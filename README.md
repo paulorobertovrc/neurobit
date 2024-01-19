@@ -1,12 +1,17 @@
+<div style="text-align: justify;">
+
 # PROJETO NEUROBIT
+
+![Static Badge](https://img.shields.io/badge/Fichamentos-0-5F9EA0?labelColor=grey)
+![Static Badge](https://img.shields.io/badge/Material_complementar-0-5F9EA0?labelColor=grey)
+![Endpoint Badge](https://img.shields.io/endpoint?url=https%3A%2F%2Fhits.dwyl.com%2Fpaulorobertovrc%2Fneurobit.svg%3Fstyle%3Dflat-square%26show%3Dunique&label=Visitantes&labelColor=grey&color=4682B4)
 
 [![Instagram](https://img.shields.io/badge/Instagram-%23E4405F.svg?logo=Instagram&logoColor=white)](https://www.instagram.com/neurobitbr)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/paulorobertovrc/)
-![Endpoint Badge](https://img.shields.io/endpoint?url=https%3A%2F%2Fhits.dwyl.com%2Fpaulorobertovrc%2Fneurobit.svg%3Fstyle%3Dflat-square%26show%3Dunique&label=Visitantes&labelColor=072E4A&color=grey)
 
 ## Acesso rápido
 
-[Descrição](#descrição) | [Justificativa](#justificativa) | [Objetivos](#objetivos) | [Sobre o Autor](#sobre-o-autor) |
+| [Descrição](#descrição) | [Justificativa](#justificativa) | [Objetivos](#objetivos) | [Sobre o Autor](#sobre-o-autor) | [Isenção de responsabilidade](#isenção-de-responsabilidade) | [Licença](#licença) | [Tabela de fichamentos](#tabela-de-fichamentos) | [Tabela de complementos](#tabela-de-complementos) |
 
 ## Descrição
 
@@ -53,3 +58,38 @@ Um eterno insatisfeito que nunca se contentou com o raso e superficial, após mu
 Compreendi que a mim pouco importam os louros da vitória, se o caminho a ser percorrido não contiver em si mesmo idêntica, senão maior, capacidade de me manter motivado - na verdade, nessa situação eu sequer conseguiria alcançar o resultado -, e, de certa maneira, concluí que retornei ao ponto de partida para, enfim, trilhar um caminho que sempre esteve traçado, mas que eu não conseguia ou não estava preparado para enxergar.
 
 [[🔝](#acesso-rápido)]
+
+## Isenção de responsabilidade
+
+Este é um projeto pessoal de estudos, sem fins lucrativos, que visa buscar e organizar informações relevantes sobre assuntos de especial interesse ao tema principal.
+
+Embora os fichamentos sejam feitos com a maior cautela e seriedade possíveis, não há garantia de que todo o conteúdo esteja perfeitamente correto e/ou alinhado às fontes mais modernas sobre os respectivos temas, razão pela qual é recomendável à pessoa interessada verificar as fontes originais sempre que necessário.
+
+Ressalto, no entanto, o compromisso pessoal de que me esforçarei para elaborar o melhor material possível, pois o objetivo último é a aquisição do conhecimento em sua melhor forma disponível.
+
+[[🔝](#acesso-rápido)]
+
+## Licença
+
+Ressalvados os direitos autorais dos detentores/produtores dos conteúdos utilizados como fonte de estudo - artigos científicos ou informais, livros, vídeos, etc. -, devidamente referenciados, todo o material textual produzido neste âmbito é disponibilizado pelo autor do Projeto NeuroBit sob a licença [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International](https://creativecommons.org/licenses/by-nc-sa/4.0/).
+
+[[🔝](#acesso-rápido)]
+
+## Tabela de fichamentos
+
+| # | Título | Autor | Capítulo | Fase | Link |
+| :---: | :---: | :---: | :---: | :---: | :---: |
+1.1 | Neural Networks and Learning Machines | Simon Haikin |  Prefácio | ![Static Badge](https://img.shields.io/badge/Finalizado-grey) | [🔗](fichamentos/neural-networks-and-learning-machines-simon-haykin/__preface.md) |
+1.2 | Neural Networks and Learning Machines | Simon Haikin | Introdução | ![Static Badge](https://img.shields.io/badge/Escrevendo-grey) | - |
+
+[[🔝](#acesso-rápido)]
+
+## Tabela de complementos
+
+| # | Área | Assunto | Fase | Link |
+| :---: | :---: | :---: | :---: | :---: |
+1 | Neurociência | Plasticidade | ![Static Badge](https://img.shields.io/badge/Pesquisando-grey) | [🔗](./complementos/plasticidade.md) |
+
+[[🔝](#acesso-rápido)]
+
+</div>
