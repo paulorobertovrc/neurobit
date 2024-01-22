@@ -1,5 +1,3 @@
-<div style="text-align: justify;">
-
 # PROJETO NEUROBIT
 
 ![Static Badge](https://img.shields.io/badge/Fichamentos-0-5F9EA0?labelColor=grey)
@@ -11,7 +9,9 @@
 
 ## Acesso rápido
 
-| [Descrição](#descrição) | [Justificativa](#justificativa) | [Objetivos](#objetivos) | [Sobre o Autor](#sobre-o-autor) | [Isenção de responsabilidade](#isenção-de-responsabilidade) | [Licença](#licença) | [Tabela de fichamentos](#tabela-de-fichamentos) | [Tabela de complementos](#tabela-de-complementos) |
+| [Fichamentos](#tabela-de-fichamentos) | [Complementos](#tabela-de-complementos) |
+
+| [Descrição](#descrição) | [Justificativa](#justificativa) | [Objetivos](#objetivos) | [Sobre o Autor](#sobre-o-autor) | [Isenção de responsabilidade](#isenção-de-responsabilidade) | [Licença](#licença) |
 
 ## Descrição
 
