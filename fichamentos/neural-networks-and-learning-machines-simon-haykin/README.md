@@ -30,7 +30,7 @@ Livro-texto de discplinas que estudem redes neurais artificiais. Parte da aprese
 | # | Capítulo | Fase | Link |
 | :---: | :---: | :---: | :---: |
 | 1 |  Prefácio | ![Static Badge](https://img.shields.io/badge/Finalizado-grey) | [🔗](__preface.md) |
-| 2 | Introdução | ![Static Badge](https://img.shields.io/badge/Escrevendo-grey) | - |
+| 2 | Introdução | ![Static Badge](https://img.shields.io/badge/Escrevendo-grey) | [🔗](_introduction.md) |
 | 3 | Rosenblatt's Perceptron | ![Static Badge](https://img.shields.io/badge/Não_iniciado-grey) | - |
 | 4 | Model Building through Regression | ![Static Badge](https://img.shields.io/badge/Não_iniciado-grey) | - |
 | 5 | The Least-Mean-Square Algorithm | ![Static Badge](https://img.shields.io/badge/Não_iniciado-grey) | - |
