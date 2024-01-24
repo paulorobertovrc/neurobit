@@ -8,13 +8,13 @@
 
 Desde o início, o estudo das redes neurais artificiais foi pautado pela observação de que tanto o cérebro humano quanto os computadores convencionais são sistemas de processamento de informações[1] e, por conseguinte, realizam trabalho computacional[2]. Não apenas seu funcionamento é bastante distinto, mas a capacidade computacional do cérebro - não só humano, mas também o de outros animais - supera, em muito, a dos computadores digitais.
 
-O cérebro é um sistema de processamento de informações complexo, não linear e paralelo [3]. Suas estruturas fundamentais são os neurônios, organizados de modo a realizar tarefas computacionais, a exemplo do reconhecimento de padrões. Portanto, assim no cérebro como nas redes artificiais, os neurônios constituem as unidades de processamento da informação.
+O cérebro é um sistema de processamento de informações complexo, não linear e paralelo[3]. Suas estruturas fundamentais são os neurônios, organizados de modo a realizar tarefas computacionais, a exemplo do reconhecimento de padrões. Portanto, assim no cérebro como nas redes artificiais, os neurônios constituem as unidades de processamento da informação.
 
-A plasticidade[3], característica que permite a adaptação do indivíduo ao ambiente em que está inserido, também é importante para as redes neurais artificiais.
+A plasticidade[4], característica que permite a adaptação do indivíduo ao ambiente em que está inserido, também é importante para as redes neurais artificiais.
 
 Em linhas gerais, pode-se dizer que uma rede neural artificial é um modelo computacional inspirado no modo como o cérebro realiza o processamento de informações. Nas palavras de Haykin (2009, p. 2), "[...] a neural network is a machine that is designed to model the way in which the brain performs a particular task or function of interest".
 
-Já como definição formal, o autor dá às redes neurais, vistas como uma máquina adaptativa[4], o seguinte conceito:
+Já como definição formal, o autor dá às redes neurais, vistas como uma máquina adaptativa[5], o seguinte conceito:
 
 > A neural network is a massively parallel distributed processor made up of simple processing units that has a natural propensity for storing experiential knowledge and making it available for use. It resembles the brain in two respects:
 > 1. Knowledge is acquired by the network from its environment through a learning process.
@@ -32,7 +32,7 @@ O processo de aprendizagem - **algoritmo de aprendizagem** - tradicionalmente ap
 
 A rede neural pode alterar sua própria estrutura (topologia).
 
-Conforme o autor, a técnica de modificação dos pesos sinápticos guarda muita similaridade com a teoria dos filtros adaptativos lineares (*linear adaptative filter theory*) [5].
+Conforme o autor, a técnica de modificação dos pesos sinápticos guarda muita similaridade com a teoria dos filtros adaptativos lineares (*linear adaptative filter theory*) [6].
 
 #### Benefícios das redes neurais
 
@@ -53,13 +53,21 @@ Principais capacidades e propriedades das redes neurais artificiais (p. 2/6):
 - Resposta a evidências (não apenas classificar o padrão adequadamente, mas informar o nível de confiabilidade da escolha, rejeitando ambiguidade);
 - Informação contextualizada ("O conhecimento é representado pela própria estrutura e estado de ativação de uma rede neural." (HAYKIN, 2001, p. 30));
 - Tolerância a falhas (devido à sua estrutura massiva e paralelamente distribuída);
-- Implementação em VSLI (*very-large-scale-integration*) [6];
+- Implementação em VSLI (*very-large-scale-integration*) [7];
 - Uniformidade de análise e projeto ("[...] as redes neurais desfrutam de universalidade como procesadores de informação" (HAYKIN, 2001, p. 30));
 - Analogia neurobiológica (motivadas por estruturas biológicas do cérebro humano).
 
-### O cérebro humano
+### O cérebro humano [8]
 
-### Modelos de neurônio
+O sistema nervoso humano pode ser visto como um sistema de três estágios, do qual fazem parte cérebro, receptores e atuadores. Os estímulos - entrada (*input*) do sistema - são captados e convertidos em sinais elétricos pelos receptores; o cérebro continuamente recebe e processa esses sinais; os atuadores convertem os sinais recebidos de modo a gerar as ações (respostas) apropriadas, que constituem a saída (*output*) do sistema. A informação captada é transmitida em um único sentido - receptor > cérebro > atuador -, mas o sistema se retroalimenta no sentido oposto dessa transmissão - atuador > cérebro > receptor (*feedback*).
+
+Foi o trabalho de Santiago Ramón y Cajal que, em 1911, introduziu o neurônio como estrutura fundamental do cérebro. Os neurônios são cinco a seis ordens de grandeza mais lentos do que os circuitos digitais e, ainda assim, o cérebro é muito mais eficiente do que computadores em termos de eficiência energética. Provavelmente, isso é resultado da enorme quantidade de células neuronais e à massiva interconexão entre elas - a eficiência energética do cérebro humano é de $10^{-16}$ joules por operação por segundo. Eles se apresentam sob diversas formas e tamanhos, sendo que um dos mais comuns é a denominada célula piramidal.
+
+As sinapses são unidades estruturais e funcionais elementares responsáveis por intermediar a comunicação entre neurônios [9] e, em maioria, são químicas. Nelas, um sinal elétrico pré-sináptico é transformado em sinal químico pela liberação de neurotransmissores, e depois se converte novamente em sinal elétrico, pós-sináptico (Shepherd; Koch, 1990 *apud* Haykin, 2009). "Nas descrições tradicionais da organização neural, assume-se que uma sinapse é uma conexão simples que pode impor ao neurônio receptivo excitação ou inibição, mas não ambas." (HAYKIN, 2001, p. 33). O surgimento de novas sinapses ou a modificação das já existentes são os mecanismos responsáveis pela plasticidade cerebral.
+
+A saída (*output*) do processamento neuronal são, no mais das vezes, impulsos elétricos denominados **potenciais de ação** [10] ou ***spikes*** - na 2 edição, em português, o termo é traduzido como **impulso**.
+
+### Modelos de neurônio [artificial]
 
 #### Funções de ativação
 
@@ -109,6 +117,13 @@ Principais capacidades e propriedades das redes neurais artificiais (p. 2/6):
     - Uniformidade de análise e projeto ("[...] as redes neurais desfrutam de universalidade como procesadores de informação" (HAYKIN, 2001, p. 30));
     - Analogia neurobiológica (motivadas por estruturas biológicas do cérebro humano).
 
+- O cérebro humano
+  - Uma das formas de se enxergar o sistema nervoso do ser humano é como um sistema de três estágios composto por cérebro, receptores e atuadores. Os sinais de entrada (*input*) desse sistema são os estímulos externos e/ou internos que são captados pelos receptores e, submetidos ao dito sistema, tem-se como saída (*output*) alguma resposta que pode variar desde a mera percepção a um movimento corporal.
+  - Os neurônios, estruturas fundamentais do cérebro humano, comunicam-se entre si por meio do processo denominado transmissão sináptica. A sinapse é o local onde essa comunicação ocorre e pode ser, basicamente, elétrica ou química.
+    - O potencial de ação é a saída (*output*) do processamento neuronal.
+    - O surgimento de novas conexões entre os neurônios ou a modificação das já existentes são os mecanismos responsáveis pela plasticidade cerebral.
+    - O potencial de ação (*spike* ou impulso) é a saída (*output*) do processamento neuronal.
+
 ## Citações importantes
 
 > In its most general form, a neural network is a machine that is designed to model the way in which the brain performs a particular task or function of interest. (HAYKIN, 2009, p. 2)
@@ -131,11 +146,15 @@ quired knowledge. (HAYKIN, 2009, p. 2)
 
 [4] Vide complemento [plasticidade](../../complementos/plasticidade.md).
 
-<!-- [4] CONCEITUAR MÁQUINA ADAPTATIVA -->
+<!-- [5] CONCEITUAR MÁQUINA ADAPTATIVA -->
 
-<!-- [5] A **teoria dos filtros adaptativos lineares (*linear adaptative filter theory*)** CONCEITUAR ..... -->
+<!-- [6] A **teoria dos filtros adaptativos lineares (*linear adaptative filter theory*)** CONCEITUAR ..... -->
 
-[6] VLSI, do inglês *Very Large Scale Integration*, é um processo de fabricação de circuitos eletrônicos integrados com altíssima quantidade de transistores em um único chip.
+[7] VLSI, do inglês *Very Large Scale Integration*, é um processo de fabricação de circuitos eletrônicos integrados com altíssima quantidade de transistores em um único chip.
+
+[8] [10] Vide complemento [sistema nervoso, encéfalo e neurônio](../../complementos/sistema_nervoso_encefalo_neuronio.md) para consulta mais detalhada sobre o assunto, a partir de referências da literatura de Neurociências.
+
+[9] A sinapse é uma região específica, ao passo que ao processo de comunicação entre neurônios dá-se o nome de transmissão sináptica (Kandel, 2004). Nesse sentido, "o local especializado em que um neurônio se comunica com outro é chamado de sinapse [...]" (KANDEL et al., 2014, p. 157).
 
 ## Referências complementares consultadas durante o fichamento deste capítulo
 
