@@ -4,7 +4,7 @@
 ![Static Badge](https://img.shields.io/badge/Material_complementar-0-5F9EA0?labelColor=grey)
 ![Endpoint Badge](https://img.shields.io/endpoint?url=https%3A%2F%2Fhits.dwyl.com%2Fpaulorobertovrc%2Fneurobit.svg%3Fstyle%3Dflat-square%26show%3Dunique&label=Visitantes&labelColor=grey&color=4682B4)
 
-[![Instagram](https://img.shields.io/badge/Instagram-%23E4405F.svg?logo=Instagram&logoColor=white)](https://www.instagram.com/neurobitbr)
+[![Instagram](https://img.shields.io/badge/Instagram-%23E4405F.svg?logo=Instagram&logoColor=white)](https://www.instagram.com/pauloroberto.dev)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/paulorobertovrc/)
 
 ## Acesso rápido
@@ -15,23 +15,21 @@
 
 ## Descrição
 
-O Neurobit é um **projeto de pesquisa de cunho estritamente pessoal** dedicado ao estudo da **inteligência artificial com enfoque nas redes neurais artificiais.**
+O NeuroBit é um **projeto pessoal de pesquisa dedicado ao estudo da inteligência artificial, com ênfase nas redes neurais artificiais,** e surgiu como resultado de um longo processo de autoconhecimento e busca por um verdadeiro propósito em termos profissionais.
 
-Embora consista no resultado de um longo processo de autoconhecimento e de busca por um verdadeiro propósito da minha vida profissional, a idealização do esboço do projeto foi repentina e marcada pela primeira publicação no perfil do projeto no [Instagram](https://www.instagram.com/p/Cy9zF5bAcb2/?igsh=bTQ3d3YwOXRlNHZ6), em 28 de outubro de 2023, a partir de quando teve início a primeira etapa, de planejamento, que serviu como um período de nivelamento com o objetivo de introduzir conceitos elementares e formar uma compreensão inicial dos temas que deveriam ser estudados a seguir. Noutras palavras, evitar incorrer no errôneo enviesamento cognitivo a que se refere o denominado efeito Dunning-Kruger.
+Este repositório concentrará o material produzido no decorrer das sessões de estudo e pesquisa. O NeuroBit é um projeto vivo, mas ainda em estágio inicial, de modo que o material será gradativamente disponibilizado, conforme o avanço dos estudos. A ideia é que o acervo sirva como base de conhecimento para facilitar a consulta futura, pois manterá em um único lugar todo o conteúdo de interesse.
 
-O registro da evolução do projeto será feito exclusivamente por meio de postagens periódicas no [Instagram](https://www.instagram.com/neurobitbr), no intuito de documentar as principais etapas, desafios e  dificuldades enfrentadas, constituindo uma espécie de diário de eventos, ainda que as publicações não necessariamente observarão tal periodicidade.
-
-Por sua vez, este repositório concentrará todo o material que resultar das sessões de estudo, principalmente fichamentos, resumos e anotações, além dos códigos.
+A evolução do projeto poderá ser acompanhada por meio do meu perfil no [Instagram](https://www.instagram.com/pauloroberto.dev), em que registrarei as principais etapas, desafios e dificuldades enfrentadas, de modo a constituir uma espécie de diário de eventos, ainda que as publicações não necessariamente observarão tal periodicidade.
 
 [[🔝](#acesso-rápido)]
 
 ## Justificativa
 
-A justificativa mais ampla para o desenvolvimento do projeto subsiste na interessante possibilidade de correlacionar assuntos aparentemente desconexos, como Computação e Neurociência, ambos de grande interesse pessoal. Nesse sentido, é possível que em etapa mais avançada do projeto possa ser utilizada minha bagagem acumulada em outra área, o Direito, como por exemplo para desenvolver um hipotético *software* que, com o auxílio de inteligência artificial, seja capaz de propor soluções de interesse específico dessa área do conhecimento.
+A justificativa mais ampla para o desenvolvimento do projeto subsiste na interessante possibilidade de correlacionar assuntos aparentemente desconexos, como Computação e Neurociência, ambos de grande interesse pessoal. Nesse sentido, é possível que em etapa mais avançada do projeto, seja desenvolvido um *software* que, com o auxílio de inteligência artificial, seja capaz de propor soluções úteis de interesse de outra área do conhecimento, o Direito, no qual tenho experiência.
 
-Sob um ponto de vista mais concreto, a ideia surgiu em decorrência da pouca disponibilidade de material atualizado, em língua portuguesa, sobre o tema. Além disso, não parece existir algum lugar em que se encontre esse tipo de conteúdo, ao menos com as peculiaridades que pretendo abordar, de forma estruturada e organizada.
+Sob um ponto de vista mais concreto, a manutenção deste repositório se justifica pela necessidade de organizar sistematicamente o material de estudo, para futura referência, e pela possibilidade de compartilhar o conhecimento adquirido com quem quer que se interesse pelo tema. Além disso, algumas das fontes de estudo estão em língua inglesa, de modo que a disponibilização de textos em português pode facilitar o acesso de muitas pessoas.
 
-Aliás, exatamente por essa necessidade de sistematização é que decidi pela criação deste repositório, que não fazia parte da concepção original do projeto, pois além do amplo acesso por quem quer que seja, facilmente permite a contribuição de quem queira aprender ou ensinar, em virtude da estrutura eminentemente colaborativa da plataforma.
+Aliás, exatamente pela necessidade de organização e sistematização, assim como pela característica colaborativa da plataforma, é que decidi por criar este repositório, que não fazia parte da concepção original do projeto.
 
 [[🔝](#acesso-rápido)]
 
@@ -88,8 +86,6 @@ Ressalvados os direitos autorais dos detentores/produtores dos conteúdos utiliz
 
 | # | Área | Assunto | Fase | Link |
 | :---: | :---: | :---: | :---: | :---: |
-1 | Neurociência | Plasticidade | ![Static Badge](https://img.shields.io/badge/Pesquisando-grey) | [🔗](./complementos/plasticidade.md) |
+| 1 | Neurociência | Plasticidade | ![Static Badge](https://img.shields.io/badge/Pesquisando-grey) | [🔗](./complementos/plasticidade.md) |
 
 [[🔝](#acesso-rápido)]
-
-</div>
