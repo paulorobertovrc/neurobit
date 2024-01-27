@@ -77,8 +77,8 @@ Ressalvados os direitos autorais dos detentores/produtores dos conteúdos utiliz
 
 | # | Título | Autor | Capítulo | Fase | Link |
 | :---: | :---: | :---: | :---: | :---: | :---: |
-1.1 | Neural Networks and Learning Machines | Simon Haikin |  Prefácio | ![Static Badge](https://img.shields.io/badge/Finalizado-grey) | [🔗](fichamentos/neural-networks-and-learning-machines-simon-haykin/__preface.md) |
-1.2 | Neural Networks and Learning Machines | Simon Haikin | Introdução | ![Static Badge](https://img.shields.io/badge/Escrevendo-grey) | [🔗](fichamentos/neural-networks-and-learning-machines-simon-haykin/_introduction.md) |
+1.1 | Neural Networks and Learning Machines | Simon Haykin |  Prefácio | ![Static Badge](https://img.shields.io/badge/Finalizado-grey) | [🔗](./fichamentos/neural-networks-and-learning-machines-simon-haykin/__preface.md) |
+1.2 | Neural Networks and Learning Machines | Simon Haykin | Introdução | ![Static Badge](https://img.shields.io/badge/Escrevendo-grey) | [🔗](./fichamentos/neural-networks-and-learning-machines-simon-haykin/_introduction.md) |
 
 [[🔝](#acesso-rápido)]
 

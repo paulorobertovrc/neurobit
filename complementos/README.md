@@ -6,4 +6,5 @@ Textos complementares sobre assuntos periféricos e que não demandem estudo apr
 
 | # | Área | Assunto | Fase | Link |
 | :---: | :---: | :---: | :---: | :---: |
-1 | Neurociência | Plasticidade | ![Static Badge](https://img.shields.io/badge/Pesquisando-grey) | [🔗](plasticidade.md) |
+| 1 | Neurociência | Plasticidade | ![Static Badge](https://img.shields.io/badge/Pesquisando-grey) | [🔗](./plasticidade.md) |
+<!-- | 2 | Neurociência | Sistema nervoso, encéfalo e neurônio | ![Static Badge](https://img.shields.io/badge/Não_iniciado-grey) | [🔗](./sistema_nervoso_encefalo_neuronio.md) | -->
