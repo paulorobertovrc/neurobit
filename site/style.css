@@ -100,6 +100,11 @@ table {
     color: #333;
 }
 
+.linkdiscreto {
+    text-decoration: none;
+    color: #333;
+}
+
 .social {
     padding: 5px 5px 0px 5px;
 }
