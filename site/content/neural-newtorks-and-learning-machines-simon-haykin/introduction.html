@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../style.css">
+    <title>Neural Networks and Learning Machines / Introdução</title>
+</head>
+
+<header class="breadcrumb" id="top">
+    <nav>
+        <a href="../../index.html">Voltar à página inicial</a>
+        <br/>
+        <p>Networks and Learning Machines | 3<sup>a</sup> Edição</p>
+        <p>Simon Haykin</p>
+    </nav>
+</header>
+
+<body>
+    <main>
+        <h1># 1.2</h1>
+        <p><img src="https://img.shields.io/badge/Fase-Escrevendo-grey?labelColor=5F9EA0"></p>
+        
+        <h2>Introdução (p. 1/46)</h2>
+
+        <article>
+            <h3>Definição de rede neural [1]</h3>
+            <p> Desde o início, o estudo das redes neurais artificiais foi pautado pela observação de que tanto o cérebro humano quanto os computadores convencionais são sistemas de processamento de informações[2] e, por conseguinte, realizam trabalho computacional[3]. Não apenas seu funcionamento é bastante distinto, mas a capacidade computacional do cérebro - não só humano, mas também o de outros animais - supera, em muito, a dos computadores digitais.</p>
+            <p>O cérebro é um sistema de processamento de informações complexo, não linear e paralelo[4]. Suas estruturas fundamentais são os neurônios, organizados de modo a realizar tarefas computacionais, a exemplo do reconhecimento de padrões. Portanto, assim no cérebro como nas redes artificiais, os neurônios constituem as unidades de processamento da informação.</p>
+            <p>A plasticidade[5], característica que permite a adaptação do indivíduo ao ambiente em que está inserido, também é importante para as redes neurais artificiais.</p>
+            <p>Em linhas gerais, pode-se dizer que uma rede neural artificial é um modelo computacional inspirado no modo como o cérebro realiza o processamento de informações. Nas palavras de Haykin (2009, p. 2), “[…] a neural network is a machine that is designed to model the way in which the brain performs a particular task or function of interest”.</p>
+            <p>Já como definição formal, o autor dá às redes neurais, vistas como uma máquina adaptativa[6], o seguinte conceito:</p>
+            <blockquote>
+            <p>A neural network is a massively parallel distributed processor made up of simple processing units that has a natural propensity for storing experiential knowledge and making it available for use. It resembles the brain in two respects:</p>
+            <ol>
+            <li>Knowledge is acquired by the network from its environment through a learning process.</li>
+            <li>Interneuron connection strengths, known as synaptic weights, are used to store the ac-<br>
+            quired knowledge. (HAYKIN, 2009, p. 2)</li>
+            </ol>
+            </blockquote>
+            <p>Em português, conforme definição dada na edição anterior do livro:</p>
+            <blockquote>
+            <p>Uma rede neural é um processador maciçamente paralelamente distribuído constituído de unidades de processamento simples, que tem uma propensão natural para armazenar conhecimento experimental e torná-lo disponível para uso. Ela se assemelha ao cérebro em dois aspectos:</p>
+            <ol>
+            <li>O conhecimento é adquirido pela rede a partir de seu ambiente através de um processo de aprendizagem.</li>
+            <li>Forças de conexão entre os neurônios, conhecidas como pesos sinápticos, são utilizadas para armazenar o conhecimento adquirido. (HAYKIN, 2001, p. 28)</li>
+            </ol>
+            </blockquote>
+            <p>Assim, na medida do possível, as redes neurais artificiais assemelham-se e são modeladas à luz do cérebro humano [interconexão de unidades computacionais simples - neurônios - assim no cérebro biológico, como nas redes neurais artificiais].</p>
+            <p>O processo de aprendizagem - <strong>algoritmo de aprendizagem</strong> - tradicionalmente aplicado em redes neurais consiste na <strong>modificação dos pesos sinápticos</strong> das conexões neuronais e deve necessariamente resultar em <strong>atividade computacional útil</strong>, ou seja, o alcance do objetivo almejado.</p>
+            <p>A rede neural pode alterar sua própria estrutura (topologia).</p>
+            <p>Conforme o autor, a técnica de modificação dos pesos sinápticos guarda muita similaridade com a teoria dos filtros adaptativos lineares (<em>linear adaptive filter theory</em>) [7].</p>
+            
+            <h4>Benefícios das redes neurais</h4>
+            <p>A capacidade computacional das redes neurais é resultado de sua estrutura massiva e paralelamente distribuída, bem como da habilidade de aprender e generalizar. “A generalização se refere ao fato de a rede neural produzir saídas adequadas para entradas que não estavam presentes durante o treinamento (aprendizagem). Estas duas capacidades de processamento de informação [aprender e generalizar] tornam possível para as redes neurais resolver problemas complexos (de grande escala) que são atualmente intratáveis.” (HAYKIN, 2001, p. 28) [da 2 edição, em português].</p>
+            <blockquote>
+            <p>A generalização se refere ao fato de a rede neural produzir saídas adequadas para entradas que não estavam presentes durante o treinamento (aprendizagem) (HAYKIN, 2001, p. 28).</p>
+            </blockquote>
+            <blockquote>
+            <p>Generalization refers to the neural network’s production of reasonable outputs for inputs not encountered during training (learning) (HAYKIN, 2009, p. 2).</p>
+            </blockquote>
+            <p>São produzidas saídas (<em>outputs</em>) adequadas para as entradas (<em>inputs</em>) fornecidas - <em>good approximate solutions</em>, do original em inglês (Haykin, 2009). Atualmente, o problema grande e complexo deve ser decomposto em problemas menores, os quais redes neurais de propósito específico têm capacidade de resolver.</p>
+            <p>Principais capacidades e propriedades das redes neurais artificiais (p. 2/6):</p>
+            <ul>
+            <li>Não linearidade (embora individualmente os neurônios artificiais possam ser lineares ou não lineares);</li>
+            <li>Mapeamento de entrada e saída (na aprendizagem supervisionada);</li>
+            <li>Adaptabilidade (capacidade de modificar os pesos sinápticos);
+            <ul>
+            <li><strong>Dilema estabilidade x plasticidade:</strong> “Para aproveitar todos os benefícios da adaptabilidade, as constantes de tempo principais do sistema devem ser grandes o suficiente para que o sistema ignore perturbações espúrias mas ainda assim serem suficientemente pequenas para responder a mudanças significativas no ambiente” (HAYKIN, 2001, p. 30).</li>
+            </ul>
+            </li>
+            <li>Resposta a evidências (não apenas classificar o padrão adequadamente, mas informar o nível de confiabilidade da escolha, rejeitando ambiguidade);</li>
+            <li>Informação contextualizada (“O conhecimento é representado pela própria estrutura e estado de ativação de uma rede neural.” (HAYKIN, 2001, p. 30));</li>
+            <li>Tolerância a falhas (devido à sua estrutura massiva e paralelamente distribuída);</li>
+            <li>Implementação em VSLI (<em>very-large-scale-integration</em>) [8];</li>
+            <li>Uniformidade de análise e projeto (&quot;[…] as redes neurais desfrutam de universalidade como processadores de informação&quot; (HAYKIN, 2001, p. 30));</li>
+            <li>Analogia neurobiológica (motivadas por estruturas biológicas do cérebro humano).</li>
+            </ul>
+        </article>
+
+        <article>
+            <h3>O cérebro humano[9]</h3>
+            <p>O sistema nervoso humano pode ser visto como um sistema de três estágios, do qual fazem parte cérebro, receptores e atuadores. Os estímulos - entrada (<em>input</em>) do sistema - são captados e convertidos em sinais elétricos pelos receptores; o cérebro continuamente recebe e processa esses sinais; os atuadores convertem os sinais recebidos de modo a gerar as ações (respostas) apropriadas, que constituem a saída (<em>output</em>) do sistema. A informação captada é transmitida em um único sentido - receptor &gt; cérebro &gt; atuador -, mas o sistema se retroalimenta no sentido oposto dessa transmissão - atuador &gt; cérebro &gt; receptor (<em>feedback</em>).</p>
+            <p>Foi o trabalho de Santiago Ramón y Cajal que, em 1911, introduziu o neurônio como estrutura fundamental do cérebro. Os neurônios são cinco a seis ordens de grandeza mais lentos do que os circuitos digitais e, ainda assim, o cérebro é muito mais eficiente do que computadores em termos de eficiência energética. Provavelmente, isso é resultado da enorme quantidade de células neuronais e à massiva interconexão entre elas - a eficiência energética do cérebro humano é de $10^{-16}$ joules por operação por segundo. Eles se apresentam sob diversas formas e tamanhos, sendo que um dos mais comuns é a denominada célula piramidal, e se organizam na anatomia cerebral em diversos níveis e em pequena ou grande escala.</p>
+            <p>Essa estrutura hierárquica vai, em menor nível, das moléculas responsáveis pelas sinapses ao próprio sistema nervoso central, último nível hierárquico. A estrutura completa é apresentada por Haykin (2009, p. 9), na figura 3, da seguinte forma: moléculas &gt; sinapses &gt; microcircuitos neurais &gt; árvore dendrítica &gt; neurônio &gt; circuitos locais &gt; circuitos regionais &gt; sistema nervoso central.</p>
+            <blockquote>
+            <p>The synapses represent the most fundamental level, depending on molecules and ions for their action. […] A neural microcircuit refers to an assembly of synapses organized into patterns of connectivity to produce a functional operation of interest. A neural microcircuit may be likened to a silicon chip made up of an assembly of transistors. At the next level of complexity, we have local circuits […] made up of neurons with similar or different properties; there neural assemblies perform operations characteristic of a localized region in the brain. They are followed by interregional circuits made up of pathways, columns, and topographic maps, which involve multiple regions located in different parts of the brain.<br>
+            Topographic maps are organized to respond to incoming sensory information. These maps are often arranged in sheets, […] stacked in adjacent layers in such a way that stimuli from corresponding points in space lie above or below each other. […] different sensory inputs […] are mapped onto corresponding areas of the cerebral cortex in an orderly fashion. At the final level of complexity, the topographic maps and other interregional circuits mediate specific types of behavior in the central nervous system. (HAYKIN, 2009, p. 7/9)</p>
+            </blockquote>
+            <p>O equivalente, na 2 edição, em português:</p>
+            <blockquote>
+            <p>As sinapses representam o nível mais fundamental, dependente de moléculas e íons para sua ação. […] Um microcircuito neural se refere a um agrupamento de sinapses organizadas em padrões de conectividade para produzir uma operação funcional de interesse. Um microcircuito neural pode ser comparado a um circuito de silício constituído por um agrupamento de transistores. […] No nível seguinte de complexidade nós temos circuitos locais […] constituídos por neurônios com propriedades similares ou diferentes; estes agrupamentos neurais realizam operações características de uma região localizada no cérebro. Eles são seguidos por circuitos inter-regionais constituídos por caminhos, colunas e mapas topográficos, que envolvem regiões múltiplas localizadas em partes diferentes do cérebro.<br>
+            Os mapas topográficos são organizados para responder à informação sensorial incidente. Estes mapas são frequentemente arranjados em folhas, […] empilhados em camadas adjacentes de tal modo que estímulos advindos de pontos correspondentes no espaço se localizem acima ou abaixo de cada um deles. […] diferentes entradas sensoriais […] são mapeadas sobre áreas correspondentes do córtex cerebral de forma ordenada. No nível final de complexidade, os mapas topográficos e outros circuitos inter-regionais medeiam tipos específicos de comportamento no sistema nervoso central. (HAYKIN, 2001, p. 33/36)</p>
+            </blockquote>
+            <p>As sinapses são unidades estruturais e funcionais elementares responsáveis por intermediar a comunicação entre neurônios[10] e, em maioria, são químicas. Nelas, um sinal elétrico pré-sináptico é transformado em sinal químico pela liberação de neurotransmissores, e depois se converte novamente em sinal elétrico, pós-sináptico (Shepherd; Koch, 1990 <em>apud</em> Haykin, 2009). “Nas descrições tradicionais da organização neural, assume-se que uma sinapse é uma conexão simples que pode impor ao neurônio receptivo excitação ou inibição, mas não ambas.” (HAYKIN, 2001, p. 33). <strong>O surgimento de novas sinapses ou a modificação das já existentes são os mecanismos responsáveis pela plasticidade cerebral e, consequentemente, pela aprendizagem.</strong></p>
+            <p>A saída (<em>output</em>) do processamento neuronal são, no mais das vezes, impulsos elétricos denominados <strong>potenciais de ação</strong>[11] ou <strong><em>spikes</em></strong> - na 2 edição, em português, o termo é traduzido como <strong>impulso</strong>.</p>
+        </article>
+
+        <article>
+            <h3>Modelos de neurônio [artificial]</h3>
+            <p>Em sua forma mais rudimentar, o modelo de um neurônio artificial possui três elementos básicos: um <strong>conjunto de sinapses ou elos de ligação (<em>synapses or connecting links</em>)</strong>, cada um com seu próprio peso ou força (peso sináptico/<em>synaptic weight</em>) [12]; um <strong>somador (<em>adder</em>)</strong>; e uma <strong>função de ativação (<em>activation function</em>)</strong>.</p>
+            <p>Eis a ilustração do modelo (HAYKIN, 2009, p. 11):</p>
+            <img class="figura" src="../../image/03_neuronio_artificial_nao_linear_basico.png" alt="Modelo de neurônio artificial">
+            <p>Depreende-se que um sinal de <strong>entrada</strong> - representado pela letra $x$ - é direcionado à sinapse - representada pela letra $j$ -, que está conectada ao neurônio - representado pela letra $k$ - e que, por sua vez, possui um peso sináptico - representado pela letra $w$. Noutras palavras, considerados quaisquer índices, diz-se que “[…] um sinal $x_j$ na entrada da sinapse $j$ conectada ao neurônio $k$ é multiplicada pelo peso sináptico $w_{kj}$. […] O primeiro índice se refere ao neurônio em questão e o segundo se refere ao terminal de entrada da sinapse à qual o peso se refere.” (HAYKIN, 2001, p. 36).</p>
+            <p>O somatório dos sinais de entrada ponderados pelos pesos sinápticos de cada neurônio pode, ou não, executar a função de ativação, que visa “restringir a amplitude da saída de um neurônio. A função de ativação é também referida como <em>função restritiva</em> já que restringe (limita) o intervalo permissível de amplitude do sinal de saída a um valor finito. Tipicamente, o intervalo normalizado da amplitude da saída de um neurônio é escrito como o intervalo unitário fechado [0, 1] ou alternativamente [-1, 1]” (HAYKIN, 2001, p. 37). Na terminologia em inglês, a dita função restritiva é denominada <em>squashing function</em> (HAYKIN, 2009, p. 10).</p>
+            <p>O resultado - saída/<em>output</em> - do cálculo realizado pelo somador (na figura, <em>summing junction</em>) descreve um <strong>combinador linear (<em>linear combiner</em>)</strong>, representado pela letra $u$ (não aparece no modelo acima), que consiste na soma dos valores da entrada do sistema multiplicada pelo peso sináptico do neurônio.</p>
+            <p>Pode ser considerado no cálculo o <strong><em>bias</em></strong> (<strong>viés</strong>, em tradução literal), que “tem o efeito de aumentar ou diminuir a entrada líquida da função de ativação, dependendo se ele é positivo ou negativo, respectivamente” (HAYKIN, 2001, p. 37). No modelo acima, é representado por $b_k$, do que se infere que <strong>cada neurônio pode ter um viés específico</strong>. Tem-se, ainda, que o <em>bias</em> aplica uma <strong>transformação afim</strong> (<em>affine transformation</em>, em inglês) <strong>à saída do somador, que equivale à entrada líquida da função de ativação.</strong></p>
+            <p>A saída do combinador linear - $u_k$ -, após a incidência do <em>bias</em> - $b_k$ -, se for o caso, é a <strong>entrada líquida (<em>net input</em>) da função de ativação</strong>. Esta, por sua vez, é representada na imagem por $\phi(\cdot)$ e sua aplicação resulta na saída (<em>output</em>) do próprio neurônio, representada pela letra $y$.</p>
+            <p>Portanto, <strong>para o neurônio $k$, sua saída é dada por $y_k = \phi(u_k + b_k)$, cujos parâmetros são a saída do combinador linear ($u_k$) e o <em>bias</em> do neurônio ($b_k$).</strong></p>
+            <p>Até aqui, a representação matemática do neurônio $k$ é dada por:</p>
+            <p>$$<br>
+            u_k = \sum_{j=1}^{m} w_{kj}x_j<br>
+            $$</p>
+            <p>" ">e</p>
+            <p>" ">$$<br>
+            y_k = \phi(u_k + b_k)<br>
+            $$</p>
+            <p>A equação</p>
+            <p>$$<br>
+            v_k = u_k + b_k<br>
+            $$</p>
+            <p>mostra que o <strong>campo local induzido (<em>induced local field</em>) ou potencial de ativação (<em>activation potential</em>)</strong>[13], representado pela letra $v$, do neurônio $k$ tem correlação com a saída do combinador linear - $u_k$ - e o <em>bias</em> - $b_k$, de modo a deslocar o gráfico da equação a depender se o valor do <em>bias</em> é positivo ou negativo.</p>
+            
+            <h4>Tipos de funções de ativação</h4>
+            <h5>Função de limiar ou limite (<em>threshold function</em>)</h5>
+            <p>É empregada no modelo de McCulloch-Pitts, no qual “a saída de um neurônio assume o valor de 1, se o campo local induzido daquele neurônio é não-negativo, e 0 caso contrário.” (HAYKIN, 2001, p. 39). É um modelo determinístico.</p>
+            <p>Em notação matemática, tem-se que</p>
+            <p>$$<br>
+            \phi(v) = \left{<br>
+            \begin{array}{ll}<br>
+            1, &amp; \text{se } v \geq 0 \<br>
+            0, &amp; \text{se } v &lt; 0<br>
+            \end{array}<br>
+            \right.<br>
+            $$</p>
+            <p>, e para a saída $y_k$ do neurônio</p>
+            <p>$$<br>
+            y(k) = \left{<br>
+            \begin{array}{ll}<br>
+            1, &amp; \text{se } v \geq 0 \<br>
+            0, &amp; \text{se } v &lt; 0<br>
+            \end{array}<br>
+            \right.<br>
+            $$</p>
+            <p>Para esse neurônio, o campo local induzido ou potencial de ativação é dado por</p>
+            <p>$$<br>
+            v_k = \sum_{j=1}^{m} w_{kj}x_j + b_k<br>
+            $$</p>
+
+            <h5>Função sigmoide</h5>
+            <p>É a mais comumente utilizada na construção de redes neurais. “Ela é definida como uma função estritamente crescente que exige um balanceamento adequado entre comportamento linear e não-linear” (HAYKIN, 2001, p. 40), de modo que pode assumir valores contínuos no intervalo $[0, 1]$. Essa função é diferenciável.</p>
+            <p>Nos casos em que seja interessante que os valores da função de ativação se estenda de $-1$ a $+1$, em vez de $0$ a $+1$, tem-se a denominada <strong>função sinal (<em>signum function</em>)</strong>, que é definida por</p>
+            <p>$$<br>
+            \phi(v) = \left{<br>
+            \begin{array}{}<br>
+            1, &amp; \text{se } v &gt; 0 \<br>
+            0, &amp; \text{se } v = 0 \<br>
+            -1, &amp; \text{se } v &lt; 0<br>
+            \end{array}<br>
+            \right.<br>
+            $$</p>
+            <p>, e sua função sigmoide (função tangente hiperbólica) é dada por</p>
+            <p>$$<br>
+            \phi(v) = tanh(v)<br>
+            $$</p>
+
+            <h4>Modelo estocástico de neurônio</h4>
+            <p>Adição de uma variável aleatória ao modelo de McCulloch-Pitts, que é determinístico, de modo a torná-lo estocástico, isto é, probabilístico. Isso porque um modelo estocástico de neurônio tenta predizer possíveis resultados (saídas) levando em consideração a existência de um ou mais parâmetros variáveis ao longo do tempo. Ao contrário, em um modelo determinístico, as saídas devem ser sempre as mesmas para os mesmos valores de entrada.</p>
+            <p>Se $x$ representar o estado de um neurônio, $v$ o seu potencial de ativação e $P(v)$ a probabilidade de disparo, isto é, de que ocorra mudança de estado, tem-se que</p>
+            <p>$$<br>
+            x = \left{<br>
+            \begin{array}{ll}<br>
+            +1 &amp; \text{com probabilidade } P(v) \<br>
+            -1 &amp; \text{com probabilidade } 1 - P(v)<br>
+            \end{array}<br>
+            \right.<br>
+            $$</p>
+            <p>, e</p>
+            <p>$$<br>
+            P(v) = \frac{1}{1 + exp(-v/T)}<br>
+            $$</p>
+            <p>, em que $T$ é a dita <strong><em>pseudotemperatura</em></strong>, “[…] utilizada para controlar o nível de ruído e portanto a incerteza de disparar […] como um parâmetro que controle as flutuações térmicas que representam os efeitos do ruído sináptico. Note que quanto $T \rightarrow 0$, o neurônio estocástico […] se reduz a uma forma sem ruído (i.e., determinística), que é o modelo de McCulloch-Pitts.” (HAYKIN, 2001, p. 41).</p>
+        </article>
+
+        <article>
+            <h3>Redes neurais como grafos dirigidos</h3>
+            <h3>Feedback</h3>
+            <h3>Arquiteturas de redes neurais</h3>
+            <h3>Representação do conhecimento</h3>
+            <h4>Regras</h4>
+            <h4>Informação prévia no projeto de uma rede neural</h4>
+            <h4>Invariâncias no projeto de uma rede neural</h4>
+            <h3>Processos de aprendizagem</h3>
+            <h3>Tipos de aprendizagem</h3>
+        </article>
+
+        <hr>
+
+        <article>
+            <h2>Principais conceitos/definições/ideias extraídos do texto original</h2>
+            <ul>
+                <li><p><strong>Definição de rede neural</strong></p>
+                    <ul>
+                        <li>O cérebro é um sistema de processamento de informações complexo, não linear e paralelo, com capacidade computacional muito superior à dos computadores digitais convencionais.</li>
+                        <li>As redes neurais artificiais são inspiradas no cérebro humano e a ele se assemelham na medida em que compostas por neurônios artificiais interconectados.</li>
+                        <li>A plasticidade é uma característica importante tanto no cérebro quanto nas redes neurais artificiais e é ela que assegura a adaptação do indivíduo ao ambiente e a capacidade de aprender.</li>
+                        <li>Em redes biológicas ou artificiais, os neurônios são a unidade de processamento de informação e, portanto, responsáveis pelo trabalho computacional.</li>
+                        <li>Uma rede neural artificial modela o modo como o cérebro biológico realiza determinada tarefa ou função.</li>
+                        <li>O processo de aprendizagem tradicional consiste na modificação dos pesos sinápticos da rede neural artificial.</li>
+                    </ul>
+
+                    <li><p><strong>Benefícios das redes neurais</strong></p>
+                        <ul>
+                            <li>Massiva e paralelamente distribuída.</li>
+                            <li>Habilidade de aprender e generalizar.</li>
+                            <li>Produz saídas (<em>outputs</em>) adequadas para as entradas (<em>inputs</em>) fornecidas.</li>
+                            <li>Principais características:
+                                <ul>
+                                    <li>Não linearidade (embora individualmente os neurônios artificiais possam ser lineares ou não lineares);</li>
+                                    <li>Mapeamento de entrada e saída (na aprendizagem supervisionada);</li>
+                                    <li>Adaptabilidade (capacidade de modificar os pesos sinápticos);</li>
+                                    <li>Resposta a evidências (não apenas classificar o padrão adequadamente, mas informar o nível de confiabilidade da escolha, rejeitando ambiguidade);</li>
+                                    <li>Informação contextualizada (“O conhecimento é representado pela própria estrutura e estado de ativação de uma rede neural.” (HAYKIN, 2001, p. 30));</li>
+                                    <li>Tolerância a falhas (devido à sua estrutura massiva e paralelamente distribuída);</li>
+                                    <li>Implementação em VSLI (<em>very-large-scale-integration</em>) [6];</li>
+                                    <li>Uniformidade de análise e projeto (&quot;[…] as redes neurais desfrutam de universalidade como processadores de informação&quot; (HAYKIN, 2001, p. 30));</li>
+                                    <li>Analogia neurobiológica (motivadas por estruturas biológicas do cérebro humano).</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                
+                <li><p><strong>O cérebro humano</strong></p>
+                    <ul>
+                        <li>Uma das formas de se enxergar o sistema nervoso do ser humano é como um sistema de três estágios composto por cérebro, receptores e atuadores. Os sinais de entrada (<em>input</em>) desse sistema são os estímulos externos e/ou internos que são captados pelos receptores e, submetidos ao dito sistema, tem-se como saída (<em>output</em>) alguma resposta que pode variar desde a mera percepção a um movimento corporal.</li>
+                        <li>Os neurônios, estruturas fundamentais do cérebro humano, comunicam-se entre si por meio do processo denominado transmissão sináptica. A sinapse é o local onde essa comunicação ocorre e pode ser, basicamente, elétrica ou química.
+                            <ul>
+                                <li>O surgimento de novas conexões entre os neurônios ou a modificação das já existentes são os mecanismos responsáveis pela plasticidade cerebral e, consequentemente, pela aprendizagem.</li>
+                                <li>O potencial de ação (<em>spike</em> ou impulso) é a saída (<em>output</em>) do processamento neuronal.</li>
+                            </ul>
+                        </li>
+                        <li>Anatomicamente, o cérebro se organiza em níveis hierárquicos.</li>
+                        <li>Regiões específicas do cérebro são responsáveis por determinadas funções, mas não necessariamente de forma isolada, pois há casos em que um único resultado decorre da ativação de mais de uma região cerebral, que interagem entre si para produzi-lo.
+                            <ul>
+                                <li>Isso ocorre porque o cérebro é vastamente interconectado.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+
+                <li><p><strong>Modelos de neurônio</strong></p>
+                    <ul>
+                        <li>Elementos básicos: um conjunto de sinapses ou elos de ligação (<em>synapses or connecting links</em>), cada um com seu próprio peso ou força; um somador (<em>adder</em>); e uma função de ativação (<em>activation function</em>). Pode ser aplicado outro elemento chamado viés (<em>bias</em>), igualmente relativo a cada neurônio.
+                            <ul>
+                                <li>Cada neurônio pode ter seu próprio <em>bias</em>.</li>
+                                <li>Cada neurônio tem o seu campo local induzido (<em>induced local field</em>) ou potencial de ativação (<em>activation potential</em>), que é correlacionado com a saída do combinador linear e o <em>bias</em>.</li>
+                            </ul>
+                        </li>
+
+                        <li><strong>Tipos de função de ativação</strong>
+                            <ul>
+                                <li>Função de limiar ou limite (<em>threshold function</em>)
+                                    <ul>
+                                    <li>Modelo de McCulloch-Pitts</li>
+                                    <li>Determinístico</li>
+                                    </ul>
+                                </li>
+                                <li>Função sigmoide
+                                    <ul>
+                                        <li>Mais utilizada na construção de redes neurais.</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li><strong>Modelo estocástico de neurônio</strong>
+                            <ul>
+                                <li>Probabilístico</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </article>
+
+        <hr>
+
+        <article>
+            <h2>Notas</h2>
+            <p>[1] Uma rede neural artificial (ou apenas rede neural) é um modelo preditivo baseado na dinâmica do cérebro, que tem uma série de neurônios conectados. Cada um deles analisa as saídas dos outros neurônios ligados nele, faz um cálculo e, em seguida, dispara (se o valor calculado exceder um limite) ou não (se não). Portanto, as redes neurais artificiais são formadas por neurônios artificiais que executam cálculos semelhantes a partir de entradas. As redes neurais resolvem uma ampla variedade de problemas, como reconhecimento de caracteres manuscritos e detecção facial, e são muito usadas no aprendizado profundo, um dos subcampos mais inovadores do data science. No entanto, a maioria das redes neurais são “caixas-pretas” — analisar seus detalhes não explica como elas resolvem os problemas. Além disso, é difícil treinar grandes redes neurais. Para a maioria dos problemas típicos do início de carreira de um cientista de dados, elas não são a melhor opção. (GRUS, 2021, p. 245)</p>
+            <p>[2] Vide complemento #3 (dado, informação, conhecimento e competências).</p>
+            <p>[3] A palavra computar significa “fazer o cômputo de; calcular; orçar; contar; processar através de computadores”. Fonte: <a href="https://dicionario.priberam.org/computar">Dicionário Priberam da Língua Portuguesa</a>.</p>
+            <p>[4] Sobre o <strong>processamento em paralelo</strong>, das Neurociências colhe-se que, ao que parece, os comportamentos humanos de maior complexidade não decorrem da sinalização de um único neurônio, mas pela ação de muitos não necessariamente localizados na mesma região cortical (Kandel et al., 2014).</p>
+            <blockquote>
+                <p>O envolvimento de vários grupos neurais ou rotas para transmitir uma informação similar é chamado <em>processamento em paralelo</em>. O processamento em paralelo também ocorre em uma única via quando diferentes neurônios nessa via executa ações similares simultaneamente. […] O campo da ciência computacional conhecido como inteligência artificial originalmente usou o processamento serial para simular os processos cognitivos do encéfalo […] Esses modelos seriais executavam muitas tarefas de forma adequada, inclusive jogar xadrez. Entretanto, eram muito ruims em outras tarefas que o encéfalo faz quase instantaneamente, com o reconhecimento de faces ou a compreensão do discurso. […] Nesses modelos [redes neurais], elementos do sistema processam a informação simultaneamente usando conexões de pró-ação e de retroalimentação. É interessante observar que, em sistemas com circuitos de retroalimentação é a atividade dinâmica do sistema que determina o desfecho do processamento, não as aferências ou condições iniciais. Modelos de redes neurais capturam bem a arquitetura altamente recorrente da maioria dos circuitos neurais reais e também a capacidade do encéfalo de funcionar na ausência de uma aferência sensorial específica vinda de fora do corpo […] Modelos de redes neurais também demonstram que a análise de elementos individuais de um sistema pode não ser suficiente para decodificar a <em>mensagem dos potenciais de ação</em>. De acordo com tal visão de redes neurais, o que faz o encéfalo ser um deslumbrante órgão que processa a informação não é a complexidade de seus neurônios, mas o fato de ter muitos elementos interconectados de várias formas complexas.&quot; (KANDEL et al., 2014, p. 32/33)</p>
+            </blockquote>
+            <p>[5] Vide complemento #1 (plasticidade).</p>
+            <p>[6] Nesse contexto, diz-se que uma rede neural é uma <strong>máquina adaptativa</strong> exatamente pela capacidade aprendizado (autoajuste) e adaptação a partir dos dados de entrada, o que permite o ajuste de parâmetros (pesos sinápticos) para obter o melhor desempenho na tarefa.</p>
+            <p>[7] Sobre <strong>filtros adaptativos (<em>adaptive filter</em>)</strong>:</p>
+            <blockquote>
+                <p>The term “filter” is often used to describe a device in the form of a piece of physical hardware or software that is applied to a set of noisy data in order to extract information about a prescribed quantity of interest. […] In any event, we may use a filter to perform three basic information-processing tasks:</p>
+                <ol>
+                    <li><em>Filtering</em>, which means the extraction of information about a quantity of interest at a time $t$ by using data measured up to and including time $t$.</li>
+                    <li><em>Smoothing</em>, which differs from filtering in that information about the quantity of interest need not to be available at time $t$, and data measured later than time $t$ can be used in obtaining this information. This means that in the case of smoothing there is a <em>delay</em> in producing the result of interest. Since in the smoothing process we are able to use data obtained not only up to time $t$ but also data obtained after time $t$, we would expect smoothing to be more accurate in some sense than filtering.</li>
+                    <li><em>Prediction</em>, which is the forecasting side of information processing. The aim here is to derive information about what the quantity of interest will be like at some time ${t + T}$ in the future, for some ${T &gt; 0}$, by using data measured up to and including time $t$.<br> We may classify filters into linear and nonlinear. A filter is said to be <em>linear</em> if the filtered, smoothed, or predicted quantity at the output of the device is <em>a linear function of the observations applied to the filter input</em>. Otherwise, the filter is nonlinear. […] By such a device [an adaptive filter] we mean one that is self-designing in that the adaptive filter relies for its operation on a recursive algorithm, which makes it possible for the filter to perform satisfactorily in an environment where complete knowledge of the relevant signal characteristics is not available. (HAYKIN, 1995, p. 1/3)</li>
+                </ol>
+            </blockquote>
+            <p>[8] VLSI, do inglês <em>Very Large Scale Integration</em>, é um processo de fabricação de circuitos eletrônicos integrados com altíssima quantidade de transistores em um único chip.</p>
+            <p>[9] [11] Vide complemento <a href="../../complementos/sistema_nervoso_encefalo_neuronio.md">sistema nervoso, encéfalo e neurônio</a> para consulta mais detalhada sobre o assunto, a partir de referências da literatura de Neurociências.</p>
+            <p>[10] A sinapse é uma região específica, ao passo que ao processo de comunicação entre neurônios dá-se o nome de transmissão sináptica (Kandel et al., 2004). Nesse sentido, “o local especializado em que um neurônio se comunica com outro é chamado de sinapse […]” (KANDEL et al., 2014, p. 157).</p>
+            <p>[12] Em se tratando de peso sináptico, também referido como força sináptica, “[…] muitos modelos neurais estão equipados com processos dinâmicos que [se]reorganizam continuamente […] criam ou eliminam neurônios ou suas conexões […] ajustam as forças de conexões sinápticas existentes ou mudam outras propriedades dos neurônios. […] O termo peso sináptico frequentemente é utilizado para se referir à força de determinada conexão sináptica, enquanto o termo matriz de pesos sinápticos aplica-se ao conjunto de todos os pesos sinápticos em uma rede. A força da sinapse do neurônio $j$ sobre o neurônio $i$ é descrita como $W_{ij}$. Esse é o elemento da matriz de pesos localizado na intersecção da linha $i$ com a coluna $j$.” (KANDEL et al., 2014, p. 1387). O fenômeno da modificação dos pesos sinápticos é consequência da plasticidade - <strong>regra de plasticidade sináptica</strong> -, que Kandel et al. (2014) argumenta que não deve se confundida com a <strong>regra da aprendizagem</strong>, embora sejam comumente utilizadas como sinônimas, pois aprendizado é a “[…] expressão do comportamento de uma rede e não de uma única sinapse” (KANDEL et al., 2014, p. 1387). Nesse sentido, a <strong>regra ou plasticidade <em>hebbiana</em></strong>, em alusão a Donald Hebb, ensina que “[…] as sinapses são modificadas com base na atividade temporalmente contígua dos neurônios pré e pós-sinápticos” (KANDEL et al., 2014, p. 1387). Conforme Bear et al. (, p. 878), “Donald Hebb propôs que cada sinapse individual se torna um pouco mais forte quando participa com sucesso no disparo de um neurônio pós-sináptico”, embora haja trabalhos no sentido de que a mudança do peso sináptico esteja mais proximamente relacionada ao neurônio pré-sináptico, apenas (Gallinaro; Scholl; Clopath, 2023).</p>
+            <p>[13] Em referência ao potencial de ação da célula biológica.</p>
+        </article>
+
+        <hr>
+        <article>
+            <h2>Referências complementares consultadas durante o fichamento deste capítulo</h2>
+            <p>BEAR, Mark F.; CONNORS, Barry W.; PARADISO, Michael A. <strong>Neurociências: desvendando o sistema nervoso</strong>. Trad. Carla Dalmaz et al. 4. ed. Porto Alegre: Artmed, 2017.</p>
+            <p>GALLINARO, Júlia V.; SCHOLL, Benjamin; CLOPATH, Claudia. 2023. <strong>Synaptic weights that correlate with presynaptic selectivity increase decoding performance.</strong> PLOS Computational Biology 19(8): e1011362. <a href="https://doi.org/10.1371/journal.pcbi.1011362">https://doi.org/10.1371/journal.pcbi.1011362</a>.</p>
+            <p>GRUS, Joel. <strong>Data science do zero: noções fundamentais com Python.</strong> Trad. Welington Nascimento. 2 ed. E-book. Rio de Janeiro: Alta Books, 2021.</p>
+            <p>HAYKIN, Simon. <strong>Adaptive filter theory.</strong> 3 ed. Upper Saddle River, NJ: Prentice Hall, 1995.</p>
+            <p>KANDEL, Eric R.; SCHWARTZ, James H.; JESSELL, Thomas M.; SIEGELBAUM, Steven A.; HUDSPETH, A. J. <strong>Princípios de neurociências</strong>. Trad. Ana Lúcia Severo Rodrigues et al. 5. ed. Porto Alegre: AMGH, 2014.</p>
+            <p>VERY LARGE SCALE INTEGRATION. In: WIKIPEDIA. Disponível em <a href="https://en.wikipedia.org/wiki/Very_Large_Scale_Integration">https://en.wikipedia.org/wiki/Very_Large_Scale_Integration</a>. Acesso em 22 jan. 2024.</p>
+        </article>
+
+        <a class="emoji" href="#top">
+            [ 🔝 ]
+        </a>
+
+    </main>
+</body>
+
+<footer>
+    <p>Projeto NeuroBit</p>
+        <p>
+            <a class="social" href="https://github.com/paulorobertovrc" target="_blank">
+                <svg width="24px" height="24px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#ffffff"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>github [#142]</title> <desc>Created with Sketch.</desc> <defs> </defs> <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"> <g id="Dribbble-Light-Preview" transform="translate(-140.000000, -7559.000000)" fill="#fff"> <g id="icons" transform="translate(56.000000, 160.000000)"> <path d="M94,7399 C99.523,7399 104,7403.59 104,7409.253 C104,7413.782 101.138,7417.624 97.167,7418.981 C96.66,7419.082 96.48,7418.762 96.48,7418.489 C96.48,7418.151 96.492,7417.047 96.492,7415.675 C96.492,7414.719 96.172,7414.095 95.813,7413.777 C98.04,7413.523 100.38,7412.656 100.38,7408.718 C100.38,7407.598 99.992,7406.684 99.35,7405.966 C99.454,7405.707 99.797,7404.664 99.252,7403.252 C99.252,7403.252 98.414,7402.977 96.505,7404.303 C95.706,7404.076 94.85,7403.962 94,7403.958 C93.15,7403.962 92.295,7404.076 91.497,7404.303 C89.586,7402.977 88.746,7403.252 88.746,7403.252 C88.203,7404.664 88.546,7405.707 88.649,7405.966 C88.01,7406.684 87.619,7407.598 87.619,7408.718 C87.619,7412.646 89.954,7413.526 92.175,7413.785 C91.889,7414.041 91.63,7414.493 91.54,7415.156 C90.97,7415.418 89.522,7415.871 88.63,7414.304 C88.63,7414.304 88.101,7413.319 87.097,7413.247 C87.097,7413.247 86.122,7413.234 87.029,7413.87 C87.029,7413.87 87.684,7414.185 88.139,7415.37 C88.139,7415.37 88.726,7417.2 91.508,7416.58 C91.513,7417.437 91.522,7418.245 91.522,7418.489 C91.522,7418.76 91.338,7419.077 90.839,7418.982 C86.865,7417.627 84,7413.783 84,7409.253 C84,7403.59 88.478,7399 94,7399" id="github-[#142]"> </path> </g> </g> </g> </g></svg>
+            </a>
+            <a class="social" href="https://www.instagram.com/pauloroberto.dev" target="_blank">
+                <svg width="24px" height="24px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#FFFFFF"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path fill-rule="evenodd" clip-rule="evenodd" d="M12 18C15.3137 18 18 15.3137 18 12C18 8.68629 15.3137 6 12 6C8.68629 6 6 8.68629 6 12C6 15.3137 8.68629 18 12 18ZM12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16Z" fill="#FFFFFF"></path> <path d="M18 5C17.4477 5 17 5.44772 17 6C17 6.55228 17.4477 7 18 7C18.5523 7 19 6.55228 19 6C19 5.44772 18.5523 5 18 5Z" fill="#FFFFFF"></path> <path fill-rule="evenodd" clip-rule="evenodd" d="M1.65396 4.27606C1 5.55953 1 7.23969 1 10.6V13.4C1 16.7603 1 18.4405 1.65396 19.7239C2.2292 20.8529 3.14708 21.7708 4.27606 22.346C5.55953 23 7.23969 23 10.6 23H13.4C16.7603 23 18.4405 23 19.7239 22.346C20.8529 21.7708 21.7708 20.8529 22.346 19.7239C23 18.4405 23 16.7603 23 13.4V10.6C23 7.23969 23 5.55953 22.346 4.27606C21.7708 3.14708 20.8529 2.2292 19.7239 1.65396C18.4405 1 16.7603 1 13.4 1H10.6C7.23969 1 5.55953 1 4.27606 1.65396C3.14708 2.2292 2.2292 3.14708 1.65396 4.27606ZM13.4 3H10.6C8.88684 3 7.72225 3.00156 6.82208 3.0751C5.94524 3.14674 5.49684 3.27659 5.18404 3.43597C4.43139 3.81947 3.81947 4.43139 3.43597 5.18404C3.27659 5.49684 3.14674 5.94524 3.0751 6.82208C3.00156 7.72225 3 8.88684 3 10.6V13.4C3 15.1132 3.00156 16.2777 3.0751 17.1779C3.14674 18.0548 3.27659 18.5032 3.43597 18.816C3.81947 19.5686 4.43139 20.1805 5.18404 20.564C5.49684 20.7234 5.94524 20.8533 6.82208 20.9249C7.72225 20.9984 8.88684 21 10.6 21H13.4C15.1132 21 16.2777 20.9984 17.1779 20.9249C18.0548 20.8533 18.5032 20.7234 18.816 20.564C19.5686 20.1805 20.1805 19.5686 20.564 18.816C20.7234 18.5032 20.8533 18.0548 20.9249 17.1779C20.9984 16.2777 21 15.1132 21 13.4V10.6C21 8.88684 20.9984 7.72225 20.9249 6.82208C20.8533 5.94524 20.7234 5.49684 20.564 5.18404C20.1805 4.43139 19.5686 3.81947 18.816 3.43597C18.5032 3.27659 18.0548 3.14674 17.1779 3.0751C16.2777 3.00156 15.1132 3 13.4 3Z" fill="#FFFFFF"></path> </g></svg>
+            </a>
+            <a class="social" href="https://www.linkedin.com/in/paulorobertovrc" target="_blank">
+                <svg width="27px" height="27px" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M18.72 3.99997H5.37C5.19793 3.99191 5.02595 4.01786 4.86392 4.07635C4.70189 4.13484 4.55299 4.22471 4.42573 4.34081C4.29848 4.45692 4.19537 4.59699 4.12232 4.75299C4.04927 4.909 4.0077 5.07788 4 5.24997V18.63C4.01008 18.9901 4.15766 19.3328 4.41243 19.5875C4.6672 19.8423 5.00984 19.9899 5.37 20H18.72C19.0701 19.9844 19.4002 19.8322 19.6395 19.5761C19.8788 19.32 20.0082 18.9804 20 18.63V5.24997C20.0029 5.08247 19.9715 4.91616 19.9078 4.76122C19.8441 4.60629 19.7494 4.466 19.6295 4.34895C19.5097 4.23191 19.3672 4.14059 19.2108 4.08058C19.0544 4.02057 18.8874 3.99314 18.72 3.99997ZM9 17.34H6.67V10.21H9V17.34ZM7.89 9.12997C7.72741 9.13564 7.5654 9.10762 7.41416 9.04768C7.26291 8.98774 7.12569 8.89717 7.01113 8.78166C6.89656 8.66615 6.80711 8.5282 6.74841 8.37647C6.6897 8.22474 6.66301 8.06251 6.67 7.89997C6.66281 7.73567 6.69004 7.57169 6.74995 7.41854C6.80986 7.26538 6.90112 7.12644 7.01787 7.01063C7.13463 6.89481 7.2743 6.80468 7.42793 6.74602C7.58157 6.68735 7.74577 6.66145 7.91 6.66997C8.07259 6.66431 8.2346 6.69232 8.38584 6.75226C8.53709 6.8122 8.67431 6.90277 8.78887 7.01828C8.90344 7.13379 8.99289 7.27174 9.05159 7.42347C9.1103 7.5752 9.13699 7.73743 9.13 7.89997C9.13719 8.06427 9.10996 8.22825 9.05005 8.3814C8.99014 8.53456 8.89888 8.6735 8.78213 8.78931C8.66537 8.90513 8.5257 8.99526 8.37207 9.05392C8.21843 9.11259 8.05423 9.13849 7.89 9.12997ZM17.34 17.34H15V13.44C15 12.51 14.67 11.87 13.84 11.87C13.5822 11.8722 13.3313 11.9541 13.1219 12.1045C12.9124 12.2549 12.7546 12.4664 12.67 12.71C12.605 12.8926 12.5778 13.0865 12.59 13.28V17.34H10.29V10.21H12.59V11.21C12.7945 10.8343 13.0988 10.5225 13.4694 10.3089C13.84 10.0954 14.2624 9.98848 14.69 9.99997C16.2 9.99997 17.34 11 17.34 13.13V17.34Z" fill="#FFFFFF"></path> </g></svg>
+            </a>
+        </p>
+</footer>
