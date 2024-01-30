@@ -54,11 +54,12 @@ table {
     border-collapse: collapse;
     margin-top: 20px;
     text-align: center;
-  }
+}
 
   th {
       font-weight: bolder;
-  }
+      background-color: #f2f2f2;
+}
 
   th, td {
     border: 1px solid #dddddd;
@@ -68,11 +69,14 @@ table {
         text-decoration: none;
         color: #333;
     }
-  }
+}
 
-  th {
-    background-color: #f2f2f2;
-  }
+div#container {
+    overflow-x: auto;
+    @media screen and (max-width: 450px){
+        font-size: x-small;
+    }
+}
   
 .breadcrumb {
     text-align: right;
@@ -93,6 +97,11 @@ table {
 
 .destacado {
     font-weight: bold;
+}
+
+.div_tabela {
+    width: auto;
+    overflow-x: auto;
 }
     
 .emoji {
