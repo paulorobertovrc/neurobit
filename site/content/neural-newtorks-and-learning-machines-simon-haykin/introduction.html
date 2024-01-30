@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/site/style.css">
+    <link rel="stylesheet" href="../../../site/style.css">
     <title>Neural Networks and Learning Machines / Introdução</title>
 </head>
 
 <header class="breadcrumb" id="top">
     <nav>
-        <a href="/index.html">Voltar à página inicial</a>
+        <a href="neurobit/index.html">Voltar à página inicial</a>
         <br/>
         <p>Networks and Learning Machines | 3<sup>a</sup> Edição</p>
         <p>Simon Haykin</p>
@@ -100,7 +100,7 @@
             <h3>Modelos de neurônio [artificial]</h3>
             <p>Em sua forma mais rudimentar, o modelo de um neurônio artificial possui três elementos básicos: um <strong>conjunto de sinapses ou elos de ligação (<em>synapses or connecting links</em>)</strong>, cada um com seu próprio peso ou força (peso sináptico/<em>synaptic weight</em>) [12]; um <strong>somador (<em>adder</em>)</strong>; e uma <strong>função de ativação (<em>activation function</em>)</strong>.</p>
             <p>Eis a ilustração do modelo (HAYKIN, 2009, p. 11):</p>
-            <img class="figura" src="/fichamentos/neural-networks-and-learning-machines-simon-haykin/images/03_neuronio_artificial_nao_linear_basico.png" alt="Modelo de neurônio artificial">
+            <img class="figura" src="neurobit/fichamentos/neural-newtorks-and-learning-machines-simon-haykin/images/03_neuronio_artificial_nao_linear_basico.png" alt="Modelo de neurônio artificial">
             <p>Depreende-se que um sinal de <strong>entrada</strong> - representado pela letra $x$ - é direcionado à sinapse - representada pela letra $j$ -, que está conectada ao neurônio - representado pela letra $k$ - e que, por sua vez, possui um peso sináptico - representado pela letra $w$. Noutras palavras, considerados quaisquer índices, diz-se que “[…] um sinal $x_j$ na entrada da sinapse $j$ conectada ao neurônio $k$ é multiplicada pelo peso sináptico $w_{kj}$. […] O primeiro índice se refere ao neurônio em questão e o segundo se refere ao terminal de entrada da sinapse à qual o peso se refere.” (HAYKIN, 2001, p. 36).</p>
             <p>O somatório dos sinais de entrada ponderados pelos pesos sinápticos de cada neurônio pode, ou não, executar a função de ativação, que visa “restringir a amplitude da saída de um neurônio. A função de ativação é também referida como <em>função restritiva</em> já que restringe (limita) o intervalo permissível de amplitude do sinal de saída a um valor finito. Tipicamente, o intervalo normalizado da amplitude da saída de um neurônio é escrito como o intervalo unitário fechado [0, 1] ou alternativamente [-1, 1]” (HAYKIN, 2001, p. 37). Na terminologia em inglês, a dita função restritiva é denominada <em>squashing function</em> (HAYKIN, 2009, p. 10).</p>
             <p>O resultado - saída/<em>output</em> - do cálculo realizado pelo somador (na figura, <em>summing junction</em>) descreve um <strong>combinador linear (<em>linear combiner</em>)</strong>, representado pela letra $u$ (não aparece no modelo acima), que consiste na soma dos valores da entrada do sistema multiplicada pelo peso sináptico do neurônio.</p>
