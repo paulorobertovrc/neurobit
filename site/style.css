@@ -71,6 +71,10 @@ table {
     }
 }
 
+p {
+    overflow-wrap: break-word;
+}
+
 /* PARA RESPONSIVIDADE */
 div#container {
     overflow-x: auto;
@@ -121,6 +125,12 @@ div#container {
     height: auto;
     display: block;
     margin: 0 auto;
+    /* margin-left: auto;
+    margin-right: auto; */
+    @media screen and (max-width: 350px){
+        max-width: 80vw;
+        max-height: 80vh;
+    }
 }
 
 .image-container p.legenda {
