@@ -1,6 +1,6 @@
 # # 1.2
 
-![Static Badge](https://img.shields.io/badge/Fase-Escrevendo-grey?labelColor=5F9EA0)
+![Static Badge](https://img.shields.io/badge/Status-Escrevendo-grey?labelColor=5F9EA0)
 
 ## Introdução (p. 1/46)
 
@@ -249,6 +249,15 @@ $$
 - **Modelos de neurônio**
   - Elementos básicos: um conjunto de sinapses ou elos de ligação (*synapses or connecting links*), cada um com seu próprio peso ou força; um somador (*adder*); e uma função de ativação (*activation function*). Pode ser aplicado outro elemento chamado viés (*bias*), igualmente relativo a cada neurônio.
     - Cada neurônio pode ter seu próprio *bias*.
+    - Cada neurônio tem o seu campo local induzido (*induced local field*) ou potencial de ativação (*activation potential*), que é correlacionado com a saída do combinador linear e o *bias*.
+  - **Tipos de função de ativação**
+    - Função de limiar ou limite (*threshold function*)
+      - Modelo de McCulloch-Pitts
+      - Determinístico
+    - Função sigmoide
+      - Mais utilizada na construção de redes neurais.
+  - **Modelo estocástico de neurônio**
+    - Probabilístico
 
 ## Notas
 

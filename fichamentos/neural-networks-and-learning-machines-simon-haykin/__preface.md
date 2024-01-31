@@ -1,8 +1,6 @@
-<div style="text-align: justify;">
-
 # # 1.1
 
-![Static Badge](https://img.shields.io/badge/Fase-Finalizado-grey?labelColor=5F9EA0)
+![Static Badge](https://img.shields.io/badge/Status-Finalizado-grey?labelColor=5F9EA0)
 
 ## Prefácio (p. xi/xix)
 
@@ -48,5 +46,3 @@ RADIAL basis function. In: WIKIPEDIA. Disponível em <https://en.wikipedia.org/w
 RADIAL basis function network. In: WIKIPEDIA. Disponível em <https://en.wikipedia.org/wiki/Radial_basis_function_network>. Acesso em 14 jan. 2024.
 
 UNZUETA, Diego. **Kernel Methods: A Simple Introduction**. Medium, 2021. Disponível em <https://towardsdatascience.com/kernel-methods-a-simple-introduction-4a26dcbe4ebd>. Acesso em 14 jan. 2024.
-
-</div>

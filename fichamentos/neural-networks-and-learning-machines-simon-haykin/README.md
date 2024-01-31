@@ -1,6 +1,6 @@
 # # 1 - Neural Networks and Learning Machines
 
-![Static Badge](https://img.shields.io/badge/Fase-Escrevendo-grey?labelColor=5F9EA0)
+![Static Badge](https://img.shields.io/badge/Status-Escrevendo-grey?labelColor=5F9EA0)
 ![Static Badge](https://img.shields.io/badge/Progresso-1_/_17-grey?labelColor=5F9EA0)
 
 ## Informações do livro
@@ -23,14 +23,14 @@
 
 ## Resumo
 
-Livro-texto de disciplinas que estudem redes neurais artificiais. Parte da apresentação de conceitos gerais sobre redes neurais, métodos e processos de aprendizagem de máquina, e a cada capítulo aprofunda em um tema específico. Possui fortíssimo viés teórico e apresenta grande quantidade de demonstrações matemáticas e conceitos estatísticos de alta complexidade, de modo que não é uma leitura fácil ou introdutória e exige conhecimentos prévios. É composto por quinze capítulos, além de introdução e prefácio, e o objetivo é realizar a leitura e fichamento da maior parte ou de todo o livro, capítulo a capítulo, mas interpoladamente com o estudo de outras obras.
+Livro-texto de disciplinas que estudem redes neurais artificiais. Parte da apresentação de conceitos gerais sobre redes neurais, métodos e processos de aprendizagem de máquina, e a cada capítulo aprofunda em um tema específico. Possui fortíssimo viés teórico e apresenta grande quantidade de demonstrações matemáticas e conceitos estatísticos de alta complexidade, de modo que não é uma leitura fácil ou introdutória e exige conhecimentos prévios. É composto por quinze capítulos, além de introdução e prefácio, e o objetivo é realizar a leitura e fichamento da maior parte ou de todo o livro, capítulo a capítulo, mas interpoladamente com o estudo de outras obras. Portanto, a princípio, serão dezessete fichamentos, correspondentes ao prefácio, à introdução e aos quinze capítulos.
 
 ## Lista de capítulos
 
-| # | Capítulo | Fase | Link |
+| # | Capítulo | Status | Link |
 | :---: | :---: | :---: | :---: |
-| 1 |  Prefácio | ![Static Badge](https://img.shields.io/badge/Finalizado-grey) | [🔗](./__preface.md) |
-| 2 | Introdução | ![Static Badge](https://img.shields.io/badge/Escrevendo-grey) | [🔗](./_introduction.md) |
+| 1 |  Preface | ![Static Badge](https://img.shields.io/badge/Finalizado-grey) | [🔗](./__preface.md) |
+| 2 | Introduction | ![Static Badge](https://img.shields.io/badge/Escrevendo-grey) | [🔗](./_introduction.md) |
 | 3 | Rosenblatt's Perceptron | ![Static Badge](https://img.shields.io/badge/Não_iniciado-grey) | - |
 | 4 | Model Building through Regression | ![Static Badge](https://img.shields.io/badge/Não_iniciado-grey) | - |
 | 5 | The Least-Mean-Square Algorithm | ![Static Badge](https://img.shields.io/badge/Não_iniciado-grey) | - |

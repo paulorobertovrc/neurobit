@@ -4,7 +4,7 @@ Neste diretório estarão os fichamentos de livros, artigos científicos, textos
 
 ## Tabela de fichamentos (por livro)
 
-| # | Título | Autor | Fase | Progresso | Link |
+| # | Título | Autor | Status | Progresso | Link |
 | :---: | :---: | :---: | :---: | :---: | :---: |
 1 | Neural Networks and Learning Machines | Simon Haykin | ![Static Badge](https://img.shields.io/badge/Escrevendo-grey) | ![Static Badge](https://img.shields.io/badge/1_/_17-grey) | [🔗](./neural-networks-and-learning-machines-simon-haykin/README.md) |
 
