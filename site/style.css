@@ -71,6 +71,7 @@ table {
     }
 }
 
+/* PARA RESPONSIVIDADE */
 div#container {
     overflow-x: auto;
     @media screen and (max-width: 450px){
@@ -87,13 +88,13 @@ div#container {
     }
 }
 
-.figura {    
+/* .figura {    
     display: block;
     margin-left: auto;
     margin-right: auto;
     max-width: 768px;
     width: 100%;
-}
+} */
 
 .destacado {
     font-weight: bold;
@@ -106,6 +107,25 @@ div#container {
     
 .emoji {
     text-decoration: none;
+    color: #333;
+}
+
+.image-container {
+    text-align: center;
+    margin: 20px;
+}
+
+.image-container img {
+    max-width: 768px;
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+.image-container p.legenda {
+    text-align: center;
+    font-size: smaller;
     color: #333;
 }
 
