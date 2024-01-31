@@ -4,7 +4,7 @@
 
 ## Introdução (p. 1/46)
 
-### Definição de rede neural[1]
+### 1. Definição de rede neural [1]
 
 Desde o início, o estudo das redes neurais artificiais foi pautado pela observação de que tanto o cérebro humano quanto os computadores convencionais são sistemas de processamento de informações[2] e, por conseguinte, realizam trabalho computacional[3]. Não apenas seu funcionamento é bastante distinto, mas a capacidade computacional do cérebro - não só humano, mas também o de outros animais - supera, em muito, a dos computadores digitais.
 
@@ -34,7 +34,7 @@ A rede neural pode alterar sua própria estrutura (topologia).
 
 Conforme o autor, a técnica de modificação dos pesos sinápticos guarda muita similaridade com a teoria dos filtros adaptativos lineares (*linear adaptive filter theory*) [7].
 
-#### Benefícios das redes neurais
+#### 1.1 Benefícios das redes neurais
 
 A capacidade computacional das redes neurais é resultado de sua estrutura massiva e paralelamente distribuída, bem como da habilidade de aprender e generalizar. "A generalização se refere ao fato de a rede neural produzir saídas adequadas para entradas que não estavam presentes durante o treinamento (aprendizagem). Estas duas capacidades de processamento de informação [aprender e generalizar] tornam possível para as redes neurais resolver problemas complexos (de grande escala) que são atualmente intratáveis." (HAYKIN, 2001, p. 28) [da 2 edição, em português].
 
@@ -57,13 +57,19 @@ Principais capacidades e propriedades das redes neurais artificiais (p. 2/6):
 - Uniformidade de análise e projeto ("[...] as redes neurais desfrutam de universalidade como processadores de informação" (HAYKIN, 2001, p. 30));
 - Analogia neurobiológica (motivadas por estruturas biológicas do cérebro humano).
 
-### O cérebro humano[9]
+### 2. O cérebro humano[9]
 
 O sistema nervoso humano pode ser visto como um sistema de três estágios, do qual fazem parte cérebro, receptores e atuadores. Os estímulos - entrada (*input*) do sistema - são captados e convertidos em sinais elétricos pelos receptores; o cérebro continuamente recebe e processa esses sinais; os atuadores convertem os sinais recebidos de modo a gerar as ações (respostas) apropriadas, que constituem a saída (*output*) do sistema. A informação captada é transmitida em um único sentido - receptor > cérebro > atuador -, mas o sistema se retroalimenta no sentido oposto dessa transmissão - atuador > cérebro > receptor (*feedback*).
 
 Foi o trabalho de Santiago Ramón y Cajal que, em 1911, introduziu o neurônio como estrutura fundamental do cérebro. Os neurônios são cinco a seis ordens de grandeza mais lentos do que os circuitos digitais e, ainda assim, o cérebro é muito mais eficiente do que computadores em termos de eficiência energética. Provavelmente, isso é resultado da enorme quantidade de células neuronais e à massiva interconexão entre elas - a eficiência energética do cérebro humano é de $10^{-16}$ joules por operação por segundo. Eles se apresentam sob diversas formas e tamanhos, sendo que um dos mais comuns é a denominada célula piramidal, e se organizam na anatomia cerebral em diversos níveis e em pequena ou grande escala.
 
+![Célula piramidal](../../imagens/01_celula_piramidal.png)
+Figura 1 - Célula piramidal (HAYKIN, 2009, p. 8)
+
 Essa estrutura hierárquica vai, em menor nível, das moléculas responsáveis pelas sinapses ao próprio sistema nervoso central, último nível hierárquico. A estrutura completa é apresentada por Haykin (2009, p. 9), na figura 3, da seguinte forma: moléculas > sinapses > microcircuitos neurais > árvore dendrítica > neurônio > circuitos locais > circuitos regionais > sistema nervoso central.
+
+![Córtex cerebral](../../imagens/02_cortex_cerebral.png)
+Figura 2 - Célula piramidal (HAYKIN, 2009, p. 10)
 
 > The synapses represent the most fundamental level, depending on molecules and ions for their action. [...] A neural microcircuit refers to an assembly of synapses organized into patterns of connectivity to produce a functional operation of interest. A neural microcircuit may be likened to a silicon chip made up of an assembly of transistors. At the next level of complexity, we have local circuits [...] made up of neurons with similar or different properties; there neural assemblies perform operations characteristic of a localized region in the brain. They are followed by interregional circuits made up of pathways, columns, and topographic maps, which involve multiple regions located in different parts of the brain.
 > Topographic maps are organized to respond to incoming sensory information. These maps are often arranged in sheets, [...] stacked in adjacent layers in such a way that stimuli from corresponding points in space lie above or below each other. [...] different sensory inputs [...] are mapped onto corresponding areas of the cerebral cortex in an orderly fashion. At the final level of complexity, the topographic maps and other interregional circuits mediate specific types of behavior in the central nervous system. (HAYKIN, 2009, p. 7/9)
@@ -76,12 +82,15 @@ As sinapses são unidades estruturais e funcionais elementares responsáveis por
 
 A saída (*output*) do processamento neuronal são, no mais das vezes, impulsos elétricos denominados **potenciais de ação**[11] ou ***spikes*** - na 2 edição, em português, o termo é traduzido como **impulso**.
 
-### Modelos de neurônio [artificial]
+### 3. Modelos de neurônio [artificial]
 
 Em sua forma mais rudimentar, o modelo de um neurônio artificial possui três elementos básicos: um **conjunto de sinapses ou elos de ligação (*synapses or connecting links*)**, cada um com seu próprio peso ou força (peso sináptico/*synaptic weight*) [12]; um **somador (*adder*)**; e uma **função de ativação (*activation function*)**.
 
-Eis a ilustração do modelo (HAYKIN, 2009, p. 11):
-![Modelo de neurônio artificial](./images/03_neuronio_artificial_nao_linear_basico.png)
+Eis a representação gráfica do modelo (HAYKIN, 2009, p. 11):
+![Modelo de neurônio artificial](../../imagens/03_neuronio_artificial_nao_linear_basico.png) 
+Figura 3 - Modelo de neurônio artificial não linear representado por diagrama em blocos
+
+Trata-se do **modelo de um neurônio artificial não linear representado por *diagrama em blocos***. Como se verá até ao final desta seção, o diagrama em blocos é uma das formas de representar graficamente uma rede neural artificial.
 
 Depreende-se que um sinal de **entrada** - representado pela letra $x$ - é direcionado à sinapse - representada pela letra $j$ -, que está conectada ao neurônio - representado pela letra $k$ - e que, por sua vez, possui um peso sináptico - representado pela letra $w$. Noutras palavras, considerados quaisquer índices, diz-se que "[...] um sinal $x_j$ na entrada da sinapse $j$ conectada ao neurônio $k$ é multiplicada pelo peso sináptico $w_{kj}$. [...] O primeiro índice se refere ao neurônio em questão e o segundo se refere ao terminal de entrada da sinapse à qual o peso se refere." (HAYKIN, 2001, p. 36).
 
@@ -115,9 +124,9 @@ $$
 
 mostra que o **campo local induzido (*induced local field*) ou potencial de ativação (*activation potential*)**[13], representado pela letra $v$, do neurônio $k$ tem correlação com a saída do combinador linear - $u_k$ - e o *bias* - $b_k$, de modo a deslocar o gráfico da equação a depender se o valor do *bias* é positivo ou negativo.
 
-#### Tipos de funções de ativação
+#### 3.1 Tipos de funções de ativação
 
-##### Função de limiar ou limite (*threshold function*)
+##### 3.1.1 Função de limiar ou limite (*threshold function*)
 
 É empregada no modelo de McCulloch-Pitts, no qual "a saída de um neurônio assume o valor de 1, se o campo local induzido daquele neurônio é não-negativo, e 0 caso contrário." (HAYKIN, 2001, p. 39). É um modelo determinístico.
 
@@ -149,7 +158,7 @@ $$
 v_k = \sum_{j=1}^{m} w_{kj}x_j + b_k
 $$
 
-##### Função sigmoide
+##### 3.1.2 Função sigmoide
 
 É a mais comumente utilizada na construção de redes neurais. "Ela é definida como uma função estritamente crescente que exige um balanceamento adequado entre comportamento linear e não-linear" (HAYKIN, 2001, p. 40), de modo que pode assumir valores contínuos no intervalo $[0, 1]$. Essa função é diferenciável.
 
@@ -171,7 +180,7 @@ $$
 \phi(v) = tanh(v)
 $$
 
-#### Modelo estocástico de neurônio
+#### 3.2 Modelo estocástico de neurônio
 
 Adição de uma variável aleatória ao modelo de McCulloch-Pitts, que é determinístico, de modo a torná-lo estocástico, isto é, probabilístico. Isso porque um modelo estocástico de neurônio tenta predizer possíveis resultados (saídas) levando em consideração a existência de um ou mais parâmetros variáveis ao longo do tempo. Ao contrário, em um modelo determinístico, as saídas devem ser sempre as mesmas para os mesmos valores de entrada.
 
@@ -194,23 +203,66 @@ $$
 
 , em que $T$ é a dita ***pseudotemperatura***, "[...] utilizada para controlar o nível de ruído e portanto a incerteza de disparar [...] como um parâmetro que controle as flutuações térmicas que representam os efeitos do ruído sináptico. Note que quanto $T \rightarrow 0$, o neurônio estocástico [...] se reduz a uma forma sem ruído (i.e., determinística), que é o modelo de McCulloch-Pitts." (HAYKIN, 2001, p. 41).
 
-### Redes neurais como grafos dirigidos
+#### 3.3 Redes neurais como grafos dirigidos [14] [15]
 
-### Feedback
+> A signal-flow graph is a network of directed *links (branches)* that are interconnected at certain points called *nodes*. A typical node $j$ has an associated node signal $x_j$. A typical directed link originates at node $j$ and terminates on node $k$; it has an associated *transfer function*, or *transmittance*, that specifies the manner in which the signal $y_k$ at node $k$ dependes on the signal $x_j$ at node $j$. (HAYKIN, 2009, p. 15)
 
-### Arquiteturas de redes neurais
+Na edição em português:
+> Um *grafo de fluxo de sinal* é uma rede de *elos (ramos)* orientados que são interligados em certos pontos chamados *nós*. Um nó típico $j$ tem um sinal nodal $x_j$ associado. Um elo orientado típico origina-se no nó $j$ e termina no nó $k$; ele tem uma *função de transferência* ou *transmitância* associada que especifica a maneira pela qual o sinal $y_k$ no nó $k$ depende do sinal $x_j$ no nó $j$. (HAYKIN, 2001, p. 41)
 
-### Representação do conhecimento
+O fluxo dos sinais obedece a três regras básicas:
+1.**Um sinal flui ao longo de um elo somente no sentido definido pela seta do elo**, distinguindo-se dois tipos de elos (*links*):
+  - **Elos sinápticos (*synaptic links*)**, regido por uma relação linear de entrada-saída (*input-output*);
+  - **Elos de ativação (*activation links*)**, regido por uma relação não-linear de entrada-saída.
+2.**Um sinal nodal é igual à soma algébrica de todos os sinais que entram no nó pertinente via os elos incidentes**.
+3.**O sinal de um nó é transmitido para cada elo de saída originário deste nó, sendo a transmissão inteiramente independente das funções de transferência dos elos de saída**.
 
-#### Regras
+A não-linearidade nos elos de ativação é fator limitante da utilização do modelo.
 
-#### Informação prévia no projeto de uma rede neural
+O grafo de fluxo de sinal construído a partir dessas regras é o seguinte (HAYKIN, 2009, p. 17):
+![Grafo de fluxo de sinal de um neurônio](../../imagens/04_grafo_fluxo_sinal.png)
+Figura 4 - Grafo de fluxo de sinal de um neurônio
 
-#### Invariâncias no projeto de uma rede neural
+Com base no modelo acima, extrai-se a seguinte **definição matemática de uma rede neural** (HAYKIN, 2009, p. 16/17):
+> A neural network is a directed graph consisting of nodes with interconnecting synaptic and activation links and is characterized by four properties:
+1. Each neuron is represented by a set of linear synaptic links, an externally applied bias, and a possibly nonlinear activation link. The bias is represented by a synaptic link con- nected to an input fixed at +1.
+2. The synaptic links of a neuron weight their respective input signals.
+3. The weighted sum of the input signals defines the induces local field of the neuron in question.
+4. The activation link squashes the induced local field of the neuron to produce an output.
 
-### Processos de aprendizagem
+Da edição anterior, em português (HAYKIN, 2001, p. 43):
+> Uma rede neural é um grafo orientado constituído de nós com elos de interligação sinápticos e de ativação e é caracterizado por quatro propriedades:
+1. Cada neurônio é representado por um conjunto de elos sinápticos lineares, um bias aplicado externamente e um elo de ativação possivelmente não-linear. O bias é representado por um elo sináptico conectado a uma entrada fixada em +1.
+2. Os elos sinápticos de um neurônio ponderam seus respectivos sinais de entrada.
+3. A soma ponderada dos sinais de entrada define o campo local induzido do neurônio em questão.
+4. O elo de ativação limita o campo local induzido do neurônio para produzir uma saída.
 
-### Tipos de aprendizagem
+O grafo referido na figura 4 é dito **completo** porque descreve o fluxo do sinal entre os neurônios e dentro de cada neurônio. Por outro lado, diz-se que o grafo **parcialmente completo** é aquele que expõe apenas o fluxo inter-neuronal, caso em que é referido como **grafo arquitetural (*architectural graph*)**, pois expressa uma espécie de planta da rede neural.
+
+![Grafo arquitetural](../../imagens/05_grafo_arquitetural.png)
+Figura 5 - Grafo arquitetural
+
+#### 3.4 As três representações gráficas de uma rede neural [16]
+
+- **Diagrama em blocos** (*block diagram*), que oferece uma descrição funcional da rede, conforme a figura 3;
+- **Grafo de fluxo de sinal** (*signal-flow graph*), que oferece uma descrição completa do fluxo dos sinais entre os neurônios e dentro de cada neurônio da rede, conforme a figura 4;
+- **Grafo arquitetural** (*architectural graph*), que oferece uma descrição estrutural, como uma planta baixa da rede, conforme a figura 5.
+
+<!-- ### 5. Feedback
+
+### 6. Arquiteturas de redes neurais
+
+### 7. Representação do conhecimento
+
+#### 7.1 Regras de representação do conhecimento
+
+#### 7.2 Informação prévia no projeto de uma rede neural
+
+#### 7.3 Invariâncias no projeto de uma rede neural
+
+### 8. Processos de aprendizagem
+
+### 9. Tipos de aprendizagem -->
 
 ## Principais conceitos/definições/ideias extraídos do texto original
 
@@ -258,6 +310,10 @@ $$
       - Mais utilizada na construção de redes neurais.
   - **Modelo estocástico de neurônio**
     - Probabilístico
+  - **Representações gráficas de uma rede neural**
+    - Diagrama em blocos
+    - Grafo de fluxo de sinal
+    - Grafo arquitetural
 
 ## Notas
 
@@ -290,6 +346,12 @@ $$
 [12] Em se tratando de peso sináptico, também referido como força sináptica, "[...] muitos modelos neurais estão equipados com processos dinâmicos que [se]reorganizam continuamente [...] criam ou eliminam neurônios ou suas conexões [...] ajustam as forças de conexões sinápticas existentes ou mudam outras propriedades dos neurônios. [...] O termo peso sináptico frequentemente é utilizado para se referir à força de determinada conexão sináptica, enquanto o termo matriz de pesos sinápticos aplica-se ao conjunto de todos os pesos sinápticos em uma rede. A força da sinapse do neurônio $j$ sobre o neurônio $i$ é descrita como $W_{ij}$. Esse é o elemento da matriz de pesos localizado na intersecção da linha $i$ com a coluna $j$." (KANDEL et al., 2014, p. 1387). O fenômeno da modificação dos pesos sinápticos é consequência da plasticidade - **regra de plasticidade sináptica** -, que Kandel et al. (2014) argumenta que não deve se confundida com a **regra da aprendizagem**, embora sejam comumente utilizadas como sinônimas, pois aprendizado é a "[...] expressão do comportamento de uma rede e não de uma única sinapse" (KANDEL et al., 2014, p. 1387). Nesse sentido, a **regra ou plasticidade *hebbiana***, em alusão a Donald Hebb, ensina que "[...] as sinapses são modificadas com base na atividade temporalmente contígua dos neurônios pré e pós-sinápticos" (KANDEL et al., 2014, p. 1387). Conforme Bear et al. (, p. 878), "Donald Hebb propôs que cada sinapse individual se torna um pouco mais forte quando participa com sucesso no disparo de um neurônio pós-sináptico", embora haja trabalhos no sentido de que a mudança do peso sináptico esteja mais proximamente relacionada ao neurônio pré-sináptico, apenas (Gallinaro; Scholl; Clopath, 2023).
 
 [13] Em referência ao potencial de ação da célula biológica.
+
+[14] No livro, este subtítulo está nível hierárquico superior, isto é, como a seção autônoma de número 4. Contudo, para melhor compreensão, optei por incluí-lo como parte da seção 3, que trata dos modelos de neurônio, tendo em vista que, assim como o diagrama em blocos (figura 3) os grafos são uma das formas de representar graficamente uma rede neural.
+
+[15] Um grafo é uma estrutura matemática utilizada para modelar relacionamentos entre pares de objetos. Esses objetos são os vértices, também chamados de pontos ou nós, e seus relacionamentos são representados por arestas, que os conectam. Há grafos dirigidos/direcionados ou não dirigidos/não direcionados, a depender da existência ou não de sentido predefinido para as arestas. Sua aplicação na Ciência da Computação será abordada em complemento específico, a ser elaborado futuramente.
+
+[16] Esta subdivisão não consta do livro, mas foi criada para melhor didática.
 
 ## Referências complementares consultadas durante o fichamento deste capítulo
 
