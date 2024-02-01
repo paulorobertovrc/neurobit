@@ -75,6 +75,10 @@ p {
     overflow-wrap: break-word;
 }
 
+math[display="block"] {
+    margin: 15px 0px 15px;
+}
+
 /* PARA RESPONSIVIDADE */
 div#container {
     overflow-x: auto;
@@ -133,7 +137,7 @@ div#container {
     }
 }
 
-.image-container p.legenda {
+.image-container figcaption.legenda {
     text-align: center;
     font-size: smaller;
     color: #333;
