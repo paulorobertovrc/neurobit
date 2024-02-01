@@ -122,7 +122,7 @@ $$
 v_k = u_k + b_k
 $$
 
-mostra que o **campo local induzido (*induced local field*) ou potencial de ativação (*activation potential*)**[13], representado pela letra $v$, do neurônio $k$ tem correlação com a saída do combinador linear - $u_k$ - e o *bias* - $b_k$, de modo a deslocar o gráfico da equação a depender se o valor do *bias* é positivo ou negativo.
+mostra que o **campo local induzido (*induced local field*) ou potencial de ativação (*activation potential*)**[13], representado pela letra $v$, do neurônio $k$ tem correlação com a saída do combinador linear - $u_k$ - e o *bias* - $b_k$ -, de modo a deslocar o gráfico da equação a depender se o valor do *bias* é positivo ou negativo.
 
 #### 3.1 Tipos de funções de ativação
 
@@ -130,24 +130,24 @@ mostra que o **campo local induzido (*induced local field*) ou potencial de ativ
 
 É empregada no modelo de McCulloch-Pitts, no qual "a saída de um neurônio assume o valor de 1, se o campo local induzido daquele neurônio é não-negativo, e 0 caso contrário." (HAYKIN, 2001, p. 39). É um modelo determinístico.
 
-Em notação matemática, tem-se que
+Em notação matemática, representa-se a função por
 
 $$
 \phi(v) = \left\{
 \begin{array}{ll}
-1, & \text{se } v \geq 0 \\
-0, & \text{se } v < 0
+1 & \text{se } v \geq 0 \\
+0 & \text{se } v < 0
 \end{array}
 \right.
 $$
 
-, e para a saída $y_k$ do neurônio
+Para a saída $y_k$ do neurônio, temos que
 
 $$
 y(k) = \left\{
 \begin{array}{ll}
-1, & \text{se } v \geq 0 \\
-0, & \text{se } v < 0
+1 & \text{se } v \geq 0 \\
+0 & \text{se } v < 0
 \end{array}
 \right.
 $$
@@ -162,7 +162,7 @@ $$
 
 É a mais comumente utilizada na construção de redes neurais. "Ela é definida como uma função estritamente crescente que exige um balanceamento adequado entre comportamento linear e não-linear" (HAYKIN, 2001, p. 40), de modo que pode assumir valores contínuos no intervalo $[0, 1]$. Essa função é diferenciável.
 
-Nos casos em que seja interessante que os valores da função de ativação se estenda de $-1$ a $+1$, em vez de $0$ a $+1$, tem-se a denominada **função sinal (*signum function*)**, que é definida por
+Nos casos em que seja interessante que os valores da função de ativação se estenda de $-1$ a $+1$, em vez de $0$ a $+1$, tem-se a denominada **função sinal (*signum function*)**, que obedece à regra
 
 $$
 \phi(v) = \left\{
@@ -184,7 +184,7 @@ $$
 
 Adição de uma variável aleatória ao modelo de McCulloch-Pitts, que é determinístico, de modo a torná-lo estocástico, isto é, probabilístico. Isso porque um modelo estocástico de neurônio tenta predizer possíveis resultados (saídas) levando em consideração a existência de um ou mais parâmetros variáveis ao longo do tempo. Ao contrário, em um modelo determinístico, as saídas devem ser sempre as mesmas para os mesmos valores de entrada.
 
-Se $x$ representar o estado de um neurônio, $v$ o seu potencial de ativação e $P(v)$ a probabilidade de disparo, isto é, de que ocorra mudança de estado, tem-se que
+Se $x$ representar o estado de um neurônio, $v$ o seu potencial de ativação e $P(v)$ a probabilidade de **disparo**, isto é, de que **ocorra mudança de estado**, tem-se que
 
 $$
 x = \left\{
@@ -195,13 +195,13 @@ x = \left\{
 \right.
 $$
 
-, e
+, e que
 
 $$
 P(v) = \frac{1}{1 + exp(-v/T)}
 $$
 
-, em que $T$ é a dita ***pseudotemperatura***, "[...] utilizada para controlar o nível de ruído e portanto a incerteza de disparar [...] como um parâmetro que controle as flutuações térmicas que representam os efeitos do ruído sináptico. Note que quanto $T \rightarrow 0$, o neurônio estocástico [...] se reduz a uma forma sem ruído (i.e., determinística), que é o modelo de McCulloch-Pitts." (HAYKIN, 2001, p. 41).
+, em que $T$ é a dita **pseudotemperatura**, "[...] utilizada para controlar o nível de ruído e portanto a incerteza de disparar [...] como um parâmetro que controle as flutuações térmicas que representam os efeitos do ruído sináptico. Note que quando $T \rightarrow 0$, o neurônio estocástico [...] se reduz a uma forma sem ruído (i.e., determinística), que é o modelo de McCulloch-Pitts." (HAYKIN, 2001, p. 41).
 
 #### 3.3 Redes neurais como grafos dirigidos [14] [15]
 
@@ -225,7 +225,7 @@ Figura 4 - Grafo de fluxo de sinal de um neurônio
 
 Com base no modelo acima, extrai-se a seguinte **definição matemática de uma rede neural** (HAYKIN, 2009, p. 16/17):
 > A neural network is a directed graph consisting of nodes with interconnecting synaptic and activation links and is characterized by four properties:
-1. Each neuron is represented by a set of linear synaptic links, an externally applied bias, and a possibly nonlinear activation link. The bias is represented by a synaptic link con- nected to an input fixed at +1.
+1. Each neuron is represented by a set of linear synaptic links, an externally applied bias, and a possibly nonlinear activation link. The bias is represented by a synaptic link connected to an input fixed at +1.
 2. The synaptic links of a neuron weight their respective input signals.
 3. The weighted sum of the input signals defines the induces local field of the neuron in question.
 4. The activation link squashes the induced local field of the neuron to produce an output.
