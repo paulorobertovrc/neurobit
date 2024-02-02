@@ -535,8 +535,28 @@
                     </ul>
         </article>
 
-        <!-- <article>
+        <article>
             <h3>Feedback</h3>
+            <blockquote>
+                <p>Feedback is said to exist in a dynamic system whenever the output of an element in the system influences in part the input applied to that particular element, thereby giving rise to one or more closed paths for the transmission of signals around the system. (HAYKIN, 2009, p. 18)</p>
+            </blockquote>
+            <p>Na edição em português:</p>
+            <blockquote>
+                <p>Dizemos que existe realimentação em um sistema dinâmico [17] sempre que a saída de um elemento no sistema influencia em parte a entrada aplicada àquele elemento particular, originando assim um ou mais de um caminho fechado para transmissão de sinais em torno do sistema. (HAYKIN, 2001, p. 44)</p>
+            </blockquote>
+            <p>Ocorre no sistema nervoso dos animais. Tem posição de destaque em redes neurais recorrentes (RNN - <em> recurrent neural networks</em>), embora a não linearidade das unidades de processamento prejudique sua aplicação.</p>
+            <p>O comportamento dinâmico da rede é controlado pelo ajuste dos pesos sinápticos [18], de modo que, se <math><mrow><mi>|w|</mi><mo><</mo><mn>1</mn></mrow></math>, o sinal de saída é <strong>exponencialmente convergente</strong> e a rede é dita <strong>estável</strong>; se <math><mrow><mi>|w|</mi><mo>&geq;</mo><mn>1</mn></mrow></math>, o sinal de saída é <strong>divergente</strong> e a rede é dita <strong>instável</strong>. Neste caso, se <math><mrow><mi>|w|</mi><mo>=</mo><mn>1</mn></mrow></math>, a divergência é <strong>linear</strong> e, se <math><mrow><mi>|w|</mi><mo>></mo><mn>1</mn></mrow></math>, <strong>exponencial</strong>.</p>
+            <p>O grafo de fluxo de sinal que mostra o modelo mais simples de um sistema realimentado é o seguinte (HAYKIN, 2009, p. 19):</p>
+
+            <div class="image-container">
+                <figure>
+                    <img src="../../../imagens/06_grafo_fluxo_sinal_realimentado_laco_unico.png" alt="Grafo de fluxo de sinal de um sistema realimentado com laço único">
+                    <figcaption class="legenda">Figura 6 - Grafo de fluxo de sinal de um sistema realimentado com laço único.</figcaption>
+                </figure>
+            </div>
+        </article>
+
+        <!-- <article>
             <h3>Arquiteturas de redes neurais</h3>
             <h3>Representação do conhecimento</h3>
             <h4>Regras</h4>
@@ -639,6 +659,14 @@
                         </li>
                     </ul>
                 </li>
+
+                <li><p><strong>Feedback</strong></p>
+                    <ul>
+                        <li>Comum no sistema nervoso dos seres vivos.</li>
+                        <li>Importante nas redes neurais recorrentes, embora a não linearidade das unidades de processamento prejudique sua aplicação.</li>
+                        <li>O comportamento dinâmico da rede é controlado pelo ajuste dos pesos sinápticos.</li>
+                    </ul>
+                </li>
             </ul>
         </article>
 
@@ -672,17 +700,21 @@
             <p>[14] No livro, este subtítulo está nível hierárquico superior, isto é, como a seção autônoma de número 4. Contudo, para melhor compreensão, optei por incluí-lo como parte da seção 3, que trata dos modelos de neurônio, tendo em vista que, assim como o diagrama em blocos (figura 3) os grafos são uma das formas de representar graficamente uma rede neural.</p>
             <p>[15] Um grafo é uma estrutura matemática utilizada para modelar relacionamentos entre pares de objetos. Esses objetos são os vértices, também chamados de pontos ou nós, e seus relacionamentos são representados por arestas, que os conectam. Há grafos dirigidos/direcionados ou não dirigidos/não direcionados, a depender da existência ou não de sentido predefinido para as arestas. Sua aplicação na Ciência da Computação será abordada em complemento específico, a ser elaborado futuramente.</p>
             <p>[16] Esta subdivisão não consta do livro, mas foi criada para melhor didática.</p>
+            <p>[17] "Sistemas dinâmicos são sistemas fora do equilíbrio, caracterizados por estados que mudam com o tempo. São usados para modelar e fazer previsões de sistemas físicos, biológicos, financeiros, etc." (AGUIAR, 2005, p. 3). Aguiar (2015) ainda destaca que a definição de um sistema dinâmico exige três requisitos: espaço de estados, equações de movimento e medida de distância. E os classifica em discretos, contínuos, campos, autômato celular e redes complexas; lineares ou não lineares; conservativos ou dissipativos; autômatos ou não autômatos; com ou sem retardo; e determinísticos ou probabilísticos.</p>
+            <p>[18] "[...] alguns modelos de redes neurais tentaram incluir interações entre sinais globais de uma fonte central e sinais locais, como fator de modificação sináptica." (KANDEL et al., 2014, p. 1387).</p>
         </article>
 
         <hr>
+        
         <article>
             <h2>Referências complementares consultadas durante o fichamento deste capítulo</h2>
+            <p>AGUIAR, Marcus A. M. **Sistemas dinâmicos**. Universidade Estadual de Campinas. 2005. Disponível em <a href="https://sites.ifi.unicamp.br/aguiar/files/2014/10/sistemas-dinamicos.pdf" target="_blank">https://sites.ifi.unicamp.br/aguiar/files/2014/10/sistemas-dinamicos.pdf</a>. Acesso em 02 fev. 2024.</p>
             <p>BEAR, Mark F.; CONNORS, Barry W.; PARADISO, Michael A. <strong>Neurociências: desvendando o sistema nervoso</strong>. Trad. Carla Dalmaz et al. 4. ed. Porto Alegre: Artmed, 2017.</p>
-            <p>GALLINARO, Júlia V.; SCHOLL, Benjamin; CLOPATH, Claudia. 2023. <strong>Synaptic weights that correlate with presynaptic selectivity increase decoding performance.</strong> PLOS Computational Biology 19(8): e1011362. <a href="https://doi.org/10.1371/journal.pcbi.1011362">https://doi.org/10.1371/journal.pcbi.1011362</a>.</p>
+            <p>GALLINARO, Júlia V.; SCHOLL, Benjamin; CLOPATH, Claudia. 2023. <strong>Synaptic weights that correlate with presynaptic selectivity increase decoding performance.</strong> PLOS Computational Biology 19(8): e1011362. <a href="https://doi.org/10.1371/journal.pcbi.1011362" target="_blank">https://doi.org/10.1371/journal.pcbi.1011362</a>.</p>
             <p>GRUS, Joel. <strong>Data science do zero: noções fundamentais com Python.</strong> Trad. Welington Nascimento. 2 ed. E-book. Rio de Janeiro: Alta Books, 2021.</p>
             <p>HAYKIN, Simon. <strong>Adaptive filter theory.</strong> 3 ed. Upper Saddle River, NJ: Prentice Hall, 1995.</p>
             <p>KANDEL, Eric R.; SCHWARTZ, James H.; JESSELL, Thomas M.; SIEGELBAUM, Steven A.; HUDSPETH, A. J. <strong>Princípios de neurociências</strong>. Trad. Ana Lúcia Severo Rodrigues et al. 5. ed. Porto Alegre: AMGH, 2014.</p>
-            <p>VERY LARGE SCALE INTEGRATION. In: WIKIPEDIA. Disponível em <a href="https://en.wikipedia.org/wiki/Very_Large_Scale_Integration">https://en.wikipedia.org/wiki/Very_Large_Scale_Integration</a>. Acesso em 22 jan. 2024.</p>
+            <p>VERY LARGE SCALE INTEGRATION. In: WIKIPEDIA. Disponível em <a href="https://en.wikipedia.org/wiki/Very_Large_Scale_Integration" target="_blank">https://en.wikipedia.org/wiki/Very_Large_Scale_Integration</a>. Acesso em 22 jan. 2024.</p>
         </article>
 
         <a class="emoji" href="#top">

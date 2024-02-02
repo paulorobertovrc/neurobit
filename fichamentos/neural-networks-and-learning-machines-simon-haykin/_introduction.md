@@ -248,7 +248,24 @@ Figura 5 - Grafo arquitetural
 - **Grafo de fluxo de sinal** (*signal-flow graph*), que oferece uma descrição completa do fluxo dos sinais entre os neurônios e dentro de cada neurônio da rede, conforme a figura 4;
 - **Grafo arquitetural** (*architectural graph*), que oferece uma descrição estrutural, como uma planta baixa da rede, conforme a figura 5.
 
-<!-- ### 5. Feedback
+### 5. Feedback (Realimentação, na edição em português)
+
+> Feedback is said to exist in a dynamic system whenever the output of an element in the system influences in part the input applied to that particular element, thereby giving rise to one or more closed paths for the transmission of signals around the system. (HAYKIN, 2009, p. 18)
+
+Na edição em português:
+
+> Dizemos que existe realimentação em um sistema dinâmico [17] sempre que a saída de um elemento no sistema influencia em parte a entrada aplicada àquele elemento particular, originando assim um ou mais de um caminho fechado para transmissão de sinais em torno do sistema. (HAYKIN, 2001, p. 44)
+
+Ocorre no sistema nervoso dos animais. Tem posição de destaque em redes neurais recorrentes (RNN - *recurrent neural networks*), embora a não linearidade das unidades de processamento prejudique sua aplicação.
+
+O comportamento dinâmico da rede é controlado pelo ajuste dos pesos sinápticos [18], de modo que, se $|w| < 1$, o sinal de saída é **exponencialmente convergente** e a rede é dita **estável**; se $|w| \geq 1$, o sinal de saída é **divergente** e a rede é dita **instável**. Neste caso, se $|w| = 1$, a divergência é **linear** e, se $|w| > 1$, **exponencial**.
+
+O grafo de fluxo de sinal que mostra o modelo mais simples de um sistema realimentado é o seguinte (HAYKIN, 2009, p. 19):
+
+![Grafo de fluxo de sinal de um sistema realimentado com laço único](../../imagens/06_grafo_fluxo_sinal_realimentado_laco_unico.png)
+Figura 6 - Grafo de fluxo de sinal de um sistema realimentado com laço único
+
+<!-- 
 
 ### 6. Arquiteturas de redes neurais
 
@@ -262,7 +279,9 @@ Figura 5 - Grafo arquitetural
 
 ### 8. Processos de aprendizagem
 
-### 9. Tipos de aprendizagem -->
+### 9. Tipos de aprendizagem 
+
+-->
 
 ## Principais conceitos/definições/ideias extraídos do texto original
 
@@ -315,6 +334,11 @@ Figura 5 - Grafo arquitetural
     - Grafo de fluxo de sinal
     - Grafo arquitetural
 
+- **Feedback**
+  - Comum no sistema nervoso dos seres vivos.
+  - Importante nas redes neurais recorrentes, embora a não linearidade das unidades de processamento prejudique sua aplicação.
+  - O comportamento dinâmico da rede é controlado pelo ajuste dos pesos sinápticos.
+
 ## Notas
 
 [1] Uma rede neural artificial (ou apenas rede neural) é um modelo preditivo baseado na dinâmica do cérebro, que tem uma série de neurônios conectados. Cada um deles analisa as saídas dos outros neurônios ligados nele, faz um cálculo e, em seguida, dispara (se o valor calculado exceder um limite) ou não (se não). Portanto, as redes neurais artificiais são formadas por neurônios artificiais que executam cálculos semelhantes a partir de entradas. As redes neurais resolvem uma ampla variedade de problemas, como reconhecimento de caracteres manuscritos e detecção facial, e são muito usadas no aprendizado profundo, um dos subcampos mais inovadores do data science. No entanto, a maioria das redes neurais são “caixas-pretas” — analisar seus detalhes não explica como elas resolvem os problemas. Além disso, é difícil treinar grandes redes neurais. Para a maioria dos problemas típicos do início de carreira de um cientista de dados, elas não são a melhor opção. (GRUS, 2021, p. 245)
@@ -353,7 +377,13 @@ Figura 5 - Grafo arquitetural
 
 [16] Esta subdivisão não consta do livro, mas foi criada para melhor didática.
 
+[17] "Sistemas dinâmicos são sistemas fora do equilíbrio, caracterizados por estados que mudam com o tempo. São usados para modelar e fazer previsões de sistemas físicos, biológicos, financeiros, etc." (AGUIAR, 2005, p. 3). Aguiar (2015) ainda destaca que a definição de um sistema dinâmico exige três requisitos: espaço de estados, equações de movimento e medida de distância. E os classifica em discretos, contínuos, campos, autômato celular e redes complexas; lineares ou não lineares; conservativos ou dissipativos; autômatos ou não autômatos; com ou sem retardo; e determinísticos ou probabilísticos.
+
+[18] "[...] alguns modelos de redes neurais tentaram incluir interações entre sinais globais de uma fonte central e sinais locais, como fator de modificação sináptica." (KANDEL et al., 2014, p. 1387).
+
 ## Referências complementares consultadas durante o fichamento deste capítulo
+
+AGUIAR, Marcus A. M. **Sistemas dinâmicos**. Universidade Estadual de Campinas. 2005. Disponível em <https://sites.ifi.unicamp.br/aguiar/files/2014/10/sistemas-dinamicos.pdf>. Acesso em 02 fev. 2024.
 
 BEAR, Mark F.; CONNORS, Barry W.; PARADISO, Michael A. **Neurociências: desvendando o sistema nervoso**. Trad. Carla Dalmaz et al. 4. ed. Porto Alegre: Artmed, 2017.
 
