@@ -265,9 +265,60 @@ O grafo de fluxo de sinal que mostra o modelo mais simples de um sistema realime
 ![Grafo de fluxo de sinal de um sistema realimentado com laço único](../../imagens/06_grafo_fluxo_sinal_realimentado_laco_unico.png)
 Figura 6 - Grafo de fluxo de sinal de um sistema realimentado com laço único
 
-<!-- 
+### 6. Arquiteturas de redes neurais (*Network architectures*)
 
-### 6. Arquiteturas de redes neurais
+A forma de organização neuronal da rede é fortemente correlacionada ao algoritmo de aprendizagem utilizado para o treinamento.
+
+De modo geral, destacam-se três categorias de arquiteturas de rede:
+
+1. ***Single-Layer Feed-forward Networks*** (Redes alimentadas adiante com camada única, na edição em português);
+2. ***Multilayer Feed-forward Networks*** (Redes alimentadas diretamente com múltiplas camadas, na edição em português); e
+3. ***Recurrent Networks*** (Redes recorrentes, na edição em português).
+
+#### 6.1 Single-Layer Feed-forward Networks
+
+Nas redes neurais em camadas, como o nome sugere, os neurônios são organizados em camadas.
+
+Este é o modelo arquitetural mais simples e é dito que possui uma única camada, em referência à própria camada de saída (*output layer*) dos neurônios, pois somente esta realiza atividade computacional. Não há camadas intermediárias escondidas (*hidden layers*) e é denominada **alimentada adiante (*feed-forward*)**, ou acíclica, porque o fluxo dos sinais é **unidirecional**, isto é, **não há realimentação**.
+
+![Single-Layer Feed-forward Network](../../imagens/07_single_layer_feed_forward_network.png)
+Figura 7 - Single-Layer Feed-forward Network. Fonte: HAYKIN, 2009, p. 21
+
+#### 6.2 Multilayer Feed-forward Networks
+
+Possui uma ou mais camadas ocultas (*hidden layers*), compostas por neurônios ou unidades ocultos(as), cuja função "[...] é intervir entre a entrada externa e a saída da rede de maneira útil" (HAYKIN, 2001, p. 47). A adição de mais camadas ocultas aumenta o poder computacional da rede.
+
+Nesse sentido, "in a rather loose sense, the network acquires a global perspective despite its local connectivity, due to the extra set of synaptic connections and the extra dimension of neural interactions (Churchland and Sejnowski, 1992)" (HAYKIN, 2009, p. 22).
+
+Da edição anterior, em português, extrai-se que "em um sentido bastante livre, a rede adquire uma perspectiva global apesar de sua conectividade local, devido ao conjunto extra de conexões sinápticas e da dimensão extra de interações neurais (Churchland e Sejnowski, 1992)" (HAYKIN, 2001, p. 47).
+
+Os nós da camada mais externa recebem os sinais de entrada e os direcionam à camada seguinte, isto é, a primeira camada oculta, que os processa e encaminha à próxima camada, seguindo-se assim sucessivamente, até que cheguem à camada de saída. Em regra, os sinais de entrada das camadas internas são limitados aos próprios sinais de saída da camada imediatamente anterior.
+
+Na imagem a seguir, tem-se um exemplo de rede neural com uma camada oculta composta por quatro neurônios, a qual é referida como uma rede 10-4-2, ou seja, 10 neurônios de entrada (fonte), 4 ocultos e 2 na camada de saída.
+
+![Multilayer Feed-forward Network](../../imagens/08_multi_layer_feed_forward_network.png)
+Figura 8 - Multilayer Feed-forward Network. Fonte: HAYKIN, 2009, p. 22.
+
+Por conseguinte, uma rede com $m$ nós de entrada, $h_1$ neurônios na primeira camada oculta, $h_2$ neurônios na segunda camada oculta e $q$ neurônios na camada de saída é referida como uma rede $m-h_1-h_2-q$.
+
+A rede apresentada na figura acima é dita **totalmente conectada** pois cada neurônio de uma camada está conectado a todos os neurônios da camada seguinte. Do contrário, se houvesse alguma conexão sináptica faltante, seria denominada **parcialmente conectada**.
+
+#### 6.3 Recurrent Networks
+
+As redes modeladas neste estilo arquitetural possuem, pelo menos, um laço de realimentação (*feedback loop*). Essa característica reflete positivamente na capacidade de aprendizado e na performance da rede. Elas podem ou não ser auto-realimentadas (*self-feedback*), isto é, a saída de um neurônio pode ou não ser realimentada a sua própria entrada.
+
+Abaixo, está exemplificada uma rede neural recorrente sem auto-realimentação e sem neurônios ocultos:
+
+![Rede recorrente sem auto-realimentação e sem neurônios ocultos](../../imagens/09_recurrent_network_without_feedback.png)
+Figura 9 - Rede recorrente sem auto-realimentação e sem neurônios ocultos. Fonte: HAYKIN, 2009, p. 23.
+
+Já a seguir, tem-se um exemplo de rede recorrente com neurônios ocultos:
+![Rede recorrente com neurônios ocultos](../../imagens/10_recurrent_network_with_hidden_neurons.png)
+Figura 10 - Rede recorrente com neurônios ocultos. Fonte: HAYKIN, 2009, p. 24.
+
+Em ambos os casos, verifica-se a presença de elementos de atraso unitário (*unit-time delay elements*), nos laços de realimentação, representados por $z^{-1}$, com o objetivo de conferir comportamento dinâmico não-linear à rede.
+
+<!-- 
 
 ### 7. Representação do conhecimento
 
@@ -338,6 +389,11 @@ Figura 6 - Grafo de fluxo de sinal de um sistema realimentado com laço único
   - Comum no sistema nervoso dos seres vivos.
   - Importante nas redes neurais recorrentes, embora a não linearidade das unidades de processamento prejudique sua aplicação.
   - O comportamento dinâmico da rede é controlado pelo ajuste dos pesos sinápticos.
+
+- **Arquiteturas de rede**
+  - Single-Layer Feed-forward Networks
+  - Multilayer Feed-forward Networks
+  - Recurrent Networks
 
 ## Notas
 

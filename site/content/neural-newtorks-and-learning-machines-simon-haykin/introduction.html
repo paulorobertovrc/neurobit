@@ -490,14 +490,12 @@
                 </ol>
                 <p>A não-linearidade nos elos de ativação é fator limitante da utilização do modelo.</p>
                 <p>O grafo de fluxo de sinal construído a partir dessas regras é o seguinte (HAYKIN, 2009, p. 17):</p>
-
                 <div class="image-container">
                     <figure>
                         <img src="../../../imagens/04_grafo_fluxo_sinal.png" alt="Grafo de fluxo de sinal de um neurônio">
                         <figcaption class="legenda">Figura 4 - Grafo de fluxo de sinal de um neurônio</figcaption>
                     </figure>
                 </div>
-
                 <p>Com base no modelo acima, extrai-se a seguinte **definição matemática de uma rede neural** (HAYKIN, 2009, p. 16/17):</p>
                     <blockquote>
                         <p>A neural network is a directed graph consisting of nodes with interconnecting synaptic and activation links and is characterized by four properties:</p>
@@ -519,14 +517,12 @@
                         </ol>
                     </blockquote>
                     <p>O grafo referido na figura 4 é dito <strong>completo</strong> porque descreve o fluxo do sinal entre os neurônios e dentro de cada neurônio. Por outro lado, diz-se que o grafo <strong>parcialmente completo</strong> é aquele que expõe apenas o fluxo inter-neuronal, caso em que é referido como <strong>grafo arquitetural (<em>architectural graph</em>)</strong>, pois expressa uma espécie de planta da rede neural.</p>
-
                     <div class="image-container">
                         <figure>
                             <img src="../../../imagens/05_grafo_arquitetural.png" alt="Grafo arquitetural">
                             <figcaption class="legenda">Figura 5 - Grafo arquitetural. Fonte: HAYKIN, 2009, p. 17</fi>
                         </figure>
                     </div>
-
                     <h4>3.4 As três representações gráficas de uma rede neural [16]</h4>
                     <ul>
                         <li><strong>Diagrama em blocos (<em>block diagram</em>)</strong>, que oferece uma descrição funcional da rede, conforme a figura 3;</li>
@@ -536,7 +532,7 @@
         </article>
 
         <article>
-            <h3>Feedback</h3>
+            <h3>5. Feedback</h3>
             <blockquote>
                 <p>Feedback is said to exist in a dynamic system whenever the output of an element in the system influences in part the input applied to that particular element, thereby giving rise to one or more closed paths for the transmission of signals around the system. (HAYKIN, 2009, p. 18)</p>
             </blockquote>
@@ -547,7 +543,6 @@
             <p>Ocorre no sistema nervoso dos animais. Tem posição de destaque em redes neurais recorrentes (RNN - <em> recurrent neural networks</em>), embora a não linearidade das unidades de processamento prejudique sua aplicação.</p>
             <p>O comportamento dinâmico da rede é controlado pelo ajuste dos pesos sinápticos [18], de modo que, se <math><mrow><mi>|w|</mi><mo><</mo><mn>1</mn></mrow></math>, o sinal de saída é <strong>exponencialmente convergente</strong> e a rede é dita <strong>estável</strong>; se <math><mrow><mi>|w|</mi><mo>&geq;</mo><mn>1</mn></mrow></math>, o sinal de saída é <strong>divergente</strong> e a rede é dita <strong>instável</strong>. Neste caso, se <math><mrow><mi>|w|</mi><mo>=</mo><mn>1</mn></mrow></math>, a divergência é <strong>linear</strong> e, se <math><mrow><mi>|w|</mi><mo>></mo><mn>1</mn></mrow></math>, <strong>exponencial</strong>.</p>
             <p>O grafo de fluxo de sinal que mostra o modelo mais simples de um sistema realimentado é o seguinte (HAYKIN, 2009, p. 19):</p>
-
             <div class="image-container">
                 <figure>
                     <img src="../../../imagens/06_grafo_fluxo_sinal_realimentado_laco_unico.png" alt="Grafo de fluxo de sinal de um sistema realimentado com laço único">
@@ -556,8 +551,61 @@
             </div>
         </article>
 
+        <article>7
+            <h3>6. Arquiteturas de redes neurais (<em>Network architectures</em>)</h3>
+            <p>A forma de organização neuronal da rede é fortemente correlacionada ao algoritmo de aprendizagem utilizado para o treinamento.</p>
+            <p>De moto geral, destacam-se três categorias de arquiteturas de rede:</p>
+            <ol>
+                <li><strong><em>Single-Layer Feed-forward Networks</em></strong> (Redes alimentadas adiante com camada única);</li>
+                <li><strong><em>Multilayer Feed-forward Networks</em></strong> (Redes alimentadas diretamente com múltiplas camadas); e</li>
+                <li><strong><em>Recurrent Networks</em></strong> (Redes recorrentes).</li>
+            </ol>
+
+            <h4>6.1 Single-Layer Feed-forward Networks</h4>
+            <p>Nas redes neurais em camadas, como o nome sugere, os neurônios são organizados em camadas.</p>
+            <p>Este é o modelo arquitetural mais simples e é dito que possui uma única camada, em referência à própria camada de saída (<em>output layer</em>) dos neurônios, pois somente esta realiza atividade computacional. Não há camadas intermediárias escondidas (<em>hidden layers</em>) e é denominada <strong>alimentada adiante (<em>feed-forward</em>)</strong>, ou acíclica, porque o fluxo dos sinais é <strong>unidirecional</strong>, isto é, <strong>não há realimentação</strong>.</p>
+            <div class="image-container">
+                <figure>
+                    <img src="../../../imagens/07_single_layer_feed_forward_network.png" alt="Single-Layer Feed-forward Network">
+                    <figcaption class="legenda">Figura 7 - Single-Layer Feed-forward Network. Fonte: HAYKIN, 2009, p. 21</figcaption>
+                </figure>
+            </div>
+
+            <h4>6.2 Multilayer Feed-forward Networks</h4>
+            <p>Possui uma ou mais camadas ocultas (<em>hidden layers</em>), compostas por neurônios ou unidades ocultos(as), cuja função "[...] é intervir entre a entrada externa e a saída da rede de maneira útil" (HAYKIN, 2001, p. 47). A adição de mais camadas ocultas aumenta o poder computacional da rede.</p>
+            <p>Nesse sentido, "<em>in a rather loose sense, the network acquires a global perspective despite its local connectivity, due to the extra set of synaptic connections and the extra dimension of neural interactions</em> (Churchland and Sejnowski, 1992)" (HAYKIN, 2009, p. 22).</p>
+            <p>Da edição anterior, em português, extrai-se que "em um sentido bastante livre, a rede adquire uma perspectiva global apesar de sua conectividade local, devido ao conjunto extra de conexões sinápticas e da dimensão extra de interações neurais (Churchland e Sejnowski, 1992)" (HAYKIN, 2001, p. 47).</p>
+            <p>Os nós da camada mais externa recebem os sinais de entrada e os direcionam à camada seguinte, isto é, a primeira camada oculta, que os processa e encaminha à próxima camada, seguindo-se assim sucessivamente, até que cheguem à camada de saída. Em regra, os sinais de entrada das camadas internas são limitados aos próprios sinais de saída da camada imediatamente anterior.</p>
+            <p>Na imagem a seguir, tem-se um exemplo de rede neural com uma camada oculta composta por quatro neurônios, a qual é referida como uma rede 10-4-2, ou seja, 10 neurônios de entrada (fonte), 4 ocultos e 2 na camada de saída.</p>
+            <div class="image-container">
+                <figure>
+                    <img src="../../../imagens/08_multi_layer_feed_forward_network.png" alt="Multilayer Feed-forward Network">
+                    <figcaption class="legenda">Figura 8 - Multilayer Feed-forward Network. Fonte: HAYKIN, 2009, p. 22.</figcaption>
+                </figure>
+            </div>
+            <p>Por conseguinte, uma rede com <math><mi>m</mi></math> nós de entrada, <math><msub><mi>h</mi><mn>1</mn></msub></math> neurônios na primeira camada oculta, <math><msub><mi>h</mi><mn>2</mn></msub></math> neurônios na segunda camada oculta e <math><mi>q</mi></math> neurônios na camada de saída é referida como uma rede <math><ms>m-</ms><msub><ms>h</ms><ms>1</ms></msub><msub><ms>-h</ms><ms>2</ms></msub><ms>-q</ms></math>.</p>
+            <p>A rede apresentada na figura acima é dita <strong>totalmente conectada</strong> pois cada neurônio de uma camada está conectado a todos os neurônios da camada seguinte. Do contrário, se houvesse alguma conexão sináptica faltante, seria denominada <strong>parcialmente conectada</strong>.</p>
+            
+            <h4>6.3 Recurrent Networks</h4>
+            <p>As redes modeladas neste estilo arquitetural possuem, pelo menos, um laço de realimentação (<em>feedback loop</em>). Essa característica reflete positivamente na capacidade de aprendizado e na performance da rede. Elas podem ou não ser auto-realimentadas (<em>self-feedback</em>), isto é, a saída de um neurônio pode ou não ser realimentada a sua própria entrada.</p>
+            <p>Abaixo, está exemplificada uma rede neural recorrente sem auto-realimentação e sem neurônios ocultos:</p>
+            <div class="image-container">
+                <figure>
+                    <img src="../../../imagens/09_recurrent_network_without_feedback.png" alt="Rede recorrente sem auto-realimentação e sem neurônios ocultos">
+                    <figcaption class="legenda">Figura 9 - Rede recorrente sem auto-realimentação e sem neurônios ocultos. Fonte: HAYKIN, 2009, p. 23.</figcaption>
+                </figure>
+            </div>
+            <p>Já a seguir, tem-se um exemplo de rede recorrente com neurônios ocultos:</p>
+            <div class="image-container">
+                <figure>
+                    <img src="../../../imagens/10_recurrent_network_with_hidden_neurons.png" alt="Rede recorrente com neurônios ocultos">
+                    <figcaption class="legenda">Figura 10 - Rede recorrente com neurônios ocultos. Fonte: HAYKIN, 2009, p. 24.</figcaption>
+                </figure>
+            </div>
+            <p>Em ambos os casos, verifica-se a presença de elementos de atraso unitário (<em>unit-time delay elements</em>), representados por <math><msup><mi>z</mi><mn>-1</mn></msup></math>, nos laços de realimentação, com o objetivo de conferir comportamento dinâmico não-linear à rede.</p>
+        </article>
+
         <!-- <article>
-            <h3>Arquiteturas de redes neurais</h3>
             <h3>Representação do conhecimento</h3>
             <h4>Regras</h4>
             <h4>Informação prévia no projeto de uma rede neural</h4>
@@ -665,6 +713,14 @@
                         <li>Comum no sistema nervoso dos seres vivos.</li>
                         <li>Importante nas redes neurais recorrentes, embora a não linearidade das unidades de processamento prejudique sua aplicação.</li>
                         <li>O comportamento dinâmico da rede é controlado pelo ajuste dos pesos sinápticos.</li>
+                    </ul>
+                </li>
+
+                <li><p><strong>Arquiteturas de redes neurais</strong></p>
+                    <ul>
+                        <li>Single-Layer Feed-forward Networks</li>
+                        <li>Multilayer Feed-forward Networks</li>
+                        <li>Recurrent Networks</li>
                     </ul>
                 </li>
             </ul>
