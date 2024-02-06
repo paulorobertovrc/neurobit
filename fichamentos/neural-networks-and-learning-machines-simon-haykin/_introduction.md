@@ -267,9 +267,9 @@ Figura 6 - Grafo de fluxo de sinal de um sistema realimentado com laço único
 
 ### 6. Arquiteturas de redes neurais (*Network architectures*)
 
-A forma de organização neuronal da rede é fortemente correlacionada ao algoritmo de aprendizagem utilizado para o treinamento.
+A forma de organização neuronal da rede é fortemente correlacionada ao algoritmo de aprendizagem utilizado para o treinamento. **Só é considerado um neurônio, ou nó da camada, se houver trabalho computacional.**
 
-De modo geral, destacam-se três categorias de arquiteturas de rede:
+De modo geral, Haykin afirma que os padrões de arquitetura de redes neurais constituem três grandes categorias:
 
 1. ***Single-Layer Feed-forward Networks*** (Redes alimentadas adiante com camada única, na edição em português);
 2. ***Multilayer Feed-forward Networks*** (Redes alimentadas diretamente com múltiplas camadas, na edição em português); e
@@ -318,13 +318,49 @@ Figura 10 - Rede recorrente com neurônios ocultos. Fonte: HAYKIN, 2009, p. 24.
 
 Em ambos os casos, verifica-se a presença de elementos de atraso unitário (*unit-time delay elements*), nos laços de realimentação, representados por $z^{-1}$, com o objetivo de conferir comportamento dinâmico não-linear à rede.
 
-<!-- 
-
 ### 7. Representação do conhecimento
+
+"Knowledge refers to stored information or models used by a person or machine to interpret, predict, and appropriately respond to the outside world" (FISCHLER; FIRSCHEIN, 1987 apud HAYKIN, 2009, p. 24). Ou, na 2a edição, "Conhecimento se refere à informação armazenada ou a modelos utilizados por uma pessoa ou máquina para interpretar, prever e responder apropriadamente ao mundo exterior" (FISCHLER; FIRSCHEIN, 1987 apud HAYKIN, 2001, p. 49).
+
+Suas duas principais características são "(1) que informação é realmente tornada explícita; e (2) como a informação é codificada fisicamente para o uso subsequente." (HAYKIN, 2001, p. 49). Além disso, deve ser direcionada a um objetivo.
+
+"Em aplicações do mundo real de máquinas 'inteligentes', podemos dizer que uma boa solução depende de uma boa representação do conhecimento" (WOODS, 1986 apud HAYKIN, 2001, p. 49).
+
+A rede neural deve ser capaz de aprender a respeito do mundo exterior - isto é, o ambiente no qual está inserida - e constantemente manter essa definição atualizada, de modo a atingir os objetivos específicos da aplicação. Destaca-se que esse conhecimento sobre o mundo consiste, basicamente, em dois tipos de informação:
+
+>1. O estado conhecido do mundo, representado pelos fatos sobre o que é e o que era conhecido; esta forma de conhecimento é chamada de *informação prévia*.
+>2. As observações (medidas) do mundo, obtidas por meio de sensores projetados para sondar o ambiente no qual a rede neural deve operar. Normalmente, estas observações são inerentemente ruidosas, sendo sujeitas a erros devido a ruído [19] do sensor e imperfeições do sistema. De qualquer maneira, as observações que são assim obtidas fornecem o conjunto de informações de onde são retirados os *exemplos* utilizados para treinar a rede neural. (HAYKIN, 2001, p. 50)
+
+Esses exemplos para treinamento podem ser **rotulados ou não rotulados**. No primeiro caso, ao sinal de entrada é associada a resposta esperada, enquanto que, no segundo, não há essa associação e o sinal de entrada é contraposto a ocorrências diferentes dele próprio. Em qualquer caso, **o conjunto de exemplos representa o conhecimento da rede neural sobre o ambiente.**
+
+Também podem ser **positivos** ou **negativos**, isto é, respectivamente voltados a ensinar **o que deve ser reconhecido** e **o que deve ser ignorado**.
+
+Ao par de dados entrada-saída, respectivamente correspondentes ao sinal de entrada e à resposta desejada, dá-se o nome de **conjunto de dados de treinamento ou amostra de treinamento (*set of training data or training sample*)**.
+
+Nesse sentido, um possível projeto de uma rede neural teria duas fases, quais sejam, a de **aprendizagem (*learning*)**, na qual haveria a exposição ao conjunto de dados, e a de **generalização (*generalization*)**, depois da testagem bem-sucedida após o treinamento, que consiste na capacidade de repetir idêntica performance em cenários que envolvam dados que não foram apresentados durante o treinamento.
+
+Diferentemente do que ocorre nos classificadores de padrões clássicos, "[...] a rede neural não somente fornece o modelo implícito do ambiente no qual ela está inserida, como também realiza a função de processamento de informação de interesse" (HAYKIN, 2001, p. 50).
+
+A representação do conhecimento perpassa pelo ajuste dos pesos sinápticos e do *bias*, isto é, dos **parâmetros livres da rede**. "A forma dessa representação de conhecimento constitui o verdadeiro projeto da rede neural, e portanto é a chave para o seu desemprenho" (HAYKIN, 2001, p. 51).
 
 #### 7.1 Regras de representação do conhecimento
 
-#### 7.2 Informação prévia no projeto de uma rede neural
+Há quatro regras comumente aceitas (ANDERSON, 1988 apud HAYKIN, 2001, p. 51/53):
+
+>1. Entradas similares de classes similares normalmente devem produzir representações similares no interior da rede, e portanto devem ser classificadas como pertencentes à mesma categoria.
+>2. Devem ser atribuídas representações bem diferentes na rede a itens que devem ser categorizados como classes separadas.
+>3. Se uma característica particular é importante, então deve haver um grande número de neurônios envolvidos na representação daquele item na rede.
+>4. Informação prévia e invariâncias devem ser incorporadas no projeto de uma rede neural, simplificando com isso o projeto da rede por não ter que aprendê-las.
+
+"Correlation plays a key role not only in the human brain, but also in signal processing of various kinds" (CHEN ET AL., 2007 apud HAYKIN, 2009, p. 28). Em tradução direta, "a correlação desempenha um papel fundamental não apenas no cérebro humano, mas também no processamento de sinais de vários tipos".
+
+A regra 4 significa que é *altamente desejável* que a rede neural possua estrutura especializada (restrita), o que se justifica pelo fato de que há alta especialização em redes biológicas (visuais e auditivas, por exemplo), pela necessidade de menos parâmetros livres e menores conjuntos de dados para treinamento e pela maior eficiência (aumento da produtividade  e redução de custos) (Russo apud Haykin, 2001).
+
+A utilização de informação prévia restringe a aplicabilidade da rede a um domínio específico (Haykin, 2009).
+
+<!-- 
+
+#### 7.2 Como incorporar informação prévia no projeto de uma rede neural
 
 #### 7.3 Invariâncias no projeto de uma rede neural
 
@@ -391,9 +427,25 @@ Em ambos os casos, verifica-se a presença de elementos de atraso unitário (*un
   - O comportamento dinâmico da rede é controlado pelo ajuste dos pesos sinápticos.
 
 - **Arquiteturas de rede**
-  - Single-Layer Feed-forward Networks
-  - Multilayer Feed-forward Networks
-  - Recurrent Networks
+  - Agrupamento em três grandes categorias:
+    - Single-Layer Feed-forward Networks
+    - Multilayer Feed-forward Networks
+    - Recurrent Networks
+
+- **Representação do conhecimento**
+  - Características:
+    - Qual informação é tornada explícita
+    - Como a informação é codificada fisicamente para o uso subsequente
+  - Dois tipos essenciais de informação:
+    - Estado conhecido do mundo (ambiente)
+      - Informação prévia
+    - Observações (medidas) do mundo (ambiente)
+  - Conjunto de dados ou amostra de treinamento (*set of training data or training sample*)
+    - Rotulados ou não rotulados
+    - Positivos ou negativos
+  - Objetivos do treinamento:
+    - Aprendizagem
+    - Generalização
 
 ## Notas
 
@@ -404,7 +456,7 @@ Em ambos os casos, verifica-se a presença de elementos de atraso unitário (*un
 [3] A palavra computar significa "fazer o cômputo de; calcular; orçar; contar; processar através de computadores". Fonte: [Dicionário Priberam da Língua Portuguesa](https://dicionario.priberam.org/computar).
 
 [4] Sobre o **processamento em paralelo**, das Neurociências colhe-se que, ao que parece, os comportamentos humanos de maior complexidade não decorrem da sinalização de um único neurônio, mas pela ação de muitos não necessariamente localizados na mesma região cortical (Kandel et al., 2014).
-> O envolvimento de vários grupos neurais ou rotas para transmitir uma informação similar é chamado *processamento em paralelo*. O processamento em paralelo também ocorre em uma única via quando diferentes neurônios nessa via executa ações similares simultaneamente. [...] O campo da ciência computacional conhecido como inteligência artificial originalmente usou o processamento serial para simular os processos cognitivos do encéfalo [...] Esses modelos seriais executavam muitas tarefas de forma adequada, inclusive jogar xadrez. Entretanto, eram muito ruims em outras tarefas que o encéfalo faz quase instantaneamente, com o reconhecimento de faces ou a compreensão do discurso. [...] Nesses modelos [redes neurais], elementos do sistema processam a informação simultaneamente usando conexões de pró-ação e de retroalimentação. É interessante observar que, em sistemas com circuitos de retroalimentação é a atividade dinâmica do sistema que determina o desfecho do processamento, não as aferências ou condições iniciais. Modelos de redes neurais capturam bem a arquitetura altamente recorrente da maioria dos circuitos neurais reais e também a capacidade do encéfalo de funcionar na ausência de uma aferência sensorial específica vinda de fora do corpo [...] Modelos de redes neurais também demonstram que a análise de elementos individuais de um sistema pode não ser suficiente para decodificar a *mensagem dos potenciais de ação*. De acordo com tal visão de redes neurais, o que faz o encéfalo ser um deslumbrante órgão que processa a informação não é a complexidade de seus neurônios, mas o fato de ter muitos elementos interconectados de várias formas complexas." (KANDEL et al., 2014, p. 32/33)
+> O envolvimento de vários grupos neurais ou rotas para transmitir uma informação similar é chamado *processamento em paralelo*. O processamento em paralelo também ocorre em uma única via quando diferentes neurônios nessa via executa ações similares simultaneamente. [...] O campo da ciência computacional conhecido como inteligência artificial originalmente usou o processamento serial para simular os processos cognitivos do encéfalo [...] Esses modelos seriais executavam muitas tarefas de forma adequada, inclusive jogar xadrez. Entretanto, eram muito ruins em outras tarefas que o encéfalo faz quase instantaneamente, com o reconhecimento de faces ou a compreensão do discurso. [...] Nesses modelos [redes neurais], elementos do sistema processam a informação simultaneamente usando conexões de pró-ação e de retroalimentação. É interessante observar que, em sistemas com circuitos de retroalimentação é a atividade dinâmica do sistema que determina o desfecho do processamento, não as aferências ou condições iniciais. Modelos de redes neurais capturam bem a arquitetura altamente recorrente da maioria dos circuitos neurais reais e também a capacidade do encéfalo de funcionar na ausência de uma aferência sensorial específica vinda de fora do corpo [...] Modelos de redes neurais também demonstram que a análise de elementos individuais de um sistema pode não ser suficiente para decodificar a *mensagem dos potenciais de ação*. De acordo com tal visão de redes neurais, o que faz o encéfalo ser um deslumbrante órgão que processa a informação não é a complexidade de seus neurônios, mas o fato de ter muitos elementos interconectados de várias formas complexas." (KANDEL et al., 2014, p. 32/33)
 
 [5] Vide complemento #1 ([plasticidade](../../complementos/plasticidade.md)).
 
@@ -423,7 +475,7 @@ Em ambos os casos, verifica-se a presença de elementos de atraso unitário (*un
 
 [10] A sinapse é uma região específica, ao passo que ao processo de comunicação entre neurônios dá-se o nome de transmissão sináptica (Kandel et al., 2004). Nesse sentido, "o local especializado em que um neurônio se comunica com outro é chamado de sinapse [...]" (KANDEL et al., 2014, p. 157).
 
-[12] Em se tratando de peso sináptico, também referido como força sináptica, "[...] muitos modelos neurais estão equipados com processos dinâmicos que [se]reorganizam continuamente [...] criam ou eliminam neurônios ou suas conexões [...] ajustam as forças de conexões sinápticas existentes ou mudam outras propriedades dos neurônios. [...] O termo peso sináptico frequentemente é utilizado para se referir à força de determinada conexão sináptica, enquanto o termo matriz de pesos sinápticos aplica-se ao conjunto de todos os pesos sinápticos em uma rede. A força da sinapse do neurônio $j$ sobre o neurônio $i$ é descrita como $W_{ij}$. Esse é o elemento da matriz de pesos localizado na intersecção da linha $i$ com a coluna $j$." (KANDEL et al., 2014, p. 1387). O fenômeno da modificação dos pesos sinápticos é consequência da plasticidade - **regra de plasticidade sináptica** -, que Kandel et al. (2014) argumenta que não deve se confundida com a **regra da aprendizagem**, embora sejam comumente utilizadas como sinônimas, pois aprendizado é a "[...] expressão do comportamento de uma rede e não de uma única sinapse" (KANDEL et al., 2014, p. 1387). Nesse sentido, a **regra ou plasticidade *hebbiana***, em alusão a Donald Hebb, ensina que "[...] as sinapses são modificadas com base na atividade temporalmente contígua dos neurônios pré e pós-sinápticos" (KANDEL et al., 2014, p. 1387). Conforme Bear et al. (, p. 878), "Donald Hebb propôs que cada sinapse individual se torna um pouco mais forte quando participa com sucesso no disparo de um neurônio pós-sináptico", embora haja trabalhos no sentido de que a mudança do peso sináptico esteja mais proximamente relacionada ao neurônio pré-sináptico, apenas (Gallinaro; Scholl; Clopath, 2023).
+[12] Em se tratando de peso sináptico, também referido como força sináptica, "[...] muitos modelos neurais estão equipados com processos dinâmicos que [se]reorganizam continuamente [...] criam ou eliminam neurônios ou suas conexões [...] ajustam as forças de conexões sinápticas existentes ou mudam outras propriedades dos neurônios. [...] O termo peso sináptico frequentemente é utilizado para se referir à força de determinada conexão sináptica, enquanto o termo matriz de pesos sinápticos aplica-se ao conjunto de todos os pesos sinápticos em uma rede. A força da sinapse do neurônio $j$ sobre o neurônio $i$ é descrita como $W_{ij}$. Esse é o elemento da matriz de pesos localizado na intersecção da linha $i$ com a coluna $j$." (KANDEL et al., 2014, p. 1387). O fenômeno da modificação dos pesos sinápticos é consequência da plasticidade - **regra de plasticidade sináptica** -, que Kandel et al. (2014) argumenta que não deve se confundida com a **regra da aprendizagem**, embora sejam comumente utilizadas como sinônimas, pois aprendizado é a "[...] expressão do comportamento de uma rede e não de uma única sinapse" (KANDEL et al., 2014, p. 1387). Nesse sentido, a **regra ou plasticidade *hebbiana***, em alusão a Donald Hebb, ensina que "[...] as sinapses são modificadas com base na atividade temporalmente contígua dos neurônios pré e pós-sinápticos" (KANDEL et al., 2014, p. 1387). Conforme Bear et al. (2017, p. 878), "Donald Hebb propôs que cada sinapse individual se torna um pouco mais forte quando participa com sucesso no disparo de um neurônio pós-sináptico", embora haja trabalhos no sentido de que a mudança do peso sináptico esteja mais proximamente relacionada ao neurônio pré-sináptico, apenas (Gallinaro; Scholl; Clopath, 2023).
 
 [13] Em referência ao potencial de ação da célula biológica.
 
@@ -436,6 +488,8 @@ Em ambos os casos, verifica-se a presença de elementos de atraso unitário (*un
 [17] "Sistemas dinâmicos são sistemas fora do equilíbrio, caracterizados por estados que mudam com o tempo. São usados para modelar e fazer previsões de sistemas físicos, biológicos, financeiros, etc." (AGUIAR, 2005, p. 3). Aguiar (2015) ainda destaca que a definição de um sistema dinâmico exige três requisitos: espaço de estados, equações de movimento e medida de distância. E os classifica em discretos, contínuos, campos, autômato celular e redes complexas; lineares ou não lineares; conservativos ou dissipativos; autômatos ou não autômatos; com ou sem retardo; e determinísticos ou probabilísticos.
 
 [18] "[...] alguns modelos de redes neurais tentaram incluir interações entre sinais globais de uma fonte central e sinais locais, como fator de modificação sináptica." (KANDEL et al., 2014, p. 1387).
+
+[19] No contexto de redes neurais, **ruídos** são sinais indesejados, irrelevantes ou imprecisos que interferem na qualidade dos dados. Nesse sentido, vide a nota #7, sobre filtros adaptativos.
 
 ## Referências complementares consultadas durante o fichamento deste capítulo
 
