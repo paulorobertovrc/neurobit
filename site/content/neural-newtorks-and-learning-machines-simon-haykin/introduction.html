@@ -29,13 +29,13 @@
                 Desde o início, o estudo das redes neurais artificiais foi pautado pela observação de que tanto o cérebro humano quanto os computadores convencionais são sistemas de processamento de informações<sup><a class="linknotas" href="#nota_2">[2]</a></sup> e, por conseguinte, realizam trabalho computacional<sup><a class="linknotas" href="#nota_3">[3]</a></sup>.
                 Não apenas seu funcionamento é bastante distinto, mas a capacidade computacional do cérebro - não só humano, mas também o de outros animais - supera, em muito, a dos computadores digitais.
             </p>
-            <p>
+            <p id="subtitulo_1_nota_4">
                 O cérebro é um sistema de processamento de informações complexo, não linear e paralelo<sup><a class="linknotas" href="#nota_4">[4]</a></sup>. 
                 Suas estruturas fundamentais são os neurônios, organizados de modo a realizar tarefas computacionais, a exemplo do reconhecimento de padrões. Portanto, assim no cérebro como nas redes artificiais, os neurônios constituem as unidades de processamento da informação.
             </p>
-            <p>A plasticidade<sup><a class="linknotas" href="#nota_5">[5]</a></sup>, característica que permite a adaptação do indivíduo ao ambiente em que está inserido, também é importante para as redes neurais artificiais.</p>
+            <p id="subtitulo_1_nota_5">A plasticidade<sup><a class="linknotas" href="#nota_5">[5]</a></sup>, característica que permite a adaptação do indivíduo ao ambiente em que está inserido, também é importante para as redes neurais artificiais.</p>
             <p>Em linhas gerais, pode-se dizer que uma rede neural artificial é um modelo computacional inspirado no modo como o cérebro realiza o processamento de informações. Nas palavras de Haykin (2009, p. 2), “[…] a neural network is a machine that is designed to model the way in which the brain performs a particular task or function of interest”.</p>
-            <p>
+            <p id="subtitulo_1_nota_6">
                 Já como definição formal, o autor dá às redes neurais, vistas como uma máquina adaptativa<sup><a class="linknotas" href="#nota_6">[6]</a></sup>, o seguinte conceito:
                 <blockquote>
                 <p>A neural network is a massively parallel distributed processor made up of simple processing units that has a natural propensity for storing experiential knowledge and making it available for use. It resembles the brain in two respects:</p>
@@ -59,7 +59,7 @@
             <p>Assim, na medida do possível, as redes neurais artificiais assemelham-se e são modeladas à luz do cérebro humano [interconexão de unidades computacionais simples - neurônios - assim no cérebro biológico, como nas redes neurais artificiais].</p>
             <p>O processo de aprendizagem - <strong>algoritmo de aprendizagem</strong> - tradicionalmente aplicado em redes neurais consiste na <strong>modificação dos pesos sinápticos</strong> das conexões neuronais e deve necessariamente resultar em <strong>atividade computacional útil</strong>, ou seja, o alcance do objetivo almejado.</p>
             <p>A rede neural pode alterar sua própria estrutura (topologia).</p>
-            <p>Conforme o autor, a técnica de modificação dos pesos sinápticos guarda muita similaridade com a teoria dos filtros adaptativos lineares (<em>linear adaptive filter theory</em>)<sup><a class="linknotas" href="#nota_7">[7]</a></sup>.</p>
+            <p id="subtitulo_1_nota_7">Conforme o autor, a técnica de modificação dos pesos sinápticos guarda muita similaridade com a teoria dos filtros adaptativos lineares (<em>linear adaptive filter theory</em>)<sup><a class="linknotas" href="#nota_7">[7]</a></sup>.</p>
             
             <h4 id="subtitulo_1_1">1.1 Benefícios das redes neurais</h4>
             <p>A capacidade computacional das redes neurais é resultado de sua estrutura massiva e paralelamente distribuída, bem como da habilidade de aprender e generalizar. “A generalização se refere ao fato de a rede neural produzir saídas adequadas para entradas que não estavam presentes durante o treinamento (aprendizagem). Estas duas capacidades de processamento de informação [aprender e generalizar] tornam possível para as redes neurais resolver problemas complexos (de grande escala) que são atualmente intratáveis.” (HAYKIN, 2001, p. 28) [da 2 edição, em português].</p>
@@ -349,7 +349,7 @@
 
             <h5>3.1.2 Função sigmoide</h5>
             <p>É a mais comumente utilizada na construção de redes neurais. “Ela é definida como uma função estritamente crescente que exige um balanceamento adequado entre comportamento linear e não-linear” (HAYKIN, 2001, p. 40), de modo que pode assumir valores contínuos no intervalo <math><mo>[</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo>]</mo></math>. Essa função é diferenciável.</p>
-            <>Nos casos em que seja interessante que os valores da função de ativação se estenda de <math><mn>-1</mn></math> a <math><mn>+1</mn></math>, em vez de <math><mn>0</mn></math> a <math><mn>+1</mn></math>, tem-se a denominada <strong>função sinal (<em>signum function</em>)</strong>, que obedece à regra
+            <p>Nos casos em que seja interessante que os valores da função de ativação se estenda de <math><mn>-1</mn></math> a <math><mn>+1</mn></math>, em vez de <math><mn>0</mn></math> a <math><mn>+1</mn></math>, tem-se a denominada <strong>função sinal (<em>signum function</em>)</strong>, que obedece à regra
                 <math display="block">
                     <mi>&#x03C6;</mi>
                     <mo>(</mo>
@@ -395,8 +395,9 @@
                       </mtable>
                     </mrow>
                 </math>
+            </p>
 
-            , e sua função sigmoide (função tangente hiperbólica) é dada por
+            <p> e sua função sigmoide (função tangente hiperbólica) é dada por
                 <math display="block">
                     <mi>&#x03C6;</mi>
                     <mo>(</mo>
@@ -450,8 +451,8 @@
                       </mtable>
                     </mrow>
                 </math>
-            
-            e que
+                </p>
+            <p>e que
 
                 <math display="block">
                     <mi>P</mi>
@@ -474,9 +475,9 @@
                       </mrow>
                     </mfrac>
                 </math>
-                
-            , em que <math><mi>T</mi></math> é a dita <strong>pseudotemperatura</strong>, “[…] utilizada para controlar o nível de ruído e portanto a incerteza de disparar […] como um parâmetro que controle as flutuações térmicas que representam os efeitos do ruído sináptico. Note que quando <math><mi>T</mi><mo>&#x2192;</mo><mn>0</mn></math>, o neurônio estocástico […] se reduz a uma forma sem ruído (i.e., determinística), que é o modelo de McCulloch-Pitts.” (HAYKIN, 2001, p. 41).
-        </p>
+            </p>                
+            <p>em que <math><mi>T</mi></math> é a dita <strong>pseudotemperatura</strong>, “[…] utilizada para controlar o nível de ruído e portanto a incerteza de disparar […] como um parâmetro que controle as flutuações térmicas que representam os efeitos do ruído sináptico. Note que quando <math><mi>T</mi><mo>&#x2192;</mo><mn>0</mn></math>, 
+                o neurônio estocástico […] se reduz a uma forma sem ruído (i.e., determinística), que é o modelo de McCulloch-Pitts.” (HAYKIN, 2001, p. 41).</p>
         </article>
 
         <article>
@@ -507,7 +508,7 @@
                         <figcaption class="legenda">Figura 4 - Grafo de fluxo de sinal de um neurônio</figcaption>
                     </figure>
                 </div>
-                <p>Com base no modelo acima, extrai-se a seguinte **definição matemática de uma rede neural** (HAYKIN, 2009, p. 16/17):</p>
+                <p>Com base no modelo acima, extrai-se a seguinte <strong>definição matemática de uma rede neural</strong> (HAYKIN, 2009, p. 16/17):</p>
                     <blockquote>
                         <p>A neural network is a directed graph consisting of nodes with interconnecting synaptic and activation links and is characterized by four properties:</p>
                         <ol>
@@ -553,13 +554,14 @@
             </blockquote>
             <p>Ocorre no sistema nervoso dos animais. Tem posição de destaque em redes neurais recorrentes (RNN - <em> recurrent neural networks</em>), embora a não linearidade das unidades de processamento prejudique sua aplicação.</p>
             <p>O comportamento dinâmico da rede é controlado pelo ajuste dos pesos sinápticos<sup><a class="linknotas" href="#nota_18">[18]</a></sup>, de modo que, se <math><mrow><mi>|w|</mi><mo><</mo><mn>1</mn></mrow></math>, o sinal de saída é <strong>exponencialmente convergente</strong> e a rede é dita <strong>estável</strong>; se <math><mrow><mi>|w|</mi><mo>&geq;</mo><mn>1</mn></mrow></math>, o sinal de saída é <strong>divergente</strong> e a rede é dita <strong>instável</strong>. Neste caso, se <math><mrow><mi>|w|</mi><mo>=</mo><mn>1</mn></mrow></math>, a divergência é <strong>linear</strong> e, se <math><mrow><mi>|w|</mi><mo>></mo><mn>1</mn></mrow></math>, <strong>exponencial</strong>.</p>
-            <p>O grafo de fluxo de sinal que mostra o modelo mais simples de um sistema realimentado é o seguinte (HAYKIN, 2009, p. 19):</p>
-            <div class="image-container">
-                <figure>
-                    <img src="../../../imagens/06_grafo_fluxo_sinal_realimentado_laco_unico.png" alt="Grafo de fluxo de sinal de um sistema realimentado com laço único">
-                    <figcaption class="legenda">Figura 6 - Grafo de fluxo de sinal de um sistema realimentado com laço único.</figcaption>
-                </figure>
-            </div>
+            <p>O grafo de fluxo de sinal que mostra o modelo mais simples de um sistema realimentado é o seguinte (HAYKIN, 2009, p. 19):
+                <div class="image-container">
+                    <figure>
+                        <img src="../../../imagens/06_grafo_fluxo_sinal_realimentado_laco_unico.png" alt="Grafo de fluxo de sinal de um sistema realimentado com laço único">
+                        <figcaption class="legenda">Figura 6 - Grafo de fluxo de sinal de um sistema realimentado com laço único.</figcaption>
+                    </figure>
+                </div>
+            </p>
         </article>
 
         <article>
@@ -833,22 +835,21 @@
                 <blockquote>
                     <p>
                         O envolvimento de vários grupos neurais ou rotas para transmitir uma informação similar é chamado <em>processamento em paralelo</em>. O processamento em paralelo também ocorre em uma única via quando diferentes neurônios nessa via executa ações similares simultaneamente. […] O campo da ciência computacional conhecido como inteligência artificial originalmente usou o processamento serial para simular os processos cognitivos do encéfalo […] Esses modelos seriais executavam muitas tarefas de forma adequada, inclusive jogar xadrez. Entretanto, eram muito ruins em outras tarefas que o encéfalo faz quase instantaneamente, com o reconhecimento de faces ou a compreensão do discurso. […] Nesses modelos [redes neurais], elementos do sistema processam a informação simultaneamente usando conexões de pró-ação e de retroalimentação. É interessante observar que, em sistemas com circuitos de retroalimentação é a atividade dinâmica do sistema que determina o desfecho do processamento, não as aferências ou condições iniciais. Modelos de redes neurais capturam bem a arquitetura altamente recorrente da maioria dos circuitos neurais reais e também a capacidade do encéfalo de funcionar na ausência de uma aferência sensorial específica vinda de fora do corpo […] Modelos de redes neurais também demonstram que a análise de elementos individuais de um sistema pode não ser suficiente para decodificar a <em>mensagem dos potenciais de ação</em>. De acordo com tal visão de redes neurais, o que faz o encéfalo ser um deslumbrante órgão que processa a informação não é a complexidade de seus neurônios, mas o fato de ter muitos elementos interconectados de várias formas complexas.&quot; (KANDEL et al., 2014, p. 32/33)
-                        <br/><a class="linkdiscreto" href="#subtitulo_1"> [ 🔙 ]</a>
+                        <br/><a class="linkdiscreto" href="#subtitulo_1_nota_4"> [ 🔙 ]</a>
                     </p>
                 </blockquote>
             </p>
-            <p id="nota_5">[5] Vide complemento #1 (plasticidade).<a class="linkdiscreto" href="#subtitulo_1"> [ 🔙 ]</a></p>
-            <p id="nota_6">[6] Nesse contexto, diz-se que uma rede neural é uma <strong>máquina adaptativa</strong> exatamente pela capacidade aprendizado (autoajuste) e adaptação a partir dos dados de entrada, o que permite o ajuste de parâmetros (pesos sinápticos) para obter o melhor desempenho na tarefa.<a class="linkdiscreto" href="#subtitulo_1"> [ 🔙 ]</a></p>
+            <p id="nota_5">[5] Vide complemento #1 (plasticidade).<a class="linkdiscreto" href="#subtitulo_1_nota_5"> [ 🔙 ]</a></p>
+            <p id="nota_6">[6] Nesse contexto, diz-se que uma rede neural é uma <strong>máquina adaptativa</strong> exatamente pela capacidade aprendizado (autoajuste) e adaptação a partir dos dados de entrada, o que permite o ajuste de parâmetros (pesos sinápticos) para obter o melhor desempenho na tarefa.<a class="linkdiscreto" href="#subtitulo_1_nota_6"> [ 🔙 ]</a></p>
             <p id="nota_7">[7] Sobre <strong>filtros adaptativos (<em>adaptive filter</em>)</strong>:
                 <blockquote>
-                    <p>The term “filter” is often used to describe a device in the form of a piece of physical hardware or software that is applied to a set of noisy data in order to extract information about a prescribed quantity of interest. […] In any event, we may use a filter to perform three basic information-processing tasks:
+                    The term “filter” is often used to describe a device in the form of a piece of physical hardware or software that is applied to a set of noisy data in order to extract information about a prescribed quantity of interest. […] In any event, we may use a filter to perform three basic information-processing tasks:
                         <ol>
                             <li><em>Filtering</em>, which means the extraction of information about a quantity of interest at a time <math><mi>t</mi></math> by using data measured up to and including time <math><mi>t</mi></math>.</li>
                             <li><em>Smoothing</em>, which differs from filtering in that information about the quantity of interest need not to be available at time <math><mi>t</mi></math>, and data measured later than time <math><mi>t</mi></math> can be used in obtaining this information. This means that in the case of smoothing there is a <em>delay</em> in producing the result of interest. Since in the smoothing process we are able to use data obtained not only up to time <math><mi>t</mi></math> but also data obtained after time <math><mi>t</mi></math>, we would expect smoothing to be more accurate in some sense than filtering.</li>
                             <li><em>Prediction</em>, which is the forecasting side of information processing. The aim here is to derive information about what the quantity of interest will be like at some time <math><mi>t</mi><mo>+</mo><mi>T</mi></math> in the future, for some <math><mi>T</mi><mo>></mo><mn>0</mn></math>, by using data measured up to and including time <math><mi>t</mi></math>.<br> We may classify filters into linear and nonlinear. A filter is said to be <em>linear</em> if the filtered, smoothed, or predicted quantity at the output of the device is <em>a linear function of the observations applied to the filter input</em>. Otherwise, the filter is nonlinear. […] By such a device [an adaptive filter] we mean one that is self-designing in that the adaptive filter relies for its operation on a recursive algorithm, which makes it possible for the filter to perform satisfactorily in an environment where complete knowledge of the relevant signal characteristics is not available. (HAYKIN, 1995, p. 1/3)</li>
-                            <a class="linkdiscreto" href="#subtitulo_1"> [ 🔙 ]</a>
+                            <a class="linkdiscreto" href="#subtitulo_1_nota_7"> [ 🔙 ]</a>
                         </ol>
-                    </p>
                 </blockquote>
             </p>            
             <p id="nota_8">[8] VLSI, do inglês <em>Very Large Scale Integration</em>, é um processo de fabricação de circuitos eletrônicos integrados com altíssima quantidade de transistores em um único chip.<a class="linkdiscreto" href="#subtitulo_1_1"> [ 🔙 ]</a></p>
@@ -872,7 +873,7 @@
 
 <footer>
     <p>Projeto NeuroBit</p>
-        <p>
+        <p class="linkdiscreto">
             <a class="social" href="https://github.com/paulorobertovrc" target="_blank">
                 <svg width="24px" height="24px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#ffffff"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>github [#142]</title> <desc>Created with Sketch.</desc> <defs> </defs> <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"> <g id="Dribbble-Light-Preview" transform="translate(-140.000000, -7559.000000)" fill="#fff"> <g id="icons" transform="translate(56.000000, 160.000000)"> <path d="M94,7399 C99.523,7399 104,7403.59 104,7409.253 C104,7413.782 101.138,7417.624 97.167,7418.981 C96.66,7419.082 96.48,7418.762 96.48,7418.489 C96.48,7418.151 96.492,7417.047 96.492,7415.675 C96.492,7414.719 96.172,7414.095 95.813,7413.777 C98.04,7413.523 100.38,7412.656 100.38,7408.718 C100.38,7407.598 99.992,7406.684 99.35,7405.966 C99.454,7405.707 99.797,7404.664 99.252,7403.252 C99.252,7403.252 98.414,7402.977 96.505,7404.303 C95.706,7404.076 94.85,7403.962 94,7403.958 C93.15,7403.962 92.295,7404.076 91.497,7404.303 C89.586,7402.977 88.746,7403.252 88.746,7403.252 C88.203,7404.664 88.546,7405.707 88.649,7405.966 C88.01,7406.684 87.619,7407.598 87.619,7408.718 C87.619,7412.646 89.954,7413.526 92.175,7413.785 C91.889,7414.041 91.63,7414.493 91.54,7415.156 C90.97,7415.418 89.522,7415.871 88.63,7414.304 C88.63,7414.304 88.101,7413.319 87.097,7413.247 C87.097,7413.247 86.122,7413.234 87.029,7413.87 C87.029,7413.87 87.684,7414.185 88.139,7415.37 C88.139,7415.37 88.726,7417.2 91.508,7416.58 C91.513,7417.437 91.522,7418.245 91.522,7418.489 C91.522,7418.76 91.338,7419.077 90.839,7418.982 C86.865,7417.627 84,7413.783 84,7409.253 C84,7403.59 88.478,7399 94,7399" id="github-[#142]"> </path> </g> </g> </g> </g></svg>
             </a>
