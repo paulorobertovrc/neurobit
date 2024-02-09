@@ -360,13 +360,48 @@ A regra 4 significa que é *altamente desejável* que a rede neural possua estru
 
 A utilização de informação prévia restringe a aplicabilidade da rede a um domínio específico (Haykin, 2009).
 
-<!-- #### 7.2 Como incorporar informação prévia no projeto de uma rede neural
+#### 7.2 Como incorporar informação prévia no projeto de uma rede neural
 
-Duas regras são comumente aceitas (LECUN ET AL. apud HAYKIN, 2001, p. 54)[^19]: -->
+Duas regras são comumente aceitas, as quais, particularmente a segunda, contribuem significativamente para a diminuição do número de parâmetros livres da rede:
+
+>1. *Restringir a arquitetura da rede* pelo uso de conexões locais conhecidas como campos receptivos (*receptive fields*); e
+>2. *Restringir a escolha de pesos sinápticos* através do uso de compartilhamento de pesos. (LECUN ET AL., 1990 apud HAYKIN, 2001, p. 54)
+
+O termo **campo receptivo** diz respeito ao **limiar de excitação** a partir do qual os dados de entrada são capazes de influenciar a saída do neurônio, isto é, à **sensibilidade a estímulos** do neurônio ou da conexão sináptica. Já o compartilhamento de pesos sinápticos é tão somente o que seu próprio nome sugere. Nesse sentido:
+>The receptive field of a neuron is defined as that region of the input field over which the incoming stimuli can influence the output signal produced by the neuron. The mapping of the receptive field is a powerful and shorthand description of the neuron’s behavior, and therefore its output. To satisfy the weight-sharing constraint, we merely have to use the same set of synaptic weights for each one of the neurons in the hidden layer of the network. (HAYKIN, 2009, p. 30)
+
+Uma rede implementada com essas características é denominada **rede convolucional (*convolutional network*)**.
+
+A seguir, o grafo arquitetural exemplificativo de uma rede convolucional:
+
+![Grafo arquitetural de uma rede convolucional](../../imagens/11_convolutional_network_architectural_graph.png)
+Figura 11 - Grafo arquitetural de uma rede convolucional. Fonte: HAYKIN, 2009, p. 29.
+
+Observa-se que a camada de entrada é formada pelo total de dez nós $k$, cada qual recebendo um único sinal $x$, que estão conectados de seis em seis a um único neurônio da camada oculta, que é composta por quatro neurônios -- ${j_1}$ a ${j_4}$. 
+
+Assim, considerando que cada um dos quatro neurônios ocultos tem seis conexões sinápticas e que todos compartilham o mesmo conjunto de pesos sinápticos -- ${\{w_i\}}^6_i = 1$ --, o campo local induzido[^19] $v$ de qualquer neurônio $j$, para cada uma das seis conexões sinápticas -- $i$ --, é dado pela equação
+
+$$
+v_j = \sum_{i=1}^{6} w_ix_k \text{ , j = 1, 2, 3, 4}
+$$
+
+Sendo $k = i + j - 1$ e, portanto, $x_k$ o próprio sinal de entrada.
+
+#### 7.3 Como incorporar invariâncias no projeto de uma rede neural
+
+É desejável que o sistema seja invariante perante transformações como a rotação do objeto de interesse, a alterações de amplitude ou frequência de ondas, timbre, entonação ou velocidade de voz, etc.
+
+"[...] o sistema deve ser capaz de lidar com uma série de transformações do sinal observado" (Barnard; Casasent, 1991, apud HAYKIN, 2001, p. 55).
+
+"Em outras palavras, uma estimativa de classe representada por uma saída do classificador não deve ser afetada pelas transformações do sinal observado aplicado à entrada do classificador." (HAYKIN, 2001, p. 55).
+
+Há pelo menos três técnicas para implementar o dito classificador invariante a transformações (Barnard; Casasent, 1991, apud HAYKIN, 2001):
+
+>**Invariância por estrutura:** as versões transformadas do mesmo sinal de entrada são forçadas a produzir o mesmo sinal de saída, por meio da criação de novas conexões sinápticas, o que resulta na desvantagem de que o número de conexões da rede aumenta demasiadamente.
+>**Invariância por treinamento:** durante o treinamento, à rede são apresentadas diversas variações do mesmo objeto, de modo que possa generalizá-lo e reconhecê-lo em suas variadas formas. Como desvantagens, não há certeza de que o comportamento invariante alcançará transformações não vistas ou objetos de outras classes, além da maior demanda por recursos computacionais.
+>**Espaço de características invariantes:** envolve a extração das principais características invariantes - isto é, que não se modificam - do objeto apresentado (e/ou seu conteúdo essencial), a fim de que, por generalização, a rede seja capaz de observá-las em outros objetos e, diante disso, classificá-los como da mesma classe. Idealmente, a rede somente precisaria lidar com fatores inevitáveis como ruídos e oclusão. Destacam-se vantagens como a redução do número de características do objeto a níveis realistas, a redução das exigências impostas à rede neural e a certeza de invariância em relação a todas as variações conhecidas do objeto.
 
 <!-- 
-
-#### 7.3 Invariâncias no projeto de uma rede neural
 
 ### 8. Processos de aprendizagem
 
@@ -450,6 +485,16 @@ Duas regras são comumente aceitas (LECUN ET AL. apud HAYKIN, 2001, p. 54)[^19]:
   - Objetivos do treinamento:
     - Aprendizagem
     - Generalização
+  - **Regras de representação do conhecimento**
+    - Entradas similares de devem produzir representações similares e serem classificadas sob a mesma categoria
+    - Representações diferentes devem pertencer a categorias diferentes
+    - Para características importantes, deve ser designado um grande número de neurônios
+    - Informações prévias e invariâncias devem ser incorporadas sempre que possível
+    - **Incorporação de informação prévia**
+      - Restringir a arquitetura da rede (campos receptivos)
+      - Restringir a escolha de pesos sinápticos (compartilhamento de pesos)
+    - **Incorporação de invariâncias**
+      - A rede deve ser invariante a variações do mesmo sinal de entrada, isto é, o sinal de saída não deve ser afetado por meras transformações do sinal de entrada
 
 ## Referências complementares consultadas durante o fichamento deste capítulo
 
@@ -511,4 +556,4 @@ VERY LARGE SCALE INTEGRATION. In: WIKIPEDIA. Disponível em <https://en.wikipedi
 
 [^18]: No contexto de redes neurais, **ruídos** são sinais indesejados, irrelevantes ou imprecisos que interferem na qualidade dos dados. Nesse sentido, vide a nota #7, sobre filtros adaptativos.
 
-<!-- [^19]: texto da nota de rodapé .......... -->
+[^19]: De forma simplificada, o campo local induzido é a soma ponderada dos sinais de entrada e determina se haverá ou não ativação do neurônio e consequente disparo do sinal de saída.

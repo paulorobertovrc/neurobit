@@ -24,7 +24,7 @@
         <h2>Introdução (p. 1/46)</h2>
 
         <article>
-            <h3 id="subtitulo_1">1. Definição de rede neural <sup><a class="linknotas" href="#nota_1">[1]</a></sup></h3>
+            <h3 id="subtitulo_1">1. Definição de rede neural<sup><a class="linknotas" href="#nota_1">[1]</a></sup></h3>
             <p>
                 Desde o início, o estudo das redes neurais artificiais foi pautado pela observação de que tanto o cérebro humano quanto os computadores convencionais são sistemas de processamento de informações<sup><a class="linknotas" href="#nota_2">[2]</a></sup> e, por conseguinte, realizam trabalho computacional<sup><a class="linknotas" href="#nota_3">[3]</a></sup>.
                 Não apenas seu funcionamento é bastante distinto, mas a capacidade computacional do cérebro - não só humano, mas também o de outros animais - supera, em muito, a dos computadores digitais.
@@ -620,47 +620,132 @@
 
         <article>
             <h3 id="subtitulo_7">7. Representação do conhecimento</h3>
-                <p>"Knowledge refers to stored information or models used by a person or machine to interpret, predict, and appropriately respond to the outside world" (FISCHLER; FIRSCHEIN, 1987 apud HAYKIN, 2009, p. 24). Ou, na 2a edição, "Conhecimento se refere à informação armazenada ou a modelos utilizados por uma pessoa ou máquina para interpretar, prever e responder apropriadamente ao mundo exterior" (FISCHLER; FIRSCHEIN, 1987 apud HAYKIN, 2001, p. 49).</p>
-                <p>Suas duas principais características são "(1) que informação é realmente tornada explícita; e (2) como a informação é codificada fisicamente para o uso subsequente." (HAYKIN, 2001, p. 49). Além disso, deve ser direcionada a um objetivo.</p>
-                <p>"Em aplicações do mundo real de máquinas 'inteligentes', podemos dizer que uma boa solução depende de uma boa representação do conhecimento" (WOODS, 1986 apud HAYKIN, 2001, p. 49).</p>
-                <p>A rede neural deve ser capaz de aprender a respeito do mundo exterior - isto é, o ambiente no qual está inserida - e constantemente manter essa definição atualizada, de modo a atingir os objetivos específicos da aplicação. Destaca-se que esse conhecimento sobre o mundo consiste, basicamente, em dois tipos de informação:
+            <p>"Knowledge refers to stored information or models used by a person or machine to interpret, predict, and appropriately respond to the outside world" (FISCHLER; FIRSCHEIN, 1987 apud HAYKIN, 2009, p. 24). Ou, na 2a edição, "Conhecimento se refere à informação armazenada ou a modelos utilizados por uma pessoa ou máquina para interpretar, prever e responder apropriadamente ao mundo exterior" (FISCHLER; FIRSCHEIN, 1987 apud HAYKIN, 2001, p. 49).</p>
+            <p>Suas duas principais características são "(1) que informação é realmente tornada explícita; e (2) como a informação é codificada fisicamente para o uso subsequente." (HAYKIN, 2001, p. 49). Além disso, deve ser direcionada a um objetivo.</p>
+            <p>"Em aplicações do mundo real de máquinas 'inteligentes', podemos dizer que uma boa solução depende de uma boa representação do conhecimento" (WOODS, 1986 apud HAYKIN, 2001, p. 49).</p>
+            <p>A rede neural deve ser capaz de aprender a respeito do mundo exterior - isto é, o ambiente no qual está inserida - e constantemente manter essa definição atualizada, de modo a atingir os objetivos específicos da aplicação. Destaca-se que esse conhecimento sobre o mundo consiste, basicamente, em dois tipos de informação:
+                <blockquote>
+                    <ol>
+                        <li>O estado conhecido do mundo, representado pelos fatos sobre o que é e o que era conhecido; esta forma de conhecimento é chamada de <em>informação prévia</em>.</li>
+                        <li>As observações (medidas) do mundo, obtidas por meio de sensores projetados para sondar o ambiente no qual a rede neural deve operar. Normalmente, estas observações são inerentemente ruidosas, sendo sujeitas a erros devido a ruído<sup><a class="linknotas" href="#nota_19">[19]</a></sup> do sensor e imperfeições do sistema. De qualquer maneira, as observações que são assim obtidas fornecem o conjunto de informações de onde são retirados os <em>exemplos</em> utilizados para treinar a rede neural. (HAYKIN, 2001, p. 50)</li>
+                    </ol>
+                </blockquote>
+            </p>
+            <p>Esses exemplos para treinamento podem ser <strong>rotulados ou não rotulados</strong>. No primeiro caso, ao sinal de entrada é associada a resposta esperada, enquanto que, no segundo, não há essa associação e o sinal de entrada é contraposto a ocorrências diferentes dele próprio. Em qualquer caso, <strong>o conjunto de exemplos representa o conhecimento da rede neural sobre o ambiente.</strong></p>
+            <p>Também podem ser <strong>positivos ou negativos</strong> isto é, respectivamente voltados a ensinar <strong> o que deve ser reconhecido e o que deve ser ignorado.</strong></p>
+            <p>Ao par de dados entrada-saída, respectivamente correspondentes ao sinal de entrada e à resposta desejada, dá-se o nome de <strong>conjunto de dados de treinamento ou amostra de treinamento (<em>set of training data or training sample</em>).</strong></p>
+            <p>Nesse sentido, um possível projeto de uma rede neural teria duas fases, quais sejam, a de <strong> aprendizagem (<em>learning</em>)</strong>, na qual haveria a exposição ao conjunto de dados, e a de <strong> generalização (<em>generalization</em>)</strong>, depois da testagem bem-sucedida após o treinamento, que consiste na capacidade de repetir idêntica performance em cenários que envolvam dados que não foram apresentados durante o treinamento.</p>
+            <p>Diferentemente do que ocorre nos classificadores de padrões clássicos, "[...] a rede neural não somente fornece o modelo implícito do ambiente no qual ela está inserida, como também realiza a função de processamento de informação de interesse" (HAYKIN, 2001, p. 50).</p>
+            <p>A representação do conhecimento perpassa pelo ajuste dos pesos sinápticos e do <em>bias</em>, isto é, dos <strong>parâmetros livres da rede</strong>. "A forma dessa representação de conhecimento constitui o verdadeiro projeto da rede neural, e portanto é a chave para o seu desemprenho" (HAYKIN, 2001, p. 51).</p>
+
+            <h4>7.1 Regras de representação do conhecimento</h4>
+            <p>Há quatro regras comumente aceitas (ANDERSON, 1988 apud HAYKIN, 2001, p. 51/53):
+                <blockquote>
+                    <ol>
+                        <li>Entradas similares de classes similares normalmente devem produzir representações similares no interior da rede, e portanto devem ser classificadas como pertencentes à mesma categoria.</li>
+                        <li>Devem ser atribuídas representações bem diferentes na rede a itens que devem ser categorizados como classes separadas.</li>
+                        <li>Se uma característica particular é importante, então deve haver um grande número de neurônios envolvidos na representação daquele item na rede.</li>
+                        <li>Informação prévia e invariâncias devem ser incorporadas no projeto de uma rede neural, simplificando com isso o projeto da rede por não ter que aprendê-las.</li>
+                    </ol>
+                </blockquote>
+            </p>
+            <p>"Correlation plays a key role not only in the human brain, but also in signal processing of various kinds" (CHEN ET AL., 2007 apud HAYKIN, 2009, p. 28). Em tradução direta, "a correlação desempenha um papel fundamental não apenas no cérebro humano, mas também no processamento de sinais de vários tipos".</p>
+            <p><strong>Probabilidade de detecção vs. probabilidade de falso alarme</strong> - Critério de Neyman-Pearson: "[...] a probabilidade de detecção é maximizada, sujeita à restrição de que a probabilidade de alarme falso não exceda a um determinado valor" (VAN TREES, 1968 apud HAYKIN, 2001, p. 53).</p>
+            <p>A regra 4 significa que é <em>altamente desejável</em> que a rede neural possua estrutura especializada (restrita), o que se justifica pelo fato de que há alta especialização em redes biológicas (visuais e auditivas, por exemplo), pela necessidade de menos parâmetros livres e menores conjuntos de dados para treinamento e pela maior eficiência (aumento da produtividade  e redução de custos) (Russo apud Haykin, 2001).</p>
+            <p>A utilização de informação prévia restringe a aplicabilidade da rede a um domínio específico (Haykin, 2009).</p>
+                
+            <h4>7.2 Como incorporar informação prévia no projeto de uma rede neural</h4>
+                <p>Duas regras são comumente aceitas, as quais, particularmente a segunda, contribuem significativamente para a diminuição do número de parâmetros livres da rede:
                     <blockquote>
                         <ol>
-                            <li>O estado conhecido do mundo, representado pelos fatos sobre o que é e o que era conhecido; esta forma de conhecimento é chamada de <em>informação prévia</em>.</li>
-                            <li>As observações (medidas) do mundo, obtidas por meio de sensores projetados para sondar o ambiente no qual a rede neural deve operar. Normalmente, estas observações são inerentemente ruidosas, sendo sujeitas a erros devido a ruído<sup><a class="linknotas" href="#nota_19">[19]</a></sup> do sensor e imperfeições do sistema. De qualquer maneira, as observações que são assim obtidas fornecem o conjunto de informações de onde são retirados os <em>exemplos</em> utilizados para treinar a rede neural. (HAYKIN, 2001, p. 50)</li>
+                            <li>Restringir a arquitetura da rede pelo uso de conexões locais conhecidas como campos receptivos (<em>receptive fields</em>); e</li>
+                            <li>Restringir a escolha de pesos sinápticos através do uso de compartilhamento de pesos. (LECUN ET AL., 1990 apud HAYKIN, 2001, p. 54)</li>
                         </ol>
                     </blockquote>
                 </p>
-                <p>Esses exemplos para treinamento podem ser <strong>rotulados ou não rotulados</strong>. No primeiro caso, ao sinal de entrada é associada a resposta esperada, enquanto que, no segundo, não há essa associação e o sinal de entrada é contraposto a ocorrências diferentes dele próprio. Em qualquer caso, <strong>o conjunto de exemplos representa o conhecimento da rede neural sobre o ambiente.</strong></p>
-                <p>Também podem ser <strong>positivos ou negativos</strong> isto é, respectivamente voltados a ensinar <strong> o que deve ser reconhecido e o que deve ser ignorado.</strong></p>
-                <p>Ao par de dados entrada-saída, respectivamente correspondentes ao sinal de entrada e à resposta desejada, dá-se o nome de <strong>conjunto de dados de treinamento ou amostra de treinamento (<em>set of training data or training sample</em>).</strong></p>
-                <p>Nesse sentido, um possível projeto de uma rede neural teria duas fases, quais sejam, a de <strong> aprendizagem (<em>learning</em>)</strong>, na qual haveria a exposição ao conjunto de dados, e a de <strong> generalização (<em>generalization</em>)</strong>, depois da testagem bem-sucedida após o treinamento, que consiste na capacidade de repetir idêntica performance em cenários que envolvam dados que não foram apresentados durante o treinamento.</p>
-                <p>Diferentemente do que ocorre nos classificadores de padrões clássicos, "[...] a rede neural não somente fornece o modelo implícito do ambiente no qual ela está inserida, como também realiza a função de processamento de informação de interesse" (HAYKIN, 2001, p. 50).</p>
-                <p>A representação do conhecimento perpassa pelo ajuste dos pesos sinápticos e do <em>bias</em>, isto é, dos <strong>parâmetros livres da rede</strong>. "A forma dessa representação de conhecimento constitui o verdadeiro projeto da rede neural, e portanto é a chave para o seu desemprenho" (HAYKIN, 2001, p. 51).</p>
-
-                <h4>7.1 Regras de representação do conhecimento</h4>
-                    <p>Há quatro regras comumente aceitas (ANDERSON, 1988 apud HAYKIN, 2001, p. 51/53):
-                        <blockquote>
-                            <ol>
-                                <li>Entradas similares de classes similares normalmente devem produzir representações similares no interior da rede, e portanto devem ser classificadas como pertencentes à mesma categoria.</li>
-                                <li>Devem ser atribuídas representações bem diferentes na rede a itens que devem ser categorizados como classes separadas.</li>
-                                <li>Se uma característica particular é importante, então deve haver um grande número de neurônios envolvidos na representação daquele item na rede.</li>
-                                <li>Informação prévia e invariâncias devem ser incorporadas no projeto de uma rede neural, simplificando com isso o projeto da rede por não ter que aprendê-las.</li>
-                            </ol>
-                        </blockquote>
-                    </p>
-                    <p>"Correlation plays a key role not only in the human brain, but also in signal processing of various kinds" (CHEN ET AL., 2007 apud HAYKIN, 2009, p. 28). Em tradução direta, "a correlação desempenha um papel fundamental não apenas no cérebro humano, mas também no processamento de sinais de vários tipos".</p>
-                    <p><strong>Probabilidade de detecção vs. probabilidade de falso alarme</strong> - Critério de Neyman-Pearson: "[...] a probabilidade de detecção é maximizada, sujeita à restrição de que a probabilidade de alarme falso não exceda a um determinado valor" (VAN TREES, 1968 apud HAYKIN, 2001, p. 53).</p>
-                    <p>A regra 4 significa que é <em>altamente desejável</em> que a rede neural possua estrutura especializada (restrita), o que se justifica pelo fato de que há alta especialização em redes biológicas (visuais e auditivas, por exemplo), pela necessidade de menos parâmetros livres e menores conjuntos de dados para treinamento e pela maior eficiência (aumento da produtividade  e redução de custos) (Russo apud Haykin, 2001).</p>
-                    <p>A utilização de informação prévia restringe a aplicabilidade da rede a um domínio específico (Haykin, 2009).</p>
-            <a class="emoji" href="#top">
-                [ 🔝 ]
-            </a>
+                <p>
+                    O termo <strong>campo receptivo</strong> diz respeito ao <strong>limiar de excitação</strong> a partir do qual os dados de entrada são capazes de influenciar a saída do neurônio, isto é, à <strong>sensibilidade a estímulos</strong> do neurônio ou da conexão sináptica.
+                    Já o compartilhamento de pesos sinápticos é tão somente o que seu próprio nome sugere. Nesse sentido:
+                    <blockquote>
+                        The receptive field of a neuron is defined as that region of the input field over which the incoming stimuli can influence the output signal produced by the neuron. The mapping of the receptive field is a powerful and shorthand description of the neuron’s behavior, and therefore its output. To satisfy the weight-sharing constraint, we merely have to use the same set of synaptic weights for each one of the neurons in the hidden layer of the network. (HAYKIN, 2009, p. 30)
+                    </blockquote>
+                </p>
+                <p>Uma rede implementada com essas características é denominada <strong>rede convolucional (<em>convolutional network</em>)</strong>.</p>
+                <p>A seguir, o grafo arquitetural exemplificativo de uma rede convolucional:
+                    <div class="image-container">
+                        <figure>
+                            <img src="../../../imagens/11_convolutional_network_architectural_graph.png" alt="Grafo arquitetural de uma rede convolucional">
+                            <figcaption class="legenda">Figura 11 - Grafo arquitetural de uma rede convolucional. Fonte: HAYKIN, 2009, p. 31.</figcaption>
+                        </figure>
+                    </div>
+                </p>
+                <p>Observa-se que a camada de entrada é formada pelo total de dez nós <math><mi>k</mi></math>, cada qual recebendo um único sinal <math><mi>x</mi></math>, que estão conectados de seis em seis a um único neurônio da camada oculta, que é composta por quatro neurônios -- <math><msub><mi>j</mi><mi>1</mi></math> a <math><msub><mi>j</mi><mi>4</mi></math>.</p>
+                <p id="subtitulo_7_2_nota_20">
+                    Assim, considerando que cada um dos quatro neurônios ocultos tem seis conexões sinápticas e que todos compartilham o mesmo conjunto de pesos sinápticos -- 
+                    <math xmlns="http://www.w3.org/1998/Math/MathML">
+                        <msup>
+                            <mrow>
+                                <mo>{</mo>
+                                <msub>
+                                    <mi>w</mi>
+                                    <mi>i</mi>
+                                </msub>
+                                <mo>}</mo>
+                            </mrow>
+                            <mn>6</mn>
+                        </msup>
+                        <sub>i</sub>
+                        <mo>=</mo>
+                        <mn>1</mn>
+                    </math>
+                    --, o campo local induzido<sup><a class="linknotas" href="#nota_20">[20]</a></sup> <math><mi>v</mi></math> de qualquer neurônio <math><mi>j</mi></math>, para cada uma das seis conexões sinápticas -- <math><mi>i</mi></math> --, é dado pela equação
+                    <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+                        <msub>
+                            <mi>v</mi>
+                            <mi>j</mi>
+                        </msub>
+                        <mo>=</mo>
+                        <munderover>
+                            <mo>&#x2211;</mo>
+                            <mrow>
+                                <mi>i</mi>
+                                <mo>=</mo>
+                                <mn>1</mn>
+                            </mrow>
+                            <mrow>
+                                <mn>6</mn>
+                            </mrow>
+                        </munderover>
+                        <msub>
+                            <mi>w</mi>
+                            <mi>i</mi>
+                        </msub>
+                        <msub>
+                            <mi>x</mi>
+                            <mi>k</mi>
+                        </msub>
+                        <mtext>&nbsp; , &nbsp; j = 1, 2, 3, 4</mtext>
+                    </math>
+                </p>
+                <p>Sendo <math><mtext>k = i + j - 1</mtext></math> e, portanto, <math><msub><mi>x</mi><mi>k</mi></msub></math> o próprio sinal de entrada.</p>
+                
+                <h4>7.3 Invariâncias no projeto de uma rede neural</h4>
+                <p>É desejável que o sistema seja invariante perante transformações como a rotação do objeto de interesse, a alterações de amplitude ou frequência de ondas, timbre, entonação ou velocidade de voz, etc.</p>
+                <p>"[...] o sistema deve ser capaz de lidar com uma série de transformações do sinal observado" (Barnard; Casasent, 1991, apud HAYKIN, 2001, p. 55).</p>
+                <p>"Em outras palavras, uma estimativa de classe representada por uma saída do classificador não deve ser afetada pelas transformações do sinal observado aplicado à entrada do classificador." (HAYKIN, 2001, p. 55).</p>
+                <p>Há pelo menos três técnicas para implementar o dito classificador invariante a transformações (Barnard; Casasent, 1991, apud HAYKIN, 2001):
+                    <blockquote>
+                        <ul>
+                            <li><strong>Invariância por estrutura:</strong> as versões transformadas do mesmo sinal de entrada são forçadas a produzir o mesmo sinal de saída, por meio da criação de novas conexões sinápticas, o que resulta na desvantagem de que o número de conexões da rede aumenta demasiadamente.</li>
+                            <li><strong>Invariância por treinamento:</strong> durante o treinamento, à rede são apresentadas diversas variações do mesmo objeto, de modo que possa generalizá-lo e reconhecê-lo em suas variadas formas. Como desvantagens, não há certeza de que o comportamento invariante alcançará transformações não vistas ou objetos de outras classes, além da maior demanda por recursos computacionais.</li>
+                            <li><strong>Espaço de características invariantes:</strong> envolve a extração das principais características invariantes - isto é, que não se modificam - do objeto apresentado (e/ou seu conteúdo essencial), a fim de que, por generalização, a rede seja capaz de observá-las em outros objetos e, diante disso, classificá-los como da mesma classe. Idealmente, a rede somente precisaria lidar com fatores inevitáveis como ruídos e oclusão. Destacam-se vantagens como a redução do número de características do objeto a níveis realistas, a redução das exigências impostas à rede neural e a certeza de invariância em relação a todas as variações conhecidas do objeto.</li>
+                        </ul>
+                    </blockquote>
+                </p>
+                <a class="emoji" href="#top">[ 🔝 ]</a>
         </article>
 
         <!-- <article>
-            <h4>7.2 Como incorporar informação prévia no projeto de uma rede neural</h4>
-            <h4>7.3 Invariâncias no projeto de uma rede neural</h4>
             <h3>8. Processos de aprendizagem</h3>
             <h3>9. Tipos de aprendizagem</h3>
         </article> -->
@@ -801,11 +886,23 @@
                                     <li>Aprendizagem</li>
                                     <li>Generalização</li>
                                 </ul>
+                            <li><strong>Regras de representação do conhecimento</strong></li>
+                                <ul>
+                                    <li>Entradas similares de devem produzir representações similares e serem classificadas sob a mesma categoria</li>
+                                    <li>Representações diferentes devem pertencer a categorias diferentes</li>
+                                    <li>Para características importantes, deve ser designado um grande número de neurônios</li>
+                                    <li>Informações prévias e invariâncias devem ser incorporadas sempre que possível</li>
+                                    <li><p><strong>Incorporação de informação prévia</strong></p></li>
+                                        <ul>
+                                            <li>Restringir a arquitetura da rede (campos receptivos)</li>
+                                            <li>Restringir a escolha de pesos sinápticos (compartilhamento de pesos)</li>
+                                        </ul>
+                                    <li><p><strong>Incorporação de invariâncias</strong></p></li>
+                                        <ul><li>A rede deve ser invariante a variações do mesmo sinal de entrada, isto é, o sinal de saída não deve ser afetado por meras transformações do sinal de entrada</li></ul>
+                                </ul>
                         </ul>
                 </ul>
-            <a class="emoji" href="#top">
-                [ 🔝 ]
-            </a>
+            <a class="emoji" href="#top">[ 🔝 ]</a>
         </article>
 
         <hr>
@@ -819,9 +916,7 @@
             <p>HAYKIN, Simon. <strong>Adaptive filter theory.</strong> 3 ed. Upper Saddle River, NJ: Prentice Hall, 1995.</p>
             <p>KANDEL, Eric R.; SCHWARTZ, James H.; JESSELL, Thomas M.; SIEGELBAUM, Steven A.; HUDSPETH, A. J. <strong>Princípios de neurociências</strong>. Trad. Ana Lúcia Severo Rodrigues et al. 5. ed. Porto Alegre: AMGH, 2014.</p>
             <p>VERY LARGE SCALE INTEGRATION. In: WIKIPEDIA. Disponível em <a href="https://en.wikipedia.org/wiki/Very_Large_Scale_Integration" target="_blank">https://en.wikipedia.org/wiki/Very_Large_Scale_Integration</a>. Acesso em 22 jan. 2024.</p>
-            <a class="emoji" href="#top">
-                [ 🔝 ]
-            </a>
+            <a class="emoji" href="#top">[ 🔝 ]</a>
         </article>
 
         <hr>
@@ -864,9 +959,8 @@
             <p id="nota_17">[17] "Sistemas dinâmicos são sistemas fora do equilíbrio, caracterizados por estados que mudam com o tempo. São usados para modelar e fazer previsões de sistemas físicos, biológicos, financeiros, etc." (AGUIAR, 2005, p. 3). Aguiar (2015) ainda destaca que a definição de um sistema dinâmico exige três requisitos: espaço de estados, equações de movimento e medida de distância. E os classifica em discretos, contínuos, campos, autômato celular e redes complexas; lineares ou não lineares; conservativos ou dissipativos; autômatos ou não autômatos; com ou sem retardo; e determinísticos ou probabilísticos.<a class="linkdiscreto" href="#subtitulo_5"> [ 🔙 ]</a></p>
             <p id="nota_18">[18] "[...] alguns modelos de redes neurais tentaram incluir interações entre sinais globais de uma fonte central e sinais locais, como fator de modificação sináptica." (KANDEL et al., 2014, p. 1387).<a class="linkdiscreto" href="#subtitulo_5"> [ 🔙 ]</a></p>
             <p id="nota_19">[19] No contexto de redes neurais, <strong>ruídos</strong> são sinais indesejados, irrelevantes ou imprecisos que interferem na qualidade dos dados. Nesse sentido, vide a nota #7, sobre filtros adaptativos.<a class="linkdiscreto" href="#subtitulo_7"> [ 🔙 ]</a></p>
-            <a class="emoji" href="#top">
-                [ 🔝 ]
-            </a>
+            <p id="nota_20">[20] De forma simplificada, o campo local induzido é a soma ponderada dos sinais de entrada e determina se haverá ou não ativação do neurônio e consequente disparo do sinal de saída.<a class="linkdiscreto" href="#subtitulo_7_2_nota_20"> [ 🔙 ]</a></p>
+            <a class="emoji" href="#top">[ 🔝 ]</a>
         </article>
     </main>
 </body>
