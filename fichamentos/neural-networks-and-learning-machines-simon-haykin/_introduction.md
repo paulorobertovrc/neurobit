@@ -318,7 +318,7 @@ Figura 10 - Rede recorrente com neurônios ocultos. Fonte: HAYKIN, 2009, p. 24.
 
 Em ambos os casos, verifica-se a presença de elementos de atraso unitário (*unit-time delay elements*), nos laços de realimentação, representados por $z^{-1}$, com o objetivo de conferir comportamento dinâmico não-linear à rede.
 
-### 7. Representação do conhecimento
+### 7. Representação do conhecimento [^18]
 
 "Knowledge refers to stored information or models used by a person or machine to interpret, predict, and appropriately respond to the outside world" (FISCHLER; FIRSCHEIN, 1987 apud HAYKIN, 2009, p. 24). Ou, na 2a edição, "Conhecimento se refere à informação armazenada ou a modelos utilizados por uma pessoa ou máquina para interpretar, prever e responder apropriadamente ao mundo exterior" (FISCHLER; FIRSCHEIN, 1987 apud HAYKIN, 2001, p. 49).
 
@@ -329,7 +329,7 @@ Suas duas principais características são "(1) que informação é realmente to
 A rede neural deve ser capaz de aprender a respeito do mundo exterior - isto é, o ambiente no qual está inserida - e constantemente manter essa definição atualizada, de modo a atingir os objetivos específicos da aplicação. Destaca-se que esse conhecimento sobre o mundo consiste, basicamente, em dois tipos de informação:
 
 >1. O estado conhecido do mundo, representado pelos fatos sobre o que é e o que era conhecido; esta forma de conhecimento é chamada de *informação prévia*.
->2. As observações (medidas) do mundo, obtidas por meio de sensores projetados para sondar o ambiente no qual a rede neural deve operar. Normalmente, estas observações são inerentemente ruidosas, sendo sujeitas a erros devido a ruído [^18] do sensor e imperfeições do sistema. De qualquer maneira, as observações que são assim obtidas fornecem o conjunto de informações de onde são retirados os *exemplos* utilizados para treinar a rede neural. (HAYKIN, 2001, p. 50)
+>2. As observações (medidas) do mundo, obtidas por meio de sensores projetados para sondar o ambiente no qual a rede neural deve operar. Normalmente, estas observações são inerentemente ruidosas, sendo sujeitas a erros devido a ruído [^19] do sensor e imperfeições do sistema. De qualquer maneira, as observações que são assim obtidas fornecem o conjunto de informações de onde são retirados os *exemplos* utilizados para treinar a rede neural. (HAYKIN, 2001, p. 50)
 
 Esses exemplos para treinamento podem ser **rotulados ou não rotulados**. No primeiro caso, ao sinal de entrada é associada a resposta esperada, enquanto que, no segundo, não há essa associação e o sinal de entrada é contraposto a ocorrências diferentes dele próprio. Em qualquer caso, **o conjunto de exemplos representa o conhecimento da rede neural sobre o ambiente.**
 
@@ -379,7 +379,7 @@ Figura 11 - Grafo arquitetural de uma rede convolucional. Fonte: HAYKIN, 2009, p
 
 Observa-se que a camada de entrada é formada pelo total de dez nós $k$, cada qual recebendo um único sinal $x$, que estão conectados de seis em seis a um único neurônio da camada oculta, que é composta por quatro neurônios -- ${j_1}$ a ${j_4}$. 
 
-Assim, considerando que cada um dos quatro neurônios ocultos tem seis conexões sinápticas e que todos compartilham o mesmo conjunto de pesos sinápticos -- ${\{w_i\}}^6_i = 1$ --, o campo local induzido[^19] $v$ de qualquer neurônio $j$, para cada uma das seis conexões sinápticas -- $i$ --, é dado pela equação
+Assim, considerando que cada um dos quatro neurônios ocultos tem seis conexões sinápticas e que todos compartilham o mesmo conjunto de pesos sinápticos -- ${\{w_i\}}^6_i = 1$ --, o campo local induzido[^20] $v$ de qualquer neurônio $j$, para cada uma das seis conexões sinápticas -- $i$ --, é dado pela equação
 
 $$
 v_j = \sum_{i=1}^{6} w_ix_k \text{ , j = 1, 2, 3, 4}
@@ -397,15 +397,84 @@ Sendo $k = i + j - 1$ e, portanto, $x_k$ o próprio sinal de entrada.
 
 Há pelo menos três técnicas para implementar o dito classificador invariante a transformações (Barnard; Casasent, 1991, apud HAYKIN, 2001):
 
->**Invariância por estrutura:** as versões transformadas do mesmo sinal de entrada são forçadas a produzir o mesmo sinal de saída, por meio da criação de novas conexões sinápticas, o que resulta na desvantagem de que o número de conexões da rede aumenta demasiadamente.
->**Invariância por treinamento:** durante o treinamento, à rede são apresentadas diversas variações do mesmo objeto, de modo que possa generalizá-lo e reconhecê-lo em suas variadas formas. Como desvantagens, não há certeza de que o comportamento invariante alcançará transformações não vistas ou objetos de outras classes, além da maior demanda por recursos computacionais.
->**Espaço de características invariantes:** envolve a extração das principais características invariantes - isto é, que não se modificam - do objeto apresentado (e/ou seu conteúdo essencial), a fim de que, por generalização, a rede seja capaz de observá-las em outros objetos e, diante disso, classificá-los como da mesma classe. Idealmente, a rede somente precisaria lidar com fatores inevitáveis como ruídos e oclusão. Destacam-se vantagens como a redução do número de características do objeto a níveis realistas, a redução das exigências impostas à rede neural e a certeza de invariância em relação a todas as variações conhecidas do objeto.
+- **Invariância por estrutura:** as versões transformadas do mesmo sinal de entrada são forçadas a produzir o mesmo sinal de saída, por meio da criação de novas conexões sinápticas, o que resulta na desvantagem de que o número de conexões da rede aumenta demasiadamente.
+
+- **Invariância por treinamento:** durante o treinamento, à rede são apresentadas diversas variações do mesmo objeto, de modo que possa generalizá-lo e reconhecê-lo em suas variadas formas. Como desvantagens, não há certeza de que o comportamento invariante alcançará transformações não vistas ou objetos de outras classes, além da maior demanda por recursos computacionais.
+
+- **Espaço de características invariantes:** envolve a extração das principais características invariantes - isto é, que não se modificam - do objeto apresentado (e/ou seu conteúdo essencial), a fim de que, por generalização, a rede seja capaz de observá-las em outros objetos e, diante disso, classificá-los como da mesma classe. Idealmente, a rede somente precisaria lidar com fatores inevitáveis como ruídos e oclusão. Destacam-se vantagens como a redução do número de características do objeto a níveis realistas, a redução das exigências impostas à rede neural e a certeza de invariância em relação a todas as variações conhecidas do objeto.
+
+### 8. Processos de aprendizagem [^21]
+
+#### 8.1 Conceito de aprendizagem
+
+>Aprendizagem é um processo pelo qual os parâmetros livres de uma rede neural são adaptados através de um processo de estimulação pelo ambiente no qual a rede está inserida. O tipo de aprendizagem é determinado pela maneira pela qual a modificação dos parâmetros ocorre. (HAYKIN, 2001, p. 75)
+
+É fundamental que a rede neural seja capaz de aprender a partir de seu ambiente e, através de um processo contínuo de ajuste de pesos sinápticos e níveis de *bias*[^22], melhorar o seu desempenho, respondendo de maneira diferente àquele mesmo ambiente, em razão das modificações sofridas.
+
+"Um conjunto preestabelecido de regras bem-definidas para a solução de um problema de aprendizagem é denominado um algoritmo de aprendizagem. [...] Basicamente, os algoritmos de aprendizagem diferem entre si pela forma como é formulado o ajuste de um peso sináptico de um neurônio." (HAYKIN, 2001, p. 76)
+
+##### 8.1.1 Regras básicas de aprendizagem
+
+###### 8.1.1.1 Aprendizagem por correção de erros
+
+Consiste no ajuste dos pesos sinápticos do neurônio até que o sistema atinja um denominado **estado estável**, em que os próprios pesos estariam estabilizados de modo a minimizar o erro entre a saída da rede neural e a **resposta desejada ou saída-alvo** - $d_k(n)$ -, em que $k$ é um neurônio de camada oculta que foi acionado pelo sinal $x(n)$, proveniente também de camada(s) oculta(s), e "o argumento $n$ representa o instante de tempo discreto, ou mais precisamente, o passo de tempo de um processo iterativo envolvido no ajuste dos pesos sinápticos do neurônio $k$, tal como ilustrado abaixo:
+
+![Aprendizagem por correção de erros](../../imagens/12_aprendizagem_correcao_de_erro.png)
+Figura 12 - Ilustração da regra da aprendizagem por correção de erros. Fonte: HAYKIN, 2001, p. 77.
+
+O sinal de erro produzido, representado por $e_k(n)$, é a diferença entre a saída desejada e a saída real da rede neural, isto é, $e_k(n) = d_k(n) - y_k(n)$. Esse sinal "[...] aciona um mecanismo de controle, cujo propósito é aplicar uma sequência de ajustes corretivos aos pesos sinápticos do neurônio $k$ [...] projetados para aproximar passo a passo o sinal de saída $y_k(n)$ da resposta desejada $d_k(n)$. Este objetivo é alcançado minimizando-se uma *função de custo* ou *índice de desempenho* [...]" (HAYKIN, 2001, p. 77).
+
+O índice de desempenho - $E$ - é definido em termos de $e_k(n)$ como $E = \frac{1}{2} e_k^2(n)$ e corresponde ao **valor instantâneo da energia do erro.** A minimização dessa função de custo resulta na **regra delta ou regra de Widrow-Hoff**, que pode ser formulada como "o ajuste feito em um peso sináptico de um neurônio é proporcional ao produto do sinal de erro pelo sinal de entrada da sinapse em questão" (HAYKIN, 2001, p. 78) e é dada por:
+
+$$
+\Delta w_{kj}(n) = \eta e_k(n)x_j(n)
+$$
+
+A **taxa de aprendizagem**, representada pela letra $\eta$, é uma constante positiva que aumenta conforme o incremento do passo no processo de aprendizagem. Essa regra exige que o sinal de erro seja diretamente mensurável e que a resposta desejada seja conhecida e fornecida à rede neural por alguma fonte externa com acesso direto ao neurônio $k$, do que se depreende que esse neurônio necessariamente seja visível ao mundo externo e que o erro é corrigido apenas localmente, isto é, são ajustadas apenas as sinapses do neurônio $k$, como visto na figura acima.
+
+O ajuste sináptico - $\Delta w_{kj}(n)$ -, que atualiza o peso sináptico $w_{kj}$ é determinado pela equação
+
+$$
+w_{kj}(n+1) = w_{kj}(n) + \Delta w_{kj}(n)
+$$
+
+ou pela equação
+
+$$
+w_{kj}(n) = z^{-1}[w_{kj}(n + 1)]
+$$
+
+em que $z^{-1}$ é o **operador de atraso unitário que representa um elemento de armazenamento.**
+
+Na figura (b), acima, o sinal de entrada $x_j$ e o campo local induzido $v_k$ correspondem, respectivamente, aos sinais pré e pós-sináptico da $j$-ésima sinapse do neurônio $k$.
+
+###### 8.1.1.2 Aprendizagem baseada em memória
+
+###### 8.1.1.3 Aprendizagem Hebbiana
+
+###### 8.1.1.4 Aprendizagem competitiva
+
+###### 8.1.1.5 Aprendizagem de Boltzmann
+
+##### 8.1.2 O problema da atribuição de crédito
+
+>Basicamente, o problema da atribuição de crédito é o problema de se atribuir crédito ou culpa por resultados globais a cada uma das decisões internas que tenham sido tomadas por uma máquina de aprendizagem e que tenham contribuído para aqueles resultados. [...] é também denominado *problema de carga*, isto é, o problema de 'carregar' um determinado conjunto de dados de treinamento para dentro dos parâmetros livres da rede. (HAYKIN, 2001, p. 87)
+
+A problematização decorre do fato de que "[...] as decisões internas afetam a escolha das ações particulares que são tomadas e, com isso, as ações e não as decisões internas influenciam diretamente os resultados globais." (HAYKIN, 2001, p. 87)
+
+Dois componentes deste problema:
+
+- **Atribuição de crédito por resultados das ações (problema de atribuição de crédito temporal)**, que se preocupa com o **momento (instante temporal)**, isto é, **quando** as ações que merecem crédito foram tomadas; e
+- **Atribuição de crédito por ações a decisões internas (problema de atribuição de crédito estrutural)**, que se refere a apontar as **estruturas internas** responsáveis pelas ações que sejam merecedoras de crédito.
+
+>O problema de atribuição de crédito estrutural é relevante no contexto de uma máquina de aprendizagem com múltiplos componentes quando devemos determinar precisamente qual componente particular do sistema deve ter seu comportamento alterado e em que medida, de forma a melhorar o desempenho global do sistema. Por outro lado, o problema de atribuição de crédito temporal é relevante quando há muitas ações tomadas por uma máquina de aprendizagem que acarretam certos resultados, e devemos determinar quais dessas ações foram responsáveis pelos resultados. O problema combinado de atribuição de crédito temporal e estrutural é enfrentado por qualquer máquina de aprendizagem distribuída que se esforce em melhorar sem desempenho em situações envolvendo comportamento estendido no tempo (Williams, 1988). (HAYKIN, 2001, p. 87)
+
+#### 8.2 Paradigmas de aprendizagem
 
 <!-- 
 
-### 8. Processos de aprendizagem
-
-### 9. Tipos de aprendizagem 
+### 9. Tarefas de aprendizagem 
+Tarefas de aprendizagem / memória / adaptação
 
 -->
 
@@ -554,6 +623,12 @@ VERY LARGE SCALE INTEGRATION. In: WIKIPEDIA. Disponível em <https://en.wikipedi
 
 [^17]: "[...] alguns modelos de redes neurais tentaram incluir interações entre sinais globais de uma fonte central e sinais locais, como fator de modificação sináptica." (KANDEL et al., 2014, p. 1387).
 
-[^18]: No contexto de redes neurais, **ruídos** são sinais indesejados, irrelevantes ou imprecisos que interferem na qualidade dos dados. Nesse sentido, vide a nota #7, sobre filtros adaptativos.
+[^18]: "[...] o conhecimento sobre o domínio do problema de interesse é adquirido pela rede de uma forma relativamente simples e direta através de treinamento. O conhecimento assim adquirido é representado em uma forma compacta e distribuída como pesos através de conexões sinápticas da rede. Enquanto esta forma de representação de conhecimento permite que a rede neural se adapte e generalize, infelizmente a rede neural sofre da incapacidade inerente para explicar, de uma forma abrangente, o processo computacional através do qual a rede toma uma decisão ou apresenta suas saídas." (HAYKIN, 2001, p. 59)
 
-[^19]: De forma simplificada, o campo local induzido é a soma ponderada dos sinais de entrada e determina se haverá ou não ativação do neurônio e consequente disparo do sinal de saída.
+[^19]: No contexto de redes neurais, **ruídos** são sinais indesejados, irrelevantes ou imprecisos que interferem na qualidade dos dados. Nesse sentido, vide a nota #7, sobre filtros adaptativos.
+
+[^20]: De forma simplificada, o campo local induzido é a soma ponderada dos sinais de entrada e determina se haverá ou não ativação do neurônio e consequente disparo do sinal de saída.
+
+[^21]: Na 2a edição do livro, o capítulo 2 era dedicado integralmente aos processos de aprendizagem. Entretanto, na 3a edição, o tema é abordado em dois tópicos da Introdução do livro e em menor extensão. Por esse motivo, criei uma subseção específica para tratar de aspectos conceituais que não foram abordados na nova edição.
+
+[^22]: O ***bias* (viés)** é uma constante independente que pode ser aplicada à soma ponderada dos sinais de entrada, antes de serem submetidos à função de ativação, de modo a influenciar/deslocar o valor de saída do neurônio. Ao apontar para melhores representações dos dados pelo refinamento do liminar (*threshold*) de ativação, ele auxilia a rede neural no processo de aprendizagem por meio do aumento da efetividade do [disparo do] neurônio. Vide [tópico 3 (modelos de neurônio artificial)](#3-modelos-de-neurônio-artificial) para mais detalhes.
