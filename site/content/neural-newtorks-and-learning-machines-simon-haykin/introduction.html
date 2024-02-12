@@ -24,7 +24,7 @@
         <h2>Introdução (p. 1/46)</h2>
 
         <article>
-            <h3 id="subtitulo_1">1. Definição de rede neural<sup><a class="linknotas" href="#nota_1">[1]</a></sup></h3>
+            <h3 id="subtitulo_1">1. Definição de rede neural<sup> <a class="linknotas" href="#nota_1">[1]</a></sup></h3>
             <p>
                 Desde o início, o estudo das redes neurais artificiais foi pautado pela observação de que tanto o cérebro humano quanto os computadores convencionais são sistemas de processamento de informações<sup><a class="linknotas" href="#nota_2">[2]</a></sup> e, por conseguinte, realizam trabalho computacional<sup><a class="linknotas" href="#nota_3">[3]</a></sup>.
                 Não apenas seu funcionamento é bastante distinto, mas a capacidade computacional do cérebro - não só humano, mas também o de outros animais - supera, em muito, a dos computadores digitais.
@@ -619,15 +619,15 @@
         </article>
 
         <article>
-            <h3 id="subtitulo_7">7. Representação do conhecimento</h3>
+            <h3 id="subtitulo_7">7. Representação do conhecimento<sup> <a class="linknotas" href="#nota_19">[19]</a></sup></h3></h3>
             <p>"Knowledge refers to stored information or models used by a person or machine to interpret, predict, and appropriately respond to the outside world" (FISCHLER; FIRSCHEIN, 1987 apud HAYKIN, 2009, p. 24). Ou, na 2a edição, "Conhecimento se refere à informação armazenada ou a modelos utilizados por uma pessoa ou máquina para interpretar, prever e responder apropriadamente ao mundo exterior" (FISCHLER; FIRSCHEIN, 1987 apud HAYKIN, 2001, p. 49).</p>
             <p>Suas duas principais características são "(1) que informação é realmente tornada explícita; e (2) como a informação é codificada fisicamente para o uso subsequente." (HAYKIN, 2001, p. 49). Além disso, deve ser direcionada a um objetivo.</p>
             <p>"Em aplicações do mundo real de máquinas 'inteligentes', podemos dizer que uma boa solução depende de uma boa representação do conhecimento" (WOODS, 1986 apud HAYKIN, 2001, p. 49).</p>
             <p>A rede neural deve ser capaz de aprender a respeito do mundo exterior - isto é, o ambiente no qual está inserida - e constantemente manter essa definição atualizada, de modo a atingir os objetivos específicos da aplicação. Destaca-se que esse conhecimento sobre o mundo consiste, basicamente, em dois tipos de informação:
-                <blockquote>
+                <blockquote id="subtitulo_7_nota_20">
                     <ol>
                         <li>O estado conhecido do mundo, representado pelos fatos sobre o que é e o que era conhecido; esta forma de conhecimento é chamada de <em>informação prévia</em>.</li>
-                        <li>As observações (medidas) do mundo, obtidas por meio de sensores projetados para sondar o ambiente no qual a rede neural deve operar. Normalmente, estas observações são inerentemente ruidosas, sendo sujeitas a erros devido a ruído<sup><a class="linknotas" href="#nota_19">[19]</a></sup> do sensor e imperfeições do sistema. De qualquer maneira, as observações que são assim obtidas fornecem o conjunto de informações de onde são retirados os <em>exemplos</em> utilizados para treinar a rede neural. (HAYKIN, 2001, p. 50)</li>
+                        <li>As observações (medidas) do mundo, obtidas por meio de sensores projetados para sondar o ambiente no qual a rede neural deve operar. Normalmente, estas observações são inerentemente ruidosas, sendo sujeitas a erros devido a ruído<sup><a class="linknotas" href="#nota_20">[20]</a></sup> do sensor e imperfeições do sistema. De qualquer maneira, as observações que são assim obtidas fornecem o conjunto de informações de onde são retirados os <em>exemplos</em> utilizados para treinar a rede neural. (HAYKIN, 2001, p. 50)</li>
                     </ol>
                 </blockquote>
             </p>
@@ -680,7 +680,7 @@
                     </div>
                 </p>
                 <p>Observa-se que a camada de entrada é formada pelo total de dez nós <math><mi>k</mi></math>, cada qual recebendo um único sinal <math><mi>x</mi></math>, que estão conectados de seis em seis a um único neurônio da camada oculta, que é composta por quatro neurônios -- <math><msub><mi>j</mi><mi>1</mi></math> a <math><msub><mi>j</mi><mi>4</mi></math>.</p>
-                <p id="subtitulo_7_2_nota_20">
+                <p id="subtitulo_7_2_nota_21">
                     Assim, considerando que cada um dos quatro neurônios ocultos tem seis conexões sinápticas e que todos compartilham o mesmo conjunto de pesos sinápticos -- 
                     <math xmlns="http://www.w3.org/1998/Math/MathML">
                         <msup>
@@ -698,7 +698,7 @@
                         <mo>=</mo>
                         <mn>1</mn>
                     </math>
-                    --, o campo local induzido<sup><a class="linknotas" href="#nota_20">[20]</a></sup> <math><mi>v</mi></math> de qualquer neurônio <math><mi>j</mi></math>, para cada uma das seis conexões sinápticas -- <math><mi>i</mi></math> --, é dado pela equação
+                    --, o campo local induzido<sup><a class="linknotas" href="#nota_21">[21]</a></sup> <math><mi>v</mi></math> de qualquer neurônio <math><mi>j</mi></math>, para cada uma das seis conexões sinápticas -- <math><mi>i</mi></math> --, é dado pela equação
                     <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
                         <msub>
                             <mi>v</mi>
@@ -745,8 +745,208 @@
                 <a class="emoji" href="#top">[ 🔝 ]</a>
         </article>
 
+        <article>
+            <h3 id="subtitulo_8">8. Processos de aprendizagem<sup> <a class="linknotas" href="#nota_22">[22]</a></sup></h3></h3>
+            
+            <h4>8.1 Conceito de aprendizagem</h4>
+            <p>
+                <blockquote>
+                    Aprendizagem é um processo pelo qual os parâmetros livres de uma rede neural são adaptados através de um processo de estimulação pelo ambiente no qual a rede está inserida. O tipo de aprendizagem é determinado pela maneira pela qual a modificação dos parâmetros ocorre. (HAYKIN, 2001, p. 75)
+                </blockquote>
+            </p>
+            <p>É fundamental que a rede neural seja capaz de aprender a partir de seu ambiente e, através de um processo contínuo de ajuste de pesos sinápticos e níveis de *bias*[^22], melhorar o seu desempenho, respondendo de maneira diferente àquele mesmo ambiente, em razão das modificações sofridas.</p>
+            <p>"Um conjunto preestabelecido de regras bem-definidas para a solução de um problema de aprendizagem é denominado um algoritmo de aprendizagem. [...] Basicamente, os algoritmos de aprendizagem diferem entre si pela forma como é formulado o ajuste de um peso sináptico de um neurônio." (HAYKIN, 2001, p. 76)</p>
+            <h5>8.1.1 Regras básicas de aprendizagem</h5>
+            <h6>8.1.1.1 Aprendizagem por correção</h6>
+            <p>
+                Consiste no ajuste dos pesos sinápticos do neurônio até que o sistema atinja um denominado <strong>estado estável</strong>, em que os próprios pesos estariam estabilizados de modo a minimizar o erro entre a saída da rede neural e a <strong>resposta desejada ou saída-alvo</strong> -- 
+                <math>
+                    <mrow>
+                        <msub>
+                        <mi>d</mi>
+                        <mrow>
+                            <mi>k</mi>
+                        </mrow>
+                        </msub>
+                    <mo stretchy="false">(</mo>
+                    <mi>n</mi>
+                    <mo stretchy="false">)</mo>
+                  </mrow>
+                </math> 
+                 --, em que <math><mi>k</mi></math> é um neurônio de camada oculta que foi acionado pelo sinal <math><mi>x</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></math>, proveniente também de camada(s) oculta(s), e "o argumento <math><mi>n</mi></math> representa o instante de tempo discreto, ou mais precisamente, o passo de tempo de um processo iterativo envolvido no ajuste dos pesos sinápticos do neurônio <math><mi>k</mi></math>, tal como ilustrado abaixo:
+                <div class="image-container">
+                    <figure>
+                        <img src="../../../imagens/13_grafico_hipoteses_hebb_e_covariancia.png" alt="Ilustração da regra da aprendizagem por correção de erros">
+                        <figcaption class="legenda">Figura 12 - Ilustração da regra da aprendizagem por correção de erros. Fonte: HAYKIN, 2001, p. 77.</figcaption>
+                    </figure>
+                </div>
+            </p>
+            <p>
+                O sinal de erro produzido, representado por <math><mrow><msub><mi>e</mi><mrow><mi>k</mi></mrow></msub><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></mrow></math>, é a diferença entre a saída desejada e a saída real da rede neural, isto é, <math><mrow><msub><mi>e</mi><mrow><mi>k</mi></mrow></msub><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo><mo>=</mo><msub><mi>d</mi><mrow><mi>k</mi></mrow></msub><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo><mo>-</mo><msub><mi>y</mi><mrow><mi>k</mi></mrow></msub><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></mrow></math>. 
+                Esse sinal "[...] aciona um mecanismo de controle, cujo propósito é aplicar uma sequência de ajustes corretivos aos pesos sinápticos do neurônio <math><mi>k</mi></math> [...] projetados para aproximar passo a passo o sinal de saída <math><mrow><msub><mi>y</mi><mrow><mi>k</mi></mrow></msub><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></math> da resposta desejada <math><mrow><msub><mi>d</mi><mrow><mi>k</mi></mrow></msub><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></math>. 
+                Este objetivo é alcançado minimizando-se uma <strong>função de custo ou índice de desempenho</strong> [...]" (HAYKIN, 2001, p. 77).
+            </p>
+            <p>
+                O índice de desempenho -- <math><mi>E</mi></math> -- é definido em termos de <math><mrow><msub><mi>e</mi><mrow><mi>k</mi></mrow></msub><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></mrow></math> como
+                <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline">
+                    <mrow>
+                        <mi>E</mi>
+                        <mo>=</mo>
+                        <mfrac>
+                            <mn>1</mn>
+                            <mn>2</mn>
+                        </mfrac>
+                        <msub>
+                            <msup>
+                                <mi>e</mi>
+                                <mn>2</mn>
+                            </msup>
+                            <mi>k</mi>
+                        </msub>
+                        <mo stretchy="false">(</mo>
+                        <mi>n</mi>
+                        <mo stretchy="false">)</mo>
+                    </mrow>
+                </math>
+
+                e corresponde ao <strong>valor instantâneo da energia do erro.</strong> A minimização dessa função de custo resulta na <strong>regra delta ou regra de Widrow-Hoff</strong>, que pode ser formulada como "o ajuste feito em um peso sináptico de um neurônio é proporcional ao produto do sinal de erro pelo sinal de entrada da sinapse em questão" (HAYKIN, 2001, p. 78) e é dada por:
+
+                <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+                    <mi>&#x2206; <!-- Delta --> </mi>
+                    <msub>
+                        <mi>w</mi>
+                            <mi>kj</mi>
+                    </msub>
+                      <mo stretchy="false">(</mo>
+                      <mi>n</mi>
+                      <mo stretchy="false">)</mo>
+                      <mo>=</mo>
+                      <mi>&#x03B7; . <!-- Greek small letter eta --></mi>
+                      <msub>
+                        <mi>&nbsp; e</mi>
+                        <mrow>
+                          <mi>k</mi>
+                        </mrow>
+                      </msub>
+                      <mo stretchy="false">(</mo>
+                      <mi>n</mi>
+                      <mo stretchy="false">)</mo>
+                      <msub>
+                        <mi>x</mi>
+                        <mrow>
+                          <mi>j</mi>
+                        </mrow>
+                      </msub>
+                      <mo stretchy="false">(</mo>
+                      <mi>n</mi>
+                      <mo stretchy="false">)</mo>
+                    </mrow>
+                  </math>            
+            </p>
+            <p>A <strong>taxa de aprendizagem</strong>, representada pela letra <math><mi>&#x03B7;</mi></math> , é uma constante positiva que aumenta conforme o incremento do passo no processo de aprendizagem. Essa regra exige que o sinal de erro seja diretamente mensurável e que a resposta desejada seja conhecida e fornecida à rede neural por alguma fonte externa com acesso direto ao neurônio <math><mi>k</mi></math>, do que se depreende que esse neurônio necessariamente seja visível ao mundo externo e que o erro é corrigido apenas localmente, isto é, são ajustadas apenas as sinapses do neurônio <math><mi>k</mi></math>, como visto na figura acima.</p>
+            <p>
+                O ajuste sináptico -- <math><mi>&#x2206;</mi><msub><mi>w</mi><mi>kj</mi></msub><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></math> --, que atualiza o peso sináptico <math><msub><mi>w</mi><mi>kj</mi></msub></math> é determinado pela equação 
+                <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+                    <mrow>
+                        <mi>&#x2206;</mi>
+                        <msub>
+                            <mi>w</mi>
+                                <mi>kj</mi>
+                        </msub>
+                      <mo stretchy="false">(</mo>
+                      <mrow>
+                        <mi>n</mi>
+                        <mo>+</mo>
+                        <mn>1</mn>
+                      </mrow>
+                      <mo stretchy="false">)</mo>
+                      <mo>=</mo>
+                      <msub>
+                        <mi>w</mi>
+                        <mrow>
+                          <mi>kj</mi>
+                        </mrow>
+                      </msub>
+                      <mo stretchy="false">(</mo>
+                      <mi>n</mi>
+                      <mo stretchy="false">)</mo>
+                      <mo>+</mo>
+                      <msub>
+                        <mi>&#x2206;</mi>
+                        <mrow>
+                          <mi>w</mi>
+                          <mi>kj</mi>
+                        </mrow>
+                      </msub>
+                      <mo stretchy="false">(</mo>
+                      <mi>n</mi>
+                      <mo stretchy="false">)</mo>
+                    </mrow>
+                  </math>
+                  
+                  ou pela equação
+
+                    <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+                        <mrow>
+                            <mi>&#x2206;</mi>
+                            <msub>
+                                <mi>w</mi>
+                                <mi>kj</mi>
+                            </msub>
+                            <mo stretchy="false">(</mo>
+                            <mi>n</mi>
+                            <mo stretchy="false">)</mo>
+                            <mo>=</mo>
+                            <msup>
+                                <mi>z</mi>
+                                <mrow>
+                                <mn>-1</mn>
+                                </mrow>
+                            </msup>
+                            <mo stretchy="false">[</mo>
+                            <msub>
+                                <mi>w</mi>
+                                <mi>kj</mi>
+                            </msub>
+                            <mo stretchy="false">(</mo>
+                            <mi>n</mi>
+                            <mo stretchy="false">)</mo>
+                            <mo>+</mo>
+                            <mn>1</mn>
+                            <mo stretchy="false">]</mo>
+                        </mrow>
+                    </math>
+
+                em que <math><msup><mi>z</mi><mn>-1</mn></msup></math> é o <strong>operador de atraso unitário, que representa um elemento de armazenamento.</strong>
+            </p>
+            <p>Na figura (b), acima, o sinal de entrada <math><msub><mi>x</mi><mi>j</mi></msub></math> e o campo local induzido <math><msub><mi>v</mi><mi>k</mi></msub></math> correspondem, respectivamente, aos sinais pré e pós-sináptico da <math><mi>j</mi></math>-ésima sinapse do neurônio <math><mi>k</mi></math>.</p>
+
+            <h4>8.1.2 O problema da atribuição de crédito</h4>
+            <p>
+                <blockquote>
+                    Basicamente, o problema da atribuição de crédito é o problema de se atribuir crédito ou culpa por resultados globais a cada uma das decisões internas que tenham sido tomadas por uma máquina de aprendizagem e que tenham contribuído para aqueles resultados. 
+                    [...] é também denominado <em>problema de carga</em>, isto é, o problema de "carregar" um determinado conjunto de dados de treinamento para dentro dos parâmetros livres da rede. (HAYKIN, 2001, p. 87)
+                </blockquote>
+            </p>
+            <p>A problematização decorre do fato de que "[...] as decisões internas afetam a escolha das ações particulares que são tomadas e, com isso, as ações e não as decisões internas influenciam diretamente os resultados globais." (HAYKIN, 2001, p. 87)</p>
+            <p>
+                Dois componentes deste problema:
+                <ul>
+                    <li><strong>Atribuição de crédito por resultados das ações (problema de atribuição de crédito temporal)</strong>, que se preocupa com o <strong>momento (instante temporal)</strong>, isto é, <strong>quando</strong> as ações que merecem crédito foram tomadas; e</li>
+                    <li><strong>Atribuição de crédito por ações a decisões internas (problema de atribuição de crédito estrutural</strong>, que se refere a apontar as <strong>estruturas internas</strong> responsáveis pelas ações que sejam merecedoras de crédito.</li>
+                </ul>
+            </p>
+            <p>
+                Nesse sentido, 
+                <blockquote>
+                    o problema de atribuição de crédito estrutural é relevante no contexto de uma máquina de aprendizagem com múltiplos componentes quando devemos determinar precisamente qual componente particular do sistema deve ter seu comportamento alterado e em que medida, de forma a melhorar o desempenho global do sistema. 
+                    Por outro lado, o problema de atribuição de crédito temporal é relevante quando há muitas ações tomadas por uma máquina de aprendizagem que acarretam certos resultados, e devemos determinar quais dessas ações foram responsáveis pelos resultados. 
+                    O problema combinado de atribuição de crédito temporal e estrutural é enfrentado por qualquer máquina de aprendizagem distribuída que se esforce em melhorar sem desempenho em situações envolvendo comportamento estendido no tempo (Williams, 1988). (HAYKIN, 2001, p. 87)
+                </blockquote>
+            </p>
+        </article>
+
         <!-- <article>
-            <h3>8. Processos de aprendizagem</h3>
             <h3>9. Tipos de aprendizagem</h3>
         </article> -->
 
@@ -958,8 +1158,10 @@
             <p id="nota_16">[16] Esta subdivisão não consta do livro, mas foi criada para melhor didática.<a class="linkdiscreto" href="#subtitulo_3_4"> [ 🔙 ]</a></p>
             <p id="nota_17">[17] "Sistemas dinâmicos são sistemas fora do equilíbrio, caracterizados por estados que mudam com o tempo. São usados para modelar e fazer previsões de sistemas físicos, biológicos, financeiros, etc." (AGUIAR, 2005, p. 3). Aguiar (2015) ainda destaca que a definição de um sistema dinâmico exige três requisitos: espaço de estados, equações de movimento e medida de distância. E os classifica em discretos, contínuos, campos, autômato celular e redes complexas; lineares ou não lineares; conservativos ou dissipativos; autômatos ou não autômatos; com ou sem retardo; e determinísticos ou probabilísticos.<a class="linkdiscreto" href="#subtitulo_5"> [ 🔙 ]</a></p>
             <p id="nota_18">[18] "[...] alguns modelos de redes neurais tentaram incluir interações entre sinais globais de uma fonte central e sinais locais, como fator de modificação sináptica." (KANDEL et al., 2014, p. 1387).<a class="linkdiscreto" href="#subtitulo_5"> [ 🔙 ]</a></p>
-            <p id="nota_19">[19] No contexto de redes neurais, <strong>ruídos</strong> são sinais indesejados, irrelevantes ou imprecisos que interferem na qualidade dos dados. Nesse sentido, vide a nota #7, sobre filtros adaptativos.<a class="linkdiscreto" href="#subtitulo_7"> [ 🔙 ]</a></p>
-            <p id="nota_20">[20] De forma simplificada, o campo local induzido é a soma ponderada dos sinais de entrada e determina se haverá ou não ativação do neurônio e consequente disparo do sinal de saída.<a class="linkdiscreto" href="#subtitulo_7_2_nota_20"> [ 🔙 ]</a></p>
+            <p id="nota_19">[19] "[...] o conhecimento sobre o domínio do problema de interesse é adquirido pela rede de uma forma relativamente simples e direta através de treinamento. O conhecimento assim adquirido é representado em uma forma compacta e distribuída como pesos através de conexões sinápticas da rede. Enquanto esta forma de representação de conhecimento permite que a rede neural se adapte e generalize, infelizmente a rede neural sofre da incapacidade inerente para explicar, de uma forma abrangente, o processo computacional através do qual a rede toma uma decisão ou apresenta suas saídas." (HAYKIN, 2001, p. 59)<a class="linkdiscreto" href="#subtitulo_7"> [ 🔙 ]</a></p>
+            <p id="nota_20">[20] No contexto de redes neurais, <strong>ruídos</strong> são sinais indesejados, irrelevantes ou imprecisos que interferem na qualidade dos dados. Nesse sentido, vide a nota #7, sobre filtros adaptativos.<a class="linkdiscreto" href="#subtitulo_7_nota_20"> [ 🔙 ]</a></p>
+            <p id="nota_21">[21] De forma simplificada, o campo local induzido é a soma ponderada dos sinais de entrada e determina se haverá ou não ativação do neurônio e consequente disparo do sinal de saída.<a class="linkdiscreto" href="#subtitulo_7_2_nota_21"> [ 🔙 ]</a></p>
+            <p id="nota_22">[22] Na 2a edição do livro, o capítulo 2 era dedicado integralmente aos processos de aprendizagem. Entretanto, na 3a edição, o tema é abordado em dois tópicos da Introdução do livro e em menor extensão. Por esse motivo, criei uma subseção específica para tratar de aspectos conceituais que não foram abordados na nova edição ou que o foram superficialmente mais adiante.<a class="linkdiscreto" href="#subtitulo_8"> [ 🔙 ]</a></p>
             <a class="emoji" href="#top">[ 🔝 ]</a>
         </article>
     </main>
