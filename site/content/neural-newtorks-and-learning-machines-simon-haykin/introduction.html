@@ -18,13 +18,11 @@
 
 <body>
     <main>
-        <h1># 1.2</h1>
+        <h1># 1.2 Introdução (p. 1/46)</h1>
         <p><img src="https://img.shields.io/badge/Status-Escrevendo-grey?labelColor=5F9EA0"></p>
-        
-        <h2>Introdução (p. 1/46)</h2>
 
         <article>
-            <h3 id="subtitulo_1">1. Definição de rede neural<sup> <a class="linknotas" href="#nota_1">[1]</a></sup></h3>
+            <h2 id="subtitulo_1">1. Definição de rede neural<sup> <a class="linknotas" href="#nota_1">[1]</a></sup></h2>
             <p>
                 Desde o início, o estudo das redes neurais artificiais foi pautado pela observação de que tanto o cérebro humano quanto os computadores convencionais são sistemas de processamento de informações<sup><a class="linknotas" href="#nota_2">[2]</a></sup> e, por conseguinte, realizam trabalho computacional<sup><a class="linknotas" href="#nota_3">[3]</a></sup>.
                 Não apenas seu funcionamento é bastante distinto, mas a capacidade computacional do cérebro - não só humano, mas também o de outros animais - supera, em muito, a dos computadores digitais.
@@ -61,7 +59,7 @@
             <p>A rede neural pode alterar sua própria estrutura (topologia).</p>
             <p id="subtitulo_1_nota_7">Conforme o autor, a técnica de modificação dos pesos sinápticos guarda muita similaridade com a teoria dos filtros adaptativos lineares (<em>linear adaptive filter theory</em>)<sup><a class="linknotas" href="#nota_7">[7]</a></sup>.</p>
             
-            <h4 id="subtitulo_1_1">1.1 Benefícios das redes neurais</h4>
+            <h3 id="subtitulo_1_1">1.1 Benefícios das redes neurais</h3>
             <p>A capacidade computacional das redes neurais é resultado de sua estrutura massiva e paralelamente distribuída, bem como da habilidade de aprender e generalizar. “A generalização se refere ao fato de a rede neural produzir saídas adequadas para entradas que não estavam presentes durante o treinamento (aprendizagem). Estas duas capacidades de processamento de informação [aprender e generalizar] tornam possível para as redes neurais resolver problemas complexos (de grande escala) que são atualmente intratáveis.” (HAYKIN, 2001, p. 28) [da 2 edição, em português].</p>
             <blockquote>
             <p>A generalização se refere ao fato de a rede neural produzir saídas adequadas para entradas que não estavam presentes durante o treinamento (aprendizagem) (HAYKIN, 2001, p. 28).</p>
@@ -89,26 +87,22 @@
         </article>
 
         <article>
-            <h3 id="subtitulo_2">2. O cérebro humano<sup><a class="linknotas" href="#nota_9">[9]</a></sup></h3>
+            <h2 id="subtitulo_2">2. O cérebro humano<sup><a class="linknotas" href="#nota_9">[9]</a></sup></h2>
             <p>O sistema nervoso humano pode ser visto como um sistema de três estágios, do qual fazem parte cérebro, receptores e atuadores. Os estímulos - entrada (<em>input</em>) do sistema - são captados e convertidos em sinais elétricos pelos receptores; o cérebro continuamente recebe e processa esses sinais; os atuadores convertem os sinais recebidos de modo a gerar as ações (respostas) apropriadas, que constituem a saída (<em>output</em>) do sistema. A informação captada é transmitida em um único sentido - receptor &gt; cérebro &gt; atuador -, mas o sistema se retroalimenta no sentido oposto dessa transmissão - atuador &gt; cérebro &gt; receptor (<em>feedback</em>).</p>
             <p>Foi o trabalho de Santiago Ramón y Cajal que, em 1911, introduziu o neurônio como estrutura fundamental do cérebro. Os neurônios são cinco a seis ordens de grandeza mais lentos do que os circuitos digitais e, ainda assim, o cérebro é muito mais eficiente do que computadores em termos de eficiência energética. Provavelmente, isso é resultado da enorme quantidade de células neuronais e à massiva interconexão entre elas - a eficiência energética do cérebro humano é de <math><msup><mi>10</mi><mi>-16</mi></msup></math> joules por operação por segundo. Eles se apresentam sob diversas formas e tamanhos, sendo que um dos mais comuns é a denominada célula piramidal, e se organizam na anatomia cerebral em diversos níveis e em pequena ou grande escala.</p>
-
             <div class="image-container">
                 <figure>
                     <img src="../../../imagens/01_celula_piramidal.png" alt="Célula piramidal">
                     <figcaption class="legenda">Figura 1 - Célula piramidal. Fonte: HAYKIN, 2009, p. 8.</figcaption>
                 </figure>
             </div>
-
             <p>Essa estrutura hierárquica vai, em menor nível, das moléculas responsáveis pelas sinapses ao próprio sistema nervoso central, último nível hierárquico. A estrutura completa é apresentada por Haykin (2009, p. 9), na figura 3, da seguinte forma: moléculas &gt; sinapses &gt; microcircuitos neurais &gt; árvore dendrítica &gt; neurônio &gt; circuitos locais &gt; circuitos regionais &gt; sistema nervoso central.</p>
-
             <div class="image-container">
                 <figure>
                     <img src="../../../imagens/02_cortex_cerebral.png" alt="Córtex cerebral">
                     <figcaption class="legenda">Figura 2 - Córtex cerebral. Fonte: HAYKIN, 2009, p. 10.</figcaption>
                 </figure>
             </div>
-
             <blockquote>
             <p>The synapses represent the most fundamental level, depending on molecules and ions for their action. […] A neural microcircuit refers to an assembly of synapses organized into patterns of connectivity to produce a functional operation of interest. A neural microcircuit may be likened to a silicon chip made up of an assembly of transistors. At the next level of complexity, we have local circuits […] made up of neurons with similar or different properties; there neural assemblies perform operations characteristic of a localized region in the brain. They are followed by interregional circuits made up of pathways, columis, and topographic maps, which involve multiple regions located in different parts of the brain.<br>
             Topographic maps are organized to respond to incoming sensory information. These maps are often arranged in sheets, […] stacked in adjacent layers in such a way that stimuli from corresponding points in space lie above or below each other. […] different sensory inputs […] are mapped onto corresponding areas of the cerebral cortex in an orderly fashion. At the final level of complexity, the topographic maps and other interregional circuits mediate specific types of behavior in the central nervous system. (HAYKIN, 2009, p. 7/9)</p>
@@ -123,7 +117,7 @@
         </article>
 
         <article>
-            <h3 id="subtitulo_3">3. Modelos de neurônio [artificial]</h3>
+            <h2 id="subtitulo_3">3. Modelos de neurônio [artificial]</h2>
             <p>Em sua forma mais rudimentar, o modelo de um neurônio artificial possui três elementos básicos: um <strong>conjunto de sinapses ou elos de ligação (<em>synapses or connecting links</em>)</strong>, cada um com seu próprio peso ou força (peso sináptico/<em>synaptic weight</em>)<sup><a class="linknotas" href="#nota_12">[12]</a></sup>; um <strong>somador (<em>adder</em>)</strong>; e uma <strong>função de ativação (<em>activation function</em>)</strong>.</p>
             <p>Eis a representação gráfica do modelo (HAYKIN, 2009, p. 11):
                 <div class="image-container">
@@ -237,8 +231,8 @@
             mostra que o <strong>campo local induzido (<em>induced local field</em>) ou potencial de ativação (<em>activation potential</em>)</strong><sup><a class="linknotas" href="#nota_13">[13]</a></sup>, representado pela letra <math><mi>v</mi></math>, do neurônio <math><mi>k</mi></math> tem correlação com a saída do combinador linear - <math><msub><mi>u</mi><mi>k</mi></msub></math> - e o <em>bias</em> - <math><msub><mi>b</mi><mi>k</mi></msub></math> -, de modo a deslocar o gráfico da equação a depender se o valor do <em>bias</em> é positivo ou negativo.
         </p>
             
-            <h4>3.1 Tipos de funções de ativação</h4>
-            <h5>3.1.1 Função de limiar ou limite (<em>threshold function</em>)</h5>
+            <h3>3.1 Tipos de funções de ativação</h3>
+            <h4>3.1.1 Função de limiar ou limite (<em>threshold function</em>)</h4>
             <p>É empregada no modelo de McCulloch-Pitts, no qual “a saída de um neurônio assume o valor de 1, se o campo local induzido daquele neurônio é não-negativo, e 0 caso contrário.” (HAYKIN, 2001, p. 39). É um modelo determinístico.</p>
             <p>Em notação matemática, representa-se a função por
                 <math display="block">
@@ -347,7 +341,7 @@
                 </math>
             </p>
 
-            <h5>3.1.2 Função sigmoide</h5>
+            <h4>3.1.2 Função sigmoide</h4>
             <p>É a mais comumente utilizada na construção de redes neurais. “Ela é definida como uma função estritamente crescente que exige um balanceamento adequado entre comportamento linear e não-linear” (HAYKIN, 2001, p. 40), de modo que pode assumir valores contínuos no intervalo <math><mo>[</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo>]</mo></math>. Essa função é diferenciável.</p>
             <p>Nos casos em que seja interessante que os valores da função de ativação se estenda de <math><mn>-1</mn></math> a <math><mn>+1</mn></math>, em vez de <math><mn>0</mn></math> a <math><mn>+1</mn></math>, tem-se a denominada <strong>função sinal (<em>signum function</em>)</strong>, que obedece à regra
                 <math display="block">
@@ -411,7 +405,7 @@
                 </math>
             </p>
 
-            <h4>3.2 Modelo estocástico de neurônio</h4>
+            <h3>3.2 Modelo estocástico de neurônio</h3>
             <p>Adição de uma variável aleatória ao modelo de McCulloch-Pitts, que é determinístico, de modo a torná-lo estocástico, isto é, probabilístico. Isso porque um modelo estocástico de neurônio tenta predizer possíveis resultados (saídas) levando em consideração a existência de um ou mais parâmetros variáveis ao longo do tempo. Ao contrário, em um modelo determinístico, as saídas devem ser sempre as mesmas para os mesmos valores de entrada.</p>
             <p>Se <math><mi>x</mi></math> representar o estado de um neurônio, <math><mi>v</mi></math> o seu potencial de ativação e <math><mi>P</mi><mo>(</mo><mi>v</mi><mo>)</math> a probabilidade de <strong>disparo</strong>, isto é, de que <strong>ocorra mudança de estado</strong>, tem-se que
                 <math display="block">
@@ -453,7 +447,6 @@
                 </math>
                 </p>
             <p>e que
-
                 <math display="block">
                     <mi>P</mi>
                     <mo>(</mo>
@@ -535,7 +528,7 @@
                             <figcaption class="legenda">Figura 5 - Grafo arquitetural. Fonte: HAYKIN, 2009, p. 17</fi>
                         </figure>
                     </div>
-                    <h4 id="subtitulo_3_4">3.4 As três representações gráficas de uma rede neural<sup><a class="linknotas" href="#nota_16">[16]</a></sup></h4>
+                    <h3 id="subtitulo_3_4">3.4 As três representações gráficas de uma rede neural<sup><a class="linknotas" href="#nota_16">[16]</a></sup></h3>
                     <ul>
                         <li><strong>Diagrama em blocos (<em>block diagram</em>)</strong>, que oferece uma descrição funcional da rede, conforme a figura 3;</li>
                         <li><strong>Grafo de fluxo de sinal (<em>signal-flow graph</em>)</strong>, que oferece uma descrição completa do fluxo dos sinais entre os neurônios e dentro de cada neurônio da rede, conforme a figura 4;</li>
@@ -544,7 +537,7 @@
         </article>
 
         <article>
-            <h3 id="subtitulo_5">5. Feedback</h3>
+            <h2 id="subtitulo_5">5. Feedback (Realimentação)</h2>
             <blockquote>
                 <p>Feedback is said to exist in a dynamic system whenever the output of an element in the system influences in part the input applied to that particular element, thereby giving rise to one or more closed paths for the transmission of signals around the system. (HAYKIN, 2009, p. 18)</p>
             </blockquote>
@@ -565,7 +558,7 @@
         </article>
 
         <article>
-            <h3>6. Arquiteturas de redes neurais (<em>Network architectures</em>)</h3>
+            <h2>6. Arquiteturas de redes neurais (<em>Network architectures</em>)</h2>
             <p>A forma de organização neuronal da rede é fortemente correlacionada ao algoritmo de aprendizagem utilizado para o treinamento. <strong>Só é considerado um neurônio, ou nó da camada, se houver trabalho computacional.</strong></p>
             <p>De modo geral, Haykin afirma que os padrões de arquitetura de redes neurais constituem três grandes categorias:</p>
             <ol>
@@ -574,7 +567,7 @@
                 <li><strong><em>Recurrent Networks</em></strong> (Redes recorrentes).</li>
             </ol>
 
-            <h4>6.1 Single-Layer Feed-forward Networks</h4>
+            <h3>6.1 Single-Layer Feed-forward Networks</h3>
             <p>Nas redes neurais em camadas, como o nome sugere, os neurônios são organizados em camadas.</p>
             <p>Este é o modelo arquitetural mais simples e é dito que possui uma única camada, em referência à própria camada de saída (<em>output layer</em>) dos neurônios, pois somente esta realiza atividade computacional. Não há camadas intermediárias escondidas (<em>hidden layers</em>) e é denominada <strong>alimentada adiante (<em>feed-forward</em>)</strong>, ou acíclica, porque o fluxo dos sinais é <strong>unidirecional</strong>, isto é, <strong>não há realimentação</strong>.</p>
             <div class="image-container">
@@ -584,7 +577,7 @@
                 </figure>
             </div>
 
-            <h4>6.2 Multilayer Feed-forward Networks</h4>
+            <h3>6.2 Multilayer Feed-forward Networks</h3>
             <p>Possui uma ou mais camadas ocultas (<em>hidden layers</em>), compostas por neurônios ou unidades ocultos(as), cuja função "[...] é intervir entre a entrada externa e a saída da rede de maneira útil" (HAYKIN, 2001, p. 47). A adição de mais camadas ocultas aumenta o poder computacional da rede.</p>
             <p>Nesse sentido, "<em>in a rather loose sense, the network acquires a global perspective despite its local connectivity, due to the extra set of synaptic connections and the extra dimension of neural interactions</em> (Churchland and Sejnowski, 1992)" (HAYKIN, 2009, p. 22).</p>
             <p>Da edição anterior, em português, extrai-se que "em um sentido bastante livre, a rede adquire uma perspectiva global apesar de sua conectividade local, devido ao conjunto extra de conexões sinápticas e da dimensão extra de interações neurais (Churchland e Sejnowski, 1992)" (HAYKIN, 2001, p. 47).</p>
@@ -599,7 +592,7 @@
             <p>Por conseguinte, uma rede com <math><mi>m</mi></math> nós de entrada, <math><msub><mi>h</mi><mn>1</mn></msub></math> neurônios na primeira camada oculta, <math><msub><mi>h</mi><mn>2</mn></msub></math> neurônios na segunda camada oculta e <math><mi>q</mi></math> neurônios na camada de saída é referida como uma rede <math><ms>m-</ms><msub><ms>h</ms><ms>1</ms></msub><msub><ms>-h</ms><ms>2</ms></msub><ms>-q</ms></math></p>
             <p>A rede apresentada na figura acima é dita <strong>totalmente conectada</strong> pois cada neurônio de uma camada está conectado a todos os neurônios da camada seguinte. Do contrário, se houvesse alguma conexão sináptica faltante, seria denominada <strong>parcialmente conectada</strong>.</p>
             
-            <h4>6.3 Recurrent Networks</h4>
+            <h3>6.3 Recurrent Networks</h3>
             <p>As redes modeladas neste estilo arquitetural possuem, pelo menos, um laço de realimentação (<em>feedback loop</em>). Essa característica reflete positivamente na capacidade de aprendizado e na performance da rede. Elas podem ou não ser auto-realimentadas (<em>self-feedback</em>), isto é, a saída de um neurônio pode ou não ser realimentada a sua própria entrada.</p>
             <p>Abaixo, está exemplificada uma rede neural recorrente sem auto-realimentação e sem neurônios ocultos:</p>
             <div class="image-container">
@@ -619,7 +612,7 @@
         </article>
 
         <article>
-            <h3 id="subtitulo_7">7. Representação do conhecimento<sup> <a class="linknotas" href="#nota_19">[19]</a></sup></h3></h3>
+            <h2 id="subtitulo_7">7. Representação do conhecimento<sup> <a class="linknotas" href="#nota_19">[19]</a></sup></h2></h3>
             <p>"Knowledge refers to stored information or models used by a person or machine to interpret, predict, and appropriately respond to the outside world" (FISCHLER; FIRSCHEIN, 1987 apud HAYKIN, 2009, p. 24). Ou, na 2a edição, "Conhecimento se refere à informação armazenada ou a modelos utilizados por uma pessoa ou máquina para interpretar, prever e responder apropriadamente ao mundo exterior" (FISCHLER; FIRSCHEIN, 1987 apud HAYKIN, 2001, p. 49).</p>
             <p>Suas duas principais características são "(1) que informação é realmente tornada explícita; e (2) como a informação é codificada fisicamente para o uso subsequente." (HAYKIN, 2001, p. 49). Além disso, deve ser direcionada a um objetivo.</p>
             <p>"Em aplicações do mundo real de máquinas 'inteligentes', podemos dizer que uma boa solução depende de uma boa representação do conhecimento" (WOODS, 1986 apud HAYKIN, 2001, p. 49).</p>
@@ -638,7 +631,7 @@
             <p>Diferentemente do que ocorre nos classificadores de padrões clássicos, "[...] a rede neural não somente fornece o modelo implícito do ambiente no qual ela está inserida, como também realiza a função de processamento de informação de interesse" (HAYKIN, 2001, p. 50).</p>
             <p>A representação do conhecimento perpassa pelo ajuste dos pesos sinápticos e do <em>bias</em>, isto é, dos <strong>parâmetros livres da rede</strong>. "A forma dessa representação de conhecimento constitui o verdadeiro projeto da rede neural, e portanto é a chave para o seu desemprenho" (HAYKIN, 2001, p. 51).</p>
 
-            <h4>7.1 Regras de representação do conhecimento</h4>
+            <h3>7.1 Regras de representação do conhecimento</h3>
             <p>Há quatro regras comumente aceitas (ANDERSON, 1988 apud HAYKIN, 2001, p. 51/53):
                 <blockquote>
                     <ol>
@@ -654,7 +647,7 @@
             <p>A regra 4 significa que é <em>altamente desejável</em> que a rede neural possua estrutura especializada (restrita), o que se justifica pelo fato de que há alta especialização em redes biológicas (visuais e auditivas, por exemplo), pela necessidade de menos parâmetros livres e menores conjuntos de dados para treinamento e pela maior eficiência (aumento da produtividade  e redução de custos) (Russo apud Haykin, 2001).</p>
             <p>A utilização de informação prévia restringe a aplicabilidade da rede a um domínio específico (Haykin, 2009).</p>
                 
-            <h4>7.2 Como incorporar informação prévia no projeto de uma rede neural</h4>
+            <h3>7.2 Como incorporar informação prévia no projeto de uma rede neural</h3>
                 <p>Duas regras são comumente aceitas, as quais, particularmente a segunda, contribuem significativamente para a diminuição do número de parâmetros livres da rede:
                     <blockquote>
                         <ol>
@@ -729,7 +722,7 @@
                 </p>
                 <p>Sendo <math><mtext>k = i + j - 1</mtext></math> e, portanto, <math><msub><mi>x</mi><mi>k</mi></msub></math> o próprio sinal de entrada.</p>
                 
-                <h4>7.3 Invariâncias no projeto de uma rede neural</h4>
+                <h3>7.3 Invariâncias no projeto de uma rede neural</h3>
                 <p>É desejável que o sistema seja invariante perante transformações como a rotação do objeto de interesse, a alterações de amplitude ou frequência de ondas, timbre, entonação ou velocidade de voz, etc.</p>
                 <p>"[...] o sistema deve ser capaz de lidar com uma série de transformações do sinal observado" (Barnard; Casasent, 1991, apud HAYKIN, 2001, p. 55).</p>
                 <p>"Em outras palavras, uma estimativa de classe representada por uma saída do classificador não deve ser afetada pelas transformações do sinal observado aplicado à entrada do classificador." (HAYKIN, 2001, p. 55).</p>
@@ -746,18 +739,19 @@
         </article>
 
         <article>
-            <h3 id="subtitulo_8">8. Processos de aprendizagem<sup> <a class="linknotas" href="#nota_22">[22]</a></sup></h3></h3>
+            <h2 id="subtitulo_8">8. Processos de aprendizagem<sup> <a class="linknotas" href="#nota_22">[22]</a></sup></h2></h3>
             
-            <h4>8.1 Conceito de aprendizagem</h4>
+            <h3 id="subtitulo_8_1">8.1 Conceito de aprendizagem</h3>
             <p>
                 <blockquote>
                     Aprendizagem é um processo pelo qual os parâmetros livres de uma rede neural são adaptados através de um processo de estimulação pelo ambiente no qual a rede está inserida. O tipo de aprendizagem é determinado pela maneira pela qual a modificação dos parâmetros ocorre. (HAYKIN, 2001, p. 75)
                 </blockquote>
             </p>
-            <p>É fundamental que a rede neural seja capaz de aprender a partir de seu ambiente e, através de um processo contínuo de ajuste de pesos sinápticos e níveis de *bias*[^22], melhorar o seu desempenho, respondendo de maneira diferente àquele mesmo ambiente, em razão das modificações sofridas.</p>
+            <p>É fundamental que a rede neural seja capaz de aprender a partir de seu ambiente e, através de um processo contínuo de ajuste de pesos sinápticos e níveis de <em>bias</em><sup><a class="linknotas" href="#nota_23">[23]</a></sup>, melhorar o seu desempenho, respondendo de maneira diferente àquele mesmo ambiente, em razão das modificações sofridas.</p>
             <p>"Um conjunto preestabelecido de regras bem-definidas para a solução de um problema de aprendizagem é denominado um algoritmo de aprendizagem. [...] Basicamente, os algoritmos de aprendizagem diferem entre si pela forma como é formulado o ajuste de um peso sináptico de um neurônio." (HAYKIN, 2001, p. 76)</p>
-            <h5>8.1.1 Regras básicas de aprendizagem</h5>
-            <h6>8.1.1.1 Aprendizagem por correção</h6>
+            
+            <h4>8.1.1 Regras básicas de aprendizagem</h4>
+            <h5>8.1.1.1 Aprendizagem por correção</h5>
             <p>
                 Consiste no ajuste dos pesos sinápticos do neurônio até que o sistema atinja um denominado <strong>estado estável</strong>, em que os próprios pesos estariam estabilizados de modo a minimizar o erro entre a saída da rede neural e a <strong>resposta desejada ou saída-alvo</strong> -- 
                 <math>
@@ -776,7 +770,7 @@
                  --, em que <math><mi>k</mi></math> é um neurônio de camada oculta que foi acionado pelo sinal <math><mi>x</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></math>, proveniente também de camada(s) oculta(s), e "o argumento <math><mi>n</mi></math> representa o instante de tempo discreto, ou mais precisamente, o passo de tempo de um processo iterativo envolvido no ajuste dos pesos sinápticos do neurônio <math><mi>k</mi></math>, tal como ilustrado abaixo:
                 <div class="image-container">
                     <figure>
-                        <img src="../../../imagens/13_grafico_hipoteses_hebb_e_covariancia.png" alt="Ilustração da regra da aprendizagem por correção de erros">
+                        <img src="../../../imagens/12_aprendizagem_correcao_de_erro.png" alt="Ilustração da regra da aprendizagem por correção de erros">
                         <figcaption class="legenda">Figura 12 - Ilustração da regra da aprendizagem por correção de erros. Fonte: HAYKIN, 2001, p. 77.</figcaption>
                     </figure>
                 </div>
@@ -808,9 +802,7 @@
                         <mo stretchy="false">)</mo>
                     </mrow>
                 </math>
-
                 e corresponde ao <strong>valor instantâneo da energia do erro.</strong> A minimização dessa função de custo resulta na <strong>regra delta ou regra de Widrow-Hoff</strong>, que pode ser formulada como "o ajuste feito em um peso sináptico de um neurônio é proporcional ao produto do sinal de erro pelo sinal de entrada da sinapse em questão" (HAYKIN, 2001, p. 78) e é dada por:
-
                 <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
                     <mi>&#x2206; <!-- Delta --> </mi>
                     <msub>
@@ -882,46 +874,46 @@
                       <mi>n</mi>
                       <mo stretchy="false">)</mo>
                     </mrow>
-                  </math>
+                  </math>                  
                   
                   ou pela equação
-
-                    <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
-                        <mrow>
-                            <mi>&#x2206;</mi>
-                            <msub>
-                                <mi>w</mi>
-                                <mi>kj</mi>
-                            </msub>
-                            <mo stretchy="false">(</mo>
-                            <mi>n</mi>
-                            <mo stretchy="false">)</mo>
-                            <mo>=</mo>
-                            <msup>
-                                <mi>z</mi>
-                                <mrow>
-                                <mn>-1</mn>
-                                </mrow>
-                            </msup>
-                            <mo stretchy="false">[</mo>
-                            <msub>
-                                <mi>w</mi>
-                                <mi>kj</mi>
-                            </msub>
-                            <mo stretchy="false">(</mo>
-                            <mi>n</mi>
-                            <mo stretchy="false">)</mo>
-                            <mo>+</mo>
-                            <mn>1</mn>
-                            <mo stretchy="false">]</mo>
-                        </mrow>
-                    </math>
+                  
+                  <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+                    <mrow>
+                        <mi>&#x2206;</mi>
+                        <msub>
+                            <mi>w</mi>
+                            <mi>kj</mi>
+                        </msub>
+                        <mo stretchy="false">(</mo>
+                        <mi>n</mi>
+                        <mo stretchy="false">)</mo>
+                        <mo>=</mo>
+                        <msup>
+                            <mi>z</mi>
+                            <mrow>
+                            <mn>-1</mn>
+                            </mrow>
+                        </msup>
+                        <mo stretchy="false">[</mo>
+                        <msub>
+                            <mi>w</mi>
+                            <mi>kj</mi>
+                        </msub>
+                        <mo stretchy="false">(</mo>
+                        <mi>n</mi>
+                        <mo stretchy="false">)</mo>
+                        <mo>+</mo>
+                        <mn>1</mn>
+                        <mo stretchy="false">]</mo>
+                    </mrow>
+                </math>
 
                 em que <math><msup><mi>z</mi><mn>-1</mn></msup></math> é o <strong>operador de atraso unitário, que representa um elemento de armazenamento.</strong>
             </p>
             <p>Na figura (b), acima, o sinal de entrada <math><msub><mi>x</mi><mi>j</mi></msub></math> e o campo local induzido <math><msub><mi>v</mi><mi>k</mi></msub></math> correspondem, respectivamente, aos sinais pré e pós-sináptico da <math><mi>j</mi></math>-ésima sinapse do neurônio <math><mi>k</mi></math>.</p>
 
-            <h4>8.1.2 O problema da atribuição de crédito</h4>
+            <h3>8.1.2 O problema da atribuição de crédito</h3>
             <p>
                 <blockquote>
                     Basicamente, o problema da atribuição de crédito é o problema de se atribuir crédito ou culpa por resultados globais a cada uma das decisões internas que tenham sido tomadas por uma máquina de aprendizagem e que tenham contribuído para aqueles resultados. 
@@ -1162,6 +1154,7 @@
             <p id="nota_20">[20] No contexto de redes neurais, <strong>ruídos</strong> são sinais indesejados, irrelevantes ou imprecisos que interferem na qualidade dos dados. Nesse sentido, vide a nota #7, sobre filtros adaptativos.<a class="linkdiscreto" href="#subtitulo_7_nota_20"> [ 🔙 ]</a></p>
             <p id="nota_21">[21] De forma simplificada, o campo local induzido é a soma ponderada dos sinais de entrada e determina se haverá ou não ativação do neurônio e consequente disparo do sinal de saída.<a class="linkdiscreto" href="#subtitulo_7_2_nota_21"> [ 🔙 ]</a></p>
             <p id="nota_22">[22] Na 2a edição do livro, o capítulo 2 era dedicado integralmente aos processos de aprendizagem. Entretanto, na 3a edição, o tema é abordado em dois tópicos da Introdução do livro e em menor extensão. Por esse motivo, criei uma subseção específica para tratar de aspectos conceituais que não foram abordados na nova edição ou que o foram superficialmente mais adiante.<a class="linkdiscreto" href="#subtitulo_8"> [ 🔙 ]</a></p>
+            <p id="nota_23">[23] O <em>bias</em> (viés) é uma constante independente que pode ser aplicada à soma ponderada dos sinais de entrada, antes de serem submetidos à função de ativação, de modo a influenciar/deslocar o valor de saída do neurônio. Ao apontar para melhores representações dos dados pelo refinamento do liminar (*threshold*) de ativação, ele auxilia a rede neural no processo de aprendizagem por meio do aumento da efetividade do [disparo do] neurônio. Vide [tópico 3 (modelos de neurônio artificial)](#3-modelos-de-neurônio-artificial) para mais detalhes.<a class="linkdiscreto" href="#subtitulo_8_1"> [ 🔙 ]</a></p>
             <a class="emoji" href="#top">[ 🔝 ]</a>
         </article>
     </main>
