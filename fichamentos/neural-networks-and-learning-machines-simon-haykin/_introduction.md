@@ -538,7 +538,7 @@ $$
 
 ##### 8.1.1.5 Aprendizagem de Boltzmann
 
-Trata-se de um algoritmo estocástico(probabilístico) derivado da mecânica estatística. A rede neural projetada com base nessa regra é denominada **máquina de Boltzmann.** Analogicamente, busca-se um "equilíbrio térmico" do sistema.
+Trata-se de um algoritmo estocástico(probabilístico) derivado da mecânica estatística[^23]. A rede neural projetada com base nessa regra é denominada **máquina de Boltzmann.** Analogicamente, busca-se um "equilíbrio térmico" do sistema.
 
 Os neurônios operam de modo binário e recorrente, variando entre os estados "ligado" (+1) e "desligado" (-1). "A máquina é caracterizada por uma *função de energia*, $E$, cujo valor é determinado pelos estados particulares ocupados pelos neurônios individuais da máquina [...]" (HAYKIN, 2001, p. 86). Nesse modelo, não há realimentação.
 
@@ -554,7 +554,7 @@ $$
 P(x_k \rightarrow -x_k) = \frac{1}{1 + e^{{-\Delta E}_k / T}}
 $$
 
-em que $\Delta E_k$ é a variação da energia em razão da troca e $T$ é a pseudotemperatura[^23].
+em que $\Delta E_k$ é a variação da energia em razão da troca e $T$ é a pseudotemperatura[^24].
 
 Seus neurônios podem ser **visíveis ou ocultos**, funcionando aqueles como uma interface entre a rede e o ambiente (condição presa) e estes livremente (condição de operação livre).
 
@@ -573,9 +573,24 @@ Nesse sentido,
 
 >o problema de atribuição de crédito estrutural é relevante no contexto de uma máquina de aprendizagem com múltiplos componentes quando devemos determinar precisamente qual componente particular do sistema deve ter seu comportamento alterado e em que medida, de forma a melhorar o desempenho global do sistema. Por outro lado, o problema de atribuição de crédito temporal é relevante quando há muitas ações tomadas por uma máquina de aprendizagem que acarretam certos resultados, e devemos determinar quais dessas ações foram responsáveis pelos resultados. O problema combinado de atribuição de crédito temporal e estrutural é enfrentado por qualquer máquina de aprendizagem distribuída que se esforce em melhorar sem desempenho em situações envolvendo comportamento estendido no tempo (Williams, 1988). (HAYKIN, 2001, p. 87)
 
+<!-- ### 8.2 Paradigmas de aprendizagem
+
+#### 8.2.1 Aprendizagem com um professor (*learning with a teacher*) ou aprendizagem supervisionada (*supervised learning*)
+
+O professor é visto como um agente externo detentor do conhecimento, representado por um conjunto de pares de exemplos de entrada-saída, pelo qual será capaz de instruir a rede neural com a resposta desejada (desempenho ideal da rede). O processo de treinamento consiste no ajuste dos pesos sinápticos da rede neural de modo a minimizar a diferença entre a saída real e a saída desejada, com base em algum critério como sinal de erro ou função de custo. O objetivo é que, através desse ajuste de parâmetros internos, a rede seja capaz de emular o professor.
+
+>In this way, knowledge of the environment available to the teacher is transferred to the neural network through training and stored in the form of “fixed” synaptic weights, representing long-term memory. When this condition is reached, we may then dispense with the teacher and let the neural network deal with the environment completely by itself. (HAYKIN, 2009, p. 35)
+
+#### 8.2.2 Aprendizagem sem um professor (*learning without a teacher*)
+
+Neste paradigma, não existe a figura do professor para supervisionar o aprendizado da rede neural, de modo que não são fornecidos exemplos rotulados ao sistema.
+
+##### 8.2.2.1 Aprendizagem não supervisionada
+
+##### 8.2.2.2 Aprendizagem por reforço -->
+
 <!-- 
 
-### 8.2 Paradigmas de aprendizagem
 ## 9. Tarefas de aprendizagem
 
 -->
@@ -744,4 +759,6 @@ VERY LARGE SCALE INTEGRATION. In: WIKIPEDIA. Disponível em <https://en.wikipedi
 
 [^22]: O ***bias* (viés)** é uma constante independente que pode ser aplicada à soma ponderada dos sinais de entrada, antes de serem submetidos à função de ativação, de modo a influenciar/deslocar o valor de saída do neurônio. Ao apontar para melhores representações dos dados pelo refinamento do liminar (*threshold*) de ativação, ele auxilia a rede neural no processo de aprendizagem por meio do aumento da efetividade do [disparo do] neurônio. Vide [tópico 3 (modelos de neurônio artificial)](#3-modelos-de-neurônio-artificial) para mais detalhes.
 
-[^23]: A **pseudotemperatura** é um parâmetro utilizado para controlar o nível de ruído do sistema e, por conseguinte, a probabilidade de disparo do neurônio. Nesse sentido, vide o tópico [3.2 Modelo estocástico de neurônio](#32-modelo-estocástico-de-neurônio).
+[^23]: "A importância da termodinâmica estatística no estudo dos mecanismos computacionais foi reconhecida por John von Neumann. Isto fica evidenciado pela terceira das suas cinco palestras sobre a *Teoria e Organização de Autômatos Complicados* na University of Illinois em 1949. [...] 'Conceitos termodinâmicos provavelmente entrarão nesta nova teoria da informação. Há fortes indicações de que a informação é similar à entropia e de que os processos degenerativos da entropia se comparam aos processos degenerativos no processamento da informação. É provável que não se possa definir a função de um autômato, ou a sua eficiência, sem caracterizar o ambiente no qual ele trabalha por meio de traços estatísticos como aqueles utilizados para caracterizar um ambiente na termodinâmica. As variáveis estatísticas do ambiente do autômato serão, é claro, um pouco mais complicadas que a variável de temperatura da termodinâmica padrão, mas serão similares em caráter.'" (HAYKIN, 2001, p. 134)
+
+[^24]: A **pseudotemperatura** é um parâmetro utilizado para controlar o nível de ruído do sistema e, por conseguinte, a probabilidade de disparo do neurônio. Nesse sentido, vide o tópico [3.2 Modelo estocástico de neurônio](#32-modelo-estocástico-de-neurônio).

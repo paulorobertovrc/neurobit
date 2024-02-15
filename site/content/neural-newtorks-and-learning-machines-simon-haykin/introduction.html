@@ -1248,8 +1248,8 @@
                 </math>
             </p>
 
-            <h5>8.1.1.5 Aprendizagem de Botzmann</h5>
-            <p>Trata-se de um algoritmo estocástico (probabilístico) derivado da mecânica estatística. A rede neural projetada com base nessa regra é denominada <strong>máquina de Boltzmann</strong> Analogicamente, busca-se um "equilíbrio térmico" do sistema.</p>
+            <h5 id="subtitulo_8_1_1_5">8.1.1.5 Aprendizagem de Botzmann</h5>
+            <p>Trata-se de um algoritmo estocástico (probabilístico) derivado da mecânica estatística<sup><a class="linknotas" href="#nota_24">[24]</a></sup>. A rede neural projetada com base nessa regra é denominada <strong>máquina de Boltzmann</strong> Analogicamente, busca-se um "equilíbrio térmico" do sistema.</p>
             <p>Os neurônios operam de modo binário e recorrente, variando entre os estados "ligado" (+1) e "desligado" (-1). "A máquina é caracterizada por uma <em>função de energia</em>, <math><mi>E</mi></math>, cujo valor é determinado pelos estados particulares ocupados pelos neurônios individuais da máquina [...]" (HAYKIN, 2001, p. 86). Nesse modelo, não há realimentação.</p>
             <p>
                 Sendo <math><msub><mi>x</mi><mi>j</mi></msub></math> o estado atual e <math><msub><mi>w</mi><mi>kj</mi></msub></math> o peso sináptico entre os neurônios <math><mi>k</mi></math> e <math><mi>j</mi></math>, a função de energia é dada por
@@ -1296,7 +1296,7 @@
                     </mrow>
                 </math>
             </p>
-            <p id="subtitulo_8_1_1_5_nota_24">
+            <p id="subtitulo_8_1_1_5_nota_25">
                 Um neurônio é aleatoriamente selecionado e tem seu estado invertido, sendo que a probabilidade de que isso ocorra é dada por
                 <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
                     <mi>P</mi>
@@ -1341,7 +1341,7 @@
                         </mfrac>
                     </mrow>
                 </math>
-                em que <math><mi>&#x2206</mi><msub><mi>E</mi><mi>k</mi></msub></math> é a variação da energia em razão da troca e <math><mi>T</mi></math> é a pseudotemperatura<sup><a class="linknotas" href="#nota_24">[24]</a></sup>.
+                em que <math><mi>&#x2206</mi><msub><mi>E</mi><mi>k</mi></msub></math> é a variação da energia em razão da troca e <math><mi>T</mi></math> é a pseudotemperatura<sup><a class="linknotas" href="#nota_25">[25]</a></sup>.
             </p>
             <p>Seus neurônios podem ser <strong>visíveis ou ocultos</strong>, funcionando aqueles como uma interface entre a rede e o ambiente (condição presa) e estes livremente (condição de operação livre).</p>
 
@@ -1618,7 +1618,8 @@
             <p id="nota_21">[21] De forma simplificada, o campo local induzido é a soma ponderada dos sinais de entrada e determina se haverá ou não ativação do neurônio e consequente disparo do sinal de saída.<a class="linkdiscreto" href="#subtitulo_7_2_nota_21"> [ 🔙 ]</a></p>
             <p id="nota_22">[22] Na 2a edição do livro, o capítulo 2 era dedicado integralmente aos processos de aprendizagem. Entretanto, na 3a edição, o tema é abordado em dois tópicos da Introdução do livro e em menor extensão. Por esse motivo, criei uma subseção específica para tratar de aspectos conceituais que não foram abordados na nova edição ou que o foram superficialmente mais adiante.<a class="linkdiscreto" href="#subtitulo_8"> [ 🔙 ]</a></p>
             <p id="nota_23">[23] O <em>bias</em> (viés) é uma constante independente que pode ser aplicada à soma ponderada dos sinais de entrada, antes de serem submetidos à função de ativação, de modo a influenciar/deslocar o valor de saída do neurônio. Ao apontar para melhores representações dos dados pelo refinamento do liminar (*threshold*) de ativação, ele auxilia a rede neural no processo de aprendizagem por meio do aumento da efetividade do [disparo do] neurônio. Vide [tópico 3 (modelos de neurônio artificial)](#3-modelos-de-neurônio-artificial) para mais detalhes.<a class="linkdiscreto" href="#subtitulo_8_1"> [ 🔙 ]</a></p>
-            <p id="nota_24">[24] A <strong>pseudotemperatura</strong> é um parâmetro utilizado para controlar o nível de ruído do sistema e, por conseguinte, a probabilidade de disparo do neurônio. Nesse sentido, vide o tópico <a href="#subtitulo_3_2">3.2 Modelo estocástico de neurônio</a>.<a class="linkdiscreto" href="#subtitulo_8_1_1_5_nota_24"> [ 🔙 ]</a></p>
+            <p id="nota_24">[24] "A importância da termodinâmica estatística no estudo dos mecanismos computacionais foi reconhecida por John von Neumann. Isto fica evidenciado pela terceira das suas cinco palestras sobre a *Teoria e Organização de Autômatos Complicados* na University of Illinois em 1949. [...] 'Conceitos termodinâmicos provavelmente entrarão nesta nova teoria da informação. Há fortes indicações de que a informação é similar à entropia e de que os processos degenerativos da entropia se comparam aos processos degenerativos no processamento da informação. É provável que não se possa definir a função de um autômato, ou a sua eficiência, sem caracterizar o ambiente no qual ele trabalha por meio de traços estatísticos como aqueles utilizados para caracterizar um ambiente na termodinâmica. As variáveis estatísticas do ambiente do autômato serão, é claro, um pouco mais complicadas que a variável de temperatura da termodinâmica padrão, mas serão similares em caráter.'" (HAYKIN, 2001, p. 134)<a class="linkdiscreto" href="#subtitulo_8_1_1_5"> [ 🔙 ]</a></p>
+            <p id="nota_25">[25] A <strong>pseudotemperatura</strong> é um parâmetro utilizado para controlar o nível de ruído do sistema e, por conseguinte, a probabilidade de disparo do neurônio. Nesse sentido, vide o tópico <a href="#subtitulo_3_2">3.2 Modelo estocástico de neurônio</a>.<a class="linkdiscreto" href="#subtitulo_8_1_1_5_nota_25"> [ 🔙 ]</a></p>
             <a class="emoji" href="#top">[ 🔝 ]</a>
         </article>
     </main>
