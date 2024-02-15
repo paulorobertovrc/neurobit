@@ -405,7 +405,7 @@
                 </math>
             </p>
 
-            <h3>3.2 Modelo estocástico de neurônio</h3>
+            <h3 id="subtitulo_3_2">3.2 Modelo estocástico de neurônio</h3>
             <p>Adição de uma variável aleatória ao modelo de McCulloch-Pitts, que é determinístico, de modo a torná-lo estocástico, isto é, probabilístico. Isso porque um modelo estocástico de neurônio tenta predizer possíveis resultados (saídas) levando em consideração a existência de um ou mais parâmetros variáveis ao longo do tempo. Ao contrário, em um modelo determinístico, as saídas devem ser sempre as mesmas para os mesmos valores de entrada.</p>
             <p>Se <math><mi>x</mi></math> representar o estado de um neurônio, <math><mi>v</mi></math> o seu potencial de ativação e <math><mi>P</mi><mo>(</mo><mi>v</mi><mo>)</math> a probabilidade de <strong>disparo</strong>, isto é, de que <strong>ocorra mudança de estado</strong>, tem-se que
                 <math display="block">
@@ -739,7 +739,7 @@
         </article>
 
         <article>
-            <h2 id="subtitulo_8">8. Processos de aprendizagem<sup> <a class="linknotas" href="#nota_22">[22]</a></sup></h2></h3>
+            <h2 id="subtitulo_8">8. Processos de aprendizagem<sup> <a class="linknotas" href="#nota_22">[22]</a></sup></h2>
             
             <h3 id="subtitulo_8_1">8.1 Conceito de aprendizagem</h3>
             <p>
@@ -863,12 +863,10 @@
                       <mi>n</mi>
                       <mo stretchy="false">)</mo>
                       <mo>+</mo>
+                      <mi>&#x2206;</mi>
                       <msub>
-                        <mi>&#x2206;</mi>
-                        <mrow>
                           <mi>w</mi>
                           <mi>kj</mi>
-                        </mrow>
                       </msub>
                       <mo stretchy="false">(</mo>
                       <mi>n</mi>
@@ -912,6 +910,440 @@
                 em que <math><msup><mi>z</mi><mn>-1</mn></msup></math> é o <strong>operador de atraso unitário, que representa um elemento de armazenamento.</strong>
             </p>
             <p>Na figura (b), acima, o sinal de entrada <math><msub><mi>x</mi><mi>j</mi></msub></math> e o campo local induzido <math><msub><mi>v</mi><mi>k</mi></msub></math> correspondem, respectivamente, aos sinais pré e pós-sináptico da <math><mi>j</mi></math>-ésima sinapse do neurônio <math><mi>k</mi></math>.</p>
+            
+            <h5>8.1.1.2 Aprendizagem baseada em memória</h5>
+            <p>
+                O conhecimento (experiência), em sua totalidade ou maioria, é explicitamente armazenado e classificado no formato de pares de exemplos de entrada-saída -- 
+                <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline">
+                    <msub>
+                        <msup>
+                            <mrow>
+                                <mo fence="true" stretchy="true">{</mo>
+                                <msub>
+                                    <mi>x</mi>
+                                    <mi>i</mi>
+                                </msub>
+                                <mo>,</mo>
+                                <msub>
+                                    <mi>d</mi>
+                                    <mi>i</mi>
+                                </msub>
+                                <mo fence="true" stretchy="true">}</mo>
+                            </mrow>
+                            <mi>N</mi>
+                        </msup>
+                        <mrow>
+                            <mi>i</mi>
+                            <mo>=</mo>
+                            <mn>1</mn>
+                        </mrow>
+                    </msub>
+                        <msup>
+                        </msup>
+                </math>                  
+                --, sendo <math><msub><mi>x</mi><mi>i</mi></msub></math> e <math><msub><mi>d</mi><mi>i</mi></msub></math> o sinal de entrada e a resposta desejada, respectivamente.
+            </p>
+            <p>Um dos algoritmos que utiliza esta regra é o do <strong>vizinho mais próximo (regra do vizinho mais próximo ou <em>nearest neighbor algorithm</em>).</strong></p>
+
+            <h5>8.1.1.3 Aprendizagem Hebbiana</h5>
+            <p>O <strong>postulado de aprendizado de Hebb</strong>, em homenagem ao neuropsicólogo Donald Hebb, autor do livro <em>The Organization of Behavior</em> (1949), preconiza que "quando um axônio da célula A está perto o suficiente para excitar uma célula B e participa do seu disparo repetida ou persistentemente, então algum processo de crescimento ou modificação metabólica acontece em uma das células ou em ambas, de tal forma que a eficiência de A como uma das células que dispara B é aumentada." (HEBB, 1949 apud HAYKIN, 2001, p. 80). Essa modificação seria embasada na aprendizagem associativa a nível celular, culminando na modificação permanente do padrão de atividade das células envolvidas.</p>
+            <p>
+                Esse postulado pode ser dividido em duas partes, no que se denomina <strong>sinapse hebbiana</strong>, embora originalmente Hebb não tenha proposto a segunda (Stent, 1973; Changeux, Danchin, 1976 apud HAYKIN, 2001, p. 80):
+                <blockquote>
+                    <ol>
+                        <li>Se dois neurônios em ambos os lados de uma sinapse (conexão) são ativados simultaneamente [...], então a força daquela sinapse é seletivamente aumentada.</li>
+                        <li>Se dois neurônios em ambos os lados de uma sinapse são ativados assincronamente, então aquela sinapse é seletivamente enfraquecida ou eliminada.</li>
+                    </ol>
+                </blockquote>
+            </p>
+            <p>A <strong>sinapse hebbiana</strong> pode ser definida como "[...] uma sinapse que usa um mecanismo dependente do tempo, altamente local e fortemente interativo para aumentar a eficiência sináptica como uma função da correlação entre as atividades pré-sináptica e pós-sináptica." (HAYKIN, 2001, p. 80/81).</p>
+            <p>
+                Quatro <strong>mecanismos/propriedades fundamentais</strong> dessa espécie de sinapse (Brown et al., 1990 apud Haykin, 2001):
+                <ol>
+                    <li><strong>Dependente do tempo</strong> de ocorrência dos sinais pré e pós-sinápticos;</li>
+                    <li><strong>Local</strong>, referindo-se ao fato de que a sinapse é um local contíguo no espaço-tempo onde ocorre a transmissão dos sinais portadores de informação;</li>
+                    <li><strong>Interativo</strong>, pois a modificação proposta em uma sinapse hebbiana é dependente da atividade de ambos os lados da sinapse; e</li>
+                    <li><strong>Conjuncional ou correlativo</strong>, no sentido de que a mera "[...] ocorrência simultânea dos sinais pré-sináptico e pós-sináptico (dentro de um curto intervalo de tempo) é suficiente para produzir a modificação sináptica." (HAYKIN, 2001, p. 81), isso porque "a correlação é de fato a base do aprendizado" (Eggermont, 1990 apud HAYKIN, 2001, p. 81).</li>
+                </ol>
+            </p>
+
+            <h6>8.1.1.3.1 Reforço e depressão sinápticos</h6>
+            <p>
+                A modificação sináptica pode ser desencadeada por uma atividade positivamente correlacionada, a qual reforça aquela sinapse, ou por uma atividade não-correlacionada ou negativamente correlacionada, que enfraquece a sinapse (Stent, 1973, apud Haykin, 2001). 
+                Ela [a modificação sináptica] pode também ser classificada como hebbiana, anti-hebbiana e não-hebbiana (Palm, 1982 apud Haykin, 2001), respectivamente descritas como a que aumenta ou diminui a força conforme há correlação positiva ou negativa entre os sinais pré e pós-sinápticos, a que, inversamente, aumenta se houver correlação negativa e diminui se houver correlação positiva, e a que não é afetada pela correlação entre os sinais pré e pós-sinápticos (não envolve qualquer mecanismo hebbiano).
+            </p>
+
+            <h6>8.1.1.3.2 Modelos matemáticos de modificações hebbianas</h6>
+            <p>
+                Em termos matemáticos, a formulação da aprendizagem hebbiana é dada por uma função <math><mi>F</mi></math> que depende tanto do sinal pré-sináptico 
+                <math><msub><mi>x</mi><mi>j</mi></msub><mo stretchy="true">(</mo><mi>n</mi><mo stretchy="true">)</mo></math> quanto do sinal pós-sináptico <math><msub><mi>y</mi><mi>k</mi></msub><mo stretchy="true">(</mo><mi>n</mi><mo stretchy="true">)</mo></math>, isto é, <math><mi>F</mi><mo stretchy="true">(</mo><msub><mi>x</mi><mi>j</mi></msub><mo stretchy="true">(</mo><mi>n</mi><mo stretchy="true">), </mo><msub><mi>y</mi><mi>k</mi></msub><mo stretchy="true">(</mo><mi>n</mi><mo stretchy="true">)</mo><mo>)</mo></math>, conforme a equação abaixo:                
+                <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+                    <mrow>
+                        <mi>&#x2206;</mi>
+                        <msub>
+                            <mi>w</mi>
+                            <mrow>
+                                <mi>kj</mi>
+                            </mrow>
+                        </msub>
+                        <mo stretchy="false">(</mo>
+                        <mi>n</mi>
+                        <mo stretchy="false">)</mo>
+                        <mo>=</mo>
+                        <mi>F</mi>
+                        <mo stretchy="false">(</mo>
+                        <msub>
+                            <mi>y</mi>
+                            <mrow>
+                            <mi>k</mi>
+                            </mrow>
+                        </msub>
+                        <mo stretchy="false">(</mo>
+                        <mi>n</mi>
+                        <mo stretchy="false">)</mo>
+                        <mo>,</mo>
+                        <msub>
+                            <mi>x</mi>
+                            <mrow>
+                            <mi>j</mi>
+                          </mrow>
+                        </msub>
+                        <mo stretchy="false">(</mo>
+                        <mi>n</mi>
+                        <mo stretchy="false">)</mo>
+                        <mo stretchy="false">)</mo>
+                        </mrow>
+                    </math>
+            </p>
+            <p>Ou, alternativamente, pelas equações da <strong>hipótese de Hebb</strong> ou da <strong>hipótese da covariância</strong>, esta que foi introduzida por Sejnowski (1977).</p>
+            <p>A primeira, logo abaixo, envolve a constante positiva <math><mi>&#x03B7;</mi></math>, que é a taxa de aprendizagem, e pode ser referida como regra do produto das atividades. Nela, há um crescimento exponencial do sinal/atividade pós-sináptica <math><msub><mi>y</mi><mi>k</mi></msub></math>, que conduz a um "[...] ponto [em que] nenhuma informação será armazenada na sinapse e a seletividade é perdida" (HAYKIN, 2001, p. 82), ou seja, à saturação da conexão sináptica. Abaixo a equação:</p>
+            <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+                <mrow>
+                    <mi>&#x2206;</mi>
+                    <msub>
+                        <mi>w</mi>
+                        <mrow>
+                            <mi>kj</mi>
+                        </mrow>
+                    </msub>
+                    <mo stretchy="false">(</mo>
+                    <mi>n</mi>
+                    <mo stretchy="false">)</mo>
+                    <mo>=</mo>
+                    <mi>&#x03B7;</mi>
+                    <msub>
+                        <mi>y</mi>
+                        <mrow>
+                            <mi>k</mi>
+                        </mrow>
+                    </msub>
+                    <mo stretchy="false">(</mo>
+                    <mi>n</mi>
+                    <mo stretchy="false">)</mo>
+                    <msub>
+                        <mi>x</mi>
+                        <mrow>
+                            <mi>j</mi>
+                        </mrow>
+                    </msub>
+                    <mo stretchy="false">(</mo>
+                    <mi>n</mi>
+                    <mo stretchy="false">)</mo>
+                </mrow>
+            </math>
+            <p>
+                Na segunda, por sua vez, os sinais pré e pós-sinápticos são substituídos pelos respectivos desvios em relação aos igualmente respectivos valores médios (
+                <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline">
+                    <mover>
+                      <mi>x</mi>
+                      <mo>&#xAF;<!-- macron --></mo>
+                    </mover>
+                </math>
+                e 
+                <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline">
+                    <mover>
+                      <mi>y</mi>
+                      <mo>&#xAF;<!-- macron --></mo>
+                    </mover>
+                  </math>
+                ) num dado intervalo temporal, sendo que os valores médios constituem os limiares que determinam o sinal da modificação sináptica. Ela é dada pela equação
+                <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+                    <mrow>
+                        <mi>&#x2206;</mi>
+                      <msub>
+                          <mi>w</mi>
+                        <mrow>
+                          <mi>kj</mi>
+                        </mrow>
+                      </msub>
+                      <mo stretchy="false">(</mo>
+                      <mi>n</mi>
+                      <mo stretchy="false">)</mo>
+                      <mo>=</mo>
+                      <mi>&#x03B7; <!-- Greek small letter eta --></mi>
+                      <mo stretchy="false">(</mo>
+                      <msub>
+                          <mi>x</mi>
+                          <mi>j</mi>
+                      </msub>
+                      <mo>&#x2212;<!-- minus sign --></mo>
+                      <mover>
+                        <mi>x</mi>
+                        <mo>&#xAF;<!-- macron --></mo>
+                      </mover>
+                      <mo stretchy="false">)</mo>
+                      <mo stretchy="false">(</mo>
+                      <msub>
+                        <mi>y</mi>
+                        <mi>k</mi>
+                      </msub>
+                      <mo>&#x2212;<!-- minus sign --></mo>
+                      <mover>
+                        <mi>y</mi>
+                        <mo>&#xAF;<!-- macron --></mo>
+                      </mover>
+                      <mo stretchy="false">)</mo>
+                    </mrow>
+                </math>                  
+            </p>
+            <p>
+                A <strong>hipótese da covariância</strong> permite a convergência para um estado não trivial, de equilíbrio, quando <math display="inline"><msub><mi>x</mi><mi>k</mi></msub><mo>=</mo><mover><mi>x</mi><mo>&#xAF;</mo></mover></math> ou <math display="inline"><msub><mi>y</mi><mi>j</mi></msub><mo>=</mo><mover><mi>y</mi><mo>&#xAF;</mo></mover></math>, e prever a potenciação ou a depressão sináptica. O reforço do peso sináptico <math><msub><mi>w</mi><mi>kj</mi></msub></math> ocorre se <math display="inline"><msub><mi>x</mi><mi>j</mi></msub><mo>></mo><mover><mi>x</mi><mo>&#xAF;</mo></mover></math> e <math display="inline"><msub><mi>y</mi><mi>k</mi></msub><mo>></mo><mover><mi>y</mi><mo>&#xAF;</mo></mover></math>, enquanto que a depressão ocorre se houver ativação pré-sináptica na ausência de ativação pós-sináptica suficiente ou vice-versa.
+            </p>
+            <p>A figura abaixo ilustra graficamente as duas hipóteses:
+                <div class="image-container">
+                    <figure>
+                        <img src="../../../imagens/13_grafico_hipoteses_hebb_e_covariancia.png" alt="Ilustração das hipóteses de Hebb e da covariância">
+                        <figcaption class="legenda">Figura 13 - Ilustração das hipóteses de Hebb e da covariância. Fonte: HAYKIN, 2001, p. 82.</figcaption>
+                    </figure>
+                </div>
+            </p>
+
+            <h5>8.1.1.4 Aprendizagem competitiva</h5>
+            <p>Ocorreria uma competição entre os neurônios da camada de saída da rede neural para que se tornassem ativos -- isto é, disparassem --, isso porque, diferentemente do que ocorre no modelo baseado na aprendizagem hebbiana, "[...] na aprendizagem competitiva somente um único neurônio de saída está ativo em um determinado instante" (HAYKIN, 2001, p. 83), o que a torna adequada para "[...] descobrir características estatisticamente salientes que podem ser utilizadas para classificar um conjunto de padrões de entrada." (HAYKIN, 2001, p. 83).</p>
+            <p>
+                Três elementos básicos (Rumelhart; Zisper, 1985):
+                <ul>
+                    <li>Neurônios com pesos sinápticos diferentes são aleatoriamente distribuídos para que respondam diferentemente ao padrão de entrada;</li>
+                    <li>A "força" de cada neurônio é limitada; e</li>
+                    <li>Existência de um mecanismo que possibilite a competição entre os neurônios ("neurônio vencedor leva tudo" (HAYKIN, 2001, p. 84)).</li>
+                </ul>
+            </p>
+            <p>Essa abordagem favorece a especialização e o agrupamento de neurônios da rede para o reconhecimento de padrões específicos, que se tornam detectores de características dos padrões de entrada (Haykin, 2001). Cada neurônio <math><mi>k</mi></math> da rede possuiria um montante fixo de peso sináptico para que fosse distribuído entre seus nós de entrada
+                <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+                    <munder>
+                        <mo>&#x2211;</mo>
+                        <mi>j</mi>
+                    </munder>
+                    <msub>
+                        <mi>w</mi>
+                        <mi>kj</mi>
+                    </msub>
+                    <mo>=</mo>
+                    <mn>1</mn>
+                    <mo>,</mo>
+                    <mrow>
+                        <mo mathsize="80%">&#x2200;<!-- for all --></mo>
+                        <mi>&nbsp;k</mi>
+                    </mrow>
+                </math>
+            </p>
+            <p>
+                O neurônio cujo campo local induzido -- <math><msub><mi>v</mi><mi>k</mi></msub></math> -- tivesse o maior valor seria o vencedor e, portanto, o único a disparar. Nesse caso, seu sinal de saída -- <math><msub><mi>y</mi><mi>k</mi></msub></math> -- é definido em <math><mn>1</mn></math>, enquanto que o de todos os demais são definidos em <math><mn>0</mn></math>:
+                <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+                    <msub>
+                        <mi>y</mi>
+                        <mi>k</mi>
+                    </msub>
+                    <mo>=</mo>
+                    <mrow>
+                        <mo>{</mo>
+                        <mtable>
+                          <mtr>
+                            <mtd>
+                              <mn>1</mn>
+                            </mtd>
+                            <mtd>
+                                <mtext> se &nbsp;</mtext>
+                                <msub>
+                                    <mi>v</mi>
+                                    <mi>k</mi>
+                                </msub>
+                                <mo>&gt;</mo>
+                                <msub>
+                                    <mi>v</mi>
+                                    <mi>j</mi>
+                                </msub>
+                                <mspace width="0.5em"/>
+                                <mo>&forall;</mo>
+                                <mspace width="0.5em"/>
+                              <mi>j</mi>
+                              <mo>,</mo>
+                              <mspace width="0.5em"/>
+                              <mi>j</mi>
+                              <mo>&ne;</mo>
+                              <mi>k</mi>
+                            </mtd>
+                          </mtr>
+                          <mtr>
+                            <mtd>
+                              <mn>0</mn>
+                            </mtd>
+                            <mtd>
+                              <mtext>caso contrário</mtext>
+                            </mtd>
+                          </mtr>
+                        </mtable>
+                    <mrow>
+                </math>
+            </p>
+            <p>
+                <blockquote>
+                    Um neurônio, então, aprende ao deslocar pesos sinápticos de seus nós de entrada inativos para os seus nós ativos. Se um neurônio não responde a um padrão de entrada particular, então não ocorrerá aprendizado naquele neurônio. Se um neurônio particular vencer a competição, então cada nó de entrada deste neurônio libera uma certa proporção de seu peso sináptico e este peso liberado será então distribuído uniformemente entre os nós de entrada ativos." (HAYKIN, 2001, p. 84)
+                </blockquote>
+            </p>
+            <p>
+                Desse modo, a variação do peso sináptico -- <math><mi>&#x2206;</mi><msub><mi>w</mi><mi>kj</mi></msub></math> -- corresponde a
+                <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+                    <mrow>
+                        <mi>&#x2206;</mi>
+                      <msub>
+                          <mi>w</mi>
+                          <mi>kj</mi>
+                      </msub>
+                      <mo>=</mo>
+                      <mrow>
+                        <mo>{</mo>
+                        <mtable>
+                          <mtr>
+                            <mtd>
+                              <mi>&#x03B7;</mi>
+                                <mo>(</mo>
+                                <msub>
+                                    <mi>x</mi>
+                                    <mi>j</mi>
+                                </msub>
+                                <mo>-</mo>
+                                <msub>
+                                    <mi>w</mi>
+                                    <mi>kj</mi>
+                                </msub>
+                                <mo>)</mo>
+                            </mtd>
+                            <mtd>
+                                <mtext> se &nbsp;</mtext>
+                                <mi>k</mi>
+                                <mspace width="0.5em"/>
+                                <mtext> é o neurônio vencedor</mtext>
+                            </mtd>
+                          </mtr>
+                          <mtr>
+                            <mtd>
+                              <mn>0</mn>
+                            </mtd>
+                            <mtd>
+                              <mtext>caso contrário</mtext>
+                            </mtd>
+                          </mtr>
+                        </mtable>
+                </math>
+            </p>
+
+            <h5>8.1.1.5 Aprendizagem de Botzmann</h5>
+            <p>Trata-se de um algoritmo estocástico (probabilístico) derivado da mecânica estatística. A rede neural projetada com base nessa regra é denominada <strong>máquina de Boltzmann</strong> Analogicamente, busca-se um "equilíbrio térmico" do sistema.</p>
+            <p>Os neurônios operam de modo binário e recorrente, variando entre os estados "ligado" (+1) e "desligado" (-1). "A máquina é caracterizada por uma <em>função de energia</em>, <math><mi>E</mi></math>, cujo valor é determinado pelos estados particulares ocupados pelos neurônios individuais da máquina [...]" (HAYKIN, 2001, p. 86). Nesse modelo, não há realimentação.</p>
+            <p>
+                Sendo <math><msub><mi>x</mi><mi>j</mi></msub></math> o estado atual e <math><msub><mi>w</mi><mi>kj</mi></msub></math> o peso sináptico entre os neurônios <math><mi>k</mi></math> e <math><mi>j</mi></math>, a função de energia é dada por
+                <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+                    <mi>E</mi>
+                    <mo>=</mo>
+                    <mo>&#x2212;<!-- minus sign --></mo>
+                    <mrow>
+                        <mfrac>
+                            <mn>1</mn>
+                            <mn>2</mn>
+                        </mfrac>
+                    </mrow>
+                    <mrow>
+                        <munder>
+                            <mrow>
+                                <munder>
+                                    <mo>&#x2211;</mo>
+                                    <mi>j</mi>
+                                </munder>
+                                <munder>
+                                    <mo>&#x2211;</mo>
+                                    <mi>k</mi>
+                                </munder>
+                            </mrow>
+                            <msub>
+                                <mi>x</mi>
+                                <mo>&ne;</mo>
+                                <mi>j</mi>
+                            </msub>
+                        </munder>
+                        <msub>
+                            <mi>w</mi>
+                            <mi>kj</mi>
+                        </msub>
+                        <msub>
+                            <mi>x</mi>
+                            <mi>k</mi>
+                        </msub>
+                        <msub>
+                            <mi>x</mi>
+                            <mi>j</mi>
+                        </msub>
+                    </mrow>
+                </math>
+            </p>
+            <p id="subtitulo_8_1_1_5_nota_24">
+                Um neurônio é aleatoriamente selecionado e tem seu estado invertido, sendo que a probabilidade de que isso ocorra é dada por
+                <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+                    <mi>P</mi>
+                    <mo stretchy="false">(</mo>
+                    <msub>
+                        <mi>x</mi>
+                        <mi>j</mi>
+                    </msub>
+                    <mo>&#x2192;</mo>
+                    <mo>&#x2212;<!-- minus sign --></mo>
+                    <msub>
+                        <mi>x</mi>
+                        <mi>j</mi>
+                    </msub>
+                    <mo stretchy="false">)</mo>
+                    <mo>=</mo>
+                    <mrow>
+                        <mfrac>
+                            <mn>1</mn>
+                            <mrow>
+                                <mn>1</mn>
+                                <mo>+</mo>
+                                <msup>
+                                    <mi>e</mi>
+                                    <mrow>
+                                        <mo>&#x2212;<!-- minus sign --></mo>
+                                        <mrow>
+                                            <mfrac>
+                                                <mrow>
+                                                    <mi>&#x2206;</mi>
+                                                    <msub>
+                                                        <mi>E</mi>
+                                                        <mi>k</mi>
+                                                    </msub>
+                                                </mrow>
+                                                <mi>T</mi>
+                                            </mfrac>
+                                        </mrow>
+                                    </mrow>
+                                </msup>
+                            </mrow>
+                        </mfrac>
+                    </mrow>
+                </math>
+                em que <math><mi>&#x2206</mi><msub><mi>E</mi><mi>k</mi></msub></math> é a variação da energia em razão da troca e <math><mi>T</mi></math> é a pseudotemperatura<sup><a class="linknotas" href="#nota_24">[24]</a></sup>.
+            </p>
+            <p>Seus neurônios podem ser <strong>visíveis ou ocultos</strong>, funcionando aqueles como uma interface entre a rede e o ambiente (condição presa) e estes livremente (condição de operação livre).</p>
 
             <h3>8.1.2 O problema da atribuição de crédito</h3>
             <p>
@@ -938,8 +1370,11 @@
             </p>
         </article>
 
+        <a class="emoji" href="#top">[ 🔝 ]</a>
+
         <!-- <article>
-            <h3>9. Tipos de aprendizagem</h3>
+            <h3 id="subtitulo_8_2">8.2 Paradigmas de aprendizagem</h3>
+            <h2 id="subtitulo_9">9. Tipos de aprendizagem</h2>
         </article> -->
 
         <hr>
@@ -1093,6 +1528,34 @@
                                         <ul><li>A rede deve ser invariante a variações do mesmo sinal de entrada, isto é, o sinal de saída não deve ser afetado por meras transformações do sinal de entrada</li></ul>
                                 </ul>
                         </ul>
+
+                        <li><p><strong>Processos de aprendizagem</strong></p></li>
+                        <ul>
+                            <li>
+                                 <strong>Conceito: </strong>consiste no ajuste dos parâmetros livres (peso sináptico e *bias*) da rede neural em resposta aos estímulos recebidos do ambiente (dados de entrada).
+                            </li>
+                            <li><strong>Regras básicas comuns</strong></li>
+                                <ul>
+                                    <li>
+                                        <strong>Aprendizagem por correção de erros: </strong>os pesos sinápticos são ajustados até que o sistema atinja um estado estável, de modo a minimizar o erro entre a saída da rede neural e a resposta desejada. É gerado um sinal de erro, que corresponde à diferença entre a saída desejada e a obtida e funciona como um mecanismo de controle.
+                                    </li>
+                                    <li>
+                                        <strong>Aprendizagem baseada em memória: </strong>o conhecimento (dados de treinamento) é explícita e individualmente armazenado e classificado no formato de pares de entrada-saída, consultando-os diretamente em busca de características específicas que levaram àquela classificação. Os próprios exemplos são memorizados.
+                                    </li>
+                                    <li>
+                                        <strong>Aprendizagem Hebbiana: </strong>baseia-se no postulado de aprendizado de Hebb, que preconiza que a eficiência sináptica é aumentada conforme dois neurônios (pré e pós-sinápticos) são ativados simultaneamente. Diferentemente da proposição original, admite-se o enfraquecimento ou eliminação da sinapse se a ativação de dois neurônios ocorrer assincronamente, isto é, não correlacionadamente.
+                                    </li>
+                                    <li>
+                                        <strong>Aprendizagem competitiva: </strong>os neurônios da camada de saída competem entre si, pois apenas um deles será ativado. Favorece a especialização e o agrupamento de neurônios da rede para o reconhecimento de padrões específicos (detectores de características estatisticamente relevantes dos padrões de entrada).
+                                    </li>
+                                    <li>
+                                        <strong>Aprendizagem de Boltzmann: </strong>modelo estocástico no qual os neurônios formam uma rede recorrente e binária, em busca do "equilíbrio térmico" do sistema. Um parâmetro de controle denominado pseudotemperatura é utilizado para determinar a probabilidade de que um neurônio seja selecionado e tenha seu estado invertido.
+                                    </li>
+                                </ul>
+                            <li>
+                                <strong>O problema da atribuição de crédito: </strong>cuida da dificuldade de se atribuir o crédito ou a culpa individualmente a elementos ou partes internas de um sistema complexo, como é o caso de uma rede neural, com o objetivo de compreender qual foi a contribuição de cada um deles para o resultado global do sistema.
+                            </li>
+                        </ul>
                 </ul>
             <a class="emoji" href="#top">[ 🔝 ]</a>
         </article>
@@ -1155,6 +1618,7 @@
             <p id="nota_21">[21] De forma simplificada, o campo local induzido é a soma ponderada dos sinais de entrada e determina se haverá ou não ativação do neurônio e consequente disparo do sinal de saída.<a class="linkdiscreto" href="#subtitulo_7_2_nota_21"> [ 🔙 ]</a></p>
             <p id="nota_22">[22] Na 2a edição do livro, o capítulo 2 era dedicado integralmente aos processos de aprendizagem. Entretanto, na 3a edição, o tema é abordado em dois tópicos da Introdução do livro e em menor extensão. Por esse motivo, criei uma subseção específica para tratar de aspectos conceituais que não foram abordados na nova edição ou que o foram superficialmente mais adiante.<a class="linkdiscreto" href="#subtitulo_8"> [ 🔙 ]</a></p>
             <p id="nota_23">[23] O <em>bias</em> (viés) é uma constante independente que pode ser aplicada à soma ponderada dos sinais de entrada, antes de serem submetidos à função de ativação, de modo a influenciar/deslocar o valor de saída do neurônio. Ao apontar para melhores representações dos dados pelo refinamento do liminar (*threshold*) de ativação, ele auxilia a rede neural no processo de aprendizagem por meio do aumento da efetividade do [disparo do] neurônio. Vide [tópico 3 (modelos de neurônio artificial)](#3-modelos-de-neurônio-artificial) para mais detalhes.<a class="linkdiscreto" href="#subtitulo_8_1"> [ 🔙 ]</a></p>
+            <p id="nota_24">[24] A <strong>pseudotemperatura</strong> é um parâmetro utilizado para controlar o nível de ruído do sistema e, por conseguinte, a probabilidade de disparo do neurônio. Nesse sentido, vide o tópico <a href="#subtitulo_3_2">3.2 Modelo estocástico de neurônio</a>.<a class="linkdiscreto" href="#subtitulo_8_1_1_5_nota_24"> [ 🔙 ]</a></p>
             <a class="emoji" href="#top">[ 🔝 ]</a>
         </article>
     </main>

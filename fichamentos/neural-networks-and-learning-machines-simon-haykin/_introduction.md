@@ -1,10 +1,8 @@
-# # 1.2
+# # 1.2 Introdução (p. 1/46)
 
 ![Static Badge](https://img.shields.io/badge/Status-Escrevendo-grey?labelColor=5F9EA0)
 
-## Introdução (p. 1/46)
-
-### 1. Definição de rede neural [^1]
+## 1. Definição de rede neural [^1]
 
 Desde o início, o estudo das redes neurais artificiais foi pautado pela observação de que tanto o cérebro humano quanto os computadores convencionais são sistemas de processamento de informações[^2] e, por conseguinte, realizam trabalho computacional[^3]. Não apenas seu funcionamento é bastante distinto, mas a capacidade computacional do cérebro - não só humano, mas também o de outros animais - supera, em muito, a dos computadores digitais.
 
@@ -34,7 +32,7 @@ A rede neural pode alterar sua própria estrutura (topologia).
 
 Conforme o autor, a técnica de modificação dos pesos sinápticos guarda muita similaridade com a teoria dos filtros adaptativos lineares (*linear adaptive filter theory*) [^7].
 
-#### 1.1 Benefícios das redes neurais
+### 1.1 Benefícios das redes neurais
 
 A capacidade computacional das redes neurais é resultado de sua estrutura massiva e paralelamente distribuída, bem como da habilidade de aprender e generalizar. "A generalização se refere ao fato de a rede neural produzir saídas adequadas para entradas que não estavam presentes durante o treinamento (aprendizagem). Estas duas capacidades de processamento de informação [aprender e generalizar] tornam possível para as redes neurais resolver problemas complexos (de grande escala) que são atualmente intratáveis." (HAYKIN, 2001, p. 28) [da 2 edição, em português].
 
@@ -57,7 +55,7 @@ Principais capacidades e propriedades das redes neurais artificiais (p. 2/6):
 - Uniformidade de análise e projeto ("[...] as redes neurais desfrutam de universalidade como processadores de informação" (HAYKIN, 2001, p. 30));
 - Analogia neurobiológica (motivadas por estruturas biológicas do cérebro humano).
 
-### 2. O cérebro humano[^9]
+## 2. O cérebro humano[^9]
 
 O sistema nervoso humano pode ser visto como um sistema de três estágios, do qual fazem parte cérebro, receptores e atuadores. Os estímulos - entrada (*input*) do sistema - são captados e convertidos em sinais elétricos pelos receptores; o cérebro continuamente recebe e processa esses sinais; os atuadores convertem os sinais recebidos de modo a gerar as ações (respostas) apropriadas, que constituem a saída (*output*) do sistema. A informação captada é transmitida em um único sentido - receptor > cérebro > atuador -, mas o sistema se retroalimenta no sentido oposto dessa transmissão - atuador > cérebro > receptor (*feedback*).
 
@@ -82,7 +80,7 @@ As sinapses são unidades estruturais e funcionais elementares responsáveis por
 
 A saída (*output*) do processamento neuronal são, no mais das vezes, impulsos elétricos denominados **potenciais de ação**[^9] ou ***spikes*** - na 2 edição, em português, o termo é traduzido como **impulso**.
 
-### 3. Modelos de neurônio [artificial]
+## 3. Modelos de neurônio [artificial]
 
 Em sua forma mais rudimentar, o modelo de um neurônio artificial possui três elementos básicos: um **conjunto de sinapses ou elos de ligação (*synapses or connecting links*)**, cada um com seu próprio peso ou força (peso sináptico/*synaptic weight*) [^11]; um **somador (*adder*)**; e uma **função de ativação (*activation function*)**.
 
@@ -124,9 +122,9 @@ $$
 
 mostra que o **campo local induzido (*induced local field*) ou potencial de ativação (*activation potential*)**[^12], representado pela letra $v$, do neurônio $k$ tem correlação com a saída do combinador linear - $u_k$ - e o *bias* - $b_k$ -, de modo a deslocar o gráfico da equação a depender se o valor do *bias* é positivo ou negativo.
 
-#### 3.1 Tipos de funções de ativação
+### 3.1 Tipos de funções de ativação
 
-##### 3.1.1 Função de limiar ou limite (*threshold function*)
+#### 3.1.1 Função de limiar ou limite (*threshold function*)
 
 É empregada no modelo de McCulloch-Pitts, no qual "a saída de um neurônio assume o valor de 1, se o campo local induzido daquele neurônio é não-negativo, e 0 caso contrário." (HAYKIN, 2001, p. 39). É um modelo determinístico.
 
@@ -158,7 +156,7 @@ $$
 v_k = \sum_{j=1}^{m} w_{kj}x_j + b_k
 $$
 
-##### 3.1.2 Função sigmoide
+#### 3.1.2 Função sigmoide
 
 É a mais comumente utilizada na construção de redes neurais. "Ela é definida como uma função estritamente crescente que exige um balanceamento adequado entre comportamento linear e não-linear" (HAYKIN, 2001, p. 40), de modo que pode assumir valores contínuos no intervalo $[0, 1]$. Essa função é diferenciável.
 
@@ -180,7 +178,7 @@ $$
 \phi(v) = tanh(v)
 $$
 
-#### 3.2 Modelo estocástico de neurônio
+### 3.2 Modelo estocástico de neurônio
 
 Adição de uma variável aleatória ao modelo de McCulloch-Pitts, que é determinístico, de modo a torná-lo estocástico, isto é, probabilístico. Isso porque um modelo estocástico de neurônio tenta predizer possíveis resultados (saídas) levando em consideração a existência de um ou mais parâmetros variáveis ao longo do tempo. Ao contrário, em um modelo determinístico, as saídas devem ser sempre as mesmas para os mesmos valores de entrada.
 
@@ -203,7 +201,7 @@ $$
 
 , em que $T$ é a dita **pseudotemperatura**, "[...] utilizada para controlar o nível de ruído e portanto a incerteza de disparar [...] como um parâmetro que controle as flutuações térmicas que representam os efeitos do ruído sináptico. Note que quando $T \rightarrow 0$, o neurônio estocástico [...] se reduz a uma forma sem ruído (i.e., determinística), que é o modelo de McCulloch-Pitts." (HAYKIN, 2001, p. 41).
 
-#### 3.3 Redes neurais como grafos dirigidos [^13] [^14]
+### 3.3 Redes neurais como grafos dirigidos [^13] [^14]
 
 > A signal-flow graph is a network of directed *links (branches)* that are interconnected at certain points called *nodes*. A typical node $j$ has an associated node signal $x_j$. A typical directed link originates at node $j$ and terminates on node $k$; it has an associated *transfer function*, or *transmittance*, that specifies the manner in which the signal $y_k$ at node $k$ dependes on the signal $x_j$ at node $j$. (HAYKIN, 2009, p. 15)
 
@@ -242,13 +240,13 @@ O grafo referido na figura 4 é dito **completo** porque descreve o fluxo do sin
 ![Grafo arquitetural](../../imagens/05_grafo_arquitetural.png)
 Figura 5 - Grafo arquitetural
 
-#### 3.4 As três representações gráficas de uma rede neural [^15]
+### 3.4 As três representações gráficas de uma rede neural [^15]
 
 - **Diagrama em blocos** (*block diagram*), que oferece uma descrição funcional da rede, conforme a figura 3;
 - **Grafo de fluxo de sinal** (*signal-flow graph*), que oferece uma descrição completa do fluxo dos sinais entre os neurônios e dentro de cada neurônio da rede, conforme a figura 4;
 - **Grafo arquitetural** (*architectural graph*), que oferece uma descrição estrutural, como uma planta baixa da rede, conforme a figura 5.
 
-### 5. Feedback (Realimentação, na edição em português)
+## 5. Feedback (Realimentação)
 
 > Feedback is said to exist in a dynamic system whenever the output of an element in the system influences in part the input applied to that particular element, thereby giving rise to one or more closed paths for the transmission of signals around the system. (HAYKIN, 2009, p. 18)
 
@@ -265,7 +263,7 @@ O grafo de fluxo de sinal que mostra o modelo mais simples de um sistema realime
 ![Grafo de fluxo de sinal de um sistema realimentado com laço único](../../imagens/06_grafo_fluxo_sinal_realimentado_laco_unico.png)
 Figura 6 - Grafo de fluxo de sinal de um sistema realimentado com laço único
 
-### 6. Arquiteturas de redes neurais (*Network architectures*)
+## 6. Arquiteturas de redes neurais (*Network architectures*)
 
 A forma de organização neuronal da rede é fortemente correlacionada ao algoritmo de aprendizagem utilizado para o treinamento. **Só é considerado um neurônio, ou nó da camada, se houver trabalho computacional.**
 
@@ -275,7 +273,7 @@ De modo geral, Haykin afirma que os padrões de arquitetura de redes neurais con
 2. ***Multilayer Feed-forward Networks*** (Redes alimentadas diretamente com múltiplas camadas, na edição em português); e
 3. ***Recurrent Networks*** (Redes recorrentes, na edição em português).
 
-#### 6.1 Single-Layer Feed-forward Networks
+### 6.1 Single-Layer Feed-forward Networks
 
 Nas redes neurais em camadas, como o nome sugere, os neurônios são organizados em camadas.
 
@@ -284,7 +282,7 @@ Este é o modelo arquitetural mais simples e é dito que possui uma única camad
 ![Single-Layer Feed-forward Network](../../imagens/07_single_layer_feed_forward_network.png)
 Figura 7 - Single-Layer Feed-forward Network. Fonte: HAYKIN, 2009, p. 21
 
-#### 6.2 Multilayer Feed-forward Networks
+### 6.2 Multilayer Feed-forward Networks
 
 Possui uma ou mais camadas ocultas (*hidden layers*), compostas por neurônios ou unidades ocultos(as), cuja função "[...] é intervir entre a entrada externa e a saída da rede de maneira útil" (HAYKIN, 2001, p. 47). A adição de mais camadas ocultas aumenta o poder computacional da rede.
 
@@ -303,7 +301,7 @@ Por conseguinte, uma rede com $m$ nós de entrada, $h_1$ neurônios na primeira 
 
 A rede apresentada na figura acima é dita **totalmente conectada** pois cada neurônio de uma camada está conectado a todos os neurônios da camada seguinte. Do contrário, se houvesse alguma conexão sináptica faltante, seria denominada **parcialmente conectada**.
 
-#### 6.3 Recurrent Networks
+### 6.3 Recurrent Networks
 
 As redes modeladas neste estilo arquitetural possuem, pelo menos, um laço de realimentação (*feedback loop*). Essa característica reflete positivamente na capacidade de aprendizado e na performance da rede. Elas podem ou não ser auto-realimentadas (*self-feedback*), isto é, a saída de um neurônio pode ou não ser realimentada a sua própria entrada.
 
@@ -318,7 +316,7 @@ Figura 10 - Rede recorrente com neurônios ocultos. Fonte: HAYKIN, 2009, p. 24.
 
 Em ambos os casos, verifica-se a presença de elementos de atraso unitário (*unit-time delay elements*), nos laços de realimentação, representados por $z^{-1}$, com o objetivo de conferir comportamento dinâmico não-linear à rede.
 
-### 7. Representação do conhecimento [^18]
+## 7. Representação do conhecimento [^18]
 
 "Knowledge refers to stored information or models used by a person or machine to interpret, predict, and appropriately respond to the outside world" (FISCHLER; FIRSCHEIN, 1987 apud HAYKIN, 2009, p. 24). Ou, na 2a edição, "Conhecimento se refere à informação armazenada ou a modelos utilizados por uma pessoa ou máquina para interpretar, prever e responder apropriadamente ao mundo exterior" (FISCHLER; FIRSCHEIN, 1987 apud HAYKIN, 2001, p. 49).
 
@@ -343,7 +341,7 @@ Diferentemente do que ocorre nos classificadores de padrões clássicos, "[...] 
 
 A representação do conhecimento perpassa pelo ajuste dos pesos sinápticos e do *bias*, isto é, dos **parâmetros livres da rede**. "A forma dessa representação de conhecimento constitui o verdadeiro projeto da rede neural, e portanto é a chave para o seu desemprenho" (HAYKIN, 2001, p. 51).
 
-#### 7.1 Regras de representação do conhecimento
+### 7.1 Regras de representação do conhecimento
 
 Há quatro regras comumente aceitas (ANDERSON, 1988 apud HAYKIN, 2001, p. 51/53):
 
@@ -360,7 +358,7 @@ A regra 4 significa que é *altamente desejável* que a rede neural possua estru
 
 A utilização de informação prévia restringe a aplicabilidade da rede a um domínio específico (Haykin, 2009).
 
-#### 7.2 Como incorporar informação prévia no projeto de uma rede neural
+### 7.2 Como incorporar informação prévia no projeto de uma rede neural
 
 Duas regras são comumente aceitas, as quais, particularmente a segunda, contribuem significativamente para a diminuição do número de parâmetros livres da rede:
 
@@ -387,7 +385,7 @@ $$
 
 Sendo $k = i + j - 1$ e, portanto, $x_k$ o próprio sinal de entrada.
 
-#### 7.3 Como incorporar invariâncias no projeto de uma rede neural
+### 7.3 Como incorporar invariâncias no projeto de uma rede neural
 
 É desejável que o sistema seja invariante perante transformações como a rotação do objeto de interesse, a alterações de amplitude ou frequência de ondas, timbre, entonação ou velocidade de voz, etc.
 
@@ -403,9 +401,9 @@ Há pelo menos três técnicas para implementar o dito classificador invariante 
 
 - **Espaço de características invariantes:** envolve a extração das principais características invariantes - isto é, que não se modificam - do objeto apresentado (e/ou seu conteúdo essencial), a fim de que, por generalização, a rede seja capaz de observá-las em outros objetos e, diante disso, classificá-los como da mesma classe. Idealmente, a rede somente precisaria lidar com fatores inevitáveis como ruídos e oclusão. Destacam-se vantagens como a redução do número de características do objeto a níveis realistas, a redução das exigências impostas à rede neural e a certeza de invariância em relação a todas as variações conhecidas do objeto.
 
-### 8. Processos de aprendizagem [^21]
+## 8. Processos de aprendizagem [^21]
 
-#### 8.1 Conceito de aprendizagem
+### 8.1 Conceito de aprendizagem
 
 >Aprendizagem é um processo pelo qual os parâmetros livres de uma rede neural são adaptados através de um processo de estimulação pelo ambiente no qual a rede está inserida. O tipo de aprendizagem é determinado pela maneira pela qual a modificação dos parâmetros ocorre. (HAYKIN, 2001, p. 75)
 
@@ -413,9 +411,9 @@ Há pelo menos três técnicas para implementar o dito classificador invariante 
 
 "Um conjunto preestabelecido de regras bem-definidas para a solução de um problema de aprendizagem é denominado um algoritmo de aprendizagem. [...] Basicamente, os algoritmos de aprendizagem diferem entre si pela forma como é formulado o ajuste de um peso sináptico de um neurônio." (HAYKIN, 2001, p. 76)
 
-##### 8.1.1 Regras básicas de aprendizagem
+#### 8.1.1 Regras básicas de aprendizagem
 
-###### 8.1.1.1 Aprendizagem por correção de erros
+##### 8.1.1.1 Aprendizagem por correção de erros
 
 Consiste no ajuste dos pesos sinápticos do neurônio até que o sistema atinja um denominado **estado estável**, em que os próprios pesos estariam estabilizados de modo a minimizar o erro entre a saída da rede neural e a **resposta desejada ou saída-alvo** - $d_k(n)$ -, em que $k$ é um neurônio de camada oculta que foi acionado pelo sinal $x(n)$, proveniente também de camada(s) oculta(s), e "o argumento $n$ representa o instante de tempo discreto, ou mais precisamente, o passo de tempo de um processo iterativo envolvido no ajuste dos pesos sinápticos do neurônio $k$, tal como ilustrado abaixo:
 
@@ -424,7 +422,7 @@ Figura 12 - Ilustração da regra da aprendizagem por correção de erros. Fonte
 
 O sinal de erro produzido, representado por $e_k(n)$, é a diferença entre a saída desejada e a saída real da rede neural, isto é, $e_k(n) = d_k(n) - y_k(n)$. Esse sinal "[...] aciona um mecanismo de controle, cujo propósito é aplicar uma sequência de ajustes corretivos aos pesos sinápticos do neurônio $k$ [...] projetados para aproximar passo a passo o sinal de saída $y_k(n)$ da resposta desejada $d_k(n)$. Este objetivo é alcançado minimizando-se uma *função de custo* ou *índice de desempenho* [...]" (HAYKIN, 2001, p. 77).
 
-O índice de desempenho - $E$ - é definido em termos de $e_k(n)$ como $E = \frac{1}{2} e_k^2(n)$ e corresponde ao **valor instantâneo da energia do erro.** A minimização dessa função de custo resulta na **regra delta ou regra de Widrow-Hoff**, que pode ser formulada como "o ajuste feito em um peso sináptico de um neurônio é proporcional ao produto do sinal de erro pelo sinal de entrada da sinapse em questão" (HAYKIN, 2001, p. 78) e é dada por:
+O índice de desempenho -- $E$ -- é definido em termos de $e_k(n)$ como $E = \frac{1}{2} e_k^2(n)$ e corresponde ao **valor instantâneo da energia do erro.** A minimização dessa função de custo resulta na **regra delta ou regra de Widrow-Hoff**, que pode ser formulada como "o ajuste feito em um peso sináptico de um neurônio é proporcional ao produto do sinal de erro pelo sinal de entrada da sinapse em questão" (HAYKIN, 2001, p. 78) e é dada por:
 
 $$
 \Delta w_{kj}(n) = \eta e_k(n)x_j(n)
@@ -448,17 +446,121 @@ em que $z^{-1}$ é o **operador de atraso unitário que representa um elemento d
 
 Na figura (b), acima, o sinal de entrada $x_j$ e o campo local induzido $v_k$ correspondem, respectivamente, aos sinais pré e pós-sináptico da $j$-ésima sinapse do neurônio $k$.
 
-###### 8.1.1.2 Aprendizagem baseada em memória
+##### 8.1.1.2 Aprendizagem baseada em memória
 
-###### 8.1.1.3 Aprendizagem Hebbiana
+O conhecimento (experiência), em sua totalidade ou maioria, é explicitamente armazenado e classificado no formato de pares de exemplos de entrada-saída -- ${\{x_i,d_i\}^N_{i=1}}$, sendo $x_i$ e $d_i$ o sinal de entrada e a resposta desejada, respectivamente.
 
-###### 8.1.1.4 Aprendizagem competitiva
+Um dos algoritmos que utiliza esta regra é o do **vizinho mais próximo (regra do vizinho mais próximo ou *nearest neighbor algorithm*).**
 
-###### 8.1.1.5 Aprendizagem de Boltzmann
+##### 8.1.1.3 Aprendizagem Hebbiana
 
-##### 8.1.2 O problema da atribuição de crédito
+O **postulado de aprendizado de Hebb**, em homenagem ao neuropsicólogo Donald Hebb, autor do livro *The Organization of Behavior* (1949), preconiza que "quando um axônio da célula A está perto o suficiente para excitar uma célula B e participa do seu disparo repetida ou persistentemente, então algum processo de crescimento ou modificação metabólica acontece em uma das células ou em ambas, de tal forma que a eficiência de A como uma das células que dispara B é aumentada." (HEBB, 1949 apud HAYKIN, 2001, p. 80). Essa modificação seria embasada na aprendizagem associativa a nível celular, culminando na modificação permanente do padrão de atividade das células envolvidas.
 
->Basicamente, o problema da atribuição de crédito é o problema de se atribuir crédito ou culpa por resultados globais a cada uma das decisões internas que tenham sido tomadas por uma máquina de aprendizagem e que tenham contribuído para aqueles resultados. [...] é também denominado *problema de carga*, isto é, o problema de 'carregar' um determinado conjunto de dados de treinamento para dentro dos parâmetros livres da rede. (HAYKIN, 2001, p. 87)
+Esse postulado pode ser dividido em duas partes, no que se denomina **sinapse hebbiana**, embora originalmente Hebb não tenha proposto a segunda (Stent, 1973; Changeux, Danchin, 1976 apud HAYKIN, 2001, p. 80):
+
+>1. Se dois neurônios em ambos os lados de uma sinapse (conexão) são ativados simultaneamente [...], então a força daquela sinapse é seletivamente aumentada.
+>2. Se dois neurônios em ambos os lados de uma sinapse são ativados assincronamente, então aquela sinapse é seletivamente enfraquecida ou eliminada.
+
+A **sinapse hebbiana** pode ser definida como "[...] uma sinapse que usa um mecanismo dependente do tempo, altamente local e fortemente interativo para aumentar a eficiência sináptica como uma função da correlação entre as atividades pré-sináptica e pós-sináptica." (HAYKIN, 2001, p. 80/81).
+
+Quatro **mecanismos/propriedades fundamentais** dessa espécie de sinapse (Brown et al., 1990 apud Haykin, 2001):
+
+1. **Dependente do tempo** de ocorrência dos sinais pré e pós-sinápticos;
+2. **Local**, referindo-se ao fato de que a sinapse é um local contíguo no espaço-tempo onde ocorre a transmissão dos sinais portadores de informação;
+3. **Interativo**, pois a modificação proposta em uma sinapse hebbiana é dependente da atividade de ambos os lados da sinapse; e
+4. **Conjuncional ou correlativo**, no sentido de que a mera "[...] ocorrência simultânea dos sinais pré-sináptico e pós-sináptico (dentro de um curto intervalo de tempo) é suficiente para produzir a modificação sináptica." (HAYKIN, 2001, p. 81), isso porque "a correlação é de fato a base do aprendizado" (Eggermont, 1990 apud HAYKIN, 2001, p. 81).
+
+###### 8.1.1.3.1 Reforço e depressão sinápticos
+
+A modificação sináptica pode ser desencadeada por uma atividade positivamente correlacionada, a qual reforça aquela sinapse, ou por uma atividade não-correlacionada ou negativamente correlacionada, que enfraquece a sinapse (Stent, 1973, apud Haykin, 2001). Ela [a modificação sináptica] pode também ser classificada como hebbiana, anti-hebbiana e não-hebbiana (Palm, 1982 apud Haykin, 2001), respectivamente descritas como a que aumenta ou diminui a força conforme há correlação positiva ou negativa entre os sinais pré e pós-sinápticos, a que, inversamente, aumenta se houver correlação negativa e diminui se houver correlação positiva, e a que não é afetada pela correlação entre os sinais pré e pós-sinápticos (não envolve qualquer mecanismo hebbiano).
+
+###### 8.1.1.3.2 Modelos matemáticos de modificações hebbianas
+
+Em termos matemáticos, a formulação da aprendizagem hebbiana é dada por uma função $F$ que depende tanto do sinal pré-sináptico $x_j(n)$ quanto do sinal pós-sináptico $y_k(n)$, isto é, $F(x_j(n), y_k(n))$, conforme a equação abaixo:
+
+$$
+\Delta w_{kj}(n) = F(y_k(n), x_j(n))
+$$
+
+Ou, alternativamente, pelas equações da **hipótese de Hebb** ou da **hipótese da covariância**, esta que foi introduzida por Sejnowski (1977).
+
+A primeira, logo abaixo, envolve a constante positiva $\eta$, que é a taxa de aprendizagem, e pode ser referida como regra do produto das atividades. Nela, há um crescimento exponencial do sinal/atividade pós-sináptica $y_k$, que conduz a um "[...] ponto [em que] nenhuma informação será armazenada na sinapse e a seletividade é perdida" (HAYKIN, 2001, p. 82), ou seja, à saturação da conexão sináptica. Abaixo a equação:
+
+$$
+\Delta w_{kj}(n) = \eta y_k(n)x_j(n)
+$$
+
+Na segunda, por sua vez, os sinais pré e pós-sinápticos são substituídos pelos respectivos desvios em relação aos igualmente respectivos valores médios ($\bar{x}$ e $\bar{y}$) num dado intervalo temporal, sendo que os valores médios constituem os limiares que determinam o sinal da modificação sináptica. Ela é dada pela equação
+
+$$
+\Delta w_{kj}(n) = \eta (x_j - \bar{x})(y_k - \bar{y})
+$$
+
+A **hipótese da covariância** permite a convergência para um estado não trivial, de equilíbrio, quando $x_k = \bar{x}$ ou $y_j = \bar{y}$, e prever a potenciação ou a depressão sináptica. O reforço do peso sináptico $w_kj$ ocorre se $x_j > \bar{x} \text{ e } y_k > \bar{y}$, enquanto que a depressão ocorre se houver ativação pré-sináptica na ausência de ativação pós-sináptica suficiente ou vice-versa.
+
+A figura abaixo ilustra graficamente as duas hipóteses:
+
+![Ilustração das hipóteses de Hebb e da covariância](../../imagens/13_grafico_hipoteses_hebb_e_covariancia.png)
+Figura 13 - Ilustração das hipóteses de Hebb e da covariância. Fonte: HAYKIN, 2001, p. 82.
+
+##### 8.1.1.4 Aprendizagem competitiva
+
+Ocorreria uma competição entre os neurônios da camada de saída da rede neural para que se tornassem ativos -- isto é, disparassem --, isso porque, diferentemente do que ocorre no modelo baseado na aprendizagem hebbiana, "[...] na aprendizagem competitiva somente um único neurônio de saída está ativo em um determinado instante" (HAYKIN, 2001, p. 83), o que a torna adequada para "[...] descobrir características estatisticamente salientes que podem ser utilizadas para classificar um conjunto de padrões de entrada." (HAYKIN, 2001, p. 83).
+
+Três elementos básicos (Rumelhart; Zisper, 1985):
+
+- Neurônios com pesos sinápticos diferentes são aleatoriamente distribuídos para que respondam diferentemente ao padrão de entrada;
+- A "força" de cada neurônio é limitada; e
+- Existência de um mecanismo que possibilite a competição entre os neurônios ("neurônio vencedor leva tudo" (HAYKIN, 2001, p. 84)).
+
+Essa abordagem favorece a especialização e o agrupamento de neurônios da rede para o reconhecimento de padrões específicos, que se tornam detectores de características dos padrões de entrada (Haykin, 2001). Cada neurônio $k$ da rede possuiria um montante fixo de peso sináptico para que fosse distribuído entre seus nós de entrada
+
+$$
+\sum_{j} w_{kj} = 1 , \forall \ k
+$$
+
+O neurônio cujo campo local induzido -- $v_k$ -- tivesse o maior valor seria o vencedor e, portanto, o único a disparar. Nesse caso, seu sinal de saída -- $y_k$ -- é definido em $1$, enquanto que o de todos os demais são definidos em $0$:
+
+$$
+y_k = \begin{cases} 1 & \text{, se } v_k > v_j \ \ \ \forall \ j, & j \neq k \\
+  0 & \text{, caso contrário } \end{cases}
+$$
+
+>Um neurônio, então, aprende ao deslocar pesos sinápticos de seus nós de entrada inativos para os seus nós ativos. Se um neurônio não responde a um padrão de entrada particular, então não ocorrerá aprendizado naquele neurônio. Se um neurônio particular vencer a competição, então cada nó de entrada deste neurônio libera uma certa proporção de seu peso sináptico e este peso liberado será então distribuído uniformemente entre os nós de entrada ativos." (HAYKIN, 2001, p. 84)
+
+Desse modo, a variação do peso sináptico -- $\Delta w_{kj}$ -- corresponde a
+
+$$
+\Delta w_{kj} = \begin{cases}
+  \eta (x_j - w_{kj}) \text{, se } k \text{ é o neurônio vencedor} \\
+  0 \text{, caso contrário} \end{cases}
+$$
+
+##### 8.1.1.5 Aprendizagem de Boltzmann
+
+Trata-se de um algoritmo estocástico(probabilístico) derivado da mecânica estatística. A rede neural projetada com base nessa regra é denominada **máquina de Boltzmann.** Analogicamente, busca-se um "equilíbrio térmico" do sistema.
+
+Os neurônios operam de modo binário e recorrente, variando entre os estados "ligado" (+1) e "desligado" (-1). "A máquina é caracterizada por uma *função de energia*, $E$, cujo valor é determinado pelos estados particulares ocupados pelos neurônios individuais da máquina [...]" (HAYKIN, 2001, p. 86). Nesse modelo, não há realimentação.
+
+Sendo $x_j$ o estado atual e $w_kj$ o peso sináptico entre os neurônios $k$ e $j$, a função de energia é dada por
+
+$$
+E = -\frac{1}{2} {\sum_{j} \sum_{k}}_{j \neq k} w_{kj}x_kx_j
+$$
+
+Um neurônio é aleatoriamente selecionado e tem seu estado invertido, sendo que a probabilidade de que isso ocorra é dada por
+
+$$
+P(x_k \rightarrow -x_k) = \frac{1}{1 + e^{{-\Delta E}_k / T}}
+$$
+
+em que $\Delta E_k$ é a variação da energia em razão da troca e $T$ é a pseudotemperatura[^23].
+
+Seus neurônios podem ser **visíveis ou ocultos**, funcionando aqueles como uma interface entre a rede e o ambiente (condição presa) e estes livremente (condição de operação livre).
+
+#### 8.1.2 O problema da atribuição de crédito
+
+>Basicamente, o problema da atribuição de crédito é o problema de se atribuir crédito ou culpa por resultados globais a cada uma das decisões internas que tenham sido tomadas por uma máquina de aprendizagem e que tenham contribuído para aqueles resultados. [...] é também denominado *problema de carga*, isto é, o problema de "carregar" um determinado conjunto de dados de treinamento para dentro dos parâmetros livres da rede. (HAYKIN, 2001, p. 87)
 
 A problematização decorre do fato de que "[...] as decisões internas afetam a escolha das ações particulares que são tomadas e, com isso, as ações e não as decisões internas influenciam diretamente os resultados globais." (HAYKIN, 2001, p. 87)
 
@@ -467,14 +569,14 @@ Dois componentes deste problema:
 - **Atribuição de crédito por resultados das ações (problema de atribuição de crédito temporal)**, que se preocupa com o **momento (instante temporal)**, isto é, **quando** as ações que merecem crédito foram tomadas; e
 - **Atribuição de crédito por ações a decisões internas (problema de atribuição de crédito estrutural)**, que se refere a apontar as **estruturas internas** responsáveis pelas ações que sejam merecedoras de crédito.
 
->O problema de atribuição de crédito estrutural é relevante no contexto de uma máquina de aprendizagem com múltiplos componentes quando devemos determinar precisamente qual componente particular do sistema deve ter seu comportamento alterado e em que medida, de forma a melhorar o desempenho global do sistema. Por outro lado, o problema de atribuição de crédito temporal é relevante quando há muitas ações tomadas por uma máquina de aprendizagem que acarretam certos resultados, e devemos determinar quais dessas ações foram responsáveis pelos resultados. O problema combinado de atribuição de crédito temporal e estrutural é enfrentado por qualquer máquina de aprendizagem distribuída que se esforce em melhorar sem desempenho em situações envolvendo comportamento estendido no tempo (Williams, 1988). (HAYKIN, 2001, p. 87)
+Nesse sentido,
 
-#### 8.2 Paradigmas de aprendizagem
+>o problema de atribuição de crédito estrutural é relevante no contexto de uma máquina de aprendizagem com múltiplos componentes quando devemos determinar precisamente qual componente particular do sistema deve ter seu comportamento alterado e em que medida, de forma a melhorar o desempenho global do sistema. Por outro lado, o problema de atribuição de crédito temporal é relevante quando há muitas ações tomadas por uma máquina de aprendizagem que acarretam certos resultados, e devemos determinar quais dessas ações foram responsáveis pelos resultados. O problema combinado de atribuição de crédito temporal e estrutural é enfrentado por qualquer máquina de aprendizagem distribuída que se esforce em melhorar sem desempenho em situações envolvendo comportamento estendido no tempo (Williams, 1988). (HAYKIN, 2001, p. 87)
 
 <!-- 
 
-### 9. Tarefas de aprendizagem 
-Tarefas de aprendizagem / memória / adaptação
+### 8.2 Paradigmas de aprendizagem
+## 9. Tarefas de aprendizagem
 
 -->
 
@@ -564,6 +666,15 @@ Tarefas de aprendizagem / memória / adaptação
       - Restringir a escolha de pesos sinápticos (compartilhamento de pesos)
     - **Incorporação de invariâncias**
       - A rede deve ser invariante a variações do mesmo sinal de entrada, isto é, o sinal de saída não deve ser afetado por meras transformações do sinal de entrada
+  - **Processos de aprendizagem**
+    - **Conceito:** Consiste no ajuste dos parâmetros livres (peso sináptico e *bias*) da rede neural em resposta aos estímulos recebidos do ambiente (dados de entrada)
+    - **Regras básicas comuns**
+      - **Aprendizagem por correção de erros:** os pesos sinápticos são ajustados até que o sistema atinja um estado estável, de modo a minimizar o erro entre a saída da rede neural e a resposta desejada. É gerado um sinal de erro, que corresponde à diferença entre a saída desejada e a obtida e funciona como um mecanismo de controle.
+      - **Aprendizagem baseada em memória:** o conhecimento (dados de treinamento) é explícita e individualmente armazenado e classificado no formato de pares de entrada-saída, consultando-os diretamente em busca de características específicas que levaram àquela classificação. Os próprios exemplos são memorizados.
+      - **Aprendizagem Hebbiana:** baseia-se no postulado de aprendizado de Hebb, que preconiza que a eficiência sináptica é aumentada conforme dois neurônios (pré e pós-sinápticos) são ativados simultaneamente. Diferentemente da proposição original, admite-se o enfraquecimento ou eliminação da sinapse se a ativação de dois neurônios ocorrer assincronamente, isto é, não correlacionadamente.
+      - **Aprendizagem competitiva:** os neurônios da camada de saída competem entre si, pois apenas um deles será ativado. Favorece a especialização e o agrupamento de neurônios da rede para o reconhecimento de padrões específicos (detectores de características estatisticamente relevantes dos padrões de entrada).
+      - **Aprendizagem de Boltzmann:** modelo estocástico no qual os neurônios formam uma rede recorrente e binária, em busca do "equilíbrio térmico" do sistema. Um parâmetro de controle denominado pseudotemperatura é utilizado para determinar a probabilidade de que um neurônio seja selecionado e tenha seu estado invertido.
+    - **O problema da atribuição de crédito:** cuida da dificuldade de se atribuir o crédito ou a culpa individualmente a elementos ou partes internas de um sistema complexo, como é o caso de uma rede neural, com o objetivo de compreender qual foi a contribuição de cada um deles para o resultado global do sistema.
 
 ## Referências complementares consultadas durante o fichamento deste capítulo
 
@@ -627,8 +738,10 @@ VERY LARGE SCALE INTEGRATION. In: WIKIPEDIA. Disponível em <https://en.wikipedi
 
 [^19]: No contexto de redes neurais, **ruídos** são sinais indesejados, irrelevantes ou imprecisos que interferem na qualidade dos dados. Nesse sentido, vide a nota #7, sobre filtros adaptativos.
 
-[^20]: De forma simplificada, o campo local induzido é a soma ponderada dos sinais de entrada e determina se haverá ou não ativação do neurônio e consequente disparo do sinal de saída.
+[^20]: De forma simplificada, o **campo local induzido** é a soma ponderada dos sinais de entrada e determina se haverá ou não ativação do neurônio e consequente disparo do sinal de saída.
 
-[^21]: Na 2a edição do livro, o capítulo 2 era dedicado integralmente aos processos de aprendizagem. Entretanto, na 3a edição, o tema é abordado em dois tópicos da Introdução do livro e em menor extensão. Por esse motivo, criei uma subseção específica para tratar de aspectos conceituais que não foram abordados na nova edição.
+[^21]: Na 2a edição do livro, o capítulo 2 era dedicado integralmente aos processos de aprendizagem. Entretanto, na 3a edição, o tema é abordado em dois tópicos da Introdução do livro e em menor extensão. Por esse motivo, criei uma subseção específica para tratar de aspectos conceituais que não foram abordados na nova edição ou que o foram superficialmente mais adiante.
 
 [^22]: O ***bias* (viés)** é uma constante independente que pode ser aplicada à soma ponderada dos sinais de entrada, antes de serem submetidos à função de ativação, de modo a influenciar/deslocar o valor de saída do neurônio. Ao apontar para melhores representações dos dados pelo refinamento do liminar (*threshold*) de ativação, ele auxilia a rede neural no processo de aprendizagem por meio do aumento da efetividade do [disparo do] neurônio. Vide [tópico 3 (modelos de neurônio artificial)](#3-modelos-de-neurônio-artificial) para mais detalhes.
+
+[^23]: A **pseudotemperatura** é um parâmetro utilizado para controlar o nível de ruído do sistema e, por conseguinte, a probabilidade de disparo do neurônio. Nesse sentido, vide o tópico [3.2 Modelo estocástico de neurônio](#32-modelo-estocástico-de-neurônio).
