@@ -401,7 +401,7 @@ Há pelo menos três técnicas para implementar o dito classificador invariante 
 
 - **Espaço de características invariantes:** envolve a extração das principais características invariantes - isto é, que não se modificam - do objeto apresentado (e/ou seu conteúdo essencial), a fim de que, por generalização, a rede seja capaz de observá-las em outros objetos e, diante disso, classificá-los como da mesma classe. Idealmente, a rede somente precisaria lidar com fatores inevitáveis como ruídos e oclusão. Destacam-se vantagens como a redução do número de características do objeto a níveis realistas, a redução das exigências impostas à rede neural e a certeza de invariância em relação a todas as variações conhecidas do objeto.
 
-## 8. Processos de aprendizagem [^21]
+## 8. Processos de aprendizagem (*learning processes*) [^21]
 
 ### 8.1 Conceito de aprendizagem
 
@@ -573,7 +573,7 @@ Nesse sentido,
 
 >o problema de atribuição de crédito estrutural é relevante no contexto de uma máquina de aprendizagem com múltiplos componentes quando devemos determinar precisamente qual componente particular do sistema deve ter seu comportamento alterado e em que medida, de forma a melhorar o desempenho global do sistema. Por outro lado, o problema de atribuição de crédito temporal é relevante quando há muitas ações tomadas por uma máquina de aprendizagem que acarretam certos resultados, e devemos determinar quais dessas ações foram responsáveis pelos resultados. O problema combinado de atribuição de crédito temporal e estrutural é enfrentado por qualquer máquina de aprendizagem distribuída que se esforce em melhorar sem desempenho em situações envolvendo comportamento estendido no tempo (Williams, 1988). (HAYKIN, 2001, p. 87)
 
-<!-- ### 8.2 Paradigmas de aprendizagem
+### 8.2 Paradigmas de aprendizagem
 
 #### 8.2.1 Aprendizagem com um professor (*learning with a teacher*) ou aprendizagem supervisionada (*supervised learning*)
 
@@ -585,15 +585,51 @@ O professor é visto como um agente externo detentor do conhecimento, representa
 
 Neste paradigma, não existe a figura do professor para supervisionar o aprendizado da rede neural, de modo que não são fornecidos exemplos rotulados ao sistema.
 
-##### 8.2.2.1 Aprendizagem não supervisionada
+##### 8.2.2.1 Aprendizagem por reforço (*reinforcement learning*) [^25]
 
-##### 8.2.2.2 Aprendizagem por reforço -->
+O aprendizado decorre da interação contínua com o ambiente. "O objetivo da aprendizagem é minimizar uma função de custo para avançar, definida como a expectativa do custo cumulativo de ações tomadas ao longo de uma sequência de passos, em vez de simplesmente do custo imediato. Pode acontecer que certas ações tomadas anteriormente naquela sequência de passos sejam de fato os melhores determinantes do comportamento global do sistema. A função da máquina de aprendizagem [...] é descobrir estar ações e realimentá-las para o ambiente." (HAYKIN, 2001, p. 89/90). Pode existir a figura de um crítico que aperfeiçoaria a qualidade do sinal de reforço.
 
-<!-- 
+##### 8.2.2.2 Aprendizagem não supervisionada (*unsupervised learning*) ou auto-organizada (*self-organized learning*)
 
-## 9. Tarefas de aprendizagem
+Neste tipo, não há agentes externos detentores do conhecimento (professores) ou supervisores internos (críticos). É fornecida uma medida da qualidade da representação do conhecimento que é esperada da rede (um vetor de dados descrevendo o estado do ambiente), de sorte que em relação a ela os parâmetros livres internos possam ser ajustados e a qualidade da resposta obtida corretamente mensurada. "Uma vez que a rede tenha se ajustado às regularidades estatísticas dos dados de entrada, ela desenvolve a habilidade de formar representações internas para codificar as características da entrada e, desse modo, criar automaticamente novas classes (Becker, 1991)" (HAYKIN, 2001, p. 90).
 
--->
+## 9. Tarefas de aprendizagem (*learning tasks*)
+
+"Em um sentido fundamental, todas as tarefas de aprendizagem são problemas relativos a aprender um mapeamento a partir de exemplos (possivelmente ruidosos) de mapeamentos." (HAYKIN, 2001, p. 100).
+
+### 9.1 Associação de padrões (*pattern association*)
+
+"Uma *memória associativa* é uma memória distribuída inspirada no cérebro, que aprende por *associação*. Desde Aristóteles, sabe-se que a associação é uma característica proeminente da memória humana, e todos os modelos de cognição utilizam associação de uma forma ou de outra como a operação básica (Anderson, 1995)." (HAYKIN, 2001, p. 91). Envolve as fases de armazenamento (*storage*), que se refere ao treinamento propriamente dito, e de recordação (*recall*), que se refere à recuperação da informação armazenada.
+
+Duas categorias:
+
+- Autoassociação: um conjunto de padrões entrada-saída é repetidamente apresentado à rede, a fim de que ela o armazene (aprendizagem não supervisionada).
+- Heteroassociação: dois conjuntos, um de padrões de entrada e outro de saída, são arbitrariamente apresentados à rede, que deve aprender a associá-los (aprendizagem supervisionada).
+
+### 9.2 Reconhecimento de padrões (*pattern recognition*)
+
+>O reconhecimento de padrões é formalmente definido como *o processo pelo qual um padrão/sinal recebido é atribuído a uma classe dentre um número predeterminado de classes (categorias)*. Uma rede neural realiza o reconhecimento de padrões passando inicialmente por uma seção de treinamento, durante a qual se apresenta repetidamente à rede um conjunto de padrões de entrada junto com a categoria à qual cada padrão particular pertence. Mais tarde, apresenta-se à rede um novo padrão que não foi visto antes, mas que pertence à mesma população de padrões utilizada para treinar a rede. A rede é capaz de identificar a classe daquele padrão particular por causa da informação que ela extraiu dos dados de treinamento. (HAYKIN, 2001, p. 92).
+
+Essa tarefa tem natureza estatística. Os padrões são representados por pontos em um espaço de decisão multidimensional dividido em tantas regiões quantas forem as classes predeterminadas. "As fronteiras de decisão são determinadas pelo processo de treinamento. A construção dessas fronteiras é tornada estatística pela variabilidade inerente que existe dentro das classes e entre as classes." (HAYKIN, 2001, p. 93).
+
+### 9.3 Aproximação de funções (*function approximation*)
+
+Dado um mapeamento de entrada-saída que é descrito por uma função matemática desconhecida, o objetivo é que, a partir de um conjunto de exemplos rotulados, a rede seja capaz de comparativamente aproximá-los para que a saída da rede seja a mais próxima possível da saída desejada, isto é, dos exemplos rotulados.
+
+### 9.4 Controle (*control*)
+
+Diz respeito a "[...] um processo ou parte crítica de um sistema que deve ser mantido em uma condição controlada. [...] No contexto de controle, o cérebro é a prova viva de que é possível construir um controlador genérico que tira total vantagem da implementação física paralelamente distribuída, que pode controlar muitos milhares de atuadores [...] em paralelo, que pode tratar não-linearidades e ruído e que pode realizar otimização sobre um horizonte de planejamento muito amplo (Werbos, 1992)." (HAYKIN, 2001, p. 95/96). Envolve a implementação de um sistema que exerce controle sobre outros sistemas, especialmente no que diz respeito à tomada de decisões sequenciais para alcançar objetivos ou recompensas específicos em um ambiente dinâmico.
+
+### 9.5 Filtragem (*filtering*) [^26]
+
+>O termo *filtro* se refere frequentemente a um dispositivo ou algoritmo utilizado para extrair informação sobre uma determinada grandeza de interesse a partir de um conjunto de dados ruidosos. [...] Podemos utilizar um filtro para realizar três tarefas básicas de processamento de informação:
+>1. *Filtragem.* Esta tarefa se refere à extração de informação sobre uma quantidade de interesse no tempo discreto $n$, utilizando dados medidos até o tempo $n$, inclusive.
+>2. *Suavização.* Esta segunda tarefa difere da filtragem pelo fato de que não é necessário que a informação sobre a grandeza de interesse esteja disponível no tempo $n$ e de que os dados medidos após o tempo $n$ podem ser usados para obter esta informação. Isto significa que, na suavização, há um *atraso* na produção do resultado de interesse. Já que no processo de suavização podemos usar dados obtidos não apenas até o tempo $n$ mas também após o tempo $n$, podemos esperar que a suavização seja mais precisa que a filtragem em um sentido estatístico.
+>3. *Previsão.* Esta tarefa corresponde ao lado preditivo do processamento de informação. O objetivo aqui é derivar informação sobre como será a grandeza de interesse em um determinado tempo $n + n_0$ no futuro, para algum $n_0 > 0$, utilizando os dados medidos até o tempo $n$ inclusive. (HAYKIN, 2001, p. 96)
+
+#### 9.5.1 Formação de feixe (*beamforming*)
+
+Trata-se de "[...] uma forma de filtragem espacial e é utilizada para distinguir entre as propriedades espaciais de um sinal-alvo e o ruído de fundo." (HAYKIN, 2001, p. 98). Envolve a detecção e possivelmente o aprimoramento de um sinal de interesse, ou o realce ou destaque de características relevantes/específicas, em meio a um ambiente com ruídos ou interferência (**seletividade atencional**). Lida-se com o fato de que a direção de origem do sinal-alvo é desconhecida, assim como de que não há informações prévias sobre os sinais de interferência. Esse tipo de máquina de aprendizagem é denominada neurocomputador atencional (Hecht-Nielsen, 1990 apud Haykin, 2001).
 
 ## Principais conceitos/definições/ideias extraídos do texto original
 
@@ -690,6 +726,18 @@ Neste paradigma, não existe a figura do professor para supervisionar o aprendiz
       - **Aprendizagem competitiva:** os neurônios da camada de saída competem entre si, pois apenas um deles será ativado. Favorece a especialização e o agrupamento de neurônios da rede para o reconhecimento de padrões específicos (detectores de características estatisticamente relevantes dos padrões de entrada).
       - **Aprendizagem de Boltzmann:** modelo estocástico no qual os neurônios formam uma rede recorrente e binária, em busca do "equilíbrio térmico" do sistema. Um parâmetro de controle denominado pseudotemperatura é utilizado para determinar a probabilidade de que um neurônio seja selecionado e tenha seu estado invertido.
     - **O problema da atribuição de crédito:** cuida da dificuldade de se atribuir o crédito ou a culpa individualmente a elementos ou partes internas de um sistema complexo, como é o caso de uma rede neural, com o objetivo de compreender qual foi a contribuição de cada um deles para o resultado global do sistema.
+    - **Paradigmas de aprendizagem**
+      - Aprendizagem com um professor (aprendizagem supervisionada)
+      - Aprendizagem sem um professor
+        - Aprendizagem por reforço
+        - Aprendizagem não supervisionada (auto-organizada)
+  - **Tarefas de aprendizagem**
+    - Associação de padrões
+    - Reconhecimento de padrões
+    - Aproximação de funções
+    - Controle
+    - Filtragem
+      - Formação de feixe
 
 ## Referências complementares consultadas durante o fichamento deste capítulo
 
@@ -762,3 +810,7 @@ VERY LARGE SCALE INTEGRATION. In: WIKIPEDIA. Disponível em <https://en.wikipedi
 [^23]: "A importância da termodinâmica estatística no estudo dos mecanismos computacionais foi reconhecida por John von Neumann. Isto fica evidenciado pela terceira das suas cinco palestras sobre a *Teoria e Organização de Autômatos Complicados* na University of Illinois em 1949. [...] 'Conceitos termodinâmicos provavelmente entrarão nesta nova teoria da informação. Há fortes indicações de que a informação é similar à entropia e de que os processos degenerativos da entropia se comparam aos processos degenerativos no processamento da informação. É provável que não se possa definir a função de um autômato, ou a sua eficiência, sem caracterizar o ambiente no qual ele trabalha por meio de traços estatísticos como aqueles utilizados para caracterizar um ambiente na termodinâmica. As variáveis estatísticas do ambiente do autômato serão, é claro, um pouco mais complicadas que a variável de temperatura da termodinâmica padrão, mas serão similares em caráter.'" (HAYKIN, 2001, p. 134)
 
 [^24]: A **pseudotemperatura** é um parâmetro utilizado para controlar o nível de ruído do sistema e, por conseguinte, a probabilidade de disparo do neurônio. Nesse sentido, vide o tópico [3.2 Modelo estocástico de neurônio](#32-modelo-estocástico-de-neurônio).
+
+[^25]: Na segunda edição do livro, o autor ressalta que, nesse contexto, a ideia de reforço tem origem na Psicologia e destaca a Lei do Efeito de Thorndike, segundo a qual "das diversas respostas à mesma situação, aquelas que são acompanhadas ou seguidas de perto pela satisfação do animal serão, se o restante for igual, mais fortemente conectadas com a situação, de forma que, quando a situação ocorrer novamente, elas terão maior probabilidade de ocorrerem; aquelas que são acompanhadas ou seguidas de perto por desconforto para o animal, se o resto for igual, terão menor probabilidade de ocorrerem. Quanto maior for a satisfação ou o desconforto, maior será o reforço ou o enfraquecimento da ligação." (HAYKIN, 2001, p. 135).
+
+[^26]: Não contemplado na terceira edição, mas presente na segunda.
