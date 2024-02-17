@@ -1431,14 +1431,212 @@
             <p>Trata-se de "[...] uma forma de filtragem espacial e é utilizada para distinguir entre as propriedades espaciais de um sinal-alvo e o ruído de fundo." (HAYKIN, 2001, p. 98). Envolve a detecção e possivelmente o aprimoramento de um sinal de interesse, ou o realce ou destaque de características relevantes/específicas, em meio a um ambiente com ruídos ou interferência (<strong>seletividade atencional</strong>). Lida-se com o fato de que a direção de origem do sinal-alvo é desconhecida, assim como de que não há informações prévias sobre os sinais de interferência. Esse tipo de máquina de aprendizagem é denominada neurocomputador atencional (Hecht-Nielsen, 1990 apud Haykin, 2001).</p>
         </article>
 
-        <a class="emoji" href="#top">[ 🔝 ]</a>
+        <article>
+            <h2 id="subtitulo_10">10. Tópicos adicionais<sup> <a class="linknotas" href="#nota_28">[28]</a></sup></h2>
+            <h3>10.1 Inteligência artificial e redes neurais</h3>
+            <p>
+                <blockquote>
+                    O objetivo da inteligência artificial (IA) é o desenvolvimento de paradigmas ou algoritmos que requeiram máquinas para realizar tarefas cognitivas, para as quais os humanos são atualmente melhores. [...] Um sistema de IA deve ser capaz de fazer três coisas: (1) armazenar conhecimento; (2) aplicar o conhecimento armazenado para resolver problemas e (3) adquirir novo conhecimento através da experiência." (HAYKIN, 2001, p. 59)
+                </blockquote>
+            </p>
+            <p>
+                Três componentes fundamentais foram identificados por Sage (1990): <strong>representação, raciocínio e aprendizagem</strong>
+                <ol>
+                    <li><strong>Representação:</strong> "[...] uso de uma linguagem de estruturas simbólicas [representações abstratas de conceitos ou objetos] para representar tanto o conhecimento genérico sobre um domínio do problema de interesse como o conhecimento específico sobre a solução do problema." (HAYKIN, 2001, p. 59)
+                        <ul>
+                            <li>Conhecimento (dados)
+                                <ul>
+                                    <li>Declarativo: coleção estática de fatos e algumas instruções sobre como manipulá-los. Do ponto de vista do usuário humano, possuem significado próprio independentemente da relevância para o sistema de IA.</li>
+                                    <li>Procedimental: representação do significado do conhecimento.</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><strong>Raciocínio:</strong> "[...] habilidade de resolver problemas." (HAYKIN, 2001, p. 60)
+                        <ul>
+                            <li>Um sistema de raciocínio deve satisfazer a certas condições (FISCHLER; FIRSCHEIN, 1987 apud HAYKIN, 2001, p. 60):
+                                <ul>
+                                    <li>O sistema deve ser capaz de expressar e resolver uma vasta gama de problemas e tipos de problemas.</li>
+                                    <li>O sistema deve ser capaz de tornar conhecidas para ele tanto a informação explícita como a informação implícita.</li>
+                                    <li>O sistema deve ter um mecanismo de controle que determine quais operações devem ser aplicadas para um problema particular, quando uma solução para este problema foi obtida, ou quando deve ser encerrado o tratamento deste problema.</li>
+                                </ul>
+                            </li>
+                            <li>A resolução de problemas é um problema de busca, de modo que podem ser utilizadas regras, dados e controle, tal como comumente utilizados para lidar com problemas de busca (Nilsson, 1980 apud Haykin, 2001). As regras operam sobre os dados e o controle opera sobre as regras. Caso o conhecimento disponível seja incompleto ou inexato, procedimentos de raciocínios probabilísticos podem ser utilizados para que sistemas de IA lidem com incertezas (Russell; Norvig, 1995; Pearl, 1988 apud Haykin, 2001)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Aprendizagem:</strong> "[...] o ambiente fornece alguma informação para um elemento de aprendizagem. [...] O elemento de aprendizagem utiliza, então, esta informação para aperfeiçoar a base de conhecimento, e finalmente o elemento de desempenho utiliza a base de conhecimento para executar a sua tarefa. Normalmente, a informação que o ambiente fornece para a máquina é imperfeita, resultando que o elemento de desempenho não sabe previamente como preencher os detalhes ausentes ou ignorar os detalhes que não são importantes. Portanto, a máquina opera inicialmente por suposição e depois recebe realimentação do elemento de desempenho. O mecanismo de realimentação permite que a máquina avalie suas hipóteses e as revise, se necessário." (HAYKIN, 2001, p. 60/61)
+                        <ul>
+                            <li>Dois tipos de processamento de informação: indutivo e dedutivo.
+                                <ul>
+                                    <li><strong>Indutivo:</strong> "[...] padrões gerais e regras são determinados a partir dos dados brutos e da experiência." (HAYKIN, 2001, p. 61)</li>
+                                        <ul><li>Aprendizagem baseada em similaridade / aprendizagem baseada em explanação</li></ul>
+                                    <li><strong>Dedutivo:</strong> "[...] são utilizadas regras gerais para determinar fatos específicos." (HAYKIN, 2001, p. 61)</li>
+                                        <ul><li>Aprendizagem baseada em axiomas / aprendizagem baseada em explicação</li></ul>
+                                </ul>
+                            </li>
+                            <li>A resolução de problemas é um problema de busca, de modo que podem ser utilizadas regras, dados e controle, tal como comumente utilizados para lidar com problemas de busca (Nilsson, 1980 apud Haykin, 2001). As regras operam sobre os dados e o controle opera sobre as regras. Caso o conhecimento disponível seja incompleto ou inexato, procedimentos de raciocínios probabilísticos podem ser utilizados para que sistemas de IA lidem com incertezas (Russell; Norvig, 1995; Pearl, 1988 apud Haykin, 2001)</li>
+                        </ul>
+                    </li>
+                </ol>
+            </p>
 
-        <!-- <article>
-            <h2 id="subtitulo_9">9. Tipos de aprendizagem</h2>
-        </article> -->
+            <h4>10.1.1 IA simbólica x conexionista (modelos cognitivos; redes neurais)</h4>
+            <p>
+                <blockquote>
+                    Em resumo, podemos descrever a IA simbólica como a manipulação formal de uma linguagem de algoritmos e representações de dados em uma forma de cima para baixo (top-down). Por outro lado, podemos descrever as redes neurais como processadores distribuídos paralelamente com uma habitualidade natural para aprender e que normalmente operam de uma forma de baixo para cima (bottom-up). Portanto, torna-se evidente que, para a implementação de tarefas cognitivas, [...] uma abordagem potencialmente mais vantajosa seria construir modelos conexionistas estruturados ou sistemas híbridos que integrem ambas as abordagens. Fazendo isso, somos capazes de combinar as características desejáveis de adaptabilidade, robustez e uniformidade oferecidas pelas redes neurais com a representação, inferência e universalidade, que são características inerentes da IA simbólica (Feldman, 1992; Waltz, 1997). (HAYKIN, 2001, p. 62)
+                </blockquote>
+            </p>
+            <p>
+                <ul>Três subdivisões (MEMMI, 1989 apud HAYKIN, 2001, p. 61):
+                    <ul>
+                        <li><strong>Nível de explanação:</strong> na IA clássica, é dada ênfase à construção de representações simbólicas, que são presumivelmente assim chamadas porque representam algo. Do ponto de vista da cognição, a IA assume a existência de representações mentais e ela modela a cognição como o processamento sequencial de representações simbólicas (Newell; Simon, 1972 apud Haikin, 2001). Por outro lado, nas redes neurais a ênfase está no desenvolvimento de modelos de processamento paralelamente distribuído (PDP, Parallel Distributed Processing). Estes modelos assumem que o processamento de informação acontece através da interação de um grande número de neurônios, onde cada neurônio envia sinais excitadores e inibitórios para outros neurônios da rede (Rumelhart; McClelland, 1986 apud Haykin, 2001). Além disso, as redes neurais dão grande ênfase à explanação biológica dos fenômenos cognitivos.</li>
+                        <li><strong>Estilo de processamento:</strong> sequencial na IA clássica e paralelo na IA baseada em redes neurais. "Como a computação está distribuída sobre muitos neurônios, normalmente não importa muito se os estados de alguns neurônios da rede se desviarem de seus valores esperados. Entradas ruidosas ou incompletas podem ainda ser reconhecidas, uma rede danificada pode ainda ser capaz de funcionar satisfatoriamente, e a aprendizagem não precisa ser perfeita. O desempenho da rede se degrada suavemente dentro de um certo limite." (HAYKIN, 2001, p. 62)</li>
+                        <li><strong>Estrutura representativa:</strong> estrutura quase linguística das representações simbólicas que baseia a IA clássica, fortemente atrelada a regras e conhecimento simbólico. As expressões são complexas e sistemáticas, próximas às da linguagem natural. Nas redes neurais, a base são os dados. Para Fodor e Pylyshyn (1988 apud Haykin, 2001), "[...] pode-se afirmar para as teorias da IA clássica, mas não para as redes neurais, que (i) as representações mentais exibem de forma característica uma estrutura constituinte combinatória e semântica combinatória; e que (ii) os processos mentais são caracteristicamente sensíveis à estrutura combinatória das representações sobre as quais operam."</li>
+                    </ul>
 
+                </ul>
+            </p>
+            <p>
+                <ul><li>Razões para a extração de regras de redes neurais (ANDREWS; DIEDERICH, 1996 apud HAYKIN, 2001, p. 62/63):
+                    <ul>
+                        <li>Validar componentes de redes neurais em sistemas programados, tornando os estados internos da rede neural acessíveis e compreensíveis ao usuário;</li>
+                        <li>Melhorar o desempenho de generalização das redes neurais, (1) identificando regiões do espaço de entrada onde os dados de treinamento não estão adequadamente representados, ou (2) indicando as circunstâncias onde a rede neural pode falhar na generalização;</li>
+                        <li>Descobrir características marcantes dos dados de entrada para exploração de dados (mineração de dados, data mining);</li>
+                        <li>Fornecer meios de atravessar a fronteira entre as abordagens conexionista e simbólica para o desenvolvimento de máquinas inteligentes;</li>
+                        <li>Satisfazer a crítica necessidade de segurança em uma classe especial de sistemas na qual segurança é uma condição obrigatória.</li>
+                    </ul>
+                </li></ul>
+            </p>
+
+            <h3>10.2 Notas históricas</h3>
+            <ul>
+                <li>
+                    <strong>Trabalho pioneiro em redes neurais (considerado por alguns como o nascimento da IA e das redes neurais artificiais): McCulloch e Pitts (1943)</strong>
+                    <ul>
+                        <li>Descrição de cálculos lógicos das redes neurais</li>
+                        <li>Primeira proposta de um modelo de neurônio artificial
+                            <ul>
+                                <li>Modelo "tudo ou nada" (binário)</li>
+                                <li>Afirmaram que, com a quantidade suficiente dessas unidades, com conexões sinápticas ajustadas e operando de forma síncrona, teoricamente seria possível computar qualquer função computável</li>
+                            </ul>
+                        </li>
+                        <li>Influenciou von Neumann na construção do EDVAC</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Donald Hebb (1949)</strong>
+                    <ul>
+                        <li>Formulação explícita de uma regra de aprendizagem fisiológica para a modificação sináptica
+                            <ul>
+                                <li>A conectividade do cérebro é continuamente modificada conforme o organismo aprende tarefas funcionais diferentes. Agrupamentos neurais são criados por tais modificações.</li>
+                                <li>A eficiência da sinapse entre dois neurônios é aumentada pela ativação repetida de um deles causada pelo outro.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Ashby (1952)</strong>
+                    <ul>
+                        <li><i>Design for a Brain: The Origin of Adaptive Behavior</i>
+                            <ul>
+                                <li>O comportamento adaptativo não é inato, mas aprendido.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Rochester, Holland, Haibt e Duda (1956)</strong>
+                    <ul>
+                        <li>Talvez a primeira tentativa de simular computacionalmente o postulado da aprendizagem de Hebb.</li>
+                        <li>Os resultados demonstraram a necessidade de adicionar inibição para que a teoria funcionasse.</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Utley (1956)</strong>
+                    <ul>
+                        <li>Demonstrou que uma rede neural com sinapses modificáveis pode aprender a classificar conjuntos simples de padrões binários.</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Von Neumann (1956)</strong>
+                    <ul>
+                        <li>Propôs a redundância como solução para o problema da confiabilidade da rede composta por componentes individualmente não confiáveis (neurônios).</li>
+                        <li>Winograd e Cowan (1963) sugeriram a representação redundante e distribuída.
+                            <ul>
+                                <li>Demonstraram que um grande número de elementos pode representar um conceito individual, com incremento de robustez e paralelismo.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Rosenblatt (1958)</strong>
+                    <ul>
+                        <li>Perceptron
+                            <ul>
+                                <li>Método de aprendizagem supervisionada</li>
+                                <li>Reconhecimento de padrões</li>
+                                <li>Teorema da convergência do perceptron</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Widrow e Hoff (1960)</strong>
+                    <ul>
+                        <li>Algoritmo do mínimo quadrado médio (Least Mean-Square, LMS)</li>
+                        <li>Adaline (adaptive linear element), que se diferencia do perceptron pelo procedimento de aprendizagem.</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Widrow (1962)</strong>
+                    <ul>
+                        <li>Madaline (Multiple Adaline)
+                            <ul>
+                                <li>Uma das primeiras redes neurais em camadas e treináveis.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Minsky e Papert (1969)</strong>
+                    <ul>
+                        <li>Demonstraram que há limites fundamentais ao que o perceptron de camada única pode calcular e que não há razões para supor que seriam superadas pelo de múltiplas camadas.</li>
+                        <li>Problema da atribuição de crédito.</li>
+                        <li>A década de 70 foi marcada pelo enfraquecimento do interesse em redes neurais, especialmente em razão das limitações por eles demonstradas, que somente ressurgiu nos anos 80, com destaque para os trabalhos de Hopfield (1982), Rumelhart e McClelland (1986).</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Grossberg (1980)</strong>
+                    <ul>
+                        <li>Teoria da ressonância adaptativa</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Ackley, Hinton e Sejnowski (1985)</strong>
+                    <ul>
+                        <li>Máquina de Boltzmann (primeira rede neural de múltiplas camadas)</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Rumelhart, Hinton e Williams (1986)</strong>
+                    <ul>
+                        <li>Algoritmo de retropropagação
+                            <ul>
+                                <li>A ideia básica foi proposta por Bryson e Ho (1969), mas primeiramente documentada por Werbos (1974).</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Broomhead e Lowe (1988)</strong>
+                    <ul>
+                        <li>Redes feedforward RBF (Radial Basis Function)</li>
+                    </ul>
+                </li>
+            </ul>            
+            <a class="emoji" href="#top">[ 🔝 ]</a>
+        </article>
         <hr>
-
         <article>
             <h2>Principais conceitos/definições/ideias extraídos do texto original</h2>
                 <ul>
@@ -1701,6 +1899,7 @@
             <p id="nota_25">[25] A <strong>pseudotemperatura</strong> é um parâmetro utilizado para controlar o nível de ruído do sistema e, por conseguinte, a probabilidade de disparo do neurônio. Nesse sentido, vide o tópico <a href="#subtitulo_3_2">3.2 Modelo estocástico de neurônio</a>.<a class="linkdiscreto" href="#subtitulo_8_1_1_5_nota_25"> [ 🔙 ]</a></p>
             <p id="nota_26">[26] Na segunda edição do livro, o autor ressalta que, nesse contexto, a ideia de reforço tem origem na Psicologia e destaca a Lei do Efeito de Thorndike, segundo a qual "das diversas respostas à mesma situação, aquelas que são acompanhadas ou seguidas de perto pela satisfação do animal serão, se o restante for igual, mais fortemente conectadas com a situação, de forma que, quando a situação ocorrer novamente, elas terão maior probabilidade de ocorrerem; aquelas que são acompanhadas ou seguidas de perto por desconforto para o animal, se o resto for igual, terão menor probabilidade de ocorrerem. Quanto maior for a satisfação ou o desconforto, maior será o reforço ou o enfraquecimento da ligação." (HAYKIN, 2001, p. 135).<a class="linkdiscreto" href="#subtitulo_8_2_2_1"> [ 🔙 ]</a></p>
             <p id="nota_27">[27] Não contemplado na terceira edição, mas presente na segunda.<a class="linkdiscreto" href="#subtitulo_9_5"> [ 🔙 ]</a></p>
+            <p id="nota_28">[28] Estes tópicos não constam explicitamente da terceira edição, mas estavam na segunda (itens 1.8 ("inteligência artificial e redes neurais"), 1.9 ("notas históricas"), 2.11 ("memória"), 2.12 ("adaptação), 2.13 ("natureza estatística do processo de aprendizagem"), 2.14 ("teoria estatística da aprendizagem"), 2.15 ("modelo de aprendizagem Provavelmente Aproximadamente Correto")).<a class="linkdiscreto" href="#subtitulo_10"> [ 🔙 ]</a></p>
             <a class="emoji" href="#top">[ 🔝 ]</a>
         </article>
     </main>

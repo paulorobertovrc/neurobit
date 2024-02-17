@@ -631,6 +631,111 @@ Diz respeito a "[...] um processo ou parte crítica de um sistema que deve ser m
 
 Trata-se de "[...] uma forma de filtragem espacial e é utilizada para distinguir entre as propriedades espaciais de um sinal-alvo e o ruído de fundo." (HAYKIN, 2001, p. 98). Envolve a detecção e possivelmente o aprimoramento de um sinal de interesse, ou o realce ou destaque de características relevantes/específicas, em meio a um ambiente com ruídos ou interferência (**seletividade atencional**). Lida-se com o fato de que a direção de origem do sinal-alvo é desconhecida, assim como de que não há informações prévias sobre os sinais de interferência. Esse tipo de máquina de aprendizagem é denominada neurocomputador atencional (Hecht-Nielsen, 1990 apud Haykin, 2001).
 
+## 10. Tópicos adicionais [^27]
+
+### 10.1 Inteligência artificial e redes neurais
+
+>O objetivo da inteligência artificial (IA) é o desenvolvimento de paradigmas ou algoritmos que requeiram máquinas para realizar tarefas cognitivas, para as quais os humanos são atualmente melhores. [...] Um sistema de IA deve ser capaz de fazer três coisas: (1) armazenar conhecimento; (2) aplicar o conhecimento armazenado para resolver problemas e (3) adquirir novo conhecimento através da experiência." (HAYKIN, 2001, p. 59)
+
+Três componentes fundamentais foram identificados por Sage (1990): **representação, raciocínio e aprendizagem.**
+
+1. **Representação**: "[...] uso de uma linguagem de estruturas simbólicas [representações abstratas de conceitos ou objetos] para representar tanto o conhecimento genérico sobre um domínio do problema de interesse como o conhecimento específico sobre a solução do problema." (HAYKIN, 2001, p. 59)
+    - Conhecimento (dados)
+      - Declarativo: coleção estática de fatos e algumas instruções sobre como manipulá-los. Do ponto de vista do usuário humano, possuem significado próprio independentemente da relevância para o sistema de IA.
+      - Procedimental: representação do significado do conhecimento.
+
+2. **Raciocínio**: "[...] habilidade de resolver problemas." (HAYKIN, 2001, p. 60)
+    - Um sistema de raciocínio deve satisfazer a certas condições (FISCHLER; FIRSCHEIN, 1987 apud HAYKIN, 2001, p. 60):
+      - O sistema deve ser capaz de expressar e resolver uma vasta gama de problemas e tipos de problemas.
+      - O sistema deve ser capaz de tornar conhecidas para ele tanto a informação explícita como a informação implícita.
+      - O sistema deve ter um mecanismo de controle que determine quais operações devem ser aplicadas para um problema particular, quando uma solução para este problema foi obtida, ou quando deve ser encerrado o tratamento deste problema.
+    - A resolução de problemas é um problema de busca, de modo que podem ser utilizadas regras, dados e controle, tal como comumente utilizados para lidar com problemas de busca (Nilsson, 1980 apud Haykin, 2001). As regras operam sobre os dados e o controle opera sobre as regras. Caso o conhecimento disponível seja incompleto ou inexato, procedimentos de raciocínios probabilísticos podem ser utilizados para que sistemas de IA lidem com incertezas (Russell; Norvig, 1995; Pearl, 1988 apud Haykin, 2001)
+
+3. **Aprendizagem**: "[...] o ambiente fornece alguma informação para um elemento de aprendizagem. [...] O elemento de aprendizagem utiliza, então, esta informação para aperfeiçoar a base de conhecimento, e finalmente o elemento de desempenho utiliza a base de conhecimento para executar a sua tarefa. Normalmente, a informação que o ambiente fornece para a máquina é imperfeita, resultando que o elemento de desempenho não sabe previamente como preencher os detalhes ausentes ou ignorar os detalhes que não são importantes. Portanto, a máquina opera inicialmente por suposição e depois recebe realimentação do elemento de desempenho. O mecanismo de realimentação permite que a máquina avalie suas hipóteses e as revise, se necessário." (HAYKIN, 2001, p. 60/61)
+    - Dois tipos de processamento de informação: indutivo e dedutivo.
+      - **Indutivo**: "[...] padrões gerais e regras são determinados a partir dos dados brutos e da experiência." (HAYKIN, 2001, p. 61)
+        - Aprendizagem baseada em similaridade / aprendizagem baseada em explanação
+      - **Dedutivo**: "[...] são utilizadas regras gerais para determinar fatos específicos." (HAYKIN, 2001, p. 61)
+        - Aprendizagem baseada em axiomas / aprendizagem baseada em explicação
+
+#### 10.1.1 IA simbólica x conexionista (modelos cognitivos; redes neurais)
+
+>Em resumo, podemos descrever a IA simbólica como a manipulação formal de uma linguagem de algoritmos e representações de dados em uma forma de cima para baixo (top-down). Por outro lado, podemos descrever as redes neurais como processadores distribuídos paralelamente com uma habitualidade natural para aprender e que normalmente operam de uma forma de baixo para cima (bottom-up). Portanto, torna-se evidente que, para a implementação de tarefas cognitivas, [...] uma abordagem potencialmente mais vantajosa seria construir modelos conexionistas estruturados ou sistemas híbridos que integrem ambas as abordagens. Fazendo isso, somos capazes de combinar as características desejáveis de adaptabilidade, robustez e uniformidade oferecidas pelas redes neurais com a representação, inferência e universalidade, que são características inerentes da IA simbólica (Feldman, 1992; Waltz, 1997). (HAYKIN, 2001, p. 62)
+
+- Três subdivisões (MEMMI, 1989 apud HAYKIN, 2001, p. 61):
+  - **Nível de explanação**: na IA clássica, é dada ênfase à construção de representações simbólicas, que são presumivelmente assim chamadas porque representam algo. Do ponto de vista da cognição, a IA assume a existência de representações mentais e ela modela a cognição como o processamento sequencial de representações simbólicas (Newell; Simon, 1972 apud Haikin, 2001). Por outro lado, nas redes neurais a ênfase está no desenvolvimento de modelos de processamento paralelamente distribuído (PDP, Parallel Distributed Processing). Estes modelos assumem que o processamento de informação acontece através da interação de um grande número de neurônios, onde cada neurônio envia sinais excitadores e inibitórios para outros neurônios da rede (Rumelhart; McClelland, 1986 apud Haykin, 2001). Além disso, as redes neurais dão grande ênfase à explanação biológica dos fenômenos cognitivos.
+  - **Estilo de processamento**: sequencial na IA clássica e paralelo na IA baseada em redes neurais. "Como a computação está distribuída sobre muitos neurônios, normalmente não importa muito se os estados de alguns neurônios da rede se desviarem de seus valores esperados. Entradas ruidosas ou incompletas podem ainda ser reconhecidas, uma rede danificada pode ainda ser capaz de funcionar satisfatoriamente, e a aprendizagem não precisa ser perfeita. O desempenho da rede se degrada suavemente dentro de um certo limite." (HAYKIN, 2001, p. 62)
+  - **Estrutura representativa**: estrutura quase linguística das representações simbólicas que baseia a IA clássica, fortemente atrelada a regras e conhecimento simbólico. As expressões são complexas e sistemáticas, próximas às da linguagem natural. Nas redes neurais, a base são os dados. Para Fodor e Pylyshyn (1988 apud Haykin, 2001), "[...] pode-se afirmar para as teorias da IA clássica, mas não para as redes neurais, que (i) as representações mentais exibem de forma característica uma estrutura constituinte combinatória e semântica combinatória; e que (ii) os processos mentais são caracteristicamente sensíveis à estrutura combinatória das representações sobre as quais operam."
+
+- Razões para a extração de regras de redes neurais (ANDREWS; DIEDERICH, 1996 apud HAYKIN, 2001, p. 62/63):
+  - Validar componentes de redes neurais em sistemas programados, tornando os estados internos da rede neural acessíveis e compreensíveis ao usuário;
+  - Melhorar o desempenho de generalização das redes neurais, (1) identificando regiões do espaço de entrada onde os dados de treinamento não estão adequadamente representados, ou (2) indicando as circunstâncias onde a rede neural pode falhar na generalização;
+  - Descobrir características marcantes dos dados de entrada para exploração de dados (mineração de dados, data mining);
+  - Fornecer meios de atravessar a fronteira entre as abordagens conexionista e simbólica para o desenvolvimento de máquinas inteligentes;
+  - Satisfazer a crítica necessidade de segurança em uma classe especial de sistemas na qual segurança é uma condição obrigatória.
+
+### 10.2 Notas históricas
+
+- Trabalho pioneiro em redes neurais (considerado por alguns como o nascimento da IA e das redes neurais artificiais): McCulloch e Pitts (1943)
+  - Descrição de cálculos lógicos das redes neurais
+  - Primeira proposta de um modelo de neurônio artificial
+    - Modelo "tudo ou nada" (binário)
+    - Afirmaram que, com a quantidade suficiente dessas unidades, com conexões sinápticas ajustadas e operando de forma síncrona, teoricamente seria possível computar qualquer função computável
+  - Influenciou von Neumann na construção do EDVAC
+
+- Donald Hebb (1949)
+  - Formulação explícita de uma regra de aprendizagem fisiológica para a modificação sináptica
+    - A conectividade do cérebro é continuamente modificada conforme o organismo aprende tarefas funcionais diferentes. Agrupamentos neurais são criados por tais modificações.
+    - A eficiência da sinapse entre dois neurônios é aumentada pela ativação repetida de um deles causada pelo outro.
+
+- Ashby (1952)
+  - *Design for a Brain: The Origin of Adaptive Behavior*
+    - O comportamento adaptativo não é inato, mas aprendido.
+
+- Rochester, Holland, Haibt e Duda (1956)
+  - Talvez a primeira tentativa de simular computacionalmente o postulado da aprendizagem de Hebb.
+  - Os resultados demonstraram a necessidade de adicionar inibição para que a teoria funcionasse.
+
+- Utley (1956)
+  - Demonstrou que uma rede neural com sinapses modificáveis pode aprender a classificar conjuntos simples de padrões binários.
+
+- Von Neumann (1956)
+  - Propôs a redundância como solução para o problema da confiabilidade da rede composta por componentes individualmente não confiáveis (neurônios).
+  - Winograd e Cowan (1963) sugeriram a representação redundante e distribuída.
+    - Demonstraram que um grande número de elementos pode representar um conceito individual, com incremento de robustez e paralelismo.
+
+- Rosenblatt (1958)
+  - Perceptron
+    - Método de aprendizagem supervisionada
+    - Reconhecimento de padrões
+    - Teorema da convergência do perceptron
+
+- Widrow e Hoff (1960)
+  - Algoritmo do mínimo quadrado médio (Least Mean-Square, LMS)
+  - Adaline (adaptive linear element), que se diferencia do perceptron pelo procedimento de aprendizagem.
+
+- Widrow (1962)
+  - Madaline (Multiple Adaline)
+    - Uma das primeiras redes neurais em camadas e treináveis.
+
+- Minsky e Papert (1969)
+  - Demonstraram que há limites fundamentais ao que o perceptron de camada única pode calcular e que não há razões para supor que seriam superadas pelo de múltiplas camadas.
+  - Problema da atribuição de crédito.
+  - A década de 70 foi marcada pelo enfraquecimento do interesse em redes neurais, especialmente em razão das limitações por eles demonstradas, que somente ressurgiu nos anos 80, com destaque para os trabalhos de Hopfield (1982), Rumelhart e McClelland (1986).
+
+- Grossberg (1980)
+  - Teoria da ressonância adaptativa
+
+- Ackley, Hinton e Sejnowski (1985)
+  - Máquina de Boltzmann (primeira rede neural de múltiplas camadas)
+
+- Rumelhart, Hinton e Williams (1986)
+  - Algoritmo de retropropagação
+    - A ideia básica foi proposta por Bryson e Ho (1969), mas primeiramente documentada por Werbos (1974).
+
+- Broomhead e Lowe (1988)
+  - Redes feedforward RBF (Radial Basis Function)
+
 ## Principais conceitos/definições/ideias extraídos do texto original
 
 - **Definição de rede neural**
@@ -814,3 +919,5 @@ VERY LARGE SCALE INTEGRATION. In: WIKIPEDIA. Disponível em <https://en.wikipedi
 [^25]: Na segunda edição do livro, o autor ressalta que, nesse contexto, a ideia de reforço tem origem na Psicologia e destaca a Lei do Efeito de Thorndike, segundo a qual "das diversas respostas à mesma situação, aquelas que são acompanhadas ou seguidas de perto pela satisfação do animal serão, se o restante for igual, mais fortemente conectadas com a situação, de forma que, quando a situação ocorrer novamente, elas terão maior probabilidade de ocorrerem; aquelas que são acompanhadas ou seguidas de perto por desconforto para o animal, se o resto for igual, terão menor probabilidade de ocorrerem. Quanto maior for a satisfação ou o desconforto, maior será o reforço ou o enfraquecimento da ligação." (HAYKIN, 2001, p. 135).
 
 [^26]: Não contemplado na terceira edição, mas presente na segunda.
+
+[^27]: Estes tópicos não constam explicitamente da terceira edição, mas estavam na segunda (itens 1.8 ("inteligência artificial e redes neurais"), 1.9 ("notas históricas"), 2.11 ("memória"), 2.12 ("adaptação), 2.13 ("natureza estatística do processo de aprendizagem"), 2.14 ("teoria estatística da aprendizagem"), 2.15 ("modelo de aprendizagem Provavelmente Aproximadamente Correto")).
