@@ -55,7 +55,7 @@ Principais capacidades e propriedades das redes neurais artificiais (p. 2/6):
 - Uniformidade de análise e projeto ("[...] as redes neurais desfrutam de universalidade como processadores de informação" (HAYKIN, 2001, p. 30));
 - Analogia neurobiológica (motivadas por estruturas biológicas do cérebro humano).
 
-## 2. O cérebro humano[^9]
+## 2. O cérebro humano [^9]
 
 O sistema nervoso humano pode ser visto como um sistema de três estágios, do qual fazem parte cérebro, receptores e atuadores. Os estímulos - entrada (*input*) do sistema - são captados e convertidos em sinais elétricos pelos receptores; o cérebro continuamente recebe e processa esses sinais; os atuadores convertem os sinais recebidos de modo a gerar as ações (respostas) apropriadas, que constituem a saída (*output*) do sistema. A informação captada é transmitida em um único sentido - receptor > cérebro > atuador -, mas o sistema se retroalimenta no sentido oposto dessa transmissão - atuador > cérebro > receptor (*feedback*).
 
@@ -415,6 +415,8 @@ Há pelo menos três técnicas para implementar o dito classificador invariante 
 
 ##### 8.1.1.1 Aprendizagem por correção de erros
 
+É uma regra inerente à **aprendizagem supervisionada** em que o professor deve ser "[...] capaz de fornecer correções exatas para as saídas da rede quando um erro ocorrer [...]" (HAYKIN, 2001, p. 131).
+
 Consiste no ajuste dos pesos sinápticos do neurônio até que o sistema atinja um denominado **estado estável**, em que os próprios pesos estariam estabilizados de modo a minimizar o erro entre a saída da rede neural e a **resposta desejada ou saída-alvo** - $d_k(n)$ -, em que $k$ é um neurônio de camada oculta que foi acionado pelo sinal $x(n)$, proveniente também de camada(s) oculta(s), e "o argumento $n$ representa o instante de tempo discreto, ou mais precisamente, o passo de tempo de um processo iterativo envolvido no ajuste dos pesos sinápticos do neurônio $k$, tal como ilustrado abaixo:
 
 ![Aprendizagem por correção de erros](../../imagens/12_aprendizagem_correcao_de_erro.png)
@@ -453,6 +455,8 @@ O conhecimento (experiência), em sua totalidade ou maioria, é explicitamente a
 Um dos algoritmos que utiliza esta regra é o do **vizinho mais próximo (regra do vizinho mais próximo ou *nearest neighbor algorithm*).**
 
 ##### 8.1.1.3 Aprendizagem Hebbiana
+
+Trata-se de regra inerente à **aprendizagem não-supervisionada**.
 
 O **postulado de aprendizado de Hebb**, em homenagem ao neuropsicólogo Donald Hebb, autor do livro *The Organization of Behavior* (1949), preconiza que "quando um axônio da célula A está perto o suficiente para excitar uma célula B e participa do seu disparo repetida ou persistentemente, então algum processo de crescimento ou modificação metabólica acontece em uma das células ou em ambas, de tal forma que a eficiência de A como uma das células que dispara B é aumentada." (HEBB, 1949 apud HAYKIN, 2001, p. 80). Essa modificação seria embasada na aprendizagem associativa a nível celular, culminando na modificação permanente do padrão de atividade das células envolvidas.
 
@@ -505,6 +509,8 @@ Figura 13 - Ilustração das hipóteses de Hebb e da covariância. Fonte: HAYKIN
 
 ##### 8.1.1.4 Aprendizagem competitiva
 
+Trata-se de regra inerente à **aprendizagem não-supervisionada**.
+
 Ocorreria uma competição entre os neurônios da camada de saída da rede neural para que se tornassem ativos -- isto é, disparassem --, isso porque, diferentemente do que ocorre no modelo baseado na aprendizagem hebbiana, "[...] na aprendizagem competitiva somente um único neurônio de saída está ativo em um determinado instante" (HAYKIN, 2001, p. 83), o que a torna adequada para "[...] descobrir características estatisticamente salientes que podem ser utilizadas para classificar um conjunto de padrões de entrada." (HAYKIN, 2001, p. 83).
 
 Três elementos básicos (Rumelhart; Zisper, 1985):
@@ -539,6 +545,8 @@ $$
 ##### 8.1.1.5 Aprendizagem de Boltzmann
 
 Trata-se de um algoritmo estocástico(probabilístico) derivado da mecânica estatística[^23]. A rede neural projetada com base nessa regra é denominada **máquina de Boltzmann.** Analogicamente, busca-se um "equilíbrio térmico" do sistema.
+
+É uma regra inerente à **aprendizagem supervisionada** em que o professor deve "[...] 'fixar' em relação ao ambiente as unidades de entrada e de saída livres da rede [...]" (HAYKIN, 2001, p. 131).
 
 Os neurônios operam de modo binário e recorrente, variando entre os estados "ligado" (+1) e "desligado" (-1). "A máquina é caracterizada por uma *função de energia*, $E$, cujo valor é determinado pelos estados particulares ocupados pelos neurônios individuais da máquina [...]" (HAYKIN, 2001, p. 86). Nesse modelo, não há realimentação.
 
@@ -757,7 +765,7 @@ Três componentes fundamentais foram identificados por Sage (1990): **representa
     - Resposta a evidências (não apenas classificar o padrão adequadamente, mas informar o nível de confiabilidade da escolha, rejeitando ambiguidade);
     - Informação contextualizada ("O conhecimento é representado pela própria estrutura e estado de ativação de uma rede neural." (HAYKIN, 2001, p. 30));
     - Tolerância a falhas (devido à sua estrutura massiva e paralelamente distribuída);
-    - Implementação em VSLI (*very-large-scale-integration*) [6];
+    - Implementação em VSLI (*very-large-scale-integration*);
     - Uniformidade de análise e projeto ("[...] as redes neurais desfrutam de universalidade como processadores de informação" (HAYKIN, 2001, p. 30));
     - Analogia neurobiológica (motivadas por estruturas biológicas do cérebro humano).
 

@@ -88,7 +88,7 @@
         </article>
 
         <article>
-            <h2 id="subtitulo_2">2. O cérebro humano<sup><a class="linknotas" href="#nota_9">[9]</a></sup></h2>
+            <h2 id="subtitulo_2">2. O cérebro humano<sup> <a class="linknotas" href="#nota_9">[9]</a></sup></h2>
             <p>O sistema nervoso humano pode ser visto como um sistema de três estágios, do qual fazem parte cérebro, receptores e atuadores. Os estímulos - entrada (<em>input</em>) do sistema - são captados e convertidos em sinais elétricos pelos receptores; o cérebro continuamente recebe e processa esses sinais; os atuadores convertem os sinais recebidos de modo a gerar as ações (respostas) apropriadas, que constituem a saída (<em>output</em>) do sistema. A informação captada é transmitida em um único sentido - receptor &gt; cérebro &gt; atuador -, mas o sistema se retroalimenta no sentido oposto dessa transmissão - atuador &gt; cérebro &gt; receptor (<em>feedback</em>).</p>
             <p>Foi o trabalho de Santiago Ramón y Cajal que, em 1911, introduziu o neurônio como estrutura fundamental do cérebro. Os neurônios são cinco a seis ordens de grandeza mais lentos do que os circuitos digitais e, ainda assim, o cérebro é muito mais eficiente do que computadores em termos de eficiência energética. Provavelmente, isso é resultado da enorme quantidade de células neuronais e à massiva interconexão entre elas - a eficiência energética do cérebro humano é de <math><msup><mi>10</mi><mi>-16</mi></msup></math> joules por operação por segundo. Eles se apresentam sob diversas formas e tamanhos, sendo que um dos mais comuns é a denominada célula piramidal, e se organizam na anatomia cerebral em diversos níveis e em pequena ou grande escala.</p>
             <div class="image-container">
@@ -753,6 +753,7 @@
             
             <h4>8.1.1 Regras básicas de aprendizagem</h4>
             <h5>8.1.1.1 Aprendizagem por correção</h5>
+            <p>É uma regra inerente à <strong>aprendizagem supervisionada</strong> em que o professor deve ser "[...] capaz de fornecer correções exatas para as saídas da rede quando um erro ocorrer [...]" (HAYKIN, 2001, p. 131).</p>
             <p>
                 Consiste no ajuste dos pesos sinápticos do neurônio até que o sistema atinja um denominado <strong>estado estável</strong>, em que os próprios pesos estariam estabilizados de modo a minimizar o erro entre a saída da rede neural e a <strong>resposta desejada ou saída-alvo</strong> -- 
                 <math>
@@ -947,6 +948,7 @@
             <p>Um dos algoritmos que utiliza esta regra é o do <strong>vizinho mais próximo (regra do vizinho mais próximo ou <em>nearest neighbor algorithm</em>).</strong></p>
 
             <h5>8.1.1.3 Aprendizagem Hebbiana</h5>
+            <p>Trata-se de regra inerente à <strong>aprendizagem não-supervisionada.</strong></p>
             <p>O <strong>postulado de aprendizado de Hebb</strong>, em homenagem ao neuropsicólogo Donald Hebb, autor do livro <em>The Organization of Behavior</em> (1949), preconiza que "quando um axônio da célula A está perto o suficiente para excitar uma célula B e participa do seu disparo repetida ou persistentemente, então algum processo de crescimento ou modificação metabólica acontece em uma das células ou em ambas, de tal forma que a eficiência de A como uma das células que dispara B é aumentada." (HEBB, 1949 apud HAYKIN, 2001, p. 80). Essa modificação seria embasada na aprendizagem associativa a nível celular, culminando na modificação permanente do padrão de atividade das células envolvidas.</p>
             <p>
                 Esse postulado pode ser dividido em duas partes, no que se denomina <strong>sinapse hebbiana</strong>, embora originalmente Hebb não tenha proposto a segunda (Stent, 1973; Changeux, Danchin, 1976 apud HAYKIN, 2001, p. 80):
@@ -1120,6 +1122,7 @@
             </p>
 
             <h5>8.1.1.4 Aprendizagem competitiva</h5>
+            <p>Trata-se de regra inerente à <strong>aprendizagem não-supervisionada.</strong></p>
             <p>Ocorreria uma competição entre os neurônios da camada de saída da rede neural para que se tornassem ativos -- isto é, disparassem --, isso porque, diferentemente do que ocorre no modelo baseado na aprendizagem hebbiana, "[...] na aprendizagem competitiva somente um único neurônio de saída está ativo em um determinado instante" (HAYKIN, 2001, p. 83), o que a torna adequada para "[...] descobrir características estatisticamente salientes que podem ser utilizadas para classificar um conjunto de padrões de entrada." (HAYKIN, 2001, p. 83).</p>
             <p>
                 Três elementos básicos (Rumelhart; Zisper, 1985):
@@ -1251,6 +1254,7 @@
 
             <h5 id="subtitulo_8_1_1_5">8.1.1.5 Aprendizagem de Botzmann</h5>
             <p>Trata-se de um algoritmo estocástico (probabilístico) derivado da mecânica estatística<sup><a class="linknotas" href="#nota_24">[24]</a></sup>. A rede neural projetada com base nessa regra é denominada <strong>máquina de Boltzmann</strong> Analogicamente, busca-se um "equilíbrio térmico" do sistema.</p>
+            <p>É uma regra inerente à <strong>aprendizagem supervisionada</strong> em que o professor deve "[...] 'fixar' em relação ao ambiente as unidades de entrada e de saída livres da rede [...]" (HAYKIN, 2001, p. 131).</p>
             <p>Os neurônios operam de modo binário e recorrente, variando entre os estados "ligado" (+1) e "desligado" (-1). "A máquina é caracterizada por uma <em>função de energia</em>, <math><mi>E</mi></math>, cujo valor é determinado pelos estados particulares ocupados pelos neurônios individuais da máquina [...]" (HAYKIN, 2001, p. 86). Nesse modelo, não há realimentação.</p>
             <p>
                 Sendo <math><msub><mi>x</mi><mi>j</mi></msub></math> o estado atual e <math><msub><mi>w</mi><mi>kj</mi></msub></math> o peso sináptico entre os neurônios <math><mi>k</mi></math> e <math><mi>j</mi></math>, a função de energia é dada por
