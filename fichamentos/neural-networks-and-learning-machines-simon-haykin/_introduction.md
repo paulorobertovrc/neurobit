@@ -744,6 +744,74 @@ Três componentes fundamentais foram identificados por Sage (1990): **representa
 - Broomhead e Lowe (1988)
   - Redes feedforward RBF (Radial Basis Function)
 
+### 10.3 Memória
+
+>Em um contexto neurobiológico, memória se refere às alterações neurais relativamente duradouras induzidas pela interação de um organismo com o seu ambiente (Teyler, 1986). [...] ela deve ser acessível ao sistema nervoso para poder influenciar o comportamento futuro. Entretanto, um padrão de atividade deve ser inicialmente armazenado na memória através de um *processo de aprendizagem*. [...] A memória se divide em memória de "curto prazo" e de "longo prazo", dependendo do tempo de retenção (Arbib, 1989). *Memória de curto prazo* se refere a uma compilação de conhecimento que representa o estado "corrente" do ambiente. [...] *Memória de longo prazo*, por outro lado, se refere ao conhecimento armazenado por um longo período ou permanentemente. (HAYKIN, 2001, p. 100)
+
+#### 10.3.1 Características da memória associativa
+
+- Distribuída
+  - "Em uma memória distribuída, a questão básica de interesse são as atividades simultâneas ou quase simultâneas de muitos neurônios diferentes [...]." (HAYKIN, 2001, p. 100)
+- Os padrões de estímulo (chaves) e os padrões de resposta (valores armazenados) são vetores de dados
+  - "As atividades neurais formam um padrão espacial dentro da memória que contém informação sobre os estímulos. Diz-se, portanto, que a memória realiza um mapeamento distribuído que transforma um padrão de atividade no espaço de entrada em um outro padrão de atividade no espaço de saída." (HAYKIN, 2001, p. 100/101)
+- A informação é armazenada na memória por meio de um padrão espacial de atividades neurais e um grande número de neurônios;
+- A informação inclui os endereços de armazenamento e de recuperação
+- Embora os neurônios não sejam confiáveis e estejam suscetíveis a falhas e/ou ruídos, a memória associativa é robusta e tolerante a falhas devido à sua natureza distribuída (difusa)
+- "Pode haver interações entre padrões individuais armazenados na memória (De outra forma, a memória deveria ser excepcionalmente grande para acomodar o armazenamento de um grande número de padrões em perfeito isolamento entre si). Existe, portanto, a possibilidade de a memória cometer *erros* durante o processo de recordação." (HAYKIN, 2001, p. 100)
+
+#### 10.3.2 Representação matricial da memória associativa
+
+Para os casos em que a dimensionalidade do espaço de entrada -- o vetor $x_k$ -- seja igual à do espaço de saída -- o vetor $y_k$ --, e igual a $m$, sendo que $m$ também equivale ao número de nós das camadas de entrada e/ou de saída da rede, se esta for linear, a associação do vetor de chaves $x_k$ (espaço de entrada) com o vetor memorizado $y_k$ (espaço de saída) pode ser descrita na forma matricial como
+
+$$
+y_k = W(k)x_k, \quad k = 1, 2, \ldots, q
+$$
+
+em que $W(k)$ é a matriz de pesos sinápticos determinada pelo par de padrões de entrada-saída $(x_k, y_k)$. Por sua vez, a matriz de pesos $m \times m \ W(k)$ é definida por
+
+$$
+W(k) = \begin{bmatrix} w_{11}(k) & w_{12}(k) & \cdots & w_{1m}(k) \\ w_{21}(k) & w_{22}(k) & \cdots & w_{2m}(k) \\ \vdots & \vdots & \ddots & \vdots \\ w_{m1}(k) & w_{m2}(k) & \cdots & w_{mm}(k) \end{bmatrix}
+$$
+
+Por conseguinte, a matriz de memória $m \times m$, que descreve a soma das matrizes de pesos para todas as associações de padrões, é dada por
+
+$$
+M = \sum_{k=1}^{q} W(k)
+$$
+
+Essa matriz define a conectividade global entre as camadas de entrada e de saída da rede, ao mesmo tempo em que representa toda a experiência acumulada como resultado de todos os $q$ padrões de entrada-saída.
+
+Na forma recursiva, essa equação pode ser reescrita como
+
+$$
+M_k = M_{k-1} + W(k), \quad k = 1, 2, \ldots, q
+$$
+
+Como se vê, ao valor mais antigo é acrescido o incremento produzido pela última associação de padrões. Além disso, conforme a quantidade de padrões armazenados aumenta, a influência de cada acréscimo sobre a memória como um todo é diminuída progressivamente.
+
+#### 10.3.3 Memória por matriz de correlação
+
+A matriz de correlação representa uma estimativa da matriz de memória $M$ e é dada por
+
+$$
+C = \sum_{k=1}^{q} y_k x_k^T
+$$
+
+O termo $x_k^T$ representa o produto externo entre o padrão-chave $x_k$ e o padrão-memorizado $y_k$. A matriz de correlação $C$ também é uma matriz $m \times m$. Essa memória é chamada de memória por matriz de correlação. "Correlação, de uma forma ou de outra, é de fato a base da aprendizagem, associação, reconhecimento de padrões e recordação de memórias no sistema nervoso humano." (HAYKIN, 2001, p. 104)
+
+#### 10.3.3.1 Recordação
+
+"[...] o número de padrões que podem ser armazenados de forma confiável em uma memória por matriz de correlação nunca pode exceder a dimensionalidade do espaço de entrada." (HAYKIN, 2001, p. 107)
+
+### 10.4 Adaptação
+
+A natureza espaço-temporal da aprendizagem é inerente às espécies animais e possibilita representar a estrutura temporal da experiência e se adaptar perante a mudança do ambiente.
+
+>Quando uma rede neural opera em um ambiente estacionário (i.e., um ambiente cujas características estatísticas não mudam com o tempo), as estatísticas essenciais do ambiente podem ser, em teoria, aprendidas pela rede, sob supervisão de um professor. Em particular, os pesos sinápticos da rede podem ser calculados submetendo-se a rede a uma sessão de treinamento com um conjunto de dados que é representativo do ambiente. Uma vez que o processo de treinamento esteja completo, os pesos sinápticos da rede capturariam a estrutura estatística subjacente do ambiente, o que justificaria o "congelamento" de seus valores depois disso. Assim, o sistema de aprendizagem se baseia de uma forma ou de outra na memória, para recordar e explorar experiências passadas.  
+Frequentemente, entretanto, o ambiente de interesse é não-estacionário, o que significa que os parâmetros estatísticos dos sinais portadores de informação, gerados pelo ambiente variam com o tempo. Em situações deste tipo, os métodos tradicionais de aprendizagem supervisionada podem se mostrar inadequados, pois a rede não está equipada com os meios necessários para seguir as variações estatísticas do ambiente no qual opera. Para superar esta dificuldade, é desejável que uma rede neural possa adaptar continuamente seus parâmetros livres às variações do sinal incidente em tempo real. Assim, um sistema adaptativo responde a toda entrada distinta como sendo uma entrada nova. Em outras palavras, o processo de aprendizagem encontrado em um sistema adaptativo nunca para, com a aprendizagem sendo realizada enquanto o processamento de sinal está sendo executado pelo sistema. Esta forma de aprendizagem é chamada de *aprendizagem contínua ou aprendizagem em tempo real (on-the-fly)*. (HAYKIN, 2001, p. 108)
+
+Uma das formas de garantir a aprendizagem contínua por meio de uma rede neural -- isto é, de assegurar que seu comportamento se adaptará à estrutura temporal variável dos sinais incidentes no espaço de comportamentos --, é presumindo que "[...] as características estatísticas de um processo não-estacionário normalmente variam de forma suficientemente lenta para que o processo seja considerado pseudo-estacionário em uma janela de tempo suficientemente curta" (HAYKIN, 2001, p. 109). Em casos tais, a rede poderá ser regularmente retreinada, de modo a capturar as variações estatísticas do ambiente (incorporação da estrutura temporal).
+
 ## Principais conceitos/definições/ideias extraídos do texto original
 
 - **Definição de rede neural**
