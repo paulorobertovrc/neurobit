@@ -812,6 +812,32 @@ Frequentemente, entretanto, o ambiente de interesse é não-estacionário, o que
 
 Uma das formas de garantir a aprendizagem contínua por meio de uma rede neural -- isto é, de assegurar que seu comportamento se adaptará à estrutura temporal variável dos sinais incidentes no espaço de comportamentos --, é presumindo que "[...] as características estatísticas de um processo não-estacionário normalmente variam de forma suficientemente lenta para que o processo seja considerado pseudo-estacionário em uma janela de tempo suficientemente curta" (HAYKIN, 2001, p. 109). Em casos tais, a rede poderá ser regularmente retreinada, de modo a capturar as variações estatísticas do ambiente (incorporação da estrutura temporal).
 
+### 10.5 Natureza estatística do processo de aprendizagem
+
+"Uma rede neural é meramente uma forma pela qual *conhecimento empírico* sobre um fenômeno físico ou ambiente de interesse pode ser codificado através de treinamento. Por conhecimento 'empírico' entendemos um conjunto de medidas que caracterizam o fenômeno." (HAYKIN, 2001, p. 110).
+
+A rede neural fornece uma aproximação para o modelo estatístico.
+
+**Modo de treinamento por lote:** os pesos sinápticos dos neurônios da rede são ajustados com base na totalidade do conjunto de dados de treinamento e não sobre cada exemplo individualmente.
+
+#### 10.5.1 Dilema bias-variância [^28]
+
+"[...] em uma rede neural que aprende por exemplos utilizando para isso ma amostra de treinamento de tamanho fixo, o preço para se obter um bias pequeno é uma variância grande. Para uma rede neural única, somente quando o tamanho da amostra de treinamento se torna infinitamente grande é que podemos esperar eliminar tanto o bias como a variância, ao mesmo tempo. Temos então o dilema bias/variância, e a consequência é uma convergência excessivamente lenta (German et al., 1992)." (HAYKIN, 2001, p. 114)
+
+### 10.6 Teoria estatística da aprendizagem
+
+#### 10.6.1 Dimensão V-C
+
+"A dimensão V-C é uma medida da capacidade ou do poder de expressão da família de funções de classificação realizadas pela máquina de aprendizagem." (HAYKIN, 2001, p. 119). "[...] é um conceito puramente combinatório que não tem conexão com a noção geométrica de dimensão. [...] Grosso modo, o número de exemplos necessários para se aprender de maneira confiável uma classe de interesse é proporcional à dimensão V-C daquela classe." (HAYKIN, 2001, p. 122)
+
+#### 10.6.2 Minimização estrutural de risco
+
+"O *erro de treinamento* é a frequência de erros cometidos por uma máquina de aprendizagem com um vetor de peso $w$ durante a sessão de treinamento. Analogamente, o *erro de generalização* é definido como a frequência de erros cometidos pela máquina quando é testada com exemplos não vistos anteriormente." (HAYKIN, 2001, p. 126). "O desafio ao se resolver um problema de aprendizagem supervisionada é, portanto, realizar o melhor desempenho de generalização adequando-se a capacidade da máquina com a quantidade disponível de dados de treinamento para o problema em questão. O método de minimização estrutural de risco fornece um procedimento indutivo para alcançar este objetivo tornando a dimensão V-C da máquina de aprendizagem em uma variável de controle (Vapnik, 1992, 1998)." (HAYKIN, 2001, p. 127).
+
+## 10.7 Modelo de aprendizagem Provavelmente Aproximadamente Correto
+
+"Como o nome implica, o modelo PAC é uma estrutura probabilística para o estudo de aprendizagem e generalização em sistemas de classificação binária." (HAYKIN, 2001, p. 128). "[...] desde que o tamanho $N$ da amostra de treinamento $\Tau$ seja suficientemente grande, após a rede neural ter sido treinada com aquele conjunto de dados, é 'provável' que o mapeamento de entrada-saída calculado pela rede seja 'aproximadamente correto'". (HAYKIN, 2001, p. 129).
+
 ## Principais conceitos/definições/ideias extraídos do texto original
 
 - **Definição de rede neural**
@@ -997,3 +1023,5 @@ VERY LARGE SCALE INTEGRATION. In: WIKIPEDIA. Disponível em <https://en.wikipedi
 [^26]: Não contemplado na terceira edição, mas presente na segunda.
 
 [^27]: Estes tópicos não constam explicitamente da terceira edição, mas estavam na segunda (itens 1.8 ("inteligência artificial e redes neurais"), 1.9 ("notas históricas"), 2.11 ("memória"), 2.12 ("adaptação), 2.13 ("natureza estatística do processo de aprendizagem"), 2.14 ("teoria estatística da aprendizagem"), 2.15 ("modelo de aprendizagem Provavelmente Aproximadamente Correto")).
+
+[^28]: Pode-se dizer que o *bias* excessivamente alto prejudica a capacidade de classificação e a variância excessivamente alta, a de generalização.

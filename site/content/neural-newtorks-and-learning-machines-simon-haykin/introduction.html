@@ -1937,6 +1937,24 @@
                 </blockquote>
             </p>
             <p>Uma das formas de garantir a aprendizagem contínua por meio de uma rede neural -- isto é, de assegurar que seu comportamento se adaptará à estrutura temporal variável dos sinais incidentes no espaço de comportamentos --, é presumindo que "[...] as características estatísticas de um processo não-estacionário normalmente variam de forma suficientemente lenta para que o processo seja considerado pseudo-estacionário em uma janela de tempo suficientemente curta" (HAYKIN, 2001, p. 109). Em casos tais, a rede poderá ser regularmente retreinada, de modo a capturar as variações estatísticas do ambiente (incorporação da estrutura temporal).</p>
+            
+            <h3>10.5 Natureza estatística do processo de aprendizagem</h3>
+            <p>"Uma rede neural é meramente uma forma pela qual *conhecimento empírico* sobre um fenômeno físico ou ambiente de interesse pode ser codificado através de treinamento. Por conhecimento 'empírico' entendemos um conjunto de medidas que caracterizam o fenômeno." (HAYKIN, 2001, p. 110).</p>
+            <p>A rede neural fornece uma aproximação para o modelo estatístico.</p>
+            <p><strong>Modo de treinamento por lote:</strong> os pesos sinápticos dos neurônios da rede são ajustados com base na totalidade do conjunto de dados de treinamento e não sobre cada exemplo individualmente.</p>
+
+            <h4 id="subtitulo_10_5_1">10.5.1 Dilema bias-variância<sup> <a class="linknotas" href="#nota_29">[29]</a></sup></h4>
+            <p>"[...] em uma rede neural que aprende por exemplos utilizando para isso ma amostra de treinamento de tamanho fixo, o preço para se obter um bias pequeno é uma variância grande. Para uma rede neural única, somente quando o tamanho da amostra de treinamento se torna infinitamente grande é que podemos esperar eliminar tanto o bias como a variância, ao mesmo tempo. Temos então o dilema bias/variância, e a consequência é uma convergência excessivamente lenta (German et al., 1992)." (HAYKIN, 2001, p. 114)</p>
+
+            <h3>10.6 Teoria estatística da aprendizagem</h3>
+            <h4>10.6.1 Dimensão V-C</h4>
+            <p>"A dimensão V-C é uma medida da capacidade ou do poder de expressão da família de funções de classificação realizadas pela máquina de aprendizagem." (HAYKIN, 2001, p. 119). "[...] é um conceito puramente combinatório que não tem conexão com a noção geométrica de dimensão. [...] Grosso modo, o número de exemplos necessários para se aprender de maneira confiável uma classe de interesse é proporcional à dimensão V-C daquela classe." (HAYKIN, 2001, p. 122)</p>
+
+            <h4>10.6.2 Minimização estrutural de risco</h4>
+            <p>"O <em>erro de treinamento</em> é a frequência de erros cometidos por uma máquina de aprendizagem com um vetor de peso <math><mi>w</mi></math> durante a sessão de treinamento. Analogamente, o <em>erro de generalização</em> é definido como a frequência de erros cometidos pela máquina quando é testada com exemplos não vistos anteriormente." (HAYKIN, 2001, p. 126). "O desafio ao se resolver um problema de aprendizagem supervisionada é, portanto, realizar o melhor desempenho de generalização adequando-se a capacidade da máquina com a quantidade disponível de dados de treinamento para o problema em questão. O método de minimização estrutural de risco fornece um procedimento indutivo para alcançar este objetivo tornando a dimensão V-C da máquina de aprendizagem em uma variável de controle (Vapnik, 1992, 1998)." (HAYKIN, 2001, p. 127).</p>
+
+            <h3>10.7 Modelo de aprendizagem Provavelmente Aproximadamente Correto</h3>
+            <p>"Como o nome implica, o modelo PAC é uma estrutura probabilística para o estudo de aprendizagem e generalização em sistemas de classificação binária." (HAYKIN, 2001, p. 128). "[...] desde que o tamanho <math><mi>N</mi></math> da amostra de treinamento <math><mi>&tau;</mi></math> seja suficientemente grande, após a rede neural ter sido treinada com aquele conjunto de dados, é 'provável' que o mapeamento de entrada-saída calculado pela rede seja 'aproximadamente correto'". (HAYKIN, 2001, p. 129).</p>
             <a class="emoji" href="#top">[ 🔝 ]</a>
         </article>
         <hr>
@@ -2203,6 +2221,7 @@
             <p id="nota_26">[26] Na segunda edição do livro, o autor ressalta que, nesse contexto, a ideia de reforço tem origem na Psicologia e destaca a Lei do Efeito de Thorndike, segundo a qual "das diversas respostas à mesma situação, aquelas que são acompanhadas ou seguidas de perto pela satisfação do animal serão, se o restante for igual, mais fortemente conectadas com a situação, de forma que, quando a situação ocorrer novamente, elas terão maior probabilidade de ocorrerem; aquelas que são acompanhadas ou seguidas de perto por desconforto para o animal, se o resto for igual, terão menor probabilidade de ocorrerem. Quanto maior for a satisfação ou o desconforto, maior será o reforço ou o enfraquecimento da ligação." (HAYKIN, 2001, p. 135).<a class="linkdiscreto" href="#subtitulo_8_2_2_1"> [ 🔙 ]</a></p>
             <p id="nota_27">[27] Não contemplado na terceira edição, mas presente na segunda.<a class="linkdiscreto" href="#subtitulo_9_5"> [ 🔙 ]</a></p>
             <p id="nota_28">[28] Estes tópicos não constam explicitamente da terceira edição, mas estavam na segunda (itens 1.8 ("inteligência artificial e redes neurais"), 1.9 ("notas históricas"), 2.11 ("memória"), 2.12 ("adaptação), 2.13 ("natureza estatística do processo de aprendizagem"), 2.14 ("teoria estatística da aprendizagem"), 2.15 ("modelo de aprendizagem Provavelmente Aproximadamente Correto")).<a class="linkdiscreto" href="#subtitulo_10"> [ 🔙 ]</a></p>
+            <p id="nota_29">[29] Pode-se dizer que o *bias* excessivamente alto prejudica a capacidade de classificação e a variância excessivamente alta, a de generalização.<a class="linkdiscreto" href="#subtitulo_10_5_1"> [ 🔙 ]</a></p>
             <a class="emoji" href="#top">[ 🔝 ]</a>
         </article>
     </main>
