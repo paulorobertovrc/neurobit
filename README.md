@@ -1,9 +1,11 @@
 # PROJETO NEUROBIT
 
-![Static Badge](https://img.shields.io/badge/Fichamentos_|_Escrevendo-1-5F9EA0?labelColor=grey)
-![Static Badge](https://img.shields.io/badge/Fichamentos_|_Finalizados-0-5F9EA0?labelColor=grey)
-![Static Badge](https://img.shields.io/badge/Complementos_|_Finalizados-0-5F9EA0?labelColor=grey)
-![Endpoint Badge](https://img.shields.io/endpoint?url=https%3A%2F%2Fhits.dwyl.com%2Fpaulorobertovrc%2Fneurobit.svg%3Fstyle%3Dflat-square%26show%3Dunique&label=Visitantes&labelColor=grey&color=4682B4)
+![Static Badge](https://img.shields.io/badge/Livros_|_Iniciados-1-025159?labelColor=grey)
+![Static Badge](https://img.shields.io/badge/Livros_|_Concluídos-0-025159?labelColor=grey)
+![Static Badge](https://img.shields.io/badge/Capítulos_|_Iniciados-0-31A8B8?labelColor=grey)
+![Static Badge](https://img.shields.io/badge/Capítulos_|_Concluídos-2-31A8B8?labelColor=grey)
+![Static Badge](https://img.shields.io/badge/Complementos_|_Iniciados-0-9FA5C8?labelColor=grey)
+![Static Badge](https://img.shields.io/badge/Complementos_|_Concluídos-0-9FA5C8?labelColor=grey)
 
 [![Instagram](https://img.shields.io/badge/Instagram-%23E4405F.svg?logo=Instagram&logoColor=white)](https://www.instagram.com/pauloroberto.dev)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/paulorobertovrc/)
@@ -78,8 +80,8 @@ Ressalvados os direitos autorais dos detentores/produtores dos conteúdos utiliz
 
 | # | Título | Autor | Capítulo | Status | Link |
 | :---: | :---: | :---: | :---: | :---: | :---: |
-1.1 | Neural Networks and Learning Machines | Simon Haykin |  Prefácio | ![Static Badge](https://img.shields.io/badge/Finalizado-grey) | [🔗](./fichamentos/neural-networks-and-learning-machines-simon-haykin/__preface.md) |
-1.2 | Neural Networks and Learning Machines | Simon Haykin | Introdução | ![Static Badge](https://img.shields.io/badge/Finalizado-grey) | [🔗](./fichamentos/neural-networks-and-learning-machines-simon-haykin/_introduction.md) |
+1.1 | Neural Networks and Learning Machines | Simon Haykin |  Prefácio | ![Static Badge](https://img.shields.io/badge/Concluído-grey) | [🔗](./fichamentos/neural-networks-and-learning-machines-simon-haykin/__preface.md) |
+1.2 | Neural Networks and Learning Machines | Simon Haykin | Introdução | ![Static Badge](https://img.shields.io/badge/Concluído-grey) | [🔗](./fichamentos/neural-networks-and-learning-machines-simon-haykin/_introduction.md) |
 
 [[🔝](#acesso-rápido)]
 

@@ -1,6 +1,6 @@
 # # 1.1
 
-![Static Badge](https://img.shields.io/badge/Status-Finalizado-grey?labelColor=5F9EA0)
+![Static Badge](https://img.shields.io/badge/Status-Concluído-grey?labelColor=31A8B8)
 
 ## Prefácio (p. xi/xix)
 
