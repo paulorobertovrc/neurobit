@@ -1,6 +1,6 @@
 # # 1.2 Introdução (p. 1/46)
 
-![Static Badge](https://img.shields.io/badge/Status-Escrevendo-grey?labelColor=5F9EA0)
+![Static Badge](https://img.shields.io/badge/Status-Finalizado-grey?labelColor=5F9EA0)
 
 ## 1. Definição de rede neural [^1]
 
