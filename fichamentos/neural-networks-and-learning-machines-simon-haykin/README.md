@@ -1,7 +1,7 @@
 # # 1 - Neural Networks and Learning Machines
 
-![Static Badge](https://img.shields.io/badge/Status-Escrevendo-grey?labelColor=5F9EA0)
-![Static Badge](https://img.shields.io/badge/Progresso-1_/_17-grey?labelColor=5F9EA0)
+![Static Badge](https://img.shields.io/badge/Status-Suspenso-grey?labelColor=31A8B8)
+![Static Badge](https://img.shields.io/badge/Progresso-2_/_17-grey?labelColor=31A8B8)
 
 ## Informações do livro
 
@@ -19,7 +19,7 @@
 ## Identificação do autor do fichamento
 
 - Nome: Paulo Roberto Vieira Ribeiro Cavalcanti
-- E-Mail: <pr@pauloroberto.dev.br> | <paulor.vrcavalcanti@gmail.com>
+- E-Mail: pr at pauloroberto.dev.br | paulor.vrcavalcanti at gmail.com
 
 ## Resumo
 
@@ -29,8 +29,8 @@ Livro-texto de disciplinas que estudem redes neurais artificiais. Parte da apres
 
 | # | Capítulo | Status | Link |
 | :---: | :---: | :---: | :---: |
-| 1 |  Preface | ![Static Badge](https://img.shields.io/badge/Finalizado-grey) | [🔗](./__preface.md) |
-| 2 | Introduction | ![Static Badge](https://img.shields.io/badge/Escrevendo-grey) | [🔗](./_introduction.md) |
+| 1 |  Preface | ![Static Badge](https://img.shields.io/badge/Concluído-grey) | [🔗](./__preface.md) |
+| 2 | Introduction | ![Static Badge](https://img.shields.io/badge/Concluído-grey) | [🔗](./_introduction.md) |
 | 3 | Rosenblatt's Perceptron | ![Static Badge](https://img.shields.io/badge/Não_iniciado-grey) | - |
 | 4 | Model Building through Regression | ![Static Badge](https://img.shields.io/badge/Não_iniciado-grey) | - |
 | 5 | The Least-Mean-Square Algorithm | ![Static Badge](https://img.shields.io/badge/Não_iniciado-grey) | - |
