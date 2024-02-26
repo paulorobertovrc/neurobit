@@ -1,11 +1,12 @@
 # PROJETO NEUROBIT
 
-![Static Badge](https://img.shields.io/badge/Livros_|_Iniciados-1-025159?labelColor=grey)
-![Static Badge](https://img.shields.io/badge/Livros_|_Concluídos-0-025159?labelColor=grey)
-![Static Badge](https://img.shields.io/badge/Capítulos_|_Iniciados-0-31A8B8?labelColor=grey)
-![Static Badge](https://img.shields.io/badge/Capítulos_|_Concluídos-2-31A8B8?labelColor=grey)
-![Static Badge](https://img.shields.io/badge/Complementos_|_Iniciados-0-9FA5C8?labelColor=grey)
-![Static Badge](https://img.shields.io/badge/Complementos_|_Concluídos-0-9FA5C8?labelColor=grey)
+![Static Badge](https://img.shields.io/badge/Livros-025159)
+![Static Badge](https://img.shields.io/badge/Selecionados-1-31A8B8?labelColor=025159)
+![Static Badge](https://img.shields.io/badge/Estudando-0-31A8B8?labelColor=025159)
+![Static Badge](https://img.shields.io/badge/Fichamentos-3A5F91)
+![Static Badge](https://img.shields.io/badge/Iniciados-2-6C8BBC?labelColor=3A5F91)
+![Static Badge](https://img.shields.io/badge/Concluídos-2-6C8BBC?labelColor=3A5F91)
+![Static Badge](https://img.shields.io/badge/Complementos-0-8AB68C?labelColor=4B7A52)
 
 [![Instagram](https://img.shields.io/badge/Instagram-%23E4405F.svg?logo=Instagram&logoColor=white)](https://www.instagram.com/pauloroberto.dev)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/paulorobertovrc/)
@@ -22,7 +23,7 @@ O NeuroBit é um **projeto pessoal de pesquisa dedicado ao estudo da inteligênc
 
 Este repositório concentrará o material produzido no decorrer das sessões de estudo e pesquisa. O NeuroBit é um projeto vivo, mas ainda em estágio inicial, de modo que o material será gradativamente disponibilizado, conforme o avanço dos estudos. A ideia é que o acervo sirva como base de conhecimento para facilitar a consulta futura, pois manterá em um único lugar todo o conteúdo de interesse.
 
-A evolução do projeto poderá ser acompanhada por meio do meu perfil no [Instagram](https://www.instagram.com/pauloroberto.dev), em que registrarei as principais etapas, desafios e dificuldades enfrentadas, de modo a constituir uma espécie de diário de eventos, ainda que as publicações não necessariamente observarão tal periodicidade.
+A evolução do projeto poderá ser acompanhada por meio do meu perfil no Instagram, em que registrarei as principais etapas, desafios e dificuldades enfrentadas, de modo a constituir uma espécie de diário de eventos, ainda que as publicações não necessariamente observarão tal periodicidade.
 
 [[🔝](#acesso-rápido)]
 
