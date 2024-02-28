@@ -8,7 +8,6 @@ body {
 
 header {
     background-color: #f2f2f2;
-    padding: 10px;
     text-align: center;
     color: #333;
 }
@@ -45,8 +44,7 @@ footer {
     text-align: center;
     font-weight: bolder;
     font-size: large;
-    padding: 0.5px;
-    bottom: 0;
+    padding: 0.5px 0;
 }
 
 table {
@@ -73,6 +71,16 @@ table {
 
 p {
     overflow-wrap: break-word;
+
+}
+
+p.descricao {
+    font-size: small;
+}
+
+p.titulo {
+    font-size: larger;
+    font-weight: bold;
 }
 
 math[display="block"] {
@@ -154,15 +162,43 @@ div#container {
 
     &:hover {
         text-decoration: none;
-        color: #5F9EA0;
+        color: #31A8B8;
     }
 
     @media screen and (max-width: 350px){
         text-decoration: underline;
-        color: #5F9EA0;
+        color: #31A8B8;
     }
 }
 
 .social {
     padding: 5px 5px 0px 5px;
+}
+
+/* Cards dos fichamentos */
+
+.fichamento {
+    display: flex;
+    grid-gap: 20px;
+}
+
+.fichamento a {
+    color: #333;
+    font-weight: bolder;
+}
+
+.fichamento a:hover {
+    color: #31A8B8;
+    text-decoration: none;
+}
+
+.fichamento article {
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.fichamento h2 {
+    margin-top: 0;
 }
