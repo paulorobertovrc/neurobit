@@ -19,7 +19,7 @@
 
 ## Descrição
 
-O NeuroBit é um **projeto pessoal de pesquisa dedicado ao estudo da inteligência artificial, com ênfase nas redes neurais artificiais,** e surgiu como resultado de um longo processo de autoconhecimento e busca por um verdadeiro propósito em termos profissionais.
+O NeuroBit é um **projeto pessoal de estudo e pesquisa sobre inteligência artificial, com ênfase em aprendizado de máquina e redes neurais artificiais.**
 
 Este repositório concentrará o material produzido no decorrer das sessões de estudo e pesquisa. O NeuroBit é um projeto vivo, mas ainda em estágio inicial, de modo que o material será gradativamente disponibilizado, conforme o avanço dos estudos. A ideia é que o acervo sirva como base de conhecimento para facilitar a consulta futura, pois manterá em um único lugar todo o conteúdo de interesse.
 
