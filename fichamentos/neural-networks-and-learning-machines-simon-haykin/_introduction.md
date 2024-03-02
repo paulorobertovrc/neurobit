@@ -13,16 +13,10 @@ A plasticidade[^5], característica que permite a adaptação do indivíduo ao a
 Em linhas gerais, pode-se dizer que uma rede neural artificial é um modelo computacional inspirado no modo como o cérebro realiza o processamento de informações. Nas palavras de Haykin (2009, p. 2), "[...] a neural network is a machine that is designed to model the way in which the brain performs a particular task or function of interest".
 
 Já como definição formal, o autor dá às redes neurais, vistas como uma máquina adaptativa[^6], o seguinte conceito:
-
-> A neural network is a massively parallel distributed processor made up of simple processing units that has a natural propensity for storing experiential knowledge and making it available for use. It resembles the brain in two respects:
-> 1. Knowledge is acquired by the network from its environment through a learning process.
-> 2. Interneuron connection strengths, known as synaptic weights, are used to store the ac-
-quired knowledge. (HAYKIN, 2009, p. 2)
+> "A neural network is a massively parallel distributed processor made up of simple processing units that has a natural propensity for storing experiential knowledge and making it available for use. It resembles the brain in two respects: 1. Knowledge is acquired by the network from its environment through a learning process. 2. Interneuron connection strengths, known as synaptic weights, are used to store the acquired knowledge." (HAYKIN, 2009, p. 2)
 
 Em português, conforme definição dada na edição anterior do livro:
-> Uma rede neural é um processador maciçamente paralelamente distribuído constituído de unidades de processamento simples, que tem uma propensão natural para armazenar conhecimento experimental e torná-lo disponível para uso. Ela se assemelha ao cérebro em dois aspectos:
-> 1. O conhecimento é adquirido pela rede a partir de seu ambiente através de um processo de aprendizagem.
-> 2. Forças de conexão entre os neurônios, conhecidas como pesos sinápticos, são utilizadas para armazenar o conhecimento adquirido. (HAYKIN, 2001, p. 28)
+> "Uma rede neural é um processador maciçamente paralelamente distribuído constituído de unidades de processamento simples, que tem uma propensão natural para armazenar conhecimento experimental e torná-lo disponível para uso. Ela se assemelha ao cérebro em dois aspectos: 1. O conhecimento é adquirido pela rede a partir de seu ambiente através de um processo de aprendizagem. 2. Forças de conexão entre os neurônios, conhecidas como pesos sinápticos, são utilizadas para armazenar o conhecimento adquirido." (HAYKIN, 2001, p. 28)
 
 Assim, na medida do possível, as redes neurais artificiais assemelham-se e são modeladas à luz do cérebro humano [interconexão de unidades computacionais simples - neurônios - assim no cérebro biológico, como nas redes neurais artificiais].
 
@@ -34,11 +28,11 @@ Conforme o autor, a técnica de modificação dos pesos sinápticos guarda muita
 
 ### 1.1 Benefícios das redes neurais
 
-A capacidade computacional das redes neurais é resultado de sua estrutura massiva e paralelamente distribuída, bem como da habilidade de aprender e generalizar. "A generalização se refere ao fato de a rede neural produzir saídas adequadas para entradas que não estavam presentes durante o treinamento (aprendizagem). Estas duas capacidades de processamento de informação [aprender e generalizar] tornam possível para as redes neurais resolver problemas complexos (de grande escala) que são atualmente intratáveis." (HAYKIN, 2001, p. 28) [da 2 edição, em português].
+A capacidade computacional das redes neurais é resultado de sua estrutura massiva e paralelamente distribuída, bem como da habilidade de aprender e generalizar. "A generalização se refere ao fato de a rede neural produzir saídas adequadas para entradas que não estavam presentes durante o treinamento (aprendizagem). Estas duas capacidades de processamento de informação [aprender e generalizar] tornam possível para as redes neurais resolver problemas complexos (de grande escala) que são atualmente intratáveis." (HAYKIN, 2001, p. 28)
 
-> A generalização se refere ao fato de a rede neural produzir saídas adequadas para entradas que não estavam presentes durante o treinamento (aprendizagem) (HAYKIN, 2001, p. 28).
+> "A generalização se refere ao fato de a rede neural produzir saídas adequadas para entradas que não estavam presentes durante o treinamento (aprendizagem)" (HAYKIN, 2001, p. 28).
 
-> Generalization refers to the neural network's production of reasonable outputs for inputs not encountered during training (learning) (HAYKIN, 2009, p. 2).
+> "Generalization refers to the neural network's production of reasonable outputs for inputs not encountered during training (learning) (HAYKIN, 2009, p. 2)".
 
 São produzidas saídas (*outputs*) adequadas para as entradas (*inputs*) fornecidas - *good approximate solutions*, do original em inglês (Haykin, 2009). Atualmente, o problema grande e complexo deve ser decomposto em problemas menores, os quais redes neurais de propósito específico têm capacidade de resolver.
 
@@ -69,12 +63,10 @@ Essa estrutura hierárquica vai, em menor nível, das moléculas responsáveis p
 ![Córtex cerebral](../../imagens/02_cortex_cerebral.png)
 Figura 2 - Célula piramidal (HAYKIN, 2009, p. 10)
 
-> The synapses represent the most fundamental level, depending on molecules and ions for their action. [...] A neural microcircuit refers to an assembly of synapses organized into patterns of connectivity to produce a functional operation of interest. A neural microcircuit may be likened to a silicon chip made up of an assembly of transistors. At the next level of complexity, we have local circuits [...] made up of neurons with similar or different properties; there neural assemblies perform operations characteristic of a localized region in the brain. They are followed by interregional circuits made up of pathways, columns, and topographic maps, which involve multiple regions located in different parts of the brain.
-> Topographic maps are organized to respond to incoming sensory information. These maps are often arranged in sheets, [...] stacked in adjacent layers in such a way that stimuli from corresponding points in space lie above or below each other. [...] different sensory inputs [...] are mapped onto corresponding areas of the cerebral cortex in an orderly fashion. At the final level of complexity, the topographic maps and other interregional circuits mediate specific types of behavior in the central nervous system. (HAYKIN, 2009, p. 7/9)
+> "The synapses represent the most fundamental level, depending on molecules and ions for their action. [...] A neural microcircuit refers to an assembly of synapses organized into patterns of connectivity to produce a functional operation of interest. A neural microcircuit may be likened to a silicon chip made up of an assembly of transistors. At the next level of complexity, we have local circuits [...] made up of neurons with similar or different properties; there neural assemblies perform operations characteristic of a localized region in the brain. They are followed by interregional circuits made up of pathways, columns, and topographic maps, which involve multiple regions located in different parts of the brain. Topographic maps are organized to respond to incoming sensory information. These maps are often arranged in sheets, [...] stacked in adjacent layers in such a way that stimuli from corresponding points in space lie above or below each other. [...] different sensory inputs [...] are mapped onto corresponding areas of the cerebral cortex in an orderly fashion. At the final level of complexity, the topographic maps and other interregional circuits mediate specific types of behavior in the central nervous system." (HAYKIN, 2009, p. 7/9)
 
 O equivalente, na 2 edição, em português:
-> As sinapses representam o nível mais fundamental, dependente de moléculas e íons para sua ação. [...] Um microcircuito neural se refere a um agrupamento de sinapses organizadas em padrões de conectividade para produzir uma operação funcional de interesse. Um microcircuito neural pode ser comparado a um circuito de silício constituído por um agrupamento de transistores. [...] No nível seguinte de complexidade nós temos circuitos locais [...] constituídos por neurônios com propriedades similares ou diferentes; estes agrupamentos neurais realizam operações características de uma região localizada no cérebro. Eles são seguidos por circuitos inter-regionais constituídos por caminhos, colunas e mapas topográficos, que envolvem regiões múltiplas localizadas em partes diferentes do cérebro.
-> Os mapas topográficos são organizados para responder à informação sensorial incidente. Estes mapas são frequentemente arranjados em folhas, [...] empilhados em camadas adjacentes de tal modo que estímulos advindos de pontos correspondentes no espaço se localizem acima ou abaixo de cada um deles. [...] diferentes entradas sensoriais [...] são mapeadas sobre áreas correspondentes do córtex cerebral de forma ordenada. No nível final de complexidade, os mapas topográficos e outros circuitos inter-regionais medeiam tipos específicos de comportamento no sistema nervoso central. (HAYKIN, 2001, p. 33/36)
+> "As sinapses representam o nível mais fundamental, dependente de moléculas e íons para sua ação. [...] Um microcircuito neural se refere a um agrupamento de sinapses organizadas em padrões de conectividade para produzir uma operação funcional de interesse. Um microcircuito neural pode ser comparado a um circuito de silício constituído por um agrupamento de transistores. [...] No nível seguinte de complexidade nós temos circuitos locais [...] constituídos por neurônios com propriedades similares ou diferentes; estes agrupamentos neurais realizam operações características de uma região localizada no cérebro. Eles são seguidos por circuitos inter-regionais constituídos por caminhos, colunas e mapas topográficos, que envolvem regiões múltiplas localizadas em partes diferentes do cérebro. Os mapas topográficos são organizados para responder à informação sensorial incidente. Estes mapas são frequentemente arranjados em folhas, [...] empilhados em camadas adjacentes de tal modo que estímulos advindos de pontos correspondentes no espaço se localizem acima ou abaixo de cada um deles. [...] diferentes entradas sensoriais [...] são mapeadas sobre áreas correspondentes do córtex cerebral de forma ordenada. No nível final de complexidade, os mapas topográficos e outros circuitos inter-regionais medeiam tipos específicos de comportamento no sistema nervoso central." (HAYKIN, 2001, p. 33/36)
 
 As sinapses são unidades estruturais e funcionais elementares responsáveis por intermediar a comunicação entre neurônios[^10] e, em maioria, são químicas. Nelas, um sinal elétrico pré-sináptico é transformado em sinal químico pela liberação de neurotransmissores, e depois se converte novamente em sinal elétrico, pós-sináptico (Shepherd; Koch, 1990 *apud* Haykin, 2009). "Nas descrições tradicionais da organização neural, assume-se que uma sinapse é uma conexão simples que pode impor ao neurônio receptivo excitação ou inibição, mas não ambas." (HAYKIN, 2001, p. 33). **O surgimento de novas sinapses ou a modificação das já existentes são os mecanismos responsáveis pela plasticidade cerebral e, consequentemente, pela aprendizagem.**
 
@@ -203,10 +195,10 @@ $$
 
 ### 3.3 Redes neurais como grafos dirigidos [^13] [^14]
 
-> A signal-flow graph is a network of directed *links (branches)* that are interconnected at certain points called *nodes*. A typical node $j$ has an associated node signal $x_j$. A typical directed link originates at node $j$ and terminates on node $k$; it has an associated *transfer function*, or *transmittance*, that specifies the manner in which the signal $y_k$ at node $k$ dependes on the signal $x_j$ at node $j$. (HAYKIN, 2009, p. 15)
+> "A signal-flow graph is a network of directed *links (branches)* that are interconnected at certain points called *nodes*. A typical node $j$ has an associated node signal $x_j$. A typical directed link originates at node $j$ and terminates on node $k$; it has an associated *transfer function*, or *transmittance*, that specifies the manner in which the signal $y_k$ at node $k$ dependes on the signal $x_j$ at node $j$." (HAYKIN, 2009, p. 15)
 
 Na edição em português:
-> Um *grafo de fluxo de sinal* é uma rede de *elos (ramos)* orientados que são interligados em certos pontos chamados *nós*. Um nó típico $j$ tem um sinal nodal $x_j$ associado. Um elo orientado típico origina-se no nó $j$ e termina no nó $k$; ele tem uma *função de transferência* ou *transmitância* associada que especifica a maneira pela qual o sinal $y_k$ no nó $k$ depende do sinal $x_j$ no nó $j$. (HAYKIN, 2001, p. 41)
+> "Um *grafo de fluxo de sinal* é uma rede de *elos (ramos)* orientados que são interligados em certos pontos chamados *nós*. Um nó típico $j$ tem um sinal nodal $x_j$ associado. Um elo orientado típico origina-se no nó $j$ e termina no nó $k$; ele tem uma *função de transferência* ou *transmitância* associada que especifica a maneira pela qual o sinal $y_k$ no nó $k$ depende do sinal $x_j$ no nó $j$." (HAYKIN, 2001, p. 41)
 
 O fluxo dos sinais obedece a três regras básicas:
 1.**Um sinal flui ao longo de um elo somente no sentido definido pela seta do elo**, distinguindo-se dois tipos de elos (*links*):
@@ -221,19 +213,11 @@ O grafo de fluxo de sinal construído a partir dessas regras é o seguinte (HAYK
 ![Grafo de fluxo de sinal de um neurônio](../../imagens/04_grafo_fluxo_sinal.png)
 Figura 4 - Grafo de fluxo de sinal de um neurônio
 
-Com base no modelo acima, extrai-se a seguinte **definição matemática de uma rede neural** (HAYKIN, 2009, p. 16/17):
-> A neural network is a directed graph consisting of nodes with interconnecting synaptic and activation links and is characterized by four properties:
-1. Each neuron is represented by a set of linear synaptic links, an externally applied bias, and a possibly nonlinear activation link. The bias is represented by a synaptic link connected to an input fixed at +1.
-2. The synaptic links of a neuron weight their respective input signals.
-3. The weighted sum of the input signals defines the induces local field of the neuron in question.
-4. The activation link squashes the induced local field of the neuron to produce an output.
+Com base no modelo acima, extrai-se a seguinte **definição matemática de uma rede neural**:
+> "A neural network is a directed graph consisting of nodes with interconnecting synaptic and activation links and is characterized by four properties: 1. Each neuron is represented by a set of linear synaptic links, an externally applied bias, and a possibly nonlinear activation link. The bias is represented by a synaptic link connected to an input fixed at +1. 2. The synaptic links of a neuron weight their respective input signals. 3. The weighted sum of the input signals defines the induces local field of the neuron in question. 4. The activation link squashes the induced local field of the neuron to produce an output." (HAYKIN, 2009, p. 16/17)
 
-Da edição anterior, em português (HAYKIN, 2001, p. 43):
-> Uma rede neural é um grafo orientado constituído de nós com elos de interligação sinápticos e de ativação e é caracterizado por quatro propriedades:
-1. Cada neurônio é representado por um conjunto de elos sinápticos lineares, um bias aplicado externamente e um elo de ativação possivelmente não-linear. O bias é representado por um elo sináptico conectado a uma entrada fixada em +1.
-2. Os elos sinápticos de um neurônio ponderam seus respectivos sinais de entrada.
-3. A soma ponderada dos sinais de entrada define o campo local induzido do neurônio em questão.
-4. O elo de ativação limita o campo local induzido do neurônio para produzir uma saída.
+Da edição anterior, em português:
+> "Uma rede neural é um grafo orientado constituído de nós com elos de interligação sinápticos e de ativação e é caracterizado por quatro propriedades: 1. Cada neurônio é representado por um conjunto de elos sinápticos lineares, um bias aplicado externamente e um elo de ativação possivelmente não-linear. O bias é representado por um elo sináptico conectado a uma entrada fixada em +1. 2. Os elos sinápticos de um neurônio ponderam seus respectivos sinais de entrada. 3. A soma ponderada dos sinais de entrada define o campo local induzido do neurônio em questão. 4. O elo de ativação limita o campo local induzido do neurônio para produzir uma saída." (HAYKIN, 2001, p. 43)
 
 O grafo referido na figura 4 é dito **completo** porque descreve o fluxo do sinal entre os neurônios e dentro de cada neurônio. Por outro lado, diz-se que o grafo **parcialmente completo** é aquele que expõe apenas o fluxo inter-neuronal, caso em que é referido como **grafo arquitetural (*architectural graph*)**, pois expressa uma espécie de planta da rede neural.
 
@@ -248,11 +232,11 @@ Figura 5 - Grafo arquitetural
 
 ## 5. Feedback (Realimentação)
 
-> Feedback is said to exist in a dynamic system whenever the output of an element in the system influences in part the input applied to that particular element, thereby giving rise to one or more closed paths for the transmission of signals around the system. (HAYKIN, 2009, p. 18)
+> "Feedback is said to exist in a dynamic system whenever the output of an element in the system influences in part the input applied to that particular element, thereby giving rise to one or more closed paths for the transmission of signals around the system." (HAYKIN, 2009, p. 18)
 
 Na edição em português:
 
-> Dizemos que existe realimentação em um sistema dinâmico [^16] sempre que a saída de um elemento no sistema influencia em parte a entrada aplicada àquele elemento particular, originando assim um ou mais de um caminho fechado para transmissão de sinais em torno do sistema. (HAYKIN, 2001, p. 44)
+> "Dizemos que existe realimentação em um sistema dinâmico [^16] sempre que a saída de um elemento no sistema influencia em parte a entrada aplicada àquele elemento particular, originando assim um ou mais de um caminho fechado para transmissão de sinais em torno do sistema." (HAYKIN, 2001, p. 44)
 
 Ocorre no sistema nervoso dos animais. Tem posição de destaque em redes neurais recorrentes (RNN - *recurrent neural networks*), embora a não linearidade das unidades de processamento prejudique sua aplicação.
 
@@ -326,8 +310,7 @@ Suas duas principais características são "(1) que informação é realmente to
 
 A rede neural deve ser capaz de aprender a respeito do mundo exterior - isto é, o ambiente no qual está inserida - e constantemente manter essa definição atualizada, de modo a atingir os objetivos específicos da aplicação. Destaca-se que esse conhecimento sobre o mundo consiste, basicamente, em dois tipos de informação:
 
->1. O estado conhecido do mundo, representado pelos fatos sobre o que é e o que era conhecido; esta forma de conhecimento é chamada de *informação prévia*.
->2. As observações (medidas) do mundo, obtidas por meio de sensores projetados para sondar o ambiente no qual a rede neural deve operar. Normalmente, estas observações são inerentemente ruidosas, sendo sujeitas a erros devido a ruído [^19] do sensor e imperfeições do sistema. De qualquer maneira, as observações que são assim obtidas fornecem o conjunto de informações de onde são retirados os *exemplos* utilizados para treinar a rede neural. (HAYKIN, 2001, p. 50)
+>"1. O estado conhecido do mundo, representado pelos fatos sobre o que é e o que era conhecido; esta forma de conhecimento é chamada de *informação prévia*. 2. As observações (medidas) do mundo, obtidas por meio de sensores projetados para sondar o ambiente no qual a rede neural deve operar. Normalmente, estas observações são inerentemente ruidosas, sendo sujeitas a erros devido a ruído [^19] do sensor e imperfeições do sistema. De qualquer maneira, as observações que são assim obtidas fornecem o conjunto de informações de onde são retirados os *exemplos* utilizados para treinar a rede neural." (HAYKIN, 2001, p. 50)
 
 Esses exemplos para treinamento podem ser **rotulados ou não rotulados**. No primeiro caso, ao sinal de entrada é associada a resposta esperada, enquanto que, no segundo, não há essa associação e o sinal de entrada é contraposto a ocorrências diferentes dele próprio. Em qualquer caso, **o conjunto de exemplos representa o conhecimento da rede neural sobre o ambiente.**
 
@@ -343,12 +326,9 @@ A representação do conhecimento perpassa pelo ajuste dos pesos sinápticos e d
 
 ### 7.1 Regras de representação do conhecimento
 
-Há quatro regras comumente aceitas (ANDERSON, 1988 apud HAYKIN, 2001, p. 51/53):
+Há quatro regras comumente aceitas:
 
->1. Entradas similares de classes similares normalmente devem produzir representações similares no interior da rede, e portanto devem ser classificadas como pertencentes à mesma categoria.
->2. Devem ser atribuídas representações bem diferentes na rede a itens que devem ser categorizados como classes separadas.
->3. Se uma característica particular é importante, então deve haver um grande número de neurônios envolvidos na representação daquele item na rede.
->4. Informação prévia e invariâncias devem ser incorporadas no projeto de uma rede neural, simplificando com isso o projeto da rede por não ter que aprendê-las.
+>"1. Entradas similares de classes similares normalmente devem produzir representações similares no interior da rede, e portanto devem ser classificadas como pertencentes à mesma categoria. 2. Devem ser atribuídas representações bem diferentes na rede a itens que devem ser categorizados como classes separadas. 3. Se uma característica particular é importante, então deve haver um grande número de neurônios envolvidos na representação daquele item na rede. 4. Informação prévia e invariâncias devem ser incorporadas no projeto de uma rede neural, simplificando com isso o projeto da rede por não ter que aprendê-las." (ANDERSON, 1988 apud HAYKIN, 2001, p. 51/53)
 
 "Correlation plays a key role not only in the human brain, but also in signal processing of various kinds" (CHEN ET AL., 2007 apud HAYKIN, 2009, p. 28). Em tradução direta, "a correlação desempenha um papel fundamental não apenas no cérebro humano, mas também no processamento de sinais de vários tipos".
 
@@ -362,11 +342,11 @@ A utilização de informação prévia restringe a aplicabilidade da rede a um d
 
 Duas regras são comumente aceitas, as quais, particularmente a segunda, contribuem significativamente para a diminuição do número de parâmetros livres da rede:
 
->1. *Restringir a arquitetura da rede* pelo uso de conexões locais conhecidas como campos receptivos (*receptive fields*); e
->2. *Restringir a escolha de pesos sinápticos* através do uso de compartilhamento de pesos. (LECUN ET AL., 1990 apud HAYKIN, 2001, p. 54)
+>"1. *Restringir a arquitetura da rede* pelo uso de conexões locais conhecidas como campos receptivos (*receptive fields*);" e
+>"2. *Restringir a escolha de pesos sinápticos* através do uso de compartilhamento de pesos." (LECUN ET AL., 1990 apud HAYKIN, 2001, p. 54)
 
 O termo **campo receptivo** diz respeito ao **limiar de excitação** a partir do qual os dados de entrada são capazes de influenciar a saída do neurônio, isto é, à **sensibilidade a estímulos** do neurônio ou da conexão sináptica. Já o compartilhamento de pesos sinápticos é tão somente o que seu próprio nome sugere. Nesse sentido:
->The receptive field of a neuron is defined as that region of the input field over which the incoming stimuli can influence the output signal produced by the neuron. The mapping of the receptive field is a powerful and shorthand description of the neuron’s behavior, and therefore its output. To satisfy the weight-sharing constraint, we merely have to use the same set of synaptic weights for each one of the neurons in the hidden layer of the network. (HAYKIN, 2009, p. 30)
+>"The receptive field of a neuron is defined as that region of the input field over which the incoming stimuli can influence the output signal produced by the neuron. The mapping of the receptive field is a powerful and shorthand description of the neuron’s behavior, and therefore its output. To satisfy the weight-sharing constraint, we merely have to use the same set of synaptic weights for each one of the neurons in the hidden layer of the network." (HAYKIN, 2009, p. 30)
 
 Uma rede implementada com essas características é denominada **rede convolucional (*convolutional network*)**.
 
@@ -387,11 +367,7 @@ Sendo $k = i + j - 1$ e, portanto, $x_k$ o próprio sinal de entrada.
 
 ### 7.3 Como incorporar invariâncias no projeto de uma rede neural
 
-É desejável que o sistema seja invariante perante transformações como a rotação do objeto de interesse, a alterações de amplitude ou frequência de ondas, timbre, entonação ou velocidade de voz, etc.
-
-"[...] o sistema deve ser capaz de lidar com uma série de transformações do sinal observado" (Barnard; Casasent, 1991, apud HAYKIN, 2001, p. 55).
-
-"Em outras palavras, uma estimativa de classe representada por uma saída do classificador não deve ser afetada pelas transformações do sinal observado aplicado à entrada do classificador." (HAYKIN, 2001, p. 55).
+É desejável que o sistema seja invariante perante transformações como a rotação do objeto de interesse, a alterações de amplitude ou frequência de ondas, timbre, entonação ou velocidade de voz, etc. Isso porque "[...] o sistema deve ser capaz de lidar com uma série de transformações do sinal observado (Barnard; Casasent, 1991). [...] Em outras palavras, uma estimativa de classe representada por uma saída do classificador não deve ser afetada pelas transformações do sinal observado aplicado à entrada do classificador." (HAYKIN, 2001, p. 55).
 
 Há pelo menos três técnicas para implementar o dito classificador invariante a transformações (Barnard; Casasent, 1991, apud HAYKIN, 2001):
 
@@ -405,7 +381,7 @@ Há pelo menos três técnicas para implementar o dito classificador invariante 
 
 ### 8.1 Conceito de aprendizagem
 
->Aprendizagem é um processo pelo qual os parâmetros livres de uma rede neural são adaptados através de um processo de estimulação pelo ambiente no qual a rede está inserida. O tipo de aprendizagem é determinado pela maneira pela qual a modificação dos parâmetros ocorre. (HAYKIN, 2001, p. 75)
+>"Aprendizagem é um processo pelo qual os parâmetros livres de uma rede neural são adaptados através de um processo de estimulação pelo ambiente no qual a rede está inserida. O tipo de aprendizagem é determinado pela maneira pela qual a modificação dos parâmetros ocorre." (HAYKIN, 2001, p. 75)
 
 É fundamental que a rede neural seja capaz de aprender a partir de seu ambiente e, através de um processo contínuo de ajuste de pesos sinápticos e níveis de *bias*[^22], melhorar o seu desempenho, respondendo de maneira diferente àquele mesmo ambiente, em razão das modificações sofridas.
 
@@ -462,8 +438,8 @@ O **postulado de aprendizado de Hebb**, em homenagem ao neuropsicólogo Donald H
 
 Esse postulado pode ser dividido em duas partes, no que se denomina **sinapse hebbiana**, embora originalmente Hebb não tenha proposto a segunda (Stent, 1973; Changeux, Danchin, 1976 apud HAYKIN, 2001, p. 80):
 
->1. Se dois neurônios em ambos os lados de uma sinapse (conexão) são ativados simultaneamente [...], então a força daquela sinapse é seletivamente aumentada.
->2. Se dois neurônios em ambos os lados de uma sinapse são ativados assincronamente, então aquela sinapse é seletivamente enfraquecida ou eliminada.
+>"1. Se dois neurônios em ambos os lados de uma sinapse (conexão) são ativados simultaneamente [...], então a força daquela sinapse é seletivamente aumentada."
+>"2. Se dois neurônios em ambos os lados de uma sinapse são ativados assincronamente, então aquela sinapse é seletivamente enfraquecida ou eliminada."
 
 A **sinapse hebbiana** pode ser definida como "[...] uma sinapse que usa um mecanismo dependente do tempo, altamente local e fortemente interativo para aumentar a eficiência sináptica como uma função da correlação entre as atividades pré-sináptica e pós-sináptica." (HAYKIN, 2001, p. 80/81).
 
@@ -532,7 +508,7 @@ y_k = \begin{cases} 1 & \text{, se } v_k > v_j \ \ \ \forall \ j, & j \neq k \\
   0 & \text{, caso contrário } \end{cases}
 $$
 
->Um neurônio, então, aprende ao deslocar pesos sinápticos de seus nós de entrada inativos para os seus nós ativos. Se um neurônio não responde a um padrão de entrada particular, então não ocorrerá aprendizado naquele neurônio. Se um neurônio particular vencer a competição, então cada nó de entrada deste neurônio libera uma certa proporção de seu peso sináptico e este peso liberado será então distribuído uniformemente entre os nós de entrada ativos." (HAYKIN, 2001, p. 84)
+>"Um neurônio, então, aprende ao deslocar pesos sinápticos de seus nós de entrada inativos para os seus nós ativos. Se um neurônio não responde a um padrão de entrada particular, então não ocorrerá aprendizado naquele neurônio. Se um neurônio particular vencer a competição, então cada nó de entrada deste neurônio libera uma certa proporção de seu peso sináptico e este peso liberado será então distribuído uniformemente entre os nós de entrada ativos." (HAYKIN, 2001, p. 84)
 
 Desse modo, a variação do peso sináptico -- $\Delta w_{kj}$ -- corresponde a
 
@@ -568,7 +544,7 @@ Seus neurônios podem ser **visíveis ou ocultos**, funcionando aqueles como uma
 
 #### 8.1.2 O problema da atribuição de crédito
 
->Basicamente, o problema da atribuição de crédito é o problema de se atribuir crédito ou culpa por resultados globais a cada uma das decisões internas que tenham sido tomadas por uma máquina de aprendizagem e que tenham contribuído para aqueles resultados. [...] é também denominado *problema de carga*, isto é, o problema de "carregar" um determinado conjunto de dados de treinamento para dentro dos parâmetros livres da rede. (HAYKIN, 2001, p. 87)
+>"Basicamente, o problema da atribuição de crédito é o problema de se atribuir crédito ou culpa por resultados globais a cada uma das decisões internas que tenham sido tomadas por uma máquina de aprendizagem e que tenham contribuído para aqueles resultados. [...] é também denominado *problema de carga*, isto é, o problema de "carregar" um determinado conjunto de dados de treinamento para dentro dos parâmetros livres da rede." (HAYKIN, 2001, p. 87)
 
 A problematização decorre do fato de que "[...] as decisões internas afetam a escolha das ações particulares que são tomadas e, com isso, as ações e não as decisões internas influenciam diretamente os resultados globais." (HAYKIN, 2001, p. 87)
 
@@ -579,7 +555,7 @@ Dois componentes deste problema:
 
 Nesse sentido,
 
->o problema de atribuição de crédito estrutural é relevante no contexto de uma máquina de aprendizagem com múltiplos componentes quando devemos determinar precisamente qual componente particular do sistema deve ter seu comportamento alterado e em que medida, de forma a melhorar o desempenho global do sistema. Por outro lado, o problema de atribuição de crédito temporal é relevante quando há muitas ações tomadas por uma máquina de aprendizagem que acarretam certos resultados, e devemos determinar quais dessas ações foram responsáveis pelos resultados. O problema combinado de atribuição de crédito temporal e estrutural é enfrentado por qualquer máquina de aprendizagem distribuída que se esforce em melhorar sem desempenho em situações envolvendo comportamento estendido no tempo (Williams, 1988). (HAYKIN, 2001, p. 87)
+>"o problema de atribuição de crédito estrutural é relevante no contexto de uma máquina de aprendizagem com múltiplos componentes quando devemos determinar precisamente qual componente particular do sistema deve ter seu comportamento alterado e em que medida, de forma a melhorar o desempenho global do sistema. Por outro lado, o problema de atribuição de crédito temporal é relevante quando há muitas ações tomadas por uma máquina de aprendizagem que acarretam certos resultados, e devemos determinar quais dessas ações foram responsáveis pelos resultados. O problema combinado de atribuição de crédito temporal e estrutural é enfrentado por qualquer máquina de aprendizagem distribuída que se esforce em melhorar sem desempenho em situações envolvendo comportamento estendido no tempo (Williams, 1988)." (HAYKIN, 2001, p. 87)
 
 ### 8.2 Paradigmas de aprendizagem
 
@@ -587,7 +563,7 @@ Nesse sentido,
 
 O professor é visto como um agente externo detentor do conhecimento, representado por um conjunto de pares de exemplos de entrada-saída, pelo qual será capaz de instruir a rede neural com a resposta desejada (desempenho ideal da rede). O processo de treinamento consiste no ajuste dos pesos sinápticos da rede neural de modo a minimizar a diferença entre a saída real e a saída desejada, com base em algum critério como sinal de erro ou função de custo. O objetivo é que, através desse ajuste de parâmetros internos, a rede seja capaz de emular o professor.
 
->In this way, knowledge of the environment available to the teacher is transferred to the neural network through training and stored in the form of “fixed” synaptic weights, representing long-term memory. When this condition is reached, we may then dispense with the teacher and let the neural network deal with the environment completely by itself. (HAYKIN, 2009, p. 35)
+>"In this way, knowledge of the environment available to the teacher is transferred to the neural network through training and stored in the form of “fixed” synaptic weights, representing long-term memory. When this condition is reached, we may then dispense with the teacher and let the neural network deal with the environment completely by itself." (HAYKIN, 2009, p. 35)
 
 #### 8.2.2 Aprendizagem sem um professor (*learning without a teacher*)
 
@@ -616,7 +592,7 @@ Duas categorias:
 
 ### 9.2 Reconhecimento de padrões (*pattern recognition*)
 
->O reconhecimento de padrões é formalmente definido como *o processo pelo qual um padrão/sinal recebido é atribuído a uma classe dentre um número predeterminado de classes (categorias)*. Uma rede neural realiza o reconhecimento de padrões passando inicialmente por uma seção de treinamento, durante a qual se apresenta repetidamente à rede um conjunto de padrões de entrada junto com a categoria à qual cada padrão particular pertence. Mais tarde, apresenta-se à rede um novo padrão que não foi visto antes, mas que pertence à mesma população de padrões utilizada para treinar a rede. A rede é capaz de identificar a classe daquele padrão particular por causa da informação que ela extraiu dos dados de treinamento. (HAYKIN, 2001, p. 92).
+>"O reconhecimento de padrões é formalmente definido como *o processo pelo qual um padrão/sinal recebido é atribuído a uma classe dentre um número predeterminado de classes (categorias)*. Uma rede neural realiza o reconhecimento de padrões passando inicialmente por uma seção de treinamento, durante a qual se apresenta repetidamente à rede um conjunto de padrões de entrada junto com a categoria à qual cada padrão particular pertence. Mais tarde, apresenta-se à rede um novo padrão que não foi visto antes, mas que pertence à mesma população de padrões utilizada para treinar a rede. A rede é capaz de identificar a classe daquele padrão particular por causa da informação que ela extraiu dos dados de treinamento." (HAYKIN, 2001, p. 92).
 
 Essa tarefa tem natureza estatística. Os padrões são representados por pontos em um espaço de decisão multidimensional dividido em tantas regiões quantas forem as classes predeterminadas. "As fronteiras de decisão são determinadas pelo processo de treinamento. A construção dessas fronteiras é tornada estatística pela variabilidade inerente que existe dentro das classes e entre as classes." (HAYKIN, 2001, p. 93).
 
@@ -630,10 +606,7 @@ Diz respeito a "[...] um processo ou parte crítica de um sistema que deve ser m
 
 ### 9.5 Filtragem (*filtering*) [^26]
 
->O termo *filtro* se refere frequentemente a um dispositivo ou algoritmo utilizado para extrair informação sobre uma determinada grandeza de interesse a partir de um conjunto de dados ruidosos. [...] Podemos utilizar um filtro para realizar três tarefas básicas de processamento de informação:
->1. *Filtragem.* Esta tarefa se refere à extração de informação sobre uma quantidade de interesse no tempo discreto $n$, utilizando dados medidos até o tempo $n$, inclusive.
->2. *Suavização.* Esta segunda tarefa difere da filtragem pelo fato de que não é necessário que a informação sobre a grandeza de interesse esteja disponível no tempo $n$ e de que os dados medidos após o tempo $n$ podem ser usados para obter esta informação. Isto significa que, na suavização, há um *atraso* na produção do resultado de interesse. Já que no processo de suavização podemos usar dados obtidos não apenas até o tempo $n$ mas também após o tempo $n$, podemos esperar que a suavização seja mais precisa que a filtragem em um sentido estatístico.
->3. *Previsão.* Esta tarefa corresponde ao lado preditivo do processamento de informação. O objetivo aqui é derivar informação sobre como será a grandeza de interesse em um determinado tempo $n + n_0$ no futuro, para algum $n_0 > 0$, utilizando os dados medidos até o tempo $n$ inclusive. (HAYKIN, 2001, p. 96)
+>"O termo *filtro* se refere frequentemente a um dispositivo ou algoritmo utilizado para extrair informação sobre uma determinada grandeza de interesse a partir de um conjunto de dados ruidosos. [...] Podemos utilizar um filtro para realizar três tarefas básicas de processamento de informação: 1. *Filtragem.* Esta tarefa se refere à extração de informação sobre uma quantidade de interesse no tempo discreto $n$, utilizando dados medidos até o tempo $n$, inclusive. 2. *Suavização.* Esta segunda tarefa difere da filtragem pelo fato de que não é necessário que a informação sobre a grandeza de interesse esteja disponível no tempo $n$ e de que os dados medidos após o tempo $n$ podem ser usados para obter esta informação. Isto significa que, na suavização, há um *atraso* na produção do resultado de interesse. Já que no processo de suavização podemos usar dados obtidos não apenas até o tempo $n$ mas também após o tempo $n$, podemos esperar que a suavização seja mais precisa que a filtragem em um sentido estatístico. 3. *Previsão.* Esta tarefa corresponde ao lado preditivo do processamento de informação. O objetivo aqui é derivar informação sobre como será a grandeza de interesse em um determinado tempo $n + n_0$ no futuro, para algum $n_0 > 0$, utilizando os dados medidos até o tempo $n$ inclusive." (HAYKIN, 2001, p. 96)
 
 #### 9.5.1 Formação de feixe (*beamforming*)
 
@@ -643,7 +616,7 @@ Trata-se de "[...] uma forma de filtragem espacial e é utilizada para distingui
 
 ### 10.1 Inteligência artificial e redes neurais
 
->O objetivo da inteligência artificial (IA) é o desenvolvimento de paradigmas ou algoritmos que requeiram máquinas para realizar tarefas cognitivas, para as quais os humanos são atualmente melhores. [...] Um sistema de IA deve ser capaz de fazer três coisas: (1) armazenar conhecimento; (2) aplicar o conhecimento armazenado para resolver problemas e (3) adquirir novo conhecimento através da experiência." (HAYKIN, 2001, p. 59)
+>"O objetivo da inteligência artificial (IA) é o desenvolvimento de paradigmas ou algoritmos que requeiram máquinas para realizar tarefas cognitivas, para as quais os humanos são atualmente melhores. [...] Um sistema de IA deve ser capaz de fazer três coisas: (1) armazenar conhecimento; (2) aplicar o conhecimento armazenado para resolver problemas e (3) adquirir novo conhecimento através da experiência." (HAYKIN, 2001, p. 59)
 
 Três componentes fundamentais foram identificados por Sage (1990): **representação, raciocínio e aprendizagem.**
 
@@ -668,19 +641,19 @@ Três componentes fundamentais foram identificados por Sage (1990): **representa
 
 #### 10.1.1 IA simbólica x conexionista (modelos cognitivos; redes neurais)
 
->Em resumo, podemos descrever a IA simbólica como a manipulação formal de uma linguagem de algoritmos e representações de dados em uma forma de cima para baixo (top-down). Por outro lado, podemos descrever as redes neurais como processadores distribuídos paralelamente com uma habitualidade natural para aprender e que normalmente operam de uma forma de baixo para cima (bottom-up). Portanto, torna-se evidente que, para a implementação de tarefas cognitivas, [...] uma abordagem potencialmente mais vantajosa seria construir modelos conexionistas estruturados ou sistemas híbridos que integrem ambas as abordagens. Fazendo isso, somos capazes de combinar as características desejáveis de adaptabilidade, robustez e uniformidade oferecidas pelas redes neurais com a representação, inferência e universalidade, que são características inerentes da IA simbólica (Feldman, 1992; Waltz, 1997). (HAYKIN, 2001, p. 62)
+>"Em resumo, podemos descrever a IA simbólica como a manipulação formal de uma linguagem de algoritmos e representações de dados em uma forma de cima para baixo (top-down). Por outro lado, podemos descrever as redes neurais como processadores distribuídos paralelamente com uma habitualidade natural para aprender e que normalmente operam de uma forma de baixo para cima (bottom-up). Portanto, torna-se evidente que, para a implementação de tarefas cognitivas, [...] uma abordagem potencialmente mais vantajosa seria construir modelos conexionistas estruturados ou sistemas híbridos que integrem ambas as abordagens. Fazendo isso, somos capazes de combinar as características desejáveis de adaptabilidade, robustez e uniformidade oferecidas pelas redes neurais com a representação, inferência e universalidade, que são características inerentes da IA simbólica (Feldman, 1992; Waltz, 1997)." (HAYKIN, 2001, p. 62)
 
-- Três subdivisões (MEMMI, 1989 apud HAYKIN, 2001, p. 61):
-  - **Nível de explanação**: na IA clássica, é dada ênfase à construção de representações simbólicas, que são presumivelmente assim chamadas porque representam algo. Do ponto de vista da cognição, a IA assume a existência de representações mentais e ela modela a cognição como o processamento sequencial de representações simbólicas (Newell; Simon, 1972 apud Haikin, 2001). Por outro lado, nas redes neurais a ênfase está no desenvolvimento de modelos de processamento paralelamente distribuído (PDP, Parallel Distributed Processing). Estes modelos assumem que o processamento de informação acontece através da interação de um grande número de neurônios, onde cada neurônio envia sinais excitadores e inibitórios para outros neurônios da rede (Rumelhart; McClelland, 1986 apud Haykin, 2001). Além disso, as redes neurais dão grande ênfase à explanação biológica dos fenômenos cognitivos.
+- Três subdivisões (Memmi, 1989 apud Haykin, 2001):
+  - "**Nível de explanação**: na IA clássica, é dada ênfase à construção de representações simbólicas, que são presumivelmente assim chamadas porque representam algo. Do ponto de vista da cognição, a IA assume a existência de representações mentais e ela modela a cognição como o processamento sequencial de representações simbólicas (Newell; Simon, 1972 apud Haikin, 2001). Por outro lado, nas redes neurais a ênfase está no desenvolvimento de modelos de processamento paralelamente distribuído (PDP, Parallel Distributed Processing). Estes modelos assumem que o processamento de informação acontece através da interação de um grande número de neurônios, onde cada neurônio envia sinais excitadores e inibitórios para outros neurônios da rede (Rumelhart; McClelland, 1986 apud Haykin, 2001). Além disso, as redes neurais dão grande ênfase à explanação biológica dos fenômenos cognitivos." (HAYKIN, 2001, p. 61)
   - **Estilo de processamento**: sequencial na IA clássica e paralelo na IA baseada em redes neurais. "Como a computação está distribuída sobre muitos neurônios, normalmente não importa muito se os estados de alguns neurônios da rede se desviarem de seus valores esperados. Entradas ruidosas ou incompletas podem ainda ser reconhecidas, uma rede danificada pode ainda ser capaz de funcionar satisfatoriamente, e a aprendizagem não precisa ser perfeita. O desempenho da rede se degrada suavemente dentro de um certo limite." (HAYKIN, 2001, p. 62)
-  - **Estrutura representativa**: estrutura quase linguística das representações simbólicas que baseia a IA clássica, fortemente atrelada a regras e conhecimento simbólico. As expressões são complexas e sistemáticas, próximas às da linguagem natural. Nas redes neurais, a base são os dados. Para Fodor e Pylyshyn (1988 apud Haykin, 2001), "[...] pode-se afirmar para as teorias da IA clássica, mas não para as redes neurais, que (i) as representações mentais exibem de forma característica uma estrutura constituinte combinatória e semântica combinatória; e que (ii) os processos mentais são caracteristicamente sensíveis à estrutura combinatória das representações sobre as quais operam."
+  - **Estrutura representativa**: estrutura quase linguística das representações simbólicas que baseia a IA clássica, fortemente atrelada a regras e conhecimento simbólico. As expressões são complexas e sistemáticas, próximas às da linguagem natural. Nas redes neurais, a base são os dados. Para Fodor e Pylyshyn (1988 apud Haykin, 2001), "[...] pode-se afirmar para as teorias da IA clássica, mas não para as redes neurais, que (i) as representações mentais exibem de forma característica uma estrutura constituinte combinatória e semântica combinatória; e que (ii) os processos mentais são caracteristicamente sensíveis à estrutura combinatória das representações sobre as quais operam." (HAYKIN, 2001, p. 62)
 
 - Razões para a extração de regras de redes neurais (ANDREWS; DIEDERICH, 1996 apud HAYKIN, 2001, p. 62/63):
-  - Validar componentes de redes neurais em sistemas programados, tornando os estados internos da rede neural acessíveis e compreensíveis ao usuário;
-  - Melhorar o desempenho de generalização das redes neurais, (1) identificando regiões do espaço de entrada onde os dados de treinamento não estão adequadamente representados, ou (2) indicando as circunstâncias onde a rede neural pode falhar na generalização;
-  - Descobrir características marcantes dos dados de entrada para exploração de dados (mineração de dados, data mining);
-  - Fornecer meios de atravessar a fronteira entre as abordagens conexionista e simbólica para o desenvolvimento de máquinas inteligentes;
-  - Satisfazer a crítica necessidade de segurança em uma classe especial de sistemas na qual segurança é uma condição obrigatória.
+  - "Validar componentes de redes neurais em sistemas programados, tornando os estados internos da rede neural acessíveis e compreensíveis ao usuário."
+  - "Melhorar o desempenho de generalização das redes neurais, (1) identificando regiões do espaço de entrada onde os dados de treinamento não estão adequadamente representados, ou (2) indicando as circunstâncias onde a rede neural pode falhar na generalização."
+  - "Descobrir características marcantes dos dados de entrada para exploração de dados (mineração de dados, data mining)."
+  - "Fornecer meios de atravessar a fronteira entre as abordagens conexionista e simbólica para o desenvolvimento de máquinas inteligentes."
+  - "Satisfazer a crítica necessidade de segurança em uma classe especial de sistemas na qual segurança é uma condição obrigatória."
 
 ### 10.2 Notas históricas
 
@@ -746,7 +719,7 @@ Três componentes fundamentais foram identificados por Sage (1990): **representa
 
 ### 10.3 Memória
 
->Em um contexto neurobiológico, memória se refere às alterações neurais relativamente duradouras induzidas pela interação de um organismo com o seu ambiente (Teyler, 1986). [...] ela deve ser acessível ao sistema nervoso para poder influenciar o comportamento futuro. Entretanto, um padrão de atividade deve ser inicialmente armazenado na memória através de um *processo de aprendizagem*. [...] A memória se divide em memória de "curto prazo" e de "longo prazo", dependendo do tempo de retenção (Arbib, 1989). *Memória de curto prazo* se refere a uma compilação de conhecimento que representa o estado "corrente" do ambiente. [...] *Memória de longo prazo*, por outro lado, se refere ao conhecimento armazenado por um longo período ou permanentemente. (HAYKIN, 2001, p. 100)
+>"Em um contexto neurobiológico, memória se refere às alterações neurais relativamente duradouras induzidas pela interação de um organismo com o seu ambiente (Teyler, 1986). [...] ela deve ser acessível ao sistema nervoso para poder influenciar o comportamento futuro. Entretanto, um padrão de atividade deve ser inicialmente armazenado na memória através de um *processo de aprendizagem*. [...] A memória se divide em memória de "curto prazo" e de "longo prazo", dependendo do tempo de retenção (Arbib, 1989). *Memória de curto prazo* se refere a uma compilação de conhecimento que representa o estado "corrente" do ambiente. [...] *Memória de longo prazo*, por outro lado, se refere ao conhecimento armazenado por um longo período ou permanentemente." (HAYKIN, 2001, p. 100)
 
 #### 10.3.1 Características da memória associativa
 
@@ -807,8 +780,7 @@ O termo $x_k^T$ representa o produto externo entre o padrão-chave $x_k$ e o pad
 
 A natureza espaço-temporal da aprendizagem é inerente às espécies animais e possibilita representar a estrutura temporal da experiência e se adaptar perante a mudança do ambiente.
 
->Quando uma rede neural opera em um ambiente estacionário (i.e., um ambiente cujas características estatísticas não mudam com o tempo), as estatísticas essenciais do ambiente podem ser, em teoria, aprendidas pela rede, sob supervisão de um professor. Em particular, os pesos sinápticos da rede podem ser calculados submetendo-se a rede a uma sessão de treinamento com um conjunto de dados que é representativo do ambiente. Uma vez que o processo de treinamento esteja completo, os pesos sinápticos da rede capturariam a estrutura estatística subjacente do ambiente, o que justificaria o "congelamento" de seus valores depois disso. Assim, o sistema de aprendizagem se baseia de uma forma ou de outra na memória, para recordar e explorar experiências passadas.  
-Frequentemente, entretanto, o ambiente de interesse é não-estacionário, o que significa que os parâmetros estatísticos dos sinais portadores de informação, gerados pelo ambiente variam com o tempo. Em situações deste tipo, os métodos tradicionais de aprendizagem supervisionada podem se mostrar inadequados, pois a rede não está equipada com os meios necessários para seguir as variações estatísticas do ambiente no qual opera. Para superar esta dificuldade, é desejável que uma rede neural possa adaptar continuamente seus parâmetros livres às variações do sinal incidente em tempo real. Assim, um sistema adaptativo responde a toda entrada distinta como sendo uma entrada nova. Em outras palavras, o processo de aprendizagem encontrado em um sistema adaptativo nunca para, com a aprendizagem sendo realizada enquanto o processamento de sinal está sendo executado pelo sistema. Esta forma de aprendizagem é chamada de *aprendizagem contínua ou aprendizagem em tempo real (on-the-fly)*. (HAYKIN, 2001, p. 108)
+>"Quando uma rede neural opera em um ambiente estacionário (i.e., um ambiente cujas características estatísticas não mudam com o tempo), as estatísticas essenciais do ambiente podem ser, em teoria, aprendidas pela rede, sob supervisão de um professor. Em particular, os pesos sinápticos da rede podem ser calculados submetendo-se a rede a uma sessão de treinamento com um conjunto de dados que é representativo do ambiente. Uma vez que o processo de treinamento esteja completo, os pesos sinápticos da rede capturariam a estrutura estatística subjacente do ambiente, o que justificaria o "congelamento" de seus valores depois disso. Assim, o sistema de aprendizagem se baseia de uma forma ou de outra na memória, para recordar e explorar experiências passadas. Frequentemente, entretanto, o ambiente de interesse é não-estacionário, o que significa que os parâmetros estatísticos dos sinais portadores de informação, gerados pelo ambiente variam com o tempo. Em situações deste tipo, os métodos tradicionais de aprendizagem supervisionada podem se mostrar inadequados, pois a rede não está equipada com os meios necessários para seguir as variações estatísticas do ambiente no qual opera. Para superar esta dificuldade, é desejável que uma rede neural possa adaptar continuamente seus parâmetros livres às variações do sinal incidente em tempo real. Assim, um sistema adaptativo responde a toda entrada distinta como sendo uma entrada nova. Em outras palavras, o processo de aprendizagem encontrado em um sistema adaptativo nunca para, com a aprendizagem sendo realizada enquanto o processamento de sinal está sendo executado pelo sistema. Esta forma de aprendizagem é chamada de *aprendizagem contínua ou aprendizagem em tempo real (on-the-fly)*." (HAYKIN, 2001, p. 108)
 
 Uma das formas de garantir a aprendizagem contínua por meio de uma rede neural -- isto é, de assegurar que seu comportamento se adaptará à estrutura temporal variável dos sinais incidentes no espaço de comportamentos --, é presumindo que "[...] as características estatísticas de um processo não-estacionário normalmente variam de forma suficientemente lenta para que o processo seja considerado pseudo-estacionário em uma janela de tempo suficientemente curta" (HAYKIN, 2001, p. 109). Em casos tais, a rede poderá ser regularmente retreinada, de modo a capturar as variações estatísticas do ambiente (incorporação da estrutura temporal).
 
@@ -978,11 +950,7 @@ VERY LARGE SCALE INTEGRATION. In: WIKIPEDIA. Disponível em <https://en.wikipedi
 [^6]: Nesse contexto, diz-se que uma rede neural é uma **máquina adaptativa** exatamente pela capacidade aprendizado (autoajuste) e adaptação a partir dos dados de entrada, o que permite o ajuste de parâmetros (pesos sinápticos) para obter o melhor desempenho na tarefa.
 
 [^7]: Sobre **filtros adaptativos (*adaptive filter*)**:
-  The term "filter" is often used to describe a device in the form of a piece of physical hardware or software that is applied to a set of noisy data in order to extract information about a prescribed quantity of interest. [...] In any event, we may use a filter to perform three basic information-processing tasks:
-    1. *Filtering*, which means the extraction of information about a quantity of interest at a time $t$ by using data measured up to and including time $t$.
-    2. *Smoothing*, which differs from filtering in that information about the quantity of interest need not to be available at time $t$, and data measured later than time $t$ can be used in obtaining this information. This means that in the case of smoothing there is a *delay* in producing the result of interest. Since in the smoothing process we are able to use data obtained not only up to time $t$ but also data obtained after time $t$, we would expect smoothing to be more accurate in some sense than filtering.
-    3. *Prediction*, which is the forecasting side of information processing. The aim here is to derive information about what the quantity of interest will be like at some time ${t + T}$ in the future, for some ${T > 0}$, by using data measured up to and including time $t$.
-    We may classify filters into linear and nonlinear. A filter is said to be *linear* if the filtered, smoothed, or predicted quantity at the output of the device is *a linear function of the observations applied to the filter input*. Otherwise, the filter is nonlinear. [...] By such a device [an adaptive filter] we mean one that is self-designing in that the adaptive filter relies for its operation on a recursive algorithm, which makes it possible for the filter to perform satisfactorily in an environment where complete knowledge of the relevant signal characteristics is not available. (HAYKIN, 1995, p. 1/3)
+  "The term "filter" is often used to describe a device in the form of a piece of physical hardware or software that is applied to a set of noisy data in order to extract information about a prescribed quantity of interest. [...] In any event, we may use a filter to perform three basic information-processing tasks: 1. *Filtering*, which means the extraction of information about a quantity of interest at a time $t$ by using data measured up to and including time $t$. 2. *Smoothing*, which differs from filtering in that information about the quantity of interest need not to be available at time $t$, and data measured later than time $t$ can be used in obtaining this information. This means that in the case of smoothing there is a *delay* in producing the result of interest. Since in the smoothing process we are able to use data obtained not only up to time $t$ but also data obtained after time $t$, we would expect smoothing to be more accurate in some sense than filtering. 3. *Prediction*, which is the forecasting side of information processing. The aim here is to derive information about what the quantity of interest will be like at some time ${t + T}$ in the future, for some ${T > 0}$, by using data measured up to and including time $t$. We may classify filters into linear and nonlinear. A filter is said to be *linear* if the filtered, smoothed, or predicted quantity at the output of the device is *a linear function of the observations applied to the filter input*. Otherwise, the filter is nonlinear. [...] By such a device [an adaptive filter] we mean one that is self-designing in that the adaptive filter relies for its operation on a recursive algorithm, which makes it possible for the filter to perform satisfactorily in an environment where complete knowledge of the relevant signal characteristics is not available." (HAYKIN, 1995, p. 1/3)
 
 [^8]: VLSI, do inglês *Very Large Scale Integration*, é um processo de fabricação de circuitos eletrônicos integrados com altíssima quantidade de transistores em um único chip.
 
