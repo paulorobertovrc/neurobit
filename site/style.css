@@ -16,7 +16,6 @@ nav {
     background-color: #333;
     color: #fff;
     padding: 15px;
-    margin-bottom: 0px;
 
     a:hover {
         color: #f2f2f2;
@@ -32,10 +31,6 @@ nav a {
 main {
     padding: 20px;
     text-align: justify;
-}
-
-article {
-    margin-bottom: 30px;
 }
 
 footer {
@@ -86,14 +81,6 @@ p.titulo {
 math[display="block"] {
     margin: 15px 0px 15px;
 }
-
-/* PARA RESPONSIVIDADE */
-div#container {
-    overflow-x: auto;
-    @media screen and (max-width: 450px){
-        font-size: x-small;
-    }
-}
   
 .breadcrumb {
     text-align: right;
@@ -103,14 +90,6 @@ div#container {
         text-align: justify;
     }
 }
-
-/* .figura {    
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 768px;
-    width: 100%;
-} */
 
 .destacado {
     font-weight: bold;
@@ -137,8 +116,10 @@ div#container {
     height: auto;
     display: block;
     margin: 0 auto;
+
     /* margin-left: auto;
     margin-right: auto; */
+    
     @media screen and (max-width: 350px){
         max-width: 80vw;
         max-height: 80vh;
@@ -176,7 +157,77 @@ div#container {
 }
 
 /* Cards dos fichamentos */
+.fichamentos {
+    display: flex;
+    grid-gap: 20px;
 
+    width: fit-content; 
+    height: fit-content;
+
+    @media screen and (max-width: 390px){
+        flex-direction: column;
+    }
+}
+
+.fichamentos a {
+    color: #333;
+    font-weight: bolder;
+}
+
+.fichamentos a:hover {
+    color: #31A8B8;
+    text-decoration: none;
+}
+
+.fichamentos h3 {
+    margin-bottom: 5px;
+    margin-top: 0px;
+}
+
+.fichamento-card {
+    background-color: #f9f9f9;
+    padding: 15px 15px 0px 15px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+
+    text-align: center;
+    align-items: center;
+    vertical-align: middle;
+    display: flex;
+
+    max-width: 350px;
+}
+
+.fichamento-texto-container {
+    border-left: 3px solid #333;
+    margin-bottom: 10px;
+    padding-left: 5px;
+    text-align: justify;
+}
+
+.fichamento-numero {    
+    font-size: 2.5em;
+    font-weight: bolder;
+    
+    margin-right: 10px;
+    padding-right: 5px;
+}
+
+.fichamento-titulo {
+    font-size: large;
+    font-weight: bolder;
+    padding-left: 10px;
+}
+
+.fichamento-descricao {
+    font-size: medium;
+    font-weight: normal;
+    padding-left: 10px;
+    margin-top: 5px;
+}
+/* Cards dos fichamentos */
+
+/* Cards de informações */
 .fichamento {
     display: flex;
     grid-gap: 20px;
@@ -197,8 +248,11 @@ div#container {
     padding: 15px;
     border-radius: 5px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+
+    margin-bottom: 20px;
 }
 
 .fichamento h2 {
     margin-top: 0;
 }
+/* Cards de informações */
