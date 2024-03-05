@@ -76,6 +76,10 @@ p.descricao {
 p.titulo {
     font-size: larger;
     font-weight: bold;
+
+    @media screen and (max-width: 390px){
+        font-size: 1em;
+    }
 }
 
 math[display="block"] {
@@ -256,3 +260,29 @@ math[display="block"] {
     margin-top: 0;
 }
 /* Cards de informações */
+
+/* Detalhes dos fichamentos */
+.numeracao-sequencial {
+    border: solid;
+    border-radius: 100%;
+
+    font-size: 1.5em;
+    font-weight: bolder;
+    
+    padding: 10px;
+
+    background-color: #f9f9f9;
+    color: #333;
+
+    max-width: fit-content;
+}
+
+.header-info-container {
+    display: flex;
+    align-items: center;
+}
+
+.container-esquerdo {
+    margin-right: -15px;
+}
+/* Detalhes dos fichamentos */
