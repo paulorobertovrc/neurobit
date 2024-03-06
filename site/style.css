@@ -156,6 +156,17 @@ math[display="block"] {
     }
 }
 
+.links-personalizados a {
+    color:#31A8B8;
+    text-decoration: none;
+    font-weight: bolder;
+
+    &:hover {
+        text-decoration: underline;
+        font-weight: bolder;
+    }
+}
+
 .social {
     padding: 5px 5px 0px 5px;
 }
