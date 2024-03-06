@@ -1,10 +1,10 @@
 # PROJETO NEUROBIT
 
 ![Static Badge](https://img.shields.io/badge/Livros-025159)
-![Static Badge](https://img.shields.io/badge/Selecionados-1-31A8B8?labelColor=025159)
-![Static Badge](https://img.shields.io/badge/Estudando-0-31A8B8?labelColor=025159)
+![Static Badge](https://img.shields.io/badge/Selecionados-2-31A8B8?labelColor=025159)
+![Static Badge](https://img.shields.io/badge/Estudando-1-31A8B8?labelColor=025159)
 ![Static Badge](https://img.shields.io/badge/Fichamentos-3A5F91)
-![Static Badge](https://img.shields.io/badge/Iniciados-2-6C8BBC?labelColor=3A5F91)
+![Static Badge](https://img.shields.io/badge/Iniciados-3-6C8BBC?labelColor=3A5F91)
 ![Static Badge](https://img.shields.io/badge/Concluídos-2-6C8BBC?labelColor=3A5F91)
 ![Static Badge](https://img.shields.io/badge/Complementos-0-8AB68C?labelColor=4B7A52)
 
@@ -43,7 +43,7 @@ O objetivo geral, bastante amplo, pode ser dividido nas perspectivas acadêmica 
 
 Por gosto pessoal, tenho o estudo como um fim em si mesmo. Para mim, mesmo que sem uma finalidade muito clara e imediata, estudar é bastante gratificante e recompensador. Assim é que, **do ponto de vista acadêmico, o objetivo geral do projeto é compreender em maior extensão e menor profundidade, as diversas nuances que permeiam a temática da inteligência artificial.** Nessa linha, **há um objetivo específico bastante ambicioso, ou mesmo utópico, consistente na criação de uma inteligência artificial geral a partir do desenvolvimento e implementação de um modelo computacional de rede neural artificial capaz de reproduzir o funcionamento do cérebro humano.**
 
-**Do ponto de vista prático**, no entanto, **o objetivo geral do projeto é criar um repositório de conhecimento sobre tudo aquilo que pareça pertinente para consulta futura, o que será feito por meio do fichamento de artigos científicos e livros, além de outras anotações pessoais.** 
+**Do ponto de vista prático**, no entanto, **o objetivo geral do projeto é criar um repositório de conhecimento sobre tudo aquilo que pareça pertinente para consulta futura, o que será feito por meio do fichamento de artigos científicos e livros, além de outras anotações pessoais.**
 
 Por sua vez, **como objetivo específico**, vislumbro a possibilidade de eventualmente **desenvolver um sistema dotado de inteligência artificial especializada capaz de apresentar soluções de interesse do mundo jurídico**, tais como analisar a viabilidade teórica de uma ação judicial com base em dados históricos da jurisprudência - decisões anteriormente proferidas em casos idênticos - ou propor mecanismos de busca de julgados mais eficientes, com capacidade para apresentar resultados mais precisos e relevantes ao caso concreto.
 
@@ -53,7 +53,7 @@ Para atingir esse objetivo, a ideia é que o estudo dê atenção ao embasamento
 
 ## Sobre o autor
 
-Paulo Roberto Vieira Ribeiro Cavalcanti é graduando em Engenharia de Software, atualmente no 7o semestre, e bacharel em Direito.
+Paulo Roberto Vieira Ribeiro Cavalcanti é pós-graduando *lato sensu* em Inteligência Artificial e Computacional pela Universidade Federal de Viçosa, graduando em Engenharia de Software, atualmente no 7º semestre, e bacharel em Direito.
 
 Um eterno insatisfeito que nunca se contentou com o raso e superficial, após muitas idas e vindas aprendi que sou movido pelo prazer da *busca* pelo conhecimento daquilo que me interessa, ainda que visto como difícil ou inútil pela maioria das pessoas, pois é o que alimenta minha *curiosidade* natural.
 
@@ -81,8 +81,9 @@ Ressalvados os direitos autorais dos detentores/produtores dos conteúdos utiliz
 
 | # | Título | Autor | Capítulo | Status | Link |
 | :---: | :---: | :---: | :---: | :---: | :---: |
-1.1 | Neural Networks and Learning Machines | Simon Haykin |  Prefácio | ![Static Badge](https://img.shields.io/badge/Concluído-grey) | [🔗](./fichamentos/neural-networks-and-learning-machines-simon-haykin/__preface.md) |
-1.2 | Neural Networks and Learning Machines | Simon Haykin | Introdução | ![Static Badge](https://img.shields.io/badge/Concluído-grey) | [🔗](./fichamentos/neural-networks-and-learning-machines-simon-haykin/_introduction.md) |
+|1.1 | Neural Networks and Learning Machines | Simon Haykin |  Prefácio | ![Static Badge](https://img.shields.io/badge/Concluído-grey) | [🔗](./fichamentos/neural-networks-and-learning-machines-simon-haykin/__preface.md) |
+|1.2 | Neural Networks and Learning Machines | Simon Haykin | Introdução | ![Static Badge](https://img.shields.io/badge/Concluído-grey) | [🔗](./fichamentos/neural-networks-and-learning-machines-simon-haykin/_introduction.md) |
+|2.1 | Inteligência Artificial: Uma Abordagem de Aprendizado de Máquina | Katti Faceli et al. | Capítulo 1 | ![Static Badge](https://img.shields.io/badge/Estudando-grey) | [🔗](./fichamentos/inteligencia-artificial-uma-abordagem-de-am/capitulo01.md) |
 
 [[🔝](#acesso-rápido)]
 
