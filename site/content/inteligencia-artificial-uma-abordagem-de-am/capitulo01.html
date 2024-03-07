@@ -60,9 +60,36 @@
                 </blockquote>
             </p>
 
-            <!-- <h3> 1.1 Tarefas de Aprendizado</h3>
+            <h3> 1.1 Tarefas de Aprendizado</h3>
+            <p>
+                Na hierarquia clássica, as tarefas de aprendizado de máquina podem ser divididas entre <strong>preditivas</strong>, que visam <strong>inferir o atributo alvo</strong> de uma nova entrada a partir da exposição prévia aos dados <strong>rotulados</strong> durante o treinamento do modelo -- aprendizagem <strong>supervisionada</strong> --, e <strong>descritivas</strong>, que buscam <strong>extrair padrões</strong> dos atributos preditivos -- aprendizagem <strong>não supervisionada</strong>. 
+                Por conseguinte, uma vez que pertencem a este paradigma, <strong>as tarefas de aprendizado descritivas não possuem atributos alvo.</strong>
+            </p>
+            <p>
+                Noutras palavras, tarefas preditivas analisarão os atributos preditivos, comparando-os com os atributos alvo (rótulos), ao passo que tarefas descritivas cotejarão os atributos preditivos entre si, buscando por padrões e correlações.
+            </p>
+            <p>
+                Ambas as tarefas podem ser categorizadas sob o conceito de <strong>aprendizado indutivo</strong>, que é a capacidade de generalizar a partir de exemplos específicos, isto é, do conjunto de dados de treinamento. 
+                Em se tratando de tarefas <strong>preditivas</strong>, observada a divisão clássica, os algoritmos em espécie poderão implementar tarefas de <strong>classificação</strong>, nas quais o atributo alvo (rótulo) é <strong>discreto</strong> (enumerável ou finito), ou de <strong>regressão</strong>, em que o atributo alvo (rótulo) é <strong>contínuo</strong> (não enumerável ou infinito). 
+                Já as <strong>descritivas</strong> distinguem-se entre <strong>agrupamento</strong>, que busca por similaridades, <strong>associação</strong>, que busca por padrões frequentes, e <strong>sumarização</strong>, que resulta em uma breve descrição do conjunto de dados.
+            </p>
+            <p>
+                <blockquote>
+                    "Deve ser observado que, apesar dessa divisão de modelos em preditivos e descritivos, um modelo preditivo pode gerar uma descrição de um conjunto de dados, e um modelo descritivo pode prover previsões após ser validado." (FACELI et al., 2023, p. 4)
+                </blockquote>
+            </p>
+            <p>
+                Existe ainda uma estrutura hierárquica estendida, que é proposta por alguns teóricos que defendem a impossibilidade de separar todas as tarefas de AM dentre as categorias acima. 
+                Nesse sentido, o aprendizado <strong>semissupervisionado</strong> (Zhu; Goldberg, 2009 apud Faceli et al., 2023), que pode consistir em tarefas de agrupamento ou de classificação ou regressão, utiliza-se de dados não rotulados que sabidamente tenham algumas restrições e que necessariamente "[...] devem estar no mesmo grupo ou em grupos diferentes" (FACELI et al., 2023, p. 4) ou de dados parcialmente rotulados, respectivamente. 
+                Similarmente, o aprendizado <strong>ativo</strong> (Settles, 2012 apud Faceli et al., 2023), que também se utiliza de dados rotulados e não rotulados, seleciona ativamente dados que tenham atributos vazios que possam ser inferidos a partir dos exemplos rotulados ou mediante o auxílio de um agente externo -- um "oráculo" (Faceli et al., 2023). 
+                Finalmente, o aprendizado <strong>por reforço</strong> (Sutton; Barto, 1998 apud Faceli et al., 2023) opera por meio de <em>feedback</em>, ou seja, reforços positivos (recompensas) ou negativos (punições) a depender da respectiva avaliação do resultado.
+            </p>
+
+            <!--
             <h3> 1.2 Aprendizado de Máquina e Indução de Modelos</h3>
-            <h3> 1.3 Viés Indutivo</h3> -->
+            <h3> 1.3 Viés Indutivo</h3> 
+            -->
+
         </article>
         
         <hr>
@@ -105,6 +132,51 @@
                                             </ul>
                                         </li>
                                     </ul>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><strong>Tarefas de Aprendizado</strong>
+                        <ul>
+                            <li><strong>Aprendizado Indutivo</strong>
+                                <ul>
+                                    <li>Generalização a partir de exemplos</li>
+                                    <li><strong>Preditivas</strong>
+                                        <ul>
+                                            <li>Aprendizagem supervisionada</li>
+                                            <li>Dados rotulados</li>
+                                            <li>Inferência do atributo alvo</li>
+                                            <li>
+                                                Espécies
+                                                <ul>
+                                                    <li><strong>Classificação</strong> (rótulo discreto)</li>
+                                                    <li><strong>Regressão</strong> (rótulo contínuo)</li>
+                                                </ul>            
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>Descritivas</strong>
+                                        <ul>
+                                            <li>Aprendizagem não supervisionada</li>
+                                            <li>Extração de padrões</li>
+                                            <li>Não há atributo alvo</li>
+                                            <li>
+                                                Espécies
+                                                <ul>
+                                                    <li><strong>Agrupamento</strong></li>
+                                                    <li><strong>Associação</strong></li>
+                                                    <li><strong>Sumarização</strong></li>
+                                                </ul>            
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>Hierarquia estendida
+                                        <ul>
+                                            <li>Aprendizado semissupervisionado</li>
+                                            <li>Aprendizado ativo</li>
+                                            <li>Aprendizado por reforço</li>
+                                        </ul>
+                                    </li>
                                 </ul>
                             </li>
                         </ul>
