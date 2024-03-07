@@ -157,11 +157,12 @@ math[display="block"] {
 }
 
 .links-personalizados a {
-    color:#31A8B8;
+    color:#333;
     text-decoration: none;
     font-weight: bolder;
 
     &:hover {
+        color: #31A8B8;
         text-decoration: underline;
         font-weight: bolder;
     }
