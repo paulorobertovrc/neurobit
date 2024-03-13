@@ -28,12 +28,12 @@
 <body>
     <main>
         <h1># 2.1 Capítulo 1 (p. 1/7)</h1>
-        <p><img src="https://img.shields.io/badge/Status-Estudando-grey?labelColor=31A8B8"></p>
+        <p><img src="https://img.shields.io/badge/Status-Concluído-grey?labelColor=31A8B8"></p>
 
         <article>
             <h2 id="subtitulo_1">1. Introdução</h2>
             <p>
-                Nos primórdios da computação, a maioria dos sistemas era construída por meio da implementação passo a passo das regras<sup><a class="linknotas" href="#nota_1">[1]</a></sup>. . 
+                Nos primórdios da computação, a maioria dos sistemas era construída por meio da implementação passo a passo das regras<sup><a class="linknotas" href="#nota_1">[1]</a></sup>.
                 Foi somente na década de 1970 que o uso da Inteligência Artificial começou a ser difundido de modo que esses sistemas passaram a ser utilizados em problemas do mundo real.
             </p>
             <p>
@@ -85,11 +85,22 @@
                 Finalmente, o aprendizado <strong>por reforço</strong> (Sutton; Barto, 1998 apud Faceli et al., 2023) opera por meio de <em>feedback</em>, ou seja, reforços positivos (recompensas) ou negativos (punições) a depender da respectiva avaliação do resultado.
             </p>
 
-            <!--
-            <h3> 1.2 Aprendizado de Máquina e Indução de Modelos</h3>
-            <h3> 1.3 Viés Indutivo</h3> 
-            -->
+            <h3 id="subtitulo_1_2"> 1.2 Aprendizado de Máquina e Indução de Modelos</h3>
+            <p>
+                É comum que algoritmos de aprendizagem de máquina implementem a lógica <strong>indutiva</strong>, técnica que consiste inferência de uma conclusão a partir premissas reconhecidamente verdadeiras, ou seja, "[...] permite extrair conclusões genéricas a partir de um conjunto particular de exemplos" (FACELI et al., 2023, p. 4)<sup><a class="linknotas" href="#nota_2">[2]</a></sup>. 
+                Isso ocorre porque o modelo deve ser capaz manipular dados ditos <strong>imperfeitos</strong>, isto é, que apresentem ruídos, interferências, incompletudes, ambiguidades, inconsistências, ausências e redundâncias. Conquanto não possam ser eliminados, esses problemas devem ser minimizados de modo a reduzir sua influência na etapa de indução.
+            </p>
+            <p>
+                Em outras palavras, a regra que foi aprendida durante a fase de treinamento "[...] também deve ser válida para outros objetos do mesmo domínio ou problema, que não fazem parte do conjunto de treinamento" (FACELI et al., 2023, p. 5), propriedade que é denominada <strong>generalização</strong>. A baixa capacidade de generalização é um defeito decorrente do superajustamento aos dados de treino (<strong><em>overfitting</em></strong>) e "[...] significa que o modelo memorizou ou se especializou nos dados de treinamento." (FACELI et al., 2023, p. 5). Por outro lado, a baixa capacidade de predição (subajustamento ou <strong><em>underfitting</em></strong>) "[...] geralmente ocorre quando os dados de treinamento disponíveis são pouco representativos ou quando o modelo usado é muito simples e não captura os padrões existentes nos dados (Monard e Baranauskas, 2003)" (FACELI et al., 2023, p. 5).
+            </p>
 
+            <h3> 1.3 Viés Indutivo</h3>
+            <p>
+                O viés indutivo diz respeito ao modo como o algoritmo correlacionará os atributos preditivos com o atributo alvo, o que "[...] é necessário para restringir os modelos a serem avaliados no espaço de busca." (FACELI et al., 2023, p. 6). Há os vieses de <strong>representação</strong> e de <strong>busca</strong>, os quais, respectivamente, impõem restrições ao espaço de possíveis modelos decorrentes da preferência por determinada <strong>forma ou linguagem próprias</strong> ou por uma <strong>estratégia de busca</strong>.
+            </p>
+            <p>
+                Nos dois casos, restringe-se como o alvo é representado e, portanto, quais modelos poderão ser inferidos. "Embora, à primeira vista, o viés pareça uma limitação dos algoritmos de AM, segundo (Mitchell, 1997), sem viés um algoritmo de AM não consegue generalizar o conhecimento adquirido durante o processo de treinamento." (FACELI et al., 2023, p. 6)
+            </p>
         </article>
         
         <hr>
@@ -181,22 +192,35 @@
                             </li>
                         </ul>
                     </li>
+                    <li>
+                        <strong>Aprendizado de máquina e indução de modelos</strong>
+                        <ul>
+                            <li>
+                                <strong>Generalização</strong>
+                                <ul>
+                                    <li><em>Overfitting</em>: baixa capacidade de generalização</li>
+                                    <li><em>Underfitting</em>: baixa capacidade preditiva</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>Viés indutivo</strong>
+                        <ul>
+                            <li>Restringir o espaço de possíveis modelos</li>
+                            <li>De representação e de busca</li>
+                        </ul>
+                    </li>
                 </ul>
                 <p><a class="emoji" href="#top">[ 🔝 ]</a></p>
         </article>
 
         <hr>
 
-        <!-- <article>
-            <h2>Referências complementares consultadas durante o fichamento deste capítulo</h2>
-            <p><a class="emoji" href="#top">[ 🔝 ]</a></p>
-        </article>
-
-        <hr> -->
-
         <article>
             <h2>Notas</h2>
             <p id="nota_1">[1] Paradigma procedural de programação, em contraposição a outros como o funcional e, mais amplamente utilizado e moderno, o orientado a objetos.<a class="linkdiscreto" href="#subtitulo_1"> [ 🔙 ]</a></p>
+            <p id="nota_2">[2] No tópico 1.5 (exercícios), os autores esclarecem que as principais formas de inferência são a indução, a dedução e a abdução.<a class="linkdiscreto" href="#subtitulo_1_2"> [ 🔙 ]</a></p>
             <a class="emoji" href="#top">[ 🔝 ]</a>
         </article>
     </main>

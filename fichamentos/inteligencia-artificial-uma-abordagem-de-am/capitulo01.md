@@ -1,6 +1,6 @@
 # # 2.1 Capítulo 1 (p. 1/7)
 
-![Static Badge](https://img.shields.io/badge/Status-Estudando-grey?labelColor=31A8B8)
+![Static Badge](https://img.shields.io/badge/Status-Concluído-grey?labelColor=31A8B8)
 
 ## 1. Introdução
 
@@ -30,7 +30,15 @@ Existe ainda uma estrutura hierárquica estendida, que é proposta por alguns te
 
 ### 1.2 Aprendizado de Máquina e Indução de Modelos
 
+É comum que algoritmos de aprendizagem de máquina implementem a lógica **indutiva**, técnica que consiste inferência de uma conclusão a partir premissas reconhecidamente verdadeiras, ou seja, "[...] permite extrair conclusões genéricas a partir de um conjunto particular de exemplos" (FACELI et al., 2023, p. 4)[^2]. Isso ocorre porque o modelo deve ser capaz manipular dados ditos **imperfeitos**, isto é, que apresentem ruídos, interferências, incompletudes, ambiguidades, inconsistências, ausências e redundâncias. Conquanto não possam ser eliminados, esses problemas devem ser minimizados de modo a reduzir sua influência na etapa de indução.
+
+Em outras palavras, a regra que foi aprendida durante a fase de treinamento "[...] também deve ser válida para outros objetos do mesmo domínio ou problema, que não fazem parte do conjunto de treinamento" (FACELI et al., 2023, p. 5), propriedade que é denominada **generalização**. A baixa capacidade de generalização é um defeito decorrente do superajustamento aos dados de treino (***overfitting***) e "[...] significa que o modelo memorizou ou se especializou nos dados de treinamento." (FACELI et al., 2023, p. 5). Por outro lado, a baixa capacidade de predição (subajustamento ou ***underfitting***) "[...] geralmente ocorre quando os dados de treinamento disponíveis são pouco representativos ou quando o modelo usado é muito simples e não captura os padrões existentes nos dados (Monard e Baranauskas, 2003)" (FACELI et al., 2023, p. 5).
+
 ### 1.3 Viés Indutivo
+
+O viés indutivo diz respeito ao modo como o algoritmo correlacionará os atributos preditivos com o atributo alvo, o que "[...] é necessário para restringir os modelos a serem avaliados no espaço de busca." (FACELI et al., 2023, p. 6). Há os vieses de **representação** e de **busca**, os quais, respectivamente, impõem restrições ao espaço de possíveis modelos decorrentes da preferência por determinada **forma ou linguagem próprias** ou por uma **estratégia de busca**.
+
+Nos dois casos, restringe-se como o alvo é representado e, portanto, quais modelos poderão ser inferidos. "Embora, à primeira vista, o viés pareça uma limitação dos algoritmos de AM, segundo (Mitchell, 1997), sem viés um algoritmo de AM não consegue generalizar o conhecimento adquirido durante o processo de treinamento." (FACELI et al., 2023, p. 6)
 
 ## Principais conceitos/definições/ideias extraídos do texto original
 
@@ -74,9 +82,15 @@ Existe ainda uma estrutura hierárquica estendida, que é proposta por alguns te
       - Aprendizado Semissupervisionado
       - Aprendizado Ativo
       - Aprendizado Por reforço
-
-## Referências complementares consultadas durante o fichamento deste capítulo
+- **Aprendizado de máquina e indução de modelos**
+  - **Generalização**
+    - *Overfitting*: baixa capacidade de generalização
+    - *Underfitting*: baixa capacidade preditiva
+- **Viés indutivo**
+  - Restringir o espaço de possíveis modelos
+  - De representação e de busca
 
 ## Notas
 
 [^1]: Paradigma procedural de programação, em contraposição a outros como o funcional e, mais amplamente utilizado e moderno, o orientado a objetos.
+[^2]: No tópico 1.5 (exercícios), os autores esclarecem que as principais formas de inferência são a indução, a dedução e a abdução.
