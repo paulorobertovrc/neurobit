@@ -7,7 +7,7 @@ Neste diretório estarão os fichamentos de livros, artigos científicos, textos
 | # | Título | Autor | Status | Progresso | Link |
 | :---: | :---: | :---: | :---: | :---: | :---: |
 |1 | Neural Networks and Learning Machines | Simon Haykin | ![Static Badge](https://img.shields.io/badge/Suspenso-grey) | ![Static Badge](https://img.shields.io/badge/2_/_17-grey) | [🔗](./neural-networks-and-learning-machines-simon-haykin/README.md) |
-|2 | Katti Faceli et al. | Simon Haykin | ![Static Badge](https://img.shields.io/badge/Estudando-grey) | ![Static Badge](https://img.shields.io/badge/0_/_35-grey) | [🔗](./neural-networks-and-learning-machines-simon-haykin/README.md) |
+|2 | Katti Faceli et al. | Simon Haykin | ![Static Badge](https://img.shields.io/badge/Estudando-grey) | ![Static Badge](https://img.shields.io/badge/1_/_35-grey) | [🔗](./inteligencia-artificial-uma-abordagem-de-am/README.md) |
 
 ## Observações
 

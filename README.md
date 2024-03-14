@@ -83,7 +83,7 @@ Ressalvados os direitos autorais dos detentores/produtores dos conteúdos utiliz
 | :---: | :---: | :---: | :---: | :---: | :---: |
 |1.1 | Neural Networks and Learning Machines | Simon Haykin |  Prefácio | ![Static Badge](https://img.shields.io/badge/Concluído-grey) | [🔗](./fichamentos/neural-networks-and-learning-machines-simon-haykin/__preface.md) |
 |1.2 | Neural Networks and Learning Machines | Simon Haykin | Introdução | ![Static Badge](https://img.shields.io/badge/Concluído-grey) | [🔗](./fichamentos/neural-networks-and-learning-machines-simon-haykin/_introduction.md) |
-|2.1 | Inteligência Artificial: Uma Abordagem de Aprendizado de Máquina | Katti Faceli et al. | Capítulo 1 | ![Static Badge](https://img.shields.io/badge/Estudando-grey) | [🔗](./fichamentos/inteligencia-artificial-uma-abordagem-de-am/capitulo01.md) |
+|2.1 | Inteligência Artificial: Uma Abordagem de Aprendizado de Máquina | Katti Faceli et al. | Capítulo 1 | ![Static Badge](https://img.shields.io/badge/Concluído-grey) | [🔗](./fichamentos/inteligencia-artificial-uma-abordagem-de-am/capitulo01.md) |
 
 [[🔝](#acesso-rápido)]
 
