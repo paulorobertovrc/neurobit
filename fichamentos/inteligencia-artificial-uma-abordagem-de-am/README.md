@@ -1,7 +1,7 @@
 # # 2 - Inteligência Artificial: Uma Abordagem de Aprendizado de Máquina
 
 ![Static Badge](https://img.shields.io/badge/Status-Estudando-grey?labelColor=31A8B8)
-![Static Badge](https://img.shields.io/badge/Progresso-0_/_35-grey?labelColor=31A8B8)
+![Static Badge](https://img.shields.io/badge/Progresso-1_/_35-grey?labelColor=31A8B8)
 
 ## Informações do livro
 

@@ -4,8 +4,8 @@
 ![Static Badge](https://img.shields.io/badge/Selecionados-2-31A8B8?labelColor=025159)
 ![Static Badge](https://img.shields.io/badge/Estudando-1-31A8B8?labelColor=025159)
 ![Static Badge](https://img.shields.io/badge/Fichamentos-3A5F91)
-![Static Badge](https://img.shields.io/badge/Iniciados-3-6C8BBC?labelColor=3A5F91)
-![Static Badge](https://img.shields.io/badge/Concluídos-2-6C8BBC?labelColor=3A5F91)
+![Static Badge](https://img.shields.io/badge/Iniciados-4-6C8BBC?labelColor=3A5F91)
+![Static Badge](https://img.shields.io/badge/Concluídos-3-6C8BBC?labelColor=3A5F91)
 ![Static Badge](https://img.shields.io/badge/Complementos-0-8AB68C?labelColor=4B7A52)
 
 [![Instagram](https://img.shields.io/badge/Instagram-%23E4405F.svg?logo=Instagram&logoColor=white)](https://www.instagram.com/pauloroberto.dev)
@@ -84,6 +84,7 @@ Ressalvados os direitos autorais dos detentores/produtores dos conteúdos utiliz
 |1.1 | Neural Networks and Learning Machines | Simon Haykin |  Prefácio | ![Static Badge](https://img.shields.io/badge/Concluído-grey) | [🔗](./fichamentos/neural-networks-and-learning-machines-simon-haykin/__preface.md) |
 |1.2 | Neural Networks and Learning Machines | Simon Haykin | Introdução | ![Static Badge](https://img.shields.io/badge/Concluído-grey) | [🔗](./fichamentos/neural-networks-and-learning-machines-simon-haykin/_introduction.md) |
 |2.1 | Inteligência Artificial: Uma Abordagem de Aprendizado de Máquina | Katti Faceli et al. | Capítulo 1 | ![Static Badge](https://img.shields.io/badge/Concluído-grey) | [🔗](./fichamentos/inteligencia-artificial-uma-abordagem-de-am/capitulo01.md) |
+|2.2 | Inteligência Artificial: Uma Abordagem de Aprendizado de Máquina | Katti Faceli et al. | Capítulo 2 | ![Static Badge](https://img.shields.io/badge/Estudando-grey) | [🔗](./fichamentos/inteligencia-artificial-uma-abordagem-de-am/capitulo02.md) |
 
 [[🔝](#acesso-rápido)]
 
@@ -91,6 +92,6 @@ Ressalvados os direitos autorais dos detentores/produtores dos conteúdos utiliz
 
 | # | Área | Assunto | Status | Link |
 | :---: | :---: | :---: | :---: | :---: |
-| 1 | Neurociência | Plasticidade | ![Static Badge](https://img.shields.io/badge/Pesquisando-grey) | [🔗](./complementos/plasticidade.md) |
+| 1 | Neurociência | Plasticidade | ![Static Badge](https://img.shields.io/badge/Suspenso-grey) | [🔗](./complementos/plasticidade.md) |
 
 [[🔝](#acesso-rápido)]
