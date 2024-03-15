@@ -1,4 +1,4 @@
-# # 2.1 Capítulo 2 (p. 9/27)
+# # 2.2 Capítulo 2 (p. 9/27)
 
 ![Static Badge](https://img.shields.io/badge/Status-Estudando-grey?labelColor=31A8B8)
 
