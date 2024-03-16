@@ -245,9 +245,11 @@ math[display="block"] {
 
 /* Cards dos capítulos */
 .fichamento-card-capitulo {
-    /* max-width: 25%; */
-    width: fit-content;
-    max-width: 50%;
+    @media screen and (min-width: 390px) {
+        /* max-width: 25%; */
+        width: fit-content;
+        max-width: 50%;
+    }
 }
 /* Cards dos capítulos */
 
