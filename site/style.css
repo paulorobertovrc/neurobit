@@ -200,7 +200,7 @@ math[display="block"] {
     margin-top: 0px;
 }
 
-.fichamento-card {
+.fichamento-card-livro {
     background-color: #f9f9f9;
     padding: 15px 15px 0px 15px;
     border-radius: 5px;
@@ -242,6 +242,14 @@ math[display="block"] {
     margin-top: 5px;
 }
 /* Cards dos fichamentos */
+
+/* Cards dos capítulos */
+.fichamento-card-capitulo {
+    /* max-width: 25%; */
+    width: fit-content;
+    max-width: 50%;
+}
+/* Cards dos capítulos */
 
 /* Cards de informações */
 .fichamento {
