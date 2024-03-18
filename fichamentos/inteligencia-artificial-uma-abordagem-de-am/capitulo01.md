@@ -40,6 +40,10 @@ O viés indutivo diz respeito ao modo como o algoritmo correlacionará os atribu
 
 Nos dois casos, restringe-se como o alvo é representado e, portanto, quais modelos poderão ser inferidos. "Embora, à primeira vista, o viés pareça uma limitação dos algoritmos de AM, segundo (Mitchell, 1997), sem viés um algoritmo de AM não consegue generalizar o conhecimento adquirido durante o processo de treinamento." (FACELI et al., 2023, p. 6)
 
+Para exemplificar, a seguinte imagem elucida como diferentes implementações poderiam representar de formas diferentes -- como árvore de decisão, regras de decisão e matriz de pesos sinápticos -- a modelagem do mesmo conhecimento (FACELI et al., 2023, p. 5):
+![Modelo de neurônio artificial](../../imagens/14_am_faceli_vieses_representacao.png)
+Figura 14 - Vieses de representação
+
 ## Principais conceitos/definições/ideias extraídos do texto original
 
 - Os Sistemas Especialistas ou Sistemas Baseados em Conhecimento foram os primeiros sistemas de IA utilizados para resolver problemas do mundo real.
