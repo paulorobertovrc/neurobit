@@ -1,7 +1,7 @@
 # PROJETO NEUROBIT
 
 ![Static Badge](https://img.shields.io/badge/Livros-025159)
-![Static Badge](https://img.shields.io/badge/Selecionados-2-31A8B8?labelColor=025159)
+![Static Badge](https://img.shields.io/badge/Selecionados-3-31A8B8?labelColor=025159)
 ![Static Badge](https://img.shields.io/badge/Estudando-1-31A8B8?labelColor=025159)
 ![Static Badge](https://img.shields.io/badge/Fichamentos-3A5F91)
 ![Static Badge](https://img.shields.io/badge/Iniciados-4-6C8BBC?labelColor=3A5F91)
