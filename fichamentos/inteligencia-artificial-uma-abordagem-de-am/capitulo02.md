@@ -14,11 +14,27 @@ Dito isso, as principais tarefas de pré-processamento são **integração de da
 
 ## 2. Análise de dados
 
-### 2.1 Caracterização de dados
+"A análise das características presentes em um conjunto de dados permite a descoberta de padrões e tendências que podem fornecer informações valiosas para compreender o processo que gerou os dados." (FACELI et al., 2023, p. 12). Portanto, essa etapa deve preceder à modelagem do sistema, pois fundamental para "[...] uma melhor compreensão da distribuição dos dados e pode dar suporte à escolha de formas para abordar o problema." (FACELI et al., 2023, p. 26).
+
+### 2.1 Caracterização de dados [^1]
+
+A caracterização de dados diz respeito à etapa de analisar, compreender e descrever o conjunto de dados, o que passa pela identificação de suas características principais, as quais podem ser obtidas por meio de fórmulas estatísticas ou técnicas de visualização.
+
+>"Formalmente, um conjunto de dados podem ser representados por uma matriz de objetos $X_{nxd}$, em que $n$ é o número de objetos e $d$ é o número de atributos de entrada de cada objeto. O valor de $d$ define a dimensionalidade dos objetos ou do espaço de objetos (também chamado de espaço de entradas ou espaço de atributos). Cada elemento dessa matriz, ${x_i^j}$ ou $x_{ij}$, contém o valor da $j$-ésima característica para o $i$-ésimo objeto. Os $d$ atributos também podem ser vistos como um conjunto de eixos ortogonais e os objetos, como pontos no espaço de objetos de dimensão $d$." (FACELI et al., 2023, p. 12).
 
 #### 2.1.1 Tipo
 
+Determina se um atributo representa quantidades, caso em que será referido por **quantitativo ou numérico**, ou qualidades, caso em que será denominado **qualitativo, simbólico ou categórico** -- neste caso, pois permitem associar o objeto a que se referem a uma categoria ou classe específica.
+
+Os **atributos quantitativos classificam-se em contínuos e discretos**. Um atributo **contínuo** possui um número infinito de valores possíveis, que são comumente representados por números reais, e em geral constituem o resultado de medições, caso em que haverá uma unidade de medida associada ao valor numérico. Já um atributo **discreto** possui uma quantidade finita ou infinita de valores possíveis, mas contáveis, e em geral representam contagens. Atributos quantitativos podem ter seus valores ordenados e utilizados em operações aritméticas. De modo geral, os atributos quantitativos podem ser representados por valores binários, inteiros ou reais.
+
+Os **atributos qualitativos**, geralmente, consistem em uma quantidade finita de símbolos ou nomes, e, ainda que admitida a representação numérica, não faz sentido submeter seus valores a operações aritméticas. Não obstante, podem ser ordenados.
+
 #### 2.1.2 Escala
+
+"A escala define as operações que podem ser realizadas sobre os valores do atributo" (FACELI et al., 2023, p. 14) e, quanto a ela, o atributo pode ser em **nominal, ordinal, intervalar ou racional**.
+
+Atributos de escala **nominal** -- qualitativos -- não podem ser ordenados entre si, sujeitam-se a operações lógicas de igualdade e desigualdade, somente, e intrinsecamente têm a menor quantidade de informação. Um Atributo **ordinal** -- qualitativo -- permite que seja estabelecida ordem entre seus valores e, além da igualdade e desigualdade, podem ser submetidos aos operadores lógicos maior que, menor que, maior ou igual a e menor ou igual a. Atributos **intervalares** -- quantitativos -- registram variações num intervalo e seus valores exprimem, concomitantemente, os significados de ordem e magnitude (intensidade). Possuem um ponto zero (origem da escala) arbitrariamente definido, que não necessariamente corresponderá ao valor matemático atribuído ao numeral zero. Atributos **racionais** -- quantitativos -- têm em si o maior valor semântico possível, pois os valores numéricos estão associados à unidade de medida correspondente. "Os números têm um significado absoluto, ou seja, existe um zero absoluto junto com uma unidade de medida, de forma que a razão tenha significado." (FACELI et al., 2023, p. 15).
 
 ### 2.2 Exploração de dados
 
@@ -34,7 +50,7 @@ Dito isso, as principais tarefas de pré-processamento são **integração de da
 
 ## Principais tópicos
 
-- Preparação de dados
+- **Preparação de dados**
   - Correção de problemas nos dados brutos
     - Inconsistência, redundância, desbalanceamento, ruído, incompletude
   - **Técnicas de pré-processamento**
@@ -44,5 +60,19 @@ Dito isso, as principais tarefas de pré-processamento são **integração de da
     - Limpeza de dados
     - Redução de dimensionalidade
     - Transformação de dados
+  - **Análise de dados**
+    - **Caracterização**
+      - **Tipo**
+        - Quantitativo ou numérico
+          - Contínuo
+          - Discreto
+        - Qualitativo, simbólico ou categórico
+      - **Escala**
+        - Nominal
+        - Ordinal
+        - Intervalar
+        - Racional
 
 ## Notas
+
+[^1]: No livro, os atributos são definidos em termos de tipo e escala. No entanto, destaca-se que os próprios autores mencionam que "[...] alguns atributos não seguem necessariamente essa classificação, tais como textos e imagens, que podem ser considerados não estruturados." (FACELI et al., 2023, p. 13). Em nota de rodapé, sobre as imagens, é esclarecido que "[...] cada pixel de uma imagem possa ser considerado um atributo quantitativo." (FACELI et al., 2023, p. 13).
