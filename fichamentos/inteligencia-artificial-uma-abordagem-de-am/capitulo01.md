@@ -44,7 +44,7 @@ Para exemplificar, a seguinte imagem elucida como diferentes implementações po
 ![Modelo de neurônio artificial](../../imagens/14_am_faceli_vieses_representacao.png)
 Figura 14 - Vieses de representação
 
-## Principais conceitos/definições/ideias extraídos do texto original
+## Principais tópicos
 
 - Os Sistemas Especialistas ou Sistemas Baseados em Conhecimento foram os primeiros sistemas de IA utilizados para resolver problemas do mundo real.
   - Dependiam de um especialista externo para adquirir conhecimento

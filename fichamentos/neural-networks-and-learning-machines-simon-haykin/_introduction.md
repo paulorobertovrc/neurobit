@@ -810,7 +810,7 @@ A rede neural fornece uma aproximação para o modelo estatístico.
 
 "Como o nome implica, o modelo PAC é uma estrutura probabilística para o estudo de aprendizagem e generalização em sistemas de classificação binária." (HAYKIN, 2001, p. 128). "[...] desde que o tamanho $N$ da amostra de treinamento $\Tau$ seja suficientemente grande, após a rede neural ter sido treinada com aquele conjunto de dados, é 'provável' que o mapeamento de entrada-saída calculado pela rede seja 'aproximadamente correto'". (HAYKIN, 2001, p. 129).
 
-## Principais conceitos/definições/ideias extraídos do texto original
+## Principais tópicos
 
 - **Definição de rede neural**
   - O cérebro é um sistema de processamento de informações complexo, não linear e paralelo, com capacidade computacional muito superior à dos computadores digitais convencionais.
