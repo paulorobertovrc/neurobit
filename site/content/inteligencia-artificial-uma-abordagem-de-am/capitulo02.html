@@ -55,6 +55,9 @@
                     "A análise das características presentes em um conjunto de dados permite a descoberta de padrões e tendências que podem fornecer informações valiosas para compreender o processo que gerou os dados." (FACELI et al., 2023, p. 12). 
                     Portanto, essa etapa deve preceder à modelagem do sistema, pois fundamental para "[...] uma melhor compreensão da distribuição dos dados e pode dar suporte à escolha de formas para abordar o problema." (FACELI et al., 2023, p. 26).
                 </p>
+                <p>
+                    A análise de dados contempla a <strong>caracterização de dados</strong>, que se debruça sobre o que e de que forma é representado, para que se delimite como interagir com esses dados, e a <strong>exploração de dados</strong>, cujo objetivo é extrair informações úteis, à luz do problema a ser resolvido, para o que podem ser utilizadas medidas estatísticas e técnicas de visualização.
+                </p>
 
                 <h3 id="subtitulo_2_1"> 2.1 Caracterização de dados <sup><a class="linknotas" href="#nota_1">[1]</a></sup></h3>
                 <p>
@@ -93,10 +96,21 @@
                     Atributos <strong>intervalares</strong> -- quantitativos -- registram variações num intervalo e seus valores exprimem, concomitantemente, os significados de ordem e magnitude (intensidade). Possuem um ponto zero (origem da escala) arbitrariamente definido, que não necessariamente corresponderá ao valor matemático atribuído ao numeral zero. 
                     Atributos <strong>racionais</strong> -- quantitativos -- têm em si o maior valor semântico possível, pois os valores numéricos estão associados à unidade de medida correspondente. "Os números têm um significado absoluto, ou seja, existe um zero absoluto junto com uma unidade de medida, de forma que a razão tenha significado." (FACELI et al., 2023, p. 15).
                 </p>
+
+                <h3 id="subtitulo_2_2"> 2.2 Exploração de dados</h3>
+                <p>
+                    Como parte do processo de análise de dados, o objetivo derradeiro da exploração de dados é a extração de informações úteis do conjunto de dados. Funciona como norteador da escolha da melhor abordagem ao problema, no que estão inseridas as técnicas de pré-processamento e de aprendizagem de máquina. 
+                    A estatística descritiva é uma das ferramentas que podem ser utilizadas para isso, a qual "[...] resume de forma quantitativa as principais características de um conjunto de dados [...] gerados por um processo estatístico. Como o processo pode ser caracterizado por vários parâmetros as medidas podem ser vistas como estimativas dos parâmetros estatísticos da distribuição que gerou os dados." (FACELI et al., 2023, p. 16).
+                </p>
+                <p>
+                    Dentre as medições possíveis, pode-se obter informações sobre a <strong>frequência</strong> de um determinado valor -- numérico ou simbólico -- para o atributo naquele dado conjunto, a <strong>localização ou a tendência central</strong> dos dados -- moda, geralmente utilizada para os simbólicos, média, mediana, quartis e percentis, para os numéricos --, a <strong>dispersão ou espalhamento</strong> -- intervalo, variância e desvio padrão -- e sobre a <strong>distribuição ou formato</strong> -- obliquidade e curtose.
+                </p>
+                <p>
+                    "Apesar de a maioria dos conjuntos de dados utilizados em AM apresentar mais de um atributo, análises realizadas em cada atributo podem oferecer informações valiosas sobre os dados." (FACELI et al., 2023, p. 16). Por esse motivo, à exceção da frequência, as demais precitadas medidas estatísticas devem ser calculadas de maneira diversa consoante os dados de entrada possuam um único (univariados) ou mais de um atributo (multivariados).
+                </p>
             </div>
 
             <!-- 
-            <h3 id="subtitulo_2_2"> 2.2 Exploração de dados</h3>
             <h4 id="subtitulo_2_2_1"> 2.2.1 Dados univariados</h4>
             <h5 id="subtitulo_2_2_1_1"> 2.2.1.1 Medidas de localidade</h5>
             <h5 id="subtitulo_2_2_1_2"> 2.2.1.2 Medidas de espalhamento</h5>
@@ -159,6 +173,48 @@
                                             <li>Intervalar</li>
                                             <li>Racional</li>
                                         </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <strong>Exploração</strong>
+                                <ul>
+                                    <li>Extração de informações úteis escolha da melhor abordagem</li>
+                                    <li>Dados univariados ou multivariados</li>
+                                    <li>
+                                        <strong>Estatística descritiva</strong>
+                                        <ul>
+                                            <li>
+                                                <strong>Frequência</strong>
+                                            </li>
+                                            <li>
+                                                <strong>Localização ou tendência central</strong>
+                                                <ul>
+                                                    <li>Moda</li>
+                                                    <li>Média</li>
+                                                    <li>Mediana</li>
+                                                    <li>Quartis e percentis</li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <strong>Dispersão ou espalhamento</strong>
+                                                <ul>
+                                                    <li>Intervalo</li>
+                                                    <li>Variância</li>
+                                                    <li>Desvio padrão</li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <strong>Distribuição ou formato</strong>
+                                                <ul>
+                                                    <li>Obliquidade</li>
+                                                    <li>Curtose</li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <strong>Técnicas de visualização</strong>
                                     </li>
                                 </ul>
                             </li>

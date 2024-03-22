@@ -16,6 +16,8 @@ Dito isso, as principais tarefas de pré-processamento são **integração de da
 
 "A análise das características presentes em um conjunto de dados permite a descoberta de padrões e tendências que podem fornecer informações valiosas para compreender o processo que gerou os dados." (FACELI et al., 2023, p. 12). Portanto, essa etapa deve preceder à modelagem do sistema, pois fundamental para "[...] uma melhor compreensão da distribuição dos dados e pode dar suporte à escolha de formas para abordar o problema." (FACELI et al., 2023, p. 26).
 
+A análise de dados contempla a **caracterização de dados**, que se debruça sobre o que e de que forma é representado, para que se delimite como interagir com esses dados, e a **exploração de dados**, cujo objetivo é extrair informações úteis, à luz do problema a ser resolvido, para o que podem ser utilizadas medidas estatísticas e técnicas de visualização.
+
 ### 2.1 Caracterização de dados [^1]
 
 A caracterização de dados diz respeito à etapa de analisar, compreender e descrever o conjunto de dados, o que passa pela identificação de suas características principais, as quais podem ser obtidas por meio de fórmulas estatísticas ou técnicas de visualização.
@@ -37,6 +39,12 @@ Os **atributos qualitativos**, geralmente, consistem em uma quantidade finita de
 Atributos de escala **nominal** -- qualitativos -- não podem ser ordenados entre si, sujeitam-se a operações lógicas de igualdade e desigualdade, somente, e intrinsecamente têm a menor quantidade de informação. Um Atributo **ordinal** -- qualitativo -- permite que seja estabelecida ordem entre seus valores e, além da igualdade e desigualdade, podem ser submetidos aos operadores lógicos maior que, menor que, maior ou igual a e menor ou igual a. Atributos **intervalares** -- quantitativos -- registram variações num intervalo e seus valores exprimem, concomitantemente, os significados de ordem e magnitude (intensidade). Possuem um ponto zero (origem da escala) arbitrariamente definido, que não necessariamente corresponderá ao valor matemático atribuído ao numeral zero. Atributos **racionais** -- quantitativos -- têm em si o maior valor semântico possível, pois os valores numéricos estão associados à unidade de medida correspondente. "Os números têm um significado absoluto, ou seja, existe um zero absoluto junto com uma unidade de medida, de forma que a razão tenha significado." (FACELI et al., 2023, p. 15).
 
 ### 2.2 Exploração de dados
+
+Como parte do processo de análise de dados, o objetivo derradeiro da exploração de dados é a extração de informações úteis do conjunto de dados. Funciona como norteador da escolha da melhor abordagem ao problema, no que estão inseridas as técnicas de pré-processamento e de aprendizagem de máquina. A estatística descritiva é uma das ferramentas que podem ser utilizadas para isso, a qual "[...] resume de forma quantitativa as principais características de um conjunto de dados [...] gerados por um processo estatístico. Como o processo pode ser caracterizado por vários parâmetros as medidas podem ser vistas como estimativas dos parâmetros estatísticos da distribuição que gerou os dados." (FACELI et al., 2023, p. 16).
+
+Dentre as medições possíveis, pode-se obter informações sobre a **frequência** de um determinado valor -- numérico ou simbólico -- para o atributo naquele dado conjunto, a **localização ou a tendência central** dos dados -- moda, geralmente utilizada para os simbólicos, média, mediana, quartis e percentis, para os numéricos --, a **dispersão ou espalhamento** -- intervalo, variância e desvio padrão -- e sobre a **distribuição ou formato** -- obliquidade e curtose.
+
+"Apesar de a maioria dos conjuntos de dados utilizados em AM apresentar mais de um atributo, análises realizadas em cada atributo podem oferecer informações valiosas sobre os dados." (FACELI et al., 2023, p. 16). Por esse motivo, à exceção da frequência, as demais precitadas medidas estatísticas devem ser calculadas de maneira diversa consoante os dados de entrada possuam um único (univariados) ou mais de um atributo (multivariados).
 
 #### 2.2.1 Dados univariados
 
@@ -72,6 +80,24 @@ Atributos de escala **nominal** -- qualitativos -- não podem ser ordenados entr
         - Ordinal
         - Intervalar
         - Racional
+    - **Exploração**
+      - Extração de informações úteis escolha da melhor abordagem
+      - Dados univariados e multivariados
+      - **Estatística descritiva**
+        - **Frequência**
+        - **Localização ou tendência central**
+          - Moda
+          - Média
+          - Mediana
+          - Quartis e percentis
+        - **Dispersão ou espalhamento**
+          - Intervalo
+          - Variância
+          - Desvio padrão
+        - **Distribuição ou formato**
+          - Obliquidade
+          - Curtose
+      - **Técnicas de visualização**
 
 ## Notas
 
