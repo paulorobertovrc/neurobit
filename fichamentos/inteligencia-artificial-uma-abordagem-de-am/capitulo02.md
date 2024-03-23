@@ -46,15 +46,40 @@ Dentre as medições possíveis, pode-se obter informações sobre a **frequênc
 
 "Apesar de a maioria dos conjuntos de dados utilizados em AM apresentar mais de um atributo, análises realizadas em cada atributo podem oferecer informações valiosas sobre os dados." (FACELI et al., 2023, p. 16). Por esse motivo, à exceção da frequência, as demais precitadas medidas estatísticas devem ser calculadas de maneira diversa consoante os dados de entrada possuam um único (univariados) ou mais de um atributo (multivariados).
 
-#### 2.2.1 Dados univariados
+#### 2.2.1 Medidas [^2]
 
-##### 2.2.1.1 Medidas de localidade
+##### 2.2.1.1 Frequência
 
-##### 2.2.1.2 Medidas de espalhamento
+Proporcionalmente, é a quantidade de vezes que determinado valor, numérico ou simbólico, é encontrado no conjunto de dados.
 
-##### 2.2.1.3 Medidas de distribuição
+##### 2.2.1.2 Localização ou tendência central
 
-#### 2.2.2 Dados multivariados
+São utilizadas para explicitar pontos de referência. Normalmente, utiliza-se a **moda** para atributos qualitativos (simbólicos) e os demais -- **média, mediana, quartis e percentis** -- para atributos quantitativos (numéricos).
+
+A **moda** é o valor que apresenta a maior frequência no conjunto de dados. A **média** é a soma dos valores dividida pela quantidade de elementos. Se simetricamente distribuídos, ela representa fielmente o valor médio do conjunto, isso porque é fortemente distorcida por *outliers*, que são valores extremos ou discrepantes. Há variações, como a média truncada, a fim de mitigar esse problema. A **mediana** indica o valor central, isto é, que divide o conjunto em duas partes iguais. Ela é menos suscetível de distorções causadas por *outliers*. Para que seja calculada, os dados devem estar ordenados, mantendo-se os repetidos, se houver. Feito isso, se a quantidade de elementos do conjunto for um número ímpar, ela corresponderá ao exato valor do meio; se par, à média dos dois valores centrais. Os **quartis** dividem o conjunto em quartos, sendo que o segundo corresponde à mediana, enquanto os **percentis** o dividem em cem partes iguais, sendo o quinquagésimo igual à mediana. Interpreta-se que, no primeiro quartil, há 25% dos dados abaixo dele, no segundo, 50%, e no terceiro, 75%. No caso dos percentis, que no enésimo há $n\%$ dos dados abaixo dele. Para calculá-los, os valores devem estar ordenados.
+
+##### 2.2.1.3 Dispersão ou espalhamento
+
+Determinam "[...] se os valores estão amplamente espalhados ou relativamente concentrados em torno de um [outro] valor, por exemplo, a média." (FACELI et al., 2023, p. 18). Dentre elas, o **intervalo** é a diferença entre o maior e o menor valor, de modo que revela o espalhamento máximo (amplitude) do conjunto. A **variância** mede o quanto cada valor está distante da média e, por esse motivo, tal como esta, é bastante sensível à presença de *outliers*. Para mitigar esse problema, utiliza-se o **desvio padrão**, que é a raiz quadrada da variância.
+
+##### 2.2.1.4 Distribuição ou formato
+
+Revelam a forma como os dados estão distribuídos, sendo que a **obliquidade** indica a simetria e a **curtose** indica o achatamento dessa distribuição em relação à normal. Diz-se que a distribuição aproxima-se da simetria quando é normal e, nesse caso, a obliquidade é igual a zero; ela será positiva ou negativa, respectivamente, se assimétrica (com maior concentração da distribuição) à esquerda ou à direita, considerando-se a utilização de um histograma. Por sua vez, a curtose será igual a zero se o achatamento for idêntico ao de uma distribuição normal, positiva se mais alta e negativa se mais baixa, também considerado o histograma.
+
+Abaixo, histogramas ilustrativos de distribuições conforme a obliquidade e a curtose:
+![Modelo de neurônio artificial](../../imagens/15_am_faceli_hist_obliquidade.png)
+Figura 15 - Distribuição dos valores de obliquidade. (FACELI et al., 2023, p. 20).
+
+![Modelo de neurônio artificial](../../imagens/16_am_faceli_hist_curtose.png)
+Figura 16 - Distribuição dos valores de curtose. (FACELI et al., 2023, p. 21).
+
+#### 2.2.2 Dados univariados
+
+São aqueles que representam objetos que possuem um único atributo e, portanto, dado um conjunto de dados qualquer, cada elemento corresponde simultaneamente ao atributo e ao próprio objeto. São utilizadas medidas de localidade, espalhamento e distribuição.
+
+#### 2.2.3 Dados multivariados
+
+Possuem mais de um atributo, o que possibilita o estabelecimento de relações entre eles. As medidas de localidade, espalhamento e distribuição são calculadas individualmente para cada atributo. Ademais, pode-se medir a covariância e a correlação.
 
 ## Principais tópicos
 
@@ -82,7 +107,8 @@ Dentre as medições possíveis, pode-se obter informações sobre a **frequênc
         - Racional
     - **Exploração**
       - Extração de informações úteis escolha da melhor abordagem
-      - Dados univariados e multivariados
+      - Univariados
+      - Multivariados
       - **Estatística descritiva**
         - **Frequência**
         - **Localização ou tendência central**
@@ -98,7 +124,17 @@ Dentre as medições possíveis, pode-se obter informações sobre a **frequênc
           - Obliquidade
           - Curtose
       - **Técnicas de visualização**
+        <!-- - Boxplot
+        - Histograma
+        - Scatterplot
+        - Gráfico de pizza
+        - Bagplot
+        - Starplot
+        - Diagrama de Chernoff
+        - Heatmap -->
 
 ## Notas
 
 [^1]: No livro, os atributos são definidos em termos de tipo e escala. No entanto, destaca-se que os próprios autores mencionam que "[...] alguns atributos não seguem necessariamente essa classificação, tais como textos e imagens, que podem ser considerados não estruturados." (FACELI et al., 2023, p. 13). Em nota de rodapé, sobre as imagens, é esclarecido que "[...] cada pixel de uma imagem possa ser considerado um atributo quantitativo." (FACELI et al., 2023, p. 13).
+
+[^2]: Esta divisão não está presente no livro, mas acredito que seja útil para fins didáticos. No livro, as medidas de localidade, espalhamento e distribuição são abordadas como subtópico em "dados univariados", ao passo que a de frequência é apenas mencionada superficialmente, em um parágrafo, na subseção principal ("exploração de dados").
