@@ -150,12 +150,13 @@
                 <h4 id="subtitulo_2_2_2"> 2.2.2 Dados univariados</h4>
                 <p>
                     São aqueles que representam objetos que possuem um único atributo e, portanto, dado um conjunto de dados qualquer, cada elemento corresponde simultaneamente ao atributo e ao próprio objeto. 
-                    São utilizadas medidas de localidade, espalhamento e distribuição.
+                    São utilizadas medidas de frequência, localidade, espalhamento e distribuição. As técnicas de visualização mais comuns são histogramas, boxplots e gráficos de pizza.
                 </p>
                 <h4 id="subtitulo_2_2_3"> 2.2.3 Dados multivariados</h4>
                 <p>
-                    Possuem mais de um atributo, o que possibilita o estabelecimento de relações entre eles. 
-                    As medidas de localidade, espalhamento e distribuição são calculadas individualmente para cada atributo. Ademais, pode-se medir a covariância e a correlação.
+                    Possuem mais de um atributo, o que possibilita analisar a existência de relação entre dois ou mais deles. As medidas de localidade e espalhamento são calculadas individualmente para cada atributo. 
+                    Ademais, pode-se medir a <strong>covariância</strong> e a <strong>correlação</strong>, que indicam se e como os atributos observados variam juntos e estão entre si relacionados. Esta possui vantagem sobre aquela, pois elimina a influência da ordem de grandeza dos atributos que afeta o cálculo daquela. É a medida mais utilizada para essa finalidade porque "[...] apresenta uma indicação mais clara da força da relação linear entre dois atributos." (FACELI et al., 2023, p. 22). 
+                    Se a covariância for próxima a <math><mn>0</mn></math>, é indicativo de inexistência de relação linear entre os atributos; do contrário, conforme seu valor aumente ou diminua, indica que aumento ou enfraquecimento da relação, respectivamente. A correlação, por sua vez, é medida no intervalo de <math><mn>-1</mn></math> a <math><mn>+1</mn></math>, que correspondem à máxima correlação negativa ou positiva, respectivamente. As técnicas de visualização mais comuns são scatter plots, bagplots, star plots, diagramas de faces de Chernoff e heatmaps.
                 </p>
             </div>
         </article>
@@ -221,16 +222,14 @@
                                 <strong>Exploração</strong>
                                 <ul>
                                     <li>Extração de informações úteis escolha da melhor abordagem</li>
-                                    <li>Univariados</li>
-                                    <li>Multivariados</li>
                                     <li>
-                                        <strong>Estatística descritiva</strong>
+                                        <strong>Medidas de Estatística descritiva</strong>
                                         <ul>
                                             <li>
                                                 <strong>Frequência</strong>
                                             </li>
                                             <li>
-                                                <strong>Localização ou tendência central</strong>
+                                                <strong>Localidade/localização ou tendência central</strong>
                                                 <ul>
                                                     <li>Moda</li>
                                                     <li>Média</li>
@@ -257,7 +256,7 @@
                                     </li>
                                     <li>
                                         <strong>Técnicas de visualização</strong>
-                                        <!-- <ul>
+                                        <ul>
                                             <li>Boxplot</li>
                                             <li>Histograma</li>
                                             <li>Scatterplot</li>
@@ -266,14 +265,28 @@
                                             <li>Starplot</li>
                                             <li>Diagrama de Chernoff</li>
                                             <li>Heatmap</li>
-                                        </ul> -->
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        Dados univariados
+                                        <ul>
+                                            <li>Medidas: frequência, localidade, espalhamento e distribuição</li>
+                                            <li>Técnicas de visualização: histogramas, boxplots e gráficos de pizza</li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        Dados multivariados
+                                        <ul>
+                                            <li>Medidas: localidade e espalhamento, ambas individualmente para cada atributo, covariância e correlação</li>
+                                            <li>Técnicas de visualização: scatter plots, bagplots, star plots, diagramas de faces de Chernoff e heatmaps</li>
+                                        </ul>
                                     </li>
                                 </ul>
                             </li>
                         </ul>
                     </li>
                 </ul>
-                <p><a class="emoji" href="#top">[ 🔝 ]</a></p>
+            <p><a class="emoji" href="#top">[ 🔝 ]</a></p>
         </article>
 
         <hr>

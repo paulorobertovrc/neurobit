@@ -67,19 +67,19 @@ Determinam "[...] se os valores estão amplamente espalhados ou relativamente co
 Revelam a forma como os dados estão distribuídos, sendo que a **obliquidade** indica a simetria e a **curtose** indica o achatamento dessa distribuição em relação à normal. Diz-se que a distribuição aproxima-se da simetria quando é normal e, nesse caso, a obliquidade é igual a zero; ela será positiva ou negativa, respectivamente, se assimétrica (com maior concentração da distribuição) à esquerda ou à direita, considerando-se a utilização de um histograma. Por sua vez, a curtose será igual a zero se o achatamento for idêntico ao de uma distribuição normal, positiva se mais alta e negativa se mais baixa, também considerado o histograma.
 
 Abaixo, histogramas ilustrativos de distribuições conforme a obliquidade e a curtose:
-![Modelo de neurônio artificial](../../imagens/15_am_faceli_hist_obliquidade.png)
+![Histograma da distribuição dos valores de obliquidade](../../imagens/15_am_faceli_hist_obliquidade.png)
 Figura 15 - Distribuição dos valores de obliquidade. (FACELI et al., 2023, p. 20).
 
-![Modelo de neurônio artificial](../../imagens/16_am_faceli_hist_curtose.png)
+![Histograma da distribuição dos valores de curtose](../../imagens/16_am_faceli_hist_curtose.png)
 Figura 16 - Distribuição dos valores de curtose. (FACELI et al., 2023, p. 21).
 
 #### 2.2.2 Dados univariados
 
-São aqueles que representam objetos que possuem um único atributo e, portanto, dado um conjunto de dados qualquer, cada elemento corresponde simultaneamente ao atributo e ao próprio objeto. São utilizadas medidas de localidade, espalhamento e distribuição.
+São aqueles que representam objetos que possuem um único atributo e, portanto, dado um conjunto de dados qualquer, cada elemento corresponde simultaneamente ao atributo e ao próprio objeto. São utilizadas medidas de frequência, localidade, espalhamento e distribuição. As técnicas de visualização mais comuns são histogramas, boxplots e gráficos de pizza.
 
 #### 2.2.3 Dados multivariados
 
-Possuem mais de um atributo, o que possibilita o estabelecimento de relações entre eles. As medidas de localidade, espalhamento e distribuição são calculadas individualmente para cada atributo. Ademais, pode-se medir a covariância e a correlação.
+Possuem mais de um atributo, o que possibilita analisar a existência de relação entre dois ou mais deles. As medidas de localidade e espalhamento são calculadas individualmente para cada atributo. Ademais, pode-se medir a **covariância** e a **correlação**, que indicam se e como os atributos observados variam juntos e estão entre si relacionados. Esta possui vantagem sobre aquela, pois elimina a influência da ordem de grandeza dos atributos que afeta o cálculo daquela. É a medida mais utilizada para essa finalidade porque "[...] apresenta uma indicação mais clara da força da relação linear entre dois atributos." (FACELI et al., 2023, p. 22). Se a covariância for próxima a $0$, é indicativo de inexistência de relação linear entre os atributos; do contrário, conforme seu valor aumente ou diminua, indica que aumento ou enfraquecimento da relação, respectivamente. A correlação, por sua vez, é medida no intervalo de $-1$ a $1$, que correspondem à máxima correlação negativa ou positiva, respectivamente. As técnicas de visualização mais comuns são scatter plots, bagplots, star plots, diagramas de faces de Chernoff e heatmaps.
 
 ## Principais tópicos
 
@@ -107,11 +107,9 @@ Possuem mais de um atributo, o que possibilita o estabelecimento de relações e
         - Racional
     - **Exploração**
       - Extração de informações úteis escolha da melhor abordagem
-      - Univariados
-      - Multivariados
-      - **Estatística descritiva**
+      - **Medidas da Estatística descritiva**
         - **Frequência**
-        - **Localização ou tendência central**
+        - **Localidade/localização ou tendência central**
           - Moda
           - Média
           - Mediana
@@ -124,14 +122,20 @@ Possuem mais de um atributo, o que possibilita o estabelecimento de relações e
           - Obliquidade
           - Curtose
       - **Técnicas de visualização**
-        <!-- - Boxplot
+        - Boxplot
         - Histograma
-        - Scatterplot
+        - Scatter plot
         - Gráfico de pizza
         - Bagplot
-        - Starplot
-        - Diagrama de Chernoff
-        - Heatmap -->
+        - Star plot
+        - Diagrama de faces de Chernoff
+        - Heatmap
+      - Dados univariados
+        - Medidas: frequência, localidade, espalhamento e distribuição
+        - Técnicas de visualização: histogramas, boxplots e gráficos de pizza
+      - Dados multivariados
+        - Medidas: localidade e espalhamento, ambas individualmente para cada atributo, covariância e correlação
+        - Técnicas de visualização: scatter plots, bagplots, star plots, diagramas de faces de Chernoff e heatmaps
 
 ## Notas
 
