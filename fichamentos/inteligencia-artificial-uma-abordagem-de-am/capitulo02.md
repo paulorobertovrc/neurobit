@@ -1,6 +1,6 @@
 # # 2.2 Capítulo 2 (p. 9/27)
 
-![Static Badge](https://img.shields.io/badge/Status-Estudando-grey?labelColor=31A8B8)
+![Static Badge](https://img.shields.io/badge/Status-Concluído-grey?labelColor=31A8B8)
 
 ## 1. Parte 1 | Preparação de dados (capítulos 2 e 3)
 
