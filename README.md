@@ -1,11 +1,7 @@
 # PROJETO NEUROBIT
 
-![Static Badge](https://img.shields.io/badge/Livros-025159)
-![Static Badge](https://img.shields.io/badge/Selecionados-3-31A8B8?labelColor=025159)
-![Static Badge](https://img.shields.io/badge/Estudando-1-31A8B8?labelColor=025159)
-![Static Badge](https://img.shields.io/badge/Fichamentos-3A5F91)
-![Static Badge](https://img.shields.io/badge/Iniciados-4-6C8BBC?labelColor=3A5F91)
-![Static Badge](https://img.shields.io/badge/Concluídos-4-6C8BBC?labelColor=3A5F91)
+![Static Badge](https://img.shields.io/badge/Livros-1_/_3-31A8B8?labelColor=025159)
+![Static Badge](https://img.shields.io/badge/Fichamentos_\(capítulos\)-4-6C8BBC?labelColor=3A5F91)
 ![Static Badge](https://img.shields.io/badge/Complementos-0-8AB68C?labelColor=4B7A52)
 
 [![Instagram](https://img.shields.io/badge/Instagram-%23E4405F.svg?logo=Instagram&logoColor=white)](https://www.instagram.com/pauloroberto.dev)
@@ -13,7 +9,7 @@
 
 ## Acesso rápido
 
-| [Fichamentos](#tabela-de-fichamentos) | [Complementos](#tabela-de-complementos) |
+| [Fichamentos](#tabela-de-fichamentos) | [Complementos](#tabela-de-complementos) | [Referências bibliográficas](#referências-bibliográficas)
 
 | [Descrição](#descrição) | [Justificativa](#justificativa) | [Objetivos](#objetivos) | [Sobre o Autor](#sobre-o-autor) | [Isenção de responsabilidade](#isenção-de-responsabilidade) | [Licença](#licença) |
 
@@ -93,5 +89,21 @@ Ressalvados os direitos autorais dos detentores/produtores dos conteúdos utiliz
 | # | Área | Assunto | Status | Link |
 | :---: | :---: | :---: | :---: | :---: |
 | 1 | Neurociência | Plasticidade | ![Static Badge](https://img.shields.io/badge/Suspenso-grey) | [🔗](./complementos/plasticidade.md) |
+
+[[🔝](#acesso-rápido)]
+
+## Referências bibliográficas
+
+### Principais (por ordem alfabética)
+
+| Autor(a) | Título | Edição | Local, editora e ano |
+| :---: | :---: | :---: | :---: |
+| FACELI, Katti; LORENA, Ana Carolina; GAMA, João; ALMEIDA, Tiago Agostinho de; CARVALHO, André Carlos P. L. F. de | Inteligência artificial: uma abordagem de aprendizado de máquina | 2ª | Rio de Janeiro: LTC, 2023 |
+| HAYKIN, Simon | Neural networks and learning machines | 3ª | Upper Saddle River, NJ: Pearson Prentice Hall, 2009 |
+| HAYKIN, Simon | Redes neurais: princípios e práticas | 2ª | Porto Alegre: Bookman, 2001 |
+
+### Suplementares
+
+Vide [relação completa de referências](./referencias.md).
 
 [[🔝](#acesso-rápido)]
