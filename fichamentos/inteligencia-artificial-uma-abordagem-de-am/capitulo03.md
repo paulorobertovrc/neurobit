@@ -16,15 +16,31 @@ De modo geral, podem ser elencas as seguintes vantagens no pré-processamento de
 
 #### 3.1 Integração de dados
 
-<!-- Nesse sentido, "[...] os objetos dos diferentes conjuntos que possuem o mesmo valor para o atributo [...] são combinados em um único objeto do conjunto integrado. [Esses atributos] deve(m) ter um valor único para cada objeto." (FACELI et al., 2023, p. 29). -->
+Esta técnica atende, essencialmente, a duas finalidades distintas: combinar diferentes fontes de dados, e consequentemente mais de um conjunto de dados, e assegurar a integridade dos dados, e desse modo a sua confiabilidade, ao impedir que um mesmo atributo de determinado objeto seja representado mais de uma vez, em conjuntos diversos, e/ou que um dado objeto tenha seus atributos fragmentados em diferentes conjuntos.
+
+Nesse sentido, o **problema de identificação de entidade** é enfrentado "[...] por meio da busca por atributos comuns nos conjuntos a serem combinados" (FACELI et al., 2023, p. 29), de sorte que "[...] os objetos dos diferentes conjuntos que possuem o mesmo valor para o atributo [...] são combinados em um único objeto do conjunto integrado. [Esses atributos] deve(m) ter um valor único para cada objeto." (FACELI et al., 2023, p. 29).
+
+Uma das formas de contornar eventuais dificuldades ao se implementar esta técnica é por meio de metadados, que "[...] são dados sobre dados que, ao descrever as suas principais características, podem ser utilizados para evitar erros no processo de integração. [Se isso for feito] O processo de integração origina um depósito ou repositório de dados (*data warehouse*), que funciona como uma base de dados centralizada." (FACELI et al., 2023, p. 29).
 
 #### 3.2 Eliminação manual de atributos
 
-<!-- É sabido que objetos com grande quantidade de atributos podem comprometer o desempenho dos algoritmos de aprendizado. Ademais, há que se ponderar sobre a "[...] relevância dos atributos para o problema que está sendo tratado [o que] também é essencial para a qualidade dos resultados" (FACELI et al., 2023, p. 29), pois há situações nas quais somente alguns desses atributos precisarão ser fornecidos ao sistema. -->
+É sabido que objetos com grande quantidade de atributos podem comprometer o desempenho dos algoritmos de aprendizado. Ademais, há que se ponderar sobre a "[...] relevância dos atributos para o problema que está sendo tratado [o que] também é essencial para a qualidade dos resultados" (FACELI et al., 2023, p. 29), pois há situações nas quais somente alguns deles serão realmente úteis, ao passo que os demais podem ser descartados pela irrelevância para certa tarefa.
+
+Por esse motivo, ressalvadas as obviedades, "o conjunto de atributos que formarão o conjunto de dados a ser analisado é geralmente definido de acordo com a experiência de especialistas no domínio dos dados" (FACELI et al., 2023, p. 29) ou por meio de técnicas de seleção de atributos irrelevantes.
 
 #### 3.3 Amostragem de dados
 
-#### 3.4 Dados desbalanceados
+A depender do algoritmo utilizado, a grande quantidade de objetos/instâncias/exemplos em um conjunto de dados pode ser uma condição indesejada. Nesse sentido,
+
+>"associado ao número de objetos em um conjunto de dados, existe um balanço entre eficiência computacional e acurácia (taxa de predições corretas). Quanto mais dados são utilizados, maior tende a ser a acurácia do modelo e menor a eficiência computacional do processo indutivo, pois um número muito grande de objetos pode tornar o tempo de processamento muito longo. [Por esse motivo] Para se obter um bom compromisso entre eficiência e acurácia, geralmente trabalha-se com uma amostra ou subconjunto de dados." (FACELI et al., 2023, p. 30).
+
+Contudo, esse balanço deve ser cuidadosamente ponderado a fim de assegurar a representatividade da amostra, de modo que a partir dela seja possível obter resultados idênticos àqueles que de outra forma já seriam verificados, isto é, "[...] o uso da amostra [deve] leva[r] ao mesmo desempenho obtido com o uso do conjunto completo, porém com um custo computacional muito menor." (FACELI et al., 2023, p. 30). Logo, em linhas gerais, pode-se dizer que a melhor amostragem é aquela que preserva a distribuição estatística original e, ao mesmo tempo, reduza o tamanho da amostra a ponto de gerar economia relevante em termos de recursos computacionais.
+
+Por conseguinte, a amostra extraída deve ser capaz de estimar com razoabilidade a "[...] informação contida na população original, permitindo tirar conclusões de um todo a partir de uma parte." (FACELI et al., 2023, p. 30).
+
+Dentre as formas de extração, menciona-se a amostragem aleatória simples, a amostragem estratificada e a amostragem progressiva[^1].
+
+#### 3.4 [Balanceamento de] Dados desbalanceados
 
 #### 3.5 Limpeza de dados
 
@@ -58,4 +74,25 @@ De modo geral, podem ser elencas as seguintes vantagens no pré-processamento de
 
 ## Principais tópicos
 
+- Pré-processamento de dados
+  - Melhorar a qualidade dos dados
+- Técnicas de pré-processamento
+  - Integração de dados
+    - Combinação de duas ou mais fontes diferentes
+    - Assegurar a integridade dos dados
+      - Problema de identificação de entidade
+  - Eliminação manual de atributos
+    - Descarte de atributos irrelevantes
+  - Amostragem de dados
+    - Redução do tamanho do conjunto de dados
+    - Preservação da representatividade da amostra
+    - Dilema eficácia computacional *versus* acurácia
+    - Elaborar conclusões sobre o todo a partir de uma parte
+  - Balanceamento de dados desbalanceados
+  - Limpeza de dados
+  - Transformação de dados
+  - Redução de dimensionalidade
+
 ## Notas
+
+[^1]: Na seção 3.3, os autores distinguem essas abordagens. No entanto, optei por não incluir esses pontos neste momento, uma vez que pretendo estudá-los mais adiante em livros de Estatística.

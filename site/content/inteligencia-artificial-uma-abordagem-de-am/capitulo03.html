@@ -50,18 +50,58 @@
                 </p>
             </div>
 
+            <div>
+                <h3>3.1 Integração de dados</h3>
+                <p>
+                    Esta técnica atende, essencialmente, a duas finalidades distintas: combinar diferentes fontes de dados, e consequentemente mais de um conjunto de dados, e assegurar a integridade dos dados, e desse modo a sua confiabilidade, ao impedir que um mesmo atributo de determinado objeto seja representado mais de uma vez, em conjuntos diversos, e/ou que um dado objeto tenha seus atributos fragmentados em diferentes conjuntos.
+                </p>
+                <p>
+                    Nesse sentido, o <strong>problema de identificação de entidade</strong> é enfrentado "[...] por meio da busca por atributos comuns nos conjuntos a serem combinados" (FACELI et al., 2023, p. 29), de sorte que "[...] os objetos dos diferentes conjuntos que possuem o mesmo valor para o atributo [...] são combinados em um único objeto do conjunto integrado. 
+                    [Esses atributos] deve(m) ter um valor único para cada objeto." (FACELI et al., 2023, p. 29).
+                </p>
+                <p>
+                    Uma das formas de contornar eventuais dificuldades ao se implementar esta técnica é por meio de metadados, que "[...] são dados sobre dados que, ao descrever as suas principais características, podem ser utilizados para evitar erros no processo de integração. 
+                    [Se isso for feito] O processo de integração origina um depósito ou repositório de dados (<em>data warehouse</em>), que funciona como uma base de dados centralizada." (FACELI et al., 2023, p. 29).
+                </p>
+            </div>
+
+            <div>
+                <h3>3.2 Eliminação manual de atributos</h3>
+                <p>
+                    É sabido que objetos com grande quantidade de atributos podem comprometer o desempenho dos algoritmos de aprendizado. 
+                    Ademais, há que se ponderar sobre a "[...] relevância dos atributos para o problema que está sendo tratado [o que] também é essencial para a qualidade dos resultados" (FACELI et al., 2023, p. 29), pois há situações nas quais somente alguns deles serão realmente úteis, ao passo que os demais podem ser descartados pela irrelevância para certa tarefa.
+                </p>
+                <p>
+                    Por esse motivo, ressalvadas as obviedades, "o conjunto de atributos que formarão o conjunto de dados a ser analisado é geralmente definido de acordo com a experiência de especialistas no domínio dos dados" (FACELI et al., 2023, p. 29) ou por meio de técnicas de seleção de atributos irrelevantes.
+                </p>
+            </div>
+
+            <div>
+                <h3>3.3 Amostragem de dados</h3>
+                <p>
+                    A depender do algoritmo utilizado, a grande quantidade de objetos/instâncias/exemplos em um conjunto de dados pode ser uma condição indesejada. 
+                    Nesse sentido,
+                    <blockquote>
+                        "associado ao número de objetos em um conjunto de dados, existe um balanço entre eficiência computacional e acurácia (taxa de predições corretas). 
+                        Quanto mais dados são utilizados, maior tende a ser a acurácia do modelo e menor a eficiência computacional do processo indutivo, pois um número muito grande de objetos pode tornar o tempo de processamento muito longo. 
+                        [Por esse motivo] Para se obter um bom compromisso entre eficiência e acurácia, geralmente trabalha-se com uma amostra ou subconjunto de dados." (FACELI et al., 2023, p. 30).
+                    </blockquote>
+                </p>
+                <p>
+                    Contudo, esse balanço deve ser cuidadosamente ponderado a fim de assegurar a representatividade da amostra, de modo que a partir dela seja possível obter resultados idênticos àqueles que de outra forma já seriam verificados, isto é, "[...] o uso da amostra [deve] leva[r] ao mesmo desempenho obtido com o uso do conjunto completo, porém com um custo computacional muito menor." (FACELI et al., 2023, p. 30). 
+                    Logo, em linhas gerais, pode-se dizer que a melhor amostragem é aquela que preserva a distribuição estatística original e, ao mesmo tempo, reduza o tamanho da amostra a ponto de gerar economia relevante em termos de recursos computacionais.
+                </p>
+                <p>
+                    Por conseguinte, a amostra extraída deve ser capaz de estimar com razoabilidade a "[...] informação contida na população original, permitindo tirar conclusões de um todo a partir de uma parte." (FACELI et al., 2023, p. 30).
+                </p>
+                <p id="subtitulo_3_nota_1">
+                    Dentre as formas de extração, menciona-se a amostragem aleatória simples, a amostragem estratificada e a amostragem progressiva<sup><a class="linknotas" href="#nota_1">[1]</a></sup>.
+                </p>
+            </div>
+
             <!-- 
                 <div>
-                    <h3>3.1 Integração de dados</h3>
-                </div>
-                <div>
-                    <h3>3.2 Eliminação manual de atributos</h3>
-                </div>
-                <div>
-                    <h3>3.3 Amostragem de dados</h3>
-                </div>
-                <div>
-                    <h3>3.4 Dados desbalanceados</h3>
+                    <h3>3.4 [Balanceamento de] Dados desbalanceados</h3>
                 </div>
                 
                 <div>
@@ -94,19 +134,44 @@
         
         <article>
             <h2>Principais tópicos</h2>
-                <!-- <ul>
+                <ul>
                     <li>
-                        <strong>.....</strong>
-                        <ul>
-                            <li>
-                                .....
-                                <ul>
-                                    <li>.....</li>
-                                </ul>
-                            </li>
-                        </ul>
+                        Pré-processamento de dados
+                        <ul><li>Melhorar a qualidade dos dados</li></ul>
                     </li>
                     <li>
+                        Técnicas de pré-processamento
+                        <ul>
+                            <li>
+                                Integração de dados
+                                <ul>
+                                    <li>Combinação de duas ou mais fontes</li>
+                                    <li>
+                                        Assegurar a integridade dos dados
+                                        <ul><li>Problema de identificação de entidade</li></ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                Eliminação manual de atributos
+                                <ul><li>Descarte de atributos irrelevantes</li></ul>
+                            </li>
+                            <li>
+                                Amostragem de dados
+                                <ul>
+                                    <li>Redução do tamanho do conjunto de dados</li>
+                                    <li>Preservação da representatividade da amostra</li>
+                                    <li>Dilema eficácia computacional <em>versus</em> acurácia</li>
+                                    <li>Elaborar conclusões sobre o todo a partir de uma parte</li>
+                                </ul>
+                            </li>
+                            <li>Balanceamento de dados desbalanceados</li>
+                            <li>Limpeza de dados</li>
+                            <li>Transformação de dados</li>
+                            <li>Redução da dimensionalidade</li>
+                        </ul>
+                    </li>
+                    <!-- <li>
                         <strong>.....</strong>
                         <ul>
                             <li>
@@ -135,8 +200,8 @@
                                 </ul>
                             </li>
                         </ul>
-                    </li>
-                </ul> -->
+                    </li> -->
+                </ul>
             <p><a class="emoji" href="#top">[ 🔝 ]</a></p>
         </article>
 
@@ -144,7 +209,7 @@
 
         <article>
             <h2>Notas</h2>
-            <!-- <p id="nota_1">[1] ......<a class="linkdiscreto" href="#subtitulo_2_1"> [ 🔙 ]</a></p> -->
+            <p id="nota_1">[1] Na seção 3.3, os autores distinguem essas abordagens. No entanto, optei por não incluir esses pontos neste momento, uma vez que pretendo estudá-los mais adiante em livros de Estatística.<a class="linkdiscreto" href="#subtitulo_3_nota_1"> [ 🔙 ]</a></p>
             <a class="emoji" href="#top">[ 🔝 ]</a>
         </article>
     </main>
