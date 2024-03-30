@@ -42,6 +42,12 @@ Dentre as formas de extração, menciona-se a amostragem aleatória simples, a a
 
 #### 3.4 [Balanceamento de] Dados desbalanceados
 
+O balanceamento de dados necessariamente pressupõe que o modelo implementará uma tarefa de classificação e que, dentre os objetos dos dados de entrada, a frequência de determinada classe é significativamente maior do que a de outra, tal que faça sentido distingui-los de maneira binária entre classes majoritária e minoritária. Sendo o caso, para que não seja necessário balancear o conjunto original, "[...] a acurácia preditiva [...] deve ser maior que a acurácia obtida atribuindo todo novo objeto à classe majoritária" (FACELI et al., 2023, p. 31), sob pena de que o modelo perca desempenho.
+
+Com efeito, "quando alimentados com dados desbalanceados, esses algoritmos tendem  a favorecer a classificação de novos dados na classe majoritária. Se for possível gerar novos dados pelo mesmo processo que originou o conjunto atual, o conjunto de dados pode ser naturalmente balanceado. Na maioria das aplicações práticas, no entanto, isso não é possível." (FACELI et al., 2023, p. 31).
+
+Dentre as formas mais utilizadas para enfrentar o problema do desbalanceamento de dados estão a (a) **redefinição do tamanho do conjunto de dados**, que pode ser feita pela (a.i) adição de novos objetos à classe minoritária ou (a.ii) pela retirada de exemplos da minoritária. Aquela solução envolve os riscos de (a.i.i) incorporar casos impossíveis ao modelo e/ou (a.i.ii) enviesá-lo a ponto de provocar o superajustamento aos dados de treino e, por conseguinte, o comprometimento da capacidade de generalização (*overfitting*); esta, por sua vez, pode acabar por (a.ii.i) ignorar dados importantes tal que comprometa a capacidade preditiva do modelo, culminando em subajustamento (*underfitting*). Outras abordagens possíveis são a (b) **criação de funções de custo específicas para cada classe**, opção que é obstaculizada pela dificuldade (b.i) no cálculo de tais custos e (b.ii) na implementação dessa lógica nos algoritmos, e a (c) **indução de modelos específicos**, em que cada classe é aprendida separadamente.
+
 #### 3.5 Limpeza de dados
 
 ##### 3.5.1 Dados incompletos
@@ -76,22 +82,29 @@ Dentre as formas de extração, menciona-se a amostragem aleatória simples, a a
 
 - Pré-processamento de dados
   - Melhorar a qualidade dos dados
-- Técnicas de pré-processamento
-  - Integração de dados
+- **Técnicas de pré-processamento**
+  - **Integração de dados**
     - Combinação de duas ou mais fontes diferentes
     - Assegurar a integridade dos dados
       - Problema de identificação de entidade
-  - Eliminação manual de atributos
+  - **Eliminação manual de atributos**
     - Descarte de atributos irrelevantes
-  - Amostragem de dados
+  - **Amostragem de dados**
     - Redução do tamanho do conjunto de dados
     - Preservação da representatividade da amostra
     - Dilema eficácia computacional *versus* acurácia
     - Elaborar conclusões sobre o todo a partir de uma parte
-  - Balanceamento de dados desbalanceados
-  - Limpeza de dados
-  - Transformação de dados
-  - Redução de dimensionalidade
+  - **Balanceamento de dados desbalanceados**
+    - Tarefa de classificação
+    - Classes majoritária e minoritária
+    - Maior frequência de uma classe
+    - Abordagens
+      - Redefinição do tamanho do conjunto de dados
+      - Funções de custo para cada classe
+      - Indução de modelos por classe
+  - **Limpeza de dados**
+  - **Transformação de dados**
+  - **Redução de dimensionalidade**
 
 ## Notas
 

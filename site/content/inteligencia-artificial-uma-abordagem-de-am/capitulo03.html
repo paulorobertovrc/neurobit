@@ -99,11 +99,24 @@
                 </p>
             </div>
 
+            <div>
+                <h3>3.4 [Balanceamento de] Dados desbalanceados</h3>
+                <p>
+                    O balanceamento de dados necessariamente pressupõe que o modelo implementará uma tarefa de classificação e que, dentre os objetos dos dados de entrada, a frequência de determinada classe é significativamente maior do que a de outra, tal que faça sentido distingui-los de maneira binária entre classes majoritária e minoritária. 
+                    Sendo o caso, para que não seja necessário balancear o conjunto original, "[...] a acurácia preditiva [...] deve ser maior que a acurácia obtida atribuindo todo novo objeto à classe majoritária" (FACELI et al., 2023, p. 31), sob pena de que o modelo perca desempenho. 
+                </p>
+                <p>
+                    Com efeito, "quando alimentados com dados desbalanceados, esses algoritmos tendem  a favorecer a classificação de novos dados na classe majoritária. Se for possível gerar novos dados pelo mesmo processo que originou o conjunto atual, o conjunto de dados pode ser naturalmente balanceado. 
+                    Na maioria das aplicações práticas, no entanto, isso não é possível." (FACELI et al., 2023, p. 31).
+                </p>
+                <p>
+                    Dentre as formas mais utilizadas para enfrentar o problema do desbalanceamento de dados estão a (a) <strong>redefinição do tamanho do conjunto de dados</strong>, que pode ser feita pela (a.i) adição de novos objetos à classe minoritária ou (a.ii) pela retirada de exemplos da minoritária. 
+                    Aquela solução envolve os riscos de (a.i.i) incorporar casos impossíveis ao modelo e/ou (a.i.ii) enviesá-lo a ponto de provocar o superajustamento aos dados de treino e, por conseguinte, o comprometimento da capacidade de generalização (<em>overfitting</em>); esta, por sua vez, pode acabar por (a.ii.i) ignorar dados importantes tal que comprometa a capacidade preditiva do modelo, culminando em subajustamento (<em>underfitting</em>). 
+                    Outras abordagens possíveis são a (b) <strong>criação de funções de custo específicas para cada classe</strong>, opção que é obstaculizada pela dificuldade (b.i) no cálculo de tais custos e (b.ii) na implementação dessa lógica nos algoritmos, e a (c) <strong>indução de modelos específicos</strong>, em que cada classe é aprendida separadamente.
+                </p>
+            </div>
+
             <!-- 
-                <div>
-                    <h3>3.4 [Balanceamento de] Dados desbalanceados</h3>
-                </div>
-                
                 <div>
                     <h3>3.5 Limpeza de dados</h3>
                     <h4>3.5.1 Dados incompletos</h4>
@@ -140,10 +153,10 @@
                         <ul><li>Melhorar a qualidade dos dados</li></ul>
                     </li>
                     <li>
-                        Técnicas de pré-processamento
+                        <strong>Técnicas de pré-processamento</strong>
                         <ul>
                             <li>
-                                Integração de dados
+                                <strong>Integração de dados</strong>
                                 <ul>
                                     <li>Combinação de duas ou mais fontes</li>
                                     <li>
@@ -153,11 +166,11 @@
                                 </ul>
                             </li>
                             <li>
-                                Eliminação manual de atributos
+                                <strong>Eliminação manual de atributos</strong>
                                 <ul><li>Descarte de atributos irrelevantes</li></ul>
                             </li>
                             <li>
-                                Amostragem de dados
+                                <strong>Amostragem de dados</strong>
                                 <ul>
                                     <li>Redução do tamanho do conjunto de dados</li>
                                     <li>Preservação da representatividade da amostra</li>
@@ -165,7 +178,22 @@
                                     <li>Elaborar conclusões sobre o todo a partir de uma parte</li>
                                 </ul>
                             </li>
-                            <li>Balanceamento de dados desbalanceados</li>
+                            <li>
+                                <strong>Balanceamento de dados desbalanceados</strong>
+                                <ul>
+                                    <li>Tarefa de classificação</li>
+                                    <li>Classes majoritária e minoritária</li>
+                                    <li>Maior frequência de uma classe</li>
+                                    <li>
+                                        Abordagens
+                                        <ul>
+                                            <li>Redefinição do tamanho do conjunto de dados</li>
+                                            <li>Funções de custo para cada classe</li>
+                                            <li>Indução de modelos por classe</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
                             <li>Limpeza de dados</li>
                             <li>Transformação de dados</li>
                             <li>Redução da dimensionalidade</li>
