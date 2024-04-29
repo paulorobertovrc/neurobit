@@ -50,11 +50,19 @@ Dentre as formas mais utilizadas para enfrentar o problema do desbalanceamento d
 
 #### 3.5 Limpeza de dados
 
+Dizem respeito a formas de atenuar ou eliminar problemas associados a dados ruidosos, incompletos, inconsistentes ou redundantes. "Essas deficiências nos dados podem ser causadas por problemas nos equipamentos que realizam a coleta, a transmissão e o armazenamento dos dados ou problemas no preenchimento ou na entrada dos dados por seres humanos." (FACELI et al., 2023, p. 32). O objetivo é **aumentar a qualidade** dos dados para otimizar o desempenho dos algoritmos de aprendizagem, pois mesmo aqueles que conseguem lidar com certas imperfeições costumam se beneficiar do uso de dados mais limpos.
+
 ##### 3.5.1 Dados incompletos
+
+Os valores de alguns atributos de alguns dos objetos estão ausentes. Dentre as possíveis soluções, destacam-se a (a) **eliminação de objetos**, especialmente se o atributo em questão for indicativo da classe, mas desaconselhada se o problema afetar poucos atributos de um mesmo objeto, quando a quantidade de atributos ausentes variar muito entre os objetos ou quando houver muitos objetos com atributos faltantes; a (b) **inserção manual de atributos**, inviável se houver muitos deles; e a (c) **implementação de um método para definição automática**, o que pode ser feito (c.i) pela definição de um valor indicativo de que aquele atributo estava anteriormente vazio, o que pode levar à valoração equivocada da relevância desse atributo para o conjunto de dados, (c.ii) pelo uso de medidas estatísticas de frequência ou tendência central ou (c.iii) pela indução a partir do valor dos demais atributos presentes.
 
 ##### 3.5.2 Dados inconsistentes
 
+Ocorre quando os atributos explicitam valores contraditórios ou conflitantes, tanto entre os atributos do conjunto de entrada comparados entre si, quanto entre o conjunto de entrada e o valor do atributo de saída. São bem evidentes quando há violação de relações conhecidas entre os atributos.
+
 ##### 3.5.3 Dados redundantes
+
+Diz-se dos **objetos** que apresentem grande semelhança entre si, assim considerados aqueles cujos atributos têm valores muito próximos ou iguais a outro objeto, bem como de **atributos** com valores idênticos ou que possam ser deduzidos a partir de outro(s), pois "[...] têm a mesma informação preditiva." (FACELI et al., 2023, p. 36). A eliminação da redundância é importante para evitar a supervalorização de determinado aspecto do conjunto e para economizar recursos computacionais. "A redundância de um atributo está relacionada com a sua correlação com um ou mais atributos do conjunto de dados. Dois ou mais atributos estão correlacionados quando apresentam um perfil de variação semelhante para os diferentes objetos. Quanto mais correlacionados os atributos, maior o grau de redundância. Se a correlação ocorrer entre um atributo de entrada e um atributo rótulo, esse atributo de entrada terá uma grande influência na predição do valor do atributo rótulo." (FACELI et al., 2023, p. 36).
 
 ##### 3.5.4 Dados com ruídos
 
@@ -103,6 +111,8 @@ Dentre as formas mais utilizadas para enfrentar o problema do desbalanceamento d
       - Funções de custo para cada classe
       - Indução de modelos por classe
   - **Limpeza de dados**
+    - Dados ruidosos, incompletos, inconsistentes ou redundantes
+    - Aumentar a qualidade dos dados
   - **Transformação de dados**
   - **Redução de dimensionalidade**
 
