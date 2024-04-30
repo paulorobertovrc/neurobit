@@ -58,13 +58,19 @@ Os valores de alguns atributos de alguns dos objetos estão ausentes. Dentre as 
 
 ##### 3.5.2 Dados inconsistentes
 
-Ocorre quando os atributos explicitam valores contraditórios ou conflitantes, tanto entre os atributos do conjunto de entrada comparados entre si, quanto entre o conjunto de entrada e o valor do atributo de saída. São bem evidentes quando há violação de relações conhecidas entre os atributos.
+Ocorre quando os atributos explicitam valores contraditórios ou conflitantes, tanto entre os atributos do conjunto de entrada comparados entre si, quanto entre o conjunto de entrada e o valor do atributo de saída. São bem evidentes quando há violação de relações conhecidas entre os atributos. Podem ser resultado da presença de ruídos no conjunto de dados.
 
 ##### 3.5.3 Dados redundantes
 
 Diz-se dos **objetos** que apresentem grande semelhança entre si, assim considerados aqueles cujos atributos têm valores muito próximos ou iguais a outro objeto, bem como de **atributos** com valores idênticos ou que possam ser deduzidos a partir de outro(s), pois "[...] têm a mesma informação preditiva." (FACELI et al., 2023, p. 36). A eliminação da redundância é importante para evitar a supervalorização de determinado aspecto do conjunto e para economizar recursos computacionais. "A redundância de um atributo está relacionada com a sua correlação com um ou mais atributos do conjunto de dados. Dois ou mais atributos estão correlacionados quando apresentam um perfil de variação semelhante para os diferentes objetos. Quanto mais correlacionados os atributos, maior o grau de redundância. Se a correlação ocorrer entre um atributo de entrada e um atributo rótulo, esse atributo de entrada terá uma grande influência na predição do valor do atributo rótulo." (FACELI et al., 2023, p. 36).
 
 ##### 3.5.4 Dados com ruídos
+
+"Ruído pode ser definido como uma variância ou erro aleatório no valor gerado ou medido por um atributo (Han e Kamber, 2020)" (FACELI et al., 2023, p. 37) e, nesse sentido, diz-se que há ruído quando o atributo ou objeto em questão pareça dissonante em relação aos demais. "Dados com ruídos são dados que contêm objetos que, aparentemente, não pertencem à distribuição que gerou os dados analisados" (FACELI et al., 2023, p. 37) e sua presença pode conduzir ao *overfitting* (superajuste), se o modelo sobrevalorizar os objetos ruidosos em detrimento dos demais. Por outro lado, a eliminação deve ser feita cautelosamente, para evitar a perda de informação relevante.
+
+"É importante observar que não é possível ter certeza de que um valor é ou não resultado da presença de ruído, mas apenas ter uma indicação ou indício de que um dado valor para um atributo pode ter sido gerado com ruído" (FACELI et al., 2023, p. 37), sendo a presença de valores discrepantes (*outliers*) um bom indicativo.
+
+Dentre as maneiras de atenuar o ruído, destacam-se as técnicas de encestamento e as baseadas em agrupamento, distância e regressão ou classificação dos dados.
 
 #### 3.6 Transformação de dados
 

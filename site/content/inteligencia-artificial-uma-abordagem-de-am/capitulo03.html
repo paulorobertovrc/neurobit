@@ -139,7 +139,7 @@
                 <h4>3.5.2 Dados inconsistentes</h4>
                 <p>
                     Ocorre quando os atributos explicitam valores contraditórios ou conflitantes, tanto entre os atributos do conjunto de entrada comparados entre si, quanto entre o conjunto de entrada e o valor do atributo de saída. 
-                    São bem evidentes quando há violação de relações conhecidas entre os atributos.
+                    São bem evidentes quando há violação de relações conhecidas entre os atributos. Podem ser resultado da presença de ruídos no conjunto de dados.
                 </p>
             </div>
 
@@ -152,9 +152,22 @@
                 </p>
             </div>
 
-            <!-- 
+            <div>
                 <h4>3.5.4 Dados com ruídos</h4>
-                
+                <p>
+                    "Ruído pode ser definido como uma variância ou erro aleatório no valor gerado ou medido por um atributo (Han e Kamber, 2020)" (FACELI et al., 2023, p. 37) e, nesse sentido, diz-se que há ruído quando o atributo ou objeto em questão pareça dissonante em relação aos demais. 
+                    "Dados com ruídos são dados que contêm objetos que, aparentemente, não pertencem à distribuição que gerou os dados analisados" (FACELI et al., 2023, p. 37) e sua presença pode conduzir ao <em>overfitting</em> (superajuste), se o modelo sobrevalorizar os objetos ruidosos em detrimento dos demais. 
+                    Por outro lado, a eliminação deve ser feita cautelosamente, para evitar a perda de informação relevante.
+                </p>
+                <p>
+                    "É importante observar que não é possível ter certeza de que um valor é ou não resultado da presença de ruído, mas apenas ter uma indicação ou indício de que um dado valor para um atributo pode ter sido gerado com ruído" (FACELI et al., 2023, p. 37), sendo a presença de valores discrepantes (*outliers*) um bom indicativo.
+                </p>
+                <p>
+                    Dentre as maneiras de atenuar o ruído, destacam-se as técnicas de encestamento e as baseadas em agrupamento, distância e regressão ou classificação dos dados.
+                </p>
+            </div>
+            
+            <!-- 
                 <div>
                     <h3>3.6 Transformação de dados</h3>
                     <h4>3.6.1 Conversão simbólico-numérico</h4>
