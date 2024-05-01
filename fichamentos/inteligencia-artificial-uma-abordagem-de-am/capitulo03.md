@@ -74,11 +74,29 @@ Dentre as maneiras de atenuar o ruído, destacam-se as técnicas de encestamento
 
 #### 3.6 Transformação de dados
 
+As técnicas de transformação visam converter (mapear) os dados de um formato (tipo) para outro, de modo a torná-los adequados ao algoritmo de aprendizagem que será utilizado, que, no mais das vezes, admite ou lida melhor com um tipo específico de dado.
+
 ##### 3.6.1 Conversão simbólico-numérico
+
+É importante que a existência ou inexistência de relação de ordem entre os valores dos atributos, conforme o caso, seja preservada. "Ou seja, [se nominais, isto é, sem relação de ordem] a diferença entre quaisquer dois valores numéricos deve ser a mesma. [...] Quando existe uma relação de ordem, [isto é] o atributo é do tipo ordinal, [...] a codificação deve preservar essa relação. [...], [de modo que] a distância entre os valores varia de acordo com a proximidade deles [...]." (FACELI et al., 2023, p. 38/40).
+
+Dito isso, o modo como será feita a conversão dependerá de que o atributo simbólico seja nominal ou ordinal.
+
+Para a representação de um atributo **nominal** que assuma apenas dois valores (categórico), bastará um único dígito binário - 0 ou 1 -; já aqueles que possam assumir mais de dois valores podem ser representados por uma sequência binária contendo tantos bits quantos forem os possíveis valores ou categorias do atributo. Neste caso, uma abordagem possível é a **codificação 1-de-c**, também referida como canônica ou topológica, na qual apenas um dos bits sequenciais terá o valor 1 - e os demais, 0, portanto -, sendo que o valor ou categoria do atributo corresponderá à posição do bit com valor igual a 1. A distância de Hamming, segundo a qual o intervalo "[...] entre duas sequências binárias com mesmo número de elementos é igual ao número de posições em que as sequências apresentam valores diferentes" (FACELI et al., 2023, p. 38), pode ser adotada como critério para diferenciar os valores simbólicos. Alternativamente, podem ser mapeados para um conjunto de pseudoatributos binários, inteiros e/ou reais.
+
+Por outro lado, atributos **ordinais** podem ser representados por um número inteiro ou real que adequadamente corresponda e mantenha a semântica da ordenação original ou convertidos em valores binários.
 
 ##### 3.6.2 Conversão numérico-simbólico
 
+Em se tratando de atributo quantitativo **discreto** - binário ou não binário, desde que não tenham relação de ordem -, a conversão pode ser feita mediante a criação de um nome ou categoria associada. No que diz respeito a atributos quantitativos **contínuos**, a conversão pode ser feita pelo emprego de **métodos de discretização**, modo que os valores sejam mapeados para um conjunto de categorias ou intervalos. Esses métodos podem ser classificados em **paramétricos ou não paramétricos** - consoante a divisão em intervalos possa ou não ser arbitrariamente orientada por algum critério, como a quantidade de intervalos e/ou de itens em cada um deles - e em **supervisionados ou não supervisionados** - conforme sejam ou não informados os rótulos das classes dos objetos. A discretização comumente implementa estratégias que envolvem a criação de subconjuntos com larguras ou frequências iguais, estando aquela suscetível a *outliers* e esta, a desbalanceamento, o agrupamento de dados ou a inspeção visual.
+
 ##### 3.6.3 Transformação de atributos numéricos
+
+Pode ser necessária, a fim de evitar a predominância de um sobre outro, para lidar com atributos (i) cujos valores sejam muito díspares - isto é, com grande variação entre si -; (ii) que estejam em escalas diferentes ou incompatíveis; e/ou (iii) para facilitar a manipulação.
+
+Há disparidade quando "[...] os limites inferior e superior de valores dos atributos são muito diferentes [...]" (FACELI et al., 2023, p. 41), o que pode ser solucionado por técnicas de **normalização** (a) por amplitude ou (b) por distribuição. No primeiro caso, subdivide-se em (a.i) normalização por reescala e (a.ii) padronização, que, respectivamente, definem para todos os atributos "[...] uma nova escala de valores, limites mínimos e máximo [...]" e "[...] um valor central e um valor de espalhamento comuns [...]" (FACELI et al., 2023, p. 41). No segundo, "[...] a cada valor do atributo a ser normalizado é adicionada ou subtraída uma medida de localização e o valor resultante é em seguida multiplicado ou dividido por uma medida de escala. Com isso, diferentes atributos podem ter limites inferiores e superiores distintos, mas terão os mesmos valores para as medidas de escala e espalhamento." (FACELI et al., 2023, p. 42). É importante destacar que, "geralmente, é preferível padronizar a reescalar, pois a padronização lida melhor com *outliers*." (FACELI et al., 2023, p. 42).
+
+A transformação também pode ser feita por **tradução**, que tão somente visa a facilitação do manuseio, sem prejuízo da carga informacional. "Por exemplo, a conversão de um atributo com data de nascimento para idade, de graus Celsius para Fahrenheit ou de localização dada por um aparelho de GPS para código postal." (FACELI et al., 2023, p. 42).
 
 #### 3.7 Redução de dimensionalidade
 
@@ -120,6 +138,8 @@ Dentre as maneiras de atenuar o ruído, destacam-se as técnicas de encestamento
     - Dados ruidosos, incompletos, inconsistentes ou redundantes
     - Aumentar a qualidade dos dados
   - **Transformação de dados**
+    - Mapeamento de dados de um formato para outro
+    - Conversão simbólico-numérico, numérico-simbólico e transformação de atributos numéricos
   - **Redução de dimensionalidade**
 
 ## Notas
