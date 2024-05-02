@@ -100,7 +100,9 @@ A transformação também pode ser feita por **tradução**, que tão somente vi
 
 #### 3.7 Redução de dimensionalidade
 
-<!-- Um conjunto de dados grande não necessariamente é aquele que possui muitos objetos, mas também aquele que, embora os tenha em pequena quantidade, cada um deles possui muitos atributos. Ambas as situações são capazes de comprometer o desempenho dos algoritmos de AM e, por esse motivo, podem ser enfrentadas com o auxílio desta técnica. (maldição da dimensionalidade - VER) -->
+Um conjunto de dados grande não necessariamente é aquele que possui muitos objetos, mas também aquele que cujos objetos tenham muitos atributos. Ambas as situações são capazes de comprometer o desempenho dos algoritmos de AM, ou mesmo inviabilizar o uso de um determinado conjunto de dados, porque o algoritmo é incapaz de lidar com tamanha quantidade. Além das limitações inerentes ao próprio algoritmo, reduzir a dimensionalidade também favorece a efetividade do processo indutivo, a economia de recursos computacionais e melhora a interpretabilidade dos resultados.
+
+As principais técnicas estão concentradas nas abordagens de **agregação**, que cria novos atributos pela aglutinação de dois ou mais originários, e de **seleção de atributos**, que envolve o descarte de atributos desnecessários. Dentre as primeiras, destaca-se a **Análise de Componentes Principais (*Principal Component Analysis* - PCA)**, que "[...] descorrelaciona estatisticamente os exemplos, reduzindo a dimensionalidade do conjunto de dados original pela eliminação de redundâncias" (FACELI et al., 2023, p. 43) e que, tal como todas as implementações dessa abordagem, acarreta a perda dos dados originais. Já as técnicas do segundo grupo "[...] procuram por um subconjunto ótimo de atributos de acordo com um dado critério" (FACELI et al., 2023, p. 43), sendo que a seleção pode ser feita manual ou automaticamente, preferindo-se esta àquela forma para mitigar a interferência de fatores como a grande quantidade de objetos ou de atributos, ou a complexidade das relações entre eles.
 
 ##### 3.7.1 Agregação
 
