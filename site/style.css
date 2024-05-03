@@ -244,19 +244,21 @@ math[display="block"] {
 /* Cards dos fichamentos */
 
 /* Cards dos capítulos */
-.fichamento-card-capitulo {
-    @media screen and (min-width: 390px) {
-        /* max-width: 25%; */
-        width: fit-content;
-        max-width: 50%;
-    }
-}
+/* .fichamento-card-capitulo {
+} */
 /* Cards dos capítulos */
 
 /* Cards de informações */
 .fichamento {
     display: flex;
     grid-gap: 20px;
+
+    @media screen and (max-width: 390px) {
+        display: flexbox;
+        flex-direction: column;
+
+        align-items: center;
+    }
 }
 
 .fichamento a {
