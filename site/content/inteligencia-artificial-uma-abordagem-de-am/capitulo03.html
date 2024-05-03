@@ -215,7 +215,7 @@
             </div>
 
             <div>
-                <h3>3.7 Redução de dimensionalidade</h3>
+                <h3 id="subtitulo_3_7_nota_2">3.7 Redução de dimensionalidade <sup><a class="linknotas" href="#nota_2">[2]</a></sup></h3>
                 <p>
                     Um conjunto de dados grande não necessariamente é aquele que possui muitos objetos, mas também aquele que cujos objetos tenham muitos atributos. Ambas as situações são capazes de comprometer o desempenho dos algoritmos de AM, ou mesmo inviabilizar o uso de um determinado conjunto de dados, porque o algoritmo é incapaz de lidar com tamanha quantidade. 
                     Além das limitações inerentes ao próprio algoritmo, reduzir a dimensionalidade também favorece a efetividade do processo indutivo, a economia de recursos computacionais e melhora a interpretabilidade dos resultados.
@@ -225,17 +225,44 @@
                     Dentre as primeiras, destaca-se a <strong>Análise de Componentes Principais (<em>Principal Component Analysis</em> - PCA)</strong>, que "[...] descorrelaciona estatisticamente os exemplos, reduzindo a dimensionalidade do conjunto de dados original pela eliminação de redundâncias" (FACELI et al., 2023, p. 43) e que, tal como todas as implementações dessa abordagem, acarreta a perda dos dados originais. 
                     Já as técnicas do segundo grupo "[...] procuram por um subconjunto ótimo de atributos de acordo com um dado critério" (FACELI et al., 2023, p. 43), sendo que a seleção pode ser feita manual ou automaticamente, preferindo-se esta àquela forma para mitigar a interferência de fatores como a grande quantidade de objetos ou de atributos, ou a complexidade das relações entre eles.
                 </p>
+                <p>
+                    No que diz respeito à <strong>seleção de atributos</strong>, esta pode ser <strong>baseada em filtro, baseada em <em>wrapper</em> e embutida</strong>.
+                </p>
+                <p>
+                    Na primeira - <strong>abordagem baseada em filtro</strong> -, a filtragem ocorre pela seleção de atributos com base em algum critério arbitrariamente escolhido e é independente do algoritmo de AM. A filtragem consume poucos recursos computacionais, característica que, assim como a independência em relação ao algoritmo, pode ser vantajosa - neste caso, se houver necessidade de reaproveitamento do subconjunto em outro(s) algoritmo(s). 
+                    Por outro lado, o desempenho do modelo pode restar prejudicado, notadamente porque "[...] como a seleção e a indução são processos separados, o viés de um não interage com o viés de outro, o que pode levar à construção de indutores com desempenho aquém do desejado." (FACELI et al., 2023, p. 43/44).
+                </p>
+                <p>
+                    Já a <strong>abordagem baseada em <em>wrapper</em></strong> faz a seleção é feita por um algoritmo, que criará diversos subconjuntos e escolherá aquele com a melhor relação "[...] entre redução da taxa de erro e [...] do número de atributos [...]" (FACELI et al., 2023, p. 44). Embora haja algoritmos eficientes, o custo computacional poderá ser elevado. 
+                    Além disso, há que se considerar o enviesamento da seleção, o que, todavia, pode ser benéfico sob o ponto de vista do modelo a ser induzido: "por incorporar o viés do classificador, as técnicas baseadas em <em>wrapper</em> em geral conseguem obter um conjunto de atributos que leva a um melhor desempenho posterior do modelo." (FACELI et al., 2023, p. 44).
+                </p>
+                <p>
+                    Finalmente, na <strong>abordagem embutida</strong> a seleção é feita pelo próprio algoritmo de AM. Uma vez que não é necessário repetir o treinamento para cada subconjunto, como na abordagem anterior, é mais eficiente.
+                </p>
+                <p>
+                    <div class="image-container">
+                        <figure>
+                            <img src="../../../imagens/17_am_faceli_selec_atributos.png" alt="Ilustração das abordagens de seleção de atributos">
+                            <figcaption class="legenda">Figura 17 - Ilustração das abordagens de seleção de atributos (FACELI et al., 2023, p. 43).</figcaption>
+                        </figure>
+                    </div>
+                </p>
+                <p>
+                    Quanto às <strong>técnicas de seleção</strong>, enquanto as duas primeiras podem implementar tanto técnicas de ordenação quanto de seleção de subconjuntos, com ou sem informações sobre a classe, a última é restrita às de seleção de subconjuntos.
+                </p>
+                <p>
+                    As técnicas de <strong>ordenação</strong>, também chamadas técnicas de <strong><em>ranking</em></strong>, como o próprio nome sugere, ordenam os atributos conforme um dado critério, pelo que simplificadamente acabam por colocar os atributos em ordem de importância. 
+                    Essa técnica é costumeiramente adotada nos casos em que a seleção deva ser <strong>individual ou univariada</strong>, isso porque considera a relevância de cada atributo para a classificação do objeto. 
+                    Por esse motivo, não encontra correlação ou redundância entre atributos.
+                </p>
+                <p>
+                    Diferentemente, nas técnicas de <strong>seleção de subconjuntos</strong> a análise é <strong>coletiva</strong>, isto é, a totalidade do subconjunto é mais importante do que o atributo em si, o que permite o encontro de eventuais correlações. "A seleção de um subconjunto de atributos pode ser vista como um problema de busca. Cada ponto no espaço de busca pode ser considerado como um possível subconjunto de atributos." (FACELI et al., 2023, p. 45). 
+                    Nesse sentido, a qualidade do resultado depende da melhor escolha de aspectos como o ponto de início, o sentido e a estratégia da busca, além de critérios para avaliar os subconjuntos e o ponto de parada.
+                </p>
+                <p>
+                    Por fim, é importante destacar que as técnicas de seleção de subconjuntos são mais custosas do que as de ordenação, tal que inviável para conjuntos de dados com muitos atributos. Não obstante, nesse caso é possível o emprego consecutivo das duas técnicas, de modo que os atributos sejam primeiramente ordenados consoante a sua relevância individual e, em seguida, formados os subconjuntos tão somente com os melhores colocados, a partir desses dados preordenados.
+                </p>
             </div>
-            
-            <!-- 
-                <div>
-                    <h4>3.7.1 Agregação</h4>
-                    <h4>3.7.2 Seleção de atributos</h4>
-                    <h4>3.7.3 Técnicas de ordenação</h4>
-                    <h4>3.7.4 Técnicas de seleção de subconjunto</h4>
-                </div> 
-            -->
-
         </article>
         
         <hr>
@@ -305,39 +332,19 @@
                             </li>
                             <li>
                                 <strong>Redução da dimensionalidade</strong>
-                            </li>
-                        </ul>
-                    </li>
-                    <!-- <li>
-                        <strong>.....</strong>
-                        <ul>
-                            <li>
-                                <strong>.....</strong>
                                 <ul>
+                                    <li>Diminuição da quantidade de atributos ou objetos</li>
+                                    <li>Agregação</li>
                                     <li>
-                                        <strong>.....</strong>
+                                        Seleção de atributos
                                         <ul>
-                                            <li>
-                                                .....
-                                                <ul>
-                                                    <li>.....</li>
-                                                    <li>.....</li>
-                                                </ul>
-                                            </li>
-                                            <li>.....</li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <strong>.....</strong>
-                                        <ul>
-                                            <li>.....</li>
-                                            <li>.....</li>
+                                            <li>Técnicas de ordenação e seleção de subconjuntos</li>
                                         </ul>
                                     </li>
                                 </ul>
                             </li>
                         </ul>
-                    </li> -->
+                    </li>
                 </ul>
             <p><a class="emoji" href="#top">[ 🔝 ]</a></p>
         </article>
@@ -347,6 +354,7 @@
         <article>
             <h2>Notas</h2>
             <p id="nota_1">[1] Na seção 3.3, os autores distinguem essas abordagens. No entanto, optei por não incluir esses pontos neste momento, uma vez que pretendo estudá-los mais adiante em livros de Estatística.<a class="linkdiscreto" href="#subtitulo_3_nota_1"> [ 🔙 ]</a></p>
+            <p id="nota_2">[2] No livro, o tópico é subdividido nas seções 3.7.1 (agregação), 3.7.2 (seleção de atributos), 3.7.3 (técnicas de ordenação) e 3.7.4 (técnicas de seleção de subconjunto).<a class="linkdiscreto" href="#subtitulo_3_7_nota_2"> [ 🔙 ]</a></p>
             <a class="emoji" href="#top">[ 🔝 ]</a>
         </article>
     </main>

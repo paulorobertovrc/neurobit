@@ -98,19 +98,30 @@ Há disparidade quando "[...] os limites inferior e superior de valores dos atri
 
 A transformação também pode ser feita por **tradução**, que tão somente visa a facilitação do manuseio, sem prejuízo da carga informacional. "Por exemplo, a conversão de um atributo com data de nascimento para idade, de graus Celsius para Fahrenheit ou de localização dada por um aparelho de GPS para código postal." (FACELI et al., 2023, p. 42).
 
-#### 3.7 Redução de dimensionalidade
+#### 3.7 Redução de dimensionalidade [^2]
 
 Um conjunto de dados grande não necessariamente é aquele que possui muitos objetos, mas também aquele que cujos objetos tenham muitos atributos. Ambas as situações são capazes de comprometer o desempenho dos algoritmos de AM, ou mesmo inviabilizar o uso de um determinado conjunto de dados, porque o algoritmo é incapaz de lidar com tamanha quantidade. Além das limitações inerentes ao próprio algoritmo, reduzir a dimensionalidade também favorece a efetividade do processo indutivo, a economia de recursos computacionais e melhora a interpretabilidade dos resultados.
 
 As principais técnicas estão concentradas nas abordagens de **agregação**, que cria novos atributos pela aglutinação de dois ou mais originários, e de **seleção de atributos**, que envolve o descarte de atributos desnecessários. Dentre as primeiras, destaca-se a **Análise de Componentes Principais (*Principal Component Analysis* - PCA)**, que "[...] descorrelaciona estatisticamente os exemplos, reduzindo a dimensionalidade do conjunto de dados original pela eliminação de redundâncias" (FACELI et al., 2023, p. 43) e que, tal como todas as implementações dessa abordagem, acarreta a perda dos dados originais. Já as técnicas do segundo grupo "[...] procuram por um subconjunto ótimo de atributos de acordo com um dado critério" (FACELI et al., 2023, p. 43), sendo que a seleção pode ser feita manual ou automaticamente, preferindo-se esta àquela forma para mitigar a interferência de fatores como a grande quantidade de objetos ou de atributos, ou a complexidade das relações entre eles.
 
-##### 3.7.1 Agregação
+No que diz respeito à **seleção de atributos**, esta pode ser **baseada em filtro, baseada em *wrapper* e embutida**.
 
-##### 3.7.2 Seleção de atributos
+Na primeira - **abordagem baseada em filtro** -, a filtragem ocorre pela seleção de atributos com base em algum critério arbitrariamente escolhido e é independente do algoritmo de AM. A filtragem consume poucos recursos computacionais, característica que, assim como a independência em relação ao algoritmo, pode ser vantajosa - neste caso, se houver necessidade de reaproveitamento do subconjunto em outro(s) algoritmo(s). Por outro lado, o desempenho do modelo pode restar prejudicado, notadamente porque "[...] como a seleção e a indução são processos separados, o viés de um não interage com o viés de outro, o que pode levar à construção de indutores com desempenho aquém do desejado." (FACELI et al., 2023, p. 43/44).
 
-##### 3.7.3 Técnicas de ordenação
+Já a **abordagem baseada em *wrapper*** faz a seleção é feita por um algoritmo, que criará diversos subconjuntos e escolherá aquele com a melhor relação "[...] entre redução da taxa de erro e [...] do número de atributos [...]" (FACELI et al., 2023, p. 44). Embora haja algoritmos eficientes, o custo computacional poderá ser elevado. Além disso, há que se considerar o enviesamento da seleção, o que, todavia, pode ser benéfico sob o ponto de vista do modelo a ser induzido: "por incorporar o viés do classificador, as técnicas baseadas em *wrapper* em geral conseguem obter um conjunto de atributos que leva a um melhor desempenho posterior do modelo." (FACELI et al., 2023, p. 44).
 
-##### 3.7.4 Técnicas de seleção de subconjunto
+Finalmente, na **abordagem embutida** a seleção é feita pelo próprio algoritmo de AM. Uma vez que não é necessário repetir o treinamento para cada subconjunto, como na abordagem anterior, é mais eficiente.
+
+![Ilustração das abordagens de seleção de atributos](../../imagens/17_am_faceli_selec_atributos.png)
+Figura 17 - Ilustração das abordagens de seleção de atributos (FACELI et al., 2023, p. 43).
+
+Quanto às **técnicas de seleção**, enquanto as duas primeiras podem implementar tanto técnicas de ordenação quanto de seleção de subconjuntos, com ou sem informações sobre a classe, a última é restrita às de seleção de subconjuntos.
+
+As técnicas de **ordenação**, também chamadas técnicas de ***ranking***, como o próprio nome sugere, ordenam os atributos conforme um dado critério, pelo que simplificadamente acabam por colocar os atributos em ordem de importância. Essa técnica é costumeiramente adotada nos casos em que a seleção deva ser **individual ou univariada**, isso porque considera a relevância de cada atributo para a classificação do objeto. Por esse motivo, não encontra correlação ou redundância entre atributos.
+
+Diferentemente, nas técnicas de **seleção de subconjuntos** a análise é **coletiva**, isto é, a totalidade do subconjunto é mais importante do que o atributo em si, o que permite o encontro de eventuais correlações. "A seleção de um subconjunto de atributos pode ser vista como um problema de busca. Cada ponto no espaço de busca pode ser considerado como um possível subconjunto de atributos." (FACELI et al., 2023, p. 45). Nesse sentido, a qualidade do resultado depende da melhor escolha de aspectos como o ponto de início, o sentido e a estratégia da busca, além de critérios para avaliar os subconjuntos e o ponto de parada.
+
+Por fim, é importante destacar que as técnicas de seleção de subconjuntos são mais custosas do que as de ordenação, tal que inviável para conjuntos de dados com muitos atributos. Não obstante, nesse caso é possível o emprego consecutivo das duas técnicas, de modo que os atributos sejam primeiramente ordenados consoante a sua relevância individual e, em seguida, formados os subconjuntos tão somente com os melhores colocados, a partir desses dados preordenados.
 
 ## Principais tópicos
 
@@ -143,7 +154,12 @@ As principais técnicas estão concentradas nas abordagens de **agregação**, q
     - Mapeamento de dados de um formato para outro
     - Conversão simbólico-numérico, numérico-simbólico e transformação de atributos numéricos
   - **Redução de dimensionalidade**
+    - Diminuição da quantidade de atributos ou objetos
+    - Agregação
+    - Seleção de atributos
+      - Técnicas de ordenação e seleção de subconjuntos
 
 ## Notas
 
 [^1]: Na seção 3.3, os autores distinguem essas abordagens. No entanto, optei por não incluir esses pontos neste momento, uma vez que pretendo estudá-los mais adiante em livros de Estatística.
+[^2]: No livro, o tópico é subdividido nas seções 3.7.1 (agregação), 3.7.2 (seleção de atributos), 3.7.3 (técnicas de ordenação) e 3.7.4 (técnicas de seleção de subconjunto).
