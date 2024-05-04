@@ -148,16 +148,19 @@ Por fim, é importante destacar que as técnicas de seleção de subconjuntos s�
       - Funções de custo para cada classe
       - Indução de modelos por classe
   - **Limpeza de dados**
-    - Dados ruidosos, incompletos, inconsistentes ou redundantes
+    - Atenuar ou remover ruídos, incompletudes, inconsistências ou redundâncias
     - Aumentar a qualidade dos dados
   - **Transformação de dados**
     - Mapeamento de dados de um formato para outro
     - Conversão simbólico-numérico, numérico-simbólico e transformação de atributos numéricos
   - **Redução de dimensionalidade**
     - Diminuição da quantidade de atributos ou objetos
-    - Agregação
-    - Seleção de atributos
-      - Técnicas de ordenação e seleção de subconjuntos
+    - Abordagens/técnicas
+      - Agregação
+      - Seleção de atributos
+        - Baseada em filtro, em *wrapper* e embutida
+        - Ordenação
+        - Seleção de subconjuntos
 
 ## Notas
 
