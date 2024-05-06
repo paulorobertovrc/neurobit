@@ -254,7 +254,7 @@ math[display="block"] {
     display: flex;
     grid-gap: 20px;
 
-    @media screen and (max-width: 390px) {
+    @media screen and (max-width: 790px) {
         flex-direction: column;
         grid-gap: 0px;
     }
