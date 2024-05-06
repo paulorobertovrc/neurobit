@@ -82,6 +82,7 @@ Ressalvados os direitos autorais dos detentores/produtores dos conteúdos utiliz
 |2.1 | Inteligência Artificial: Uma Abordagem de Aprendizado de Máquina | Katti Faceli et al. | Capítulo 1 | ![Static Badge](https://img.shields.io/badge/Concluído-grey) | [🔗](./fichamentos/inteligencia-artificial-uma-abordagem-de-am/capitulo01.md) |
 |2.2 | Inteligência Artificial: Uma Abordagem de Aprendizado de Máquina | Katti Faceli et al. | Capítulo 2 | ![Static Badge](https://img.shields.io/badge/Concluído-grey) | [🔗](./fichamentos/inteligencia-artificial-uma-abordagem-de-am/capitulo02.md) |
 |2.3 | Inteligência Artificial: Uma Abordagem de Aprendizado de Máquina | Katti Faceli et al. | Capítulo 3 | ![Static Badge](https://img.shields.io/badge/Concluído-grey) | [🔗](./fichamentos/inteligencia-artificial-uma-abordagem-de-am/capitulo03.md) |
+|2.4 | Inteligência Artificial: Uma Abordagem de Aprendizado de Máquina | Katti Faceli et al. | Capítulo 3 | ![Static Badge](https://img.shields.io/badge/Concluído-grey) | [🔗](./fichamentos/inteligencia-artificial-uma-abordagem-de-am/capitulo04.md) |
 
 [[🔝](#acesso-rápido)]
 

@@ -32,5 +32,6 @@ Trata-se de um livro-texto voltado a cursos de graduação ou pós-graduação q
 | # | Capítulo | Status | Link |
 | :---: | :---: | :---: | :---: |
 | 1 |  Introdução | ![Static Badge](https://img.shields.io/badge/Concluído-grey) | [🔗](./capitulo01.md) |
-| 2 |  Análise de dados | ![Static Badge](https://img.shields.io/badge/Concluído-grey) | [🔗](./capitulo02.md) |
-| 3 |  Pré-processamento de dados | ![Static Badge](https://img.shields.io/badge/Concluído-grey) | [🔗](./capitulo03.md) |
+| 2 |  [Preparação de dados] Análise de dados | ![Static Badge](https://img.shields.io/badge/Concluído-grey) | [🔗](./capitulo02.md) |
+| 3 |  [Preparação de dados] Pré-processamento de dados | ![Static Badge](https://img.shields.io/badge/Concluído-grey) | [🔗](./capitulo03.md) |
+| 4 |  [Modelos preditivos] Métodos baseados em distâncias | ![Static Badge](https://img.shields.io/badge/Estudando-grey) | [🔗](./capitulo04.md) |
