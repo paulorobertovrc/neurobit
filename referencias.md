@@ -52,6 +52,8 @@ FUNÇÃO de base radial. In: WIKIPEDIA. Disponível em <https://pt.wikipedia.org
 
 GALLINARO, Júlia V.; SCHOLL, Benjamin; CLOPATH, Claudia. 2023. **Synaptic weights that correlate with presynaptic selectivity increase decoding performance.** PLOS Computational Biology 19(8): e1011362. <https://doi.org/10.1371/journal.pcbi.1011362>. Acesso em 26 jan. 2024.
 
+GUIDORIZZI, Hamilton Luiz. **Um curso de cálculo, vol. 1**. 5. ed. Rio de Janeiro: LTC, 2013.
+
 HAYKIN, Simon. **Adaptive filter theory.** 3 ed. Upper Saddle River, NJ: Prentice Hall, 1995.
 
 LECTURE 1 on kernel methods: Positive definite kernels. Vídeo: 44min49s. Publicado pelo canal Julien Mairal. 22 fev. 2021. Disponível em <https://youtu.be/IzGS8uKc5E4?si=u1IDMZS9GB8d8vNG>. Acesso em 14 jan. 2024.

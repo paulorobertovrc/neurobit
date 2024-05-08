@@ -31,28 +31,93 @@
         <p><img src="https://img.shields.io/badge/Status-Estudando-grey?labelColor=31A8B8"></p>
 
         <article>
+            <div>
+                <h2>Parte 2 | Modelos preditivos (capítulos 4 e 10)</h2>
+                <h3 id="subtitulo_0_nota_1"> Introdução aos modelos preditivos <sup><a class="linknotas" href="#nota_1">[1]</a></sup></h3>
+                <p>
+                    <blockquote>
+                        "Um algoritmo de AM preditivo é uma função que, dado um conjunto de exemplos rotulados, constrói um estimador. O rótulo ou etiqueta toma valores em um domínio conhecido. 
+                        Se esse domínio for um conjunto de valores nominais, tem-se um problema de classificação, também conhecido como aprendizado de conceitos, e o estimador gerado é um classificador. Se o domínio for um conjunto infinito e ordenado de valores, tem-se um problema de regressão, que induz um regressor. 
+                        Um classificador (ou regressor), por sua vez, também é uma função, que, dado um exemplo não rotulado, atribui esse exemplo a uma das possíveis classes (ou a um valor real) (Dietterich, 1998). 
+                        Uma definição formal seria, dado um conjunto de observações de pares
+                        <math xmlns="http://www.w3.org/1998/Math/MathML">
+                            <mi>D</mi>
+                            <ms>=</ms>
+                            <mrow class="MJX-TeXAtom-ORD">
+                                <mo>{(</mo>
+                                <mrow>
+                                    <msub>
+                                        <mi>x</mi>
+                                        <mi>i</mi>
+                                    </msub>
+                                </mrow>
+                                <mo>,</mo>
+                                <mi>f</mi>
+                                <mo stretchy="false">(</mo>
+                                <msub>
+                                    <mi>x</mi>
+                                    <mi>i</mi>
+                                </msub>
+                                <mo stretchy="false">))</mo>
+                                <mo>,</mo>
+                                <mi>i</mi>
+                                <mo>=</mo>
+                                <mn>1</mn>
+                                <mo>,</mo>
+                                <mo>&#x2026;<!-- … --></mo>
+                                <mo>,</mo>
+                                <mi>n</mi>
+                                <mo>}</mo>
+                            </mrow>
+                          </math>
+                        , em que <math><mi>f</mi></math> representa uma função desconhecida, um algoritmo de AM preditivo aprende uma aproximação <math><mover><mi>f</mi><mo>&#x005E;</mo></mover></math> da função desconhecida <math><mi>f</mi></math>. 
+                        Essa função aproximada, <math><mover><mi>f</mi><mo>&#x005E;</mo></mover></math>, permite estimar o valor de <math><mi>f</mi></math> para novas observações de <math><ms>x</ms></math>." (FACELI et al., 2023, p. 50).
+                    </blockquote>
+                </p>
+                <p id="subtitulo_0_nota_2">
+                    Noutras palavras, consiste em uma <strong>função<sup><a class="linknotas" href="#nota_2">[2]</a></sup> que mapeia dois conjuntos de dados</strong>, sendo um de exemplos rotulados (atributos preditivos/entrada/<em>inputs</em>/variáveis independentes) e outro contendo os rótulos correspondentes - que compõem os dados de treinamento -, 
+                    <strong>com o objetivo de induzir um <u>modelo preditor</u>: um algoritmo que, por aproximação, aprenda a prever o valor</strong> que deve ser assumido por outro novo exemplo, não visto anteriormente (alvos/saída/<em>outputs</em>/variáveis dependentes).
+                </p>
+                <p>
+                    Portanto, implementam regras de aprendizagem inerentes ao paradigma supervisionado para a indução do modelo.
+                </p>
+                <p id="subtitulo_0_nota_3">
+                    Os casos de uso dos modelos preditivos distinguem-se quanto à natureza do que se propõem a resolver, que no mais das vezes são problemas de <strong>classificação</strong>, em que normalmente se busca categorizar atributos qualitativos de conjuntos com valores finitos (nominais, discretos e não ordenados)<sup><a class="linknotas" href="#nota_3">[3]</a></sup>, 
+                    ou <strong>regressão</strong>, que lida com atributos quantitativos e conjuntos com valores reais infinitos (numéricos, contínuos e ordenados). 
+                    Respectivamente, o objetivo é "[...] encontrar uma fronteira de decisão que separe os exemplos de uma classe dos exemplos da outra" (FACELI et al., 2023, p. 50) e "[...] aprender uma função que relacione [os objetos] [...]" (FACELI et al., 2023, p. 50).
+                </p>
+                <p>
+                    Para exemplificar, vejamos a imagem a seguir:
+                    <div class="image-container">
+                        <figure>
+                            <img src="../../../imagens/18_am_faceli_grafico_modelos_preditivos.png" alt="Gráfico ilustrativo de tarefas">
+                            <figcaption class="legenda">Figura 18 - Gráfico ilustrativo de tarefas (FACELI et al., 2023, p. 50).</figcaption>
+                        </figure>
+                    </div>
+                </p>
+                <p>
+                    Em suma, os problemas de classificação referem-se à tarefa de atribuir um objeto a uma classe, enquanto os de regressão à de prever um valor numérico associado às variáveis independentes (atributos de entrada) a um objeto e que expresse sua relação com os demais. 
+                    A grosso modo, "em ambos os casos, o objetivo do aprendizado preditivo é aprender uma função <math><mover><mi>f</mi><mo>&#x005E;</mo></mover><ms>(</ms><mi>x</mi><mo stretchy="false">)</mo></math>, que mapeia as variáveis independentes, os atributos de entrada, na variável objetivo, o atributo alvo." (FACELI et al., 2023, p. 51).
+                </p>
+            </div>
         </article>
-        
         <hr>
-        
         <article>
             <h2>Principais tópicos</h2>
                 <ul>
                     <li>
-                        .....
-                        <ul><li>.....</li></ul>
-                    </li>
-                    <li>
-                        <strong>.....</strong>
+                        <strong>Modelo preditivo</strong>
                         <ul>
                             <li>
-                                <strong>.....</strong>
+                                É uma função aproximada que relaciona cada elemento de um conjunto rotulado de dados de entrada a um único elemento de um conjunto de rótulos, por conseguinte aprendendo a, por aproximação, rotular novas observações. 
+                                Essa função aproximada é o próprio resultado do algoritmo de aprendizado de máquina preditivo, induzido pelos dados de treinamento.
+                            </li>
+                            <li>Aprendizagem supervisionada</li>
+                            <li>
+                                <strong>Tarefas</strong>
                                 <ul>
-                                    <li>.....</li>
-                                    <li>
-                                        .....
-                                        <ul><li>.....</li></ul>
-                                    </li>
+                                    <li><strong>Classificação:</strong> atribuir um objeto a uma classe</li>
+                                    <li><strong>Regressão:</strong> prever um valor numérico que que permita extrair a relação entre os atributos de entrada e o atributo alvo</li>
                                 </ul>
                             </li>
                         </ul>
@@ -60,11 +125,23 @@
                 </ul>
             <p><a class="emoji" href="#top">[ 🔝 ]</a></p>
         </article>
-
         <hr>
-
+        <article>
+            <h2>Referências complementares</h2>
+            <p>GUIDORIZZI, Hamilton Luiz. <strong>Um curso de cálculo, vol. 1</strong>. 5. ed. Rio de Janeiro: LTC, 2013.</p>
+        </article>
+        <hr>
         <article>
             <h2>Notas</h2>
+            <p id="nota_1">[1] Na seção 3.3, os autores distinguem essas abordagens. No entanto, optei por não incluir esses pontos neste momento, uma vez que pretendo estudá-los mais adiante em livros de Estatística.<a class="linkdiscreto" href="#subtitulo_0_nota_1"> [ 🔙 ]</a></p>
+            <p id="nota_2">[2] "Entendemos por uma função <math><mi>f</mi></math> uma terna 
+                <math><mrow><mo>(</mo><mi>A</mi><ms>,&nbsp;</ms><mi>B</mi><ms>,&nbsp;</ms><mi>a</mi><mo>&#x21A6;</mo><mi>b</mi><mo>)</mo></mrow></math>, 
+                em que <math><mi>A</mi></math> e <math><mi>B</mi></math> são dois conjuntos e <math><mi>a</mi><mo>&#x21A6;</mo><mi>b</mi></math>, uma regra que nos permite associar a <em>cada</em> elemento <math><mi>a</mi></math> de <math><mi>A</mi></math> um <em>único</em> <math><mi>b</mi></math> de <math><mi>B</mi></math>. 
+                O conjunto <math><mi>A</mi></math> é o <em>domínio</em> de <math><mi>f</mi></math> e indica-se por <math><msub><mi>D</mi><mi>f</mi></msub></math>, assim <math><mrow><mi>A</mi><mo>=</mo><msub><mi>D</mi><mi>f</mi></msub></mrow></math>. 
+                O conjunto <math><mi>B</mi></math> é o <em>contradomínio</em> de <math><mi>f</mi></math>. O único <math><mi>b</mi></math> de <math><mi>B</mi></math> associado ao elemento <math><mi>a</mi></math> de <math><mi>A</mi></math> é indicado por <math><mrow><mi>f</mi><mo>(</mo><mi>a</mi><mo>)</mo></mrow></math> (leia: <math><mi>f</mi></math> de <math><mi>a</mi></math>); 
+                diremos que <math><mrow><mi>f</mi><mo>(</mo><mi>a</mi><mo>)</mo></mrow></math> é o <em>valor que <math><mi>f</mi></math> assume</em> em <math><mi>a</mi></math> ou que <math><mrow><mi>f</mi><mo>(</mo><mi>a</mi><mo>)</mo></mrow></math> é o <em>valor que <math><mi>f</mi></math> associa</em> a <math><mi>a</mi></math>." (GUIDORIZZI, 2013, p. 65).<a class="linkdiscreto" href="#subtitulo_0_nota_2"> [ 🔙 ]</a>
+            </p>
+            <p id="nota_3">[3] "Na literatura de AM é usual distinguir modelos generativos de modelos discriminativos. Modelos preditivos discriminativos são aqueles que aprendem uma fronteira de decisão. Modelos generativos, por outro lado, aprendem um modelo para cada classe." (FACELI et al., 2023, p. 52).<a class="linkdiscreto" href="#subtitulo_0_nota_3"> [ 🔙 ]</a></p>
             <a class="emoji" href="#top">[ 🔝 ]</a>
         </article>
     </main>
