@@ -100,6 +100,26 @@
                     A grosso modo, "em ambos os casos, o objetivo do aprendizado preditivo é aprender uma função <math><mover><mi>f</mi><mo>&#x005E;</mo></mover><ms>(</ms><mi>x</mi><mo stretchy="false">)</mo></math>, que mapeia as variáveis independentes, os atributos de entrada, na variável objetivo, o atributo alvo." (FACELI et al., 2023, p. 51).
                 </p>
             </div>
+            <div>
+                <h3>Métodos baseados em distâncias</h3>
+                <p>
+                    A proximidade entre as variáveis é o aspecto mais relevante, pois "a hipótese base é que dados similares tendem a estar concentrados em uma mesma região no espaço de entrada/características. De maneira alternativa, dados que não são similares estarão distantes entre si." (FACELI et al., 2023, p. 53). 
+                    A proximidade, que decorre da similitude, é constatada visualmente pelo agrupamento dos pontos na representação gráfica dos dados, que revela áreas com maior densidade de observações.
+                </p>
+                <p>
+                    A premissa fundamental é de que "objetos relacionados com o mesmo conceito são semelhantes entre si" (FACELI et al., 2023, p. 54), circunstância que evidencia que, em problemas de classificação, "[...] a distância entre os objetos está relacionada com a definição de suas classes." (FACELI et al., 2023, p. 53). 
+                    Logo, nesses casos, infere-se que objetos pertencentes à mesma classe estarão concentrados, isto é, próximos uns dos outros. Todavia, esses algoritmos podem ser empregados tanto tarefas de classificação quanto de regressão.
+                </p>
+                <p>
+                    Os principais são os <strong>algoritmos dos vizinhos mais próximos</strong>, bastante úteis a despeito do funcionamento simplificado. 
+                    Eles "[...] classifica[m] um novo objeto com base nos exemplos do conjunto de treinamento que são próximos a ele[s] [no espaço de entrada/características]" (FACELI et al., 2023, p. 54) e são considerados algoritmos <strong>preguiçosos (<em>lazy</em>)</strong> porque, na etapa de treinamento, não aprendem diretamente um modelo, 
+                    mas armazenam ("memorizam") o conjunto de dados de treino - os próprios objetos - para calcular as distâncias e, daí, realizar as predições. Por esse motivo, conclui-se que podem se tornar computacionalmente caros se utilizados com conjuntos muito grandes de dados.
+                </p>
+                <p>
+                    Em sua versão mais simples - algoritmo do <strong>1-Vizinho Mais Próximo (1-<em>Nearest Neighbor</em> - 1-NN)</strong> -, cada objeto constitui um ponto no espaço de entrada/características, tal que possibilite calcular o quanto distam entre si por alguma métrica, que usualmente é a distância euclidiana. 
+                    Por derivação lógica, tem-se o algoritmo <strong>K-NN (K-<em>Nearest Neighbors</em>)</strong>, em que <strong>K</strong> é um parâmetro - número inteiro positivo - que indica a quantidade de vizinhos a serem considerados.
+                </p>
+            </div>
         </article>
         <hr>
         <article>
@@ -118,6 +138,23 @@
                                 <ul>
                                     <li><strong>Classificação:</strong> atribuir um objeto a uma classe</li>
                                     <li><strong>Regressão:</strong> prever um valor numérico que que permita extrair a relação entre os atributos de entrada e o atributo alvo</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <strong>Métodos baseados em distâncias</strong>
+                                <li>Dados similares tendem a estar próximos uns dos outros no espaço de entrada/características</li>
+                                <ul>
+                                    <li>
+                                        <strong>Algoritmos</strong>
+                                        <ul>
+                                            <li>
+                                                <strong>Vizinhos mais próximos (1-NN / K-NN)</strong>
+                                                <ul><li>
+                                                    Estimam a posição de um novo objeto no espaço de características com base no exemplo do conjunto de treinamento mais próximo ou nos <strong>K</strong> exemplos mais próximos a ele, respectivamente
+                                                </li></ul>
+                                            </li>
+                                        </ul>
+                                    </li>
                                 </ul>
                             </li>
                         </ul>
