@@ -88,9 +88,10 @@ Ressalvados os direitos autorais dos detentores/produtores dos conteúdos utiliz
 
 ## Tabela de complementos
 
-| # | Área | Assunto | Status | Link |
-| :---: | :---: | :---: | :---: | :---: |
-| 1 | Neurociência | Plasticidade | ![Static Badge](https://img.shields.io/badge/Suspenso-grey) | [🔗](./complementos/plasticidade.md) |
+| # | Área / Assunto | Status | Link |
+| :---: | :---: | :---: | :---: |
+| 1 | Algoritmos | ![Static Badge](https://img.shields.io/badge/Previsto-grey) | [🔗](./complementos/01-algoritmos.md) |
+| 2 | Sistemas de Informação / Dado, informação e conhecimento | ![Static Badge](https://img.shields.io/badge/Previsto-grey) | [🔗](./complementos/02-si.md) |
 
 [[🔝](#acesso-rápido)]
 

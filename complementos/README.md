@@ -4,7 +4,7 @@ Textos complementares sobre assuntos periféricos e que não demandem estudo apr
 
 ## Tabela de complementos
 
-| # | Área | Assunto | Fase | Link |
-| :---: | :---: | :---: | :---: | :---: |
-| 1 | Neurociência | Plasticidade | ![Static Badge](https://img.shields.io/badge/Pesquisando-grey) | [🔗](./plasticidade.md) |
-<!-- | 2 | Neurociência | Sistema nervoso, encéfalo e neurônio | ![Static Badge](https://img.shields.io/badge/Não_iniciado-grey) | [🔗](./sistema_nervoso_encefalo_neuronio.md) | -->
+| # | Área / Assunto | Fase | Link |
+| :---: | :---: | :---: | :---: |
+| 1 | Algoritmos | ![Static Badge](https://img.shields.io/badge/Previsto-grey) | [🔗](./01-algoritmos.md) |
+| 2 | Sistemas de Informação / Dado, informação e conhecimento | ![Static Badge](https://img.shields.io/badge/Previsto-grey) | [🔗](./02-si.md) |
