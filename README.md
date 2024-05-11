@@ -9,7 +9,7 @@
 
 ## Acesso rápido
 
-| [Fichamentos](#tabela-de-fichamentos) | [Complementos](#tabela-de-complementos) | [Referências bibliográficas](#referências-bibliográficas)
+| [Fichamentos](#tabela-de-fichamentos) | [Complementos](#tabela-de-complementos) | [Referências bibliográficas](#referências-bibliográficas) |
 
 | [Descrição](#descrição) | [Justificativa](#justificativa) | [Objetivos](#objetivos) | [Sobre o Autor](#sobre-o-autor) | [Isenção de responsabilidade](#isenção-de-responsabilidade) | [Licença](#licença) |
 
