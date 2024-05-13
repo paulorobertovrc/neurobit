@@ -34,9 +34,9 @@ Em sua versão mais simples — algoritmo do **1-Vizinho Mais Próximo (1-*Neare
 
 Por derivação lógica, tem-se o algoritmo **K-NN (K-*Nearest Neighbors*)**, em que **K** é um parâmetro - número inteiro positivo — que indica a quantidade de vizinhos a serem considerados. A posição do novo objeto na superfície de decisão é estimada pela agregação dos rótulos dos **K** vizinhos mais próximos, que corresponde à moda em problemas de classificação e, em problemas de regressão, à média ou à mediana, conforme a função de custo adotada. Dentre as possíveis estratégias para a escolha do valor de **K**, destacam-se a estimativa por validação cruzada e a ponderação do impacto de cada vizinho em razão inversamente proporcional à distância em relação ao novo objeto.
 
-Esses algoritmos são sensíveis a ruídos, atributos redundantes ou irrelevantes, assim como ao incremento da dimensionalidade do conjunto de dados.
+Esses algoritmos são sensíveis a ruídos, atributos redundantes ou irrelevantes, assim como ao incremento da dimensionalidade do conjunto de dados: tornam-se claramente ineficientes porque, em regra, precisam calcular as distâncias do novo objeto em relação a cada exemplo do conjunto de treinamento memorizado, o que implica no aumento linear da complexidade de tempo desses algoritmos (O(n)). Estratégias como a criação de subconjuntos para atenuar ruídos ou excluir dados redundantes, desde que mantida a representatividade dos exemplos, podem ser utilizadas para contornar a ineficiência computacional. Há também algoritmos especialmente desenvolvidos para identificar no conjunto de treinamento os exemplos mais relevantes. Ademais, destaca-se a estrutura de árvores de busca binária multidimensionais (*k-dimensional trees - kd-trees*), que "[...] particiona[m] um espaço de busca k-dimensional utilizando os k eixos do sistema de coordenadas [...] definindo, recursivamente, o particionamento  do espaço dos dados em subespaços disjuntos." (FACELI et al., 2023, p. 59).
 
-A seguir, uma representação gráfica simples de cada um desses algoritmos:
+A seguir, representações gráficas simplificadas:
 
 ![Algoritmo 1-NN](../../imagens/19_am_faceli_algoritmo_1nn.png)
 Figura 19 - Gráfico ilustrativo do algoritmo 1-NN (FACELI et al., 2023, p. 55).
@@ -44,7 +44,11 @@ Figura 19 - Gráfico ilustrativo do algoritmo 1-NN (FACELI et al., 2023, p. 55).
 ![Algoritmo K-NN](../../imagens/20_am_faceli_algoritmo_knn.png)
 Figura 20 - Gráfico ilustrativo do algoritmo K-NN (FACELI et al., 2023, p. 56).
 
-#### 4.2 Raciocínio Baseado em Casos
+#### 4.2 Raciocínio Baseado em Casos (RBC)
+
+É uma metodologia de resolução de problemas apoiada no aproveitamento do conhecimento adquirido em ocasiões anteriores e como elas foram enfrentadas, no intuito de reaproveitar a experiência acumulada. Envolve a implementação de uma memória ou base de casos para armazenar essas informações, que serão oportunamente recuperadas, readequadas - se necessário - e reaplicadas a outros exemplos. É um método de aprendizado baseado em distância porque, assim como os algoritmos dos vizinhos mais próximos, aproveitam-se da similaridade - ou seja, da proximidade - de casos pretéritos para propor a solução de novos problemas. Diferentemente de outros métodos, não "[...] utilizam o conhecimento geral do domínio ou constroem relações entre problemas e soluções [...]" (FACELI et al., 2023, p. 60), mas focam no enfrentamento através de estratégias específicas, já conhecidas e sabidamente eficazes. Isso permite a constante atualização da base de conhecimento, que será alimentada a cada novo caso resolvido, e induz o aprendizado contínuo e incremental.
+
+Consoante proposto por Aamodt e Plaza (1994), o ciclo do RBC é composto pelas etapas de recuperação, reutilização, revisão e retenção.
 
 ## Principais tópicos
 
@@ -56,9 +60,13 @@ Figura 20 - Gráfico ilustrativo do algoritmo K-NN (FACELI et al., 2023, p. 56).
     - **Regressão:** prever um valor numérico que permita extrair a relação entre os atributos de entrada e o atributo alvo
 - **Métodos baseados em distâncias**
   - Dados similares tendem a estar próximos uns dos outros no espaço de entrada/características
-  - **Algoritmos**
-    - **Vizinhos mais próximos (1-NN / K-NN)**
-      - Estimam a posição de um novo objeto no espaço de características com base no exemplo do conjunto de treinamento mais próximo ou nos **K** exemplos mais próximos a ele, respectivamente
+  - **Algoritmos dos vizinhos mais próximos (1-NN / K-NN)**
+    - Estimam a posição de um novo objeto no espaço de características com base no exemplo do conjunto de treinamento mais próximo ou nos **K** exemplos mais próximos a ele, respectivamente.
+    - Baseados em memória ou preguiçosos (*lazy*)
+    - Lineares (complexidade de tempo O(n))
+  - **Raciocínio Baseado em Casos**
+    - Metodologia de AM que se propõe a resolver problemas com base na experiência acumulada em casos anteriores, a partir da recuperação, reutilização, revisão e retenção de informações em uma memória ou base de casos.
+    - O reaproveitamento de conhecimento específico, readequado se necessário, permite a constante atualização da base de conhecimento e o aprendizado incremental.
 
 ## Referências complementares
 

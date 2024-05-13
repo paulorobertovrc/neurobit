@@ -100,41 +100,52 @@
             </div>
             <div>
                 <h3>4. Métodos baseados em distâncias</h3>
-                <h4>4.1 Considerações gerais e algoritmos dos vizinhos mais próximos</h4>
-                <p>
-                    A proximidade entre as variáveis é o aspecto mais relevante, pois "a hipótese base é que dados similares tendem a estar concentrados em uma mesma região no espaço de entrada/características. De maneira alternativa, dados que não são similares estarão distantes entre si." (FACELI et al., 2023, p. 53). A proximidade, que decorre da similitude, é constatada visualmente pelo agrupamento dos pontos na representação gráfica dos dados, que revela áreas com maior densidade de observações.
-                </p>
-                <p>
-                    A premissa fundamental é de que "objetos relacionados com o mesmo conceito são semelhantes entre si" (FACELI et al., 2023, p. 54) — ou, na mesma linha intelectiva, "objetos com características semelhantes pertencem ao mesmo grupo" (FACELI et al., 2023, p. 57) — circunstância que evidencia que, em problemas de classificação, "[...] a distância entre os objetos está relacionada com a definição de suas classes." (FACELI et al., 2023, p. 53). Logo, nesses casos, infere-se que objetos pertencentes à mesma classe estarão concentrados, isto é, próximos uns dos outros. Todavia, esses algoritmos podem ser empregados tanto tarefas de classificação quanto de regressão.
-                </p>
-                <p>
-                    Os principais são os <strong>algoritmos dos vizinhos mais próximos</strong>, bastante úteis a despeito do funcionamento simplificado. 
-                    Eles "[...] classifica[m] um novo objeto com base nos exemplos do conjunto de treinamento que são próximos a ele[s] [no espaço de entrada/características]" (FACELI et al., 2023, p. 54) e são considerados algoritmos <strong>baseados em memória ou preguiçosos (<em>lazy</em>)</strong> porque, na etapa de treinamento, não aprendem diretamente um modelo, mas armazenam ("memorizam") o conjunto de dados de treino - os próprios objetos - para calcular as distâncias e, daí, realizar as predições. Por esse motivo, conclui-se que podem se tornar computacionalmente caros se utilizados com conjuntos muito grandes de dados.
-                </p>
-                <p>
-                    Em sua versão mais simples - algoritmo do <strong>1-Vizinho Mais Próximo (1-<em>Nearest Neighbor</em> - 1-NN)</strong> -, cada objeto constitui um ponto no espaço de entrada/características, tal que possibilite calcular o quanto distam entre si por alguma métrica, que usualmente é a distância euclidiana. Nesse caso, a superfície de decisão formará tantos poliedros quantos forem os objetos do conjunto de treinamento, os quais delimitarão a classe de cada objeto. Se os atributos forem qualitativos, pode ser necessário primeiramente convertê-los em valores numéricos. Além disso, se em escalas diferentes, a normalização pode ser necessária.
-                </p>
-                <p>
-                    Por derivação lógica, tem-se o algoritmo <strong>K-NN (K-<em>Nearest Neighbors</em>)</strong>, em que <strong>K</strong> é um parâmetro - número inteiro positivo — que indica a quantidade de vizinhos a serem considerados. A posição do novo objeto na superfície de decisão é estimada pela agregação dos rótulos dos <strong>K</strong> vizinhos mais próximos, que corresponde à moda em problemas de classificação e, em problemas de regressão, à média ou à mediana, conforme a função de custo adotada. Dentre as possíveis estratégias para a escolha do valor de <strong>K</strong>, destacam-se a estimativa por validação cruzada e a ponderação do impacto de cada vizinho em razão inversamente proporcional à distância em relação ao novo objeto.
-                </p>
-                <p>
-                    Esses algoritmos são sensíveis a ruídos, atributos redundantes ou irrelevantes, assim como ao incremento da dimensionalidade do conjunto de dados.
-                </p>
-                <p>
-                    A seguir, uma representação gráfica simples de cada um desses algoritmos:
-                    <div class="image-container">
-                        <figure>
-                            <img src="../../../imagens/19_am_faceli_algoritmo_1nn.png" alt="Algoritmo 1-NN">
-                            <figcaption class="legenda">Figura 19 - Gráfico ilustrativo do algoritmo 1-NN (FACELI et al., 2023, p. 55).</figcaption>
-                        </figure>
-                    </div>
-                    <div class="image-container">
-                        <figure>
-                            <img src="../../../imagens/20_am_faceli_algoritmo_knn.png" alt="Algoritmo K-NN">
-                            <figcaption class="legenda">Figura 20 - Gráfico ilustrativo do algoritmo K-NN (FACELI et al., 2023, p. 56).</figcaption>
-                        </figure>
-                    </div>
-                </p>
+                <div>
+                    <h4>4.1 Considerações gerais e algoritmos dos vizinhos mais próximos</h4>
+                    <p>
+                        A proximidade entre as variáveis é o aspecto mais relevante, pois "a hipótese base é que dados similares tendem a estar concentrados em uma mesma região no espaço de entrada/características. De maneira alternativa, dados que não são similares estarão distantes entre si." (FACELI et al., 2023, p. 53). A proximidade, que decorre da similitude, é constatada visualmente pelo agrupamento dos pontos na representação gráfica dos dados, que revela áreas com maior densidade de observações.
+                    </p>
+                    <p>
+                        A premissa fundamental é de que "objetos relacionados com o mesmo conceito são semelhantes entre si" (FACELI et al., 2023, p. 54) — ou, na mesma linha intelectiva, "objetos com características semelhantes pertencem ao mesmo grupo" (FACELI et al., 2023, p. 57) — circunstância que evidencia que, em problemas de classificação, "[...] a distância entre os objetos está relacionada com a definição de suas classes." (FACELI et al., 2023, p. 53). Logo, nesses casos, infere-se que objetos pertencentes à mesma classe estarão concentrados, isto é, próximos uns dos outros. Todavia, esses algoritmos podem ser empregados tanto tarefas de classificação quanto de regressão.
+                    </p>
+                    <p>
+                        Os principais são os <strong>algoritmos dos vizinhos mais próximos</strong>, bastante úteis a despeito do funcionamento simplificado. 
+                        Eles "[...] classifica[m] um novo objeto com base nos exemplos do conjunto de treinamento que são próximos a ele[s] [no espaço de entrada/características]" (FACELI et al., 2023, p. 54) e são considerados algoritmos <strong>baseados em memória ou preguiçosos (<em>lazy</em>)</strong> porque, na etapa de treinamento, não aprendem diretamente um modelo, mas armazenam ("memorizam") o conjunto de dados de treino - os próprios objetos - para calcular as distâncias e, daí, realizar as predições. Por esse motivo, conclui-se que podem se tornar computacionalmente caros se utilizados com conjuntos muito grandes de dados.
+                    </p>
+                    <p>
+                        Em sua versão mais simples - algoritmo do <strong>1-Vizinho Mais Próximo (1-<em>Nearest Neighbor</em> - 1-NN)</strong> -, cada objeto constitui um ponto no espaço de entrada/características, tal que possibilite calcular o quanto distam entre si por alguma métrica, que usualmente é a distância euclidiana. Nesse caso, a superfície de decisão formará tantos poliedros quantos forem os objetos do conjunto de treinamento, os quais delimitarão a classe de cada objeto. Se os atributos forem qualitativos, pode ser necessário primeiramente convertê-los em valores numéricos. Além disso, se em escalas diferentes, a normalização pode ser necessária.
+                    </p>
+                    <p>
+                        Por derivação lógica, tem-se o algoritmo <strong>K-NN (K-<em>Nearest Neighbors</em>)</strong>, em que <strong>K</strong> é um parâmetro - número inteiro positivo — que indica a quantidade de vizinhos a serem considerados. A posição do novo objeto na superfície de decisão é estimada pela agregação dos rótulos dos <strong>K</strong> vizinhos mais próximos, que corresponde à moda em problemas de classificação e, em problemas de regressão, à média ou à mediana, conforme a função de custo adotada. Dentre as possíveis estratégias para a escolha do valor de <strong>K</strong>, destacam-se a estimativa por validação cruzada e a ponderação do impacto de cada vizinho em razão inversamente proporcional à distância em relação ao novo objeto.
+                    </p>
+                    <p>
+                        Esses algoritmos são sensíveis a ruídos, atributos redundantes ou irrelevantes, assim como ao incremento da dimensionalidade do conjunto de dados: tornam-se claramente ineficientes porque, em regra, precisam calcular as distâncias do novo objeto em relação a cada exemplo do conjunto de treinamento memorizado, o que implica no aumento linear da complexidade de tempo desses algoritmos (O(n)). Estratégias como a criação de subconjuntos para atenuar ruídos ou excluir dados redundantes, desde que mantida a representatividade dos exemplos, podem ser utilizadas para contornar a ineficiência computacional. Há também algoritmos especialmente desenvolvidos para identificar no conjunto de treinamento os exemplos mais relevantes. Ademais, destaca-se a estrutura de árvores de busca binária multidimensionais (<em>k-dimensional trees - kd-trees</em>), que "[...] particiona[m] um espaço de busca k-dimensional utilizando os k eixos do sistema de coordenadas [...] definindo, recursivamente, o particionamento  do espaço dos dados em subespaços disjuntos." (FACELI et al., 2023, p. 59).
+                    </p>
+                    <p>
+                        A seguir, representações gráficas simplificadas:
+                        <div class="image-container">
+                            <figure>
+                                <img src="../../../imagens/19_am_faceli_algoritmo_1nn.png" alt="Algoritmo 1-NN">
+                                <figcaption class="legenda">Figura 19 - Gráfico ilustrativo do algoritmo 1-NN (FACELI et al., 2023, p. 55).</figcaption>
+                            </figure>
+                        </div>
+                        <div class="image-container">
+                            <figure>
+                                <img src="../../../imagens/20_am_faceli_algoritmo_knn.png" alt="Algoritmo K-NN">
+                                <figcaption class="legenda">Figura 20 - Gráfico ilustrativo do algoritmo K-NN (FACELI et al., 2023, p. 56).</figcaption>
+                            </figure>
+                        </div>
+                    </p>
+                </div>
+                <div>
+                    <h4>4.2 Raciocínio Baseado em Casos (RBC)</h4>
+                    <p>
+                        É uma metodologia de resolução de problemas apoiada no aproveitamento do conhecimento adquirido em ocasiões anteriores e como elas foram enfrentadas, no intuito de reaproveitar a experiência acumulada. Envolve a implementação de uma memória ou base de casos para armazenar essas informações, que serão oportunamente recuperadas, readequadas - se necessário - e reaplicadas a outros exemplos. É um método de aprendizado baseado em distância porque, assim como os algoritmos dos vizinhos mais próximos, aproveitam-se da similaridade - ou seja, da proximidade - de casos pretéritos para propor a solução de novos problemas. Diferentemente de outros métodos, não "[...] utilizam o conhecimento geral do domínio ou constroem relações entre problemas e soluções [...]" (FACELI et al., 2023, p. 60), mas focam no enfrentamento através de estratégias específicas, já conhecidas e sabidamente eficazes. Isso permite a constante atualização da base de conhecimento, que será alimentada a cada novo caso resolvido, e induz o aprendizado contínuo e incremental.
+                    </p>
+                    <p>
+                        Consoante proposto por Aamodt e Plaza (1994), o ciclo do RBC é composto pelas etapas de recuperação, reutilização, revisão e retenção.
+                    </p>
+                </div>
             </div>
         </article>
         <hr>
@@ -158,16 +169,26 @@
                             </li>
                             <li>
                                 <strong>Métodos baseados em distâncias</strong>
-                                <li>Dados similares tendem a estar próximos uns dos outros no espaço de entrada/características</li>
                                 <ul>
+                                    <li>Dados similares tendem a estar próximos uns dos outros no espaço de entrada/características</li>
                                     <li>
-                                        <strong>Algoritmos</strong>
+                                        <strong>Algoritmos dos vizinhos mais próximos (1-NN / K-NN)</strong>
                                         <ul>
                                             <li>
-                                                <strong>Vizinhos mais próximos (1-NN / K-NN)</strong>
-                                                <ul><li>
-                                                    Estimam a posição de um novo objeto no espaço de características com base no exemplo do conjunto de treinamento mais próximo ou nos <strong>K</strong> exemplos mais próximos a ele, respectivamente
-                                                </li></ul>
+                                                Estimam a posição de um novo objeto no espaço de características com base no exemplo do conjunto de treinamento mais próximo ou nos <strong>K</strong> exemplos mais próximos a ele, respectivamente.
+                                            </li>
+                                            <li>Baseados em memória ou preguiçosos (<em>lazy</em>)</li>
+                                            <li>Lineares (complexidade de tempo O(n))</li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <strong>Raciocínio Baseado em Casos</strong>
+                                        <ul>
+                                            <li>
+                                                Metodologia de AM que se propõe a resolver problemas com base na experiência acumulada em casos anteriores, a partir da recuperação, reutilização, revisão e retenção de informações em uma memória ou base de casos.
+                                            </li>
+                                            <li>
+                                                O reaproveitamento de conhecimento específico, readequado se necessário, permite a constante atualização da base de conhecimento e o aprendizado incremental.
                                             </li>
                                         </ul>
                                     </li>
