@@ -1,4 +1,4 @@
-# # 2.3 Capítulo 4 (p. 49/63)
+# # 2.4 Capítulo 4 (p. 49/63)
 
 ![Static Badge](https://img.shields.io/badge/Status-Concluído-grey?labelColor=31A8B8)
 
