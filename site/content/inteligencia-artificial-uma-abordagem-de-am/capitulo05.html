@@ -36,14 +36,22 @@
                 <h3> 5. Métodos probabilísticos</h3>
                 <div>
                     <h4 id="subtitulo_1_nota_1">5.1 Brevíssimas considerações sobre probabilidade <sup><a class="linknotas" href="#nota_1">[1]</a></sup></h4>
-                    <p id="subtitulo_1_nota_2">
-                        A probabilidade diz respeito a formas de quantificar a incerteza associada à previsão de resultados de eventos aleatórios. Sob uma perspectiva mais ampla, também à quantidade de surpresa esperada ao observar tais eventos e à quantidade de informação intrínseca àqueles eventos, referida como a entropia<sup><a class="linknotas" href="#nota_2">[2]</a></sup> de uma variável aleatória (Ross, 2010).
+                    <p id="subtitulo_1_nota_2_3">
+                        Em linhas gerais, a probabilidade pode ser definida como <strong>medida da frequência relativa</strong><sup><a class="linknotas" href="#nota_2">[2]</a></sup> de um evento<sup><a class="linknotas" href="#nota_3">[3]</a></sup> — isto é, a quantidade de vezes em que um determinado resultado ocorre ao longo de uma série experimental, desde que as condições nas quais foi observado se mantenham constantes — ou <strong>medida de crença</strong> de um indivíduo, decorrente de subjetivismo pessoal (Ross, 2010). Ela diz respeito a formas de quantificar a incerteza associada à previsão de resultados de eventos aleatórios e, sob uma perspectiva mais ampla, também à quantidade de surpresa esperada ao observar essas ocorrências e à quantidade de informação intrínseca a tais observações (Ross, 2010).
                     </p>
                     <p>
-                        Consoante a teoria da informação, a entropia de um sistema pode compreendida como uma métrica da [im]previsibilidade da ocorrência de determinado evento, tal que quanto maior a quantidade de informações disponíveis para ajustar a expectativa relacionada à observação, tão menor será a entropia e a incerteza associada; consequentemente, por outro lado, se houver poucas informações prévias para auxiliar na valoração da probabilidade, o aumento da entropia consequentemente importará em maior incerteza.
+                        <blockquote>
+                            "Parece razoável supor que a quantidade de surpresa causada pela informação de que E ocorreu deve depender da probabilidade de E. [...] [Logo,] a surpresa que alguém sente ao saber da ocorrência do evento E depende somente da probabilidade de E, [...] [então] não há surpresa ao ouvirmos que um evento cuja ocorrência é certa tenha de fato ocorrido [...] [, pois] quanto mais improvável é a ocorrência de um evento, maior é a surpresa causada por sua ocorrência." (ROSS, 2010, p. 501/502).
+                        </blockquote>
+                    </p>
+                    <p id="subtitulo_1_nota_4">
+                        Nesse sentido, a quantificação tanto da surpresa quanto da incerteza traduzem a mesma imprevisibilidade inerente ao contexto probabilístico e, exatamente por consubstanciarem enfoques distintos de uma mesma linha de raciocínio, podem ser vistas como a entropia<sup><a class="linknotas" href="#nota_4">[4]</a></sup> de uma variável aleatória (Ross, 2010) ou, em outras palavras, de um evento qualquer. "De fato, na teoria da informação, [...] é interpretada como a quantidade média de informação recebida quando o valor de [uma variável aleatória] X é observado." (ROSS, 2010, p. 504).
                     </p>
                     <p>
-                        De fato, "<em>uncertainty represents the reliability of our inferences.</em>" (DAVIS et al., 2020, p. 3).
+                        Consoante a teoria da informação, a entropia de um sistema pode ser compreendida como uma métrica da [im]previsibilidade da ocorrência de determinado evento, tal que quanto maior a quantidade de informações disponíveis para ajustar a expectativa relacionada à observação, tão menor será a entropia e a incerteza associadas; consequentemente, por outro lado, se houver poucas informações prévias para auxiliar na valoração da probabilidade, o aumento da entropia consequentemente importará em maior incerteza. Isso acontece porque ela é inversamente proporcional à interpretabilidade dos dados: cenários de maior entropia reduzem o valor informacional porque aumentam a desorganização (confusão), enquanto os de menor entropia favorecem a organização — e reduzem a confusão — dos dados, tornando-os mais interpretáveis e previsíveis.
+                    </p>
+                    <p>
+                        Não por outro motivo, "<em>uncertainty represents the reliability of our inferences.</em>" (DAVIS et al., 2020, p. 3).
                     </p>
                 </div>
             </div>
@@ -53,7 +61,34 @@
         <article>
             <h2>Principais tópicos</h2>
             <ul>
-                <!-- <li>.....</li> -->
+                <li>
+                    <strong>Probabilidade</strong>
+                    <ul>
+                        <li>
+                            Dois pontos de vista
+                            <ul>
+                                <li>Medida da frequência relativa de um evento</li>
+                                <li>Medida da crença de um indivíduo em relação a um evento</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong>Quantificação:</strong>
+                            <ul>
+                                <li>da incerteza associada à [im]previsibilidade de eventos aleatórios</li>
+                                <li>da surpresa esperada ao observar tais eventos</li>
+                                <li>da informação intrínseca à observação</li>
+                            </ul>
+                        </li>
+                        <li>
+                            Entropia
+                            <ul>
+                                <li>Medida da desordem de um sistema</li>
+                                <li>Organização, interpretabilidade e valor informacional dos dados</li>
+                                <li>Relacionada com a incerteza e a surpresa em cenários probabilísticos</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
             </ul>
             <p><a class="emoji" href="#top">[ 🔝 ]</a></p>
         </article>
@@ -75,7 +110,9 @@
         <article>
             <h2>Notas</h2>
             <p id="nota_1">[1] Este tópico é autoral, portanto, não consta no texto original do livro.<a class="linkdiscreto" href="#subtitulo_1_nota_1"> [ 🔙 ]</a></p>
-            <p id="nota_2">[2] Na teoria da informação, a entropia é uma propriedade que "[...] mede o grau de desordem de um sistema, e a forma de combater essa desordem se dá através da informação." (AUDY; CIDRAL, 2007, p. 37).<a class="linkdiscreto" href="#subtitulo_1_nota_2"> [ 🔙 ]</a></p>
+            <p id="nota_2">[2] Como uma métrica de frequência relativa, pode ser definida nos termos de "[...] um experimento, cujo espaço amostral é S, [que] seja realizado repetidamente em condições exatamente iguais. Para cada evento E do espaço amostral S, definimos n(E) como o número de vezes que o evento E ocorre nas n primeiras repetições do experimento. Então, P(E), a probabilidade do evento E, é definida como [...] a proporção (limite) de tempo em que E ocorre [...] ou como a frequência limite de E." (ROSS, 2010, p. 44).<a class="linkdiscreto" href="#subtitulo_1_nota_2_3"> [ 🔙 ]</a></p>
+            <p id="nota_3">[3] Denomina-se <strong>espaço amostral</strong> (S) o conjunto que presumidamente contenha a totalidade de resultados possíveis de um experimento, mesmo os incertos; e <strong>evento</strong> (E) qualquer subconjunto de S, tal que, "se o resultado do experimento estiver contido em E, então dizemos que E ocorreu." (ROSS, 2010, p. 40).<a class="linkdiscreto" href="#subtitulo_1_nota_2_3"> [ 🔙 ]</a></p>
+            <p id="nota_4">[4] Na teoria da informação, a entropia é uma propriedade que "[...] mede o grau de desordem de um sistema, e a forma de combater essa desordem se dá através da informação." (AUDY; CIDRAL, 2007, p. 37).<a class="linkdiscreto" href="#subtitulo_1_nota_4"> [ 🔙 ]</a></p>
             <a class="emoji" href="#top">[ 🔝 ]</a>
         </article>
     </main>
