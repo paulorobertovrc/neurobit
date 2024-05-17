@@ -38,11 +38,15 @@ KANDEL, Eric R.; SCHWARTZ, James H.; JESSELL, Thomas M.; SIEGELBAUM, Steven A.; 
 
 <!-- MORETTIN, Pedro Alberto; BUSSAB, Wilton de Oliveira. **Estatística básica**. 10. ed. São Paulo: SaraivaUni, 2023. -->
 
+ROSS, Sheldon. **Probabilidade: um curso moderno com aplicações**. Trad. Alberto Resende De Conti. 8 ed. Porto Alegre: Bookman, 2010.
+
 STAIR, Ralph M.; REYNOLDS, George W.; BRYANT, Joey; FRYDENBERG, Mark; GREENBERG, Hollis; SCHELL, George. **Princípios de Sistemas de Informação.** Trad. Edson Furmankiewicz. 14 ed. E-book. São Paulo: Cengage Learning, 2021.
 
 ### Materiais de apoio que foram consultados para tópicos específicos
 
 AGUIAR, Marcus A. M. **Sistemas dinâmicos**. Universidade Estadual de Campinas. 2005. Disponível em <https://sites.ifi.unicamp.br/aguiar/files/2014/10/sistemas-dinamicos.pdf>. Acesso em 02 fev. 2024.
+
+DAVIS, Josiah; ZHU, Jason; OLDFATHER, Jeremy; MACDONALD, Samual; TRZASKOWSKI, Maciej; KELSEN, Max. 2020. **Quantifying uncertainty in deep learning systems**. Disponível em <https://d1.awsstatic.com/APG/quantifying-uncertainty-in-deep-learning-systems.pdf>. Acesso em 18 mai. 2024.
 
 ENGEL, Paulo Martins. **Redes neurais: a rede RBF.** Disponível em <https://www.inf.ufrgs.br/~engel/data/media/file/cmp121/rbf.pdf>. Acesso em 14 jan. 2024.
 
