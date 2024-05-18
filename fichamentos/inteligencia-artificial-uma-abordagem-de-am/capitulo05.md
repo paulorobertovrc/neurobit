@@ -18,6 +18,22 @@ Consoante a teoria da informação, a entropia de um sistema pode ser compreendi
 
 Não por outro motivo, "*uncertainty represents the reliability of our inferences*" (DAVIS et al., 2020, p. 3).
 
+#### 5.2 Teorema de Bayes, métodos probabilísticos bayesianos e aprendizado bayesiano[^5]
+
+A **probabilidade condicional**[^6] avalia a probabilidade de que um evento ocorra, dada a ocorrência ou não de outro, já conhecido, a qual deve ser considerada para obter a probabilidade total. O cálculo da probabilidade condicionada é especialmente útil quando se trabalha com dados incompletos ou imprecisos.
+
+Os métodos probabilísticos bayesianos, sustentados no Teorema de Bayes, "[...] assumem que a probabilidade de um evento A, que pode ser uma classe [...], dado um evento B, que pode ser o conjunto de valores dos atributos de entrada [...], não depende apenas da relação entre A e B, mas também da probabilidade de observar A independentemente de observar B (Mitchell, 1997)." (FACELI et al., 2023, p. 64). No que pertine ao aprendizado de máquina, ele "[...] fornece uma maneira de calcular a probabilidade de um evento ou objeto pertencer a uma classe P(B|A) utilizando a probabilidade *a priori* da classe, P(A), a probabilidade de observar vários objetos com os mesmos valores de atributos que pertencem à classe, P(B|A), e a probabilidade de ocorrência desses objetos, P(B)." (FACELI et al., 2023, p. 64), e pode ser utilizado para resolver problemas em cenários probabilísticos.
+
+Noutras palavras, o Teorema de Bayes expressa a probabilidade *a posteriori*, que é a probabilidade *a priori*, inicialmente conhecida, sopesada pelas informações adicionais disponíveis — na verdade, pela verossimilhança da hipótese mais provável à luz das novas evidências, que servem para atualizar ou refinar a probabilidade inicial, em vez de desconstruí-la ou substituí-la por completo.
+
+"No aprendizado bayesiano, o valor de uma variável aleatória tem uma probabilidade associada. [...] O teorema de Bayes é usado para calcular a probabilidade *a posteriori* de um evento, dadas sua probabilidade *a priori* e a verossimilhança do novo dado." (FACELI et al., 2023, p. 66).
+
+A função que calcula a probabilidade condicionada e separa os exemplos em classes distintas é chamada **função discriminante**. "Dependendo das hipóteses propostas, diferentes funções discriminantes são obtidas, levando a diferentes classificadores" (FACELI et al., 2023, p. 66), e uma das formas de obtê-la é por meio da estimativa MAP (*Maximum A Posteriori*), que busca maximizar a eficiência preditiva ao combinar as informações disponíveis *a priori* com a hipótese mais provável (verossímil) dada a nova evidência observada.
+
+#### 5.3 Classificador *naive* Bayes
+
+#### 5.4 Redes Bayesianas
+
 ## Principais tópicos
 
 - **Probabilidade**
@@ -32,6 +48,13 @@ Não por outro motivo, "*uncertainty represents the reliability of our inference
     - Medida da desordem de um sistema
     - Organização, interpretabilidade e valor informacional dos dados
     - Relacionada com a incerteza e a surpresa em cenários probabilísticos
+- **Teorema de Bayes**
+  - É uma forma de calcular a probabilidade de ocorrência de um evento A dado um evento B que já ocorreu (P(A|B)), considerando **(a)** a probabilidade *a priori* de A (P(A)), isto é, a probabilidade de que A ocorra independentemente de B; **(b)** a probabilidade condicional de B dada a ocorrência de A (P(B|A)); e **(c)** a probabilidade total de B (P(B)), que consiste **(c.1)** novamente na probabilidade *a priori* de A e na probabilidade de B dado A, acrescida **(c.2)** da probabilidade de que A não ocorra, mas B ocorra independentemente de A.
+  - É uma forma de ajustar a probabilidade de A em relação a B, considerando novas evidências de B, sem descartar a probabilidade inicial de A, que ao invés disso é atualizada pela probabilidade de B dado A e pela probabilidade total de B.
+- **Aprendizado bayesiano**
+  - O valor de uma variável aleatória é estimado a partir da probabilidade *a priori* da classe (evento) e da probabilidade de que novos objetos pertençam àquela classe, considerando as informações disponíveis (verossimilhança).
+  - Dados imprecisos ou incompletos
+  - Função discriminante
 
 ## Referências complementares
 
