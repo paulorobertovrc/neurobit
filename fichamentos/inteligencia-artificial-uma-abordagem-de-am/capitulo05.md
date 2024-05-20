@@ -32,6 +32,16 @@ A função que calcula a probabilidade condicionada e separa os exemplos em clas
 
 #### 5.3 Classificador *naive* Bayes
 
+É um algoritmo que, aplicando o Teorema de Bayes, classifica objetos a partir do cálculo da probabilidade individual de cada atributo, assumindo serem independentes entre si e em relação à classe. Presume-se que a probabilidade de que o exemplo, assim considerado como um conjunto de atributos, pertença à classe é proporcional ao produto das probabilidades dos atributos individualmente considerados, isto é, de que cada um deles ocorra em objetos daquela classe.
+
+No tocante à implementação, as probabilidades são calculadas durante o treinamento por meio do uso extensivo de contadores: um para a probabilidade *a priori* de cada classe; outros tantos quantos forem os atributos qualitativos por classe; e para os atributos quantitativos, se previamente discretizados, deverá haver um contador por intervalo para cada classe. Alternativamente, é possível supor que os atributos quantitativos possuam determinada distribuição, comumente a normal/gaussiana, o que a literatura aponta menos eficiente em comparação com a discretização (Dougherty et al., 1995; Domingos e Pazzini, 1997, apud Faceli et al., 2023), porque não necessariamente tal assunção será verdadeira.
+
+De modo geral, são destacados dentre os aspectos positivos do algoritmo a eficiência na indução do modelo, facilidade de implementação, bom desempenho em cenários variados, ainda que haja alguma correlação entre atributos, boa interpretabilidade de resultados, pois "[...] resume a variabilidade do conjunto de dados em tabelas de contingência, e assume que estas são suficientes para distinguir entre as classes" (FACELI et al., 2023, p. 71), e a capacidade de lidar com dados incompletos ou imprecisos, "isso porque [supondo um problema de classificação binária] o atributo contribuirá igualmente na previsão das duas classes e os outros atributos é que determinarão a classificação final." (FACELI et al., 2023, p. 71).
+
+Já como aspectos negativos, destaca-se a sensibilidade à presença de atributos redundantes, que exercerão maior influência sobre a classificação porque "[...] o NB desconsidera a relação entre os atributos, tratando-os como independentes" (FACELI et al., 2023, p. 71) e as peculiaridades inerentes aos atributos quantitativos. Ademais, "frequentemente, os valores de probabilidade obtidos pelo NB não são realistas. Contudo, eles fornecem um bom ranqueamento, de maneira que a regra do máximo *a posteriori* pode ser aplicada com sucesso." (FACELI et al., 2023, p. 71).
+
+Há diversas implementações alternativas desse algoritmo, desenvolvidas para contornar as limitações e otimizar o desempenho do classificador, como o *naive* Bayes hierárquico, a árvore de *naive* Bayes, o semi-*naive* Bayes, o *naive* Bayes construtivo, o Bayes Flexível e o Linear Bayes, os quais podem apresentar desempenho superior, especialmente, em cenários específicos.
+
 #### 5.4 Redes Bayesianas
 
 ## Principais tópicos
@@ -55,6 +65,8 @@ A função que calcula a probabilidade condicionada e separa os exemplos em clas
   - O valor de uma variável aleatória é estimado a partir da probabilidade *a priori* da classe (evento) e da probabilidade de que novos objetos pertençam àquela classe, considerando as informações disponíveis (verossimilhança).
   - Dados imprecisos ou incompletos
   - Função discriminante
+- **Classificador *naive* Bayes**
+  - A classificação resulta do produto das probabilidades individuais de cada atributo, que se presumem independentes entre si e em relação à classe.
 
 ## Referências complementares
 
