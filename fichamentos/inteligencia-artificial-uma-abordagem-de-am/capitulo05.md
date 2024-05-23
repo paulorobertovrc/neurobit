@@ -32,7 +32,7 @@ A função que calcula a probabilidade condicionada e separa os exemplos em clas
 
 #### 5.3 Classificador *naive* Bayes
 
-É um algoritmo que, aplicando o Teorema de Bayes, classifica objetos a partir do cálculo da probabilidade individual de cada atributo, assumindo serem independentes entre si e em relação à classe. Presume-se que a probabilidade de que o exemplo, assim considerado como um conjunto de atributos, pertença à classe é proporcional ao produto das probabilidades dos atributos individualmente considerados, isto é, de que cada um deles ocorra em objetos daquela classe.
+É um algoritmo que, aplicando o Teorema de Bayes, classifica objetos a partir do cálculo da probabilidade individual de cada atributo, assumindo serem independentes entre si e em relação à classe. Presume-se que a probabilidade de que o exemplo, assim considerado como um conjunto de atributos, pertença à classe é proporcional ao produto das probabilidades dos atributos individualmente considerados, isto é, de que cada um deles ocorra em objetos daquela classe. Essa característica faz com que não seja uma boa opção em cenários que envolvam atributos interdependentes ou em que seja importante a busca e/ou análise de correlações.
 
 No tocante à implementação, as probabilidades são calculadas durante o treinamento por meio do uso extensivo de contadores: um para a probabilidade *a priori* de cada classe; outros tantos quantos forem os atributos qualitativos por classe; e para os atributos quantitativos, se previamente discretizados, deverá haver um contador por intervalo para cada classe. Alternativamente, é possível supor que os atributos quantitativos possuam determinada distribuição, comumente a normal/gaussiana, o que a literatura aponta menos eficiente em comparação com a discretização (Dougherty et al., 1995; Domingos e Pazzini, 1997, apud Faceli et al., 2023), porque não necessariamente tal assunção será verdadeira.
 
@@ -43,6 +43,8 @@ Já como aspectos negativos, destaca-se a sensibilidade à presença de atributo
 Há diversas implementações alternativas desse algoritmo, desenvolvidas para contornar as limitações e otimizar o desempenho do classificador, como o *naive* Bayes hierárquico, a árvore de *naive* Bayes, o semi-*naive* Bayes, o *naive* Bayes construtivo, o Bayes Flexível e o Linear Bayes, os quais podem apresentar desempenho superior, especialmente, em cenários específicos.
 
 #### 5.4 Redes Bayesianas
+
+Os modelos gráficos probabilísticos, dentre os quais as redes Bayesianas, "[...] utilizam o conceito de independência condicional entre variáveis para obter um equilíbrio entre o número de parâmetros a calcular e a representação de dependências entre as variáveis. Esses modelos representam a distribuição de probabilidade conjunta de um grupo de variáveis aleatórias em um domínio específico" (FACELI et al., 2023, p. 72) e podem ser empregados em tarefas que vão "[...] desde [a] previsão, em que se pretende obter o resultado mais provável para os dados de entrada, até o diagnóstico, em que se pretende obter as causas mais prováveis para os efeitos observados." (FACELI et al., 2023, p. 75).
 
 ## Principais tópicos
 
@@ -67,6 +69,7 @@ Há diversas implementações alternativas desse algoritmo, desenvolvidas para c
   - Função discriminante
 - **Classificador *naive* Bayes**
   - A classificação resulta do produto das probabilidades individuais de cada atributo, que se presumem independentes entre si e em relação à classe.
+  - Incapaz de lidar com atributos interdependentes
 
 ## Referências complementares
 
