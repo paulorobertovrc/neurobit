@@ -12,15 +12,17 @@ Em linhas gerais, a probabilidade pode ser definida como **medida da frequência
 
 >"Parece razoável supor que a quantidade de surpresa causada pela informação de que E ocorreu deve depender da probabilidade de E. [...] [Logo,] a surpresa que alguém sente ao saber da ocorrência do evento E depende somente da probabilidade de E, [...] [então] não há surpresa ao ouvirmos que um evento cuja ocorrência é certa tenha de fato ocorrido [...] [, pois] quanto mais improvável é a ocorrência de um evento, maior é a surpresa causada por sua ocorrência." (ROSS, 2010, p. 501/502).
 
-Nesse sentido, a quantificação tanto da surpresa quanto da incerteza traduzem a mesma imprevisibilidade inerente ao contexto probabilístico e, exatamente por consubstanciarem enfoques distintos de uma mesma linha de raciocínio, podem ser vistas como a entropia[^4] de uma variável aleatória (Ross, 2010) ou, em outras palavras, de um evento qualquer. "De fato, na teoria da informação, [...] é interpretada como a quantidade média de informação recebida quando o valor de [uma variável aleatória] X é observado." (ROSS, 2010, p. 504).
+Nesse sentido, a quantificação tanto da surpresa quanto da incerteza traduzem a mesma imprevisibilidade inerente ao contexto probabilístico e, exatamente por consubstanciarem enfoques distintos de uma mesma linha de raciocínio, podem ser vistas como a entropia[^4] de uma variável aleatória[^5] (Ross, 2010) ou, em outras palavras, de um evento qualquer. "De fato, na teoria da informação, [...] é interpretada como a quantidade média de informação recebida quando o valor de [uma variável aleatória] X é observado." (ROSS, 2010, p. 504). O **valor esperado** ou a **esperança** de uma variável aleatória "[...] é uma média ponderada dos possíveis valores que [a variável aleatória] X pode receber, com cada valor sendo ponderado pela probabilidade de que [a variável aleatória] X seja igual a esse valor." (ROSS, 2010, p. 160).
 
 Consoante a teoria da informação, a entropia de um sistema pode ser compreendida como uma métrica da [im]previsibilidade da ocorrência de determinado evento, tal que quanto maior a quantidade de informações disponíveis para ajustar a expectativa relacionada à observação, tão menor será a entropia e a incerteza associadas; consequentemente, por outro lado, se houver poucas informações prévias para auxiliar na valoração da probabilidade, o aumento da entropia consequentemente importará em maior incerteza. Isso acontece porque ela é inversamente proporcional à interpretabilidade dos dados: cenários de maior entropia reduzem o valor informacional porque aumentam a desorganização (confusão), enquanto os de menor entropia favorecem a organização — e reduzem a confusão — dos dados, tornando-os mais interpretáveis e previsíveis.
 
 Não por outro motivo, "*uncertainty represents the reliability of our inferences*" (DAVIS et al., 2020, p. 3).
 
-#### 5.2 Teorema de Bayes, métodos probabilísticos bayesianos e aprendizado bayesiano[^5]
+Entretanto, é valioso observar que, "frequentemente, quando realizamos um experimento, estamos interessados principalmente em alguma função do resultado e não no resultado em si." (ROSS, 2010, p. 151).
 
-A **probabilidade condicional**[^6] avalia a probabilidade de que um evento ocorra, dada a ocorrência ou não de outro, já conhecido, a qual deve ser considerada para obter a probabilidade total. O cálculo da probabilidade condicionada é especialmente útil quando se trabalha com dados incompletos ou imprecisos.
+#### 5.2 Teorema de Bayes, métodos probabilísticos bayesianos e aprendizado bayesiano[^6]
+
+A **probabilidade condicional**[^7] avalia a probabilidade de que um evento ocorra, dada a ocorrência ou não de outro, já conhecido, a qual deve ser considerada para obter a probabilidade total. O cálculo da probabilidade condicionada é especialmente útil quando se trabalha com dados incompletos ou imprecisos.
 
 Os métodos probabilísticos bayesianos, sustentados no Teorema de Bayes, "[...] assumem que a probabilidade de um evento A, que pode ser uma classe [...], dado um evento B, que pode ser o conjunto de valores dos atributos de entrada [...], não depende apenas da relação entre A e B, mas também da probabilidade de observar A independentemente de observar B (Mitchell, 1997)." (FACELI et al., 2023, p. 64). No que pertine ao aprendizado de máquina, ele "[...] fornece uma maneira de calcular a probabilidade de um evento ou objeto pertencer a uma classe P(B|A) utilizando a probabilidade *a priori* da classe, P(A), a probabilidade de observar vários objetos com os mesmos valores de atributos que pertencem à classe, P(B|A), e a probabilidade de ocorrência desses objetos, P(B)." (FACELI et al., 2023, p. 64), e pode ser utilizado para resolver problemas em cenários probabilísticos.
 
@@ -46,6 +48,8 @@ Há diversas implementações alternativas desse algoritmo, desenvolvidas para c
 
 Os modelos gráficos probabilísticos, dentre os quais as redes Bayesianas, "[...] utilizam o conceito de independência condicional entre variáveis para obter um equilíbrio entre o número de parâmetros a calcular e a representação de dependências entre as variáveis. Esses modelos representam a distribuição de probabilidade conjunta de um grupo de variáveis aleatórias em um domínio específico" (FACELI et al., 2023, p. 72) e podem ser empregados em tarefas que vão "[...] desde [a] previsão, em que se pretende obter o resultado mais provável para os dados de entrada, até o diagnóstico, em que se pretende obter as causas mais prováveis para os efeitos observados." (FACELI et al., 2023, p. 75).
 
+Nesse sentido, duas **variáveis aleatórias** são **independentes**[^8] se a probabilidade de uma não influenciar a de outra — ou seja, o valor de uma não serve para sugerir o de outra —; **condicionalmente independentes** se essa condição subsistir na presença de uma terceira variável — isto é, as probabilidades condicionais não se influenciam mutuamente, de modo que a probabilidade da primeira, dada a segunda ou dada esta e a terceira, é a mesma; e, contrariamente, são **dependentes** aquelas que não forem independentes (Ross, 2010), ou seja, quando a probabilidade de ocorrência de uma mudar a da outra[^9].
+
 ## Principais tópicos
 
 - **Probabilidade**
@@ -56,10 +60,17 @@ Os modelos gráficos probabilísticos, dentre os quais as redes Bayesianas, "[..
     - da incerteza associada à [im]previsibilidade de eventos aleatórios
     - da surpresa esperada ao observar tais eventos
     - da informação intrínseca à observação
-  - Entropia
-    - Medida da desordem de um sistema
-    - Organização, interpretabilidade e valor informacional dos dados
-    - Relacionada com a incerteza e a surpresa em cenários probabilísticos
+  - **Conceitos abordados**
+    - Espaço amostral, evento e probabilidade
+    - Esperança ou valor esperado
+    - **Entropia**
+      - Medida da desordem de um sistema
+      - Organização, interpretabilidade e valor informacional dos dados
+      - Relacionada com a incerteza e a surpresa em cenários probabilísticos
+    - **Variável aleatória**
+      - Função definida no espaço amostral
+      - Discretas e contínuas
+      - Independentes, condicionalmente independentes e dependentes
 - **Teorema de Bayes**
   - É uma forma de calcular a probabilidade de ocorrência de um evento A dado um evento B que já ocorreu (P(A|B)), considerando **(a)** a probabilidade *a priori* de A (P(A)), isto é, a probabilidade de que A ocorra independentemente de B; **(b)** a probabilidade condicional de B dada a ocorrência de A (P(B|A)); e **(c)** a probabilidade total de B (P(B)), que consiste **(c.1)** novamente na probabilidade *a priori* de A e na probabilidade de B dado A, acrescida **(c.2)** da probabilidade de que A não ocorra, mas B ocorra independentemente de A.
   - É uma forma de ajustar a probabilidade de A em relação a B, considerando novas evidências de B, sem descartar a probabilidade inicial de A, que ao invés disso é atualizada pela probabilidade de B dado A e pela probabilidade total de B.
@@ -87,8 +98,14 @@ ROSS, Sheldon. **Probabilidade: um curso moderno com aplicações**. Trad. Alber
 
 [^3]: Denomina-se **espaço amostral** (S) o conjunto que presumidamente contenha a totalidade de resultados possíveis de um experimento, mesmo os incertos; e **evento** (E) qualquer subconjunto de S, tal que, "se o resultado do experimento estiver contido em E, então dizemos que E ocorreu." (ROSS, 2010, p. 40).
 
-[^4]: Na teoria da informação, a entropia é uma propriedade que "[...] mede o grau de desordem de um sistema, e a forma de combater essa desordem se dá através da informação." (AUDY; CIDRAL, 2007, p. 37).
+[^4]: Na teoria da informação, a **entropia** é uma propriedade que "[...] mede o grau de desordem de um sistema, e a forma de combater essa desordem se dá através da informação." (AUDY; CIDRAL, 2007, p. 37).
 
-[^5]: No livro, equivalente à introdução do capítulo 5 e à seção 5.1 (aprendizado bayesiano).
+[^5]: **Variáveis aleatórias** são "[...] grandezas de interesse, ou, mais formalmente, [...] funções reais definidas no espaço amostral [...]. Como o valor da variável aleatória é determinado pelo resultado do experimento, podemos atribuir probabilidades aos possíveis valores da variável aleatória" (ROSS, 2010, p. 151), que podem ser **discretas** — há uma quantidade máxima (finita) e [infinitamente] contável de valores possíveis — ou [absolutamente] **contínuas** — há infinitos e incontáveis valores que podem ser assumidos ou, inversamente, cuja probabilidade de que assumam determinado valor específico é nula (Ross, 2010).
 
-[^6]: A "[...] probabilidade condicional de que E ocorra dado que F ocorreu [...] é representada por P(E | F). [...] [Noutras palavras,] se o evento F ocorrer, então, para que E ocorra, é necessário que a ocorrência real seja um ponto tanto em E quanto em F; isto é, ela deve estar em EF. Agora, como sabemos que F ocorreu, tem-se que F se torna nosso novo, ou reduzido, espaço amostral; com isso, a probabilidade de que o evento EF ocorra será igual à probabilidade de EF relativa à probabilidade de F." (ROSS, 2010, p. 82).
+[^6]: No livro, equivalente à introdução do capítulo 5 e à seção 5.1 (aprendizado bayesiano).
+
+[^7]: A "[...] probabilidade condicional de que E ocorra dado que F ocorreu [...] é representada por P(E | F). [...] [Noutras palavras,] se o evento F ocorrer, então, para que E ocorra, é necessário que a ocorrência real seja um ponto tanto em E quanto em F; isto é, ela deve estar em EF. Agora, como sabemos que F ocorreu, tem-se que F se torna nosso novo, ou reduzido, espaço amostral; com isso, a probabilidade de que o evento EF ocorra será igual à probabilidade de EF relativa à probabilidade de F." (ROSS, 2010, p. 82).
+
+[^8]: Diz-se que duas variáveis aleatórias "[...] X e Y são independentes se o conhecimento do valor de um não mudar a distribuição do outro. Variáveis aleatórias que não são independentes são chamadas de dependentes." (ROSS, 2010, p. 293). Observe-se que a "independência é uma relação simétrica. As variáveis aleatórias X e Y são independentes se sua função densidade conjunta (ou função de probabilidade conjunta, no caso discreto) é o produto de suas funções densidade (ou de probabilidade) individuais. Portanto, dizer que X é independente de Y é equivalente a dizer que Y é independente de X — ou somente que X e Y são independentes. Como resultado, ao considerar se X é independente ou não de Y em situações em que não é intuitivo saber que o valor de Y não muda as probabilidades relacionadas a X, pode ser útil inverter os papeis de X e Y e perguntar se Y é independente de X." (ROSS, 2010, p. 304).
+
+[^9]: Sobre **eventos independentes**, a P(E|F), isto é, "[...] a probabilidade condicional de E dado F, não é geralmente igual [...] [à] probabilidade incondicional de E [P(E)]. Em outras palavras, o conhecimento de que F ocorreu geralmente muda a chance de ocorrência de E. Nos casos especiais em que P(E|F) é de fato igual a P(E), dizemos que E é independente de F. Isto é, **E é independente de F se o conhecimento de que F ocorreu não mudar a probabilidade de ocorrência de E.**" (ROSS, 2010, p. 106, destaquei).
