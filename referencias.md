@@ -40,6 +40,8 @@ KANDEL, Eric R.; SCHWARTZ, James H.; JESSELL, Thomas M.; SIEGELBAUM, Steven A.; 
 
 ROSS, Sheldon. **Probabilidade: um curso moderno com aplicações**. Trad. Alberto Resende De Conti. 8 ed. Porto Alegre: Bookman, 2010.
 
+SIPSER, Michael. **Introdução à teoria da computação**. Trad. Rui José Guerra Barreto de Queiroz. 2 ed. São Paulo: Cengage Learning, 2021.
+
 STAIR, Ralph M.; REYNOLDS, George W.; BRYANT, Joey; FRYDENBERG, Mark; GREENBERG, Hollis; SCHELL, George. **Princípios de Sistemas de Informação.** Trad. Edson Furmankiewicz. 14 ed. E-book. São Paulo: Cengage Learning, 2021.
 
 ### Materiais de apoio que foram consultados para tópicos específicos

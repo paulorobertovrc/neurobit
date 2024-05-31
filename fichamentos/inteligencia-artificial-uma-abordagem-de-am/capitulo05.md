@@ -44,11 +44,13 @@ Já como aspectos negativos, destaca-se a sensibilidade à presença de atributo
 
 Há diversas implementações alternativas desse algoritmo, desenvolvidas para contornar as limitações e otimizar o desempenho do classificador, como o *naive* Bayes hierárquico, a árvore de *naive* Bayes, o semi-*naive* Bayes, o *naive* Bayes construtivo, o Bayes Flexível e o Linear Bayes, os quais podem apresentar desempenho superior, especialmente, em cenários específicos.
 
-#### 5.4 Redes Bayesianas
+#### 5.4 Redes bayesianas
 
-Os modelos gráficos probabilísticos, dentre os quais as redes Bayesianas, "[...] utilizam o conceito de independência condicional entre variáveis para obter um equilíbrio entre o número de parâmetros a calcular e a representação de dependências entre as variáveis. Esses modelos representam a distribuição de probabilidade conjunta de um grupo de variáveis aleatórias em um domínio específico" (FACELI et al., 2023, p. 72) e podem ser empregados em tarefas que vão "[...] desde [a] previsão, em que se pretende obter o resultado mais provável para os dados de entrada, até o diagnóstico, em que se pretende obter as causas mais prováveis para os efeitos observados." (FACELI et al., 2023, p. 75).
+"Os modelos gráficos probabilísticos, ou redes bayesianas (Pearl, 1988), utilizam o conceito de independência condicional entre variáveis para obter um equilíbrio entre o número de parâmetros a calcular e a representação de dependências entre as variáveis. Esses modelos representam a distribuição de probabilidade conjunta de um grupo de variáveis aleatórias em um domínio específico" (FACELI et al., 2023, p. 72) e podem ser empregados em tarefas que vão "[...] desde [a] previsão, em que se pretende obter o resultado mais provável para os dados de entrada, até o diagnóstico, em que se pretende obter as causas mais prováveis para os efeitos observados." (FACELI et al., 2023, p. 75).
 
-Nesse sentido, duas **variáveis aleatórias** são **independentes**[^8] se a probabilidade de uma não influenciar a de outra — ou seja, o valor de uma não serve para sugerir o de outra —; **condicionalmente independentes** se essa condição subsistir na presença de uma terceira variável — isto é, as probabilidades condicionais não se influenciam mutuamente, de modo que a probabilidade da primeira, dada a segunda ou dada esta e a terceira, é a mesma; e, contrariamente, são **dependentes** aquelas que não forem independentes (Ross, 2010), ou seja, quando a probabilidade de ocorrência de uma mudar a da outra[^9].
+Nesse sentido, duas **variáveis aleatórias** são **independentes**[^8] se a probabilidade de uma não influenciar a de outra — ou seja, o valor de uma não serve para sugerir o de outra —; **condicionalmente independentes** se essa condição subsistir na presença de uma terceira variável, tal que a probabilidade da primeira dada a segunda e a terceira é igual à da primeira dada unicamente a terceira — isto é, as probabilidades condicionais não se influenciam mutuamente, de modo que a da primeira terá o mesmo valor na presença de apenas uma delas ou de ambas; e, contrariamente, são **dependentes** aquelas que não forem independentes (Ross, 2010), ou seja, quando a probabilidade de ocorrência de uma mudar a da outra[^9].
+
+Uma rede Bayesiana utiliza um grafo acíclico direcionado[^10] (*directed acyclic graph* - DAG) para representar as variáveis aleatórias preditivas/independentes, conjuntamente denominadas Pais da variável alvo/dependente, que correspondem a seus nós ou vértices, e a correlação ou influência entre eles, consubstanciadas em suas arestas ou linhas. Esse elemento estrutural é acompanhado pelo conjunto de tabelas de probabilidade condicional, formado pelas probabilidades condicionais de cada variável aleatória dados os nós parentais, em se tratando de valores discretos.
 
 ## Principais tópicos
 
@@ -81,6 +83,13 @@ Nesse sentido, duas **variáveis aleatórias** são **independentes**[^8] se a p
 - **Classificador *naive* Bayes**
   - A classificação resulta do produto das probabilidades individuais de cada atributo, que se presumem independentes entre si e em relação à classe.
   - Incapaz de lidar com atributos interdependentes
+- **Redes bayesianas**
+  - Modelos gráficos probabilísticos
+  - Independência condicional entre variáveis
+  - Grafo acíclico direcionado
+    - Nós: variáveis aleatórias
+    - Arestas: influência ou correlação entre as variáveis aleatórias
+  - Tabelas de probabilidade condicional
 
 ## Referências complementares
 
@@ -89,6 +98,8 @@ AUDY, Jorge L N.; ANDRADE, Gilberto K.; CIDRAL, Alexandre. **Fundamentos de sist
 DAVIS, Josiah; ZHU, Jason; OLDFATHER, Jeremy; MACDONALD, Samual; TRZASKOWSKI, Maciej; KELSEN, Max. 2020. **Quantifying uncertainty in deep learning systems**. Disponível em <https://d1.awsstatic.com/APG/quantifying-uncertainty-in-deep-learning-systems.pdf>. Acesso em 18 mai. 2024.
 
 ROSS, Sheldon. **Probabilidade: um curso moderno com aplicações**. Trad. Alberto Resende De Conti. 8 ed. Porto Alegre: Bookman, 2010.
+
+SIPSER, Michael. **Introdução à teoria da computação**. Trad. Rui José Guerra Barreto de Queiroz. 2 ed. São Paulo: Cengage Learning, 2021.
 
 ## Notas
 
@@ -109,3 +120,5 @@ ROSS, Sheldon. **Probabilidade: um curso moderno com aplicações**. Trad. Alber
 [^8]: Diz-se que duas variáveis aleatórias "[...] X e Y são independentes se o conhecimento do valor de um não mudar a distribuição do outro. Variáveis aleatórias que não são independentes são chamadas de dependentes." (ROSS, 2010, p. 293). Observe-se que a "independência é uma relação simétrica. As variáveis aleatórias X e Y são independentes se sua função densidade conjunta (ou função de probabilidade conjunta, no caso discreto) é o produto de suas funções densidade (ou de probabilidade) individuais. Portanto, dizer que X é independente de Y é equivalente a dizer que Y é independente de X — ou somente que X e Y são independentes. Como resultado, ao considerar se X é independente ou não de Y em situações em que não é intuitivo saber que o valor de Y não muda as probabilidades relacionadas a X, pode ser útil inverter os papeis de X e Y e perguntar se Y é independente de X." (ROSS, 2010, p. 304).
 
 [^9]: Sobre **eventos independentes**, a P(E|F), isto é, "[...] a probabilidade condicional de E dado F, não é geralmente igual [...] [à] probabilidade incondicional de E [P(E)]. Em outras palavras, o conhecimento de que F ocorreu geralmente muda a chance de ocorrência de E. Nos casos especiais em que P(E|F) é de fato igual a P(E), dizemos que E é independente de F. Isto é, **E é independente de F se o conhecimento de que F ocorreu não mudar a probabilidade de ocorrência de E.**" (ROSS, 2010, p. 106, destaquei).
+
+[^10]: "Um **grafo não-direcionado**, ou simplesmente **grafo**, é um conjunto de pontos com linhas conectando alguns dos pontos. Os pontos são conhecidos como **nós** ou **vértices**, e as linhas são chamadas **arestas** [...]. Em um grafo $G$ que contém nós $i$ e $j$, o par $(i,j)$ representa a aresta que conecta $i$ e $j$. A ordem de $i$ e $j$ não importa em um grafo não-direcionado; portanto, os pares $(i,j)$ e $(j,i)$ representam a mesma aresta. Às vezes, descrevemos arestas com conjuntos em vez de pares, como em $\{i,j\}$, porque a ordem dos nós não é importante." (SIPSER, 2021, p. 10, destaques no original). Nesse sentido, "um **caminho** em um grafo é uma sequência de nós conectados por arestas. [...] Um caminho é um **ciclo**, se começa e termina no mesmo nó. [...] Se ele possui setas em vez de linhas, o grafo é um **grafo direcionado** [...]. Em um grafo direcionado, representamos uma aresta de $i$ para $j$ como um par $(i,j)$. A descrição formal de um grafo direcionado $G$ é $(V,E)$, onde $V$ é o conjunto de nós e $E$, o conjunto de arestas. [...] Um caminho no qual todas as setas apontam na mesma direção que seus passos é chamado **caminho direcionado**." (SIPSER, 2021, p. 12/13, destaques no original). Portanto, *mutatis mutandis*, o percurso entre os vértices de um **grafo acíclico direcionado** é unidirecional, ou seja, as arestas que os conectam têm setas indicativas da única direção possível do encadeamento, e não forma ciclos, de modo que o fluxo não termina no mesmo nó em que começou ou, noutras palavras, não retorna ao ponto de origem.

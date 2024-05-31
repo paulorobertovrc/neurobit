@@ -96,10 +96,13 @@
                 <div>
                     <h4>5.4 Redes Bayesianas</h4>
                     <p>
-                        Os modelos gráficos probabilísticos, dentre os quais as redes Bayesianas, "[...] utilizam o conceito de independência condicional entre variáveis para obter um equilíbrio entre o número de parâmetros a calcular e a representação de dependências entre as variáveis. Esses modelos representam a distribuição de probabilidade conjunta de um grupo de variáveis aleatórias em um domínio específico" (FACELI et al., 2023, p. 72) e podem ser empregados em tarefas que vão "[...] desde [a] previsão, em que se pretende obter o resultado mais provável para os dados de entrada, até o diagnóstico, em que se pretende obter as causas mais prováveis para os efeitos observados." (FACELI et al., 2023, p. 75).
+                        "Os modelos gráficos probabilísticos, ou redes bayesianas (Pearl, 1988), utilizam o conceito de independência condicional entre variáveis para obter um equilíbrio entre o número de parâmetros a calcular e a representação de dependências entre as variáveis. Esses modelos representam a distribuição de probabilidade conjunta de um grupo de variáveis aleatórias em um domínio específico" (FACELI et al., 2023, p. 72) e podem ser empregados em tarefas que vão "[...] desde [a] previsão, em que se pretende obter o resultado mais provável para os dados de entrada, até o diagnóstico, em que se pretende obter as causas mais prováveis para os efeitos observados." (FACELI et al., 2023, p. 75).
                     </p>
                     <p id="subtitulo_4_nota_8_9">
-                        Nesse sentido, duas <strong>variáveis aleatórias</strong> são <strong>independentes</strong></strong><sup><a class="linknotas" href="#nota_8">[8]</a></sup> se a probabilidade de uma não influenciar a de outra — ou seja, o valor de uma não serve para sugerir o de outra —; <strong>condicionalmente independentes</strong> se essa condição subsistir na presença de uma terceira variável — isto é, as probabilidades condicionais não se influenciam mutuamente, de modo que a probabilidade da primeira, dada a segunda ou dada esta e a terceira, é a mesma; e, contrariamente, são <strong>dependentes</strong> aquelas que não forem independentes (Ross, 2010), ou seja, quando a probabilidade de ocorrência de uma mudar a da outra</strong><sup><a class="linknotas" href="#nota_9">[9]</a></sup>.
+                        Nesse sentido, duas <strong>variáveis aleatórias</strong> são <strong>independentes</strong></strong><sup><a class="linknotas" href="#nota_8">[8]</a></sup> se a probabilidade de uma não influenciar a de outra — ou seja, o valor de uma não serve para sugerir o de outra —; <strong>condicionalmente independentes</strong> se essa condição subsistir na presença de uma terceira variável, tal que a probabilidade da primeira dada a segunda e a terceira é igual à da primeira dada unicamente a terceira — isto é, as probabilidades condicionais não se influenciam mutuamente, de modo que a da primeira terá o mesmo valor na presença de apenas uma delas ou de ambas; e, contrariamente, são <strong>dependentes</strong> aquelas que não forem independentes (Ross, 2010), ou seja, quando a probabilidade de ocorrência de uma mudar a da outra</strong><sup><a class="linknotas" href="#nota_9">[9]</a></sup>.
+                    </p>
+                    <p id="subtitulo_4_nota_10">
+                        Uma rede Bayesiana utiliza um grafo acíclico direcionado<sup><a class="linknotas" href="#nota_10">[10]</a></sup> (<em>directed acyclic graph</em> - DAG) para representar as variáveis aleatórias preditivas/independentes, conjuntamente denominadas Pais da variável alvo/dependente, que correspondem a seus nós ou vértices, e a correlação ou influência entre eles, consubstanciadas em suas arestas ou linhas. Esse elemento estrutural é acompanhado pelo conjunto de tabelas de probabilidade condicional, formado pelas probabilidades condicionais de cada variável aleatória dados os nós parentais, em se tratando de valores discretos.
                     </p>
                 </div>
             </div>
@@ -179,6 +182,21 @@
                         <li>Incapaz de lidar com atributos interdependentes</li>
                     </ul>
                 </li>
+                <li>
+                    <strong>Redes bayesianas</strong>
+                    <ul>
+                        <li>Modelos gráficos probabilísticos</li>
+                        <li>Independência condicional entre variáveis</li>
+                        <li>
+                            Grafo acíclico direcionado
+                            <ul>
+                                <li>Nós: variáveis aleatórias</li>
+                                <li>Arestas: influência ou correlação entre as variáveis aleatórias</li>
+                            </ul>
+                        </li>
+                        <li>Tabelas de probabilidade condicional</li>
+                    </ul>
+                </li>
             </ul>
             <p><a class="emoji" href="#top">[ 🔝 ]</a></p>
         </article>
@@ -194,6 +212,9 @@
             <p>
                 ROSS, Sheldon. <strong>Probabilidade: um curso moderno com aplicações</strong>. Trad. Alberto Resende De Conti. 8 ed. Porto Alegre: Bookman, 2010.
             </p>
+            <p>
+                SIPSER, Michael. <strong>Introdução à teoria da computação</strong>. Trad. Rui José Guerra Barreto de Queiroz. 2 ed. São Paulo: Cengage Learning, 2021.
+            </p>
             <a class="emoji" href="#top">[ 🔝 ]</a>
         </article>
         <hr>
@@ -208,6 +229,7 @@
             <p id="nota_7">[7] A "[...] probabilidade condicional de que E ocorra dado que F ocorreu [...] é representada por P(E | F). [...] [Noutras palavras,] se o evento F ocorrer, então, para que E ocorra, é necessário que a ocorrência real seja um ponto tanto em E quanto em F; isto é, ela deve estar em EF. Agora, como sabemos que F ocorreu, tem-se que F se torna nosso novo, ou reduzido, espaço amostral; com isso, a probabilidade de que o evento EF ocorra será igual à probabilidade de EF relativa à probabilidade de F." (ROSS, 2010, p. 82).<a class="linkdiscreto" href="#subtitulo_2_nota_6_7"> [ 🔙 ]</a></p>
             <p id="nota_8">[8] Diz-se que duas variáveis aleatórias "[...] X e Y são independentes se o conhecimento do valor de um não mudar a distribuição do outro. Variáveis aleatórias que não são independentes são chamadas de dependentes." (ROSS, 2010, p. 293). Observe-se que a "independência é uma relação simétrica. As variáveis aleatórias X e Y são independentes se sua função densidade conjunta (ou função de probabilidade conjunta, no caso discreto) é o produto de suas funções densidade (ou de probabilidade) individuais. Portanto, dizer que X é independente de Y é equivalente a dizer que Y é independente de X — ou somente que X e Y são independentes. Como resultado, ao considerar se X é independente ou não de Y em situações em que não é intuitivo saber que o valor de Y não muda as probabilidades relacionadas a X, pode ser útil inverter os papeis de X e Y e perguntar se Y é independente de X." (ROSS, 2010, p. 304).<a class="linkdiscreto" href="#subtitulo_4_nota_8_9"> [ 🔙 ]</a></p>
             <p id="nota_9">[9] Sobre <strong>eventos independentes</strong>, a P(E|F), isto é, "[...] a probabilidade condicional de E dado F, não é geralmente igual [...] [à] probabilidade incondicional de E [P(E)]. Em outras palavras, o conhecimento de que F ocorreu geralmente muda a chance de ocorrência de E. Nos casos especiais em que P(E|F) é de fato igual a P(E), dizemos que E é independente de F. Isto é, <strong>E é independente de F se o conhecimento de que F ocorreu não mudar a probabilidade de ocorrência de E.</strong>" (ROSS, 2010, p. 106, destaquei).<a class="linkdiscreto" href="#subtitulo_4_nota_8_9"> [ 🔙 ]</a></p>
+            <p id="nota_10">[10] "Um <strong>grafo não-direcionado</strong>, ou simplesmente <strong>grafo</strong>, é um conjunto de pontos com linhas conectando alguns dos pontos. Os pontos são conhecidos como <strong>nós</strong> ou <strong>vértices</strong>, e as linhas são chamadas <strong>arestas</strong> [...]. Em um grafo <math><mi>G</mi></math> que contém nós <math><mi>i</mi></math> e <math><mi>j</mi></math>, o par <math><mo>(</mo><mi>i</mi><mo>,</mo><mi>j</mi><mo>)</mo></math> representa a aresta que conecta <math><mi>i</mi></math> e <math><mi>j</mi></math>. A ordem de <math><mi>i</mi></math> e <math><mi>j</mi></math> não importa em um grafo não-direcionado; portanto, os pares <math><mo>(</mo><mi>i</mi><mo>,</mo><mi>j</mi><mo>)</mo></math> e <math><mo>(</mo><mi>j</mi><mo>,</mo><mi>i</mi><mo>)</mo></math> representam a mesma aresta. Às vezes, descrevemos arestas com conjuntos em vez de pares, como em <math><mo>{</mo><mi>i</mi><mo>,</mo><mi>j</mi><mo>}</mo></math>, porque a ordem dos nós não é importante." (SIPSER, 2021, p. 10, destaques no original). Nesse sentido, "um <strong>caminho</strong> em um grafo é uma sequência de nós conectados por arestas. [...] Um caminho é um <strong>ciclo</strong>, se começa e termina no mesmo nó. [...] Se ele possui setas em vez de linhas, o grafo é um <strong>grafo direcionado</strong> [...]. Em um grafo direcionado, representamos uma aresta de <math><mi>i</mi></math> para <math><mi>j</mi></math> como um par <math><mo>(</mo><mi>i</mi><mo>,</mo><mi>j</mi><mo>)</mo></math>. A descrição formal de um grafo direcionado <math><mi>G</mi></math> é <math><mo>(</mo><mi>V</mi><mo>,</mo><mi>E</mi><mo>)</mo></math>, onde <math><mi>V</mi></math> é o conjunto de nós e <math><mi>E</mi></math>, o conjunto de arestas. [...] Um caminho no qual todas as setas apontam na mesma direção que seus passos é chamado <strong>caminho direcionado</strong>." (SIPSER, 2021, p. 12/13, destaques no original). Portanto, <em>mutatis mutandis</em>, o percurso entre os vértices de um <strong>grafo acíclico direcionado</strong> é unidirecional, ou seja, as arestas que os conectam têm setas indicativas da única direção possível do encadeamento, e não forma ciclos, de modo que o fluxo não termina no mesmo nó em que começou ou, noutras palavras, não retorna ao ponto de origem.<a class="linkdiscreto" href="#subtitulo_4_nota_10"> [ 🔙 ]</a></p>
             <a class="emoji" href="#top">[ 🔝 ]</a>
         </article>
     </main>
