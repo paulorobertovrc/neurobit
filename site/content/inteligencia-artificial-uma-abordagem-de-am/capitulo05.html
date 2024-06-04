@@ -102,7 +102,13 @@
                         Nesse sentido, duas <strong>variáveis aleatórias</strong> são <strong>independentes</strong></strong><sup><a class="linknotas" href="#nota_8">[8]</a></sup> se a probabilidade de uma não influenciar a de outra — ou seja, o valor de uma não serve para sugerir o de outra —; <strong>condicionalmente independentes</strong> se essa condição subsistir na presença de uma terceira variável, tal que a probabilidade da primeira dada a segunda e a terceira é igual à da primeira dada unicamente a terceira — isto é, as probabilidades condicionais não se influenciam mutuamente, de modo que a da primeira terá o mesmo valor na presença de apenas uma delas ou de ambas; e, contrariamente, são <strong>dependentes</strong> aquelas que não forem independentes (Ross, 2010), ou seja, quando a probabilidade de ocorrência de uma mudar a da outra</strong><sup><a class="linknotas" href="#nota_9">[9]</a></sup>.
                     </p>
                     <p id="subtitulo_4_nota_10">
-                        Uma rede Bayesiana utiliza um grafo acíclico direcionado<sup><a class="linknotas" href="#nota_10">[10]</a></sup> (<em>directed acyclic graph</em> - DAG) para representar as variáveis aleatórias preditivas/independentes, conjuntamente denominadas Pais da variável alvo/dependente, que correspondem a seus nós ou vértices, e a correlação ou influência entre eles, consubstanciadas em suas arestas ou linhas. Esse elemento estrutural é acompanhado pelo conjunto de tabelas de probabilidade condicional, formado pelas probabilidades condicionais de cada variável aleatória dados os nós parentais, em se tratando de valores discretos.
+                        Uma rede bayesiana utiliza um <strong>grafo acíclico direcionado</strong><sup><a class="linknotas" href="#nota_10">[10]</a></sup> (<em>directed acyclic graph</em> - DAG) para representar as variáveis aleatórias preditivas/independentes, conjuntamente denominadas Pais da variável alvo/dependente, que correspondem a seus nós ou vértices, e a correlação ou influência entre eles, explicitadas pelas arestas ou linhas. Outro componente da rede é o conjunto das <strong>tabelas de probabilidade condicional</strong>, formadas pelas probabilidades condicionais de cada variável aleatória dados os nós parentais, em se tratando de valores discretos.
+                    </p>
+                    <p>
+                        Portanto, considerando que essa estrutura satisfaz a condição de Markov, segundo a qual "[...] cada nó é independente de todos os seus não descendentes dados os seus pais [...]" (FACELI et al., 2023, p. 72), infere-se que a probabilidade conjunta das variáveis aleatórias que conformam uma rede Bayesiana pode ser decomposta no produto das probabilidades condicionais individuais, dada a ocorrência dos respectivos nós parentais.
+                    </p>
+                    <p>
+                        O conjunto de nós capazes de exercer influência na predição da variável alvo é denominado <strong><em>Markov Blanket</em></strong>, o qual é constituído por pelos pais, filhos e co-pais do atributo alvo. Se conhecidos, esses vértices consubstanciam toda a informação de que a rede Bayesiana necessita para estimar a variável alvo/dependente (saída). Esse conjunto caracteriza a independência condicional da variável alvo em relação às demais, restringindo o espaço de possibilidades do modelo ao delimitar um subconjunto de variáveis efetivamente importantes para a tarefa preditiva.
                     </p>
                 </div>
             </div>
@@ -195,6 +201,20 @@
                             </ul>
                         </li>
                         <li>Tabelas de probabilidade condicional</li>
+                        <li>
+                            A probabilidade conjunta das variáveis aleatórias — isto é, da própria rede Bayesiana — corresponde ao produto das probabilidades condicionais individuais, dados os nós parentais
+                        </li>
+                        <li>
+                            Condição de Markov: cada nó (variável aleatória) é condicionalmente independente de seus não descendentes dados os seus pais
+                        </li>
+                        <li>
+                            Markov Blanket
+                            <ul>
+                                <li>
+                                    Redução do escopo do modelo a um subconjunto de variáveis efetivamente relevantes para a tarefa preditiva
+                                </li>
+                            </ul>
+                        </li>
                     </ul>
                 </li>
             </ul>

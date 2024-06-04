@@ -20,15 +20,15 @@ Não por outro motivo, "*uncertainty represents the reliability of our inference
 
 Entretanto, é valioso observar que, "frequentemente, quando realizamos um experimento, estamos interessados principalmente em alguma função do resultado e não no resultado em si." (ROSS, 2010, p. 151).
 
-#### 5.2 Teorema de Bayes, métodos probabilísticos bayesianos e aprendizado bayesiano[^6]
+#### 5.2 Teorema de Bayes, métodos probabilísticos Bayesianos e aprendizado Bayesiano[^6]
 
 A **probabilidade condicional**[^7] avalia a probabilidade de que um evento ocorra, dada a ocorrência ou não de outro, já conhecido, a qual deve ser considerada para obter a probabilidade total. O cálculo da probabilidade condicionada é especialmente útil quando se trabalha com dados incompletos ou imprecisos.
 
-Os métodos probabilísticos bayesianos, sustentados no Teorema de Bayes, "[...] assumem que a probabilidade de um evento A, que pode ser uma classe [...], dado um evento B, que pode ser o conjunto de valores dos atributos de entrada [...], não depende apenas da relação entre A e B, mas também da probabilidade de observar A independentemente de observar B (Mitchell, 1997)." (FACELI et al., 2023, p. 64). No que pertine ao aprendizado de máquina, ele "[...] fornece uma maneira de calcular a probabilidade de um evento ou objeto pertencer a uma classe P(B|A) utilizando a probabilidade *a priori* da classe, P(A), a probabilidade de observar vários objetos com os mesmos valores de atributos que pertencem à classe, P(B|A), e a probabilidade de ocorrência desses objetos, P(B)." (FACELI et al., 2023, p. 64), e pode ser utilizado para resolver problemas em cenários probabilísticos.
+Os métodos probabilísticos Bayesianos, sustentados no Teorema de Bayes, "[...] assumem que a probabilidade de um evento A, que pode ser uma classe [...], dado um evento B, que pode ser o conjunto de valores dos atributos de entrada [...], não depende apenas da relação entre A e B, mas também da probabilidade de observar A independentemente de observar B (Mitchell, 1997)." (FACELI et al., 2023, p. 64). No que pertine ao aprendizado de máquina, ele "[...] fornece uma maneira de calcular a probabilidade de um evento ou objeto pertencer a uma classe P(B|A) utilizando a probabilidade *a priori* da classe, P(A), a probabilidade de observar vários objetos com os mesmos valores de atributos que pertencem à classe, P(B|A), e a probabilidade de ocorrência desses objetos, P(B)." (FACELI et al., 2023, p. 64), e pode ser utilizado para resolver problemas em cenários probabilísticos.
 
 Noutras palavras, o Teorema de Bayes expressa a probabilidade *a posteriori*, que é a probabilidade *a priori*, inicialmente conhecida, sopesada pelas informações adicionais disponíveis — na verdade, pela verossimilhança da hipótese mais provável à luz das novas evidências, que servem para atualizar ou refinar a probabilidade inicial, em vez de desconstruí-la ou substituí-la por completo.
 
-"No aprendizado bayesiano, o valor de uma variável aleatória tem uma probabilidade associada. [...] O teorema de Bayes é usado para calcular a probabilidade *a posteriori* de um evento, dadas sua probabilidade *a priori* e a verossimilhança do novo dado." (FACELI et al., 2023, p. 66).
+"No aprendizado Bayesiano, o valor de uma variável aleatória tem uma probabilidade associada. [...] O teorema de Bayes é usado para calcular a probabilidade *a posteriori* de um evento, dadas sua probabilidade *a priori* e a verossimilhança do novo dado." (FACELI et al., 2023, p. 66).
 
 A função que calcula a probabilidade condicionada e separa os exemplos em classes distintas é chamada **função discriminante**. "Dependendo das hipóteses propostas, diferentes funções discriminantes são obtidas, levando a diferentes classificadores" (FACELI et al., 2023, p. 66), e uma das formas de obtê-la é por meio da estimativa MAP (*Maximum A Posteriori*), que busca maximizar a eficiência preditiva ao combinar as informações disponíveis *a priori* com a hipótese mais provável (verossímil) dada a nova evidência observada.
 
@@ -50,7 +50,11 @@ Há diversas implementações alternativas desse algoritmo, desenvolvidas para c
 
 Nesse sentido, duas **variáveis aleatórias** são **independentes**[^8] se a probabilidade de uma não influenciar a de outra — ou seja, o valor de uma não serve para sugerir o de outra —; **condicionalmente independentes** se essa condição subsistir na presença de uma terceira variável, tal que a probabilidade da primeira dada a segunda e a terceira é igual à da primeira dada unicamente a terceira — isto é, as probabilidades condicionais não se influenciam mutuamente, de modo que a da primeira terá o mesmo valor na presença de apenas uma delas ou de ambas; e, contrariamente, são **dependentes** aquelas que não forem independentes (Ross, 2010), ou seja, quando a probabilidade de ocorrência de uma mudar a da outra[^9].
 
-Uma rede Bayesiana utiliza um grafo acíclico direcionado[^10] (*directed acyclic graph* - DAG) para representar as variáveis aleatórias preditivas/independentes, conjuntamente denominadas Pais da variável alvo/dependente, que correspondem a seus nós ou vértices, e a correlação ou influência entre eles, consubstanciadas em suas arestas ou linhas. Esse elemento estrutural é acompanhado pelo conjunto de tabelas de probabilidade condicional, formado pelas probabilidades condicionais de cada variável aleatória dados os nós parentais, em se tratando de valores discretos.
+Uma rede bayesiana utiliza um **grafo acíclico direcionado**[^10] (*directed acyclic graph* - DAG) para representar as variáveis aleatórias preditivas/independentes, conjuntamente denominadas Pais da variável alvo/dependente, que correspondem a seus nós ou vértices, e a correlação ou influência entre eles, explicitadas pelas arestas ou linhas. Outro componente da rede é o conjunto das **tabelas de probabilidade condicional**, formadas pelas probabilidades condicionais de cada variável aleatória dados os nós parentais, em se tratando de valores discretos.
+
+Portanto, considerando que essa estrutura satisfaz a condição de Markov, segundo a qual "[...] cada nó é independente de todos os seus não descendentes dados os seus pais [...]" (FACELI et al., 2023, p. 72), infere-se que a probabilidade conjunta das variáveis aleatórias que conformam uma rede Bayesiana pode ser decomposta no produto das probabilidades condicionais individuais, dada a ocorrência dos respectivos nós parentais.
+
+O conjunto de nós capazes de exercer influência na predição da variável alvo é denominado ***Markov Blanket***, o qual é constituído por pelos pais, filhos e co-pais do atributo alvo. Se conhecidos, esses vértices consubstanciam toda a informação de que a rede Bayesiana necessita para estimar a variável alvo/dependente (saída). Esse conjunto caracteriza a independência condicional da variável alvo em relação às demais, restringindo o espaço de possibilidades do modelo ao delimitar um subconjunto de variáveis efetivamente importantes para a tarefa preditiva.
 
 ## Principais tópicos
 
@@ -76,20 +80,24 @@ Uma rede Bayesiana utiliza um grafo acíclico direcionado[^10] (*directed acycli
 - **Teorema de Bayes**
   - É uma forma de calcular a probabilidade de ocorrência de um evento A dado um evento B que já ocorreu (P(A|B)), considerando **(a)** a probabilidade *a priori* de A (P(A)), isto é, a probabilidade de que A ocorra independentemente de B; **(b)** a probabilidade condicional de B dada a ocorrência de A (P(B|A)); e **(c)** a probabilidade total de B (P(B)), que consiste **(c.1)** novamente na probabilidade *a priori* de A e na probabilidade de B dado A, acrescida **(c.2)** da probabilidade de que A não ocorra, mas B ocorra independentemente de A.
   - É uma forma de ajustar a probabilidade de A em relação a B, considerando novas evidências de B, sem descartar a probabilidade inicial de A, que ao invés disso é atualizada pela probabilidade de B dado A e pela probabilidade total de B.
-- **Aprendizado bayesiano**
+- **Aprendizado Bayesiano**
   - O valor de uma variável aleatória é estimado a partir da probabilidade *a priori* da classe (evento) e da probabilidade de que novos objetos pertençam àquela classe, considerando as informações disponíveis (verossimilhança).
   - Dados imprecisos ou incompletos
   - Função discriminante
 - **Classificador *naive* Bayes**
   - A classificação resulta do produto das probabilidades individuais de cada atributo, que se presumem independentes entre si e em relação à classe.
   - Incapaz de lidar com atributos interdependentes
-- **Redes bayesianas**
+- **Redes Bayesianas**
   - Modelos gráficos probabilísticos
   - Independência condicional entre variáveis
   - Grafo acíclico direcionado
     - Nós: variáveis aleatórias
     - Arestas: influência ou correlação entre as variáveis aleatórias
   - Tabelas de probabilidade condicional
+  - A probabilidade conjunta das variáveis aleatórias — isto é, da própria rede Bayesiana — corresponde ao produto das probabilidades condicionais individuais, dados os nós parentais
+  - Condição de Markov: cada nó (variável aleatória) é condicionalmente independente de seus não descendentes dados os seus pais
+  - Markov Blanket
+    - Redução do escopo do modelo a um subconjunto de variáveis efetivamente relevantes para a tarefa preditiva
 
 ## Referências complementares
 
@@ -113,7 +121,7 @@ SIPSER, Michael. **Introdução à teoria da computação**. Trad. Rui José Gue
 
 [^5]: **Variáveis aleatórias** são "[...] grandezas de interesse, ou, mais formalmente, [...] funções reais definidas no espaço amostral [...]. Como o valor da variável aleatória é determinado pelo resultado do experimento, podemos atribuir probabilidades aos possíveis valores da variável aleatória" (ROSS, 2010, p. 151), que podem ser **discretas** — há uma quantidade máxima (finita) e [infinitamente] contável de valores possíveis — ou [absolutamente] **contínuas** — há infinitos e incontáveis valores que podem ser assumidos ou, inversamente, cuja probabilidade de que assumam determinado valor específico é nula (Ross, 2010).
 
-[^6]: No livro, equivalente à introdução do capítulo 5 e à seção 5.1 (aprendizado bayesiano).
+[^6]: No livro, equivalente à introdução do capítulo 5 e à seção 5.1 (aprendizado Bayesiano).
 
 [^7]: A "[...] probabilidade condicional de que E ocorra dado que F ocorreu [...] é representada por P(E | F). [...] [Noutras palavras,] se o evento F ocorrer, então, para que E ocorra, é necessário que a ocorrência real seja um ponto tanto em E quanto em F; isto é, ela deve estar em EF. Agora, como sabemos que F ocorreu, tem-se que F se torna nosso novo, ou reduzido, espaço amostral; com isso, a probabilidade de que o evento EF ocorra será igual à probabilidade de EF relativa à probabilidade de F." (ROSS, 2010, p. 82).
 
