@@ -74,6 +74,9 @@
                     <p>
                         A função que calcula a probabilidade condicionada e separa os exemplos em classes distintas é chamada <strong>função discriminante</strong>. "Dependendo das hipóteses propostas, diferentes funções discriminantes são obtidas, levando a diferentes classificadores" (FACELI et al., 2023, p. 66), e uma das formas de obtê-la é por meio da estimativa MAP (<em>Maximum A Posteriori</em>), que busca maximizar a eficiência preditiva ao combinar as informações disponíveis <em>a priori</em> com a hipótese mais provável (verossímil) dada a nova evidência observada.
                     </p>
+                    <p>
+                        Os classificadores Bayesianos, dentre os quais o <em>naive</em> Bayes e as redes Bayesianas, apresentam "[...] complexidade crescente, [uma vez] que consideram diferentes graus de dependência entre atributos [granularidade]" (FACELI et al., 2023, p. 75), e podem ser empregados em tarefas que vão "[...] desde [a] previsão, em que se pretende obter o resultado mais provável para os dados de entrada, até o diagnóstico, em que se pretende obter as causas mais prováveis para os efeitos observados." (FACELI et al., 2023, p. 75).
+                    </p>
                 </div>
                 <div>
                     <h4>5.3 Classificador <em>naive</em> Bayes</h4>
@@ -96,19 +99,27 @@
                 <div>
                     <h4>5.4 Redes Bayesianas</h4>
                     <p>
-                        "Os modelos gráficos probabilísticos, ou redes bayesianas (Pearl, 1988), utilizam o conceito de independência condicional entre variáveis para obter um equilíbrio entre o número de parâmetros a calcular e a representação de dependências entre as variáveis. Esses modelos representam a distribuição de probabilidade conjunta de um grupo de variáveis aleatórias em um domínio específico" (FACELI et al., 2023, p. 72) e podem ser empregados em tarefas que vão "[...] desde [a] previsão, em que se pretende obter o resultado mais provável para os dados de entrada, até o diagnóstico, em que se pretende obter as causas mais prováveis para os efeitos observados." (FACELI et al., 2023, p. 75).
+                        "Os modelos gráficos probabilísticos, ou redes bayesianas (Pearl, 1988), utilizam o conceito de independência condicional entre variáveis para obter um equilíbrio entre o número de parâmetros a calcular e a representação de dependências entre as variáveis. Esses modelos representam a distribuição de probabilidade conjunta de um grupo de variáveis aleatórias em um domínio específico." (FACELI et al., 2023, p. 72).
                     </p>
                     <p id="subtitulo_4_nota_8_9">
                         Nesse sentido, duas <strong>variáveis aleatórias</strong> são <strong>independentes</strong></strong><sup><a class="linknotas" href="#nota_8">[8]</a></sup> se a probabilidade de uma não influenciar a de outra — ou seja, o valor de uma não serve para sugerir o de outra —; <strong>condicionalmente independentes</strong> se essa condição subsistir na presença de uma terceira variável, tal que a probabilidade da primeira dada a segunda e a terceira é igual à da primeira dada unicamente a terceira — isto é, as probabilidades condicionais não se influenciam mutuamente, de modo que a da primeira terá o mesmo valor na presença de apenas uma delas ou de ambas; e, contrariamente, são <strong>dependentes</strong> aquelas que não forem independentes (Ross, 2010), ou seja, quando a probabilidade de ocorrência de uma mudar a da outra</strong><sup><a class="linknotas" href="#nota_9">[9]</a></sup>.
                     </p>
                     <p id="subtitulo_4_nota_10">
-                        Uma rede bayesiana utiliza um <strong>grafo acíclico direcionado</strong><sup><a class="linknotas" href="#nota_10">[10]</a></sup> (<em>directed acyclic graph</em> - DAG) para representar as variáveis aleatórias preditivas/independentes, conjuntamente denominadas Pais da variável alvo/dependente, que correspondem a seus nós ou vértices, e a correlação ou influência entre eles, explicitadas pelas arestas ou linhas. Outro componente da rede é o conjunto das <strong>tabelas de probabilidade condicional</strong>, formadas pelas probabilidades condicionais de cada variável aleatória dados os nós parentais, em se tratando de valores discretos.
+                        Uma rede Bayesiana utiliza um <strong>grafo acíclico direcionado</strong><sup><a class="linknotas" href="#nota_10">[10]</a></sup> (<em>directed acyclic graph</em> - DAG) para representar as variáveis aleatórias preditivas/independentes, conjuntamente denominadas <strong>Pais</strong> da variável alvo/dependente, que correspondem a seus nós ou vértices, e a correlação ou influência entre eles, explicitadas pelas arestas ou linhas. Outro componente da rede é o conjunto das <strong>tabelas de probabilidade condicional</strong>, formadas pelas probabilidades condicionais de cada variável aleatória dados os nós parentais, em se tratando de valores discretos.
                     </p>
                     <p>
                         Portanto, considerando que essa estrutura satisfaz a condição de Markov, segundo a qual "[...] cada nó é independente de todos os seus não descendentes dados os seus pais [...]" (FACELI et al., 2023, p. 72), infere-se que a probabilidade conjunta das variáveis aleatórias que conformam uma rede Bayesiana pode ser decomposta no produto das probabilidades condicionais individuais, dada a ocorrência dos respectivos nós parentais.
                     </p>
                     <p>
                         O conjunto de nós capazes de exercer influência na predição da variável alvo é denominado <strong><em>Markov Blanket</em></strong>, o qual é constituído por pelos pais, filhos e co-pais do atributo alvo. Se conhecidos, esses vértices consubstanciam toda a informação de que a rede Bayesiana necessita para estimar a variável alvo/dependente (saída). Esse conjunto caracteriza a independência condicional da variável alvo em relação às demais, restringindo o espaço de possibilidades do modelo ao delimitar um subconjunto de variáveis efetivamente importantes para a tarefa preditiva.
+                    </p>
+                    <p>
+                        O processo de aprendizagem de uma rede Bayesiana envolve, primeiramente, a definição "[...] de um modelo de classe adequado que define o espaço de possíveis estruturas [...]. Em seguida, dentro desse modelo de classe, uma <em>estrutura</em> é selecionada. Finalmente, os parâmetros são estimados a partir dos dados." (FACELI et al., 2023, p. 73).
+                    </p>
+                    <p>
+                        <blockquote>
+                            "O problema de escolher a estrutura mais apropriada para determinado problema está relacionado com a <em>seleção de modelos</em>, uma área da inferência estatística que estuda a seleção, dentre um conjunto de modelos concorrentes, daquele que "melhor se ajusta", em algum sentido, aos dados disponíveis. [...] [Dentre eles, as propostas baseadas em pontuação], em que a noção de "melhor se ajusta" é definida via uma função de pontuação que mede a qualidade de cada hipótese candidata. Propostas baseadas em pontuação podem ser descritas como um <em>problema de busca</em>, em que cada estado no espaço de busca identifica um possível DAG. [...] Outro aspecto que pode também influenciar o desempenho dos CRBs induzidos é a seleção de um <em>modelo de classe</em> apropriado, que define o espaço de busca e, consequentemente, a complexidade dos CRBs induzidos. A seleção do modelo procura um equilíbrio viés-variância a fim de selecionar um modelo com a complexidade apropriada que é automaticamente regularizado pela função de pontuação (Hastie et al., 2001). Podemos obter um desempenho desejado dos CRBs induzidos se, a cada momento, tentarmos selecionar o modelo de classe apropriado, com a complexidade adequada, para os dados de treinamento disponíveis." (FACELI et al., 2023, p. 73).
+                        </blockquote>
                     </p>
                 </div>
             </div>
@@ -189,18 +200,33 @@
                     </ul>
                 </li>
                 <li>
-                    <strong>Redes bayesianas</strong>
+                    <strong>Redes Bayesianas</strong>
                     <ul>
                         <li>Modelos gráficos probabilísticos</li>
                         <li>Independência condicional entre variáveis</li>
                         <li>
-                            Grafo acíclico direcionado
+                            Componentes
                             <ul>
-                                <li>Nós: variáveis aleatórias</li>
-                                <li>Arestas: influência ou correlação entre as variáveis aleatórias</li>
+                                <li>
+                                    Estrutural
+                                    <ul>
+                                        <li>
+                                            Grafo acíclico direcionado
+                                            <ul>
+                                                <li>Nós: variáveis aleatórias</li>
+                                                <li>Arestas: influência ou correlação entre as variáveis aleatórias</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    Paramétrico
+                                    <ul>
+                                        <li>Tabelas de probabilidade condicional</li>
+                                    </ul>
+                                </li>
                             </ul>
                         </li>
-                        <li>Tabelas de probabilidade condicional</li>
                         <li>
                             A probabilidade conjunta das variáveis aleatórias — isto é, da própria rede Bayesiana — corresponde ao produto das probabilidades condicionais individuais, dados os nós parentais
                         </li>
@@ -213,6 +239,14 @@
                                 <li>
                                     Redução do escopo do modelo a um subconjunto de variáveis efetivamente relevantes para a tarefa preditiva
                                 </li>
+                            </ul>
+                        </li>
+                        <li>
+                            Etapas do aprendizado
+                            <ul>
+                                <li>Modelo de classe</li>
+                                <li>Estrutura</li>
+                                <li>Parâmetros</li>
                             </ul>
                         </li>
                     </ul>
