@@ -2,14 +2,14 @@
 
 ![Static Badge](https://img.shields.io/badge/Livros-1_/_3-31A8B8?labelColor=025159)
 ![Static Badge](https://img.shields.io/badge/Fichamentos_\(capítulos\)-6-6C8BBC?labelColor=3A5F91)
-![Static Badge](https://img.shields.io/badge/Complementos-0-8AB68C?labelColor=4B7A52)
+![Static Badge](https://img.shields.io/badge/Suplementos-0-8AB68C?labelColor=4B7A52)
 
 [![Instagram](https://img.shields.io/badge/Instagram-%23E4405F.svg?logo=Instagram&logoColor=white)](https://www.instagram.com/pauloroberto.dev)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/paulorobertovrc/)
 
 ## Acesso rápido
 
-| [Fichamentos](#tabela-de-fichamentos) | [Complementos](#tabela-de-complementos) | [Referências bibliográficas](#referências-bibliográficas) |
+| [Fichamentos](#tabela-de-fichamentos) | [Suplementos](#tabela-de-suplementos) | [Referências bibliográficas](#referências-bibliográficas) |
 
 | [Descrição](#descrição) | [Justificativa](#justificativa) | [Objetivos](#objetivos) | [Sobre o Autor](#sobre-o-autor) | [Isenção de responsabilidade](#isenção-de-responsabilidade) | [Licença](#licença) |
 
@@ -87,12 +87,7 @@ Ressalvados os direitos autorais dos detentores/produtores dos conteúdos utiliz
 
 [[🔝](#acesso-rápido)]
 
-## Tabela de complementos
-
-| # | Área / Assunto | Status | Link |
-| :---: | :---: | :---: | :---: |
-| 1 | Algoritmos | ![Static Badge](https://img.shields.io/badge/Previsto-grey) | [🔗](./complementos/01-algoritmos.md) |
-| 2 | Sistemas de Informação / Dado, informação e conhecimento | ![Static Badge](https://img.shields.io/badge/Previsto-grey) | [🔗](./complementos/02-si.md) |
+## Tabela de suplementos
 
 [[🔝](#acesso-rápido)]
 
