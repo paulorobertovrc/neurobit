@@ -1,7 +1,7 @@
 # # 2 - Inteligência Artificial: Uma Abordagem de Aprendizado de Máquina
 
 ![Static Badge](https://img.shields.io/badge/Status-Estudando-grey?labelColor=31A8B8)
-![Static Badge](https://img.shields.io/badge/Progresso-4_/_35-grey?labelColor=31A8B8)
+![Static Badge](https://img.shields.io/badge/Progresso-5_/_35-grey?labelColor=31A8B8)
 
 ## Informações do livro
 
@@ -35,4 +35,4 @@ Trata-se de um livro-texto voltado a cursos de graduação ou pós-graduação q
 | 2 |  [Preparação de dados] Análise de dados | ![Static Badge](https://img.shields.io/badge/Concluído-grey) | [🔗](./capitulo02.md) |
 | 3 |  [Preparação de dados] Pré-processamento de dados | ![Static Badge](https://img.shields.io/badge/Concluído-grey) | [🔗](./capitulo03.md) |
 | 4 |  [Modelos preditivos] Métodos baseados em distâncias | ![Static Badge](https://img.shields.io/badge/Concluído-grey) | [🔗](./capitulo04.md) |
-| 5 |  [Modelos preditivos] Métodos probabilísticos | ![Static Badge](https://img.shields.io/badge/Estudando-grey) | [🔗](./capitulo05.md) |
+| 5 |  [Modelos preditivos] Métodos probabilísticos | ![Static Badge](https://img.shields.io/badge/Concluído-grey) | [🔗](./capitulo05.md) |
