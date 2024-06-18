@@ -14,11 +14,11 @@ AUDY, Jorge L N.; ANDRADE, Gilberto K.; CIDRAL, Alexandre. **Fundamentos de sist
 
 BEAR, Mark F.; CONNORS, Barry W.; PARADISO, Michael A. **Neurociências: desvendando o sistema nervoso**. Trad. Carla Dalmaz et al. 4. ed. Porto Alegre: Artmed, 2017.
 
-<!-- BROOKSHEAR, J. Glenn. **Ciência da computação: uma visão abrangente**. Trad. Eduardo Kessler Piveta. 11. ed. Porto Alegre: Bookman, 2013. -->
+BROOKSHEAR, J. Glenn. **Ciência da computação: uma visão abrangente**. Trad. Eduardo Kessler Piveta. 11. ed. Porto Alegre: Bookman, 2013.
 
 CORMEN, Thomas H.; LEISERSON, Charles E.; RIVEST, Ronald L.; STEIN, Clifford. **Algoritmos: teoria e prática**. Trad. Arlete Simille Marques. 3. ed. Rio de Janeiro: Elsevier, 2012.
 
-<!-- GERSTING, Judith L. **Fundamentos matemáticos para a ciência da computação: matemática discreta e suas aplicações**. Trad. Valéria de Magalhães Iorio. 7. ed. Rio de Janeiro: LTC, 2017. -->
+GERSTING, Judith L. **Fundamentos matemáticos para a ciência da computação: matemática discreta e suas aplicações**. Trad. Valéria de Magalhães Iorio. 7. ed. Rio de Janeiro: LTC, 2017.
 
 GRUS, Joel. **Data science do zero: noções fundamentais com Python.** Trad. Welington Nascimento. 2 ed. E-book. Rio de Janeiro: Alta Books, 2021.
 
