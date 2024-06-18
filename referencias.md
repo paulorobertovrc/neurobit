@@ -1,42 +1,28 @@
 # Referências bibliográficas
 
-## Principais
-
-<!-- AGGARWAL, Charu C. **Neural networks and deep learning: a textbook**. 2. ed. Cham: Springer, 2023. -->
+## Principais (livros estudados e resumidos)
 
 FACELI, Katti; LORENA, Ana Carolina; GAMA, João; ALMEIDA, Tiago Agostinho de; CARVALHO, André Carlos P. L. F. de. **Inteligência artificial: uma abordagem de aprendizado de máquina**. 2. ed. Rio de Janeiro: LTC, 2023.
-
-<!-- FÁVERO, Luiz Paulo; BELFIORE, Patrícia. **Manual de análise de dados: estatística e machine learning com Excel, SPSS, Stata, R e Python.** 2. ed. Rio de Janeiro: LTC, 2024. -->
 
 HAYKIN, Simon. **Neural networks and learning machines**. 3. ed. Upper Saddle River, NJ: Pearson Prentice Hall, 2009.
 
 HAYKIN, Simon. **Redes neurais: princípios e prática**. Trad. Paulo Martins Engel. 2. ed. Porto Alegre: Bookman, 2001.
 
-<!-- MORETTIN, Pedro Alberto; SINGER, Júlio da Motta. **Estatística e ciência de dados.** 1. ed. Rio de Janeiro: LTC, 2023. -->
-
-<!-- RUSSEL, Stuart J.; NORVIG, Peter. **Inteligência artificial: uma abordagem moderna**. Trad. Daniel Vieira; Flávio Soares Corrêa da Silva. 4. ed. Rio de Janeiro: GEN LTC, 2022. -->
-
-## Suplementares
+## Complementares (consultados para aprofundamento)
 
 AUDY, Jorge L N.; ANDRADE, Gilberto K.; CIDRAL, Alexandre. **Fundamentos de sistemas de informação.** E-book. Porto Alegre: Bookman, 2007.
 
 BEAR, Mark F.; CONNORS, Barry W.; PARADISO, Michael A. **Neurociências: desvendando o sistema nervoso**. Trad. Carla Dalmaz et al. 4. ed. Porto Alegre: Artmed, 2017.
 
-<!-- CHURCHLAND, Patricia Smith; SEJNOWSKI, Terrence J. **The computational brain**. 25th Anniversary ed. Cambridge, MA: The MIT Press, 2017. -->
+<!-- BROOKSHEAR, J. Glenn. **Ciência da computação: uma visão abrangente**. Trad. Eduardo Kessler Piveta. 11. ed. Porto Alegre: Bookman, 2013. -->
 
-<!-- CORMEN, Thomas H.; LEISERSON, Charles E.; RIVEST, Ronald L.; STEIN, Clifford. **Algoritmos: teoria e prática**. Trad. Arlete Simille Marques. 3. ed. Rio de Janeiro: Elsevier, 2012.
+CORMEN, Thomas H.; LEISERSON, Charles E.; RIVEST, Ronald L.; STEIN, Clifford. **Algoritmos: teoria e prática**. Trad. Arlete Simille Marques. 3. ed. Rio de Janeiro: Elsevier, 2012.
 
-CORMEN, Thomas H.; LEISERSON, Charles E.; RIVEST, Ronald L.; STEIN, Clifford. **Introduction to algorithms**. 4. ed. Cambridge, MA: The MIT Press, 2022. -->
+<!-- GERSTING, Judith L. **Fundamentos matemáticos para a ciência da computação: matemática discreta e suas aplicações**. Trad. Valéria de Magalhães Iorio. 7. ed. Rio de Janeiro: LTC, 2017. -->
 
 GRUS, Joel. **Data science do zero: noções fundamentais com Python.** Trad. Welington Nascimento. 2 ed. E-book. Rio de Janeiro: Alta Books, 2021.
 
-<!-- IZBICKI, Rafael; DOS SANTOS, Tiago Mendonça. **Aprendizado de máquina: uma abordagem estatística**. São Carlos: Rafael Izbicki, 2020. -->
-
 KANDEL, Eric R.; SCHWARTZ, James H.; JESSELL, Thomas M.; SIEGELBAUM, Steven A.; HUDSPETH, A. J. **Princípios de neurociências**. Trad. Ana Lúcia Severo Rodrigues et al. 5. ed. Porto Alegre: AMGH, 2014.
-
-<!-- LUGER, George F. **Inteligência artificial**. Trad. Daniel Vieira. 6. ed. São Paulo: Pearson, 2013. -->
-
-<!-- MORETTIN, Pedro Alberto; BUSSAB, Wilton de Oliveira. **Estatística básica**. 10. ed. São Paulo: SaraivaUni, 2023. -->
 
 ROSS, Sheldon. **Probabilidade: um curso moderno com aplicações**. Trad. Alberto Resende De Conti. 8 ed. Porto Alegre: Bookman, 2010.
 
@@ -44,7 +30,16 @@ SIPSER, Michael. **Introdução à teoria da computação**. Trad. Rui José Gue
 
 STAIR, Ralph M.; REYNOLDS, George W.; BRYANT, Joey; FRYDENBERG, Mark; GREENBERG, Hollis; SCHELL, George. **Princípios de Sistemas de Informação.** Trad. Edson Furmankiewicz. 14 ed. E-book. São Paulo: Cengage Learning, 2021.
 
-### Materiais de apoio que foram consultados para tópicos específicos
+<!-- AGGARWAL, Charu C. **Neural networks and deep learning: a textbook**. 2. ed. Cham: Springer, 2023. -->
+<!-- CHURCHLAND, Patricia Smith; SEJNOWSKI, Terrence J. **The computational brain**. 25th Anniversary ed. Cambridge, MA: The MIT Press, 2017. -->
+<!-- FÁVERO, Luiz Paulo; BELFIORE, Patrícia. **Manual de análise de dados: estatística e machine learning com Excel, SPSS, Stata, R e Python.** 2. ed. Rio de Janeiro: LTC, 2024. -->
+<!-- IZBICKI, Rafael; DOS SANTOS, Tiago Mendonça. **Aprendizado de máquina: uma abordagem estatística**. São Carlos: Rafael Izbicki, 2020. -->
+<!-- LUGER, George F. **Inteligência artificial**. Trad. Daniel Vieira. 6. ed. São Paulo: Pearson, 2013. -->
+<!-- MORETTIN, Pedro Alberto; BUSSAB, Wilton de Oliveira. **Estatística básica**. 10. ed. São Paulo: SaraivaUni, 2023. -->
+<!-- MORETTIN, Pedro Alberto; SINGER, Júlio da Motta. **Estatística e ciência de dados.** 1. ed. Rio de Janeiro: LTC, 2023. -->
+<!-- RUSSEL, Stuart J.; NORVIG, Peter. **Inteligência artificial: uma abordagem moderna**. Trad. Daniel Vieira; Flávio Soares Corrêa da Silva. 4. ed. Rio de Janeiro: GEN LTC, 2022. -->
+
+### Materiais consultados para tópicos específicos
 
 AGUIAR, Marcus A. M. **Sistemas dinâmicos**. Universidade Estadual de Campinas. 2005. Disponível em <https://sites.ifi.unicamp.br/aguiar/files/2014/10/sistemas-dinamicos.pdf>. Acesso em 02 fev. 2024.
 
