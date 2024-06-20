@@ -1,24 +1,23 @@
 # # 1 — Ciência da Computação
 
-![Static Badge](https://img.shields.io/badge/Última_atualização-19/06/2024-grey?labelColor=5F9EA0)
+![Static Badge](https://img.shields.io/badge/Última_atualização-20/06/2024-grey?labelColor=5F9EA0)
 
-## 1.1 Aspectos históricos da computação e da Ciência da Computação
-
-## 1.2 Definição
+<!-- ## 1.1 Aspectos históricos da computação e da Ciência da Computação -->
+<!-- ## 1.2 Definição -->
 
 ## 1.3 Objetivos
 
 Dentre os objetivos da Ciência da Computação, "[...] uma tarefa fundamental [...] é encontrar técnicas para computar as funções que se encontram subjacentes aos problemas que queremos solucionar." (BROOKSHEAR, 2013, p. 469).
 
-## 1.4 Conceitos importantes
+## 1.4 Conceitos gerais importantes
 
-### 1.4.1 Abstração
+### 1.4.1 Abstração[^1]
 
 Consiste na distinção das características extrínsecas e intrínsecas de uma entidade, de modo a torná-lo mais compreensível e possibilitar que seja manipulado como uma unidade, ignorando os detalhes internos e/ou de implementação (Brookshear, 2013). Noutras palavras, é um exercício imagético de simplificação que, em detrimento da complexidade inerente à construção, visa facilitar a compreensão e a interação com o objeto.
 
 Nesse sentido, as estruturas de dados consubstanciam um exemplo de abstração, pois eximem o usuário — que pode ser humano ou outro sistema computacional, como um cliente no protocolo HTTP — do conhecimento dos detalhes inerentes ao acesso e manuseio dos dados armazenados em memória, pela simulação de um formato abstrato mais conveniente (Brookshear, 2013).
 
-Os atributos comuns da entidade podem ser abstraídos, possibilitando o destaque daqueles que precisam ser detalhados porque diferenciam e/ou especificam um exemplar em particular, em relação aos demais (Sebesta, 2018). Aliás, **processos**[^1] ou **dados**[^2] podem ser abstraídos (Sebesta, 2018).
+Os atributos comuns da entidade podem ser abstraídos, possibilitando o destaque daqueles que precisam ser detalhados porque diferenciam e/ou especificam um exemplar em particular, em relação aos demais (Sebesta, 2018). Aliás, **processos**[^2] ou **dados**[^3] podem ser abstraídos, nos dois casos, com o objetivo de reduzir a complexidade do programa (Sebesta, 2018).
 
 #### 1.4.1.1 Conceito formal
 
@@ -26,47 +25,28 @@ Os atributos comuns da entidade podem ser abstraídos, possibilitando o destaque
 
 "Uma abstração é uma visão ou representação de uma entidade que inclui apenas os atributos mais significativos. De um modo geral, a abstração permite que alguém colete exemplares de entidades em grupos nos quais seus atributos comuns não precisam ser considerados." (SEBESTA, 2018, p. 446).
 
-<!-- ## 3. Fundamentos matemáticos
+## 1.5 Linguagens de programação
 
-- Lógica
-- Teoria dos conjuntos
-- Combinatória
-- Funções
-- Matrizes
-- Teoria dos grafos
-- Álgebra booleana
-- Álgebra linear
-- Cálculo
+### 1.5.1 Sintaxe e semântica
 
-## 4. Teoria da Computação
+Assim como nas linguagens naturais, a sintaxe diz respeito à estrutura das expressões, sentenças e unidades do programa, e a semântica, ao significado (Sebesta, 2018). "Em uma linguagem de programação bem projetada, a semântica deve seguir diretamente a partir da sintaxe; ou seja, a aparência de uma sentença deve sugerir o que ela realiza." (SEBESTA, 2018, p. 111).
 
-### Autômatos, computabilidade e complexidade
+## Lista de tópicos
 
-### Funções computáveis e não computáveis
-
-Conforme Brookshear (2013), uma função é **computável** se houver um sistema algorítmico capaz de determinar a(s) saída(s) a partir da(s) entrada(s), e **não computável** se isso não for possível, dada a complexidade do problema. Nesse sentido, "como as máquinas podem apenas realizar tarefas descritas por algoritmos, o estudo de funções computáveis é o estudo das capacidades finais das máquinas." (BROOKSHEAR, 2013, p. 470).
-
-## 5. Arquitetura e organização de computadores
-
-### Armazenamento e manipulação de dados
-
-## 6. Sistemas operacionais
-
-## 7. Redes de computadores
-
-## 8. Engenharia de software
-
-## 9. Bancos de dados
-
-## 10. Ciência da computação e inteligência artificial
-
-Para Brookshear (2013), a inteligência artificial é um ramo da ciência da computação cujo objetivo é a construção de máquinas autônomas, assim compreendidas aquelas capazes de desempenhar tarefas complexas independentemente da ação de seres humanos, e dotadas de atributos tipicamente associados à inteligência humana, como percepção, raciocínio, memória associativa e agência.
-
-## 11. Pesquisa científica em Ciência da Computação -->
-
-## Principais tópicos
-
-- **Abstração**
+- **Conceitos importantes**
+  - Abstração
+- **Noções e terminologias**
+  - Símbolos, alfabeto, cadeias de caracteres e linguagem
+  - Sentenças
+- **Linguagens de programação**
+  - Sintaxe e semântica
+  - Abstração de dados e de processos
+    - Tipo de dado abstrato
+      - Objeto
+  - Subprogramas
+    - Funções e procedimentos
+  - Estruturas de dados [^4]
+    - Registros
 
 ## Referências
 
@@ -78,4 +58,10 @@ SIPSER, Michael. **Introdução à teoria da computação**. Trad. Rui José Gue
 
 ## Notas
 
-<!-- [^1]: "O conceito de abstração de processo está entre os mais antigos no projeto de linguagens de programação. [...] Todos os subprogramas são abstrações de processo, porque fornecem uma maneira pela qual um programa especifica um processo, sem fornecer os detalhes de como ele realiza sua tarefa [...]." (SEBESTA, 2018, p. 447). Por sua vez, um **subprograma** é uma coleção de sentenças, entendidas como instruções completas e específicas de ações, XXX PROSSEGUIR XXX -->
+[^1]: Ver Brookshear (2013), capítulo 0, seção 0.4 (p. 11/13) e Sebesta (2018), capítulo 11 (sobre o conceito de abstração, abstração de dados e tipos de dados abstratos).
+
+[^2]: "O conceito de abstração de processo está entre os mais antigos no projeto de linguagens de programação. [...] Todos os subprogramas são abstrações de processo, porque fornecem uma maneira pela qual um programa especifica um processo, sem fornecer os detalhes de como ele realiza sua tarefa [...]." (SEBESTA, 2018, p. 447). Por sua vez, **subprogramas** são coleções de **sentenças** — instruções completas e específicas de uma ação ou, em menor nível, "[...] um conjunto de cadeias de caracteres formadas a partir de um alfabeto" (SEBESTA, 2018, p. 111) — e podem ser categorizados em **funções** ou **procedimentos** (Sebesta, 2018). "**Cadeias de caracteres** são blocos básicos fundamentais em ciência da computação. O **alfabeto** sobre o qual as cadeias são definidas pode variar com a aplicação. Para nossos propósitos, definimos um alfabeto como podendo ser qualquer conjunto finito não vazio. Os membros do alfabeto são os **símbolos** do alfabeto. [...] Uma **cadeia sobre um alfabeto** é uma sequência finita de símbolos daquele alfabeto [...]. Uma **linguagem** é um conjunto de cadeias." (SIPSER, 2021, p. 13/14).
+
+[^3]: "Um **tipo de dado abstrato** é uma estrutura de dados na forma de um **registro**, mas que inclui subprogramas que manipulam seus dados. Sintaticamente, um tipo de dados abstrato é um invólucro que inclui apenas a representação de dados de um tipo de dados específico e os subprogramas que fornecem as operações para esse tipo. [...] Um exemplar de um tipo de dados abstrato é chamado de **objeto**." (SEBESTA, 2018, p. 447). Em linguagens de programação, um **registro** (*struct*) "[...] é uma estrutura de dados que armazena campos, os quais têm nomes e podem ser de tipos diferentes." (SEBESTA, 2018, p. 447, nota de rodapé).
+
+[^4]: Estruturas de dados são abordadas em material suplementar específico. Ver [suplemento 03](./03-estruturas-de-dados.md).
