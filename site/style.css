@@ -243,6 +243,40 @@ math[display="block"] {
 }
 /* Cards dos fichamentos */
 
+/* Cards dos suplementos */
+.suplementos {
+    @media screen and (max-width: 430px) {
+        flex-direction: column;
+    }
+}
+
+.suplemento-numero {    
+    font-size: 1.4em;
+    font-weight: bolder;
+    
+    margin-right: 10px;
+}
+
+.suplemento-titulo {
+    font-size: larger;
+    font-weight: bolder;
+    
+    padding-top: 5px;
+    padding-left: 5px;
+}
+
+.suplemento-texto-container {
+    border-left: 2px solid #333;
+    margin-bottom: 10px;
+    padding-left: 5px;
+    text-align: justify;
+}
+
+.suplemento-badge {
+    padding-top: 5px;
+}
+/* Cards dos suplementos */
+
 /* Cards dos capítulos */
 .fichamento-card-capitulo {
     width: fit-content;
