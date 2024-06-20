@@ -2,7 +2,7 @@
 
 ![Static Badge](https://img.shields.io/badge/Livros-1_/_3-31A8B8?labelColor=025159)
 ![Static Badge](https://img.shields.io/badge/Fichamentos_\(capítulos\)-7-6C8BBC?labelColor=3A5F91)
-![Static Badge](https://img.shields.io/badge/Suplementos-0-8AB68C?labelColor=4B7A52)
+![Static Badge](https://img.shields.io/badge/Suplementos-2-8AB68C?labelColor=4B7A52)
 
 [![Instagram](https://img.shields.io/badge/Instagram-%23E4405F.svg?logo=Instagram&logoColor=white)](https://www.instagram.com/pauloroberto.dev)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/paulorobertovrc/)
@@ -89,6 +89,11 @@ Ressalvados os direitos autorais dos detentores/produtores dos conteúdos utiliz
 [[🔝](#acesso-rápido)]
 
 ## Tabela de suplementos
+
+| # | Assunto | Última atualização | Link |
+| :---: | :---: | :---: | :---: |
+| 1 | Ciência da Computação | ![Static Badge](https://img.shields.io/badge/20/06/2024-grey) | [🔗](./suplementos/01-ciência-da-computação.md) |
+| 3 | Estruturas de dados | ![Static Badge](https://img.shields.io/badge/19/06/2024-grey) | [🔗](./suplementos/03-estruturas-de-dados.md) |
 
 [[🔝](#acesso-rápido)]
 
