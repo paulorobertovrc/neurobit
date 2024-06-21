@@ -8,7 +8,7 @@ HAYKIN, Simon. **Neural networks and learning machines**. 3. ed. Upper Saddle Ri
 
 HAYKIN, Simon. **Redes neurais: princípios e prática**. Trad. Paulo Martins Engel. 2. ed. Porto Alegre: Bookman, 2001.
 
-## Complementares (consultados para aprofundamento)
+## Complementares (consultados para aprofundamento, inclusive elaboração dos suplementos)
 
 AUDY, Jorge L N.; ANDRADE, Gilberto K.; CIDRAL, Alexandre. **Fundamentos de sistemas de informação.** E-book. Porto Alegre: Bookman, 2007.
 
@@ -41,7 +41,7 @@ STAIR, Ralph M.; REYNOLDS, George W.; BRYANT, Joey; FRYDENBERG, Mark; GREENBERG,
 <!-- MORETTIN, Pedro Alberto; SINGER, Júlio da Motta. **Estatística e ciência de dados.** 1. ed. Rio de Janeiro: LTC, 2023. -->
 <!-- RUSSEL, Stuart J.; NORVIG, Peter. **Inteligência artificial: uma abordagem moderna**. Trad. Daniel Vieira; Flávio Soares Corrêa da Silva. 4. ed. Rio de Janeiro: GEN LTC, 2022. -->
 
-### Materiais consultados para tópicos específicos
+## Materiais consultados para tópicos específicos
 
 AGUIAR, Marcus A. M. **Sistemas dinâmicos**. Universidade Estadual de Campinas. 2005. Disponível em <https://sites.ifi.unicamp.br/aguiar/files/2014/10/sistemas-dinamicos.pdf>. Acesso em 02 fev. 2024.
 
