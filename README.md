@@ -93,6 +93,7 @@ Ressalvados os direitos autorais dos detentores/produtores dos conteúdos utiliz
 | # | Assunto | Última atualização | Link |
 | :---: | :---: | :---: | :---: |
 | 1 | Ciência da Computação | ![Static Badge](https://img.shields.io/badge/20/06/2024-grey) | [🔗](./suplementos/01-ciência-da-computação.md) |
+| 2 | Algoritmos | ![Static Badge](https://img.shields.io/badge/Em_breve-grey) | [🔗](./suplementos/02-algoritmos.md) |
 | 3 | Estruturas de dados | ![Static Badge](https://img.shields.io/badge/19/06/2024-grey) | [🔗](./suplementos/03-estruturas-de-dados.md) |
 
 [[🔝](#acesso-rápido)]
