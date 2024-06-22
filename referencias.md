@@ -12,8 +12,6 @@ HAYKIN, Simon. **Redes neurais: princípios e prática**. Trad. Paulo Martins En
 
 AUDY, Jorge L N.; ANDRADE, Gilberto K.; CIDRAL, Alexandre. **Fundamentos de sistemas de informação.** E-book. Porto Alegre: Bookman, 2007.
 
-BEAR, Mark F.; CONNORS, Barry W.; PARADISO, Michael A. **Neurociências: desvendando o sistema nervoso**. Trad. Carla Dalmaz et al. 4. ed. Porto Alegre: Artmed, 2017.
-
 BROOKSHEAR, J. Glenn. **Ciência da computação: uma visão abrangente**. Trad. Eduardo Kessler Piveta. 11. ed. Porto Alegre: Bookman, 2013.
 
 CORMEN, Thomas H.; LEISERSON, Charles E.; RIVEST, Ronald L.; STEIN, Clifford. **Algoritmos: teoria e prática**. Trad. Arlete Simille Marques. 3. ed. Rio de Janeiro: Elsevier, 2012.
@@ -21,8 +19,6 @@ CORMEN, Thomas H.; LEISERSON, Charles E.; RIVEST, Ronald L.; STEIN, Clifford. **
 GERSTING, Judith L. **Fundamentos matemáticos para a ciência da computação: matemática discreta e suas aplicações**. Trad. Valéria de Magalhães Iorio. 7. ed. Rio de Janeiro: LTC, 2017.
 
 GRUS, Joel. **Data science do zero: noções fundamentais com Python.** Trad. Welington Nascimento. 2 ed. E-book. Rio de Janeiro: Alta Books, 2021.
-
-KANDEL, Eric R.; SCHWARTZ, James H.; JESSELL, Thomas M.; SIEGELBAUM, Steven A.; HUDSPETH, A. J. **Princípios de neurociências**. Trad. Ana Lúcia Severo Rodrigues et al. 5. ed. Porto Alegre: AMGH, 2014.
 
 ROSS, Sheldon. **Probabilidade: um curso moderno com aplicações**. Trad. Alberto Resende De Conti. 8 ed. Porto Alegre: Bookman, 2010.
 
@@ -45,6 +41,8 @@ STAIR, Ralph M.; REYNOLDS, George W.; BRYANT, Joey; FRYDENBERG, Mark; GREENBERG,
 
 AGUIAR, Marcus A. M. **Sistemas dinâmicos**. Universidade Estadual de Campinas. 2005. Disponível em <https://sites.ifi.unicamp.br/aguiar/files/2014/10/sistemas-dinamicos.pdf>. Acesso em 02 fev. 2024.
 
+BEAR, Mark F.; CONNORS, Barry W.; PARADISO, Michael A. **Neurociências: desvendando o sistema nervoso**. Trad. Carla Dalmaz et al. 4. ed. Porto Alegre: Artmed, 2017.
+
 DAVIS, Josiah; ZHU, Jason; OLDFATHER, Jeremy; MACDONALD, Samual; TRZASKOWSKI, Maciej; KELSEN, Max. 2020. **Quantifying uncertainty in deep learning systems**. Disponível em <https://d1.awsstatic.com/APG/quantifying-uncertainty-in-deep-learning-systems.pdf>. Acesso em 18 mai. 2024.
 
 ENGEL, Paulo Martins. **Redes neurais: a rede RBF.** Disponível em <https://www.inf.ufrgs.br/~engel/data/media/file/cmp121/rbf.pdf>. Acesso em 14 jan. 2024.
@@ -58,6 +56,8 @@ GALLINARO, Júlia V.; SCHOLL, Benjamin; CLOPATH, Claudia. 2023. **Synaptic weigh
 GUIDORIZZI, Hamilton Luiz. **Um curso de cálculo, vol. 1**. 5. ed. Rio de Janeiro: LTC, 2013.
 
 HAYKIN, Simon. **Adaptive filter theory.** 3 ed. Upper Saddle River, NJ: Prentice Hall, 1995.
+
+KANDEL, Eric R.; SCHWARTZ, James H.; JESSELL, Thomas M.; SIEGELBAUM, Steven A.; HUDSPETH, A. J. **Princípios de neurociências**. Trad. Ana Lúcia Severo Rodrigues et al. 5. ed. Porto Alegre: AMGH, 2014.
 
 LECTURE 1 on kernel methods: Positive definite kernels. Vídeo: 44min49s. Publicado pelo canal Julien Mairal. 22 fev. 2021. Disponível em <https://youtu.be/IzGS8uKc5E4?si=u1IDMZS9GB8d8vNG>. Acesso em 14 jan. 2024.
 
