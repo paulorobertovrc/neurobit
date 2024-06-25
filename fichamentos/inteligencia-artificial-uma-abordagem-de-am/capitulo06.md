@@ -10,11 +10,19 @@ Englobam modelos cujo objetivo é representar explicitamente, através de estrut
 
 Não obstante, é importante destacar que "a combinação de múltiplos modelos de árvores em comitês (*ensembles*) [...] tem se mostrado competitiva e é uma abordagem frequentemente empregada para aumentar o desempenho preditivo desses modelos." (FACELI et al., 2023, p. 97).
 
-## 6.1 Modelos baseados em árvores
+## 6.1 Modelos baseados em árvores[^3]
 
-Os modelos em árvore utilizam a estrutura de dados homônima para solucionar problemas de classificação ou regressão, casos em que os algoritmos são respectivamente denominados **árvores de decisão** ou **árvores de regressão**. Em ambos os casos, a forma de se interpretar o modelo e de construir o algoritmo indutor da própria árvore são bastante similares e, de modo geral, o problema é abordado **recursivamente** por meio da estratégia da **divisão e conquista**.
+Os modelos baseados em árvores utilizam a estrutura de dados homônima para solucionar problemas de classificação ou regressão, casos em que os algoritmos são respectivamente denominados **árvores de decisão** ou **árvores de regressão**. Em ambos os casos, a forma de se interpretar o modelo e de construir o algoritmo indutor da própria árvore são bastante similares e, de modo geral, o problema é abordado **recursivamente** por meio da estratégia da **divisão e conquista**[^4].
 
 Nesse sentido, "um problema complexo é dividido em problemas mais simples, aos quais recursivamente é aplicada a mesma estratégia. As soluções dos subproblemas podem ser combinadas, na forma de uma árvore, para produzir uma solução do problema complexo. A força dessa proposta vem da capacidade de dividir o espaço de instâncias em subespaços e cada subespaço é ajustado usando diferentes modelos." (FACELI et al., 2023, p. 78).
+
+"Formalmente, uma árvore de decisão[^5] é um grafo direcionado acíclico em que cada nó ou é um nó de divisão, com dois ou mais sucessores, ou um nó folha." (FACELI et al., 2023, p. 79). Os **nós de divisão** possuem testes condicionais de acordo com o valor do atributo que representam; os **nós folha** são funções que representam as saídas do modelo, possuindo os valores da variável alvo. Cada nó da árvore corresponde a uma região no espaço definido pelos atributos.
+
+>"As regiões definidas pelas folhas da árvore são mutuamente excludentes, e a reunião dessas regiões cobre todo o espaço definido pelos atributos. A interseção das regiões abrangidas por quaisquer duas folhas é vazia. A união de todas as regiões (todas as folhas) é U. Uma árvore de decisão abrange todo o espaço de instâncias. Esse fato implica que uma árvore de decisão pode fazer predições para qualquer exemplo de entrada. [...] As condições ao longo de um ramo (um percurso entre a raiz e uma folha) são conjunções de condições e os ramos individuais são disjunções. Assim, cada ramo forma uma regra com uma parte condicional e uma conclusão. A parte condicional é uma conjunção de condições. Condições são testes que envolvem um atributo particular, operador [...] e um valor do domínio do atributo." (FACELI et al., 2023, p. 79).
+
+Para exemplificar, vejamos a imagem a seguir:
+![Árvore de decisão e regiões de decisão no espaço de objetos](../../imagens/21_am_faceli_arvore_de_decisao.png)
+Figura 21 — Árvore de decisão e regiões de decisão no espaço de objetos (FACELI et al., 2023, p. 79).
 
 ## 6.2 Modelos baseados em regras
 
@@ -29,12 +37,25 @@ Nesse sentido, "um problema complexo é dividido em problemas mais simples, aos 
   - Desvantagens
     - Menor acurácia preditiva em comparação aos modelos "caixa-preta"
 - **Modelos baseados em árvores**
+  - Classificação (árvores de decisão) e regressão (árvores de regressão)
+    - A interpretação dos modelos e implementação dos algoritmos construtores de ambas são similares
+  - Recursividade
+  - Divisão e conquista
+  - Nós de divisão (testes condicionais com base nos valores dos atributos) e folha (valores da variável alvo)
 - **Modelos baseados em regras**
 
 ## Referências complementares
+
+CORMEN, Thomas H.; LEISERSON, Charles E.; RIVEST, Ronald L.; STEIN, Clifford. **Algoritmos: teoria e prática**. Trad. Arlete Simille Marques. 3. ed. Rio de Janeiro: Elsevier, 2012.
 
 ## Notas
 
 [^1]: Neste contexto, o termo **símbolo** refere-se à abstração de conceitos, objetos ou relações do mundo real, que propriamente os representam ou a suas características e estados. Por conseguinte, **estruturas simbólicas** são agrupamentos desses elementos fundamentais, de modo a representar conhecimentos e relacionamentos mais complexos.
 
 [^2]: A literatura comumente utiliza a expressão "caixa-preta" (*black box*) para se referir a modelos cujo processo decisório não é facilmente inferível ou interpretável por seres humanos, como é o caso das redes neurais artificiais. A propósito, vide o fichamento [1.2](../neural-networks-and-learning-machines-simon-haykin/_introduction.md), que contém algumas referências à terminologia no âmbito das redes neurais, em especial as [notas](../neural-networks-and-learning-machines-simon-haykin/_introduction.md#notas) 1 e 19.
+
+[^3]: Ver o [suplemento 3](../../suplementos/03-estruturas-de-dados.md), sobre estruturas de dados, para informações adicionais sobre **árvores**.
+
+[^4]: A **recursividade** é uma característica de determinados algoritmos de se chamarem a si mesmos, uma ou mais vezes, a fim de fracionar um problema em tantos problemas menores quantos forem necessários, até que seja possível resolver o problema original. Normalmente, isso é feito por meio da abordagem da **divisão e conquista**, que em cada nível de recursão aplica três etapas: divisão, conquista e combinação (Cormen et al., 2012).
+
+[^5]: No livro, os autores utilizam o termo árvore de decisão para se referir, indistintamente, às árvores de decisão ou de regressão, inclusive neste caso, dado que a interpretação dos modelos e a indução da árvore são bastante similares. Todavia, ressalvam que, se necessária, haverá a devida distinção.
