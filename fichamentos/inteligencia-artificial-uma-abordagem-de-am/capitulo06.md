@@ -8,7 +8,7 @@
 
 Englobam modelos cujo objetivo é representar explicitamente, através de estruturas simbólicas[^1], o conhecimento extraído do conjunto de dados. Esses métodos facilitam a interpretação do resultado por seres humanos, visto que asseguram "[...] uma compreensibilidade maior do processo decisório [...], estando mais alinhado[s] aos princípios de que os modelos de AM devem também ser 'explicáveis' (*Explainable Machine Learning*) para garantir maior transparência em sua operação." (FACELI et al., 2023, p. 78). Em contrapartida, se utilizados isoladamente, têm menor acurácia preditiva em comparação a outros modelos, ditos "caixa-preta"[^2].
 
-Não obstante, é importante destacar que "a combinação de múltiplos modelos de árvores em comitês (*ensembles*) [...] tem se mostrado competitiva e é uma abordagem frequentemente empregada para aumentar o desempenho preditivo desses modelos." (FACELI et al., 2023, p. 97).
+Não obstante, é importante destacar que, "atualmente, existem algoritmos eficientes para indução de árvores de decisão ou conjuntos de regras e de aplicação eficiente, com um desempenho equivalente ao de outros modelos (como redes neurais e SVM), mas com maior grau de interpretabilidade. [...] A combinação de múltiplos modelos de árvores em comitês (*ensembles*) também tem se mostrado competitiva e é uma abordagem frequentemente empregada para aumentar o desempenho preditivo desses modelos." (FACELI et al., 2023, p. 97).
 
 ## 6.1 Modelos baseados em árvores[^3]
 
@@ -24,6 +24,28 @@ Para exemplificar, vejamos a imagem a seguir:
 ![Árvore de decisão e regiões de decisão no espaço de objetos](../../imagens/21_am_faceli_arvore_de_decisao.png)
 Figura 21 — Árvore de decisão e regiões de decisão no espaço de objetos (FACELI et al., 2023, p. 79).
 
+### 6.1.1 Regras de divisão em tarefas de classificação
+
+As regras de divisão servem para **atenuar a impureza** dos conjuntos de dados e balizam a construção da árvore de decisão no intuito de **maximizar a homogeneidade** dos subconjuntos gerados em cada recursão, de modo que garantir a congruência dos atributos no tocante à seleção daqueles que melhor discriminam cada classe (*goodness of split*). Para isso, normalmente adota-se a estratégia "olha para a frente um passo", de sorte que, uma vez tomada, a decisão não é reconsiderada pelo algoritmo. "Essa pesquisa de subida de encosta (*hill-climbing*) sem *backtracking* é suscetível aos riscos usuais de convergência a uma solução ótima localmente que não é ótima globalmente." (FACELI et al., 2023, p. 80).
+
+"Uma proposta natural é rotular cada subconjunto da divisão por sua classe mais frequente e escolher a divisão que tem menores erros" (FACELI et al., 2023, p. 81), e as diversas propostas para isso convergem para a conclusão de que "[...] uma divisão que mantém a proporção de classes em todo o subconjunto não tem utilidade, e uma divisão na qual cada subconjunto contém somente exemplos de uma classe tem utilidade máxima." (FACELI et al., 2023, p. 81).
+
+Assim, a melhor divisão é aquela que minimiza a impureza e, consequentemente, heterogeneidade dos subconjuntos. Em sentido logicamente contrário, portanto, é de se concluir que a divisão ideal busca maximizar a homogeneidade dos dados em cada subconjunto.
+
+As principais regras são baseadas no **ganho de informação** e no **índice de Gini**. Embora não haja consenso em relação à superioridade, a escolha por algum critério parece ser superior à divisão aleatória de atributos.
+
+#### 6.1.1.1 Baseadas no ganho de informação
+
+<!-- Esta regra é baseada na ideia de **entropia**, que informa a **aleatoriedade de uma variável**, isto é, **quantifica a dificuldade** de predizê-la. A entropia também pode ser compreendida como uma medida da desordem ou impureza do conjunto de dados.
+
+Logo, quanto maior a entropia[^6], mais difícil será predizer o valor dessa variável aleatória, e **a árvore de decisão é construída de modo a minimizar a dificuldade** de predizer a variável alvo.
+
+Em cada nó, o atributo que mais reduzir a entropia será utilizado para balizar a divisão, particionando o conjunto de dados. Nesse sentido, "para cada atributo, o ganho de informação mede a redução na entropia nas partições obtidas de acordo com os valores do atributo. Informalmente, o ganho de informação é dado pela diferença entre a entropia do conjunto de exemplos e a soma ponderada da entropia das partições." (FACELI et al., 2023, p. 81). -->
+
+#### 6.1.1.2 Baseadas no Índice de Gini
+
+### 6.1.2 Regras de divisão em tarefas de regressão
+
 ## 6.2 Modelos baseados em regras
 
 ## Principais tópicos
@@ -37,11 +59,22 @@ Figura 21 — Árvore de decisão e regiões de decisão no espaço de objetos (
   - Desvantagens
     - Menor acurácia preditiva em comparação aos modelos "caixa-preta"
 - **Modelos baseados em árvores**
-  - Classificação (árvores de decisão) e regressão (árvores de regressão)
+  - **Classificação** (árvores de decisão) e **regressão** (árvores de regressão)
     - A interpretação dos modelos e implementação dos algoritmos construtores de ambas são similares
   - Recursividade
   - Divisão e conquista
   - Nós de divisão (testes condicionais com base nos valores dos atributos) e folha (valores da variável alvo)
+  - **Regras de divisão em tarefas de classificação**
+    - Minimizar a **impureza** e a heterogeneidade dos subconjuntos e, consequentemente, maximizar a homogeneidade dos dados que os compõem
+    - Seleção dos atributos que melhor discriminam cada classe (*goodness of split*)
+    - **Ganho de informação**
+      <!-- - **Entropia**
+        - Aleatoriedade de uma variável, que leva à dificuldade de sua predição
+        - Medida da desordem ou impureza do conjunto de dados
+      - Corresponde à diferença entre a entropia do conjunto e a soma ponderada das entropias de cada partição, de sorte que exprime a redução da aleatoriedade em cada etapa da divisão
+      - Atributos qualitativos e quantitativos -->
+    - **Índice de Gini**
+  - **Regras de divisão em tarefas de regressão**
 - **Modelos baseados em regras**
 
 ## Referências complementares
@@ -59,3 +92,5 @@ CORMEN, Thomas H.; LEISERSON, Charles E.; RIVEST, Ronald L.; STEIN, Clifford. **
 [^4]: A **recursividade** é uma característica de determinados algoritmos de se chamarem a si mesmos, uma ou mais vezes, a fim de fracionar um problema em tantos problemas menores quantos forem necessários, até que seja possível resolver o problema original. Normalmente, isso é feito por meio da abordagem da **divisão e conquista**, que em cada nível de recursão aplica três etapas: divisão, conquista e combinação (Cormen et al., 2012).
 
 [^5]: No livro, os autores utilizam o termo árvore de decisão para se referir, indistintamente, às árvores de decisão ou de regressão, inclusive neste caso, dado que a interpretação dos modelos e a indução da árvore são bastante similares. Todavia, ressalvam que, se necessária, haverá a devida distinção.
+
+[^6]: Ela é medida em bits usando logaritmos na base 2, assumindo que 0 x $\log_2(0) = 0$.

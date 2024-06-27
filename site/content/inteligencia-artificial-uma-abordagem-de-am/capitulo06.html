@@ -40,40 +40,62 @@
                         Englobam modelos cujo objetivo é representar explicitamente, através de estruturas simbólicas<sup><a class="linknotas" href="#nota_1">[1]</a></sup>, o conhecimento extraído do conjunto de dados. Esses métodos facilitam a interpretação do resultado por seres humanos, visto que asseguram "[...] uma compreensibilidade maior do processo decisório [...], estando mais alinhado[s] aos princípios de que os modelos de AM devem também ser 'explicáveis' (<em>Explainable Machine Learning</em>) para garantir maior transparência em sua operação." (FACELI et al., 2023, p. 78). Em contrapartida, se utilizados isoladamente, têm menor acurácia preditiva em comparação a outros modelos, ditos "caixa-preta"<sup><a class="linknotas" href="#nota_2">[2]</a></sup>.
                     </p>
                     <p>
-                        Não obstante, é importante destacar que "a combinação de múltiplos modelos de árvores em comitês (<em>ensembles</em>) [...] tem se mostrado competitiva e é uma abordagem frequentemente empregada para aumentar o desempenho preditivo desses modelos." (FACELI et al., 2023, p. 97).
+                        Não obstante, é importante destacar que, "atualmente, existem algoritmos eficientes para indução de árvores de decisão ou conjuntos de regras e de aplicação eficiente, com um desempenho equivalente ao de outros modelos (como redes neurais e SVM), mas com maior grau de interpretabilidade. [...] A combinação de múltiplos modelos de árvores em comitês (<em>ensembles</em>) também tem se mostrado competitiva e é uma abordagem frequentemente empregada para aumentar o desempenho preditivo desses modelos." (FACELI et al., 2023, p. 97).
                     </p>
                 </div>
                 <div>
                     <h4 id="subtitulo_1_nota_3_4">6.1 Modelos baseados em árvores <sup><a class="linknotas" href="#nota_3">[3]</a></sup></h4>
-                </div>
-                <p>
-                    Os modelos baseados em árvores utilizam a estrutura de dados homônima para solucionar problemas de classificação ou regressão, casos em que os algoritmos são respectivamente denominados <strong>árvores de decisão</strong> ou <strong>árvores de regressão</strong>. Em ambos os casos, a forma de se interpretar o modelo e de construir o algoritmo indutor da própria árvore são bastante similares e, de modo geral, o problema é abordado <strong>recursivamente</strong> por meio da estratégia da <strong>divisão e conquista</strong><sup><a class="linknotas" href="#nota_4">[4]</a></sup>.
-                </p>
-                <p>
-                    Nesse sentido, "um problema complexo é dividido em problemas mais simples, aos quais recursivamente é aplicada a mesma estratégia. As soluções dos subproblemas podem ser combinadas, na forma de uma árvore, para produzir uma solução do problema complexo. A força dessa proposta vem da capacidade de dividir o espaço de instâncias em subespaços e cada subespaço é ajustado usando diferentes modelos." (FACELI et al., 2023, p. 78).
-                </p>
-                <p id="subtitulo_1_nota_5">
-                    "Formalmente, uma árvore de decisão<sup><a class="linknotas" href="#nota_5">[5]</a></sup> é um grafo direcionado acíclico em que cada nó ou é um nó de divisão, com dois ou mais sucessores, ou um nó folha." (FACELI et al., 2023, p. 79). Os <strong>nós de divisão</strong> possuem testes condicionais de acordo com o valor do atributo que representam; os <strong>nós folha</strong> são funções que representam as saídas do modelo, possuindo os valores da variável alvo. Cada nó da árvore corresponde a uma região no espaço definido pelos atributos.
-                </p>
-                <p>
-                    <blockquote>
-                        "As regiões definidas pelas folhas da árvore são mutuamente excludentes, e a reunião dessas regiões cobre todo o espaço definido pelos atributos. A interseção das regiões abrangidas por quaisquer duas folhas é vazia. A união de todas as regiões (todas as folhas) é U. Uma árvore de decisão abrange todo o espaço de instâncias. Esse fato implica que uma árvore de decisão pode fazer predições para qualquer exemplo de entrada. [...] As condições ao longo de um ramo (um percurso entre a raiz e uma folha) são conjunções de condições e os ramos individuais são disjunções. Assim, cada ramo forma uma regra com uma parte condicional e uma conclusão. A parte condicional é uma conjunção de condições. Condições são testes que envolvem um atributo particular, operador [...] e um valor do domínio do atributo." (FACELI et al., 2023, p. 79).
-                    </blockquote>
-                </p>
-                <p>
-                    Para exemplificar, vejamos a imagem a seguir:
-                    <div class="image-container">
-                        <figure>
-                            <img src="../../../imagens/21_am_faceli_arvore_de_decisao.png" alt="Árvore de decisão e regiões de decisão no espaço de objetos">
-                            <figcaption class="legenda">Figura 21 - Árvore de decisão e regiões de decisão no espaço de objetos (FACELI et al., 2023, p. 79).</figcaption>
-                        </figure>
-                    </div>
-                </p>
+                    <p>
+                        Os modelos baseados em árvores utilizam a estrutura de dados homônima para solucionar problemas de classificação ou regressão, casos em que os algoritmos são respectivamente denominados <strong>árvores de decisão</strong> ou <strong>árvores de regressão</strong>. Em ambos os casos, a forma de se interpretar o modelo e de construir o algoritmo indutor da própria árvore são bastante similares e, de modo geral, o problema é abordado <strong>recursivamente</strong> por meio da estratégia da <strong>divisão e conquista</strong><sup><a class="linknotas" href="#nota_4">[4]</a></sup>.
+                    </p>
+                    <p>
+                        Nesse sentido, "um problema complexo é dividido em problemas mais simples, aos quais recursivamente é aplicada a mesma estratégia. As soluções dos subproblemas podem ser combinadas, na forma de uma árvore, para produzir uma solução do problema complexo. A força dessa proposta vem da capacidade de dividir o espaço de instâncias em subespaços e cada subespaço é ajustado usando diferentes modelos." (FACELI et al., 2023, p. 78).
+                    </p>
+                    <p id="subtitulo_1_nota_5">
+                        "Formalmente, uma árvore de decisão<sup><a class="linknotas" href="#nota_5">[5]</a></sup> é um grafo direcionado acíclico em que cada nó ou é um nó de divisão, com dois ou mais sucessores, ou um nó folha." (FACELI et al., 2023, p. 79). Os <strong>nós de divisão</strong> possuem testes condicionais de acordo com o valor do atributo que representam; os <strong>nós folha</strong> são funções que representam as saídas do modelo, possuindo os valores da variável alvo. Cada nó da árvore corresponde a uma região no espaço definido pelos atributos.
+                    </p>
+                    <p>
+                        <blockquote>
+                            "As regiões definidas pelas folhas da árvore são mutuamente excludentes, e a reunião dessas regiões cobre todo o espaço definido pelos atributos. A interseção das regiões abrangidas por quaisquer duas folhas é vazia. A união de todas as regiões (todas as folhas) é U. Uma árvore de decisão abrange todo o espaço de instâncias. Esse fato implica que uma árvore de decisão pode fazer predições para qualquer exemplo de entrada. [...] As condições ao longo de um ramo (um percurso entre a raiz e uma folha) são conjunções de condições e os ramos individuais são disjunções. Assim, cada ramo forma uma regra com uma parte condicional e uma conclusão. A parte condicional é uma conjunção de condições. Condições são testes que envolvem um atributo particular, operador [...] e um valor do domínio do atributo." (FACELI et al., 2023, p. 79).
+                        </blockquote>
+                    </p>
+                    <p>
+                        Para exemplificar, vejamos a imagem a seguir:
+                        <div class="image-container">
+                            <figure>
+                                <img src="../../../imagens/21_am_faceli_arvore_de_decisao.png" alt="Árvore de decisão e regiões de decisão no espaço de objetos">
+                                <figcaption class="legenda">Figura 21 - Árvore de decisão e regiões de decisão no espaço de objetos (FACELI et al., 2023, p. 79).</figcaption>
+                            </figure>
+                        </div>
+                    </p>
 
-                <!-- <div>
-                    <h4>6.2 Modelos baseados em regras</h4>
-                </div> -->
-                
+                    <div>
+                        <h5>6.1.1 Regras de divisão em tarefas de classificação</h5>
+                        <p>
+                            As regras de divisão servem para <strong>atenuar a impureza</strong> dos conjuntos de dados e balizam a construção da árvore de decisão no intuito de <strong>maximizar a homogeneidade</strong> dos subconjuntos gerados em cada recursão, de modo que garantir a congruência dos atributos no tocante à seleção daqueles que melhor discriminam cada classe (<em>goodness of split</em>). Para isso, normalmente adota-se a estratégia "olha para a frente um passo", de sorte que, uma vez tomada, a decisão não é reconsiderada pelo algoritmo. "Essa pesquisa de subida de encosta (<em>hill-climbing</em>) sem <em>backtracking</em> é suscetível aos riscos usuais de convergência a uma solução ótima localmente que não é ótima globalmente." (FACELI et al., 2023, p. 80).
+                        </p>
+                        <p>
+                            "Uma proposta natural é rotular cada subconjunto da divisão por sua classe mais frequente e escolher a divisão que tem menores erros" (FACELI et al., 2023, p. 81), e as diversas propostas para isso convergem para a conclusão de que "[...] uma divisão que mantém a proporção de classes em todo o subconjunto não tem utilidade, e uma divisão na qual cada subconjunto contém somente exemplos de uma classe tem utilidade máxima." (FACELI et al., 2023, p. 81).
+                        </p>
+                        <p>
+                            Assim, a melhor divisão é aquela que minimiza a impureza e, consequentemente, heterogeneidade dos subconjuntos. Em sentido logicamente contrário, portanto, é de se concluir que a divisão ideal busca maximizar a homogeneidade dos dados em cada subconjunto.
+                        </p>
+                        <p>
+                            As principais regras são baseadas no <strong>ganho de informação</strong> e no <strong>índice de Gini</strong>. Embora não haja consenso em relação à superioridade, a escolha por algum critério parece ser superior à divisão aleatória de atributos.
+                        </p>
+
+                        <!-- <h6 id="subtitulo_1_nota_6">6.1.1.1 Baseadas no ganho de informação</h6>
+                        <p>
+                            Esta regra é baseada na ideia de <strong>entropia</strong>, que informa a <strong>aleatoriedade de uma variável</strong> isto é, <strong>quantifica a dificuldade</strong> de predizê-la. A entropia também pode ser compreendida como uma medida da desordem ou impureza do conjunto de dados.
+                        </p>
+                        <p>
+                            Logo, quanto maior a entropia<sup><a class="linknotas" href="#nota_6">[6]</a></sup>, mais difícil será predizer o valor dessa variável aleatória, e <strong>a árvore de decisão é construída de modo a minimizar a dificuldade</strong> de predizer a variável alvo.
+                        </p>
+                        <p>
+                            Em cada nó, o atributo que mais reduzir a entropia será utilizado para balizar a divisão, particionando o conjunto de dados. Nesse sentido, "para cada atributo, o ganho de informação mede a redução na entropia nas partições obtidas de acordo com os valores do atributo. Informalmente, o ganho de informação é dado pela diferença entre a entropia do conjunto de exemplos e a soma ponderada da entropia das partições." (FACELI et al., 2023, p. 81).
+                        </p> -->
+                    </div>
+                </div>
             </div>
             <a class="emoji" href="#top">[ 🔝 ]</a>
         </article>
@@ -113,6 +135,31 @@
                         <li>Recursividade</li>
                         <li>Divisão e conquista</li>
                         <li>Nós de divisão (testes condicionais com base nos valores dos atributos) e folha (valores da variável alvo)</li>
+                        <li>
+                            <strong>Regras de divisão em tarefas de classificação</strong>
+                            <ul>
+                                <li>
+                                    Minimizar a <strong>impureza</strong> e a heterogeneidade dos subconjuntos e, consequentemente, maximizar a homogeneidade dos dados que os compõem
+                                </li>
+                                <li>
+                                    Seleção dos atributos que melhor discriminam cada classe (<em>goodness of split</em>)
+                                </li>
+                                <!-- <li>
+                                    <strong>Ganho de informação</strong>
+                                    <ul>
+                                        <li>
+                                            <strong>Entropia</strong>
+                                            <ul>
+                                                <li>Aleatoriedade de uma variável, que leva à dificuldade de sua predição</li>
+                                                <li>Medida da desordem ou impureza do conjunto de dados</li>
+                                            </ul>
+                                            <li>Corresponde à diferença entre a entropia do conjunto e a soma ponderada das entropias de cada partição, de sorte que exprime a redução da aleatoriedade em cada etapa da divisão</li>
+                                            <li>Atributos qualitativos e quantitativos</li>
+                                        </li>
+                                    </ul>
+                                </li> -->
+                            </ul>
+                        </li>
                     </ul>
                 </li>
                 <li><strong>Modelos baseados em regras</strong></li>
@@ -136,6 +183,7 @@
                 <p id="nota_3">[3] Ver o <a href="../suplementos/03-ed.html">suplemento 3</a>, sobre estruturas de dados, para informações adicionais sobre <stong>árvores.</stong><a class="linkdiscreto" href="#subtitulo_1_nota_3_4"> [ 🔙 ]</a></p>
                 <p id="nota_4">[4] A <strong>recursividade</strong> é uma característica de determinados algoritmos de se chamarem a si mesmos, uma ou mais vezes, a fim de fracionar um problema em tantos problemas menores quantos forem necessários, até que seja possível resolver o problema original. Normalmente, isso é feito por meio da abordagem da <strong>divisão e conquista</strong>, que em cada nível de recursão aplica três etapas: divisão, conquista e combinação (Cormen et al., 2012).<a class="linkdiscreto" href="#subtitulo_1_nota_3_4"> [ 🔙 ]</a></p>
                 <p id="nota_5">[5] No livro, os autores utilizam o termo árvore de decisão para se referir, indistintamente, às árvores de decisão ou de regressão, inclusive neste caso, dado que a interpretação dos modelos e a indução da árvore são bastante similares. Todavia, ressalvam que, se necessária, haverá a devida distinção.<a class="linkdiscreto" href="#subtitulo_1_nota_3_4"> [ 🔙 ]</a></p>
+                <p id="nota_6">[6] Ela é medida em bits usando logaritmos na base 2, assumindo que <math><ms>0 x &nbsp;</ms><msub><mi>log</mi><mn>2</mn></msub><mo>(</mo><mn>0</mn><mo>)</mo><mo>=</mo><mn>0</mn></math><a class="linkdiscreto" href="#subtitulo_1_nota_6"> [ 🔙 ]</a></p>
             </div>
             <a class="emoji" href="#top">[ 🔝 ]</a>
         </article>
