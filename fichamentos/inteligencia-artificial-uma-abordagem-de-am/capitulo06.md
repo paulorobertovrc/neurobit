@@ -32,7 +32,11 @@ As regras de divisão servem para **atenuar a impureza** dos conjuntos de dados 
 
 Assim, a melhor divisão é aquela que minimiza a impureza e, consequentemente, heterogeneidade dos subconjuntos. Em sentido logicamente contrário, portanto, é de se concluir que a divisão ideal busca maximizar a homogeneidade dos dados em cada subconjunto.
 
-As principais regras são baseadas no **ganho de informação** e no **índice de Gini**. Embora não haja consenso em relação à superioridade, a escolha por algum critério parece ser superior à divisão aleatória de atributos.
+Conforme Martin (1997), os autores distinguem as métricas para avaliar a qualidade das divisões em subconjuntos em três grandes grupos (**funções de mérito**), considerando diferentes critérios: **(1)** baseadas na diferença entre a **distribuição de dados antes e depois da divisão**, que enfatizam a **pureza dos subconjuntos**; **(2)** baseadas em **diferenças entre os subconjuntos**, cujo enfoque é a **disparidade entre os subconjuntos** após a divisão; e **(3)** baseadas na **confiabilidade dos subconjuntos**, isto é, em medidas estatísticas de independência capazes de denotar que cada nó/subconjunto (atributo) é efetivamente adequado para produzir boas previsões, em que a ênfase é no **peso da evidência**.
+
+Embora não haja consenso em relação à superioridade, a escolha por algum critério parece ser superior à divisão aleatória de atributos.
+
+Nas tarefas de classificação, as regras baseadas no **ganho de informação** e no **índice de Gini** são as mais comuns.
 
 #### 6.1.1.1 Baseadas no ganho de informação
 
