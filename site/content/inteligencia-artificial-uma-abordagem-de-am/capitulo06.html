@@ -91,16 +91,25 @@
                             Nas tarefas de classificação, as regras baseadas no <strong>ganho de informação</strong> e no <strong>índice de Gini</strong> são as mais comuns.
                         </p>
 
-                        <!-- <h6 id="subtitulo_1_nota_6">6.1.1.1 Baseadas no ganho de informação</h6>
+                        <h6 id="subtitulo_1_nota_6">6.1.1.1 Baseadas no ganho de informação</h6>
                         <p>
-                            Esta regra é baseada na ideia de <strong>entropia</strong>, que informa a <strong>aleatoriedade de uma variável</strong> isto é, <strong>quantifica a dificuldade</strong> de predizê-la. A entropia também pode ser compreendida como uma medida da desordem ou impureza do conjunto de dados.
+                            Esta regra é baseada no conceito de <strong>entropia</strong>, que informa a <strong>aleatoriedade de uma variável</strong> isto é, <strong>quantifica a dificuldade</strong> de predizê-la. A entropia também pode ser compreendida como uma medida da desordem ou impureza do conjunto de dados, e é medida em logaritmos na base 2. Logo, quanto maior a entropia, mais difícil será predizer o valor dessa variável aleatória, e <strong>a árvore de decisão é construída de modo a minimizar a dificuldade</strong> de predizer a variável alvo.
                         </p>
                         <p>
-                            Logo, quanto maior a entropia<sup><a class="linknotas" href="#nota_6">[6]</a></sup>, mais difícil será predizer o valor dessa variável aleatória, e <strong>a árvore de decisão é construída de modo a minimizar a dificuldade</strong> de predizer a variável alvo.
+                            <blockquote>
+                                "A cada nó de decisão, o atributo que mais reduz a aleatoriedade da variável alvo será escolhido para dividir os dados. [...] Os valores de um atributo definem partições [divisões] no conjunto de exemplos. Para cada atributo, o ganho de informação mede a redução na entropia nas partições obtidas de acordo com os valores do atributo. Informalmente, o ganho de informação é dado pela diferença entre a entropia do conjunto de exemplos e a soma ponderada da entropia das partições. A construção da árvore de decisão é guiada pelo objetivo de reduzir a entropia, isto é, a aleatoriedade (dificuldade para predizer) da variável alvo." (FACELI et al., 2023, p. 81).
+                            </blockquote>
                         </p>
                         <p>
-                            Em cada nó, o atributo que mais reduzir a entropia será utilizado para balizar a divisão, particionando o conjunto de dados. Nesse sentido, "para cada atributo, o ganho de informação mede a redução na entropia nas partições obtidas de acordo com os valores do atributo. Informalmente, o ganho de informação é dado pela diferença entre a entropia do conjunto de exemplos e a soma ponderada da entropia das partições." (FACELI et al., 2023, p. 81).
-                        </p> -->
+                            Em cada nó de divisão da árvore, o atributo que mais reduzir a entropia, consequentemente maximizando o ganho de informação, será escolhido para resolver o subproblema — leia-se, a divisão em subconjunto naquela etapa recursiva. Logo, é esperado que a cada divisão ocorra a diminuição da aleatoriedade — incerteza em relação à classificação correta da variável alvo — em virtude da consistência dos atributos que conformam o subconjunto como sendo aqueles que melhor discriminam as classes.
+                        </p>
+                        <p>
+                            Por isso é que, essencialmente, o ganho de informação consiste na redução da aleatoriedade resultante da diferença entre a entropia de todo o conjunto de dados e a dos subconjuntos.
+                        </p>
+                        <h6>6.1.1.2 Baseadas no índice de Gini</h6>
+                        <p>
+                            É uma métrica de <strong>impureza</strong> dos nós de decisão (subconjuntos). <strong>Avalia a probabilidade de que exemplos escolhidos ao acaso pertençam a classes diferentes, mas estejam no mesmo subconjunto.</strong> Quanto menor o índice de Gini, mais homogêneo — e menos impuro — é o subconjunto. Nesse sentido, o atributo que melhor discrimina a classe é aquele que minimiza o índice de Gini e, via de consequência, reduz a impureza e aumenta a homogeneidade dos subconjuntos.
+                        </p>
                     </div>
                 </div>
             </div>
@@ -151,20 +160,30 @@
                                 <li>
                                     Seleção dos atributos que melhor discriminam cada classe (<em>goodness of split</em>)
                                 </li>
-                                <!-- <li>
+                                <li>
                                     <strong>Ganho de informação</strong>
                                     <ul>
                                         <li>
                                             <strong>Entropia</strong>
                                             <ul>
-                                                <li>Aleatoriedade de uma variável, que leva à dificuldade de sua predição</li>
                                                 <li>Medida da desordem ou impureza do conjunto de dados</li>
+                                                <li>A aleatoriedade de uma variável dificulta sua predição</li>
                                             </ul>
-                                            <li>Corresponde à diferença entre a entropia do conjunto e a soma ponderada das entropias de cada partição, de sorte que exprime a redução da aleatoriedade em cada etapa da divisão</li>
-                                            <li>Atributos qualitativos e quantitativos</li>
+                                            <li>
+                                                Exprime a redução da aleatoriedade/incerteza pela diferença da entropia de todo o conjunto de dados e a dos subconjuntos
+                                            </li>
                                         </li>
                                     </ul>
-                                </li> -->
+                                </li>
+                                <li>
+                                    <strong>Índice de Gini</strong>
+                                    <ul>
+                                        <li>Medida de impureza dos nós de decisão (subconjuntos)</li>
+                                        <li>
+                                            Avalia a probabilidade de que exemplos escolhidos ao acaso pertençam a classes diferentes, mas tenham sido classificados no mesmo subconjunto
+                                        </li>
+                                    </ul>
+                                </li>
                             </ul>
                         </li>
                     </ul>
@@ -190,7 +209,6 @@
                 <p id="nota_3">[3] Ver o <a href="../suplementos/03-ed.html">suplemento 3</a>, sobre estruturas de dados, para informações adicionais sobre <stong>árvores.</stong><a class="linkdiscreto" href="#subtitulo_1_nota_3_4"> [ 🔙 ]</a></p>
                 <p id="nota_4">[4] A <strong>recursividade</strong> é uma característica de determinados algoritmos de se chamarem a si mesmos, uma ou mais vezes, a fim de fracionar um problema em tantos problemas menores quantos forem necessários, até que seja possível resolver o problema original. Normalmente, isso é feito por meio da abordagem da <strong>divisão e conquista</strong>, que em cada nível de recursão aplica três etapas: divisão, conquista e combinação (Cormen et al., 2012).<a class="linkdiscreto" href="#subtitulo_1_nota_3_4"> [ 🔙 ]</a></p>
                 <p id="nota_5">[5] No livro, os autores utilizam o termo árvore de decisão para se referir, indistintamente, às árvores de decisão ou de regressão, inclusive neste caso, dado que a interpretação dos modelos e a indução da árvore são bastante similares. Todavia, ressalvam que, se necessária, haverá a devida distinção.<a class="linkdiscreto" href="#subtitulo_1_nota_3_4"> [ 🔙 ]</a></p>
-                <p id="nota_6">[6] Ela é medida em bits usando logaritmos na base 2, assumindo que <math><ms>0 x &nbsp;</ms><msub><mi>log</mi><mn>2</mn></msub><mo>(</mo><mn>0</mn><mo>)</mo><mo>=</mo><mn>0</mn></math><a class="linkdiscreto" href="#subtitulo_1_nota_6"> [ 🔙 ]</a></p>
             </div>
             <a class="emoji" href="#top">[ 🔝 ]</a>
         </article>

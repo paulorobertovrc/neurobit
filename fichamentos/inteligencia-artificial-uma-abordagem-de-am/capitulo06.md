@@ -40,13 +40,17 @@ Nas tarefas de classificação, as regras baseadas no **ganho de informação** 
 
 #### 6.1.1.1 Baseadas no ganho de informação
 
-<!-- Esta regra é baseada na ideia de **entropia**, que informa a **aleatoriedade de uma variável**, isto é, **quantifica a dificuldade** de predizê-la. A entropia também pode ser compreendida como uma medida da desordem ou impureza do conjunto de dados.
+Esta regra é baseada no conceito de **entropia**, que informa a **aleatoriedade de uma variável**, isto é, **quantifica a dificuldade** de predizê-la. A entropia também pode ser compreendida como uma medida da desordem ou impureza do conjunto de dados, e é medida em logaritmos na base 2. Logo, quanto maior a entropia, mais difícil será predizer o valor dessa variável aleatória, e **a árvore de decisão é construída de modo a minimizar a dificuldade** de predizer a variável alvo.
 
-Logo, quanto maior a entropia[^6], mais difícil será predizer o valor dessa variável aleatória, e **a árvore de decisão é construída de modo a minimizar a dificuldade** de predizer a variável alvo.
+>"A cada nó de decisão, o atributo que mais reduz a aleatoriedade da variável alvo será escolhido para dividir os dados. [...] Os valores de um atributo definem partições [divisões] no conjunto de exemplos. Para cada atributo, o ganho de informação mede a redução na entropia nas partições obtidas de acordo com os valores do atributo. Informalmente, o ganho de informação é dado pela diferença entre a entropia do conjunto de exemplos e a soma ponderada da entropia das partições. A construção da árvore de decisão é guiada pelo objetivo de reduzir a entropia, isto é, a aleatoriedade (dificuldade para predizer) da variável alvo." (FACELI et al., 2023, p. 81).
 
-Em cada nó, o atributo que mais reduzir a entropia será utilizado para balizar a divisão, particionando o conjunto de dados. Nesse sentido, "para cada atributo, o ganho de informação mede a redução na entropia nas partições obtidas de acordo com os valores do atributo. Informalmente, o ganho de informação é dado pela diferença entre a entropia do conjunto de exemplos e a soma ponderada da entropia das partições." (FACELI et al., 2023, p. 81). -->
+Em cada nó de divisão da árvore, o atributo que mais reduzir a entropia, consequentemente maximizando o ganho de informação, será escolhido para resolver o subproblema — leia-se, a divisão em subconjunto naquela etapa recursiva. Logo, é esperado que a cada divisão ocorra a diminuição da aleatoriedade — incerteza em relação à classificação correta da variável alvo — em virtude da consistência dos atributos que conformam o subconjunto como sendo aqueles que melhor discriminam as classes.
 
-#### 6.1.1.2 Baseadas no Índice de Gini
+Por isso é que, essencialmente, o ganho de informação consiste na redução da aleatoriedade resultante da diferença entre a entropia de todo o conjunto de dados e a dos subconjuntos.
+
+#### 6.1.1.2 Baseadas no índice de Gini
+
+É uma métrica de **impureza** dos nós de decisão (subconjuntos). **Avalia a probabilidade de que exemplos escolhidos ao acaso pertençam a classes diferentes, mas estejam no mesmo subconjunto.** Quanto menor o índice de Gini, mais homogêneo — e menos impuro — é o subconjunto. Nesse sentido, o atributo que melhor discrimina a classe é aquele que minimiza o índice de Gini e, via de consequência, reduz a impureza e aumenta a homogeneidade dos subconjuntos.
 
 ### 6.1.2 Regras de divisão em tarefas de regressão
 
@@ -72,12 +76,13 @@ Em cada nó, o atributo que mais reduzir a entropia será utilizado para balizar
     - Minimizar a **impureza** e a heterogeneidade dos subconjuntos e, consequentemente, maximizar a homogeneidade dos dados que os compõem
     - Seleção dos atributos que melhor discriminam cada classe (*goodness of split*)
     - **Ganho de informação**
-      <!-- - **Entropia**
-        - Aleatoriedade de uma variável, que leva à dificuldade de sua predição
+      - **Entropia**
         - Medida da desordem ou impureza do conjunto de dados
-      - Corresponde à diferença entre a entropia do conjunto e a soma ponderada das entropias de cada partição, de sorte que exprime a redução da aleatoriedade em cada etapa da divisão
-      - Atributos qualitativos e quantitativos -->
+        - A aleatoriedade de uma variável dificulta sua predição
+      - Exprime a redução da aleatoriedade/incerteza pela diferença da entropia de todo o conjunto de dados e a dos subconjuntos
     - **Índice de Gini**
+      - Medida de impureza dos nós de decisão (subconjuntos)
+      - Avalia a probabilidade de que exemplos escolhidos ao acaso pertençam a classes diferentes, mas tenham sido classificados no mesmo subconjunto
   - **Regras de divisão em tarefas de regressão**
 - **Modelos baseados em regras**
 
@@ -96,5 +101,3 @@ CORMEN, Thomas H.; LEISERSON, Charles E.; RIVEST, Ronald L.; STEIN, Clifford. **
 [^4]: A **recursividade** é uma característica de determinados algoritmos de se chamarem a si mesmos, uma ou mais vezes, a fim de fracionar um problema em tantos problemas menores quantos forem necessários, até que seja possível resolver o problema original. Normalmente, isso é feito por meio da abordagem da **divisão e conquista**, que em cada nível de recursão aplica três etapas: divisão, conquista e combinação (Cormen et al., 2012).
 
 [^5]: No livro, os autores utilizam o termo árvore de decisão para se referir, indistintamente, às árvores de decisão ou de regressão, inclusive neste caso, dado que a interpretação dos modelos e a indução da árvore são bastante similares. Todavia, ressalvam que, se necessária, haverá a devida distinção.
-
-[^6]: Ela é medida em bits usando logaritmos na base 2, assumindo que 0 x $\log_2(0) = 0$.
