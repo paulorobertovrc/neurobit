@@ -91,7 +91,7 @@
                             Nas tarefas de classificação, as regras baseadas no <strong>ganho de informação</strong> e no <strong>índice de Gini</strong> são as mais comuns.
                         </p>
 
-                        <h6 id="subtitulo_1_nota_6">6.1.1.1 Baseadas no ganho de informação</h6>
+                        <h6>6.1.1.1 Baseadas no ganho de informação</h6>
                         <p>
                             Esta regra é baseada no conceito de <strong>entropia</strong>, que informa a <strong>aleatoriedade de uma variável</strong> isto é, <strong>quantifica a dificuldade</strong> de predizê-la. A entropia também pode ser compreendida como uma medida da desordem ou impureza do conjunto de dados, e é medida em logaritmos na base 2. Logo, quanto maior a entropia, mais difícil será predizer o valor dessa variável aleatória, e <strong>a árvore de decisão é construída de modo a minimizar a dificuldade</strong> de predizer a variável alvo.
                         </p>
@@ -106,7 +106,7 @@
                         <p>
                             Por isso é que, essencialmente, o ganho de informação consiste na redução da aleatoriedade resultante da diferença entre a entropia de todo o conjunto de dados e a dos subconjuntos.
                         </p>
-                        <h6>6.1.1.2 Baseadas no índice de Gini</h6>
+                        <h6 id="subtitulo_1_nota_6">6.1.1.2 Baseadas no índice de Gini <sup><a class="linknotas" href="#nota_6">[6]</a></sup></h6>
                         <p>
                             É uma métrica de <strong>impureza</strong> dos nós de decisão (subconjuntos). <strong>Avalia a probabilidade de que exemplos escolhidos ao acaso pertençam a classes diferentes, mas estejam no mesmo subconjunto.</strong> Quanto menor o índice de Gini, mais homogêneo — e menos impuro — é o subconjunto. Nesse sentido, o atributo que melhor discrimina a classe é aquele que minimiza o índice de Gini e, via de consequência, reduz a impureza e aumenta a homogeneidade dos subconjuntos.
                         </p>
@@ -198,6 +198,9 @@
             <p>
                 CORMEN, Thomas H.; LEISERSON, Charles E.; RIVEST, Ronald L.; STEIN, Clifford. <strong>Algoritmos: teoria e prática</strong>. Trad. Arlete Simille Marques. 3. ed. Rio de Janeiro: Elsevier, 2012.
             </p>
+            <p>
+                HOFFMANN, Rodolfo. <strong>Estatística para economistas</strong>. 4. ed. São Paulo: Pioneira Thomson Learning, 2006.
+            </p>
             <a class="emoji" href="#top">[ 🔝 ]</a>
         </article>
         <hr>
@@ -209,6 +212,7 @@
                 <p id="nota_3">[3] Ver o <a href="../suplementos/03-ed.html">suplemento 3</a>, sobre estruturas de dados, para informações adicionais sobre <stong>árvores.</stong><a class="linkdiscreto" href="#subtitulo_1_nota_3_4"> [ 🔙 ]</a></p>
                 <p id="nota_4">[4] A <strong>recursividade</strong> é uma característica de determinados algoritmos de se chamarem a si mesmos, uma ou mais vezes, a fim de fracionar um problema em tantos problemas menores quantos forem necessários, até que seja possível resolver o problema original. Normalmente, isso é feito por meio da abordagem da <strong>divisão e conquista</strong>, que em cada nível de recursão aplica três etapas: divisão, conquista e combinação (Cormen et al., 2012).<a class="linkdiscreto" href="#subtitulo_1_nota_3_4"> [ 🔙 ]</a></p>
                 <p id="nota_5">[5] No livro, os autores utilizam o termo árvore de decisão para se referir, indistintamente, às árvores de decisão ou de regressão, inclusive neste caso, dado que a interpretação dos modelos e a indução da árvore são bastante similares. Todavia, ressalvam que, se necessária, haverá a devida distinção.<a class="linkdiscreto" href="#subtitulo_1_nota_3_4"> [ 🔙 ]</a></p>
+                <p id="nota_6">[6] Na Economia, o <strong>índice de Gini</strong> é uma <strong>medida de desigualdade</strong> muito empregada para analisar a distribuição de renda, mas que pode ser usada para medir o grau de desigualdade de qualquer distribuição estatística, definido como a razão entre a <strong>área de desigualdade</strong>, obtida entre a <strong>linha da perfeita igualdade</strong> e a <strong>curva de Lorenz</strong>, e a área do triângulo formado pelos eixos do gráfico e a linha de perfeita igualdade (Hoffmann, 2006). Analogicamente, no contexto da aprendizagem de máquina, é possível trasladar esse raciocínio para a desigualdade - leia-se heterogeneidade - da distribuição dos elementos em um conjunto ou subconjunto de dados. <a class="linkdiscreto" href="#subtitulo_1_nota_6"> [ 🔙 ]</a></p>
             </div>
             <a class="emoji" href="#top">[ 🔝 ]</a>
         </article>

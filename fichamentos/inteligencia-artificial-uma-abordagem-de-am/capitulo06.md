@@ -48,7 +48,7 @@ Em cada nó de divisão da árvore, o atributo que mais reduzir a entropia, cons
 
 Por isso é que, essencialmente, o ganho de informação consiste na redução da aleatoriedade resultante da diferença entre a entropia de todo o conjunto de dados e a dos subconjuntos.
 
-#### 6.1.1.2 Baseadas no índice de Gini
+#### 6.1.1.2 Baseadas no índice de Gini [^6]
 
 É uma métrica de **impureza** dos nós de decisão (subconjuntos). **Avalia a probabilidade de que exemplos escolhidos ao acaso pertençam a classes diferentes, mas estejam no mesmo subconjunto.** Quanto menor o índice de Gini, mais homogêneo — e menos impuro — é o subconjunto. Nesse sentido, o atributo que melhor discrimina a classe é aquele que minimiza o índice de Gini e, via de consequência, reduz a impureza e aumenta a homogeneidade dos subconjuntos.
 
@@ -81,6 +81,7 @@ Por isso é que, essencialmente, o ganho de informação consiste na redução d
         - A aleatoriedade de uma variável dificulta sua predição
       - Exprime a redução da aleatoriedade/incerteza pela diferença da entropia de todo o conjunto de dados e a dos subconjuntos
     - **Índice de Gini**
+      - Medida do grau de desigualdade de uma distribuição estatística
       - Medida de impureza dos nós de decisão (subconjuntos)
       - Avalia a probabilidade de que exemplos escolhidos ao acaso pertençam a classes diferentes, mas tenham sido classificados no mesmo subconjunto
   - **Regras de divisão em tarefas de regressão**
@@ -89,6 +90,8 @@ Por isso é que, essencialmente, o ganho de informação consiste na redução d
 ## Referências complementares
 
 CORMEN, Thomas H.; LEISERSON, Charles E.; RIVEST, Ronald L.; STEIN, Clifford. **Algoritmos: teoria e prática**. Trad. Arlete Simille Marques. 3. ed. Rio de Janeiro: Elsevier, 2012.
+
+HOFFMANN, Rodolfo. **Estatística para economistas**. 4. ed. São Paulo: Pioneira Thomson Learning, 2006.
 
 ## Notas
 
@@ -101,3 +104,5 @@ CORMEN, Thomas H.; LEISERSON, Charles E.; RIVEST, Ronald L.; STEIN, Clifford. **
 [^4]: A **recursividade** é uma característica de determinados algoritmos de se chamarem a si mesmos, uma ou mais vezes, a fim de fracionar um problema em tantos problemas menores quantos forem necessários, até que seja possível resolver o problema original. Normalmente, isso é feito por meio da abordagem da **divisão e conquista**, que em cada nível de recursão aplica três etapas: divisão, conquista e combinação (Cormen et al., 2012).
 
 [^5]: No livro, os autores utilizam o termo árvore de decisão para se referir, indistintamente, às árvores de decisão ou de regressão, inclusive neste caso, dado que a interpretação dos modelos e a indução da árvore são bastante similares. Todavia, ressalvam que, se necessária, haverá a devida distinção.
+
+[^6]: Na Economia, o **índice de Gini** é uma **medida de desigualdade** muito empregada para analisar a distribuição de renda, mas que pode ser usada para medir o grau de desigualdade de qualquer distribuição estatística, definido como a razão entre a **área de desigualdade**, obtida entre a **linha da perfeita igualdade** e a **curva de Lorenz**, e a área do triângulo formado pelos eixos do gráfico e a linha de perfeita igualdade (Hoffmann, 2006). Analogicamente, no contexto da aprendizagem de máquina, é possível trasladar esse raciocínio para a desigualdade — leia-se heterogeneidade — da distribuição dos elementos em um conjunto ou subconjunto de dados.
