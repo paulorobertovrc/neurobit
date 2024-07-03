@@ -20,6 +20,8 @@ GERSTING, Judith L. **Fundamentos matemáticos para a ciência da computação: 
 
 GRUS, Joel. **Data science do zero: noções fundamentais com Python.** Trad. Welington Nascimento. 2 ed. E-book. Rio de Janeiro: Alta Books, 2021.
 
+HOFFMANN, Rodolfo. **Estatística para economistas**. 4. ed. São Paulo: Pioneira Thomson Learning, 2006.
+
 ROSS, Sheldon. **Probabilidade: um curso moderno com aplicações**. Trad. Alberto Resende De Conti. 8 ed. Porto Alegre: Bookman, 2010.
 
 SEBESTA, Robert W. **Conceitos de linguagens de programação**. Trad. João Eduardo Nóbrega Tortello. 11. ed. Porto Alegre: Bookman, 2018.
