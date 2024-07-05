@@ -111,6 +111,24 @@
                             É uma métrica de <strong>impureza</strong> dos nós de decisão (subconjuntos). <strong>Avalia a probabilidade de que exemplos escolhidos ao acaso pertençam a classes diferentes, mas estejam no mesmo subconjunto.</strong> Quanto menor o índice de Gini, mais homogêneo — e menos impuro — é o subconjunto. Nesse sentido, o atributo que melhor discrimina a classe é aquele que minimiza o índice de Gini e, via de consequência, reduz a impureza e aumenta a homogeneidade dos subconjuntos.
                         </p>
                     </div>
+                    <div>
+                        <h5>6.1.2 Regras de divisão em tarefas de regressão</h5>
+                        <p>
+                            Nas tarefas de regressão, o critério mais usual é calcular a <strong>média do erro quadrático</strong> (erro quadrático médio — EQM ou <strong><em>mean squared error</em></strong> — MSE), objetivando que dessa divisão resultem subconjuntos compostos por elementos cujos valores aproximem-se entre si, consequentemente minimizando o erro. "Por esse motivo, a constante associada às folhas de uma árvore de regressão é a média dos valores do atributo alvo dos exemplos de treinamento que caem na folha." (FACELI et al., 2023, p. 85).
+                        </p>
+                        <p>
+                            Uma forma de avaliar a qualidade das divisões foi proposta por Breiman et al. (1984) e consiste na <strong>redução do desvio padrão</strong> (<strong><em>standard deviation reduction</em></strong> - SDR), a ser calculada para cada subconjunto possível, de modo que seja o que ensejar a menor variância.
+                        </p>
+                    </div>
+                    <div>
+                        <h5>6.1.3 Valores desconhecidos</h5>
+                        <p>
+                            Submeter valores desconhecidos ou indeterminados ao modelo, isto é, que não foram explicitamente contemplados dentre os dados de treinamento, pode levar a resultados indesejados, "uma vez que uma árvore de decisão constitui uma hierarquia de testes [...]" (FACELI et al., 2023, p. 86).
+                        </p>
+                        <p>
+                            Para resolver o chamado <strong>problema do valor desconhecido</strong>, há na literatura diversas propostas, como <strong>(1)</strong> atribuir-lhe o valor mais frequente; <strong>(2)</strong> considerá-lo também um valor possível para o atributo em questão; <strong>(3)</strong> associar probabilidades a todos os possíveis valores do atributo (utilizada no algoritmo C4.5); ou <strong>(4)</strong> implementar a estratégia da divisão substituta, que preconiza a utilização de atributos que gerem divisões similares àquela obtida pelo atributo selecionado para criar uma lista alternativa de atributos, possibilitando a busca por outro, que corresponda ao valor desconhecido (utilizada no algoritmo CART).
+                        </p>
+                    </div>
                 </div>
             </div>
             <a class="emoji" href="#top">[ 🔝 ]</a>
@@ -187,6 +205,15 @@
                                 </li>
                             </ul>
                         </li>
+                        <li>
+                            <strong>Regras de divisão em tarefas de regressão</strong>
+                            <ul>
+                                <li>Erro quadrático médio (EQM) ou <em>mean squared error</em>(MSE)</li>
+                                <li>Redução do desvio padrão (<em>standard deviation reduction - SDR)</em></li>
+                                <li>Subconjuntos formados por valores sejam parecidos</li>
+                            </ul>
+                        </li>
+                        <li>Problema do valor desconhecido</li>
                     </ul>
                 </li>
                 <li><strong>Modelos baseados em regras</strong></li>

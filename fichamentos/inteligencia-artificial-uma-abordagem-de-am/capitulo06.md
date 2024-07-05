@@ -54,6 +54,16 @@ Por isso é que, essencialmente, o ganho de informação consiste na redução d
 
 ### 6.1.2 Regras de divisão em tarefas de regressão
 
+Nas tarefas de regressão, o critério mais usual é calcular a **média do erro quadrático** (erro quadrático médio — EQM ou ***mean squared error*** — MSE), objetivando que dessa divisão resultem subconjuntos compostos por elementos cujos valores aproximem-se entre si, consequentemente minimizando o erro. "Por esse motivo, a constante associada às folhas de uma árvore de regressão é a média dos valores do atributo alvo dos exemplos de treinamento que caem na folha." (FACELI et al., 2023, p. 85).
+
+Uma forma de avaliar a qualidade das divisões foi proposta por Breiman et al. (1984) e consiste na **redução do desvio padrão** (***standard deviation reduction*** - SDR), a ser calculada para cada subconjunto possível, de modo que seja o que ensejar a menor variância.
+
+### 6.1.3 Valores desconhecidos
+
+Submeter valores desconhecidos ou indeterminados ao modelo, isto é, que não foram explicitamente contemplados dentre os dados de treinamento, pode levar a resultados indesejados, "uma vez que uma árvore de decisão constitui uma hierarquia de testes [...]" (FACELI et al., 2023, p. 86).
+
+Para resolver o chamado **problema do valor desconhecido**, há na literatura diversas propostas, como **(1)** atribuir-lhe o valor mais frequente; **(2)** considerá-lo também um valor possível para o atributo em questão; **(3)** associar probabilidades a todos os possíveis valores do atributo (utilizada no algoritmo C4.5); ou **(4)** implementar a estratégia da divisão substituta, que preconiza a utilização de atributos que gerem divisões similares àquela obtida pelo atributo selecionado para criar uma lista alternativa de atributos, possibilitando a busca por outro, que corresponda ao valor desconhecido (utilizada no algoritmo CART).
+
 ## 6.2 Modelos baseados em regras
 
 ## Principais tópicos
@@ -85,6 +95,10 @@ Por isso é que, essencialmente, o ganho de informação consiste na redução d
       - Medida de impureza dos nós de decisão (subconjuntos)
       - Avalia a probabilidade de que exemplos escolhidos ao acaso pertençam a classes diferentes, mas tenham sido classificados no mesmo subconjunto
   - **Regras de divisão em tarefas de regressão**
+    - Erro quadrático médio — EQM (*mean squared error* — MSE)
+    - Redução do desvio padrão (***standard deviation reduction*** — SDR)
+    - Subconjuntos formados por valores sejam parecidos
+  - Problema do valor desconhecido
 - **Modelos baseados em regras**
 
 ## Referências complementares
