@@ -129,6 +129,26 @@
                             Para resolver o chamado <strong>problema do valor desconhecido</strong>, há na literatura diversas propostas, como <strong>(1)</strong> atribuir-lhe o valor mais frequente; <strong>(2)</strong> considerá-lo também um valor possível para o atributo em questão; <strong>(3)</strong> associar probabilidades a todos os possíveis valores do atributo (utilizada no algoritmo C4.5); ou <strong>(4)</strong> implementar a estratégia da divisão substituta, que preconiza a utilização de atributos que gerem divisões similares àquela obtida pelo atributo selecionado para criar uma lista alternativa de atributos, possibilitando a busca por outro, que corresponda ao valor desconhecido (utilizada no algoritmo CART).
                         </p>
                     </div>
+                    <div>
+                        <h5 id="subtitulo_1_nota_7">6.1.4 Estratégias de poda</h5>
+                        <p>
+                            A poda de uma árvore de decisão (<em>decision tree pruning</em>) consiste na diminuição de seu tamanho, substituindo por folhas os nós demasiadamente profundos<sup><a class="linknotas" href="#nota_7">[7]</a></sup> (eliminação de ramos ou subárvores), com o objetivo de aumentar a <strong>confiabilidade</strong> do modelo e tornar o processo decisório ainda mais <strong>compreensível</strong>. O procedimento tende a melhorar a capacidade de <strong>generalização</strong> do modelo e é de especial importância em cenários com dados ruidosos.
+                        </p>
+                        <p>
+                            <blockquote>
+                                "Dados ruidosos levantam dois problemas. O primeiro é que as árvores induzidas classificam novos objetos em um modo não confiável. Estatísticas calculadas nos nós mais profundos de uma árvore têm baixos níveis de importância em função do pequeno número de exemplos que chegam nesses nós. Nós mais profundos refletem mais o conjunto de treinamento (superajuste) e aumentam o erro em razão da variância do classificador. O segundo é que a árvore induzida tende a ser grande e, portanto, difícil para compreender." (FACELI et al., 2023, p. 86).
+                            </blockquote>
+                        </p>
+                        <p>
+                            É possível realizar a poda concomitantemente à construção da árvore, interrompendo o processo conforme algum critério predeterminado, e outras que aguardam o término, respectivamente denominadas <strong>pré-poda</strong> e <strong>pós-poda</strong>. Não obstante, "tal como as regras de divisão, a poda é um domínio em que nenhuma proposta existente é a melhor para todos os casos. A poda é um enviesamento em direção à simplicidade. Se o domínio do problema admite soluções simples, então a poda é uma opção eficiente (Schaffer, 1993)." (FACELI et al., 2023, p. 88).
+                        </p>
+                        <p>
+                            A <strong>pré-poda</strong> implementa regras que interrompem a construção de ramos que aparentemente não contribuiriam para incrementar a acurácia preditiva da árvore, evitando desde o início a criação de nós considerados inúteis, o que economiza tempo e recursos computacionais. Embora a literatura enumere diversas regras possíveis, são majoritariamente aceitas a assunção de que <strong>(1)</strong> todos os objetos que alcancem um determinado nó são da mesma classe e/ou de que <strong>(2)</strong>todos os elementos que o alcancem possuem características idênticas, embora não necessariamente pertençam à mesma classe.
+                        </p>
+                        <p id="subtitulo_1_nota_8">
+                            Todavia, as estratégias de <strong>pós-poda</strong> são mais comuns e resultam em modelos mais confiáveis, embora o processo construtivo seja mais demorado porque "uma árvore completa, superajustada aos dados de treinamento, é gerada e podada posteriormente." (FACELI et al., 2023, p. 87). Logicamente que, por esse motivo, há maior consumo de tempo e recursos computacionais. Dentre os métodos de pós-poda, são elencados os <strong>(1)</strong> baseados nas medidas de <strong>erro estático e erro de <em>backed-up</em></strong>; <strong>(2)</strong> a poda <strong>custo de complexidade</strong>, um dos mais utilizados, introduzido por Breiman et al. (1984) no algoritmo CART; e <strong>(3)</strong> a poda <strong>pessimista</strong>, apresentada e adotada por Quinlan (1988) no algoritmo C4.5<sup><a class="linknotas" href="#nota_8">[8]</a></sup>.
+                        </p>
+                    </div>
                 </div>
             </div>
             <a class="emoji" href="#top">[ 🔝 ]</a>
@@ -213,7 +233,34 @@
                                 <li>Subconjuntos formados por valores sejam parecidos</li>
                             </ul>
                         </li>
-                        <li>Problema do valor desconhecido</li>
+                        <li><strong>Problema do valor desconhecido</strong></li>
+                        <li>
+                            <strong>Estratégias de poda</strong>
+                            <ul>
+                                <li>Redução da profundidade da árvore</li>
+                                <li>Aumento da compreensibilidade e confiabilidade do modelo</li>
+                                <li>
+                                    Melhora da capacidade de generalização, pois nós muito profundos tendem ao superajuste aos dados de treinamento (<em>overfitting</em>)
+                                    <ul>
+                                        <li>Equilíbrio entre a complexidade e a capacidade de generalização da árvore</li>
+                                    </ul>
+                                    <li>
+                                        <strong>Pré-proda</strong>
+                                        <ul>
+                                            <li>Interrompe a construção da árvore conforme algum critério de parada</li>
+                                            <li>Evita a criação desnecessária de ramos/subárvores</li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <strong>Pós-proda</strong>
+                                        <ul>
+                                            <li>Mais comum e confiável</li>
+                                            <li>A árvore é completamente construída e podada ao final, após ter atingido sua complexidade máxima</li>
+                                        </ul>
+                                    </li>
+                                </li>
+                            </ul>
+                        </li>
                     </ul>
                 </li>
                 <li><strong>Modelos baseados em regras</strong></li>
@@ -223,6 +270,9 @@
         <hr>
         <article>
             <h2>Referências complementares</h2>
+            <p>
+                BROOKSHEAR, J. Glenn. <strong>Ciência da computação: uma visão abrangente</strong>. Trad. Eduardo Kessler Piveta. 11. ed. Porto Alegre: Bookman, 2013.
+            </p>
             <p>
                 CORMEN, Thomas H.; LEISERSON, Charles E.; RIVEST, Ronald L.; STEIN, Clifford. <strong>Algoritmos: teoria e prática</strong>. Trad. Arlete Simille Marques. 3. ed. Rio de Janeiro: Elsevier, 2012.
             </p>
@@ -241,6 +291,8 @@
                 <p id="nota_4">[4] A <strong>recursividade</strong> é uma característica de determinados algoritmos de se chamarem a si mesmos, uma ou mais vezes, a fim de fracionar um problema em tantos problemas menores quantos forem necessários, até que seja possível resolver o problema original. Normalmente, isso é feito por meio da abordagem da <strong>divisão e conquista</strong>, que em cada nível de recursão aplica três etapas: divisão, conquista e combinação (Cormen et al., 2012).<a class="linkdiscreto" href="#subtitulo_1_nota_3_4"> [ 🔙 ]</a></p>
                 <p id="nota_5">[5] No livro, os autores utilizam o termo árvore de decisão para se referir, indistintamente, às árvores de decisão ou de regressão, inclusive neste caso, dado que a interpretação dos modelos e a indução da árvore são bastante similares. Todavia, ressalvam que, se necessária, haverá a devida distinção.<a class="linkdiscreto" href="#subtitulo_1_nota_3_4"> [ 🔙 ]</a></p>
                 <p id="nota_6">[6] Na Economia, o <strong>índice de Gini</strong> é uma <strong>medida de desigualdade</strong> muito empregada para analisar a distribuição de renda, mas que pode ser usada para medir o grau de desigualdade de qualquer distribuição estatística, definido como a razão entre a <strong>área de desigualdade</strong>, obtida entre a <strong>linha da perfeita igualdade</strong> e a <strong>curva de Lorenz</strong>, e a área do triângulo formado pelos eixos do gráfico e a linha de perfeita igualdade (Hoffmann, 2006). Analogicamente, no contexto da aprendizagem de máquina, é possível trasladar esse raciocínio para a desigualdade - leia-se heterogeneidade - da distribuição dos elementos em um conjunto ou subconjunto de dados. <a class="linkdiscreto" href="#subtitulo_1_nota_6"> [ 🔙 ]</a></p>
+                <p id="nota_7">[7] O caminho mais longo entre as extremidades determina a <strong>altura</strong> da árvore, enquanto a <strong>profundidade</strong> é a quantidade de nós ou camadas horizontais existentes nesse caminho (Brookshear, 2013). <a class="linkdiscreto" href="#subtitulo_1_nota_7"> [ 🔙 ]</a></p>
+                <p id="nota_8">[8] Especialmente os métodos do custo de complexidade e da poda pessimista são abordados em detalhe na seção 6.3.2 do livro (p. 87/88). <a class="linkdiscreto" href="#subtitulo_1_nota_8"> [ 🔙 ]</a></p>
             </div>
             <a class="emoji" href="#top">[ 🔝 ]</a>
         </article>

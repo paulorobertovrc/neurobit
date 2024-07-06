@@ -64,6 +64,18 @@ Submeter valores desconhecidos ou indeterminados ao modelo, isto é, que não fo
 
 Para resolver o chamado **problema do valor desconhecido**, há na literatura diversas propostas, como **(1)** atribuir-lhe o valor mais frequente; **(2)** considerá-lo também um valor possível para o atributo em questão; **(3)** associar probabilidades a todos os possíveis valores do atributo (utilizada no algoritmo C4.5); ou **(4)** implementar a estratégia da divisão substituta, que preconiza a utilização de atributos que gerem divisões similares àquela obtida pelo atributo selecionado para criar uma lista alternativa de atributos, possibilitando a busca por outro, que corresponda ao valor desconhecido (utilizada no algoritmo CART).
 
+### 6.1.4 Estratégias de poda
+
+A poda de uma árvore de decisão (*decision tree pruning*) consiste na diminuição de seu tamanho, substituindo por folhas os nós demasiadamente profundos[^7] (eliminação de ramos ou subárvores), com o objetivo de aumentar a **confiabilidade** do modelo e tornar o processo decisório ainda mais **compreensível**. O procedimento tende a melhorar a capacidade de **generalização** do modelo e é de especial importância em cenários com dados ruidosos.
+
+>"Dados ruidosos levantam dois problemas. O primeiro é que as árvores induzidas classificam novos objetos em um modo não confiável. Estatísticas calculadas nos nós mais profundos de uma árvore têm baixos níveis de importância em função do pequeno número de exemplos que chegam nesses nós. Nós mais profundos refletem mais o conjunto de treinamento (superajuste) e aumentam o erro em razão da variância do classificador. O segundo é que a árvore induzida tende a ser grande e, portanto, difícil para compreender." (FACELI et al., 2023, p. 86).
+
+É possível realizar a poda concomitantemente à construção da árvore, interrompendo o processo conforme algum critério predeterminado, e outras que aguardam o término, respectivamente denominadas **pré-poda** e **pós-poda**. Não obstante, "tal como as regras de divisão, a poda é um domínio em que nenhuma proposta existente é a melhor para todos os casos. A poda é um enviesamento em direção à simplicidade. Se o domínio do problema admite soluções simples, então a poda é uma opção eficiente (Schaffer, 1993)." (FACELI et al., 2023, p. 88).
+
+A **pré-poda** implementa regras que interrompem a construção de ramos que aparentemente não contribuiriam para incrementar a acurácia preditiva da árvore, evitando desde o início a criação de nós considerados inúteis, o que economiza tempo e recursos computacionais. Embora a literatura enumere diversas regras possíveis, são majoritariamente aceitas a assunção de que **(1)** todos os objetos que alcancem um determinado nó são da mesma classe e/ou de que **(2)** todos os elementos que o alcancem possuem características idênticas, embora não necessariamente pertençam à mesma classe.
+
+Todavia, as estratégias de **pós-poda** são mais comuns e resultam em modelos mais confiáveis, embora o processo construtivo seja mais demorado porque "uma árvore completa, superajustada aos dados de treinamento, é gerada e podada posteriormente." (FACELI et al., 2023, p. 87). Logicamente que, por esse motivo, há maior consumo de tempo e recursos computacionais. Dentre os métodos de pós-poda, são elencados os **(1)** baseados nas medidas de **erro estático e erro de *backed-up***; **(2)** a poda **custo de complexidade**, um dos mais utilizados, introduzido por Breiman et al. (1984) no algoritmo CART; e **(3)** a poda **pessimista**, apresentada e adotada por Quinlan (1988) no algoritmo C4.5[^8].
+
 ## 6.2 Modelos baseados em regras
 
 ## Principais tópicos
@@ -98,10 +110,23 @@ Para resolver o chamado **problema do valor desconhecido**, há na literatura di
     - Erro quadrático médio — EQM (*mean squared error* — MSE)
     - Redução do desvio padrão (***standard deviation reduction*** — SDR)
     - Subconjuntos formados por valores sejam parecidos
-  - Problema do valor desconhecido
+  - **Problema do valor desconhecido**
+  - **Estratégias de poda**
+    - Redução da profundidade da árvore
+    - Aumento da compreensibilidade e confiabilidade do modelo
+    - Melhora da capacidade de generalização, pois nós muito profundos tendem ao superajuste aos dados de treinamento (*overfitting*)
+      - Equilíbrio entre a complexidade e a capacidade de generalização da árvore
+    - **Pré-poda**
+      - Interrompe a construção da árvore conforme algum critério de parada
+      - Evita a criação desnecessária de ramos/subárvores
+    - **Pós-poda**
+      - Mais comum e confiável
+      - A árvore é completamente construída e podada ao final, após ter atingido sua complexidade máxima
 - **Modelos baseados em regras**
 
 ## Referências complementares
+
+BROOKSHEAR, J. Glenn. **Ciência da computação: uma visão abrangente**. Trad. Eduardo Kessler Piveta. 11. ed. Porto Alegre: Bookman, 2013.
 
 CORMEN, Thomas H.; LEISERSON, Charles E.; RIVEST, Ronald L.; STEIN, Clifford. **Algoritmos: teoria e prática**. Trad. Arlete Simille Marques. 3. ed. Rio de Janeiro: Elsevier, 2012.
 
@@ -120,3 +145,7 @@ HOFFMANN, Rodolfo. **Estatística para economistas**. 4. ed. São Paulo: Pioneir
 [^5]: No livro, os autores utilizam o termo árvore de decisão para se referir, indistintamente, às árvores de decisão ou de regressão, inclusive neste caso, dado que a interpretação dos modelos e a indução da árvore são bastante similares. Todavia, ressalvam que, se necessária, haverá a devida distinção.
 
 [^6]: Na Economia, o **índice de Gini** é uma **medida de desigualdade** muito empregada para analisar a distribuição de renda, mas que pode ser usada para medir o grau de desigualdade de qualquer distribuição estatística, definido como a razão entre a **área de desigualdade**, obtida entre a **linha da perfeita igualdade** e a **curva de Lorenz**, e a área do triângulo formado pelos eixos do gráfico e a linha de perfeita igualdade (Hoffmann, 2006). Analogicamente, no contexto da aprendizagem de máquina, é possível trasladar esse raciocínio para a desigualdade — leia-se heterogeneidade — da distribuição dos elementos em um conjunto ou subconjunto de dados.
+
+[^7]: O caminho mais longo entre as extremidades determina a **altura** da árvore, enquanto a **profundidade** é a quantidade de nós ou camadas horizontais existentes nesse caminho (Brookshear, 2013).
+
+[^8]: Especialmente os métodos do custo de complexidade e da poda pessimista são abordados em detalhe na seção 6.3.2 do livro (p. 87/88).
