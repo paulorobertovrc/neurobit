@@ -12,7 +12,9 @@ Não obstante, é importante destacar que, "atualmente, existem algoritmos efici
 
 ## 6.1 Modelos baseados em árvores[^3]
 
-Os modelos baseados em árvores utilizam a estrutura de dados homônima para solucionar problemas de classificação ou regressão, casos em que os algoritmos são respectivamente denominados **árvores de decisão** ou **árvores de regressão**. Em ambos os casos, a forma de se interpretar o modelo e de construir o algoritmo indutor da própria árvore são bastante similares e, de modo geral, o problema é abordado **recursivamente** por meio da estratégia da **divisão e conquista**[^4].
+Os modelos baseados em árvores utilizam a estrutura de dados homônima para solucionar problemas de classificação ou regressão, casos em que os algoritmos são respectivamente denominados **árvores de decisão** ou **árvores de regressão**. Em ambos os casos, a forma de se interpretar o modelo e de construir o algoritmo indutor da própria árvore são bastante similares e, de modo geral, o problema é abordado **recursivamente** por meio da estratégia da **divisão e conquista**[^4] sem *backtracking*.
+
+> "Usualmente, os algoritmos exploram heurísticas que localmente executam uma pesquisa olha para a frente um passo. Uma vez que uma decisão é tomada, ela nunca é reconsiderada. Essa pesquisa de subida de encosta (*hill-climbing*) sem *backtracking* é suscetível aos riscos usuais de convergência de uma solução ótima localmente que não é ótima globalmente. Por outro lado, essa estratégia permite construir árvores de decisão em tempo linear no número de exemplos." (FACELI et al., 2023, p. 80).
 
 Nesse sentido, "um problema complexo é dividido em problemas mais simples, aos quais recursivamente é aplicada a mesma estratégia. As soluções dos subproblemas podem ser combinadas, na forma de uma árvore, para produzir uma solução do problema complexo. A força dessa proposta vem da capacidade de dividir o espaço de instâncias em subespaços e cada subespaço é ajustado usando diferentes modelos." (FACELI et al., 2023, p. 78).
 
@@ -24,9 +26,11 @@ Para exemplificar, vejamos a imagem a seguir:
 ![Árvore de decisão e regiões de decisão no espaço de objetos](../../imagens/21_am_faceli_arvore_de_decisao.png)
 Figura 21 — Árvore de decisão e regiões de decisão no espaço de objetos (FACELI et al., 2023, p. 79).
 
+Os modelos baseados em árvores possuem **vantagens** como **flexibilidade** — por serem não paramétricos, não pressupõem alguma distribuição específica de dados[^6] —, **robustez** — lidam bem com transformações de variáveis que preservem a ordem dos dados, não modificando a estrutura da árvore e a lógica do processo decisório[^7] —, **autonomia na seleção de atributos**[^8], **interpretabilidade**[^9] e **eficiência**[^10]. Dentre as **desvantagens**, estão a **replicação**[^11], a **instabilidade**[^12] e a ineficiência em cenários específicos, como dados com **valores ausentes**[^13] e **atributos contínuos**[^14].
+
 ### 6.1.1 Regras de divisão em tarefas de classificação
 
-As regras de divisão servem para **atenuar a impureza** dos conjuntos de dados e balizam a construção da árvore de decisão no intuito de **maximizar a homogeneidade** dos subconjuntos gerados em cada recursão, de modo que garantir a congruência dos atributos no tocante à seleção daqueles que melhor discriminam cada classe (*goodness of split*). Para isso, normalmente adota-se a estratégia "olha para a frente um passo", de sorte que, uma vez tomada, a decisão não é reconsiderada pelo algoritmo. "Essa pesquisa de subida de encosta (*hill-climbing*) sem *backtracking* é suscetível aos riscos usuais de convergência a uma solução ótima localmente que não é ótima globalmente." (FACELI et al., 2023, p. 80).
+As regras de divisão servem para **atenuar a impureza** dos conjuntos de dados e balizam a construção da árvore de decisão no intuito de **maximizar a homogeneidade** dos subconjuntos gerados em cada recursão, de modo que garantir a congruência dos atributos no tocante à seleção daqueles que melhor discriminam cada classe (*goodness of split*).
 
 "Uma proposta natural é rotular cada subconjunto da divisão por sua classe mais frequente e escolher a divisão que tem menores erros" (FACELI et al., 2023, p. 81), e as diversas propostas para isso convergem para a conclusão de que "[...] uma divisão que mantém a proporção de classes em todo o subconjunto não tem utilidade, e uma divisão na qual cada subconjunto contém somente exemplos de uma classe tem utilidade máxima." (FACELI et al., 2023, p. 81).
 
@@ -42,13 +46,13 @@ Nas tarefas de classificação, as regras baseadas no **ganho de informação** 
 
 Esta regra é baseada no conceito de **entropia**, que informa a **aleatoriedade de uma variável**, isto é, **quantifica a dificuldade** de predizê-la. A entropia também pode ser compreendida como uma medida da desordem ou impureza do conjunto de dados, e é medida em logaritmos na base 2. Logo, quanto maior a entropia, mais difícil será predizer o valor dessa variável aleatória, e **a árvore de decisão é construída de modo a minimizar a dificuldade** de predizer a variável alvo.
 
->"A cada nó de decisão, o atributo que mais reduz a aleatoriedade da variável alvo será escolhido para dividir os dados. [...] Os valores de um atributo definem partições [divisões] no conjunto de exemplos. Para cada atributo, o ganho de informação mede a redução na entropia nas partições obtidas de acordo com os valores do atributo. Informalmente, o ganho de informação é dado pela diferença entre a entropia do conjunto de exemplos e a soma ponderada da entropia das partições. A construção da árvore de decisão é guiada pelo objetivo de reduzir a entropia, isto é, a aleatoriedade (dificuldade para predizer) da variável alvo." (FACELI et al., 2023, p. 81).
+>"A cada nó de decisão, o atributo que mais reduz a aleatoriedade da variável alvo será escolhido para dividir os dados. [...] Os valores de um atributo definem partições [leia-se divisões] no conjunto de exemplos. Para cada atributo, o ganho de informação mede a redução na entropia nas partições obtidas de acordo com os valores do atributo. Informalmente, o ganho de informação é dado pela diferença entre a entropia do conjunto de exemplos e a soma ponderada da entropia das partições. A construção da árvore de decisão é guiada pelo objetivo de reduzir a entropia, isto é, a aleatoriedade (dificuldade para predizer) da variável alvo." (FACELI et al., 2023, p. 81).
 
 Em cada nó de divisão da árvore, o atributo que mais reduzir a entropia, consequentemente maximizando o ganho de informação, será escolhido para resolver o subproblema — leia-se, a divisão em subconjunto naquela etapa recursiva. Logo, é esperado que a cada divisão ocorra a diminuição da aleatoriedade — incerteza em relação à classificação correta da variável alvo — em virtude da consistência dos atributos que conformam o subconjunto como sendo aqueles que melhor discriminam as classes.
 
 Por isso é que, essencialmente, o ganho de informação consiste na redução da aleatoriedade resultante da diferença entre a entropia de todo o conjunto de dados e a dos subconjuntos.
 
-#### 6.1.1.2 Baseadas no índice de Gini [^6]
+#### 6.1.1.2 Baseadas no índice de Gini [^15]
 
 É uma métrica de **impureza** dos nós de decisão (subconjuntos). **Avalia a probabilidade de que exemplos escolhidos ao acaso pertençam a classes diferentes, mas estejam no mesmo subconjunto.** Quanto menor o índice de Gini, mais homogêneo — e menos impuro — é o subconjunto. Nesse sentido, o atributo que melhor discrimina a classe é aquele que minimiza o índice de Gini e, via de consequência, reduz a impureza e aumenta a homogeneidade dos subconjuntos.
 
@@ -66,7 +70,7 @@ Para resolver o chamado **problema do valor desconhecido**, há na literatura di
 
 ### 6.1.4 Estratégias de poda
 
-A poda de uma árvore de decisão (*decision tree pruning*) consiste na diminuição de seu tamanho, substituindo por folhas os nós demasiadamente profundos[^7] (eliminação de ramos ou subárvores), com o objetivo de aumentar a **confiabilidade** do modelo e tornar o processo decisório ainda mais **compreensível**. O procedimento tende a melhorar a capacidade de **generalização** do modelo e é de especial importância em cenários com dados ruidosos.
+A poda de uma árvore de decisão (*decision tree pruning*) consiste na diminuição de seu tamanho, substituindo por folhas os nós demasiadamente profundos[^16] (eliminação de ramos ou subárvores), com o objetivo de aumentar a **confiabilidade** do modelo e tornar o processo decisório ainda mais **compreensível**. O procedimento tende a melhorar a capacidade de **generalização** do modelo e é de especial importância em cenários com dados ruidosos.
 
 >"Dados ruidosos levantam dois problemas. O primeiro é que as árvores induzidas classificam novos objetos em um modo não confiável. Estatísticas calculadas nos nós mais profundos de uma árvore têm baixos níveis de importância em função do pequeno número de exemplos que chegam nesses nós. Nós mais profundos refletem mais o conjunto de treinamento (superajuste) e aumentam o erro em razão da variância do classificador. O segundo é que a árvore induzida tende a ser grande e, portanto, difícil para compreender." (FACELI et al., 2023, p. 86).
 
@@ -74,7 +78,7 @@ A poda de uma árvore de decisão (*decision tree pruning*) consiste na diminui�
 
 A **pré-poda** implementa regras que interrompem a construção de ramos que aparentemente não contribuiriam para incrementar a acurácia preditiva da árvore, evitando desde o início a criação de nós considerados inúteis, o que economiza tempo e recursos computacionais. Embora a literatura enumere diversas regras possíveis, são majoritariamente aceitas a assunção de que **(1)** todos os objetos que alcancem um determinado nó são da mesma classe e/ou de que **(2)** todos os elementos que o alcancem possuem características idênticas, embora não necessariamente pertençam à mesma classe.
 
-Todavia, as estratégias de **pós-poda** são mais comuns e resultam em modelos mais confiáveis, embora o processo construtivo seja mais demorado porque "uma árvore completa, superajustada aos dados de treinamento, é gerada e podada posteriormente." (FACELI et al., 2023, p. 87). Logicamente que, por esse motivo, há maior consumo de tempo e recursos computacionais. Dentre os métodos de pós-poda, são elencados os **(1)** baseados nas medidas de **erro estático e erro de *backed-up***; **(2)** a poda **custo de complexidade**, um dos mais utilizados, introduzido por Breiman et al. (1984) no algoritmo CART; e **(3)** a poda **pessimista**, apresentada e adotada por Quinlan (1988) no algoritmo C4.5[^8].
+Todavia, as estratégias de **pós-poda** são mais comuns e resultam em modelos mais confiáveis, embora o processo construtivo seja mais demorado porque "uma árvore completa, superajustada aos dados de treinamento, é gerada e podada posteriormente." (FACELI et al., 2023, p. 87). Logicamente que, por esse motivo, há maior consumo de tempo e recursos computacionais. Dentre os métodos de pós-poda, são elencados os **(1)** baseados nas medidas de **erro estático e erro de *backed-up***; **(2)** a poda **custo de complexidade**, um dos mais utilizados, introduzido por Breiman et al. (1984) no algoritmo CART; e **(3)** a poda **pessimista**, apresentada e adotada por Quinlan (1988) no algoritmo C4.5[^17].
 
 ## 6.2 Modelos baseados em regras
 
@@ -94,6 +98,16 @@ Todavia, as estratégias de **pós-poda** são mais comuns e resultam em modelos
   - Recursividade
   - Divisão e conquista
   - Nós de divisão (testes condicionais com base nos valores dos atributos) e folha (valores da variável alvo)
+  - **Vantagens**
+    - Flexibilidade
+    - Robustez
+    - Autonomia na seleção de atributos
+    - Interpretabilidade
+    - Eficiência (em geral)
+  - **Desvantagens**
+    - Replicação
+    - Instabilidade
+    - Ineficiência perante valores ausentes e atributos contínuos
   - **Regras de divisão em tarefas de classificação**
     - Minimizar a **impureza** e a heterogeneidade dos subconjuntos e, consequentemente, maximizar a homogeneidade dos dados que os compõem
     - Seleção dos atributos que melhor discriminam cada classe (*goodness of split*)
@@ -144,8 +158,26 @@ HOFFMANN, Rodolfo. **Estatística para economistas**. 4. ed. São Paulo: Pioneir
 
 [^5]: No livro, os autores utilizam o termo árvore de decisão para se referir, indistintamente, às árvores de decisão ou de regressão, inclusive neste caso, dado que a interpretação dos modelos e a indução da árvore são bastante similares. Todavia, ressalvam que, se necessária, haverá a devida distinção.
 
-[^6]: Na Economia, o **índice de Gini** é uma **medida de desigualdade** muito empregada para analisar a distribuição de renda, mas que pode ser usada para medir o grau de desigualdade de qualquer distribuição estatística, definido como a razão entre a **área de desigualdade**, obtida entre a **linha da perfeita igualdade** e a **curva de Lorenz**, e a área do triângulo formado pelos eixos do gráfico e a linha de perfeita igualdade (Hoffmann, 2006). Analogicamente, no contexto da aprendizagem de máquina, é possível trasladar esse raciocínio para a desigualdade — leia-se heterogeneidade — da distribuição dos elementos em um conjunto ou subconjunto de dados.
+[^6]: "O espaço de objetos é dividido em subespaços e cada subespaço é ajustado com diferentes modelos. Uma árvore de decisão fornece uma cobertura exaustiva do espaço de instâncias." (FACELI et al., 2023, p. 89).
 
-[^7]: O caminho mais longo entre as extremidades determina a **altura** da árvore, enquanto a **profundidade** é a quantidade de nós ou camadas horizontais existentes nesse caminho (Brookshear, 2013).
+[^7]: "Árvores univariáveis são invariantes a transformações (estritamente) monótonas de variáveis de entrada. [...] Como consequência dessa invariância, a sensibilidade a distribuições com grande cauda e *outliers* é também reduzida (Friedman, 1999)." (FACELI et al., 2023, p. 89).
 
-[^8]: Especialmente os métodos do custo de complexidade e da poda pessimista são abordados em detalhe na seção 6.3.2 do livro (p. 87/88).
+[^8]: "O processo de construção de uma árvore de decisão seleciona os atributos a usar no modelo de decisão. Essa seleção de atributos produz modelos que tendem a ser bastante robustos contra a adição de atributos irrelevantes e redundantes." (FACELI et al., 2023, p. 89).
+
+[^9]: "Decisões complexas e globais podem ser aproximadas por uma série de decisões mais simples e locais. Todas as decisões são baseadas nos valores dos atributos usados para descrever o problema." (FACELI et al., 2023, p. 89).
+
+[^10]: "O algoritmo para aprendizado de árvore de decisão é um algoritmo guloso que é construído de cima para baixo (*top-down*), usando uma estratégia dividir para conquistar sem *backtracking*. Sua complexidade de tempo é linear com o número de exemplos." (FACELI et al., 2023, p. 89).
+
+[^11]: "O termo refere-se à duplicação de uma sequência de testes em diferentes ramos de uma árvore de decisão, levando a uma representação não concisa, que também tende a ter baixa acurária preditiva [...]." (FACELI et al., 2023, p. 89).
+
+[^12]: "Pequenas variações no conjunto de treinamento podem produzir grandes variações na árvore final [...]. A estratégia da partição recursiva implica que a cada divisão que é feita o dado é dividido com base no atributo de teste. Depois de algumas divisões, há usualmente muito poucos dados nos quais a decisão se baseia. Há uma forte tendência a inferências feitas próximo das folhas serem menos confiáveis que aquelas feitas próximas da raiz." (FACELI et al., 2023, p. 90).
+
+[^13]: "Uma árvore de decisão é uma hierarquia de teses. Se o valor de um atributo é desconhecido, isso causa problemas em decidir que ramo seguir." (FACELI et al., 2023, p. 89).
+
+[^14]: "Nesse caso, uma operação de ordenação é solicitada para cada atributo contínuo de cada nó de decisão." (FACELI et al., 2023, p. 89).
+
+[^15]: Na Economia, o **índice de Gini** é uma **medida de desigualdade** muito empregada para analisar a distribuição de renda, mas que pode ser usada para medir o grau de desigualdade de qualquer distribuição estatística, definido como a razão entre a **área de desigualdade**, obtida entre a **linha da perfeita igualdade** e a **curva de Lorenz**, e a área do triângulo formado pelos eixos do gráfico e a linha de perfeita igualdade (Hoffmann, 2006). Analogicamente, no contexto da aprendizagem de máquina, é possível trasladar esse raciocínio para a desigualdade — leia-se heterogeneidade — da distribuição dos elementos em um conjunto ou subconjunto de dados.
+
+[^16]: O caminho mais longo entre as extremidades determina a **altura** da árvore, enquanto a **profundidade** é a quantidade de nós ou camadas horizontais existentes nesse caminho (Brookshear, 2013).
+
+[^17]: Especialmente os métodos do custo de complexidade e da poda pessimista são abordados em detalhe na seção 6.3.2 do livro (p. 87/88).
