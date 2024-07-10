@@ -82,6 +82,16 @@ Todavia, as estratégias de **pós-poda** são mais comuns e resultam em modelos
 
 ## 6.2 Modelos baseados em regras
 
+Uma regra de decisão compara logicamente um atributo e os valores conhecidos do domínio e, assim como nas árvores de decisão, seu espaço de hipóteses é dado sob a forma disjuntiva.
+
+A despeito da grande semelhança, as regras de decisão flexibilizam algumas características inerentes às árvores de decisão que podem ser desvantajosas, como a replicação e a instabilidade, e tornam o processo decisório modular, visto que as regras podem ser avaliadas isoladamente, sem que modificações realizadas em determinada regra condicional afetem as subsequentes.
+
+>"Regras de decisão e árvores de decisão são bastante similares em suas formas de representação para expressar generalizações dos exemplos. Ambas definem superfícies de decisão similares. [...] **Como as árvores de decisão cobrem todo o espaço de instâncias, a vantagem é que qualquer exemplo é classificado por uma árvore de decisão. Entretanto, cada teste em um nó tem um contexto definido por testes anteriores, definidos nos nós no caminho, que podem ser problemáticos se levarmos em conta a interpretabilidade. Por outro lado, as regras são modulares, ou seja, podem ser interpretadas isoladamente.** Cada regra cobre uma região específica do espaço de instâncias. A união de todas as regras pode ser menor que o Universo." (FACELI et al., 2023, p. 90, destaquei).
+
+Para exemplificar, vejamos a imagem a seguir:
+![Exemplos de superfícies de decisão desenhadas por um conjunto de regras](../../imagens/22_am_faceli_regras_de_decisao.png)
+Figura 22 — Exemplos de superfícies de decisão desenhadas por um conjunto de regras (FACELI et al., 2023, p. 90).
+
 ## Principais tópicos
 
 - **Características gerais**
@@ -137,6 +147,8 @@ Todavia, as estratégias de **pós-poda** são mais comuns e resultam em modelos
       - Mais comum e confiável
       - A árvore é completamente construída e podada ao final, após ter atingido sua complexidade máxima
 - **Modelos baseados em regras**
+  - Comparação lógica entre um atributo e os valores do domínio
+  - As regras são modulares e podem ser interpretadas de maneira isolada, independentemente do resultado de testes anteriores
 
 ## Referências complementares
 
