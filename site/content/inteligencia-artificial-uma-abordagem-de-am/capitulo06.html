@@ -180,6 +180,23 @@
                             </figure>
                         </div>
                     </p>
+                    <p>
+                        A similaridade permite a conversão de árvores em conjuntos ou listas de regras de decisão, tal que cada folha da árvore corresponda a uma regra. Embora a regra contemple o percurso por toda a altura da árvore — da raiz à folha —, é possível otimizar a representação, simplificando-a por meio da remoção de condições redundantes ou irrelevantes. Justifica-se essa abordagem:
+                        <blockquote>
+                            "<strong>Árvores de decisão extensas são de difícil compreensão porque o teste de decisão em cada nó aparece em um contexto específico, definido pelo resultado de todos os testes nos nós antecedentes.</strong> O trabalho desenvolvido por Rivest (1987) apresenta as <em>listas de decisão</em>, uma nova representação para a generalização de exemplos que estende as árvores de decisão. A grande vantagem dessa representação é a modularidade do modelo de decisão e, consequentemente, a sua interpretabilidade: cada regra é independente das outras regras, e pode ser interpretada isoladamente das outras regras. Como consequência, <strong>a representação utilizando regras de decisão permite eliminar um teste em uma regra, mas reter o teste em outra regra.</strong> Além disso, como a conjunção de condições é comutativa, <strong>a distinção entre testes perto da raiz e testes perto das folhas desaparece.</strong>" (FACELI et al., 2023, p. 91, destaquei).
+                        </blockquote>
+                    </p>
+                    <p>
+                        Nesse sentido, o <strong>algoritmo de cobertura</strong> é capaz de aprender regras de decisão baseadas em exemplos e a qualidade das regras pode ser avaliada pela quantidade de casos cobertos, tenham ou não sido corretamente classificados.
+                    </p>
+                    <p>
+                        <blockquote>
+                            "O algoritmo da cobertura define o processo de aprendizado como um processo de procura: dados um conjunto de exemplos classificados e uma linguagem para representar generalizações dos exemplos, o algoritmo procede, para cada classe, a uma procura heurística. Tipicamente, o algoritmo procura regras da forma: se <em>Atributo<sub>i</sub> = Valor<sub>j</sub> e Atributo<sub>l</sub> = Valor<sub>k</sub> ... então Classe<sub>z</sub></em>. A procura pode proceder a partir da regra mais geral, ou seja, uma regra sem parte condicional, para regras mais específicas, acrescentando condições <strong>[busca <em>top-down</em> orientada pelo modelo]</strong>; ou a partir de regras muito específicas [...] para regras mais gerais, eliminando restrições <strong>[busca <em>bottom-up</em> orientada pelos dados]</strong>. O processo de procura é guiado por uma função de avaliação das hipóteses. Essa função estima a qualidade das regras que são geradas durante o processo. [...] <strong>Dado um conjunto de exemplos de classes diferentes, o <em>algoritmo de cobertura</em> consiste em aprender uma regra para uma das classes, removendo o conjunto de exemplos cobertos pela regra (ou o conjunto de exemplos positivos)</strong>, e repetir o processo. O processo termina quando só há exemplos de uma única classe." (FACELI et al., 2023, p. 91/92, destaquei).
+                        </blockquote>
+                    </p>
+                    <p>
+                        Pode haver conflito entre duas ou mais regras, caso em que será necessário estabelecer algum critério de escolha. É importante observar que, diferentemente dos métodos <em>bottom-up</em>, os <em>top-down</em> induzem conjuntos ordenados de regras. Portanto, nestes, a execução do algoritmo é interrompida diante da primeira regra que satisfaça à condição de parada, enquanto naqueles, todas as regras aplicáveis são testadas e, normalmente, o resultado será ponderado pela qualidade de cada uma. Por esse motivo, é comum que algoritmos orientados por processos <em>top-down</em> contenham uma regra que específica para a classificação de exemplos desconhecidos.
+                    </p>
                 </div>
             </div>
             <a class="emoji" href="#top">[ 🔝 ]</a>
@@ -317,6 +334,15 @@
                     <ul>
                         <li>Comparação lógica entre um atributo e os valores do domínio</li>
                         <li>As regras são modulares e podem ser interpretadas de maneira isolada, independentemente do resultado de testes anteriores</li>
+                        <li>Árvores de decisão podem ser transformadas em conjuntos ou listas de regras de decisão</li>
+                        <li>
+                            Algoritmo de cobertura
+                            <ul>
+                                <li>O aprendizado das regras é um processo de procura</li>
+                                <li>Busca <em>top-down</em> (orientada pelo modelo): começa abrangente e acrescenta condições</li>
+                                <li>Busca <em>bottom-up</em> (orientada pelos dados): começa específica e remove restrições</li>
+                            </ul>
+                        </li>
                     </ul>
                 </li>
             </ul>

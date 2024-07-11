@@ -92,6 +92,16 @@ Para exemplificar, vejamos a imagem a seguir:
 ![Exemplos de superfícies de decisão desenhadas por um conjunto de regras](../../imagens/22_am_faceli_regras_de_decisao.png)
 Figura 22 — Exemplos de superfícies de decisão desenhadas por um conjunto de regras (FACELI et al., 2023, p. 90).
 
+A similaridade permite a conversão de árvores em conjuntos ou listas de regras de decisão, tal que cada folha da árvore corresponda a uma regra. Embora a regra contemple o percurso por toda a altura da árvore — da raiz à folha —, é possível otimizar a representação, simplificando-a por meio da remoção de condições redundantes ou irrelevantes. Justifica-se essa abordagem:
+
+>"**Árvores de decisão extensas são de difícil compreensão porque o teste de decisão em cada nó aparece em um contexto específico, definido pelo resultado de todos os testes nos nós antecedentes.** O trabalho desenvolvido por Rivest (1987) apresenta as *listas de decisão*, uma nova representação para a generalização de exemplos que estende as árvores de decisão. A grande vantagem dessa representação é a modularidade do modelo de decisão e, consequentemente, a sua interpretabilidade: cada regra é independente das outras regras, e pode ser interpretada isoladamente das outras regras. Como consequência, **a representação utilizando regras de decisão permite eliminar um teste em uma regra, mas reter o teste em outra regra.** Além disso, como a conjunção de condições é comutativa, **a distinção entre testes perto da raiz e testes perto das folhas desaparece.**" (FACELI et al., 2023, p. 91, destaquei).
+
+Nesse sentido, o **algoritmo de cobertura** é capaz de aprender regras de decisão baseadas em exemplos e a qualidade das regras pode ser avaliada pela quantidade de casos cobertos, tenham ou não sido corretamente classificados.
+
+>"O algoritmo da cobertura define o processo de aprendizado como um processo de procura: dados um conjunto de exemplos classificados e uma linguagem para representar generalizações dos exemplos, o algoritmo procede, para cada classe, a uma procura heurística. Tipicamente, o algoritmo procura regras da forma: se $Atributo_i = Valor_j$ e $Atributo_l = Valor_k$ ... então $Classe_z$. A procura pode proceder a partir da regra mais geral, ou seja, uma regra sem parte condicional, para regras mais específicas, acrescentando condições **[busca *top-down* orientada pelo modelo]**; ou a partir de regras muito específicas [...] para regras mais gerais, eliminando restrições **[busca *bottom-up* orientada pelos dados]**. O processo de procura é guiado por uma função de avaliação das hipóteses. Essa função estima a qualidade das regras que são geradas durante o processo. [...] **Dado um conjunto de exemplos de classes diferentes, o *algoritmo de cobertura* consiste em aprender uma regra para uma das classes, removendo o conjunto de exemplos cobertos pela regra (ou o conjunto de exemplos positivos)**, e repetir o processo. O processo termina quando só há exemplos de uma única classe." (FACELI et al., 2023, p. 91/92, destaquei).
+
+Pode haver conflito entre duas ou mais regras, caso em que será necessário estabelecer algum critério de escolha. É importante observar que, diferentemente dos métodos *bottom-up*, os *top-down* induzem conjuntos ordenados de regras. Portanto, nestes, a execução do algoritmo é interrompida diante da primeira regra que satisfaça à condição de parada, enquanto naqueles, todas as regras aplicáveis são testadas e, normalmente, o resultado será ponderado pela qualidade de cada uma. Por esse motivo, é comum que algoritmos orientados por processos *top-down* contenham uma regra que específica para a classificação de exemplos desconhecidos.
+
 ## Principais tópicos
 
 - **Características gerais**
@@ -149,6 +159,11 @@ Figura 22 — Exemplos de superfícies de decisão desenhadas por um conjunto de
 - **Modelos baseados em regras**
   - Comparação lógica entre um atributo e os valores do domínio
   - As regras são modulares e podem ser interpretadas de maneira isolada, independentemente do resultado de testes anteriores
+  - Árvores de decisão podem ser transformadas em conjuntos ou listas de regras de decisão
+  - Algoritmo de cobertura
+    - O aprendizado das regras é um processo de procura
+    - Busca *top-down* (orientada pelo modelo): começa abrangente e acrescenta condições
+    - Busca *bottom-up* (orientada pelos dados): começa específica e remove restrições
 
 ## Referências complementares
 
