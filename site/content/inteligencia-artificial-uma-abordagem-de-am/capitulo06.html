@@ -76,6 +76,17 @@
                     <p id="subtitulo_1_nota_6_7_8_9_10_11_12_13_14">
                         Os modelos baseados em árvores possuem <strong>vantagens</strong> como <strong>flexibilidade</strong> — por serem não paramétricos, não pressupõem alguma distribuição específica de dados<sup><a class="linknotas" href="#nota_6">[6]</a></sup> —, <strong>robustez</strong> — lidam bem com transformações de variáveis que preservem a ordem dos dados, não modificando a estrutura da árvore e a lógica do processo decisório<sup><a class="linknotas" href="#nota_7">[7]</a></sup> —, <strong>autonomia na seleção de atributos</strong><sup><a class="linknotas" href="#nota_8">[8]</a></sup>, <strong>interpretabilidade</strong><sup><a class="linknotas" href="#nota_9">[9]</a></sup> e, em geral, <strong>eficiência</strong><sup><a class="linknotas" href="#nota_10">[10]</a></sup>. Dentre as <strong>desvantagens</strong>, estão a <strong>replicação</strong><sup><a class="linknotas" href="#nota_11">[11]</a></sup>, a <strong>instabilidade</strong><sup><a class="linknotas" href="#nota_12">[12]</a></sup> e a ineficiência em cenários específicos, como dados com <strong>valores ausentes</strong><sup><a class="linknotas" href="#nota_13">[13]</a></sup> e <strong>atributos contínuos</strong><sup><a class="linknotas" href="#nota_14">[14]</a></sup>.
                     </p>
+                    <p>
+                        Há também modelos não convencionais como as <strong>árvores de modelos e de opções</strong>, alternativas que podem ser usadas em tarefas de regressão e classificação, respectivamente.
+                    </p>
+                    <p>
+                        <blockquote>
+                            "Uma <strong>árvore de modelos</strong> (do inglês <em>model tree</em>) [...] combina árvore de regressão com equações de regressão. Esse tipo de árvore funciona da mesma maneira que uma árvore de regressão, porém <strong>os nós folha contêm expressões lineares em vez de valores agregados (médias ou medianas).</strong> A estrutura da árvore divide o espaço dos atributos em subespaços, e os exemplos em cada um dos subespaços são aproximados por uma função linear. A <em>model tree</em> é <strong>menor e mais compreensível</strong> que uma árvore de regressão e, mesmo assim, apresenta um erro médio menor na predição." (FACELI et al., 2023, p. 96, destaquei).
+                        </blockquote>
+                    </p>
+                    <p>
+                        Em tarefas de classificação, as <strong>árvores de opção</strong> "[...] podem incluir <em>nós de opção</em>, que trocam o usual teste no valor de um atributo por um conjunto de testes, cada um dos quais sobre o valor de um atributo. Um nó de opção é como um nó <em>ou</em> em árvores <em>e-ou</em>. <strong>Na construção da árvore, em vez de selecionar o <em>melhor</em> atributo, são selecionados todos os atributos promissores, aqueles com maior valor do ganho de informação.</strong> Para cada atributo selecionado, uma árvore de decisão é construída. É de salientar que uma árvore de opção pode ter três tipos de nós: nós com somente um atributo teste - <em>nós de decisão</em>; nós com disjunções dos atributos de teste - <em>nós de opção</em>; e nós folhas." (FACELI et al., 2023, p. 97, destaquei). Em contrapartida, o consumo de recursos computacionais, notadamente memória e espaço para armazenamento, é substancialmente maior.
+                    </p>
 
                     <div>
                         <h5>6.1.1 Regras de divisão em tarefas de classificação</h5>
@@ -253,6 +264,12 @@
                                 <li>Replicação</li>
                                 <li>Instabilidade</li>
                                 <li>Ineficiência perante valores ausentes e atributos contínuos</li>
+                            </ul>
+                        </li>
+                        <li>
+                            Modelos não convencionais
+                            <ul>
+                                <li>Árvores de modelos (regressão) e árvores de opções (classificação)</li>
                             </ul>
                         </li>
                         <li>

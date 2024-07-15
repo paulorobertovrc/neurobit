@@ -28,6 +28,12 @@ Figura 21 — Árvore de decisão e regiões de decisão no espaço de objetos (
 
 Os modelos baseados em árvores possuem **vantagens** como **flexibilidade** — por serem não paramétricos, não pressupõem alguma distribuição específica de dados[^6] —, **robustez** — lidam bem com transformações de variáveis que preservem a ordem dos dados, não modificando a estrutura da árvore e a lógica do processo decisório[^7] —, **autonomia na seleção de atributos**[^8], **interpretabilidade**[^9] e **eficiência**[^10]. Dentre as **desvantagens**, estão a **replicação**[^11], a **instabilidade**[^12] e a ineficiência em cenários específicos, como dados com **valores ausentes**[^13] e **atributos contínuos**[^14].
 
+Há também modelos não convencionais como as **árvores de modelos e de opções**, alternativas que podem ser usadas em tarefas de regressão e classificação, respectivamente.
+
+>"Uma **árvore de modelos** (do inglês *model tree*) [...] combina árvore de regressão com equações de regressão. Esse tipo de árvore funciona da mesma maneira que uma árvore de regressão, porém **os nós folha contêm expressões lineares em vez de valores agregados (médias ou medianas).** A estrutura da árvore divide o espaço dos atributos em subespaços, e os exemplos em cada um dos subespaços são aproximados por uma função linear. A *model tree* é **menor e mais compreensível** que uma árvore de regressão e, mesmo assim, apresenta um erro médio menor na predição." (FACELI et al., 2023, p. 96, destaquei).
+
+Em tarefas de classificação, as **árvores de opção** "[...] podem incluir *nós de opção*, que trocam o usual teste no valor de um atributo por um conjunto de testes, cada um dos quais sobre o valor de um atributo. Um nó de opção é como um nó *ou* em árvores *e-ou*. **Na construção da árvore, em vez de selecionar o *melhor* atributo, são selecionados todos os atributos promissores, aqueles com maior valor do ganho de informação.** Para cada atributo selecionado, uma árvore de decisão é construída. É de salientar que uma árvore de opção pode ter três tipos de nós: nós com somente um atributo teste - *nós de decisão*; nós com disjunções dos atributos de teste - *nós de opção*; e nós folhas." (FACELI et al., 2023, p. 97, destaquei). Em contrapartida, o consumo de recursos computacionais, notadamente memória e espaço para armazenamento, é substancialmente maior.
+
 ### 6.1.1 Regras de divisão em tarefas de classificação
 
 As regras de divisão servem para **atenuar a impureza** dos conjuntos de dados e balizam a construção da árvore de decisão no intuito de **maximizar a homogeneidade** dos subconjuntos gerados em cada recursão, de modo que garantir a congruência dos atributos no tocante à seleção daqueles que melhor discriminam cada classe (*goodness of split*).
@@ -128,6 +134,8 @@ Pode haver conflito entre duas ou mais regras, caso em que será necessário est
     - Replicação
     - Instabilidade
     - Ineficiência perante valores ausentes e atributos contínuos
+  - Modelos não convencionais
+    - Árvores de modelos (regressão) e árvores de opção (classificação)
   - **Regras de divisão em tarefas de classificação**
     - Minimizar a **impureza** e a heterogeneidade dos subconjuntos e, consequentemente, maximizar a homogeneidade dos dados que os compõem
     - Seleção dos atributos que melhor discriminam cada classe (*goodness of split*)
