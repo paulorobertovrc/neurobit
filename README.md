@@ -1,7 +1,7 @@
 # PROJETO NEUROBIT
 
-![Static Badge](https://img.shields.io/badge/Livros-1_/_3-31A8B8?labelColor=025159)
-![Static Badge](https://img.shields.io/badge/Fichamentos_\(capítulos\)-7-6C8BBC?labelColor=3A5F91)
+![Static Badge](https://img.shields.io/badge/Livros-2-31A8B8?labelColor=025159)
+![Static Badge](https://img.shields.io/badge/Fichamentos_\(capítulos\)-8-6C8BBC?labelColor=3A5F91)
 ![Static Badge](https://img.shields.io/badge/Suplementos-2-8AB68C?labelColor=4B7A52)
 
 [![Instagram](https://img.shields.io/badge/Instagram-%23E4405F.svg?logo=Instagram&logoColor=white)](https://www.instagram.com/pauloroberto.dev)
@@ -84,7 +84,7 @@ Ressalvados os direitos autorais dos detentores/produtores dos conteúdos utiliz
 |2.3 | Inteligência Artificial: Uma Abordagem de Aprendizado de Máquina | Katti Faceli et al. | Capítulo 3 | ![Static Badge](https://img.shields.io/badge/Concluído-grey) | [🔗](./fichamentos/inteligencia-artificial-uma-abordagem-de-am/capitulo03.md) |
 |2.4 | Inteligência Artificial: Uma Abordagem de Aprendizado de Máquina | Katti Faceli et al. | Capítulo 4 | ![Static Badge](https://img.shields.io/badge/Concluído-grey) | [🔗](./fichamentos/inteligencia-artificial-uma-abordagem-de-am/capitulo04.md) |
 |2.5 | Inteligência Artificial: Uma Abordagem de Aprendizado de Máquina | Katti Faceli et al. | Capítulo 5 | ![Static Badge](https://img.shields.io/badge/Concluído-grey) | [🔗](./fichamentos/inteligencia-artificial-uma-abordagem-de-am/capitulo05.md) |
-|2.6 | Inteligência Artificial: Uma Abordagem de Aprendizado de Máquina | Katti Faceli et al. | Capítulo 6 | ![Static Badge](https://img.shields.io/badge/Estudando-grey) | [🔗](./fichamentos/inteligencia-artificial-uma-abordagem-de-am/capitulo06.md) |
+|2.6 | Inteligência Artificial: Uma Abordagem de Aprendizado de Máquina | Katti Faceli et al. | Capítulo 6 | ![Static Badge](https://img.shields.io/badge/Concluído-grey) | [🔗](./fichamentos/inteligencia-artificial-uma-abordagem-de-am/capitulo06.md) |
 
 [[🔝](#acesso-rápido)]
 
