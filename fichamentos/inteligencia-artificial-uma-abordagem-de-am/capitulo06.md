@@ -166,7 +166,10 @@ Pode haver conflito entre duas ou mais regras, caso em que será necessário est
       - A árvore é completamente construída e podada ao final, após ter atingido sua complexidade máxima
 - **Modelos baseados em regras**
   - Comparação lógica entre um atributo e os valores do domínio
-  - As regras são modulares e podem ser interpretadas de maneira isolada, independentemente do resultado de testes anteriores
+  - Modularidade
+    - As regras são modulares e podem ser interpretadas de maneira isolada, independentemente do resultado de testes anteriores
+  - Maior interpretabilidade
+  - Não há perda da acurácia conforme se aproxime dos nós folha
   - Árvores de decisão podem ser transformadas em conjuntos ou listas de regras de decisão
   - Algoritmo de cobertura
     - O aprendizado das regras é um processo de procura
