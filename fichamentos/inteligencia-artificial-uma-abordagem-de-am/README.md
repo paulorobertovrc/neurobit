@@ -37,3 +37,4 @@ Trata-se de um livro-texto voltado a cursos de graduação ou pós-graduação q
 | 4 |  [Modelos preditivos] Métodos baseados em distâncias | ![Static Badge](https://img.shields.io/badge/Concluído-grey) | [🔗](./capitulo04.md) |
 | 5 |  [Modelos preditivos] Métodos probabilísticos | ![Static Badge](https://img.shields.io/badge/Concluído-grey) | [🔗](./capitulo05.md) |
 | 6 |  [Modelos preditivos] Métodos simbólicos | ![Static Badge](https://img.shields.io/badge/Concluído-grey) | [🔗](./capitulo06.md) |
+| 7 |  [Modelos preditivos] Métodos conexionistas | ![Static Badge](https://img.shields.io/badge/Estudando-grey) | [🔗](./capitulo07.md) |
