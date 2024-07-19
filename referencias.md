@@ -45,6 +45,8 @@ AGUIAR, Marcus A. M. **Sistemas dinâmicos**. Universidade Estadual de Campinas.
 
 BEAR, Mark F.; CONNORS, Barry W.; PARADISO, Michael A. **Neurociências: desvendando o sistema nervoso**. Trad. Carla Dalmaz et al. 4. ed. Porto Alegre: Artmed, 2017.
 
+BOCCATO, Levy; ATTUX, Romis. **Tópico 6 — parte 1: redes neurais artificiais**. Departamento de Engenharia de Computação e Automação. Faculdade de Engenharia Elétrica e de Computação. Universidade Estadual de Campinas. Disponível em <https://www.dca.fee.unicamp.br/~lboccato/topico_6.1_redes_neurais.pdf>. Acesso em 19 jul. 2024.
+
 DAVIS, Josiah; ZHU, Jason; OLDFATHER, Jeremy; MACDONALD, Samual; TRZASKOWSKI, Maciej; KELSEN, Max. 2020. **Quantifying uncertainty in deep learning systems**. Disponível em <https://d1.awsstatic.com/APG/quantifying-uncertainty-in-deep-learning-systems.pdf>. Acesso em 18 mai. 2024.
 
 ENGEL, Paulo Martins. **Redes neurais: a rede RBF.** Disponível em <https://www.inf.ufrgs.br/~engel/data/media/file/cmp121/rbf.pdf>. Acesso em 14 jan. 2024.
@@ -65,9 +67,13 @@ LECTURE 1 on kernel methods: Positive definite kernels. Vídeo: 44min49s. Public
 
 LECTURE 4 on kernel methods: Kernel Trick. Vídeo: 42min22s. Publicado pelo canal Julien Mairal. 22 fev. 2021. Disponível em <https://youtu.be/Ra06l4fqlSU?si=g0V996AeIlRb4tH1>. Acesso em 14 jan. 2024.
 
+LEMES, Nelson H. T. **Neurônio de McCulloch-Pitts**. Instituto de Química. Universidade Federal de Alfenas. Disponível em <https://pessoas.unifal-mg.edu.br/nelsonlemes/neuronio-de-mcculloch-pitts/>. Acesso em 19 jul. 2024.
+
 MARGOTTI, Fábio. **Problemas inversos**. Universidade Federal de Santa Catarina. Disponível em <https://fabiomargotti.paginas.ufsc.br/pesquisa/problemas-inversos/>. Acesso em 14 jan. 2024.
 
 MARGOTTI, Fábio. **Teoria da regularização**. Universidade Federal de Santa Catarina. Disponível em <https://fabiomargotti.paginas.ufsc.br/pesquisa/problemas-inversos/teoria-da-regularizacao/>. Acesso em 14 jan. 2024.
+
+McCULLOCH, Warren S.; PITTS, Walter. **A logical calculus of ideas immanent in nervous activity**. *Reprinted from the Bulletin of Mathematical Biophysics*, v. 5, p. 115-133 (1943). *Bulletin of Mathematical Biology*, v. 52, n. 1/2, p. 99/115. *Great Britain*: Pergamon Press PLC, 1990.
 
 OTTO, Mateus Piovezan. **Métodos de kernel escaláveis e interpretáveis baseados em random Fourier features**. 2023. Dissertação (Mestrado em Estatística) - Estatística Interinstitucional do ICMC e UFSCarr, Universidade de São Paulo, São Carlos, 2023. doi:10.11606/D.104.2023.tde-02052023-084042. Acesso em: 14 jan. 2024.
 
