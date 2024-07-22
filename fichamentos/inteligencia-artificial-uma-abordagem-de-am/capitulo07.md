@@ -8,17 +8,48 @@
 
 São métodos inspirados em modelos biológicos, que buscam não apenas **simular o funcionamento** do sistema nervoso humano e o modo como o cérebro **adquire novos conhecimentos** — ou seja, seu **processo de aprendizado** —, mas alcançar **capacidade de processamento** semelhante e obter **máquinas inteligentes ou que se comportem de maneira aparentemente inteligente.** Assim como o cérebro é composto por uma grande quantidade de neurônios interconectados, perfazendo redes neurais que funcionam em paralelo e trocam informações através de sinapses[^1], as redes neurais artificiais (RNAs) são formadas por unidades que implementam funções matemáticas a fim de simular a atividade neuronal e, de modo geral, **abstraem a compreensão da fisiologia do cérebro e dos processos biológicos de aprendizagem.**
 
+### 7.1 Redes neurais artificiais
+
 >"A procura por modelos computacionais ou matemáticos do sistema nervoso teve início na mesma época em que foram desenvolvidos os primeiros computadores eletrônicos, na década de 1940. Os estudos pioneiros na área foram realizados por McCulloch e Pitts (1943)[^2]. Em 1943, eles propuseram um modelo matemático de neurônio artificial, a unidade lógica com limiar (LTU, do inglês *Logic Threshold Unit*), que podia executar funções lógicas simples. McCulloch e Pitts mostraram que a combinação de vários neurônios artificiais em sistemas neurais tem um elevado poder computacional, pois pode implementar qualquer função obtida pela combinação de funções lógicas. Entretanto, redes de LTUs não possuíam capacidade de aprendizado. [...] Na década de 1970, houve um resfriamento das pesquisas em RNAs, principalmente com a [...] limitação da rede Perceptron a problemas linearmente separáveis. Na década de 1980, o aumento da capacidade de processamento, as pesquisas em processamento paralelo e, principalmente, a proposta de novas arquiteturas de RNAs com maior capacidade de representação e de algoritmos de aprendizado mais sofisticados levaram ao ressurgimento da área." (FACELI et al., 2023, p. 102).
+
+É possível definir as redes neurais artificiais como
+
+>"[...] sistemas computacionais distribuídos compostos de unidades de processamento simples, densamente interconectadas [...], conhecidas como neurônios artificiais, [que] computam funções matemáticas [...]. As unidades [neurônios artificiais] são dispostas em uma ou mais camadas e interligadas por um grande número de conexões, geralmente unidirecionais. Na maioria das arquiteturas, essas conexões, que simulam as sinapses biológicas, possuem pesos associados, que ponderam a entrada recebida por cada neurônio da rede [...] [e] podem assumir valores positivos ou negativos, dependendo de o comportamento da conexão ser excitatório ou inibitório, respectivamente. Os pesos têm seus valores ajustados em um processo de aprendizado e codificam o conhecimento adquirido pela rede (Braga et al., 2007)." (FACELI et al., 2023, p. 103).
+
+Seus **componentes básicos** são **arquitetura** e **aprendizado**. "Enquanto a arquitetura está relacionada com o tipo, o número de unidades de processamento e a forma como os neurônios estão conectados, o aprendizado diz respeito às regras utilizadas para ajustar os pesos da rede e à informação que é utilizada por essas regras." (FACELI et al., 2023, p. 103).
+
+**O neurônio artificial é a unidade de processamento e componente fundamental da arquitetura de uma RNA.** Ele possui terminais de entrada que recebem os valores, uma função matemática que realiza o processamento desses valores já ponderados e um terminal de saída que corresponde à resposta do neurônio, alusivos, respectivamente, aos dendritos, corpo celular e axônios de um neurônio biológico. A cada terminal de entrada corresponde um peso sináptico, sendo a entrada total, sobre a qual a função de ativação é aplicada, definida pelo somatório de cada um dos valores de entrada multiplicado pelo peso vinculado à conexão respectiva. Os terminais de entrada podem ter pesos positivos, negativos ou zero, neste caso indicativo de que nenhuma conexão foi associada.
+
+A seguir, imagens ilustrativas de um neurônio artificial:
+
+![Ilustração de um neurônio artificial simples](../../imagens/23_am_faceli_neuronio_artificial.png)
+Figura 23 — Ilustração de um neurônio artificial simples (FACELI et al., 2023, p. 103).
+
+![Entrada total de um neurônio artificial](../../imagens/24_am_faceli_entrada_total_do_neuronio_artificial.png)
+Figura 24 — Entrada total de um neurônio artificial (FACELI et al., 2023, p. 104).
 
 ## Principais tópicos
 
-- Inspiração biológica
-  - Simulam o funcionamento de uma rede neural biológica para alcançar capacidade computacional similar à do cérebro humano, com o objetivo de obter máquinas inteligentes e/ou capazes de emitir comportamentos aparentemente inteligentes
-- Unidades de processamento simples implementam funções matemáticas a fim de resolver problemas complexos
-- Estudos pioneiros
-  - Neurônio artificial de McCulloch e Pitts (1943)
+- **Noções gerais**
+  - Inspiração biológica
+    - Simulam o funcionamento de uma rede neural biológica para alcançar capacidade computacional similar à do cérebro humano, com o objetivo de obter máquinas inteligentes e/ou capazes de emitir comportamentos aparentemente inteligentes
+  - Unidades de processamento simples implementam funções matemáticas a fim de resolver problemas complexos
+- **Redes neurais artificiais**
+  - Modelo de McCulloch e Pitts (1943)
+    - Primeiro modelo matemático de neurônio artificial
+    - A função de ativação é uma função limiar
     - Unidade lógica com limiar (*Logic Threshold Unit*, LTU)
-    - Redes de LTUs não possuíam capacidade de aprendizado, apesar do elevado poder computacional
+      - Executava funções lógicas simples
+      - Redes de LTUs tinham elevado poder computacional para a época, pois podiam implementar qualquer função obtida pela combinação de funções lógicas, mas não possuíam capacidade de aprendizado
+  - **Componentes básicos de uma RNA**
+    - **Aprendizado**
+      - Regras de ajuste dos pesos sinápticos
+    - **Arquitetura**
+      - Estrutura da rede (tipo, quantidade e disposição dos neurônios)
+      - **Neurônio artificial**
+        - Unidade de processamento e principal componente arquitetural
+        - Terminais de entrada, pesos, função de ativação e terminal de saída
+        - A entrada total é a soma ponderada de todos os valores de entrada e é sobre ela que a função de ativação é aplicada
 
 ## Referências complementares
 
