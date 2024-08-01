@@ -18,15 +18,24 @@ São métodos inspirados em modelos biológicos, que buscam não apenas **simula
 
 Seus **componentes básicos** são **arquitetura** e **aprendizado**. "Enquanto a arquitetura está relacionada com o tipo, o número de unidades de processamento e a forma como os neurônios estão conectados, o aprendizado diz respeito às regras utilizadas para ajustar os pesos da rede e à informação que é utilizada por essas regras." (FACELI et al., 2023, p. 103).
 
-**O neurônio artificial é a unidade de processamento e componente fundamental da arquitetura de uma RNA.** Ele possui terminais de entrada que recebem os valores, uma função matemática que realiza o processamento desses valores já ponderados e um terminal de saída que corresponde à resposta do neurônio, alusivos, respectivamente, aos dendritos, corpo celular e axônios de um neurônio biológico. A cada terminal de entrada corresponde um peso sináptico, sendo a entrada total, sobre a qual a função de ativação é aplicada, definida pelo somatório de cada um dos valores de entrada multiplicado pelo peso vinculado à conexão respectiva. Os terminais de entrada podem ter pesos positivos, negativos ou zero, neste caso indicativo de que nenhuma conexão foi associada.
+**O neurônio artificial é a unidade de processamento e componente fundamental da arquitetura de uma RNA.** Ele possui **terminais de entrada** que recebem os valores, uma **função de ativação**, que é uma função matemática que realiza o processamento desses valores já ponderados, e um **terminal de saída** que corresponde à resposta do neurônio, alusivos, respectivamente, aos dendritos, corpo celular e axônios de um neurônio biológico. A cada terminal de entrada corresponde um **peso sináptico**, sendo a **entrada total**, sobre a qual a função de ativação é aplicada, definida pelo somatório de cada um dos valores de entrada multiplicado pelo peso vinculado à conexão respectiva. Os terminais de entrada podem ter pesos positivos, negativos ou zero, neste caso indicativo de que nenhuma conexão foi associada.
 
-A seguir, imagens ilustrativas de um neurônio artificial:
+A seguir, imagem ilustrativa de um neurônio artificial:
 
 ![Ilustração de um neurônio artificial simples](../../imagens/23_am_faceli_neuronio_artificial.png)
 Figura 23 — Ilustração de um neurônio artificial simples (FACELI et al., 2023, p. 103).
 
+Em relação à **função de ativação**, dentre as propostas mais comuns, destacam-se as seguintes: linear, limiar, sigmoidal, tangente hiperbólica, gaussiana e linear retificada (ReLU). Em qualquer caso, ela receberá a entrada total e retornará um valor que será a saída do neurônio, definindo, por conseguinte, se ele será ou não ativado.
+
+>"O uso da **função linear** identidade [...] implica retornar como saída o valor de $u$ [ou seja, a própria entrada total]. Na **função limiar** [...], o valor do limiar define quando o resultado da função limiar será igual a 1 ou 0 (alternativamente, [...] -1). Quando a soma das entradas recebidas ultrapassa o limiar estabelecido, o neurônio torna-se ativo (saída +1). Quanto maior o valor do limiar, maior tem que ser o valor da entrada total para que o valor de saída do neurônio seja igual a 1. A **função sigmoidal** [...] representa uma aproximação contínua e diferenciável da função limiar. A sua saída é um valor no intervalo aberto (0, 1), podendo apresentar diferentes inclinações. A **função tangente hiperbólica** [...] é uma variação da função sigmoidal que utiliza o intervalo aberto (-1, +1) para o valor de saída. Outra função utilizada com frequência, também contínua e diferenciável, é a **função gaussiana** [...]. Mais recentemente, com a popularização das redes profundas, passou a ser cada vez mais utilizada a **função linear retificada**, também conhecida como ReLU (do inglês *Rectified Linear Unit*) [...]. Essa função retorna 0 se recebe um valor negativo ou o próprio valor, no caso contrário. Junto com suas variações, ela tem apresentado bons resultados em várias aplicações." (FACELI et al., 2023, p. 104, destaquei).
+
+A seguir, imagens ilustrativas do cálculo da entrada total de um neurônio artificial e das precitadas funções de ativação:
+
 ![Entrada total de um neurônio artificial](../../imagens/24_am_faceli_entrada_total_do_neuronio_artificial.png)
 Figura 24 — Entrada total de um neurônio artificial (FACELI et al., 2023, p. 104).
+
+![Funções de ativação](../../imagens/25_am_faceli_funcoes_de_ativacao.png)
+Figura 25 — Funções de ativação (FACELI et al., 2023, p. 104).
 
 ## Principais tópicos
 
@@ -49,7 +58,8 @@ Figura 24 — Entrada total de um neurônio artificial (FACELI et al., 2023, p. 
       - **Neurônio artificial**
         - Unidade de processamento e principal componente arquitetural
         - Terminais de entrada, pesos, função de ativação e terminal de saída
-        - A entrada total é a soma ponderada de todos os valores de entrada e é sobre ela que a função de ativação é aplicada
+        - Entrada total: soma ponderada de todos os valores de entrada, sobre a qual é aplicada a função de ativação
+        - **Função de ativação**: recebe a entrada total e retorna um valor correspondente à saída do neurônio, que define se ele será ou não ativado
 
 ## Referências complementares
 
