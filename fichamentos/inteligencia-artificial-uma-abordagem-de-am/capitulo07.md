@@ -37,6 +37,13 @@ Figura 24 — Entrada total de um neurônio artificial (FACELI et al., 2023, p. 
 ![Funções de ativação](../../imagens/25_am_faceli_funcoes_de_ativacao.png)
 Figura 25 — Funções de ativação (FACELI et al., 2023, p. 104).
 
+As redes neurais artificiais tem seus neurônios organizados em **camadas** que definem o **padrão arquitetural** da rede. Na forma mais simples, composta por **uma única camada**, os neurônios recebem os dados diretamente em seus terminais de entrada, correspondendo ela própria à camada de saída. Nas redes **multicamadas**, que possuem camadas **intermediárias, escondidas ou ocultas**, o fluxo da informação entre as camadas pode ser unidirecional (redes ***feed-forward***) ou com **retroalimentação (*feedback*)** (redes **recorrentes ou com retropropagação**), isto é, um ou mais terminais de entrada de um ou mais neurônios recebem a saída de neurônios da mesma camada, de camada posterior ou mesmo a sua própria saída. "O número de camadas, o número de neurônios em cada camada, o grau de conectividade e a presença ou não de conexões com retropropagação definem a topologia de uma RNA." (FACELI et al., 2023, p. 106).
+
+Ilustrando arquiteturas multicamadas sem e com retroalimentação, vejamos a imagem a seguir:
+
+![RNA multicamadas sem e com retroalimentação](../../imagens/26_am_faceli_rna_multicamadas.png)
+Figura 26 — RNA multicamadas sem e com retroalimentação (FACELI et al., 2023, p. 106).
+
 ## Principais tópicos
 
 - **Noções gerais**
@@ -50,16 +57,20 @@ Figura 25 — Funções de ativação (FACELI et al., 2023, p. 104).
     - Unidade lógica com limiar (*Logic Threshold Unit*, LTU)
       - Executava funções lógicas simples
       - Redes de LTUs tinham elevado poder computacional para a época, pois podiam implementar qualquer função obtida pela combinação de funções lógicas, mas não possuíam capacidade de aprendizado
+  - **Neurônio artificial**
+    - Unidade de processamento e principal componente arquitetural
+    - Terminais de entrada, pesos, função de ativação e terminal de saída
+    - Entrada total: soma ponderada de todos os valores de entrada, sobre a qual é aplicada a função de ativação
+    - **Função de ativação**: recebe a entrada total e retorna um valor correspondente à saída do neurônio, que define se ele será ou não ativado
   - **Componentes básicos de uma RNA**
+    - **Arquitetura**
+      - Estrutura da rede
+      - Topologia
+        - Número de camadas e de neurônios por camada
+        - Grau de conectividade
+        - Presença ou não de retropropagação
     - **Aprendizado**
       - Regras de ajuste dos pesos sinápticos
-    - **Arquitetura**
-      - Estrutura da rede (tipo, quantidade e disposição dos neurônios)
-      - **Neurônio artificial**
-        - Unidade de processamento e principal componente arquitetural
-        - Terminais de entrada, pesos, função de ativação e terminal de saída
-        - Entrada total: soma ponderada de todos os valores de entrada, sobre a qual é aplicada a função de ativação
-        - **Função de ativação**: recebe a entrada total e retorna um valor correspondente à saída do neurônio, que define se ele será ou não ativado
 
 ## Referências complementares
 
