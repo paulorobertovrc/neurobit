@@ -16,6 +16,8 @@ São métodos inspirados em modelos biológicos, que buscam não apenas **simula
 
 >"[...] sistemas computacionais distribuídos compostos de unidades de processamento simples, densamente interconectadas [...], conhecidas como neurônios artificiais, [que] computam funções matemáticas [...]. As unidades [neurônios artificiais] são dispostas em uma ou mais camadas e interligadas por um grande número de conexões, geralmente unidirecionais. Na maioria das arquiteturas, essas conexões, que simulam as sinapses biológicas, possuem pesos associados, que ponderam a entrada recebida por cada neurônio da rede [...] [e] podem assumir valores positivos ou negativos, dependendo de o comportamento da conexão ser excitatório ou inibitório, respectivamente. Os pesos têm seus valores ajustados em um processo de aprendizado e codificam o conhecimento adquirido pela rede (Braga et al., 2007)." (FACELI et al., 2023, p. 103).
 
+#### 7.1.1 Componentes básicos de uma RNA
+
 Seus **componentes básicos** são **arquitetura** e **aprendizado**. "Enquanto a arquitetura está relacionada com o tipo, o número de unidades de processamento e a forma como os neurônios estão conectados, o aprendizado diz respeito às regras utilizadas para ajustar os pesos da rede e à informação que é utilizada por essas regras." (FACELI et al., 2023, p. 103).
 
 **O neurônio artificial é a unidade de processamento e componente fundamental da arquitetura de uma RNA.** Ele possui **terminais de entrada** que recebem os valores, uma **função de ativação**, que é uma função matemática que realiza o processamento desses valores já ponderados, e um **terminal de saída** que corresponde à resposta do neurônio, alusivos, respectivamente, aos dendritos, corpo celular e axônios de um neurônio biológico. A cada terminal de entrada corresponde um **peso sináptico**, sendo a **entrada total**, sobre a qual a função de ativação é aplicada, definida pelo somatório de cada um dos valores de entrada multiplicado pelo peso vinculado à conexão respectiva. Os terminais de entrada podem ter pesos positivos, negativos ou zero, neste caso indicativo de que nenhuma conexão foi associada.
@@ -37,12 +39,20 @@ Figura 24 — Entrada total de um neurônio artificial (FACELI et al., 2023, p. 
 ![Funções de ativação](../../imagens/25_am_faceli_funcoes_de_ativacao.png)
 Figura 25 — Funções de ativação (FACELI et al., 2023, p. 104).
 
-As redes neurais artificiais tem seus neurônios organizados em **camadas** que definem o **padrão arquitetural** da rede. Na forma mais simples, composta por **uma única camada**, os neurônios recebem os dados diretamente em seus terminais de entrada, correspondendo ela própria à camada de saída. Nas redes **multicamadas**, que possuem camadas **intermediárias, escondidas ou ocultas**, o fluxo da informação entre as camadas pode ser unidirecional (redes ***feed-forward***) ou com **retroalimentação (*feedback*)** (redes **recorrentes ou com retropropagação**), isto é, um ou mais terminais de entrada de um ou mais neurônios recebem a saída de neurônios da mesma camada, de camada posterior ou mesmo a sua própria saída. "O número de camadas, o número de neurônios em cada camada, o grau de conectividade e a presença ou não de conexões com retropropagação definem a topologia de uma RNA." (FACELI et al., 2023, p. 106).
+##### 7.1.1.1 Arquitetura
+
+As redes neurais artificiais tem seus neurônios organizados em **camadas** que definem o **padrão arquitetural** da rede. Na forma mais simples, composta por **uma única camada**, os neurônios recebem os dados diretamente em seus terminais de entrada, correspondendo ela própria à camada de saída. Nas redes **multicamadas**, que possuem camadas **intermediárias, escondidas ou ocultas**, o fluxo da informação entre as camadas pode ser unidirecional (redes ***feed-forward***) ou com **retroalimentação (*feedback*)** (redes **recorrentes ou com retropropagação**), isto é, um ou mais terminais de entrada de um ou mais neurônios recebem a saída de neurônios da mesma camada, de camada posterior ou mesmo a sua própria saída. "O número de camadas, o número de neurônios em cada camada, o grau de conectividade e a presença ou não de conexões com retropropagação definem a **topologia** de uma RNA." (FACELI et al., 2023, p. 106, destaquei.).
 
 Ilustrando arquiteturas multicamadas sem e com retroalimentação, vejamos a imagem a seguir:
 
 ![RNA multicamadas sem e com retroalimentação](../../imagens/26_am_faceli_rna_multicamadas.png)
 Figura 26 — RNA multicamadas sem e com retroalimentação (FACELI et al., 2023, p. 106).
+
+##### 7.1.1.2 Aprendizado
+
+Essencialmente, a capacidade de aprendizado está relacionada com o **ajuste dos parâmetros** da RNA, isto é, "[...] a **definição dos valores dos pesos associados às conexões da rede** que fazem com que o modelo obtenha melhor desempenho, geralmente medido pela acurácia preditiva." (FACELI et al., 2023, p. 106, destaquei). Isso é feito através de "[...] um **conjunto de regras bem definidas** que especificam quando e como deve ser alterado o valor de cada peso" (FACELI et al., 2023, p. 106), implementadas por **algoritmos de treinamento**.
+
+Os principais algoritmos são os seguintes: **(1) correção de erro**: o ajuste é feito para minimizar os erros, geralmente, mediante o aprendizado supervisionado; **(2) Hebbiano**: inspirado na aprendizagem Hebbiana — não supervisionada —, que preconiza o fortalecimento de conexões que, com frequência, são ativadas simultaneamente; **(3) competitivo**: os neurônios competem entre si (aprendizado não supervisionado); e **(4) termodinâmico**: inspirado na aprendizagem de Boltzmann, é um algoritmo estocástico que se baseia em princípios da Física (termodinâmica) e busca o "equilíbrio térmico" da rede.
 
 ## Principais tópicos
 
@@ -60,7 +70,7 @@ Figura 26 — RNA multicamadas sem e com retroalimentação (FACELI et al., 2023
   - **Neurônio artificial**
     - Unidade de processamento e principal componente arquitetural
     - Terminais de entrada, pesos, função de ativação e terminal de saída
-    - Entrada total: soma ponderada de todos os valores de entrada, sobre a qual é aplicada a função de ativação
+    - **Entrada total**: soma ponderada de todos os valores de entrada, sobre a qual é aplicada a função de ativação
     - **Função de ativação**: recebe a entrada total e retorna um valor correspondente à saída do neurônio, que define se ele será ou não ativado
   - **Componentes básicos de uma RNA**
     - **Arquitetura**
@@ -70,7 +80,13 @@ Figura 26 — RNA multicamadas sem e com retroalimentação (FACELI et al., 2023
         - Grau de conectividade
         - Presença ou não de retropropagação
     - **Aprendizado**
-      - Regras de ajuste dos pesos sinápticos
+      - Ajuste dos parâmetros da rede
+        - Definição dos valores dos pesos associados às conexões da rede
+      - Algoritmos
+        - Correção de erro
+        - Hebbiano
+        - Competitivo
+        - Termodinâmico
 
 ## Referências complementares
 

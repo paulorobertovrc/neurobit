@@ -50,56 +50,71 @@
                         "[...] sistemas computacionais distribuídos compostos de unidades de processamento simples, densamente interconectadas [...], conhecidas como neurônios artificiais, [que] computam funções matemáticas [...]. As unidades [neurônios artificiais] são dispostas em uma ou mais camadas e interligadas por um grande número de conexões, geralmente unidirecionais. Na maioria das arquiteturas, essas conexões, que simulam as sinapses biológicas, possuem pesos associados, que ponderam a entrada recebida por cada neurônio da rede [...] [e] podem assumir valores positivos ou negativos, dependendo de o comportamento da conexão ser excitatório ou inibitório, respectivamente. Os pesos têm seus valores ajustados em um processo de aprendizado e codificam o conhecimento adquirido pela rede (Braga et al., 2007)." (FACELI et al., 2023, p. 103).
                     </blockquote>
                 </p>
-                <p>
-                    Seus <strong>componentes básicos</strong> são <strong>arquitetura</strong> e e <strong>aprendizado</strong>. "Enquanto a arquitetura está relacionada com o tipo, o número de unidades de processamento e a forma como os neurônios estão conectados, o aprendizado diz respeito às regras utilizadas para ajustar os pesos da rede e à informação que é utilizada por essas regras." (FACELI et al., 2023, p. 103).
-                </p>
-                <p>
-                    <strong>O neurônio artificial é a unidade de processamento e componente fundamental da arquitetura de uma RNA.</strong> Ele possui <strong>terminais de entrada</strong> que recebem os valores, uma <strong>função de ativação</strong>, que é uma função matemática que realiza o processamento desses valores já ponderados, e um terminal de saída que corresponde à resposta do neurônio, alusivos, respectivamente, aos dendritos, corpo celular e axônios de um neurônio biológico. A cada terminal de entrada corresponde um <strong>peso sináptico</strong>, sendo a <strong>entrada total</strong>, sobre a qual a função de ativação é aplicada, definida pelo somatório de cada um dos valores de entrada multiplicado pelo peso vinculado à conexão respectiva. Os terminais de entrada podem ter pesos positivos, negativos ou zero, neste caso indicativo de que nenhuma conexão foi associada.
-                </p>
-                <p>
-                    A seguir, imagem ilustrativa de um neurônio artificial:
-                    <div class="image-container">
-                        <figure>
-                            <img src="../../../imagens/23_am_faceli_neuronio_artificial.png" alt="Ilustração de um neurônio artificial simples">
-                            <figcaption class="legenda">Figura 23 - Ilustração de um neurônio artificial simples (FACELI et al., 2023, p. 103).</figcaption>
-                        </figure>
-                    </div>
-                </p>
-                <p>
-                    Em relação à <strong>função de ativação</strong>, dentre as propostas mais comuns, destacam-se as seguintes: linear, limiar, sigmoidal, tangente hiperbólica, gaussiana e linear retificada (ReLU). Em qualquer caso, ela receberá a entrada total e retornará um valor que será a saída do neurônio, definindo, por conseguinte, se ele será ou não ativado.
-                </p>
-                <p>
-                    <blockquote>
-                        >"O uso da <strong>função linear</strong> identidade [...] implica retornar como saída o valor de <math><ms>u</ms></math> [ou seja, a própria entrada total]. Na <strong>função limiar</strong> [...], o valor do limiar define quando o resultado da função limiar será igual a 1 ou 0 (alternativamente, [...] -1). Quando a soma das entradas recebidas ultrapassa o limiar estabelecido, o neurônio torna-se ativo (saída +1). Quanto maior o valor do limiar, maior tem que ser o valor da entrada total para que o valor de saída do neurônio seja igual a 1. A <strong>função sigmoidal</strong> [...] representa uma aproximação contínua e diferenciável da função limiar. A sua saída é um valor no intervalo aberto (0, 1), podendo apresentar diferentes inclinações. A <strong>função tangente hiperbólica</strong> [...] é uma variação da função sigmoidal que utiliza o intervalo aberto (-1, +1) para o valor de saída. Outra função utilizada com frequência, também contínua e diferenciável, é a <strong>função gaussiana</strong> [...]. Mais recentemente, com a popularização das redes profundas, passou a ser cada vez mais utilizada a <strong>função linear retificada</strong>, também conhecida como ReLU (do inglês <em>Rectified Linear Unit</em>) [...]. Essa função retorna 0 se recebe um valor negativo ou o próprio valor, no caso contrário. Junto com suas variações, ela tem apresentado bons resultados em várias aplicações." (FACELI et al., 2023, p. 104, destaquei).
-                    </blockquote>
-                </p>
-                <p>
-                    A seguir, imagens ilustrativas do cálculo da entrada total de um neurônio artificial e das precitadas funções de ativação:
-                    <div class="image-container">
-                        <figure>
-                            <img src="../../../imagens/24_am_faceli_entrada_total_do_neuronio_artificial.png" alt="Entrada total de um neurônio artificial">
-                            <figcaption class="legenda">Figura 24 - Entrada total de um neurônio artificial (FACELI et al., 2023, p. 104).</figcaption>
-                        </figure>
-                    </div>
-                    <div class="image-container">
-                        <figure>
-                            <img src="../../../imagens/25_am_faceli_funcoes_de_ativacao.png" alt="Funções de ativação">
-                            <figcaption class="legenda">Figura 25 - Funções de ativação (FACELI et al., 2023, p. 104).</figcaption>
-                        </figure>
-                    </div>
-                </p>
-                <p>
-                    As redes neurais artificiais tem seus neurônios organizados em <strong>camadas</strong> que definem o <strong>padrão arquitetural</strong> da rede. Na forma mais simples, composta por <strong>uma única camada</strong>, os neurônios recebem os dados diretamente em seus terminais de entrada, correspondendo ela própria à camada de saída. Nas redes <strong>multicamadas</strong>, que possuem camadas <strong>intermediárias, escondidas ou ocultas</strong>, o fluxo da informação entre as camadas pode ser unidirecional (redes <strong><em>feed-forward</em></strong>) ou com <strong>retroalimentação (<em>feedback</em>)</strong> (redes <strong>recorrentes ou com retropropagação</strong>), isto é, um ou mais terminais de entrada de um ou mais neurônios recebem a saída de neurônios da mesma camada, de camada posterior ou mesmo a sua própria saída. "O número de camadas, o número de neurônios em cada camada, o grau de conectividade e a presença ou não de conexões com retropropagação definem a topologia de uma RNA." (FACELI et al., 2023, p. 106).
-                </p>
-                <p>
-                    Ilustrando arquiteturas multicamadas sem e com retroalimentação, vejamos a imagem a seguir:
-                    <div class="image-container">
-                        <figure>
-                            <img src="../../../imagens/26_am_faceli_rna_multicamadas.png" alt="RNA multicamadas sem e com retroalimentação">
-                            <figcaption class="legenda">Figura 26 — RNA multicamadas sem e com retroalimentação (FACELI et al., 2023, p. 106).</figcaption>
-                        </figure>
-                    </div>
-                </p>
+                <div>
+                    <h5>7.1.1 Componentes básicos de uma RNA</h5>
+                    <p>
+                        Seus <strong>componentes básicos</strong> são <strong>arquitetura</strong> e e <strong>aprendizado</strong>. "Enquanto a arquitetura está relacionada com o tipo, o número de unidades de processamento e a forma como os neurônios estão conectados, o aprendizado diz respeito às regras utilizadas para ajustar os pesos da rede e à informação que é utilizada por essas regras." (FACELI et al., 2023, p. 103).
+                    </p>
+                    <p>
+                        <strong>O neurônio artificial é a unidade de processamento e componente fundamental da arquitetura de uma RNA.</strong> Ele possui <strong>terminais de entrada</strong> que recebem os valores, uma <strong>função de ativação</strong>, que é uma função matemática que realiza o processamento desses valores já ponderados, e um terminal de saída que corresponde à resposta do neurônio, alusivos, respectivamente, aos dendritos, corpo celular e axônios de um neurônio biológico. A cada terminal de entrada corresponde um <strong>peso sináptico</strong>, sendo a <strong>entrada total</strong>, sobre a qual a função de ativação é aplicada, definida pelo somatório de cada um dos valores de entrada multiplicado pelo peso vinculado à conexão respectiva. Os terminais de entrada podem ter pesos positivos, negativos ou zero, neste caso indicativo de que nenhuma conexão foi associada.
+                    </p>
+                    <p>
+                        A seguir, imagem ilustrativa de um neurônio artificial:
+                        <div class="image-container">
+                            <figure>
+                                <img src="../../../imagens/23_am_faceli_neuronio_artificial.png" alt="Ilustração de um neurônio artificial simples">
+                                <figcaption class="legenda">Figura 23 - Ilustração de um neurônio artificial simples (FACELI et al., 2023, p. 103).</figcaption>
+                            </figure>
+                        </div>
+                    </p>
+                    <p>
+                        Em relação à <strong>função de ativação</strong>, dentre as propostas mais comuns, destacam-se as seguintes: linear, limiar, sigmoidal, tangente hiperbólica, gaussiana e linear retificada (ReLU). Em qualquer caso, ela receberá a entrada total e retornará um valor que será a saída do neurônio, definindo, por conseguinte, se ele será ou não ativado.
+                    </p>
+                    <p>
+                        <blockquote>
+                            "O uso da <strong>função linear</strong> identidade [...] implica retornar como saída o valor de <math><ms>u</ms></math> [ou seja, a própria entrada total]. Na <strong>função limiar</strong> [...], o valor do limiar define quando o resultado da função limiar será igual a 1 ou 0 (alternativamente, [...] -1). Quando a soma das entradas recebidas ultrapassa o limiar estabelecido, o neurônio torna-se ativo (saída +1). Quanto maior o valor do limiar, maior tem que ser o valor da entrada total para que o valor de saída do neurônio seja igual a 1. A <strong>função sigmoidal</strong> [...] representa uma aproximação contínua e diferenciável da função limiar. A sua saída é um valor no intervalo aberto (0, 1), podendo apresentar diferentes inclinações. A <strong>função tangente hiperbólica</strong> [...] é uma variação da função sigmoidal que utiliza o intervalo aberto (-1, +1) para o valor de saída. Outra função utilizada com frequência, também contínua e diferenciável, é a <strong>função gaussiana</strong> [...]. Mais recentemente, com a popularização das redes profundas, passou a ser cada vez mais utilizada a <strong>função linear retificada</strong>, também conhecida como ReLU (do inglês <em>Rectified Linear Unit</em>) [...]. Essa função retorna 0 se recebe um valor negativo ou o próprio valor, no caso contrário. Junto com suas variações, ela tem apresentado bons resultados em várias aplicações." (FACELI et al., 2023, p. 104, destaquei).
+                        </blockquote>
+                    </p>
+                    <p>
+                        A seguir, imagens ilustrativas do cálculo da entrada total de um neurônio artificial e das precitadas funções de ativação:
+                        <div class="image-container">
+                            <figure>
+                                <img src="../../../imagens/24_am_faceli_entrada_total_do_neuronio_artificial.png" alt="Entrada total de um neurônio artificial">
+                                <figcaption class="legenda">Figura 24 - Entrada total de um neurônio artificial (FACELI et al., 2023, p. 104).</figcaption>
+                            </figure>
+                        </div>
+                        <div class="image-container">
+                            <figure>
+                                <img src="../../../imagens/25_am_faceli_funcoes_de_ativacao.png" alt="Funções de ativação">
+                                <figcaption class="legenda">Figura 25 - Funções de ativação (FACELI et al., 2023, p. 104).</figcaption>
+                            </figure>
+                        </div>
+                    </p>
+                </div>
+                <div>
+                    <h6>7.1.1.1 Arquitetura</h6>
+                    <p>
+                        As redes neurais artificiais tem seus neurônios organizados em <strong>camadas</strong> que definem o <strong>padrão arquitetural</strong> da rede. Na forma mais simples, composta por <strong>uma única camada</strong>, os neurônios recebem os dados diretamente em seus terminais de entrada, correspondendo ela própria à camada de saída. Nas redes <strong>multicamadas</strong>, que possuem camadas <strong>intermediárias, escondidas ou ocultas</strong>, o fluxo da informação entre as camadas pode ser unidirecional (redes <strong><em>feed-forward</em></strong>) ou com <strong>retroalimentação (<em>feedback</em>)</strong> (redes <strong>recorrentes ou com retropropagação</strong>), isto é, um ou mais terminais de entrada de um ou mais neurônios recebem a saída de neurônios da mesma camada, de camada posterior ou mesmo a sua própria saída. "O número de camadas, o número de neurônios em cada camada, o grau de conectividade e a presença ou não de conexões com retropropagação definem a topologia de uma RNA." (FACELI et al., 2023, p. 106).
+                    </p>
+                    <p>
+                        Ilustrando arquiteturas multicamadas sem e com retroalimentação, vejamos a imagem a seguir:
+                        <div class="image-container">
+                            <figure>
+                                <img src="../../../imagens/26_am_faceli_rna_multicamadas.png" alt="RNA multicamadas sem e com retroalimentação">
+                                <figcaption class="legenda">Figura 26 — RNA multicamadas sem e com retroalimentação (FACELI et al., 2023, p. 106).</figcaption>
+                            </figure>
+                        </div>
+                    </p>
+                </div>
+                <div>
+                    <h6>7.1.1.2 Aprendizado</h6>
+                    <p>
+                        Essencialmente, a capacidade de aprendizado está relacionada com o <strong>ajuste dos parâmetros</strong> da RNA, isto é, "[...] a <strong>definição dos valores dos pesos associados às conexões da rede</strong> que fazem com que o modelo obtenha melhor desempenho, geralmente medido pela acurácia preditiva." (FACELI et al., 2023, p. 106, destaquei). Isso é feito através de "[...] um <strong>conjunto de regras bem definidas</strong> que especificam quando e como deve ser alterado o valor de cada peso" (FACELI et al., 2023, p. 106, destaquei), implementadas por <strong>algoritmos de treinamento</strong>.
+                    </p>
+                    <p>
+                        Os principais algoritmos são os seguintes: <strong>(1) correção de erro</strong> o ajuste é feito para minimizar os erros, geralmente, mediante o aprendizado supervisionado; <strong>(2) Hebbiano</strong> inspirado na aprendizagem Hebbiana — não supervisionada —, que preconiza o fortalecimento de conexões que, com frequência, são ativadas simultaneamente; <strong>(3) competitivo</strong>: os neurônios competem entre si (aprendizado não supervisionado); e <strong>(4) termodinâmico</strong>: inspirado na aprendizagem de Boltzmann, é um algoritmo estocástico que se baseia em princípios da Física (termodinâmica) e busca o "equilíbrio térmico" da rede.
+                    </p>
+                </div>
             </div>
             <a class="emoji" href="#top">[ 🔝 ]</a>
         </article>
@@ -142,7 +157,7 @@
                             <ul>
                                 <li>Unidade de processamento e principal componente arquitetural</li>
                                 <li>Terminais de entrada, pesos, função de ativação e terminal de saída</li>
-                                <li>Entrata total: soma ponderada de todos os valores de entrada, sobre a qual é aplicada a função de ativação</li>
+                                <li><strong>Entrada total</strong>: soma ponderada de todos os valores de entrada, sobre a qual é aplicada a função de ativação</li>
                                 <li><strong>Função de ativação</strong>: recebe a entrada total e retorna um valor correspondente à saída do neurônio, que define se ele será ou não ativado</li>
                             </ul>
                         </li>
@@ -166,7 +181,21 @@
                                 <li>
                                     <strong>Aprendizado</strong>
                                     <ul>
-                                        <li>Regras de ajuste dos pesos sinápticos</li>
+                                        <li>
+                                            Ajuste dos parâmetros da rede
+                                            <ul>
+                                                <li>Definição dos valores dos pesos associados às conexões da rede</li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            Algoritmos
+                                            <ul>
+                                                <li>Correção de erro</li>
+                                                <li>Hebbiano</li>
+                                                <li>Competitivo</li>
+                                                <li>Termodinâmico</li>
+                                            </ul>
+                                        </li>
                                     </ul>
                                 </li>
                             </ul>
