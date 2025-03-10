@@ -47,7 +47,7 @@ Para atingir esse objetivo, a ideia é que o estudo dê atenção ao embasamento
 
 [[🔝](#acesso-rápido)]
 
-## Sobre o autor
+<!-- ## Sobre o autor
 
 Paulo Roberto Vieira Ribeiro Cavalcanti é pós-graduando *lato sensu* em Inteligência Artificial e Computacional pela Universidade Federal de Viçosa, graduando em Engenharia de Software, atualmente no 7º semestre, e bacharel em Direito.
 
@@ -55,7 +55,7 @@ Um eterno insatisfeito que nunca se contentou com o raso e superficial, após mu
 
 Compreendi que a mim pouco importam os louros da vitória, se o caminho a ser percorrido não contiver em si mesmo idêntica, senão maior, capacidade de me manter motivado - na verdade, nessa situação eu sequer conseguiria alcançar o resultado -, e, de certa maneira, concluí que retornei ao ponto de partida para, enfim, trilhar um caminho que sempre esteve traçado, mas que eu não conseguia ou não estava preparado para enxergar.
 
-[[🔝](#acesso-rápido)]
+[[🔝](#acesso-rápido)] -->
 
 ## Isenção de responsabilidade
 
